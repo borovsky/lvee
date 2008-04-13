@@ -1,0 +1,16 @@
+<h2><%=h @news.title %></h2>
+
+<p><%=h @news.created_at %></p>
+
+<p><%=h @news.lead %></p>
+
+<p><%=h @news.body %></p>
+
+<p>
+  <b>Автор:</b>
+  <%=h @news.user_id %>
+</p>
+
+
+<%= link_to 'Редактировать', edit_news_item_path(@news) %> |
+<%= link_to 'Назад', news_path %>

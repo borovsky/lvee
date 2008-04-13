@@ -1,0 +1,16 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: Заголовок
+  lead:  Краткое содержание новости
+  body:  Тело новости
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now + 1.minute %>
+
+
+two:
+  title: Еще один ацкий заголовок
+  lead:  Краткое содержание
+  body:  Тело ацкого отжига
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now + 1.minute %>

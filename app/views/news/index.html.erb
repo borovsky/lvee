@@ -1,0 +1,28 @@
+<h1>Listing news</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Body</th>
+    <th>Lead</th>
+    <th>User</th>
+    <th>Published</th>
+  </tr>
+
+<% for news in @news %>
+  <tr>
+    <td><%=h news.title %></td>
+    <td><%=h news.body %></td>
+    <td><%=h news.lead %></td>
+    <td><%=h news.user_id %></td>
+    <td><%=h news.published %></td>
+    <td><%= link_to 'Show', news_item_path(news) %></td>
+    <td><%= link_to 'Edit', edit_news_item_path(news) %></td>
+    <td><%= link_to 'Destroy', news_item_path(news), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New news', new_news_item_path %>
