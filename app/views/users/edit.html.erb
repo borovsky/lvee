@@ -1,0 +1,4 @@
+<h2>Вы редактируете профайл пользователя <%= @user.login %></h2>
+<% form_for(@user) do |f| %>
+  <%= f.text_field :login %>
+<% end %>

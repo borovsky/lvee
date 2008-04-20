@@ -1,21 +1,38 @@
 require 'digest/sha1'
 class User < ActiveRecord::Base
+
+  # Authorization plugin
+  acts_as_authorized_user
+  acts_as_authorizable
+
   # Virtual attribute for the unencrypted password
   attr_accessor :password
 
-  validates_presence_of     :login, :email
+  validates_presence_of     :login,  :email, :first_name, :last_name, :country, :city
+
   validates_presence_of     :password,                   :if => :password_required?
   validates_presence_of     :password_confirmation,      :if => :password_required?
   validates_length_of       :password, :within => 4..40, :if => :password_required?
   validates_confirmation_of :password,                   :if => :password_required?
-  validates_length_of       :login,    :within => 3..40
-  validates_length_of       :email,    :within => 3..100
+
+  validates_length_of       :login, :within => 3..40
+  validates_length_of       :email, :within => 3..100
+
+  validates_length_of       :first_name, :within => 2..30
+  validates_length_of       :first_name, :within => 2..30
+
   validates_uniqueness_of   :login, :email, :case_sensitive => false
-  before_save :encrypt_password
-  before_create :make_activation_code 
+
+  before_save   :encrypt_password
+  before_create :make_activation_code
+
   # prevents a user from submitting a crafted form that bypasses activation
   # anything else you want your user to change should be added here.
-  attr_accessible :login, :email, :password, :password_confirmation
+  attr_accessible :login, :email, :password, :password_confirmation, :first_name, :last_name, :country, :city, :quantity, :proposition
+
+  def full_name
+    [first_name, last_name].join(' ')
+  end
 
   # Activates the user in the database.
   def activate
@@ -51,7 +68,7 @@ class User < ActiveRecord::Base
   end
 
   def remember_token?
-    remember_token_expires_at && Time.now.utc < remember_token_expires_at 
+    remember_token_expires_at && Time.now.utc < remember_token_expires_at
   end
 
   # These create and unset the fields required for remembering users between browser closes
@@ -65,7 +82,7 @@ class User < ActiveRecord::Base
 
   def remember_me_until(time)
     self.remember_token_expires_at = time
-    self.remember_token            = encrypt("#{email}--#{remember_token_expires_at}")
+    self.remember_token            = encrypt("#{email}--#{remember_token_expires_at}-")
     save(false)
   end
 
@@ -80,21 +97,24 @@ class User < ActiveRecord::Base
     @activated
   end
 
+  def editable_by?(user)
+    self.id == user.id
+  end
+
   protected
-    # before filter 
+    # before filter
     def encrypt_password
       return if password.blank?
       self.salt = Digest::SHA1.hexdigest("--#{Time.now.to_s}--#{login}--") if new_record?
       self.crypted_password = encrypt(password)
     end
-      
+
     def password_required?
       crypted_password.blank? || !password.blank?
     end
-    
-    def make_activation_code
 
+    def make_activation_code
       self.activation_code = Digest::SHA1.hexdigest( Time.now.to_s.split(//).sort_by {rand}.join )
     end
-    
+
 end

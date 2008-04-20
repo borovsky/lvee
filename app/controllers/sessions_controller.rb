@@ -1,9 +1,5 @@
-# This controller handles the login/logout function of the site.  
 class SessionsController < ApplicationController
-  # Be sure to include AuthenticationSystem in Application Controller instead
-  include AuthenticatedSystem
 
-  # render new.rhtml
   def new
   end
 
@@ -12,11 +8,12 @@ class SessionsController < ApplicationController
     if logged_in?
       if params[:remember_me] == "1"
         current_user.remember_me unless current_user.remember_token?
-        cookies[:auth_token] = { :value => self.current_user.remember_token , :expires => self.current_user.remember_token_expires_at }
+        cookies[:auth_token] = { :value => self.current_user.remember_token, :expires => self.current_user.remember_token_expires_at }
       end
       redirect_back_or_default('/')
-      flash[:notice] = "Logged in successfully"
+      flash[:notice] = "Вы успешно вошли"
     else
+      flash[:notice] = "Имя пользователя или пароль не верны. Возможно вы не произвели активацию учетной записи."
       render :action => 'new'
     end
   end
@@ -25,7 +22,7 @@ class SessionsController < ApplicationController
     self.current_user.forget_me if logged_in?
     cookies.delete :auth_token
     reset_session
-    flash[:notice] = "You have been logged out."
+    flash[:notice] = "Вы успешно вышли."
     redirect_back_or_default('/')
   end
 end

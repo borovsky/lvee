@@ -44,7 +44,7 @@ class NewsController < ApplicationController
 
     respond_to do |format|
       if @news.save
-        flash[:notice] = 'News was successfully created.'
+        flash[:notice] = 'Новость была успешно опубликована.'
         format.html { redirect_to(:action => 'show', :id => @news) }
         format.xml  { render :xml => @news, :status => :created, :location => @news }
       else
@@ -61,7 +61,7 @@ class NewsController < ApplicationController
 
     respond_to do |format|
       if @news.update_attributes(params[:news])
-        flash[:notice] = 'News was successfully updated.'
+        flash[:notice] = 'Новость была успешно изменена.'
         format.html { redirect_to(@news) }
         format.xml  { head :ok }
       else
