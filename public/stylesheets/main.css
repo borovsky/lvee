@@ -1,3 +1,4 @@
+
 body { background-color: #fff; color: #333; }
 
 body, p, ol, ul, td {
@@ -72,3 +73,7 @@ div.progressBar div.background {
   width: 0%;
 }
 
+
+
+/* forms */
+.required { color: red }
