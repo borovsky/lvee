@@ -1,0 +1,9 @@
+---
+user: www-data
+cwd: /u/apps/lvee/current
+port: "9000"
+environment: production
+group: lvee
+address: 87.230.33.156
+pid_file: tmp/pids/mongrel.pid
+servers: 2
