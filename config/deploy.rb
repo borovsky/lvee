@@ -1,6 +1,6 @@
 set :application, "lvee"
-set :repository,  "ssh://git@217.21.50.60/home/git/homepage.git"
-set :host, '217.21.50.60'
+set :repository,  "ssh://gitoz@87.230.33.156:2401/var/git/lvee.git"
+set :host, '87.230.33.156'
 
 set :scm, :git
 set :deploy_via, :remote_cache
@@ -10,6 +10,8 @@ set :runner, 'www-data'
 set :use_sudo, true
 
 ssh_options[:paranoid] = false
+ssh_options[:port] = '2401'
+
 
 role :app, host
 role :web, host
