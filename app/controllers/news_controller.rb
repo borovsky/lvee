@@ -2,7 +2,7 @@ class NewsController < ApplicationController
   # GET /news
   # GET /news.xml
   def index
-    @news = News.find(:all)
+    @news = News.published.find(:all)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -40,7 +40,9 @@ class NewsController < ApplicationController
   # POST /news
   # POST /news.xml
   def create
+
     @news = News.new(params[:news])
+    @news.user = current_user
 
     respond_to do |format|
       if @news.save

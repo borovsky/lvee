@@ -1,2 +1,9 @@
-<h1>Участник: <%= @user.login %></h1>
-<p>Электропочта: <%= @user.email %></p>
+<h3>Участник: <%= @user.full_name %> (<%= @user.login %>)</h3>
+<p>Электропочта: <%= mail_to @user.email %></p>
+
+
+
+<% if @user.id == current_user.id %>
+  <hr />
+  <%= link_to 'Редактировать данные', edit_user_path(@user) %>
+<% end %>
