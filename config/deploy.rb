@@ -21,11 +21,11 @@ set :mongrel_conf, "#{deploy_to}/current/config/mongrel_cluster.yml"
 
 
 # TODO gem install mongrel_cluster
-#namespace :deploy do
-#  task :restart do
-#    restart_mongrel_cluster
-#  end
-#end
+namespace :deploy do
+  task :restart do
+    restart_mongrel_cluster
+  end
+end
 
 task :update_config, :roles => [:app] do
   run "cp -Rf #{shared_path}/config/* #{release_path}/config"
