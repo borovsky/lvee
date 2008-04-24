@@ -374,3 +374,5 @@ background: url(../images/bg-foo.jpg) bottom no-repeat;
 
 
 /*------------------------------------------------- /roll -- menu -------------------------------------------------------*/
+
+.fieldWithErrors input { border: 2px solid red; }
