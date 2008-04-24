@@ -1,4 +1,5 @@
-
+<ul>
 <% for user in @users %>
-  <%= link_to user.full_name, user_path(user) %>
-<% end %>
+  <li><%= link_to user.full_name, user_path(user) %></li>
+  <% end %>
+</ul>

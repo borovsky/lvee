@@ -1,4 +1,6 @@
-<h3>Вы редактируете профайл пользователя <%= @user.login %></h3>
+<%= error_messages_for :user %>
+
+<h3><%= @user.full_name %>, ваш профайл в ваших руках</h3>
 <% form_for(@user) do |f| %>
 
   <p><label for="first_name">Настоящее имя</label> <strong class="required">*</strong><br/>
@@ -45,54 +47,6 @@
 
   <p> Поля обозначенные красной звездочкой (<strong class="required">*</strong>) обязательны для заплонения
   </p>
-
-  <p><label for="login">Имя пользователя</label> <strong class="required">*</strong><br/>
-  <%= f.text_field :login %></p>
-
- <p><label for="email">Электропочта</label> <strong class="required">*</strong><br/>
-  <%= f.text_field :email %></p>
-
-  <p><label for="first_name">Настоящее имя</label> <strong class="required">*</strong><br/>
-  <%= f.text_field :first_name %></p>
-
-  <p><label for="last_name">Настоящая фамилия</label> <strong class="required">*</strong><br/>
-  <%= f.text_field :last_name %></p>
-
-  <p><label for="quantity">Сколько с вами будет человек (если вы не один)</label><br/>
-  <%= f.text_field :quantity %></p>
-
-  <p><label for="country">Страна</label> <strong class="required">*</strong><br/>
-  <%= f.country_select :country, ['Belarus', 'Ukraine', 'Russia'] %></p>
-
-  <p><label for="city">Населенный пункт</label> <strong class="required">*</strong><br/>
-  <%= f.text_field :city %></p>
-
-  <p><label for="location">Место работы/учебы и сфера деятельности</label> <strong class="required">*</strong><br/>
-  <%= f.text_field :occupation %></p>
-
-  <p><label for="projects">Проекты Free Software / Open Source (FS/OS), в которых вы принимали
-и/или принимаете участие и ваша роль в них</label><br/>
-  <%= f.text_area :projects %></p>
-
-  <p><label for="proposition">
-Так как свободное ПО создаётся сообществом с привлечением множества
-добровольцев, то расскажите, пожалуйста, что Вы могли бы привнести в
-нашу встречу. Пусть это будет доклад или менее формальный рассказ в
-рамках круглого стола (workshop) о внедрении, использовании или
-разработке свободного ПО вами или в вашей организации. Если вы
-собираетесь сделать доклад или организовать семинар на конференции,
-укажите тему предлагаемого вами доклада, а также вышлите на
-<%= mail_to 'd.kostiuk@lvee.org' %> тезисы выступления.
-  </label><br/>
-  <%= f.text_area :proposition %></p>
-
-
-
-  <p><label for="password">Пароль (если хотите сменить)</label> <strong class="required">*</strong><br/>
-  <%= f.password_field :password %></p>
-
-  <p><label for="password_confirmation">Подтвержедние пароля</label> <strong class="required">*</strong><br/>
-  <%= f.password_field :password_confirmation %></p>
 
 
   <p><%= submit_tag 'Сохранить изменения' %></p>

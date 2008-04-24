@@ -28,7 +28,7 @@ class User < ActiveRecord::Base
 
   # prevents a user from submitting a crafted form that bypasses activation
   # anything else you want your user to change should be added here.
-  attr_accessible :login, :email, :password, :password_confirmation, :first_name, :last_name, :country, :city, :quantity, :proposition
+  #attr_protected :
 
   def full_name
     [first_name, last_name].join(' ')
@@ -98,7 +98,7 @@ class User < ActiveRecord::Base
   end
 
   def editable_by?(user)
-    self.id == user.id
+    self.id == user.id # by self and only self ;)
   end
 
   protected
