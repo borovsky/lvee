@@ -1,0 +1,19 @@
+<div id="submenu" class="menu">
+	<ul>
+  	<%= main_menu_item('главная', :controller => 'main', :link => '/') %>
+
+    <% about_sub  = '<li><a href="about-history.html">история проекта </a></li>' %>
+    <% about_sub << '<li><a href="about-place.html">место проведения </a></li>'  %>
+    <% about_sub << '<li><a href="about-linux.html">линукс </a></li>'            %>
+
+  	<%= main_menu_item('о проекте',  {:controller => 'about'}) %>
+  	<%= main_menu_item('спонсоры', :controller => 'sponsors') %>
+
+  	<%= main_menu_item('регистрация', :controller => 'users', :link => '/users/new') unless logged_in? %>
+
+    <li><a href="http://lvee.org.by/">вики</a></li>
+  	<%= main_menu_item('программа', :controller => 'program')  %>
+  	<%= main_menu_item('контакты', :controller => 'contacts')  %>
+  </ul>
+  <div class="clear"></div>
+</div>
