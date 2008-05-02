@@ -25,10 +25,10 @@ module ApplicationHelper
       current = controller.controller_name == url_opts[:controller]
     end
     url = url_for(url_opts)
-    if block_given? && current
+    if block_given? 
       content = capture(&block)
       concat("<li#{current ? ' class="menu-place"' : ''}><a href=\"#{url}\">#{text}</a>", block.binding)
-      concat(content, block.binding)
+      concat(content, block.binding) if current
       concat("</li>", block.binding)
     else
       menu_html = "<li#{current ? ' class="menu-place"' : ''}><a href=\"#{url}\">#{text}</a></li>"
