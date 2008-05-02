@@ -28,7 +28,7 @@
 
   <p><label for="projects">Проекты Free Software / Open Source (FS/OS), в которых вы принимали
 и/или принимаете участие и ваша роль в них</label><br/>
-  <%= f.text_area :projects %></p>
+  <%= f.text_area :projects, :style => 'width: 100%', :rows => 5 %></p>
 
   <p><label for="proposition">
 Так как свободное ПО создаётся сообществом с привлечением множества
@@ -40,7 +40,7 @@
 укажите тему предлагаемого вами доклада, а также вышлите на
 <%= mail_to 'd.kostiuk@lvee.org' %> тезисы выступления.
   </label><br/>
-  <%= f.text_area :proposition %></p>
+  <%= f.text_area :proposition, :style => 'width: 100%', :rows => 5 %></p>
 
 
 

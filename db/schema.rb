@@ -13,8 +13,8 @@ ActiveRecord::Schema.define(:version => 3) do
 
   create_table "news", :force => true do |t|
     t.string   "title"
-    t.text     "body"
     t.text     "lead"
+    t.text     "body"
     t.integer  "user_id"
     t.boolean  "published"
     t.datetime "created_at"

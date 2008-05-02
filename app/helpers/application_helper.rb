@@ -17,11 +17,22 @@ module ApplicationHelper
     time.strftime('%d.%m.%Y')
   end
 
-  def main_menu_item(text, args, submenu = '')
-    css_class = controller.controller_name == args[:controller] ? ' class="menu-place"' : ''
-    menu_html = "<li#{css_class}><a href=\"#{args[:link] || ('/' + args[:controller])}\">#{text}</a>"
-    menu_html << "<ul class=\"sub-menu\">#{submenu}</ul>" unless submenu.empty?
-    menu_html << "</li>"
+  def menu_item(text, url_opts, &block)
+    current = false
+    if url_opts[:action]
+      current = controller.action_name == url_opts[:action] 
+    else
+      current = controller.controller_name == url_opts[:controller]
+    end
+    url = url_for(url_opts)
+    if block_given? && current
+      content = capture(&block)
+      concat("<li#{current ? ' class="menu-place"' : ''}><a href=\"#{url}\">#{text}</a>", block.binding)
+      concat(content, block.binding)
+      concat("</li>", block.binding)
+    else
+      menu_html = "<li#{current ? ' class="menu-place"' : ''}><a href=\"#{url}\">#{text}</a></li>"
+    end
     menu_html
   end
 
