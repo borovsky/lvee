@@ -1,4 +1,4 @@
-<div id="submenu" class="menu">
+<div id="sub-menu" class="menu">
   <ul>
 
     <%= menu_item('главная', :controller => 'main') %>
@@ -12,9 +12,19 @@
       </ul>
     <% end %>
 
-    <%= menu_item('программа',  :controller => 'program')  %>
+    <% menu_item('программа',  :controller => 'program') do %>
+      <ul class="sub-menu">
+        <%= menu_item('материалы прошлых конференций', :controller => 'program', :action => 'materials') %>
+      </ul>
+    <% end %>
     <%= menu_item('спонсоры',   :controller => 'sponsors') %>
-    <%= menu_item('участникам', :controller => 'participants') %>
+    <% menu_item('участникам', :controller => 'participants') do %>
+      <ul class="sub-menu">
+        <%= menu_item('правила оформления тезисов', :controller => 'participants', :action => 'tezis') %>
+        <%= menu_item('волонтерам', :controller => 'participants', :action => 'contribute') %>
+        <%= menu_item('размещение', :controller => 'participants', :action => 'dislocation') %>
+      </ul>
+    <% end %>
     <%= menu_item('контакты',   :controller => 'contacts')  %>
   </ul>
   <div class="clear"></div>

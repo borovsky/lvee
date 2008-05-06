@@ -24,7 +24,7 @@ body {
 	font-size: 12px;
 	color: #515650;
 	background: #d3d3d3;
-
+	
 }
 
 /*------------------------------------------------- /intro ---------------------------------------------------------------*/
@@ -36,17 +36,18 @@ body {
 	color: white;
 	font-weight: bold;
 	padding: 0 10px 0 10px;
+	min-width: 954px;
 	}
-
+	
 .logpass div{
 	text-align: right;
 	position: absolute;
-	margin-left: -500px;
+	margin-left: -450px;
 	left: 100%;
 	top: 0;
-
+	
 	}
-
+	
 
 
 .logpass div input {
@@ -54,12 +55,12 @@ body {
 	line-height: 14px;
 	height: 15px;
 	}
-
+	
 .logpass a {
 	color: white;
 	text-decoration: none;
 	}
-
+	
 .logpass a:hover {
 	color: white;
 	text-decoration: underline;
@@ -71,56 +72,56 @@ body {
 	background: url(../images/bg-all.jpg) repeat-y;
 
 	}
-
-
-
+	
+	
+	
 /*------------------------------------------------- header ---------------------------------------------------------------*/
 
 .header{
-
+	
 	background: top no-repeat url(../images/bg-header.jpg);
 	text-align: center;
 	padding-top: 40px;
-
+	
 	}
 
 
-
+	
 /*------------------------------------------------ /header ---------------------------------------------------------------*/
 
 
-
+	
 /*------------------------------------------------- content ---------------------------------------------------------------*/
-
+	
 .content{
 	margin: 10px auto 0 auto;
 	width: 918px;
 	}
-
-
+	
+	
 .menu {
 	background: url(../images/bg-menu.jpg) repeat-x center;
 	font-size: 14px;
 	font-weight: bold;
-
-
+	
+	
 	}
-
-.menu ul {
+	
+.menu ul {	
 	padding-left: 110px;
 	}
-
+	
 .menu ul li {
 	float: left;
 	padding: 0 15px 0 15px;
 	line-height: 73px;
 	list-style: none;
 	}
-
+	
 .menu ul li a{
 	color: #515650;
 	text-decoration: none;
-
+	
 	}
 
 .menu ul li:hover{
@@ -130,25 +131,25 @@ body {
 .menu ul li a:hover{
 	color: #ff7e00;
 	}
-
+	
 .menu  ul li.menu-place {
 
 	background: url(../images/arrow-sub.jpg) no-repeat top;
 	}
-
+	
 .menu  ul li.menu-place a, .menu  ul li.menu-place a:hover{
 	color: #ff7e00;
 	background: none;
 	}
 
 
-body.sub .menu {
+#sub-menu {
 	background: url(../images/bg-menu-sub.jpg) repeat-x top;
 	font-size: 14px;
 	font-weight: bold;
 	height: 105px;
 	}
-
+	
 
 
 .sub-menu {
@@ -156,28 +157,28 @@ body.sub .menu {
 	margin-top: -18px;
 	left: 172px;
 	}
-
-body.sub ul.sub-menu li, body.sub ul.sub-menu li a, body.sub ul.sub-menu li a:hover{
+	
+#sub-menu ul.sub-menu li, #sub-menu ul.sub-menu li a, #sub-menu ul.sub-menu li a:hover{
 	line-height: 14px;
 	font-size: 12px;
 	color: #fff;
 	background: none;
 	}
-
-body.sub ul.sub-menu li a:hover {
+	
+#sub-menu ul.sub-menu li a:hover {
 	text-decoration: underline;
 	}
 
 .lvee2008 {
 	float:left;
 	width: 446px;
-	}
-
+	}	
+	
 .text-place-white {
 	width: 440px;
 	float: left;
 	}
-
+	
 
 
 .text-place-white h1 {
@@ -189,115 +190,115 @@ body.sub ul.sub-menu li a:hover {
 
 	text-align: justify;
 	}
-
-
+	
+	
 h1 {
 	line-height: 50px;
 	font-size: 30px;
 	color: #93908d;
 	}
-
+	
 a {
 	color: #f75515;
 	}
-
+	
 a:hover {
 	color: #f75515;
 	text-decoration: none;
 	}
-
+	
 .blue-block {
 	background: #e1f4df;
 	border-top: 6px solid #beeeba;
 	border-bottom: 6px solid #beeeba;
 	clear: both;
 	}
-
+	
 .blue-block h1{
 	padding-left: 30px;}
-
+	
 .blue-block ul li {
 	list-style: none;
 	background: url(../images/arrow.gif) no-repeat left top;
 	line-height: 16px;
 	padding-left: 52px;
 	}
-
+	
 .blue-block-left {
 	float: left;
 	width: 420px;
 	padding: 10px 10px 20px 10px;
 	}
-
+	
 .blue-block-right {
 	float: left;
 	width: 420px;
 	padding: 10px 10px 20px 20px;
-
+	
 	}
-
+	
 .simple-text .blue-block-right {
 	width: 600px;
 	}
-
+	
 .blue-block-right h1 {
 	padding-left: 0px;
 	}
-
+	
 .blue-block-right table th{
 	color: #3879f0;
 	font-weight: normal;
 	width: 70px;
 	text-align: left;
 	}
-
-p.gipLink {
+	
+p.gipLink { 
 	text-align: right;
 	padding: 20px 10px 0 10px;
 	font-weight: bold;
 	font-size: 13px;
 	}
-
+	
 .simple-text {
 	padding: 10px 50px 20px 50px;
 	}
-
+	
 .simple-text p {
 	padding: 7px 0;
-	}
-
+	} 
+	
 .simple-text ul {
 	padding: 7px 50px 7px 50px;
 	}
 .simple-text ul li {
 	padding: 5px 0;}
-
+	
 .sitemap {
 	padding: 10px 50px 20px 50px;
 	}
 .sitemap ul li li{
 	margin-left: 20px;
 	}
+	
 
-
-
+	
 .orgcom div{
 	clear: both;
 	padding-top: 30px;
 
 	}
-
+	
 .orgcom div ul {
 	float: left;
 	padding: 0 10px;
 	margin-top: 1px;
 	}
-
+	
 .orgcom div li {
 	padding: 0;
 	list-style: none;
 	}
-
+	
 .orgcom div li span{
 	background: #ff8400;
 	padding: 1px 10px;
@@ -305,7 +306,7 @@ p.gipLink {
 	font-weight:bold;
 
 	}
-
+	
 .orgcom div img{
 	float: left;
 	border: 2px solid #ff8400;
@@ -337,9 +338,9 @@ background: url(../images/bg-foo.jpg) bottom no-repeat;
 .sponsors-logo {
 	height: 122px;
 	padding: 0 140px;
-
+	
 	}
-
+	
 .sponsors-logo a{
 	position: relative;
 	display: block;
@@ -351,14 +352,14 @@ background: url(../images/bg-foo.jpg) bottom no-repeat;
 
 	padding: 0px 0 20px 0;
 	}
-
+	
 .licence p{
 	text-align: center;
 	color: #313131;
 	font-size: 9px;
 	font-weight: bold;
 	}
-
+	
 .licence a{
 	color: #313131;
 
@@ -373,6 +374,4 @@ background: url(../images/bg-foo.jpg) bottom no-repeat;
 
 
 
-/*------------------------------------------------- /roll -- menu -------------------------------------------------------*/
-
-.fieldWithErrors input { border: 2px solid red; }
+/*------------------------------------------------- /roll -- menu -------------------------------------------------------*/	
