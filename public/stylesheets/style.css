@@ -297,6 +297,7 @@ p.gipLink {
 .orgcom div li {
 	padding: 0;
 	list-style: none;
+  width: 600px;
 	}
 	
 .orgcom div li span{
