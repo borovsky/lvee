@@ -2,20 +2,20 @@
 <%= flashes_if_any %>
 
 <%= error_messages_for :user, 
-:header_message => 'Регистрация не завершена...',
-:message => 'Следующие поля были неправильно заполнены:' %>
+:header_message => 'Регистрация не завершена',
+:message => 'Для завершения регистрации вы должны выполнить следующие требования:' %>
 
 <% form_for :user, :url => users_path do |f| -%>
-  <p><label for="login">Имя пользователя</label> <strong class="required">*</strong><br/>
+  <p><label for="login">Login</label> <strong class="required">*</strong><br/>
   <%= f.text_field :login %></p>
 
- <p><label for="email">Электропочта</label> <strong class="required">*</strong><br/>
+ <p><label for="email">Email</label> <strong class="required">*</strong><br/>
   <%= f.text_field :email %></p>
 
-  <p><label for="first_name">Настоящее имя</label> <strong class="required">*</strong><br/>
+  <p><label for="first_name">Имя</label> <strong class="required">*</strong><br/>
   <%= f.text_field :first_name %></p>
 
-  <p><label for="last_name">Настоящая фамилия</label> <strong class="required">*</strong><br/>
+  <p><label for="last_name">Фамилия</label> <strong class="required">*</strong><br/>
   <%= f.text_field :last_name %></p>
 
   <p><label for="quantity">Сколько с вами будет человек (если вы не один)</label><br/>
