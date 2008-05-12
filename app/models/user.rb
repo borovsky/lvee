@@ -32,14 +32,14 @@ class User < ActiveRecord::Base
   validates_length_of       :last_name, :within => 2..30,  :allow_blank => true, :message => '^Фамилия должна быть указана'
 
   validates_uniqueness_of   :login, :message => '^К сожалению выбранный вами логин кто-то уже занял'
-  validates_presence_of     :email, :case_sensitive => false, :message => '^К сожалению выбранный вами клиент кто-то уже занял'
+  validates_presence_of     :email, :case_sensitive => false, :message => '^К сожалению выбранный вами Email кто-то уже занял'
 
   before_save   :encrypt_password
   before_create :make_activation_code
 
   # prevents a user from submitting a crafted form that bypasses activation
   # anything else you want your user to change should be added here.
-  attr_accessible :first_name, :last_name, :country, :city, :occupation, :projects, :proposition
+  attr_accessible :first_name, :last_name, :country, :city, :occupation, :projects, :proposition, :email, :login
 
   def full_name
     [first_name, last_name].join(' ')
