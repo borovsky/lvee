@@ -42,17 +42,16 @@ body {
 	
 .logpass div{
 	text-align: right;
-
   width: 500px;
-float:right;
-
-
+  float:right;
 	top: 0;
 	
 	}
 
-*html .logpass div{
+*html div.logpass div{
   margin-top: -12px;
+  position: relative;
+
   }	
 
 
