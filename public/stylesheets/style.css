@@ -50,7 +50,10 @@ float:right;
 	top: 0;
 	
 	}
-	
+
+*html .logpass div{
+  margin-top: -12px;
+  }	
 
 
 .logpass div input {
@@ -341,6 +344,7 @@ p.gipLink {
   background: #B9121B;
   font-weight: bold;
   color: #fff;
+  margin: 30px 0;
   }
 /*------------------------------------------------- /content ---------------------------------------------------------------*/
 
