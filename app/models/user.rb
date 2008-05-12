@@ -1,25 +1,30 @@
 require 'digest/sha1'
 class User < ActiveRecord::Base
 
-  # Authorization plugin
+ # Authorization plugin
  # acts_as_authorized_user
  # acts_as_authorizable
 
   # Virtual attribute for the unencrypted password
   attr_accessor :password
 
-  validates_presence_of     :login,  :email, :first_name, :last_name, :country, :city
+  validates_presence_of :login, :message => 'Заполните поле Login'
+  validates_presence_of :email, :message => 'Заполните поле Email'
+  validates_presence_of :first_name, :message => 'Вы забыли указать своё имя'
+  validates_presence_of :last_name,  :message => 'Вы забыли указать фамилию'
+  validates_presence_of :country,    :message => 'Укажите вашу страну'
+  validates_presence_of :city,       :message => 'Укажите ваш город'
 
   validates_presence_of     :password,                   :if => :password_required?
   validates_presence_of     :password_confirmation,      :if => :password_required?
   validates_length_of       :password, :within => 4..40, :if => :password_required?
   validates_confirmation_of :password,                   :if => :password_required?
 
-  validates_length_of       :login, :within => 3..40
+  validates_length_of       :login, :within => 3..40, :message => 'Пароль должен быть более 3х символов, но менее 40'
   validates_length_of       :email, :within => 3..100
 
-  validates_length_of       :first_name, :within => 2..30
-  validates_length_of       :first_name, :within => 2..30
+  validates_length_of       :first_name, :within => 2..30, :allow_blank => true
+  validates_length_of       :last_name, :within => 2..30, :allow_blank => true
 
   validates_uniqueness_of   :login, :email, :case_sensitive => false
 

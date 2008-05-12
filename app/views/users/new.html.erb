@@ -1,6 +1,9 @@
 
 <%= flashes_if_any %>
-<%= error_messages_for :user %>
+
+<%= error_messages_for :user, 
+:header_message => 'Регистрация не завершена...',
+:message => 'Следующие поля были неправильно заполнены:' %>
 
 <% form_for :user, :url => users_path do |f| -%>
   <p><label for="login">Имя пользователя</label> <strong class="required">*</strong><br/>
