@@ -8,32 +8,38 @@ class User < ActiveRecord::Base
   # Virtual attribute for the unencrypted password
   attr_accessor :password
 
-  validates_presence_of :login, :message => 'Заполните поле Login'
-  validates_presence_of :email, :message => 'Заполните поле Email'
-  validates_presence_of :first_name, :message => 'Вы забыли указать своё имя'
-  validates_presence_of :last_name,  :message => 'Вы забыли указать фамилию'
-  validates_presence_of :country,    :message => 'Укажите вашу страну'
-  validates_presence_of :city,       :message => 'Укажите ваш город'
+  validates_presence_of :login, :message => '^Заполните поле Login'
+  validates_presence_of :email, :message => '^Заполните поле Email'
+  validates_presence_of :first_name, :message => '^Вы забыли указать своё имя'
+  validates_presence_of :last_name,  :message => '^Вы забыли указать фамилию'
+  validates_presence_of :country,    :message => '^Укажите вашу страну'
+  validates_presence_of :city,       :message => '^Укажите ваш населенный пункт'
 
-  validates_presence_of     :password,                   :if => :password_required?
-  validates_presence_of     :password_confirmation,      :if => :password_required?
-  validates_length_of       :password, :within => 4..40, :if => :password_required?
-  validates_confirmation_of :password,                   :if => :password_required?
+  validates_presence_of     :password,                   :if => :password_required?, :message => '^Вы должны выбрать пароль'
+  validates_presence_of     :password_confirmation,      :if => :password_required?, :message => '^Подтверждение пароля не совпадает с введенным паролем'
 
-  validates_length_of       :login, :within => 3..40, :message => 'Пароль должен быть более 3х символов, но менее 40'
-  validates_length_of       :email, :within => 3..100
+  password_lenght_error = '^Пароль должен быть длинной от 4 до 40 символов'
+  validates_length_of       :password, :within => 4..40, :if => :password_required?, :allow_blank => true, 
+                                                         :too_short => password_lenght_error, :too_long => password_lenght_error
 
-  validates_length_of       :first_name, :within => 2..30, :allow_blank => true
-  validates_length_of       :last_name, :within => 2..30, :allow_blank => true
+  validates_confirmation_of :password,                   :if => :password_required?, :message => '^Подтверждение пароля не совпадает с введенным паролем'
 
-  validates_uniqueness_of   :login, :email, :case_sensitive => false
+  validates_format_of :email, :with => /^\S+\@(\[?)[a-zA-Z0-9\-\.]+\.([a-zA-Z]{2,4}|[0-9]{1,4})(\]?)$/ix , :message => '^Ваш Email содержит ошибки'
+
+  validates_length_of       :login, :within => 3..40, :message => '^Пароль должен быть более 3х символов, но менее 40'
+
+  validates_length_of       :first_name, :within => 2..30, :allow_blank => true, :message => '^Имя должно быть указано'
+  validates_length_of       :last_name, :within => 2..30,  :allow_blank => true, :message => '^Фамилия должна быть указана'
+
+  validates_uniqueness_of   :login, :message => '^К сожалению выбранный вами логин кто-то уже занял'
+  validates_presence_of     :email, :case_sensitive => false, :message => '^К сожалению выбранный вами клиент кто-то уже занял'
 
   before_save   :encrypt_password
   before_create :make_activation_code
 
   # prevents a user from submitting a crafted form that bypasses activation
   # anything else you want your user to change should be added here.
-  #attr_protected :
+  attr_accessible :first_name, :last_name, :country, :city, :occupation, :projects, :proposition
 
   def full_name
     [first_name, last_name].join(' ')
@@ -104,6 +110,10 @@ class User < ActiveRecord::Base
 
   def editable_by?(user)
     self.id == user.id # by self and only self ;)
+  end
+
+  def site_editor?
+    SITE_EDITORS.include? self.login
   end
 
   protected

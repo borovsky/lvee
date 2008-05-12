@@ -2,7 +2,8 @@
 
 <%= error_messages_for :news %>
 
-<% form_for(@news) do |f| %>
+<% form_for(@news, :url => news_item_path(@news) ) do |f| %>
+<%# form_for(@news) do |f| %>
   <p>
     <b>Заголовок</b><br />
     <%= f.text_field :title %>
@@ -24,5 +25,5 @@
   </p>
 <% end %>
 
-<%= link_to 'Показать', @news %> |
+<%= link_to 'Показать', news_item_path(@news) %> |
 <%= link_to 'Список новостей', news_path %>

@@ -6,6 +6,6 @@ class News < ActiveRecord::Base
 
   attr_protected :user_id # публикуем только от своего имени
 
-  named_scope :published, :conditions => { :published => 1 }, :order => 'created_at DESC'
+  named_scope :published, :conditions => { :published => true }, :order => 'created_at DESC'
 
 end

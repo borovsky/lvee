@@ -15,4 +15,6 @@
 
 <hr />
 
+<% if current_user.site_editor? %>
 <%= link_to 'Добавить новость', new_news_item_path %>
+<% end %>

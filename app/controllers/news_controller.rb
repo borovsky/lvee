@@ -64,7 +64,7 @@ class NewsController < ApplicationController
     respond_to do |format|
       if @news.update_attributes(params[:news])
         flash[:notice] = 'Новость была успешно изменена.'
-        format.html { redirect_to(@news) }
+        format.html { redirect_to(news_item_path(@news)) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
