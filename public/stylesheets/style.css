@@ -169,7 +169,11 @@ body {
 	}
 
 * html .sub-menu {
-  margin-top: -9px;
+  margin-top: 30px;
+  }
+
+*+html .sub-menu {
+  margin-top: -18px;
   }
 	
 #sub-menu ul.sub-menu li, #sub-menu ul.sub-menu li a, #sub-menu ul.sub-menu li a:hover{
