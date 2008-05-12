@@ -39,7 +39,7 @@ class User < ActiveRecord::Base
 
   # prevents a user from submitting a crafted form that bypasses activation
   # anything else you want your user to change should be added here.
-  attr_accessible :first_name, :last_name, :country, :city, :occupation, :projects, :proposition, :email, :login
+  attr_accessible :first_name, :last_name, :country, :city, :occupation, :projects, :proposition, :email, :login, :password, :password_confirmation
 
   def full_name
     [first_name, last_name].join(' ')
