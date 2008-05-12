@@ -103,7 +103,7 @@ body {
 	
 /*------------------------------------------------- content ---------------------------------------------------------------*/
 	
-.content{
+.content {
 	margin: 10px auto 0 auto;
 	width: 918px;
 	}
@@ -167,6 +167,10 @@ body {
 	margin-top: -18px;
 	left: 172px;
 	}
+
+*-html .sub-menu {
+  9px;
+  }
 	
 #sub-menu ul.sub-menu li, #sub-menu ul.sub-menu li a, #sub-menu ul.sub-menu li a:hover{
 	line-height: 14px;
