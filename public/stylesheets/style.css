@@ -55,7 +55,7 @@ body {
 
 *+html div.logpass div {
   text-align: right;
-  width: 500px;
+  width: 540px;
   float:right;
   top: 0;
 }
@@ -203,7 +203,7 @@ li.menu-place div.sub-menu {
 
 
 *+html #sub-menu div.sub-menu {
-  margin-top: 30px;
+  margin-top: 15px;
 }
 
 .lvee2008 {
