@@ -41,30 +41,35 @@ body {
 	}
 	
 .logpass div{
-	text-align: right;
+  text-align: right;
   width: 500px;
   float:right;
-	top: 0;
-	
-	}
+  top: 0;
+}
 
-*html div.logpass div{
+*html div.logpass div {
   margin-top: -12px;
   position: relative;
+}
 
-  }	
 
+*+html div.logpass div {
+  text-align: right;
+  width: 500px;
+  float:right;
+  top: 0;
+}
 
 .logpass div input {
 	width: 100px;
 	line-height: 14px;
 	height: 15px;
-	}
+}
 
 .logpass div input.log-button {
   width: 40px;
   height:22px;
-  } 
+} 
 	
 .logpass a {
 	color: white;
@@ -197,6 +202,9 @@ li.menu-place div.sub-menu {
  }
 
 
+*+html #sub-menu div.sub-menu {
+  margin-top: 30px;
+}
 
 .lvee2008 {
 	float:left;
