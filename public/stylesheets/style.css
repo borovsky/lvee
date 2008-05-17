@@ -174,10 +174,7 @@ li.menu-place div.sub-menu {
 
 
 
-* html #sub-menu div.sub-menu {
-  margin-top: 15px;
-  width: 740px;
- }
+
 	
 #sub-menu div.sub-menu a, #sub-menu div.sub-menu a:hover{
 	line-height: 14px;
@@ -192,6 +189,18 @@ li.menu-place div.sub-menu {
 #sub-menu div.sub-menu a:hover {
 	text-decoration: underline;
 	}
+
+
+* html #sub-menu div.sub-menu {
+  margin-top: 15px;
+  width: 740px;
+ }
+
+* html #sub-menu div.sub-menu a{
+  display: block;
+  float: left;
+  width: 200px;
+ }
 
 .lvee2008 {
 	float:left;
