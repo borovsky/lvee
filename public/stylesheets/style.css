@@ -160,9 +160,7 @@ body {
 	height: 105px;
 	}
 
-* html #sub-menu div.sub-menu {
-  margin-top: 15px;
- }
+
 
 
 li.menu-place div.sub-menu {
@@ -174,11 +172,12 @@ li.menu-place div.sub-menu {
 
 	}
 
-#li.menu-place div.sub-menu {
+
+
+* html #sub-menu div.sub-menu {
   margin-top: 15px;
-  }
-
-
+  width: 500px;
+ }
 	
 #sub-menu div.sub-menu a, #sub-menu div.sub-menu a:hover{
 	line-height: 14px;
