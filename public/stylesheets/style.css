@@ -159,7 +159,10 @@ body {
 	font-weight: bold;
 	height: 105px;
 	}
-	
+
+* html #sub-menu div.sub-menu {
+  margin-top: 10px;
+ }
 
 
 li.menu-place div.sub-menu {
@@ -185,6 +188,8 @@ li.menu-place div.sub-menu {
   padding-left: 14px;
 	}
 	
+
+
 #sub-menu div.sub-menu a:hover {
 	text-decoration: underline;
 	}
