@@ -54,10 +54,12 @@ body {
 
 
 *+html div.logpass div {
-  text-align: right;
-  width: 540px;
-  float:right;
-  top: 0;
+ text-align: right;
+ position: absolute;
+ margin-left: -500px;
+ left: 100%;
+ top: 0;
+ width: 500px;
 }
 
 .logpass div input {
