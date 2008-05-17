@@ -1,6 +1,6 @@
 <%= error_messages_for :user %>
 
-<h3><%= @user.full_name %>, ваш профайл в ваших руках</h3>
+<h3><%= @user.full_name %> (<%= @user.login %>), ваш профайл в ваших руках</h3>
 <% form_for(@user) do |f| %>
 
   <p><label for="first_name">Настоящее имя</label> <strong class="required">*</strong><br/>

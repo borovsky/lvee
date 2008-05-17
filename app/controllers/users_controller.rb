@@ -14,7 +14,8 @@ class UsersController < ApplicationController
     cookies.delete :auth_token
     @user = User.new(params[:user])
     @user.save
-    if @user.errors.empty? && UserMailer.deliver_signup_notification(@user)
+    if @user.errors.empty? 
+      UserMailer.deliver_signup_notification(@user)
       self.current_user = @user
       flash[:notice] = "Спасбио за регистрацию!"
       redirect_to user_path(current_user)
