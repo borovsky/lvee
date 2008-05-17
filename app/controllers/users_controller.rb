@@ -14,10 +14,10 @@ class UsersController < ApplicationController
     cookies.delete :auth_token
     @user = User.new(params[:user])
     @user.save
-    if @user.errors.empty?
+    if @user.errors.empty? && UserMailer.deliver_signup_notification(@user)
       self.current_user = @user
-      redirect_back_or_default('/')
       flash[:notice] = "Спасбио за регистрацию!"
+      redirect_to user_path(current_user)
     else
       render :action => 'new'
     end
@@ -28,6 +28,7 @@ class UsersController < ApplicationController
     if logged_in? && !current_user.active?
       current_user.activate
       flash[:notice] = "Регистрация завершена!"
+      redirect_to user_path(current_user)
     end
     redirect_back_or_default('/')
   end
