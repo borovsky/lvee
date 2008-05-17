@@ -29,9 +29,9 @@ class UsersController < ApplicationController
     if logged_in? && !current_user.active?
       current_user.activate
       flash[:notice] = "Регистрация завершена!"
-      redirect_to user_path(current_user)
+      
     end
-    redirect_back_or_default('/')
+    redirect_back_or_default(user_path(current_user))
   end
 
   def show
