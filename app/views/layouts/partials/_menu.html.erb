@@ -22,9 +22,7 @@
 
     <% menu_item('участникам', :controller => 'participants') do %>
       <div class="sub-menu">
-        <%= sub_menu_item('правила оформления тезисов', :controller => 'participants', :action => 'tezis') %>
-        <%= sub_menu_item('волонтерам', :controller => 'participants', :action => 'contribute') %>
-        <%= sub_menu_item('размещение', :controller => 'participants', :action => 'dislocation') %>
+        <%= sub_menu_item('правила оформления тезисов', :controller => 'participants', :action => 'tezis') %><%= sub_menu_item('волонтерам', :controller => 'participants', :action => 'contribute') %><%= sub_menu_item('размещение', :controller => 'participants', :action => 'dislocation') %>
       </div>
     <% end %>
 
