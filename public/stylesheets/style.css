@@ -123,8 +123,8 @@ body {
 	
 .menu ul li {
 	float: left;
-	padding: 0 15px 0 15px;
-	line-height: 73px;
+	padding: 29px 15px 0 15px;
+  line-height: 22px;
 	list-style: none;
 	}
 	
@@ -162,28 +162,26 @@ body {
 	
 
 
-.sub-menu {
+li.menu-place div.sub-menu {
 	position: absolute;
-	margin-top: -18px;
-	left: 172px;
+	margin-top: 0px;
+  height: 14px;
+  left: 50%;
+  margin-left: -320px;
+
 	}
 
-* html .sub-menu {
-  margin-top: 30px;
-  }
 
-*+html .sub-menu {
-  margin-top: -18px;
-  }
 	
-#sub-menu ul.sub-menu li, #sub-menu ul.sub-menu li a, #sub-menu ul.sub-menu li a:hover{
+#sub-menu div.sub-menu a, #sub-menu div.sub-menu a:hover{
 	line-height: 14px;
 	font-size: 12px;
 	color: #fff;
 	background: none;
+  padding-left: 14px;
 	}
 	
-#sub-menu ul.sub-menu li a:hover {
+#sub-menu div.sub-menu a:hover {
 	text-decoration: underline;
 	}
 
