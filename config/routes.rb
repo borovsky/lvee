@@ -10,6 +10,8 @@ ActionController::Routing::Routes.draw do |map|
 
   # Sample of regular route:
   map.connect 'about/:action', :controller => 'about'
+  map.connect 'activate/:activation_code', :controller => 'users', :action => 'activate'
+
   # Keep in mind you can assign values other than :controller and :action
 
   # Sample of named route:

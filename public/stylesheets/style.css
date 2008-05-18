@@ -41,30 +41,37 @@ body {
 	}
 	
 .logpass div{
-	text-align: right;
+  text-align: right;
   width: 500px;
   float:right;
-	top: 0;
-	
-	}
+  top: 0;
+}
 
-*html div.logpass div{
+*html div.logpass div {
   margin-top: -12px;
   position: relative;
+}
 
-  }	
 
+*+html div.logpass div {
+ text-align: right;
+ position: absolute;
+ margin-left: -500px;
+ left: 100%;
+ top: 0;
+ width: 500px;
+}
 
 .logpass div input {
 	width: 100px;
 	line-height: 14px;
 	height: 15px;
-	}
+}
 
 .logpass div input.log-button {
   width: 40px;
   height:22px;
-  } 
+} 
 	
 .logpass a {
 	color: white;
@@ -123,8 +130,8 @@ body {
 	
 .menu ul li {
 	float: left;
-	padding: 0 15px 0 15px;
-	line-height: 73px;
+	padding: 29px 15px 0 15px;
+  line-height: 22px;
 	list-style: none;
 	}
 	
@@ -159,33 +166,47 @@ body {
 	font-weight: bold;
 	height: 105px;
 	}
-	
 
 
-.sub-menu {
+
+
+li.menu-place div.sub-menu {
 	position: absolute;
-	margin-top: -18px;
-	left: 172px;
+	margin-top: 0px;
+  height: 14px;
+  left: 50%;
+  margin-left: -320px;
+
 	}
 
-* html .sub-menu {
-  margin-top: 30px;
-  }
 
-*+html .sub-menu {
-  margin-top: -18px;
-  }
+
+
 	
-#sub-menu ul.sub-menu li, #sub-menu ul.sub-menu li a, #sub-menu ul.sub-menu li a:hover{
+#sub-menu div.sub-menu a, #sub-menu div.sub-menu a:hover{
 	line-height: 14px;
 	font-size: 12px;
 	color: #fff;
 	background: none;
+  padding-left: 14px;
 	}
 	
-#sub-menu ul.sub-menu li a:hover {
+
+
+#sub-menu div.sub-menu a:hover {
 	text-decoration: underline;
 	}
+
+
+* html #sub-menu div.sub-menu {
+  margin-top: 15px;
+  width: 740px;
+ }
+
+
+*+html #sub-menu div.sub-menu {
+  margin-top: 15px;
+}
 
 .lvee2008 {
 	float:left;

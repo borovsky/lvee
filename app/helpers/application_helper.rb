@@ -36,4 +36,15 @@ module ApplicationHelper
     menu_html
   end
 
+  def sub_menu_item(text, url_opts)
+    current = false
+    if url_opts[:action]
+      current = controller.action_name == url_opts[:action] 
+    else
+      current = controller.controller_name == url_opts[:controller]
+    end
+    url       = url_for(url_opts)
+    menu_html = "<a href=\"#{url}\" #{current ? ' class="menu-place"' : ''}>#{text}</a>"
+  end
+
 end
