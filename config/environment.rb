@@ -60,3 +60,5 @@ Rails::Initializer.run do |config|
   # Gem Dependencies
   config.gem "gettext", :version => '1.91.0'
 end
+
+LANGUAGES = ['by','ru','en']

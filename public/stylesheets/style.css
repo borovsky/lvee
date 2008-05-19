@@ -346,6 +346,20 @@ p.gipLink {
   color: #fff;
   margin: 30px 0;
 }
+
+
+.lang {
+  position: absolute;
+  text-align: right;
+  width: 910px;
+  margin-top: -15px;
+  }
+
+.lang a{
+  color: #333;
+  }
+
+
 /*------------------------------------------------- /content ---------------------------------------------------------------*/
 
 
