@@ -46,5 +46,17 @@ module ApplicationHelper
     url       = url_for(url_opts)
     menu_html = "<a href=\"#{url}\" #{current ? ' class="menu-place"' : ''}>#{text}</a>"
   end
+  
+  def links_to_languages(langs)  
+    html = ''
+    langs.each do |lang|
+      if controller.action_name 
+        html += link_to( lang, :controller => controller.controller_name, :action => controller.action_name, :lang => lang)
+      else 
+        html += link_to( lang, :controller => controller.controller_name, :lang => lang)
+      end
+    end
+    html
+  end
 
 end
