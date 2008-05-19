@@ -3,13 +3,13 @@
 <h3><%= @user.full_name %> (<%= @user.login %>), ваш профайл в ваших руках</h3>
 <% form_for(@user) do |f| %>
 
-  <p><label for="first_name">Настоящее имя</label> <strong class="required">*</strong><br/>
+  <p><label for="first_name">Имя</label> <strong class="required">*</strong><br/>
   <%= f.text_field :first_name %></p>
 
-  <p><label for="last_name">Настоящая фамилия</label> <strong class="required">*</strong><br/>
+  <p><label for="last_name">Фамилия</label> <strong class="required">*</strong><br/>
   <%= f.text_field :last_name %></p>
 
-  <p><label for="quantity">Сколько с вами будет человек (если вы не один)</label><br/>
+  <p><label for="quantity">Если вы планируете взять с собой на LVEE кого-то еще в качестве сопровождающих персон, укажите их количество</label><br/>
   <%= f.text_field :quantity %></p>
 
   <p><label for="country">Страна</label> <strong class="required">*</strong><br/>

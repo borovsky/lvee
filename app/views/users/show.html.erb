@@ -1,10 +1,9 @@
 <h3>Участник: <%= @user.full_name %> (<%= @user.country %>, <%= @user.city %>)... </h3>
 
-<p>Электропочта: <%= mail_to @user.email %></p>
-<p>Вид деятельности: <%= @user.occupation %></p>
-<p>Населенный пункт: <%= @user.city %></p>
-<p>Проекты: <%= @user.projects %></p>
-<p>Предложение: <%= @user.proposition %></p>
+<p>E-mail: <%= mail_to @user.email %></p>
+<p>Место работы/учебы и сфера деятельности: <%= @user.occupation %></p>
+<p>Участие в свободных проектах: <%= @user.projects %></p>
+<p>Тема доклада или другой способ участия в организации LVEE: <%= @user.proposition %></p>
 
 <% if @user.id == current_user.id %>
   <hr />
