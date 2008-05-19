@@ -1,6 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
 
-  map.resources :users, :collection => { :activate => :get }
+  map.connect 'activate/:activation_code', :controller => 'users', :action => 'activate'
+
+  map.resources :users, :member => { :activate => :get }
 
   map.resource  :session
 
@@ -10,7 +12,6 @@ ActionController::Routing::Routes.draw do |map|
 
   # Sample of regular route:
   map.connect 'about/:action', :controller => 'about'
-  map.connect 'activate/:activation_code', :controller => 'users', :action => 'activate'
 
   # Keep in mind you can assign values other than :controller and :action
 
