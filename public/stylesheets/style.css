@@ -74,14 +74,13 @@ body {
 } 
 	
 .logpass a {
-	color: white;
-	text-decoration: none;
-	}
+  color: white;
+}
 	
 .logpass a:hover {
-	color: white;
-	text-decoration: underline;
-	}
+  color: white;
+  text-decoration: underline;
+}
 
 .all {
 	width: 974px;

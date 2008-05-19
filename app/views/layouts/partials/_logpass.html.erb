@@ -1,10 +1,10 @@
 <% unless logged_in? %>
   <div class="logpass" >
     <div>
-	  <% form_tag session_path do -%>
-          Имя пользователя <input type="text" name="login" />&nbsp; &nbsp; &nbsp; Пароль <input type="password" name="password" />&nbsp; &nbsp; 
-          <%= submit_tag 'go', :class => 'log-button' %>
-          <!-- a href="#" onclick="document.forms[0].submit(); return false;">GO</a -->
+      <% form_tag session_path do -%>
+      Имя пользователя <input type="text" name="login" />&nbsp; &nbsp; &nbsp; Пароль <input type="password" name="password" />&nbsp; &nbsp; 
+      <%= submit_tag 'go', :class => 'log-button' %>
+      <!-- a href="#" onclick="document.forms[0].submit(); return false;">GO</a -->
     <% end %>
     </div>
     <%= link_to 'зарегистрироваться', new_user_path %> | <a href="#">забыли пароль?</a>
