@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_filter :login_required, :only => [:show]
+  before_filter :login_required, :only => [:show, :index, :edit, :update]
 
   def index
     @users = User.paginate :page => params[:page]
@@ -56,7 +56,7 @@ class UsersController < ApplicationController
     end
 
     flash[:notice] = 'Вы не можете изменять имя пользователя' if params[:user].delete(:login)
-    @user.update_attributes(params[:user])
+    @user.update_attributes(params[:user]) if @user.editable_by? current_user
     redirect_to user_path(@user)
   end
 
