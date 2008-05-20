@@ -380,14 +380,11 @@ p.gipLink {
 
 .sponsors-logo {
   height: 122px;
-  padding: 0 140px;
+  text-align: center;
 }
 	
 .sponsors-logo a {
-  position: relative;
-  display: block;
-  float: left;
-  width: 49%;
+
   text-align: center;
 }
 
