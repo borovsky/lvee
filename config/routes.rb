@@ -11,7 +11,8 @@ ActionController::Routing::Routes.draw do |map|
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
-  map.connect 'about/:action', :controller => 'about'
+  #map.connect 'about/:action', :controller => 'about'
+  #map.connect ':lang/about/:action', :controller => 'about'
 
   # Keep in mind you can assign values other than :controller and :action
 
@@ -34,10 +35,14 @@ ActionController::Routing::Routes.draw do |map|
   #     admin.resources :products
   #   end
 
-  map.root :controller => "main"
+  map.root :controller => "main", :lang => 'ru'
 
 
   # Install the default routes as the lowest priority.
-  map.connect ':controller/:action/:id'
-  map.connect ':controller/:action/:id.:format'
+  map.connect ':lang/:controller/:action/:id'
+  map.connect ':lang/:controller/:action/:id.:format'
+
+  # Deprecated 
+  #map.connect ':controller/:action/:id'
+  #map.connect ':controller/:action/:id.:format'
 end
