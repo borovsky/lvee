@@ -4,14 +4,14 @@
       <% form_tag session_path do -%>
       Имя пользователя <input type="text" name="login" />&nbsp; &nbsp; &nbsp; Пароль <input type="password" name="password" />&nbsp; &nbsp; 
       <%= submit_tag 'go', :class => 'log-button' %>
-      <!-- a href="#" onclick="document.forms[0].submit(); return false;">GO</a -->
     <% end %>
     </div>
-    <%= link_to 'зарегистрироваться', new_user_path %> | <a href="#">забыли пароль?</a>
+
+    <%= link_to 'зарегистрироваться', '/ru/users/new' %> 
   </div>
 <% else %>
   <div class="logpass" >
     вы вошли как <%= link_to current_user.login, user_path(current_user) %> |
-    <%= link_to 'выйти', session_path, :method => 'DELETE' %>
+    <%= link_to 'выйти', session_path, :method => :delete %>
   </div>
 <% end %>
