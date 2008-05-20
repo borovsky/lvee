@@ -48,15 +48,15 @@ module ApplicationHelper
   end
   
   def links_to_languages(langs)  
-    html = ''
+    html = []
     langs.each do |lang|
       if controller.action_name 
-        html += link_to( lang, :controller => controller.controller_name, :action => controller.action_name, :lang => lang)
+        html << link_to( lang, :controller => controller.controller_name, :action => controller.action_name, :lang => lang)
       else 
-        html += link_to( lang, :controller => controller.controller_name, :lang => lang)
+        html << link_to( lang, :controller => controller.controller_name, :lang => lang)
       end
     end
-    html
+    html.join(' ')
   end
 
 end
