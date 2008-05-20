@@ -51,9 +51,9 @@ module ApplicationHelper
     html = []
     langs.each do |lang|
       if controller.action_name 
-        html << link_to( lang, :controller => controller.controller_name, :action => controller.action_name, :lang => lang)
+        html << link_to_unless_current( lang, :controller => controller.controller_name, :action => controller.action_name, :lang => lang)
       else 
-        html << link_to( lang, :controller => controller.controller_name, :lang => lang)
+        html << link_to_unless_current( lang, :controller => controller.controller_name, :lang => lang)
       end
     end
     html.join(' ')
