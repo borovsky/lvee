@@ -4,6 +4,14 @@ class UsersController < ApplicationController
 
   def index
     @users = User.paginate :page => params[:page]
+    respond_to do |format|
+      format.html 
+      format.csv do
+        @exportable =  [:id, :login, :email, :first_name, :last_name, :quantity, :country, :city, :occupation, :projects, :proposition, :activated_at]
+        render :template => 'users/users'
+      end
+    end
+
   end
 
   # render new.rhtml
@@ -59,6 +67,5 @@ class UsersController < ApplicationController
     @user.update_attributes(params[:user]) if @user.editable_by? current_user
     redirect_to user_path(@user)
   end
-
 
 end
