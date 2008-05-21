@@ -1,12 +1,12 @@
 ActionController::Routing::Routes.draw do |map|
 
-  map.connect 'activate/:activation_code', :controller => 'users', :action => 'activate'
+  map.connect 'activate/:activation_code', :controller => 'users', :action => 'activate', :lang => 'ru' # FIXME other langs?
 
+  
   map.resources :users, :member => { :activate => :get }
-
   map.resource  :session
-
   map.resources :news, :has_many => [:comments], :has_one => :user, :singular => 'news_item'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
 
@@ -34,7 +34,7 @@ ActionController::Routing::Routes.draw do |map|
   #     # Directs /admin/products/* to Admin::ProductsController (app/controllers/admin/products_controller.rb)
   #     admin.resources :products
   #   end
-
+  
   map.root :controller => "main", :lang => 'ru'
 
 
@@ -43,6 +43,6 @@ ActionController::Routing::Routes.draw do |map|
   map.connect ':lang/:controller/:action/:id.:format'
 
   # Deprecated 
-  #map.connect ':controller/:action/:id'
-  #map.connect ':controller/:action/:id.:format'
+  map.connect ':controller/:action/:id'
+  map.connect ':controller/:action/:id.:format'
 end

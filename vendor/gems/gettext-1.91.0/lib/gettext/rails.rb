@@ -297,6 +297,7 @@ module ActionView #:nodoc:
     end
 
     module ActiveRecordHelper #:nodoc: all
+=begin
       module L10n
 	# Separate namespace for textdomain
 	include GetText
@@ -380,7 +381,6 @@ module ActionView #:nodoc:
       def error_message(msg, count) #:nodoc:
         ngettext(msg, count)
       end
-
       alias error_messages_for_without_localize error_messages_for #:nodoc:
 
       # error_messages_for overrides original method with localization.
@@ -393,6 +393,7 @@ module ActionView #:nodoc:
       # * :message_explanation - the explanation of message
       #                       e.g. Nn_("There was a problem with the following field:", 
       #                                "There were %{num} problems with the following fields:")
+      #
       def error_messages_for(*params)
         options = params.last.is_a?(Hash) ? params.pop.symbolize_keys : {}
         objects = params.collect {|object_name| instance_variable_get("@#{object_name}") }.compact
@@ -404,6 +405,7 @@ module ActionView #:nodoc:
           L10n.error_messages_for(self, objects, object_names, count, options)
         end
       end
+=end
     end
 
     module DateHelper #:nodoc: all

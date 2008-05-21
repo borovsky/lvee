@@ -1,6 +1,9 @@
 require 'digest/sha1'
 class User < ActiveRecord::Base
 
+  untranslate_all
+
+
  # Authorization plugin
  # acts_as_authorized_user
  # acts_as_authorizable

@@ -5,7 +5,7 @@
 :header_message => 'Регистрация не завершена',
 :message => 'Для завершения регистрации вы должны выполнить следующие требования:' %>
 
-<% form_for :user, :url => users_path do |f| -%>
+<% form_for :user, :url => users_path(:lang => params[:lang]) do |f| -%>
   <p><label for="login">Login</label> <strong class="required">*</strong><br/>
   <%= f.text_field :login %></p>
 
