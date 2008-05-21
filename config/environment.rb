@@ -59,6 +59,7 @@ Rails::Initializer.run do |config|
   
   # Gem Dependencies
   config.gem "gettext", :version => '1.91.0'
+  config.gem "fastercsv", :version => '1.2.3'
 end
 
-LANGUAGES = ['by','ru','en']
+LANGUAGES = ['ru','en']
