@@ -17,11 +17,13 @@ html, body {
 body {
   min-height: 100%;
   height: auto; !important;
-  font-family:  Tahoma, sans;
-  font-size: 12px;
   color: #515650;
   background: #d3d3d3;
+  font: 12px/18px  "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;  
+  color: #333;
 }
+
+
 
 /*------------------------------------------------- /intro ---------------------------------------------------------------*/
 
