@@ -251,9 +251,7 @@ a:hover {
   padding: 10px 10px 20px 20px;
 }
 
-.blue-block-right th {
-  vertical-align: top;
-  }
+
 	
 .simple-text .blue-block-right {
   width: 600px;
@@ -266,8 +264,10 @@ a:hover {
 .blue-block-right table th {
   color: #3879f0;
   font-weight: normal;
-  width: 70px;
+  width: 60px;
   text-align: left;
+  vertical-align: top;
+  font-size: 10px;
 }
 	
 p.gipLink { 
