@@ -25,4 +25,5 @@
 
 <div class="content">
 
-<%= render(:partial => 'layouts/partials/menu') %>
+  <%= if (params[:lang] == 'en' or !params[:lang]) then render(:partial => 'layouts/partials/menu_en') end %>
+  <%= if (params[:lang] == 'ru') then render(:partial => 'layouts/partials/menu') end %>
