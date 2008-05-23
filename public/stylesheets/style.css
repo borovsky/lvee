@@ -236,7 +236,7 @@ a:hover {
   list-style: none;
   background: url(../images/arrow.gif) no-repeat left top;
   line-height: 16px;
-  padding-left: 52px;
+  padding: 0 0 8px 52px;
 }
 	
 .blue-block-left {
@@ -250,6 +250,10 @@ a:hover {
   width: 420px;
   padding: 10px 10px 20px 20px;
 }
+
+.blue-block-right th {
+  vertical-align: top;
+  }
 	
 .simple-text .blue-block-right {
   width: 600px;
