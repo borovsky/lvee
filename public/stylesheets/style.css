@@ -392,6 +392,7 @@ p.gipLink {
 
 .licence {
   padding: 0px 0 20px 0;
+  font-family: Sans, Tahoma, Arial;
 }
 	
 .licence p {
@@ -400,6 +401,8 @@ p.gipLink {
   font-size: 9px;
   font-weight: bold;
 }
+
+
 	
 .licence a {
   color: #313131;
