@@ -236,7 +236,7 @@ a:hover {
   list-style: none;
   background: url(../images/arrow.gif) no-repeat left top;
   line-height: 16px;
-  padding-left: 52px;
+  padding: 0 0 8px 52px;
 }
 	
 .blue-block-left {
@@ -250,6 +250,8 @@ a:hover {
   width: 420px;
   padding: 10px 10px 20px 20px;
 }
+
+
 	
 .simple-text .blue-block-right {
   width: 600px;
@@ -262,8 +264,10 @@ a:hover {
 .blue-block-right table th {
   color: #3879f0;
   font-weight: normal;
-  width: 70px;
+  width: 60px;
   text-align: left;
+  vertical-align: top;
+  font-size: 10px;
 }
 	
 p.gipLink { 
@@ -392,6 +396,7 @@ p.gipLink {
 
 .licence {
   padding: 0px 0 20px 0;
+  font-family: Sans, Tahoma, Arial;
 }
 	
 .licence p {
@@ -400,6 +405,8 @@ p.gipLink {
   font-size: 9px;
   font-weight: bold;
 }
+
+
 	
 .licence a {
   color: #313131;
