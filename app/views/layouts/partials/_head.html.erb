@@ -18,8 +18,8 @@
 
 <div class="header">
   <div class="lang">
-    <%= if (params[:lang] == 'en' or !params[:lang]) then "Language:" end %>
-    <%= if (params[:lang] == 'ru') then "Язык:" end %>
+    <%= if (params[:lang] == 'en' or !params[:lang]) then "languages:" end %>
+    <%= if (params[:lang] == 'ru') then "языки:" end %>
 
     <%= links_to_languages LANGUAGES %>  
   </div>
