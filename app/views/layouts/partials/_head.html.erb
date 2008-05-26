@@ -18,7 +18,10 @@
 
 <div class="header">
   <div class="lang">
-     Language: <%= links_to_languages LANGUAGES %>  
+    <%= if (params[:lang] == 'en' or !params[:lang]) then "languages:" end %>
+    <%= if (params[:lang] == 'ru') then "языки:" end %>
+
+    <%= links_to_languages LANGUAGES %>  
   </div>
   <a href="http://lvee.org"><img src="/images/head-lvee.png" alt="Linux Vacation Eastern Europe in Minsk Belarus" /></a>
 </div>
