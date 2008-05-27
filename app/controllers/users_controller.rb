@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.html 
       format.csv do
+        @users = User.find :all
         @exportable =  [:id, :login, :email, :first_name, :last_name, :quantity, :country, :city, :occupation, :projects, :proposition, :activated_at]
         render :template => 'users/users'
       end
