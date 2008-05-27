@@ -3,11 +3,10 @@ class UsersController < ApplicationController
   before_filter :login_required, :only => [:show, :index, :edit, :update]
 
   def index
-    @users = User.paginate :page => params[:page]
+    @users = User.find :all
     respond_to do |format|
       format.html 
       format.csv do
-        @users = User.find :all
         @exportable =  [:id, :login, :email, :first_name, :last_name, :quantity, :country, :city, :occupation, :projects, :proposition, :activated_at]
         render :template => 'users/users'
       end
