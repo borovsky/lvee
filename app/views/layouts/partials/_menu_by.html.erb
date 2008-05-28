@@ -1,0 +1,35 @@
+<div id="sub-menu" class="menu">
+  <ul>
+
+    <%= menu_item('галоўная', :controller => 'main') %>
+
+    <% menu_item('аб праекце',  :controller => 'about') do %>
+      <div class="sub-menu">
+        <%= sub_menu_item('гісторыя', :controller => 'about', :action => 'history') %>
+        <%= sub_menu_item('прэса',  :controller => 'about', :action => 'press') %>
+        <%= sub_menu_item('месца правядзення',  :controller => 'about', :action => 'place') %>
+        <%= sub_menu_item('linux',   :controller => 'about', :action => 'linux') %>
+      </div>
+    <% end %>
+
+    <% menu_item('праграма',  :controller => 'program') do %>
+      <div class="sub-menu">
+        <%= sub_menu_item('матэрыялы мінулых канферэнцый', :controller => 'program', :action => 'materials') %>
+      </div>
+    <% end %>
+
+    <%= menu_item('спонсары',   :controller => 'sponsors') %>
+
+    <% menu_item('удзельнікам', :controller => 'participants') do %>
+      <div class="sub-menu">
+        <%= sub_menu_item('правілы афармлення тэзісаў', :controller => 'participants', :action => 'tezis') %>
+        <%= sub_menu_item('валанцёрам', :controller => 'participants', :action => 'contribute') %>
+        <%= sub_menu_item('размяшчэнне', :controller => 'participants', :action => 'dislocation') %>
+      </div>
+    <% end %>
+
+    <%= menu_item('кантакты',   :controller => 'contacts')  %>
+
+  </ul>
+  <div class="clear"></div>
+</div>

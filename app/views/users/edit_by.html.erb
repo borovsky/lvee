@@ -1,0 +1,53 @@
+<%= error_messages_for :user %>
+
+<h3><%= @user.full_name %> (<%= @user.login %>), ваш профіль залежыць ад вас</h3>
+<% form_for(@user) do |f| %>
+
+  <p><label for="first_name">Імя</label> <strong class="required">*</strong><br/>
+  <%= f.text_field :first_name %></p>
+
+  <p><label for="last_name">Прозвішча</label> <strong class="required">*</strong><br/>
+  <%= f.text_field :last_name %></p>
+
+  <p><label for="quantity">Калі вы плануеце ўзяць з сабой на LVEE кагосьці яшчэ дзеля кампаніі, пазначце колькасць людзей</label><br/>
+  <%= f.text_field :quantity %></p>
+
+  <p><label for="country">Краіна</label> <strong class="required">*</strong><br/>
+  <%= f.country_select :country, ['Belarus', 'Ukraine', 'Russia'] %></p>
+
+  <p><label for="city">Месца жыхарства</label> <strong class="required">*</strong><br/>
+  <%= f.text_field :city %></p>
+
+  <p><label for="location">Месца працы/вучобы і сфера дзейнасці</label> <strong class="required">*</strong><br/>
+  <%= f.text_field :occupation %></p>
+
+  <p><label for="projects">Праекты Free Software / Open Source (FS/OS), у якіх вы ўдзельнічалі
+і/ці ўдзельнічаеце і ваша роля ў іх</label><br/>
+  <%= f.text_area :projects %></p>
+
+  <p><label for="proposition">
+Свабоднае ПЗ ствараецца супольнасцю з удзелам дабраахвотнікаў, таму
+распавядзіце, калі ласка, што вы можаце прынесці ў нашу сустрэчу.
+Няхай гэта толькі даклад ці менш фармальны аповед у межах круглага
+стала (workshop) пра інтэграцыю, выкарыстанне ці распрацоўку
+свабоднага ПЗ вамі ці ў вашай арганізацыі. Калі вы плануеце зрабіць
+даклад ці зарганізаваць семінар на канферэнцыі, пазначце тэму
+прапанаванага вамі даклада, а таксама дашліце на
+<%= mail_to 'd.kostiuk@lvee.org' %> тэзісы выступу.
+  </label><br/>
+  <%= f.text_area :proposition %></p>
+
+
+
+  <p><label for="password">Пароль</label> <strong class="required">*</strong><br/>
+  <%= f.password_field :password %></p>
+
+  <p><label for="password_confirmation">Пацвярджэнне пароля</label> <strong class="required">*</strong><br/>
+  <%= f.password_field :password_confirmation %></p>
+
+  <p> Палі, пазначаныя чырвонай зорачкай (<strong class="required">*</strong>), трэба абавязкова запаўняць
+  </p>
+
+
+  <p><%= submit_tag 'Запісаць змены' %></p>
+<% end %>
