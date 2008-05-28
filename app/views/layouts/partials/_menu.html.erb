@@ -1,0 +1,35 @@
+<div id="sub-menu" class="menu">
+  <ul>
+
+    <%= menu_item('главная', :controller => 'main') %>
+
+    <% menu_item('о проекте',  :controller => 'about') do %>
+      <div class="sub-menu">
+        <%= sub_menu_item('история', :controller => 'about', :action => 'history') %>
+        <%= sub_menu_item('пресса',  :controller => 'about', :action => 'press') %>
+        <%= sub_menu_item('место проведения',  :controller => 'about', :action => 'place') %>
+        <%= sub_menu_item('linux',   :controller => 'about', :action => 'linux') %>
+      </div>
+    <% end %>
+
+    <% menu_item('программа',  :controller => 'program') do %>
+      <div class="sub-menu">
+        <%= sub_menu_item('материалы прошлых конференций', :controller => 'program', :action => 'materials') %>
+      </div>
+    <% end %>
+
+    <%= menu_item('спонсоры',   :controller => 'sponsors') %>
+
+    <% menu_item('участникам', :controller => 'participants') do %>
+      <div class="sub-menu">
+        <%= sub_menu_item('правила оформления тезисов', :controller => 'participants', :action => 'tezis') %>
+        <%= sub_menu_item('волонтерам', :controller => 'participants', :action => 'contribute') %>
+        <%= sub_menu_item('размещение', :controller => 'participants', :action => 'dislocation') %>
+      </div>
+    <% end %>
+
+    <%= menu_item('контакты',   :controller => 'contacts')  %>
+
+  </ul>
+  <div class="clear"></div>
+</div>
