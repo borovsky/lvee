@@ -39,10 +39,7 @@ ActionController::Routing::Routes.draw do |map|
 
 
   # Install the default routes as the lowest priority.
-  map.connect ':lang/:controller/:action/:id'
-  map.connect ':lang/:controller/:action/:id.:format'
+  map.connect ':lang/:controller/:action/:id', :defaults => { :lang => 'ru' }
+  map.connect ':lang/:controller/:action/:id.:format', :defaults => { :lang => 'ru' }
 
-  # Deprecated 
-  map.connect ':controller/:action/:id'
-  map.connect ':controller/:action/:id.:format'
 end

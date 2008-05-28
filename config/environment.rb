@@ -62,4 +62,4 @@ Rails::Initializer.run do |config|
   config.gem "fastercsv", :version => '1.2.3'
 end
 
-LANGUAGES = ['ru','en']
+LANGUAGES = ['ru','en','by','ua']

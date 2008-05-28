@@ -1,0 +1,12 @@
+% form_tag session_path do -%>
+<p><label for="login"> Ім’я користувача</label><br/>
+<%= text_field_tag 'login' %></p>
+
+<p><label for="password">Пароль</label><br/>
+<%= password_field_tag 'password' %></p>
+
+<p><label for="remember_me"> Запам'ятати мене:</label>
+<%= check_box_tag 'remember_me' %></p>
+
+<p><%= submit_tag 'Увійти' %></p>
+<% end -%>
