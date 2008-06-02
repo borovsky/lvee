@@ -63,3 +63,4 @@ Rails::Initializer.run do |config|
 end
 
 LANGUAGES = ['by','ru','en','ua']
+ADMIN_IDS = [1]

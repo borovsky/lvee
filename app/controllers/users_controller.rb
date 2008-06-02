@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   before_filter :login_required, :only => [:show, :index, :edit, :update]
+  before_filter :admin?, :only => [:index, :destroy]
 
   def index
     @users = User.find :all
@@ -11,7 +12,6 @@ class UsersController < ApplicationController
         render :template => 'users/users'
       end
     end
-
   end
 
   # render new.rhtml
@@ -26,7 +26,7 @@ class UsersController < ApplicationController
       UserMailer.deliver_signup_notification(@user)
       self.current_user = @user
       flash[:notice] = "Спасбио за регистрацию!"
-      redirect_to user_path(current_user)
+      redirect_to user_path(:id => current_user.id, :lang => params[:lang])
     else
       render :action => 'new'
     end
@@ -66,6 +66,19 @@ class UsersController < ApplicationController
     flash[:notice] = 'Вы не можете изменять имя пользователя' if params[:user].delete(:login)
     @user.update_attributes(params[:user]) if @user.editable_by? current_user
     redirect_to user_path(@user)
+  end
+
+  def destroy
+    @user = User.find params[:id]
+    render(:update) do |page|
+      page[dom_id(@user)].visual_effect :fade
+    end if @user.destroy
+  end
+
+private
+
+  def admin?
+    redirect_to '/' unless ADMIN_IDS.include? current_user.id
   end
 
 end

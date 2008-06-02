@@ -1,5 +1,8 @@
 <ul>
 <% for user in @users %>
-  <li><%= link_to user.full_name, user_path(user) %></li>
+<li id="<%= dom_id(user) %>">
+    <%= link_to user.full_name, user_path(user) %>
+    <%= link_to_remote 'удалить', :url => user_path(user), :method => :delete, :confirm => 'Вы уверены?' %>
+    </li>
   <% end %>
 </ul>
