@@ -58,7 +58,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find params[:id]
 
-    unless @user.editable_by? current_user
+    unless @user.editable_by?(current_user)
       flash[:notice] = 'У вас недостаточно прав для изменения этого профайла'
       redirect_to user_path(@user)
     end
@@ -78,7 +78,12 @@ class UsersController < ApplicationController
 private
 
   def admin?
-    redirect_to '/' unless ADMIN_IDS.include? current_user.id
+    redirect_to '/' unless ADMIN_IDS.include?(current_user.id)
   end
+
+  def may_view
+    ADMIN_IDS.include?(current_user.id) or @user.editable_by?(current_user)
+  end
+  
 
 end
