@@ -7,7 +7,7 @@ set :deploy_via, :remote_cache
 
 set :user, 'antono'
 set :runner, 'www-data'
-set :use_sudo, true
+set :use_sudo, false
 
 ssh_options[:paranoid] = false
 ssh_options[:port] = '2401'
