@@ -664,6 +664,8 @@ class AssociationsJoinModelTest < ActiveRecord::TestCase
 
   def test_has_many_through_include_uses_array_include_after_loaded
     david = authors(:david)
+    david.categories.class # force load target
+
     category = david.categories.first
 
     assert_no_queries do
@@ -690,6 +692,13 @@ class AssociationsJoinModelTest < ActiveRecord::TestCase
 
     assert ! david.categories.loaded?
     assert ! david.categories.include?(category)
+  end
+
+  def test_has_many_through_goes_through_all_sti_classes
+    sub_sti_post = SubStiPost.create!(:title => 'test', :body => 'test', :author_id => 1)
+    new_comment = sub_sti_post.comments.create(:body => 'test')
+
+    assert_equal [9, 10, new_comment.id], authors(:david).sti_post_comments.map(&:id).sort
   end
 
   private

@@ -12,29 +12,37 @@ module ActionController #:nodoc:
     X_SENDFILE_HEADER = 'X-Sendfile'.freeze
 
     protected
-      # Sends the file by streaming it 4096 bytes at a time. This way the
-      # whole file doesn't need to be read into memory at once.  This makes
-      # it feasible to send even large files.
+      # Sends the file, by default streaming it 4096 bytes at a time. This way the
+      # whole file doesn't need to be read into memory at once. This makes it
+      # feasible to send even large files. You can optionally turn off streaming
+      # and send the whole file at once.
       #
-      # Be careful to sanitize the path parameter if it coming from a web
-      # page.  send_file(params[:path]) allows a malicious user to
+      # Be careful to sanitize the path parameter if it is coming from a web
+      # page. <tt>send_file(params[:path])</tt> allows a malicious user to
       # download any file on your server.
       #
       # Options:
       # * <tt>:filename</tt> - suggests a filename for the browser to use.
-      #   Defaults to File.basename(path).
-      # * <tt>:type</tt> - specifies an HTTP content type.
-      #   Defaults to 'application/octet-stream'.
+      #   Defaults to <tt>File.basename(path)</tt>.
+      # * <tt>:type</tt> - specifies an HTTP content type. Defaults to 'application/octet-stream'.
+      # * <tt>:length</tt> - used to manually override the length (in bytes) of the content that
+      #   is going to be sent to the client. Defaults to <tt>File.size(path)</tt>.
       # * <tt>:disposition</tt> - specifies whether the file will be shown inline or downloaded.
       #   Valid values are 'inline' and 'attachment' (default).
-      # * <tt>:stream</tt> - whether to send the file to the user agent as it is read (true)
-      #   or to read the entire file before sending (false). Defaults to true.
+      # * <tt>:stream</tt> - whether to send the file to the user agent as it is read (+true+)
+      #   or to read the entire file before sending (+false+). Defaults to +true+.
       # * <tt>:buffer_size</tt> - specifies size (in bytes) of the buffer used to stream the file.
       #   Defaults to 4096.
       # * <tt>:status</tt> - specifies the status code to send with the response. Defaults to '200 OK'.
-      # * <tt>:url_based_filename</tt> - set to true if you want the browser guess the filename from
+      # * <tt>:url_based_filename</tt> - set to +true+ if you want the browser guess the filename from
       #   the URL, which is necessary for i18n filenames on certain browsers
-      #   (setting :filename overrides this option).
+      #   (setting <tt>:filename</tt> overrides this option).
+      # * <tt>:x_sendfile</tt> - uses X-Sendfile to send the file when set to +true+. This is currently
+      #   only available with Lighttpd/Apache2 and specific modules installed and activated. Since this
+      #   uses the web server to send the file, this may lower memory consumption on your server and
+      #   it will not block your application for further requests.
+      #   See http://blog.lighttpd.net/articles/2006/07/02/x-sendfile and
+      #   http://tn123.ath.cx/mod_xsendfile/ for details. Defaults to +false+.
       #
       # The default Content-Type and Content-Disposition headers are
       # set to download arbitrary binary files in as many browsers as
@@ -42,17 +50,20 @@ module ActionController #:nodoc:
       # a variety of quirks (especially when downloading over SSL).
       #
       # Simple download:
+      #
       #   send_file '/path/to.zip'
       #
       # Show a JPEG in the browser:
+      #
       #   send_file '/path/to.jpeg', :type => 'image/jpeg', :disposition => 'inline'
       #
       # Show a 404 page in the browser:
+      #
       #   send_file '/path/to/404.html', :type => 'text/html; charset=utf-8', :status => 404
       #
       # Read about the other Content-* HTTP headers if you'd like to
-      # provide the user with more information (such as Content-Description).
-      # http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11
+      # provide the user with more information (such as Content-Description) in
+      # http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11.
       #
       # Also be aware that the document may be cached by proxies and browsers.
       # The Pragma and Cache-Control headers declare how the file may be cached
@@ -95,20 +106,22 @@ module ActionController #:nodoc:
       # and specify whether to show data inline or download as an attachment.
       #
       # Options:
-      # * <tt>:filename</tt> - Suggests a filename for the browser to use.
-      # * <tt>:type</tt> - specifies an HTTP content type.
-      #   Defaults to 'application/octet-stream'.
+      # * <tt>:filename</tt> - suggests a filename for the browser to use.
+      # * <tt>:type</tt> - specifies an HTTP content type. Defaults to 'application/octet-stream'.
       # * <tt>:disposition</tt> - specifies whether the file will be shown inline or downloaded.
       #   Valid values are 'inline' and 'attachment' (default).
       # * <tt>:status</tt> - specifies the status code to send with the response. Defaults to '200 OK'.
       #
       # Generic data download:
+      #
       #   send_data buffer
       #
       # Download a dynamically-generated tarball:
+      #
       #   send_data generate_tgz('dir'), :filename => 'dir.tgz'
       #
       # Display an image Active Record in the browser:
+      #
       #   send_data image.data, :type => image.content_type, :disposition => 'inline'
       #
       # See +send_file+ for more information on HTTP Content-* headers and caching.

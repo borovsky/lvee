@@ -38,7 +38,7 @@ module ActiveRecord
 
         stream.puts <<HEADER
 # This file is auto-generated from the current state of the database. Instead of editing this file, 
-# please use the migrations feature of ActiveRecord to incrementally modify your database, and
+# please use the migrations feature of Active Record to incrementally modify your database, and
 # then regenerate this schema definition.
 #
 # Note that this schema.rb definition is the authoritative source for your database schema. If you need
@@ -102,7 +102,7 @@ HEADER
             spec[:precision] = column.precision.inspect if !column.precision.nil?
             spec[:scale]     = column.scale.inspect if !column.scale.nil?
             spec[:null]      = 'false' if !column.null
-            spec[:default]   = default_string(column.default) if !column.default.nil?
+            spec[:default]   = default_string(column.default) if column.has_default?
             (spec.keys - [:name, :type]).each{ |k| spec[k].insert(0, "#{k.inspect} => ")}
             spec
           end.compact
@@ -159,13 +159,19 @@ HEADER
       end
       
       def indexes(table, stream)
-        indexes = @connection.indexes(table)
-        indexes.each do |index|
-          stream.print "  add_index #{index.table.inspect}, #{index.columns.inspect}, :name => #{index.name.inspect}"
-          stream.print ", :unique => true" if index.unique
+        if (indexes = @connection.indexes(table)).any?
+          add_index_statements = indexes.map do |index|
+            statment_parts = [ ('add_index ' + index.table.inspect) ]
+            statment_parts << index.columns.inspect
+            statment_parts << (':name => ' + index.name.inspect)
+            statment_parts << ':unique => true' if index.unique
+
+            '  ' + statment_parts.join(', ')
+          end
+
+          stream.puts add_index_statements.sort.join("\n")
           stream.puts
         end
-        stream.puts unless indexes.empty?
       end
   end
 end

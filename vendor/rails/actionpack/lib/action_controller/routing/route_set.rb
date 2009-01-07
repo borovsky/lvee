@@ -1,6 +1,6 @@
 module ActionController
   module Routing
-    class RouteSet #:nodoc: 
+    class RouteSet #:nodoc:
       # Mapper instances are used to build routes. The object passed to the draw
       # block in config/routes.rb is a Mapper instance.
       #
@@ -115,7 +115,7 @@ module ActionController
         def install(destinations = [ActionController::Base, ActionView::Base], regenerate = false)
           reset! if regenerate
           Array(destinations).each do |dest|
-            dest.send! :include, @module
+            dest.__send__(:include, @module)
           end
         end
 
@@ -168,6 +168,7 @@ module ActionController
             #
             @module.module_eval <<-end_eval # We use module_eval to avoid leaks
               def #{selector}(*args)
+
                 #{generate_optimisation_block(route, kind)}
 
                 opts = if args.empty? || Hash === args.first
@@ -189,11 +190,13 @@ module ActionController
           end
       end
 
-      attr_accessor :routes, :named_routes
+      attr_accessor :routes, :named_routes, :configuration_file
 
       def initialize
         self.routes = []
         self.named_routes = NamedRouteCollection.new
+
+        clear_recognize_optimized!
       end
 
       # Subclasses and plugins may override this method to specify a different
@@ -215,7 +218,7 @@ module ActionController
         @routes_by_controller = nil
         # This will force routing/recognition_optimization.rb
         # to refresh optimisations.
-        @compiled_recognize_optimized = nil
+        clear_recognize_optimized!
       end
 
       def install_helpers(destinations = [ActionController::Base, ActionView::Base], regenerate_code = false)
@@ -231,15 +234,14 @@ module ActionController
         Routing.use_controllers! nil # Clear the controller cache so we may discover new ones
         clear!
         load_routes!
-        install_helpers
       end
 
       # reload! will always force a reload whereas load checks the timestamp first
       alias reload! load!
 
       def reload
-        if @routes_last_modified && defined?(RAILS_ROOT)
-          mtime = File.stat("#{RAILS_ROOT}/config/routes.rb").mtime
+        if @routes_last_modified && configuration_file
+          mtime = File.stat(configuration_file).mtime
           # if it hasn't been changed, then just return
           return if mtime == @routes_last_modified
           # if it has changed then record the new time and fall to the load! below
@@ -249,9 +251,9 @@ module ActionController
       end
 
       def load_routes!
-        if defined?(RAILS_ROOT) && defined?(::ActionController::Routing::Routes) && self == ::ActionController::Routing::Routes
-          load File.join("#{RAILS_ROOT}/config/routes.rb")
-          @routes_last_modified = File.stat("#{RAILS_ROOT}/config/routes.rb").mtime
+        if configuration_file
+          load configuration_file
+          @routes_last_modified = File.stat(configuration_file).mtime
         else
           add_route ":controller/:action/:id"
         end
@@ -352,7 +354,7 @@ module ActionController
           if generate_all
             # Used by caching to expire all paths for a resource
             return routes.collect do |route|
-              route.send!(method, options, merged, expire_on)
+              route.__send__(method, options, merged, expire_on)
             end.compact
           end
 
@@ -360,7 +362,7 @@ module ActionController
           routes = routes_by_controller[controller][action][options.keys.sort_by { |x| x.object_id }]
 
           routes.each do |route|
-            results = route.send!(method, options, merged, expire_on)
+            results = route.__send__(method, options, merged, expire_on)
             return results if results && (!results.is_a?(Array) || results.first)
           end
         end

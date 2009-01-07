@@ -96,17 +96,22 @@ module ActiveSupport
         end
       end
 
-      def find_callback(callback, &block)
+      # TODO: Decompose into more Array like behavior
+      def replace_or_append!(chain)
+        if index = index(chain)
+          self[index] = chain
+        else
+          self << chain
+        end
+        self
+      end
+
+      def find(callback, &block)
         select { |c| c == callback && (!block_given? || yield(c)) }.first
       end
 
-      def replace_or_append_callback(callback)
-        if found_callback = find_callback(callback)
-          index = index(found_callback)
-          self[index] = callback
-        else
-          self << callback
-        end
+      def delete(callback)
+        super(callback.is_a?(Callback) ? callback : find(callback))
       end
 
       private
@@ -149,6 +154,14 @@ module ActiveSupport
         self.class.new(@kind, @method, @options.dup)
       end
 
+      def hash
+        if @identifier
+          @identifier.hash
+        else
+          @method.hash
+        end
+      end
+
       def call(*args, &block)
         evaluate_method(method, *args, &block) if should_run_callback?(*args)
       rescue LocalJumpError
@@ -175,7 +188,7 @@ module ActiveSupport
                   "Callbacks must be a symbol denoting the method to call, a string to be evaluated, " +
                   "a block to be invoked, or an object responding to the callback method."
               end
-            end
+          end
         end
 
         def should_run_callback?(*args)
@@ -216,8 +229,8 @@ module ActiveSupport
       end
     end
 
-    # Runs all the callbacks defined for the given options. 
-    # 
+    # Runs all the callbacks defined for the given options.
+    #
     # If a block is given it will be called after each callback receiving as arguments:
     #
     #  * the result from the callback
@@ -228,31 +241,31 @@ module ActiveSupport
     # Example:
     #   class Storage
     #     include ActiveSupport::Callbacks
-    #   
+    #
     #     define_callbacks :before_save, :after_save
     #   end
-    #   
+    #
     #   class ConfigStorage < Storage
     #     before_save :pass
     #     before_save :pass
     #     before_save :stop
     #     before_save :pass
-    #   
+    #
     #     def pass
     #       puts "pass"
     #     end
-    #   
+    #
     #     def stop
     #       puts "stop"
     #       return false
     #     end
-    #   
+    #
     #     def save
     #       result = run_callbacks(:before_save) { |result, object| result == false }
     #       puts "- save" if result
     #     end
     #   end
-    #   
+    #
     #   config = ConfigStorage.new
     #   config.save
     #

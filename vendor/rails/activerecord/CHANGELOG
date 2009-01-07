@@ -1,8 +1,108 @@
-*SVN*
+*2.2 (November 21st, 2008)*
+
+* Ensure indices don't flip order in schema.rb #1266 [Jordi Bunster]
+
+* Fixed that serialized strings should never be type-casted (i.e. turning "Yes" to a boolean) #857 [Andreas Korth]
+
+* Skip collection ids reader optimization if using :finder_sql [Jeremy Kemper]
+
+* Add Model#delete instance method, similar to Model.delete class method. #1086 [Hongli Lai]
+
+* MySQL: cope with quirky default values for not-null text columns.  #1043 [Frederick Cheung]
+
+* Multiparameter attributes skip time zone conversion for time-only columns [#1030 state:resolved] [Geoff Buesing]
+
+* Base.skip_time_zone_conversion_for_attributes uses class_inheritable_accessor, so that subclasses don't overwrite Base [#346 state:resolved] [miloops]
+
+* Added find_last_by dynamic finder #762 [miloops]
+
+* Internal API: configurable association options and build_association method for reflections so plugins may extend and override.  #985 [Hongli Lai]
+
+* Changed benchmarks to be reported in milliseconds [DHH]
+
+* Connection pooling.  #936 [Nick Sieger]
+
+* Merge scoped :joins together instead of overwriting them. May expose scoping bugs in your code!  #501 [Andrew White]
+
+* before_save, before_validation and before_destroy callbacks that return false will now ROLLBACK the transaction.  Previously this would have been committed before the processing was aborted. #891 [Xavier Noria]
+
+* Transactional migrations for databases which support them.  #834 [divoxx, Adam Wiggins, Tarmo Tänav]
+
+* Set config.active_record.timestamped_migrations = false to have migrations with numeric prefix instead of UTC timestamp. #446. [Andrew Stone, Nik Wakelin]
+
+* change_column_default preserves the not-null constraint.  #617 [Tarmo Tänav]
+
+* Fixed that create database statements would always include "DEFAULT NULL" (Nick Sieger) [#334]
+
+* Add :tokenizer option to validates_length_of to specify how to split up the attribute string. #507. [David Lowenfels] Example :
+
+  # Ensure essay contains at least 100 words.
+  validates_length_of :essay, :minimum => 100, :too_short => "Your essay must be at least %d words."), :tokenizer => lambda {|str| str.scan(/\w+/) }
+
+* Allow conditions on multiple tables to be specified using hash. [Pratik Naik]. Example:
+
+  User.all :joins => :items, :conditions => { :age => 10, :items => { :color => 'black' } }
+  Item.first :conditions => { :items => { :color => 'red' } }
+
+* Always treat integer :limit as byte length.  #420 [Tarmo Tänav]
+
+* Partial updates don't update lock_version if nothing changed.  #426 [Daniel Morrison]
+
+* Fix column collision with named_scope and :joins.  #46 [Duncan Beevers, Mark Catley]
+
+* db:migrate:down and :up update schema_migrations.  #369 [Michael Raidel, RaceCondition]
+
+* PostgreSQL: support :conditions => [':foo::integer', { :foo => 1 }] without treating the ::integer typecast as a bind variable.  [Tarmo Tänav]
+
+* MySQL: rename_column preserves column defaults.  #466 [Diego Algorta]
+
+* Add :from option to calculations.  #397 [Ben Munat]
+
+* Add :validate option to associations to enable/disable the automatic validation of associated models. Resolves #301. [Jan De Poorter]
+
+* PostgreSQL: use 'INSERT ... RETURNING id' for 8.2 and later.  [Jeremy Kemper]
+
+* Added SQL escaping for :limit and :offset in MySQL [Jonathan Wiess]
+
+
+*2.1.0 (May 31st, 2008)*
+
+* Add ActiveRecord::Base.sti_name that checks ActiveRecord::Base#store_full_sti_class? and returns either the full or demodulized name. [rick]
+
+* Add first/last methods to associations/named_scope. Resolved #226. [Ryan Bates]
+
+* Added SQL escaping for :limit and :offset #288 [Aaron Bedra, Steven Bristol, Jonathan Wiess] 
+
+* Added first/last methods to associations/named_scope. Resolved #226. [Ryan Bates]
+
+* Ensure hm:t preloading honours reflection options. Resolves #137. [Frederick Cheung]
+
+* Added protection against duplicate migration names (Aslak Hellesøy) [#112]
+
+* Base#instantiate_time_object: eliminate check for Time.zone, since we can assume this is set if time_zone_aware_attributes is set to true [Geoff Buesing]
+
+* Time zone aware attribute methods use Time.zone.parse instead of #to_time for String arguments, so that offset information in String is respected. Resolves #105. [Scott Fleckenstein, Geoff Buesing]
+
+* Added change_table for migrations (Jeff Dean) [#71]. Example:
+
+    change_table :videos do |t|
+      t.timestamps                          # adds created_at, updated_at
+      t.belongs_to :goat                    # adds goat_id integer
+      t.string :name, :email, :limit => 20  # adds name and email both with a 20 char limit
+      t.remove :name, :email                # removes the name and email columns
+    end
+
+* Fixed has_many :through .create with no parameters caused a "can't dup NilClass" error (Steven Soroka) [#85]
+
+* Added block-setting of attributes for Base.create like Base.new already has (Adam Meehan) [#39]
+
+* Fixed that pessimistic locking you reference the quoted table name (Josh Susser) [#67]
+
+* Fixed that change_column should be able to use :null => true on a field that formerly had false [Nate Wiger] [#26]
+
+* Added that the MySQL adapter should map integer to either smallint, int, or bigint depending on the :limit just like PostgreSQL [DHH]
 
 * Change validates_uniqueness_of :case_sensitive option default back to true (from [9160]).  Love your database columns, don't LOWER them.  [rick]
-
-* Ensure that save on child object fails for invalid belongs_to association. Closes #11555. [rubyruy]
 
 * Add support for interleaving migrations by storing which migrations have run in the new schema_migrations table. Closes #11493 [jordi]
 

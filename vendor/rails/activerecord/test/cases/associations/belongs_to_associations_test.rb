@@ -12,6 +12,8 @@ require 'models/author'
 require 'models/tag'
 require 'models/tagging'
 require 'models/comment'
+require 'models/sponsor'
+require 'models/member'
 
 class BelongsToAssociationsTest < ActiveRecord::TestCase
   fixtures :accounts, :companies, :developers, :projects, :topics,
@@ -54,8 +56,8 @@ class BelongsToAssociationsTest < ActiveRecord::TestCase
     original_proxy = citibank.firm
     citibank.firm = another_firm
 
-    assert_equal first_firm.object_id, original_proxy.object_id
-    assert_equal another_firm.object_id, citibank.firm.object_id
+    assert_equal first_firm.object_id, original_proxy.target.object_id
+    assert_equal another_firm.object_id, citibank.firm.target.object_id
   end
 
   def test_creating_the_belonging_object
@@ -90,6 +92,11 @@ class BelongsToAssociationsTest < ActiveRecord::TestCase
   def test_with_condition
     assert_equal Company.find(1).name, Company.find(3).firm_with_condition.name
     assert_not_nil Company.find(3).firm_with_condition, "Microsoft should have a firm"
+  end
+
+  def test_with_select
+    assert_equal Company.find(2).firm_with_select.attributes.size, 1
+    assert_equal Company.find(2, :include => :firm_with_select ).firm_with_select.attributes.size, 1
   end
 
   def test_belongs_to_counter
@@ -376,17 +383,59 @@ class BelongsToAssociationsTest < ActiveRecord::TestCase
     assert_raise(ActiveRecord::ReadOnlyRecord) { companies(:first_client).readonly_firm.save! }
     assert companies(:first_client).readonly_firm.readonly?
   end
-
-  def test_save_fails_for_invalid_belongs_to
-    log = AuditLog.new
-    assert log.valid?
-
-    log.build_developer # Build invalid association
-    assert !log.developer.valid?
-    assert !log.valid?
-    assert_equal "is invalid", log.errors.on("developer")
+  
+  def test_polymorphic_assignment_foreign_type_field_updating
+    # should update when assigning a saved record
+    sponsor = Sponsor.new
+    member = Member.create
+    sponsor.sponsorable = member
+    assert_equal "Member", sponsor.sponsorable_type
     
-    assert !log.save
+    # should update when assigning a new record
+    sponsor = Sponsor.new
+    member = Member.new
+    sponsor.sponsorable = member
+    assert_equal "Member", sponsor.sponsorable_type
+  end
+  
+  def test_polymorphic_assignment_updates_foreign_id_field_for_new_and_saved_records
+    sponsor = Sponsor.new
+    saved_member = Member.create
+    new_member = Member.new
+    
+    sponsor.sponsorable = saved_member
+    assert_equal saved_member.id, sponsor.sponsorable_id
+    
+    sponsor.sponsorable = new_member
+    assert_equal nil, sponsor.sponsorable_id
   end
 
+  def test_save_fails_for_invalid_belongs_to
+    assert log = AuditLog.create(:developer_id=>0,:message=>"")
+
+    log.developer = Developer.new
+    assert !log.developer.valid?
+    assert !log.valid?
+    assert !log.save
+    assert_equal "is invalid", log.errors.on("developer")
+  end
+
+  def test_save_succeeds_for_invalid_belongs_to_with_validate_false
+    assert log = AuditLog.create(:developer_id=>0,:message=>"")
+
+    log.unvalidated_developer = Developer.new
+    assert !log.unvalidated_developer.valid?
+    assert log.valid?
+    assert log.save
+  end
+
+  def test_belongs_to_proxy_should_not_respond_to_private_methods
+    assert_raises(NoMethodError) { companies(:first_firm).private_method }
+    assert_raises(NoMethodError) { companies(:second_client).firm.private_method }
+  end
+
+  def test_belongs_to_proxy_should_respond_to_private_methods_via_send
+    companies(:first_firm).send(:private_method)
+    companies(:second_client).firm.send(:private_method)
+  end
 end

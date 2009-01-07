@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 
   helper :all
 
-  init_gettext 'lvee'
+#  init_gettext 'lvee'
 
   # See ActionController::RequestForgeryProtection for details
   # Uncomment the :secret if you're not using the cookie session store

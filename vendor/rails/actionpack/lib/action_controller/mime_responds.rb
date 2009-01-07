@@ -92,7 +92,7 @@ module ActionController #:nodoc:
       # with the remaining data.
       #
       # Note that you can define your own XML parameter parser which would allow you to describe multiple entities
-      # in a single request (i.e., by wrapping them all in a single root note), but if you just go with the flow
+      # in a single request (i.e., by wrapping them all in a single root node), but if you just go with the flow
       # and accept Rails' defaults, life will be much easier.
       #
       # If you need to use a MIME type which isn't supported by default, you can register your own handlers in
@@ -114,7 +114,11 @@ module ActionController #:nodoc:
         @request    = controller.request
         @response   = controller.response
 
-        @mime_type_priority = Array(Mime::Type.lookup_by_extension(@request.parameters[:format]) || @request.accepts)
+        if ActionController::Base.use_accept_header
+          @mime_type_priority = Array(Mime::Type.lookup_by_extension(@request.parameters[:format]) || @request.accepts)
+        else
+          @mime_type_priority = [@request.format]
+        end
 
         @order     = []
         @responses = {}

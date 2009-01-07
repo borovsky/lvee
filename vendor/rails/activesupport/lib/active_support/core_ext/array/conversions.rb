@@ -6,10 +6,13 @@ module ActiveSupport #:nodoc:
       module Conversions
         # Converts the array to a comma-separated sentence where the last element is joined by the connector word. Options:
         # * <tt>:connector</tt> - The word used to join the last element in arrays with two or more elements (default: "and")
-        # * <tt>:skip_last_comma</tt> - Set to true to return "a, b and c" instead of "a, b, and c".
-        def to_sentence(options = {})
-          options.assert_valid_keys(:connector, :skip_last_comma)
-          options.reverse_merge! :connector => 'and', :skip_last_comma => false
+        # * <tt>:skip_last_comma</tt> - Set to true to return "a, b and c" instead of "a, b, and c".        
+        def to_sentence(options = {})          
+          options.assert_valid_keys(:connector, :skip_last_comma, :locale)
+          
+          default = I18n.translate(:'support.array.sentence_connector', :locale => options[:locale])
+          default_skip_last_comma = I18n.translate(:'support.array.skip_last_comma', :locale => options[:locale])
+          options.reverse_merge! :connector => default, :skip_last_comma => default_skip_last_comma
           options[:connector] = "#{options[:connector]} " unless options[:connector].nil? || options[:connector].strip == ''
 
           case length
@@ -23,11 +26,12 @@ module ActiveSupport #:nodoc:
               "#{self[0...-1].join(', ')}#{options[:skip_last_comma] ? '' : ','} #{options[:connector]}#{self[-1]}"
           end
         end
+        
 
         # Calls <tt>to_param</tt> on all its elements and joins the result with
         # slashes. This is used by <tt>url_for</tt> in Action Pack. 
         def to_param
-          map(&:to_param).join '/'
+          collect { |e| e.to_param }.join '/'
         end
 
         # Converts an array into a string suitable for use as a URL query string,
@@ -35,7 +39,8 @@ module ActiveSupport #:nodoc:
         #
         #   ['Rails', 'coding'].to_query('hobbies') # => "hobbies%5B%5D=Rails&hobbies%5B%5D=coding"
         def to_query(key)
-          collect { |value| value.to_query("#{key}[]") } * '&'
+          prefix = "#{key}[]"
+          collect { |value| value.to_query(prefix) }.join '&'
         end
 
         def self.included(base) #:nodoc:
@@ -67,17 +72,35 @@ module ActiveSupport #:nodoc:
           end
         end
 
-        # Returns a string that represents this array in XML by sending
-        # <tt>to_xml</tt> to each element.
+        # Returns a string that represents this array in XML by sending +to_xml+
+        # to each element. Active Record collections delegate their representation
+        # in XML to this method.
         #
-        # All elements are expected to respond to <tt>to_xml</tt>, if any of
-        # them does not an exception is raised.
+        # All elements are expected to respond to +to_xml+, if any of them does
+        # not an exception is raised.
         #
         # The root node reflects the class name of the first element in plural
-        # if all elements belong to the same type and that's not <tt>Hash</tt>.
-        # Otherwise the root element is "records".
+        # if all elements belong to the same type and that's not Hash:
         #
-        # Root children have as node name the one of the root singularized.
+        #   customer.projects.to_xml
+        #
+        #   <?xml version="1.0" encoding="UTF-8"?>
+        #   <projects type="array">
+        #     <project>
+        #       <amount type="decimal">20000.0</amount>
+        #       <customer-id type="integer">1567</customer-id>
+        #       <deal-date type="date">2008-04-09</deal-date>
+        #       ...
+        #     </project>
+        #     <project>
+        #       <amount type="decimal">57230.0</amount>
+        #       <customer-id type="integer">1567</customer-id>
+        #       <deal-date type="date">2008-04-15</deal-date>
+        #       ...
+        #     </project>
+        #   </projects>
+        #
+        # Otherwise the root element is "records":
         #
         #   [{:foo => 1, :bar => 2}, {:baz => 3}].to_xml
         #
@@ -92,9 +115,26 @@ module ActiveSupport #:nodoc:
         #     </record>
         #   </records>
         #
+        # If the collection is empty the root element is "nil-classes" by default:
+        #
+        #   [].to_xml
+        #
+        #   <?xml version="1.0" encoding="UTF-8"?>
+        #   <nil-classes type="array"/>
+        #
+        # To ensure a meaningful root element use the <tt>:root</tt> option:
+        #
+        #   customer_with_no_projects.projects.to_xml(:root => "projects")
+        #
+        #   <?xml version="1.0" encoding="UTF-8"?>
+        #   <projects type="array"/>
+        #
+        # By default root children have as node name the one of the root
+        # singularized. You can change it with the <tt>:children</tt> option.
+        #
         # The +options+ hash is passed downwards:
         #
-        #   [Message.find(:first)].to_xml(:skip_types => true)
+        #   Message.all.to_xml(:skip_types => true)
         #
         #   <?xml version="1.0" encoding="UTF-8"?>
         #   <messages>
@@ -132,7 +172,7 @@ module ActiveSupport #:nodoc:
           else
             xml.tag!(root, options[:skip_types] ? {} : {:type => "array"}) {
               yield xml if block_given?
-              each { |e| e.to_xml(opts.merge!({ :skip_instruct => true })) }
+              each { |e| e.to_xml(opts.merge({ :skip_instruct => true })) }
             }
           end
         end

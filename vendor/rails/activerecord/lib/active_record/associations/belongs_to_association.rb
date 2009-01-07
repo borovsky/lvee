@@ -2,11 +2,11 @@ module ActiveRecord
   module Associations
     class BelongsToAssociation < AssociationProxy #:nodoc:
       def create(attributes = {})
-        replace(@reflection.klass.create(attributes))
+        replace(@reflection.create_association(attributes))
       end
 
       def build(attributes = {})
-        replace(@reflection.klass.new(attributes))
+        replace(@reflection.build_association(attributes))
       end
 
       def replace(record)
@@ -42,10 +42,11 @@ module ActiveRecord
       private
         def find_target
           @reflection.klass.find(
-            @owner[@reflection.primary_key_name], 
+            @owner[@reflection.primary_key_name],
+            :select     => @reflection.options[:select],
             :conditions => conditions,
             :include    => @reflection.options[:include],
-            :readonly => @reflection.options[:readonly]
+            :readonly   => @reflection.options[:readonly]
           )
         end
 

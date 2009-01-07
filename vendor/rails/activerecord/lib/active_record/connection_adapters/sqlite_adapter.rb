@@ -70,7 +70,7 @@ module ActiveRecord
     #
     # Options:
     #
-    # * <tt>:database</tt> -- Path to the database file.
+    # * <tt>:database</tt> - Path to the database file.
     class SQLiteAdapter < AbstractAdapter
       def adapter_name #:nodoc:
         'SQLite'
@@ -214,20 +214,36 @@ module ActiveRecord
       end
 
       def add_column(table_name, column_name, type, options = {}) #:nodoc:
+        if @connection.respond_to?(:transaction_active?) && @connection.transaction_active?
+          raise StatementInvalid, 'Cannot add columns to a SQLite database while inside a transaction'
+        end
+        
         super(table_name, column_name, type, options)
         # See last paragraph on http://www.sqlite.org/lang_altertable.html
         execute "VACUUM"
       end
 
-      def remove_column(table_name, column_name) #:nodoc:
-        alter_table(table_name) do |definition|
-          definition.columns.delete(definition[column_name])
+      def remove_column(table_name, *column_names) #:nodoc:
+        column_names.flatten.each do |column_name|
+          alter_table(table_name) do |definition|
+            definition.columns.delete(definition[column_name])
+          end
         end
       end
+      alias :remove_columns :remove_column
 
       def change_column_default(table_name, column_name, default) #:nodoc:
         alter_table(table_name) do |definition|
           definition[column_name].default = default
+        end
+      end
+
+      def change_column_null(table_name, column_name, null, default = nil)
+        unless null || default.nil?
+          execute("UPDATE #{quote_table_name(table_name)} SET #{quote_column_name(column_name)}=#{quote(default)} WHERE #{quote_column_name(column_name)} IS NULL")
+        end
+        alter_table(table_name) do |definition|
+          definition[column_name].null = null
         end
       end
 
@@ -244,6 +260,9 @@ module ActiveRecord
       end
 
       def rename_column(table_name, column_name, new_column_name) #:nodoc:
+        unless columns(table_name).detect{|c| c.name == column_name.to_s }
+          raise ActiveRecord::ActiveRecordError, "Missing column #{table_name}.#{column_name}"
+        end
         alter_table(table_name, :rename => {column_name.to_s => new_column_name.to_s})
       end
 
@@ -257,7 +276,7 @@ module ActiveRecord
             record = {}
             row.each_key do |key|
               if key.is_a?(String)
-                record[key.sub(/^\w+\./, '')] = row[key]
+                record[key.sub(/^"?\w+"?\./, '')] = row[key]
               end
             end
             record

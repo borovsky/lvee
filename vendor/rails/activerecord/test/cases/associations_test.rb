@@ -27,7 +27,7 @@ require 'models/sponsor'
 
 class AssociationsTest < ActiveRecord::TestCase
   fixtures :accounts, :companies, :developers, :projects, :developers_projects,
-           :computers
+           :computers, :people, :readers
 
   def test_include_with_order_works
     assert_nothing_raised {Account.find(:first, :order => 'id', :include => :firm)}
@@ -41,11 +41,11 @@ class AssociationsTest < ActiveRecord::TestCase
   end
 
   def test_should_construct_new_finder_sql_after_create
-    person = Person.new
+    person = Person.new :first_name => 'clark'
     assert_equal [], person.readers.find(:all)
     person.save!
     reader = Reader.create! :person => person, :post => Post.new(:title => "foo", :body => "bar")
-    assert_equal [reader], person.readers.find(:all)
+    assert person.readers.find(reader.id)
   end
 
   def test_force_reload
@@ -99,12 +99,12 @@ class AssociationProxyTest < ActiveRecord::TestCase
     david = authors(:david)
     assert_equal  david, david.posts.proxy_owner
     assert_equal  david.class.reflect_on_association(:posts), david.posts.proxy_reflection
-    david.posts.first   # force load target
+    david.posts.class   # force load target
     assert_equal  david.posts, david.posts.proxy_target
 
     assert_equal  david, david.posts_with_extension.testing_proxy_owner
     assert_equal  david.class.reflect_on_association(:posts_with_extension), david.posts_with_extension.testing_proxy_reflection
-    david.posts_with_extension.first   # force load target
+    david.posts_with_extension.class   # force load target
     assert_equal  david.posts_with_extension, david.posts_with_extension.testing_proxy_target
   end
 
@@ -149,9 +149,27 @@ class AssociationProxyTest < ActiveRecord::TestCase
     assert !david.projects.loaded?
   end
 
+  def test_inspect_does_not_reload_a_not_yet_loaded_target
+    andreas = Developer.new :name => 'Andreas', :log => 'new developer added'
+    assert !andreas.audit_logs.loaded?
+    assert_match(/message: "new developer added"/, andreas.audit_logs.inspect)
+  end
+
   def test_save_on_parent_saves_children
     developer = Developer.create :name => "Bryan", :salary => 50_000
     assert_equal 1, developer.reload.audit_logs.size
+  end
+
+  def test_create_via_association_with_block
+    post = authors(:david).posts.create(:title => "New on Edge") {|p| p.body = "More cool stuff!"}
+    assert_equal post.title, "New on Edge"
+    assert_equal post.body, "More cool stuff!"
+  end
+
+  def test_create_with_bang_via_association_with_block
+    post = authors(:david).posts.create!(:title => "New on Edge") {|p| p.body = "More cool stuff!"}
+    assert_equal post.title, "New on Edge"
+    assert_equal post.body, "More cool stuff!"
   end
 
   def test_failed_reload_returns_nil

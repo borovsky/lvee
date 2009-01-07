@@ -30,6 +30,7 @@ module ActiveSupport #:nodoc:
         #   time.to_s(:time)                    # => "06:10:17"
         #
         #   time.to_formatted_s(:db)            # => "2007-01-18 06:10:17"
+        #   time.to_formatted_s(:number)        # => "20070118061017"
         #   time.to_formatted_s(:short)         # => "18 Jan 06:10"
         #   time.to_formatted_s(:long)          # => "January 18, 2007 06:10"
         #   time.to_formatted_s(:long_ordinal)  # => "January 18th, 2007 06:10"
@@ -59,7 +60,7 @@ module ActiveSupport #:nodoc:
         # Converts a Time object to a Date, dropping hour, minute, and second precision.
         #
         #   my_time = Time.now  # => Mon Nov 12 22:59:51 -0500 2007
-        #   my_time.to_date     #=> Mon, 12 Nov 2007
+        #   my_time.to_date     # => Mon, 12 Nov 2007
         #
         #   your_time = Time.parse("1/13/2009 1:13:03 P.M.")  # => Tue Jan 13 13:13:03 -0500 2009
         #   your_time.to_date                                 # => Tue, 13 Jan 2009

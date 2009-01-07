@@ -8,6 +8,12 @@ module ActiveRecord
     end
   end
 
+  class DuplicateMigrationNameError < ActiveRecordError#:nodoc:
+    def initialize(name)
+      super("Multiple migrations have the name #{name}")
+    end
+  end
+
   class UnknownMigrationVersionError < ActiveRecordError #:nodoc:
     def initialize(version)
       super("No migration with version number #{version}")
@@ -76,16 +82,16 @@ module ActiveRecord
   # * <tt>rename_table(old_name, new_name)</tt>: Renames the table called +old_name+ to +new_name+.
   # * <tt>add_column(table_name, column_name, type, options)</tt>: Adds a new column to the table called +table_name+
   #   named +column_name+ specified to be one of the following types:
-  #   :string, :text, :integer, :float, :decimal, :datetime, :timestamp, :time,
-  #   :date, :binary, :boolean. A default value can be specified by passing an
-  #   +options+ hash like { :default => 11 }. Other options include :limit and :null (e.g. { :limit => 50, :null => false })
+  #   <tt>:string</tt>, <tt>:text</tt>, <tt>:integer</tt>, <tt>:float</tt>, <tt>:decimal</tt>, <tt>:datetime</tt>, <tt>:timestamp</tt>, <tt>:time</tt>,
+  #   <tt>:date</tt>, <tt>:binary</tt>, <tt>:boolean</tt>. A default value can be specified by passing an
+  #   +options+ hash like <tt>{ :default => 11 }</tt>. Other options include <tt>:limit</tt> and <tt>:null</tt> (e.g. <tt>{ :limit => 50, :null => false }</tt>)
   #   -- see ActiveRecord::ConnectionAdapters::TableDefinition#column for details.
   # * <tt>rename_column(table_name, column_name, new_column_name)</tt>: Renames a column but keeps the type and content.
   # * <tt>change_column(table_name, column_name, type, options)</tt>:  Changes the column to a different type using the same
   #   parameters as add_column.
   # * <tt>remove_column(table_name, column_name)</tt>: Removes the column named +column_name+ from the table called +table_name+.
   # * <tt>add_index(table_name, column_names, options)</tt>: Adds a new index with the name of the column. Other options include
-  #   :name and :unique (e.g. { :name => "users_name_index", :unique => true }).
+  #   <tt>:name</tt> and <tt>:unique</tt> (e.g. <tt>{ :name => "users_name_index", :unique => true }</tt>).
   # * <tt>remove_index(table_name, index_name)</tt>: Removes the index specified by +index_name+.
   #
   # == Irreversible transformations
@@ -202,7 +208,7 @@ module ActiveRecord
   #
   # You can quiet them down by setting ActiveRecord::Migration.verbose = false.
   #
-  # You can also insert your own messages and benchmarks by using the #say_with_time
+  # You can also insert your own messages and benchmarks by using the +say_with_time+
   # method:
   #
   #   def self.up
@@ -232,6 +238,22 @@ module ActiveRecord
   # lower than the current schema version: when migrating up, those
   # never-applied "interleaved" migrations will be automatically applied, and
   # when migrating down, never-applied "interleaved" migrations will be skipped.
+  # 
+  # == Timestamped Migrations
+  #
+  # By default, Rails generates migrations that look like:
+  #
+  #    20080717013526_your_migration_name.rb
+  #
+  # The prefix is a generation timestamp (in UTC).
+  #
+  # If you'd prefer to use numeric prefixes, you can turn timestamped migrations
+  # off by setting:
+  #
+  #    config.active_record.timestamped_migrations = false
+  # 
+  # In environment.rb.
+  #
   class Migration
     @@verbose = true
     cattr_accessor :verbose
@@ -327,6 +349,27 @@ module ActiveRecord
     end
   end
 
+  # MigrationProxy is used to defer loading of the actual migration classes
+  # until they are needed
+  class MigrationProxy
+
+    attr_accessor :name, :version, :filename
+
+    delegate :migrate, :announce, :write, :to=>:migration
+
+    private
+
+      def migration
+        @migration ||= load_migration
+      end
+
+      def load_migration
+        load(filename)
+        name.constantize
+      end
+
+  end
+
   class Migrator#:nodoc:
     class << self
       def migrate(migrations_path, target_version = nil)
@@ -363,13 +406,21 @@ module ActiveRecord
         Base.table_name_prefix + 'schema_migrations' + Base.table_name_suffix
       end
 
+      def get_all_versions
+        Base.connection.select_values("SELECT version FROM #{schema_migrations_table_name}").map(&:to_i).sort
+      end
+
       def current_version
-        Base.connection.select_values(
-          "SELECT version FROM #{schema_migrations_table_name}").map(&:to_i).max || 0
+        sm_table = schema_migrations_table_name
+        if Base.connection.table_exists?(sm_table)
+          get_all_versions.max || 0
+        else
+          0
+        end
       end
 
       def proper_table_name(name)
-        # Use the ActiveRecord objects own table_name, or pre/suffix from ActiveRecord::Base if name is a symbol/string
+        # Use the Active Record objects own table_name, or pre/suffix from ActiveRecord::Base if name is a symbol/string
         name.table_name rescue "#{ActiveRecord::Base.table_name_prefix}#{name}#{ActiveRecord::Base.table_name_suffix}"
       end
     end
@@ -381,7 +432,7 @@ module ActiveRecord
     end
 
     def current_version
-      self.class.current_version
+      migrated.last || 0
     end
     
     def current_migration
@@ -391,7 +442,10 @@ module ActiveRecord
     def run
       target = migrations.detect { |m| m.version == @target_version }
       raise UnknownMigrationVersionError.new(@target_version) if target.nil?
-      target.migrate(@direction)
+      unless (up? && migrated.include?(target.version.to_i)) || (down? && !migrated.include?(target.version.to_i))
+        target.migrate(@direction)
+        record_version_state_after_migrating(target.version)
+      end
     end
 
     def migrate
@@ -410,17 +464,25 @@ module ActiveRecord
       runnable.pop if down? && !target.nil?
       
       runnable.each do |migration|
-        Base.logger.info "Migrating to #{migration} (#{migration.version})"
+        Base.logger.info "Migrating to #{migration.name} (#{migration.version})"
 
         # On our way up, we skip migrating the ones we've already migrated
-        # On our way down, we skip reverting the ones we've never migrated
         next if up? && migrated.include?(migration.version.to_i)
 
+        # On our way down, we skip reverting the ones we've never migrated
         if down? && !migrated.include?(migration.version.to_i)
           migration.announce 'never migrated, skipping'; migration.write
-        else
-          migration.migrate(@direction)
-          record_version_state_after_migrating(migration.version)
+          next
+        end
+
+        begin
+          ddl_transaction do
+            migration.migrate(@direction)
+            record_version_state_after_migrating(migration.version)
+          end
+        rescue => e
+          canceled_msg = Base.connection.supports_ddl_transactions? ? "this and " : ""
+          raise StandardError, "An error has occurred, #{canceled_msg}all later migrations canceled:\n\n#{e}", e.backtrace
         end
       end
     end
@@ -438,12 +500,15 @@ module ActiveRecord
           if klasses.detect { |m| m.version == version }
             raise DuplicateMigrationVersionError.new(version) 
           end
+
+          if klasses.detect { |m| m.name == name.camelize }
+            raise DuplicateMigrationNameError.new(name.camelize) 
+          end
           
-          load(file)
-          
-          klasses << returning(name.camelize.constantize) do |klass|
-            class << klass; attr_accessor :version end
-            klass.version = version
+          klasses << returning(MigrationProxy.new) do |migration|
+            migration.name     = name.camelize
+            migration.version  = version
+            migration.filename = file
           end
         end
         
@@ -458,17 +523,19 @@ module ActiveRecord
     end
 
     def migrated
-      sm_table = self.class.schema_migrations_table_name
-      Base.connection.select_values("SELECT version FROM #{sm_table}").map(&:to_i).sort
+      @migrated_versions ||= self.class.get_all_versions
     end
 
     private
       def record_version_state_after_migrating(version)
         sm_table = self.class.schema_migrations_table_name
 
+        @migrated_versions ||= []
         if down?
+          @migrated_versions.delete(version.to_i)
           Base.connection.update("DELETE FROM #{sm_table} WHERE version = '#{version}'")
         else
+          @migrated_versions.push(version.to_i).sort!
           Base.connection.insert("INSERT INTO #{sm_table} (version) VALUES ('#{version}')")
         end
       end
@@ -479,6 +546,15 @@ module ActiveRecord
 
       def down?
         @direction == :down
+      end
+
+      # Wrap the migration in a transaction only if supported by the adapter.
+      def ddl_transaction(&block)
+        if Base.connection.supports_ddl_transactions?
+          Base.transaction { block.call }
+        else
+          block.call
+        end
       end
   end
 end
