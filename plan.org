@@ -1,0 +1,10 @@
+* What we need to do
+
+** Add ability to use existant account for 2009 [0/2]
+*** TODO Update database
+*** TODO Add interface for add new year assignment
+
+** Add tests [0/1]
+*** TODO Add tests for registration
+
+** Add new design [/]
