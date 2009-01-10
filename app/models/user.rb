@@ -1,7 +1,7 @@
 require 'digest/sha1'
 class User < ActiveRecord::Base
 
-  untranslate_all
+#  untranslate_all
 
 
  # Authorization plugin
@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
   validates_presence_of     :password_confirmation,      :if => :password_required?, :message => '^Подтверждение пароля не совпадает с введенным паролем'
 
   password_lenght_error = '^Пароль должен быть длинной от 4 до 40 символов'
-  validates_length_of       :password, :within => 4..40, :if => :password_required?, :allow_blank => true, 
+  validates_length_of       :password, :within => 4..40, :if => :password_required?, :allow_blank => true,
                                                          :too_short => password_lenght_error, :too_long => password_lenght_error
 
   validates_confirmation_of :password,                   :if => :password_required?, :message => '^Подтверждение пароля не совпадает с введенным паролем'
@@ -50,9 +50,9 @@ class User < ActiveRecord::Base
 
   # Activates the user in the database.
   def activate
-    @activated = true
-    self.activated_at = Time.now.utc
-    self.activation_code = nil
+    activated = true
+    activated_at = Time.now.utc
+    activation_code = nil
     save(false)
   end
 
@@ -117,6 +117,14 @@ class User < ActiveRecord::Base
 
   def site_editor?
     SITE_EDITORS.include? self.login
+  end
+
+  def self.valid_data
+    {:login => 'login', :email => 'user@example.com',
+    :first_name => 'Vasiliy', :last_name=> 'Pupkin',
+    :country => 'Belarus', :city => 'Minsk',
+    :password => '1234',
+    :password_confirmation => '1234'}
   end
 
   protected

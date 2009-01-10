@@ -1,8 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
 
-  map.connect 'activate/:activation_code', :controller => 'users', :action => 'activate', :lang => 'ru' # FIXME other langs?
+  map.connect 'activate/:activation_code', :controller => 'users', :action => 'activate' # FIXME other langs?
 
-  
+
   map.resources :users, :member => { :activate => :get }
   map.resource  :session
   map.resources :news, :has_many => [:comments], :has_one => :user, :singular => 'news_item'
@@ -34,7 +34,7 @@ ActionController::Routing::Routes.draw do |map|
   #     # Directs /admin/products/* to Admin::ProductsController (app/controllers/admin/products_controller.rb)
   #     admin.resources :products
   #   end
-  
+
   map.root :controller => "main", :lang => 'ru'
 
 
