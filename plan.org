@@ -19,7 +19,7 @@
 *** TODO [#B] Add version control
 *** TODO [#B] Add changes notifications (Editors' RSS?)
 
-** Misc [0/1]
-*** TODO [#A] Add normal role support (normal user/editor/admin)
+** Misc [1/2]
+*** DONE [#A] Add normal role support (normal user/editor/admin)
 *** TODO [#C] Add report thesis editor to site (with versioning, RSS, comments, etc)
 ** Add new design [/]
