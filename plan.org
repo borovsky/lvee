@@ -1,13 +1,13 @@
 * What we need to do
 
-** Add tests [1/3]
+** Add tests [3/3]
 *** DONE Add tests for registration
-*** TODO Add tests for news
-*** TODO Add tests for login
+*** DONE Add tests for news
+*** DONE Add tests for login
 
-** Add ability to use existant account for 2009 [0/2]
-*** TODO [#A] Update database
-*** TODO [#A] Add interface for add new year assignment
+** Add ability to use existant account for 2009 [2/2]
+*** DONE [#A] Update database
+*** DONE [#A] Add interface for add new year assignment
 
 ** Translations [0/3]
 *** TODO [#A] Add messages translations
