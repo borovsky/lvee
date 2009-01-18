@@ -3,11 +3,13 @@
 require File.dirname(__FILE__) + '/../../spec_helper'
 
 describe Admin::UsersController do
+  def mock_user(stubs={})
+    model_stub(User, stubs)
+  end
+
   before :all do
-    @user = stub(:user)
-    @user.stubs(:id).returns(100)
-    @admin = stub(:admin)
-    @admin.stubs(:id).returns(1)
+    @user = mock_user(:id => 100, :admin? => false)
+    @admin = mock_user(:id => 1, :admin? => true)
   end
 
   describe 'index' do
@@ -46,6 +48,35 @@ describe Admin::UsersController do
       login_as @admin
       User.stubs(:find).with(:all).returns([])
       get :index, :format=>'csv'
+      assert_response :success
+    end
+  end
+
+  describe "set_role" do
+    it "should be accessible by right URL" do
+      params_from(:post, '/ru/admin/users/set_role/42').should == {
+        :controller => 'admin/users',
+        :action => 'set_role',
+        :id=>'42',
+        :lang => 'ru'
+      }
+    end
+    it "should forbid set role if user is not admin" do
+      login_as(@user)
+
+      get :set_role, :id=> 12, :role => 'admin'
+      assert_response 403
+    end
+
+    it "should allow admin set role for user" do
+      login_as(@admin)
+
+      user = mock()
+      user.expects(:role=).with('admin')
+      user.expects(:save!)
+      User.expects(:find).with('12').returns(user)
+
+      get :set_role, :id=> 12, :role => 'admin'
       assert_response :success
     end
   end

@@ -1,1 +1,1 @@
-SITE_EDITORS = %w{antono sturm antono1}
+ROLES = %w{none editor admin}

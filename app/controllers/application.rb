@@ -3,12 +3,9 @@
 
 class ApplicationController < ActionController::Base
   include AuthenticatedSystem
+  include ApplicationHelper
 
   helper :all
-
-  def admin_required
-    render :status=>403, :text => "Access denied" unless admin?
-  end
 
   protect_from_forgery # :secret => 'dc50c44338f5eba496ede18e9ea29cb1'
 end

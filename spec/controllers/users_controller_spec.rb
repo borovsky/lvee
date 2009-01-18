@@ -3,11 +3,13 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 
 describe UsersController do
+  def mock_user(stubs={})
+    model_stub(User, stubs)
+  end
+
   before :all do
-    @user = stub(:user)
-    @user.stubs(:id).returns(100)
-    @admin = stub(:admin)
-    @admin.stubs(:id).returns(1)
+    @user = mock_user(:id => 100)
+    @admin = mock_user(:id => 1, :admin? => true)
   end
 
   describe 'new' do
@@ -102,12 +104,11 @@ describe UsersController do
       assigns(:user).should == user
     end
 
-    it 'can\'t show other users' do
-      logged_in_user = stub(:logged_in_user)
-      logged_in_user.stubs(:id).returns(1234)
+    it "can't show other users" do
+      logged_in_user = mock_user(:id => 1234, :admin? => false)
       login_as(logged_in_user)
 
-      user = stub(:user)
+      user = mock_user()
       User.stubs(:find).with('42').returns(user)
 
       get :show, :id=> '42'
@@ -116,9 +117,7 @@ describe UsersController do
 
 
     it 'admin can view any user' do
-      logged_in_user = stub(:logged_in_user)
-      logged_in_user.stubs(:id).returns(ADMIN_IDS[0])
-      login_as(logged_in_user)
+      login_as(@admin)
 
       user = stub(:user)
       User.stubs(:find).with('42').returns(user)

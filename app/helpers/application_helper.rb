@@ -18,6 +18,18 @@ module ApplicationHelper
     time ? time.strftime('%d.%m.%Y') : 'None'
   end
 
+  def admin_required
+    login_required
+    return if performed?
+    render :text=>"Access denied", :status=>403  unless current_user.admin?
+  end
+
+  def editor_required
+    login_required
+    return if performed?
+    render :text=>"Access denied", :status=>403  unless current_user.editor?
+  end
+
   def menu_item(text, url_opts, &block)
     current = false
     if url_opts[:action]

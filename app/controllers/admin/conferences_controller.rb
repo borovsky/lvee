@@ -1,5 +1,7 @@
 module Admin
   class ConferencesController < ApplicationController
+    before_filter :admin_required
+
     # GET /conferences
     # GET /conferences.xml
     def index

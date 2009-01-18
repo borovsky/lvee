@@ -1,4 +1,5 @@
 class NewsController < ApplicationController
+  before_filter :editor_required, :except => [:index, :show]
   # GET /news
   # GET /news.xml
   def index

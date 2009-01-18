@@ -33,7 +33,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    user_have_access = ADMIN_IDS.include?(current_user.id) || (current_user.id.to_s == params[:id])
+    user_have_access = (current_user.id.to_s == params[:id]) || current_user.admin?
     return render :text=>"Access denied", :status => 403 unless user_have_access
     @user = User.find params[:id]
   end
@@ -59,11 +59,4 @@ class UsersController < ApplicationController
       render :action => "users/edit"
     end
   end
-
-  private
-
-  def admin?
-    render :text=>"Access denied", :status=>403  unless ADMIN_IDS.include?(current_user.id)
-  end
-
 end

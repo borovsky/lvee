@@ -109,4 +109,38 @@ describe User do
       u.forget_me
     end
   end
+
+  describe 'admin?' do
+    it 'should be true if role is admin' do
+      u = User.new
+      u.expects(:role).returns('admin')
+      u.admin?.should == true
+    end
+
+    it 'should be false if role is not admin' do
+      u = User.new
+      u.expects(:role).returns('user')
+      u.admin?.should == false
+    end
+  end
+  
+  describe 'editor?' do
+    it 'should be true if role is admin' do
+      u = User.new
+      u.expects(:role).returns('admin')
+      u.editor?.should == true
+    end
+
+    it 'should be false if role is not admin' do
+      u = User.new
+      u.expects(:role).returns('editor')
+      u.editor?.should == true
+    end
+
+    it 'should be false if role is not admin' do
+      u = User.new
+      u.expects(:role).returns('user')
+      u.editor?.should == false
+    end
+  end
 end

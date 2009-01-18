@@ -113,8 +113,12 @@ class User < ActiveRecord::Base
     self.id == user.id # by self and only self ;)
   end
 
-  def site_editor?
-    SITE_EDITORS.include? self.login
+  def admin?
+    self.role == 'admin'
+  end
+
+  def editor?
+    ['admin', 'editor'].include?(self.role)
   end
 
   def self.valid_data
