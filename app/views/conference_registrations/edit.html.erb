@@ -1,0 +1,15 @@
+<h1>Conference registration edit for <%= @registration.conference.name %></h1>
+
+<%= error_messages_for :registration %>
+
+<% form_for(@registration, :url =>
+user_conference_registration_path(params[:user_id], @registration.id) ) do |f| %>
+<%= render :partial => 'form', :locals => {:f => f}%>
+
+<p>
+  <%= f.submit "Сохранить" %>
+</p>
+
+<% end %>
+
+<%= link_to 'To your profile', user_path(current_user) %>

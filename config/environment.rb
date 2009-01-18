@@ -61,6 +61,9 @@ Rails::Initializer.run do |config|
   config.gem "fastercsv", :version => '1.2.3'
   config.gem "mislav-will_paginate", :version => '2.3.6',
     :lib => 'will_paginate' , :source => 'http://gems.github.com'
+  config.gem "RedCloth", :version => '4.1.1',
+    :lib => 'redcloth'
+  config.gem "calendar_date_select"
 end
 
 LANGUAGES = ['by','ru','en','ua']

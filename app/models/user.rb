@@ -1,8 +1,6 @@
 require 'digest/sha1'
 class User < ActiveRecord::Base
-
-#  untranslate_all
-
+  has_many :conference_registrations, :dependent => :delete_all
 
  # Authorization plugin
  # acts_as_authorized_user
@@ -45,14 +43,14 @@ class User < ActiveRecord::Base
   attr_accessible :first_name, :last_name, :country, :city, :occupation, :projects, :proposition, :email, :login, :password, :password_confirmation
 
   def full_name
-    [first_name, last_name].join(' ')
+    "#{first_name} #{last_name}"
   end
 
   # Activates the user in the database.
   def activate
-    activated = true
-    activated_at = Time.now.utc
-    activation_code = nil
+    @activated = true
+    self.activated_at = Time.now.utc
+    self.activation_code = nil
     save(false)
   end
 

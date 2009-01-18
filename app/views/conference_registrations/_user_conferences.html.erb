@@ -1,0 +1,32 @@
+<% user_id = params[:user_id] || @user.id-%>
+<% regs = ConferenceRegistration.find_actual_for_user(user_id) %>
+<% available = Conference.available_conferences(regs.map {|c|
+   c.conference}) %>
+<% unless regs.empty? -%>
+<h2>You have participated:</h2>
+<ul>
+<% regs.each  do |reg| -%>
+<% conf = reg.conference -%>
+  <li>
+    <%= link_to conf.name,  user_conference_registration_path(:user_id => user_id, :id => reg.id) %>
+    (<%= format_date(conf.start_date) %> -
+    <%= format_date(conf.finish_date) %>)
+  </li>
+<% end -%>
+</ul>
+<% end -%>
+
+<% unless available.empty? -%>
+<h2>Upcoming conferences:</h2>
+<ul>
+  <% available.each  do |conf| -%>
+  <li>
+    <%= conf.name %> (<%= format_date(conf.start_date) %> -
+    <%= format_date(conf.finish_date) %>)
+    <%= link_to "Register",
+    new_user_conference_registration_path(:user_id => user_id,
+    :conference_id => conf.id)  %>
+  </li>
+<% end -%>
+</ul>
+<% end -%>

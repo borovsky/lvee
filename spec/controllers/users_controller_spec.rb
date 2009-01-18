@@ -3,49 +3,11 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 
 describe UsersController do
-  #  integrate_views
-
   before :all do
     @user = stub(:user)
     @user.stubs(:id).returns(100)
     @admin = stub(:admin)
     @admin.stubs(:id).returns(1)
-  end
-
-  describe 'index' do
-    it "should be accessible by right URL" do
-      params_from(:get, '/users').should == {
-        :controller => 'users',
-        :action => 'index'
-      }
-      params_from(:get, '/users.csv').should == {
-        :controller => 'users',
-        :action => 'index',
-        :format => 'csv'
-      }
-    end
-
-    it "should be accessible only for admin" do
-      login_as(@admin)
-      get :index
-
-      assert_response :success
-
-      login_as(@user)
-      get :index
-
-      assert_response 403
-    end
-
-    it "should render html if requested" do
-      User.stubs(:find).with(:all).returns([])
-      get :index, :format=>'html'
-    end
-
-    it "should render csv if requested" do
-      User.stubs(:find).with(:all).returns([])
-      get :index, :format=>'csv'
-    end
   end
 
   describe 'new' do
@@ -259,34 +221,4 @@ describe UsersController do
     end
   end
 
-  describe "destroy" do
-    it "should be accessible by right URL" do
-      params_from(:delete, '/users/42').should == {
-        :controller => 'users',
-        :action => 'destroy',
-        :id=>'42'
-      }
-    end
-    it "should forbid delete user if user is not admin" do
-      logged_in_user = stub(:logged_in_user)
-      logged_in_user.stubs(:id).returns(1234)
-      login_as(logged_in_user)
-      
-      get :destroy, :id=> 12
-      assert_response 403
-    end
-    
-    it "should allow admin delete any user" do
-      logged_in_user = stub(:logged_in_user)
-      logged_in_user.stubs(:id).returns(ADMIN_IDS[0])
-      login_as(logged_in_user)
-
-      user = mock()
-      user.expects(:destroy).returns(true)
-      User.expects(:find).with('12').returns(user)
-
-      get :destroy, :id=> 12
-      assert_response :success
-    end
-  end
 end

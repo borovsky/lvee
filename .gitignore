@@ -4,3 +4,5 @@ log/*.log
 *.swp
 tags
 config/database.yml
+coverage
+semantic.cache

@@ -6,9 +6,9 @@ class ApplicationController < ActionController::Base
 
   helper :all
 
-#  init_gettext 'lvee'
+  def admin_required
+    render :status=>403, :text => "Access denied" unless admin?
+  end
 
-  # See ActionController::RequestForgeryProtection for details
-  # Uncomment the :secret if you're not using the cookie session store
   protect_from_forgery # :secret => 'dc50c44338f5eba496ede18e9ea29cb1'
 end

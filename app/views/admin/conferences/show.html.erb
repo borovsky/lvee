@@ -1,0 +1,9 @@
+<h1>Conference <%=h @conference.name %>
+  (<%= format_date(@conference.start_date) %> -
+  <%= format_date(@conference.finish_date) %>)</h1>
+
+<p>Registration is <b><%= @conference.registration_opened ? 'opened' :
+                          'closed'%></b></p>
+
+<%= link_to 'Edit', edit_admin_conference_path(@conference) %> |
+<%= link_to 'Back', admin_conferences_path %>

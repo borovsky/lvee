@@ -13,19 +13,20 @@ module ApplicationHelper
     html
   end
 
-  def sexy_time_format(time)
-    time.strftime('%d.%m.%Y')
+  # FIXME
+  def format_date(time)
+    time ? time.strftime('%d.%m.%Y') : 'None'
   end
 
   def menu_item(text, url_opts, &block)
     current = false
     if url_opts[:action]
-      current = controller.action_name == url_opts[:action] 
+      current = controller.action_name == url_opts[:action]
     else
       current = controller.controller_name == url_opts[:controller]
     end
     url = url_for(url_opts)
-    if block_given? 
+    if block_given?
       content = capture(&block)
       concat("<li#{current ? ' class="menu-place"' : ''}><a href=\"#{url}\">#{text}</a>", block.binding)
       concat(content, block.binding) if current
@@ -39,20 +40,20 @@ module ApplicationHelper
   def sub_menu_item(text, url_opts)
     current = false
     if url_opts[:action]
-      current = controller.action_name == url_opts[:action] 
+      current = controller.action_name == url_opts[:action]
     else
       current = controller.controller_name == url_opts[:controller]
     end
     url       = url_for(url_opts)
     menu_html = "<a href=\"#{url}\" #{current ? ' class="menu-place"' : ''}>#{text}</a>"
   end
-  
-  def links_to_languages(langs)  
+
+  def links_to_languages(langs)
     html = []
     langs.each do |lang|
-      if controller.action_name 
+      if controller.action_name
         html << link_to_unless_current( lang, :controller => controller.controller_name, :action => controller.action_name, :lang => lang)
-      else 
+      else
         html << link_to_unless_current( lang, :controller => controller.controller_name, :lang => lang)
       end
     end

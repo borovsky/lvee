@@ -6,20 +6,20 @@
 *** TODO Add tests for login
 
 ** Add ability to use existant account for 2009 [0/2]
-*** TODO Update database
-*** TODO Add interface for add new year assignment
+*** TODO [#A] Update database
+*** TODO [#A] Add interface for add new year assignment
 
 ** Translations [0/3]
-*** TODO Add messages translations
-*** TODO Make news language-dependant (translation for news)
-*** TODO Add RSS for news
+*** TODO [#A] Add messages translations
+*** TODO [#A] Make news language-dependant (translation for news)
+*** TODO [#B] Add RSS for news
 
 ** Content edit [0/3]
-*** TODO Add editor for articles (with translation support)
-*** TODO Add version control
-*** TODO Add changes notifications (Editors' RSS?)
+*** TODO [#A] Add editor for articles (with translation support)
+*** TODO [#B] Add version control
+*** TODO [#B] Add changes notifications (Editors' RSS?)
 
 ** Misc [0/1]
-*** TODO Add normal role support (normal user/editor/admin)
-
+*** TODO [#A] Add normal role support (normal user/editor/admin)
+*** TODO [#C] Add report thesis editor to site (with versioning, RSS, comments, etc)
 ** Add new design [/]

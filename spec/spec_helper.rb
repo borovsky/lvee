@@ -46,8 +46,41 @@ Spec::Runner.configure do |config|
   # For more information take a look at Spec::Runner::Configuration and Spec::Runner
 end
 
+class Spec::Rails::Example::RailsExampleGroup
+  @@next_id = 1
+
+  def next_id
+    @@next_id += 1
+  end
+
+  def model_stub(model_class, stubs={})
+    attrs = model_class.column_names.inject(Hash.new) do|s, i|
+      s[i.to_sym] = nil
+      s
+    end
+    def_params = {
+      :id => next_id,
+      :class => model_class,
+      :errors => []
+    }
+    stubs = attrs.merge(def_params).merge(stubs)
+    model = stub("#{model_class} - #{stubs[:id]}")
+    stubs.each_pair do |k, v|
+      model.stubs(k).returns(v)
+    end
+    yield model if block_given?
+    model
+  end
+end
+
 class Spec::Rails::Example::ControllerExampleGroup
   def login_as(user)
     @controller.stubs(:current_user).returns(user)
+  end
+end
+
+class Spec::Rails::Example::ViewExampleGroup
+  def login_as(user)
+    template.stubs(:current_user).returns(user)
   end
 end

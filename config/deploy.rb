@@ -1,5 +1,6 @@
 set :application, "lvee"
-set :repository,  "ssh://gitoz@87.230.33.156:2401/var/git/lvee.git"
+set :repository,  "git://github.com/partizan/lvee.git"
+#set :repository,  "ssh://gitoz@87.230.33.156:2401/var/git/lvee.git"
 set :host, '87.230.33.156'
 
 set :scm, :git

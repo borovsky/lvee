@@ -1,0 +1,14 @@
+<h1>Editing conference</h1>
+
+<% form_for(@conference, :url => admin_conference_path(@conference)) do |f| %>
+  <%= f.error_messages %>
+
+<%= render :partial => 'form', :locals => {:f => f}%>
+
+<p>
+  <%= f.submit "Update" %>
+</p>
+<% end %>
+
+<%= link_to 'Show', admin_conference_path(@conference) %> |
+<%= link_to 'Back', admin_conferences_path %>

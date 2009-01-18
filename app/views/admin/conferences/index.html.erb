@@ -1,0 +1,26 @@
+<h1>Listing conferences</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Start date</th>
+    <th>Finish date</th>
+    <th>Registration opened?</th>
+  </tr>
+
+<% for conference in @conferences %>
+  <tr>
+    <td><%=h conference.name %></td>
+    <td><%=h format_date(conference.start_date) %></td>
+    <td><%=h format_date(conference.finish_date) %></td>
+    <td><%=h conference.registration_opened %></td>
+    <td><%= link_to 'Show', admin_conference_path(conference) %></td>
+    <td><%= link_to 'Edit', edit_admin_conference_path(conference) %></td>
+    <td><%= link_to 'Destroy', admin_conference_path(conference), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New conference', new_admin_conference_path %>
