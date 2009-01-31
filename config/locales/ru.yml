@@ -200,7 +200,8 @@ ru:
       save: Сохранить
       show: Показать
       update: Обновить
-      upload: Загрузить
+      upload: Закачать
+      download: Скачать
     conference: 
       creating: "Создание конференции"
       finish_date: "Дата окончания"

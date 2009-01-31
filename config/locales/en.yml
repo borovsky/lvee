@@ -36,6 +36,7 @@
       update: "Update"
       delete: "Delete"
       upload: "Upload"
+      download: "Download"
     conference:
       name: "Name"
       start_date: "Start date"

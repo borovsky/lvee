@@ -4,14 +4,17 @@
   <tr>
     <th>Id</th>
     <th>Name</th>
+    <th>Published?</th>
   </tr>
 
 <% for language in @languages %>
   <tr>
     <td><%= h language.name %></td>
     <td><%= h language.description %></td>
+    <td><%= h language.published %></td>
     <td><%= link_to t('label.common.show'), editor_language_path(:id => language) %></td>
     <td><%= link_to t('label.common.edit'), edit_editor_language_path(:id => language) %></td>
+    <td><%= link_to t('label.common.download'), :controller => "editor/languages", :id => language, :action => "download", :format => 'yml' %></td>
     <td><%= link_to t('label.common.delete'), editor_language_path(:id => language), :confirm => t('message.common.sure'), :method => :delete %></td>
   </tr>
 <% end %>
