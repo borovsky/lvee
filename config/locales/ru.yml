@@ -90,7 +90,7 @@ ru:
       - октября
       - ноября
       - декабря
-    none: None
+    none: Нет
     order: 
       - !ruby/symbol day
       - !ruby/symbol month
@@ -200,7 +200,7 @@ ru:
       save: Сохранить
       show: Показать
       update: Обновить
-      upload: Upload
+      upload: Загрузить
     conference: 
       creating: "Создание конференции"
       finish_date: "Дата окончания"
@@ -280,6 +280,9 @@ ru:
     signature: |-
         -- 
         С уважением, робот
+    subject: 
+      activation: "Активация аккаунта с LVEE"
+      activation_complete: "Ваш аккаунт на LVEE.org активирован"
     title: "Здравствуйте, {{full_name}}"
   menu: 
     about: "О конференции"
@@ -290,16 +293,27 @@ ru:
     sponsors: Спонсоры
   message: 
     common: 
+      access_denied: "Доступ запрещён"
       sure: "Вы уверены?"
     conference: 
+      created: "Конференция успешно создана"
       status: "Регистрация на конференцию: {{status}}."
+      updated: "Конференция успешно обновлена"
     language: 
       created: "Язык успешно создан"
       updated: "Язык успешно обновлён"
+    news: 
+      created: "Новость успешно создана"
+      updated: "Новость успешно обновлена"
     session: 
+      failed: "Имя пользователя или пароль не верны. Возможно вы не произвели активацию учетной записи."
       logged: "Вы вошли как {{user_name}}"
+      logged_out: "Вы успешно вышли"
     user: 
+      activated: "Регистрация завершена"
       describe: "Пользователь: {{full_name}} ({{country}}, {{city}})..."
+      login_change: "Вы не можете изменить свой логин"
+      registred: "Спасибо за регистрацию."
       required_fields: "Поля отмеченные красной звёздочкой ({{mark}}) обязательны для заполнения."
   number: 
     currency: 
