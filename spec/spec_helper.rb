@@ -76,7 +76,7 @@ end
 
 class Spec::Rails::Example::ControllerExampleGroup
   def login_as(user)
-    @controller.stubs(:current_user).returns(user)
+    controller.stubs(:current_user).returns(user)
   end
 
   %w(get post put delete head).each do |method|
