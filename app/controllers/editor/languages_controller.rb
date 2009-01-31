@@ -88,10 +88,13 @@ module Editor
     end
 
     def download
-      def_lang = YAML.load_file("#{LOCALE_DIR}/en.yml")
-      cur_lang = YAML.load_file("#{LOCALE_DIR}/#{params[:id]}.yml")
+      def_lang = YAML.load_file("#{LOCALE_DIR}/en.yml") 
+      cur_f = "#{LOCALE_DIR}/#{params[:id]}.yml"
+      cur_lang = YAML.load_file(cur_f) if File.exist?(cur_f)
 
-      hash = def_lang['en'].deep_merge(cur_lang[params[:id]])
+      
+      hash = def_lang['en']
+      hash = hash.deep_merge(cur_lang[params[:id]]) if cur_lang
 
       txt = hash.ya2yaml
 
