@@ -11,9 +11,9 @@ class SessionsController < ApplicationController
         cookies[:auth_token] = { :value => self.current_user.remember_token, :expires => self.current_user.remember_token_expires_at }
       end
       redirect_back_or_default('/')
-      flash[:notice] = "Вы успешно вошли"
+      flash[:notice] = t('message.session.logged', :user_name => h(params[:login]))
     else
-      flash[:notice] = "Имя пользователя или пароль не верны. Возможно вы не произвели активацию учетной записи."
+      flash[:notice] = t('message.session.failed')
       render :action => 'new'
     end
   end
@@ -22,7 +22,7 @@ class SessionsController < ApplicationController
     self.current_user.forget_me if logged_in?
     cookies.delete :auth_token
     reset_session
-    flash[:notice] = "Вы успешно вышли."
+    flash[:notice] = t('message.session.logged_out')
     redirect_back_or_default('/')
   end
 end

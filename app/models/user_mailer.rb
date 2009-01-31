@@ -1,18 +1,18 @@
 class UserMailer < ActionMailer::Base
   def signup_notification(user)
     setup_email(user)
-    @subject    += 'Акивация аккаунта для LVEE'
-  
+    @subject    += t('mail.subject.activation')
+
     @body[:url]  = "http://lvee.org/activate/#{user.activation_code}"
-  
+
   end
-  
+
   def activation(user)
     setup_email(user)
-    @subject    += 'Ваш аккаунт для LVEE был активирован!'
+    @subject    += t('mail.subject.activation_complete')
     @body[:url]  = "http://lvee.org/"
   end
-  
+
   protected
     def setup_email(user)
       @recipients  = "#{user.email}"

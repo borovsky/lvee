@@ -26,13 +26,13 @@ class ApplicationController < ActionController::Base
   def admin_required
     login_required
     return if performed?
-    render :text=>"Access denied", :status=>403  unless current_user.admin?
+    render :text=>t('message.common.access_denied'), :status=>403  unless current_user.admin?
   end
 
   def editor_required
     login_required
     return if performed?
-    render :text=>"Access denied", :status=>403  unless current_user.editor?
+    render :text=>t('message.common.access_denied'), :status=>403  unless current_user.editor?
   end
 
   def default_url_options(options={})

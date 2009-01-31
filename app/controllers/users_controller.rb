@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     if @user.save
       UserMailer.deliver_signup_notification(@user)
       self.current_user = @user
-      flash[:notice] = "Спасбио за регистрацию!"
+      flash[:notice] = t('message.user.registred')
       redirect_to user_path(:id => current_user.id, :lang => params[:lang])
     else
       render :action => 'new'
@@ -29,7 +29,7 @@ class UsersController < ApplicationController
     if user && !user.active?
       user.activate
       self.current_user = user
-      flash[:notice] = "Регистрация завершена!"
+      flash[:notice] = t('message.user.activated')
       redirect_to user_path(:id=>current_user)
     else
       redirect_back_or_default('/')
@@ -38,14 +38,14 @@ class UsersController < ApplicationController
 
   def show
     user_have_access = (current_user.id.to_s == params[:id]) || current_user.admin?
-    return render :text=>"Access denied", :status => 403 unless user_have_access
+    return render :text=>t('message.common.access_denied'), :status => 403 unless user_have_access
     @user = User.find params[:id]
   end
 
   def edit
     @user = User.find params[:id]
     unless @user.editable_by? current_user
-      return render :text =>"Access denied", :status=> 403
+      return render :text =>t('message.common.access_denied'), :status=> 403
     end
   end
 
@@ -53,10 +53,10 @@ class UsersController < ApplicationController
     @user = User.find params[:id]
 
     unless @user.editable_by?(current_user)
-      return render :text =>"Access denied", :status=> 403
+      return render :text =>t('message.common.access_denied'), :status=> 403
     end
 
-    flash[:notice] = 'Вы не можете изменять имя пользователя' if params[:user].delete(:login)
+    flash[:notice] = t('message.user.login_change') if params[:user].delete(:login)
     if(@user.update_attributes(params[:user]))
       redirect_to user_path(:id=>@user)
     else

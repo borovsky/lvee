@@ -23,7 +23,9 @@
       activate: |-
         Please visit following URL for activation your account:
         {{url}}
-      
+    subject:
+      activation: 'Account activation for LVEE'
+      activation_complete: "Your account for LVEE was activated"      
   label:
     common:
       back: "Back"
@@ -104,13 +106,24 @@
       updated: "Language updated successfully"
     conference:
       status: "Registration to conference {{status}}."
+      created: "Conference created successfully"
+      updated: "Conference updated successfully"
     user:       
       required_fields: "Fields marked with red asterisk ({{mark}}) are obligatory for filling in."
       describe: "User: {{full_name}} ({{country}}, {{city}})..."
+      registred: "Thank you for registration"
+      activated: "Registration completed"
+      login_change: "You can't change your login"
+    news:
+      created: "News created successfully"
+      updated: "News updated successfully"
     session:
       logged: "You logged in as {{user_name}}"
+      logged_out: "You logged out successfully"
+      failed: "Login or password incorrect. May be you didn't activate your account"
     common:
       sure: "Are you sure?"
+      access_denied: "Access denied"
 
   number:
     # Used in number_with_delimiter()

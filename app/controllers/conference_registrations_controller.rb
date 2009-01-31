@@ -26,12 +26,12 @@ class ConferenceRegistrationsController < ApplicationController
 
   def edit
     @registration = ConferenceRegistration.find_by_id_and_user_id(params[:id], params[:user_id])
-    render :text => 'Access denied', :status => 403 unless @registration
+    render :text => t('message.common.access_denied'), :status => 403 unless @registration
   end
 
   def update
     @registration = ConferenceRegistration.find_by_id_and_user_id(params[:id], params[:user_id])
-    return render :text => 'Access denied', :status => 403 unless @registration
+    return render :text => t('message.common.access_denied'), :status => 403 unless @registration
     if @registration.update_attributes(params[:conference_registration])
       redirect_to user_conference_registration_path(:user_id => params[:user_id], :id => params[:id])
     else
@@ -41,12 +41,12 @@ class ConferenceRegistrationsController < ApplicationController
 
   def show
     @registration = ConferenceRegistration.find_by_id_and_user_id(params[:id], params[:user_id])
-    return render :text => 'Access denied', :status => 403 unless @registration
+    return render :text => t('message.common.access_denied'), :status => 403 unless @registration
   end
 
   protected
   def current_user_only
-    render :text => "Access denied", :status=>403 unless params[:user_id].to_s == current_user.id.to_s
+    render :text => t('message.common.access_denied'), :status=>403 unless params[:user_id].to_s == current_user.id.to_s
   end
 
   def default_url_options(options={})
