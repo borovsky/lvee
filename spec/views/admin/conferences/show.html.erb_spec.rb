@@ -17,19 +17,23 @@ describe "/admin/conferences/show.html.erb" do
 
   it "should render if conference is opened with check requested message IDs" do
     @conference.stubs(:registration_opened).returns(true)
+    template.expects(:t).with('label.conference.show', anything).returns('LVEE')
     template.expects(:t).with('label.conference.registration_opened').returns('opened')
     template.expects(:t).with('message.conference.status', anything).returns("")
     template.expects(:t).with('label.common.edit').returns('Edit')
     template.expects(:t).with('label.common.back').returns('Back')
+    template.expects(:t).with('date.none').returns('None').times(2)
     render "/admin/conferences/show.html.erb"
   end
 
   it "should render attributes in closed with check requested message IDs" do
     @conference.stubs(:registration_opened).returns(false)
+    template.expects(:t).with('label.conference.show', anything).returns('LVEE')
     template.expects(:t).with('label.conference.registration_closed').returns('closed')
     template.expects(:t).with('message.conference.status', anything).returns("")
     template.expects(:t).with('label.common.edit').returns('Edit')
     template.expects(:t).with('label.common.back').returns('Back')
+    template.expects(:t).with('date.none').returns('None').times(2)
     render "/admin/conferences/show.html.erb"
   end
 
