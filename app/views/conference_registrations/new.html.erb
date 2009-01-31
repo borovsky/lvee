@@ -1,15 +1,16 @@
-<h1>Conference registration for <%= @registration.conference.name %>></h1>
+<h1><%= t('label.conference_registration.title', :conference =>@registration.conference.name)%></h1>
 
 <%= error_messages_for :registration %>
 
-<% form_for(@registration, :url => user_conference_registrations_path(params[:user_id]) ) do |f| %>
+<% form_for(@registration, :url =>
+user_conference_registrations_path(:user_id =>params[:user_id]) ) do |f| %>
 <%= f.hidden_field(:conference_id )%>
 <%= render :partial => 'form', :locals => {:f => f}%>
 
 <p>
-  <%= f.submit "Сохранить" %>
+  <%= f.submit t('label.common.save') %>
 </p>
 
 <% end %>
 
-<%= link_to 'To your profile', user_path(current_user) %>
+<%= link_to t('label.user.to_profile'), user_path(:id => current_user) %>

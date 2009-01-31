@@ -58,7 +58,7 @@ describe ConferenceRegistrationsController do
       Conference.stubs(:find).with('1').returns(conference)
 
       post 'create', :user_id => 1, :conference_registration => params
-      assert_redirected_to user_conference_registration_path(reg.user_id, reg.id)
+      assert_redirected_to user_conference_registration_path(:user_id => reg.user_id, :id => reg.id)
     end
 
     it "should render 'new', if validation failed" do
@@ -104,7 +104,7 @@ describe ConferenceRegistrationsController do
       ConferenceRegistration.stubs(:find_by_id_and_user_id).with('42', '1').returns(reg)
       reg.expects(:update_attributes).with('proposition' => 'test').returns(true)
       post 'update', :user_id => '1', :id => 42, :conference_registration => {:proposition => 'test'}
-      response.should redirect_to(user_conference_registration_path(@user.id, 1))
+      response.should redirect_to(user_conference_registration_path(:user_id =>@user.id, :id => 42))
     end
 
     it "should render edit if registration isn't valid" do

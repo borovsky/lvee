@@ -150,7 +150,7 @@ describe Admin::ConferencesController do
         login_as @admin
         Conference.stubs(:new).returns(mock_conference(:save => true))
         post :create, :conference => {}
-        response.should redirect_to(admin_conference_url(mock_conference))
+        response.should redirect_to(admin_conference_url(:id => mock_conference.id))
       end
 
     end
@@ -207,7 +207,7 @@ describe Admin::ConferencesController do
         login_as @admin
         Conference.stubs(:find).returns(mock_conference(:update_attributes => true))
         put :update, :id => "1"
-        response.should redirect_to(admin_conference_url(mock_conference))
+        response.should redirect_to(admin_conference_url(:id=>mock_conference))
       end
 
     end

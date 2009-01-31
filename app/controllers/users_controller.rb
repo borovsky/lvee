@@ -1,7 +1,7 @@
 # Controller for work with users: create(signup), update, delete, activate
 
 class UsersController < ApplicationController
-  before_filter :login_required, :only => [:show, :index, :edit, :update]
+  before_filter :login_required, :only => [:show, :index, :edit, :update, :current]
 
   # render new.rhtml
   def new
@@ -20,13 +20,17 @@ class UsersController < ApplicationController
     end
   end
 
+  def current
+    redirect_to user_path(current_user)
+  end
+
   def activate
     user = params[:activation_code].blank? ? false : User.find_by_activation_code(params[:activation_code])
     if user && !user.active?
       user.activate
       self.current_user = user
       flash[:notice] = "Регистрация завершена!"
-      redirect_to user_path(current_user)
+      redirect_to user_path(:id=>current_user)
     else
       redirect_back_or_default('/')
     end
@@ -54,7 +58,7 @@ class UsersController < ApplicationController
 
     flash[:notice] = 'Вы не можете изменять имя пользователя' if params[:user].delete(:login)
     if(@user.update_attributes(params[:user]))
-      redirect_to user_path(@user)
+      redirect_to user_path(:id=>@user)
     else
       render :action => "users/edit"
     end

@@ -1,0 +1,345 @@
+--- 
+ru: 
+  activerecord: 
+    errors: 
+      messages: 
+        accepted: "нужно подтвердить"
+        blank: "не может быть пустым"
+        confirmation: "не совпадает с подтверждением"
+        empty: "не может быть пустым"
+        equal_to: "может иметь лишь значение, равное {{count}}"
+        even: "может иметь лишь нечетное значение"
+        exclusion: "имеет зарезервированное значение"
+        greater_than: "может иметь значение большее {{count}}"
+        greater_than_or_equal_to: "может иметь значение большее или равное {{count}}"
+        inclusion: "имеет непредусмотренное значение"
+        invalid: "имеет неверное значение"
+        less_than: "может иметь значение меньшее чем {{count}}"
+        less_than_or_equal_to: "может иметь значение меньшее или равное {{count}}"
+        not_a_number: "не является числом"
+        odd: "может иметь лишь четное значение"
+        taken: "уже существует"
+        too_long: 
+          few: "слишком большой длины (не может быть больше чем {{count}} символа)"
+          many: "слишком большой длины (не может быть больше чем {{count}} символов)"
+          one: "слишком большой длины (не может быть больше чем {{count}} символ)"
+          other: "слишком большой длины (не может быть больше чем {{count}} символа)"
+        too_short: 
+          few: "недостаточной длины (не может быть меньше {{count}} символов)"
+          many: "недостаточной длины (не может быть меньше {{count}} символов)"
+          one: "недостаточной длины (не может быть меньше {{count}} символа)"
+          other: "недостаточной длины (не может быть меньше {{count}} символа)"
+        wrong_length: 
+          few: "неверной длины (может быть длиной ровно {{count}} символа)"
+          many: "неверной длины (может быть длиной ровно {{count}} символов)"
+          one: "неверной длины (может быть длиной ровно {{count}} символ)"
+          other: "неверной длины (может быть длиной ровно {{count}} символа)"
+      template: 
+        body: "Проблемы возникли со следующими полями:"
+        header: 
+          few: "{{model}}: сохранение не удалось из-за {{count}} ошибок"
+          many: "{{model}}: сохранение не удалось из-за {{count}} ошибок"
+          one: "{{model}}: сохранение не удалось из-за {{count}} ошибки"
+          other: "{{model}}: сохранение не удалось из-за {{count}} ошибки"
+  date: 
+    abbr_day_names: 
+      - Вс
+      - Пн
+      - Вт
+      - Ср
+      - Чт
+      - Пт
+      - Сб
+    abbr_month_names: 
+      - ~
+      - янв.
+      - февр.
+      - марта
+      - апр.
+      - мая
+      - июня
+      - июля
+      - авг.
+      - сент.
+      - окт.
+      - нояб.
+      - дек.
+    day_names: 
+      - воскресенье
+      - понедельник
+      - вторник
+      - среда
+      - четверг
+      - пятница
+      - суббота
+    formats: 
+      default: "%d.%m.%Y"
+      long: "%d %B %Y"
+      short: "%d %b"
+    month_names: 
+      - ~
+      - января
+      - февраля
+      - марта
+      - апреля
+      - мая
+      - июня
+      - июля
+      - августа
+      - сентября
+      - октября
+      - ноября
+      - декабря
+    none: None
+    order: 
+      - !ruby/symbol day
+      - !ruby/symbol month
+      - !ruby/symbol year
+    standalone_abbr_month_names: 
+      - ~
+      - янв.
+      - февр.
+      - март
+      - апр.
+      - май
+      - июнь
+      - июль
+      - авг.
+      - сент.
+      - окт.
+      - нояб.
+      - дек.
+    standalone_day_names: 
+      - Воскресенье
+      - Понедельник
+      - Вторник
+      - Среда
+      - Четверг
+      - Пятница
+      - Суббота
+    standalone_month_names: 
+      - ~
+      - Январь
+      - Февраль
+      - Март
+      - Апрель
+      - Май
+      - Июнь
+      - Июль
+      - Август
+      - Сентябрь
+      - Октябрь
+      - Ноябрь
+      - Декабрь
+  datetime: 
+    distance_in_words: 
+      about_x_hours: 
+        few: "около {{count}} часов"
+        many: "около {{count}} часов"
+        one: "около {{count}} часа"
+        other: "около {{count}} часа"
+      about_x_months: 
+        few: "около {{count}} месяцев"
+        many: "около {{count}} месяцев"
+        one: "около {{count}} месяца"
+        other: "около {{count}} месяца"
+      about_x_years: 
+        few: "около {{count}} лет"
+        many: "около {{count}} лет"
+        one: "около {{count}} года"
+        other: "около {{count}} лет"
+      half_a_minute: "меньше минуты"
+      less_than_x_minutes: 
+        few: "меньше {{count}} минут"
+        many: "меньше {{count}} минут"
+        one: "меньше {{count}} минуты"
+        other: "меньше {{count}} минуты"
+      less_than_x_seconds: 
+        few: "меньше {{count}} секунд"
+        many: "меньше {{count}} секунд"
+        one: "меньше {{count}} секунды"
+        other: "меньше {{count}} секунды"
+      over_x_years: 
+        few: "больше {{count}} лет"
+        many: "больше {{count}} лет"
+        one: "больше {{count}} года"
+        other: "больше {{count}} лет"
+      x_days: 
+        few: "{{count}} дня"
+        many: "{{count}} дней"
+        one: "{{count}} день"
+        other: "{{count}} дня"
+      x_minutes: 
+        few: "{{count}} минуты"
+        many: "{{count}} минут"
+        one: "{{count}} минуту"
+        other: "{{count}} минуты"
+      x_months: 
+        few: "{{count}} месяца"
+        many: "{{count}} месяцев"
+        one: "{{count}} месяц"
+        other: "{{count}} месяца"
+      x_seconds: 
+        few: "{{count}} секунды"
+        many: "{{count}} секунд"
+        one: "{{count}} секунда"
+        other: "{{count}} секунды"
+    prompts: 
+      day: День
+      hour: Часов
+      minute: Минут
+      month: Месяц
+      second: Секунд
+      year: Год
+  label: 
+    common: 
+      back: Назад
+      create: Создать
+      delete: Удалить
+      edit: Редактировать
+      save: Сохранить
+      show: Показать
+      update: Обновить
+      upload: Upload
+    conference: 
+      creating: "Создание конференции"
+      finish_date: "Дата окончания"
+      listing: "Список конференций"
+      name: Название
+      new: "Новая конференция"
+      participated: "Вы принимали участие"
+      register: Зарегистрироваться
+      registration_closed: закрыта
+      registration_opened: открыта
+      registration_opened?: "Регистрация открыта?"
+      show: "Конференция {{name}} ({{start_date}} - {{finish_date}}"
+      start_date: "Дата начала"
+      upcoming: "Ближайшие конференции"
+    conference_registration: 
+      index: "Регистрации на конференции"
+      propositions: "Ваши предложения"
+      quantity: "Количество участников"
+      title: "Регистрация на конференцию {{conference}}"
+    language: 
+      creating: "Создание языка"
+      editing: "Редактирование языка"
+      id: "двух-буквенный идентификатор языка"
+      listing: "Список языков"
+      name: "Полное название языка на английском"
+      new: "Новый язык"
+      published: "Язык опубликован?"
+      upload: "Загрузить язык"
+    news: 
+      abstract: Резюме
+      add: "Добавить новости"
+      all_news: "Все новости"
+      author: Автор
+      back_to_list: "Назад к списку новостей"
+      body: "Содержимое новости"
+      creating: "Создание новости"
+      editing: "Редактирование новости"
+      last_news: "Последние новости"
+      publish: "Опубликовать новость"
+      title: Заголовок
+      unpublished: "Не опубликованно"
+    session: 
+      login: Логин
+      loginButton: Войти
+      logout: Выйти
+      password: Пароль
+      rememberMe: "Запомнить меня"
+    user: 
+      city: Город
+      country: Страна
+      create: Зарегистрироваться
+      edit: "Редактировать профиль"
+      email: "Адрес электронной почты"
+      first_name: Имя
+      last_name: Фамилия
+      login: Логин
+      occupation: "Место работы/учёбы, область деятельности"
+      password: Пароль
+      password_confirmation: "Подтверждение пароль"
+      projects: "Проекты Free Software / Open Source (FS/OS), в которых вы принимали -и/или принимаете участие и ваша роль в них"
+      register: Зарегистрироваться
+      title: "{{full_name}} ({{login}}), ваш профиль в твоих руках"
+      to_profile: "На ваш профиль"
+  mail: 
+    account: 
+      activate: |-
+          Пожалуйста откройте следующий адрес для активации вашего аккаунта:
+          {{url}}
+      activated: "Ваш аккаунт был активирован"
+      created: "Ваш аккаунт был создан"
+      edit_data: |-
+          Вы можете зайти и отредактировать ваши данные:
+          {{url}}
+      information: |-
+          Имя пользователя: <%= @user.login %>
+          Пароль:           <%= @user.password %>
+    signature: |-
+        -- 
+        С уважением, робот
+    title: "Здравствуйте, {{full_name}}"
+  menu: 
+    about: "О конференции"
+    contacts: Контакты
+    main: Главная
+    profile: Профиль
+    reports: Отчёты
+    sponsors: Спонсоры
+  message: 
+    common: 
+      sure: "Вы уверены?"
+    conference: 
+      status: "Регистрация на конференцию: {{status}}."
+    language: 
+      created: "Язык успешно создан"
+      updated: "Язык успешно обновлён"
+    session: 
+      logged: "Вы вошли как {{user_name}}"
+    user: 
+      describe: "Пользователь: {{full_name}} ({{country}}, {{city}})..."
+      required_fields: "Поля отмеченные красной звёздочкой ({{mark}}) обязательны для заполнения."
+  number: 
+    currency: 
+      format: 
+        delimiter: " "
+        format: "%n %u"
+        precision: 2
+        separator: "."
+        unit: руб.
+    format: 
+      delimiter: " "
+      precision: 3
+      separator: "."
+    human: 
+      format: 
+        delimiter: ""
+        precision: 1
+      storage_units: 
+        - байт
+        - КБ
+        - МБ
+        - ГБ
+        - ТБ
+    percentage: 
+      format: 
+        delimiter: ""
+    precision: 
+      format: 
+        delimiter: ""
+  support: 
+    array: 
+      last_word_connector: " и "
+      sentence_connector: и
+      skip_last_comma: true
+      two_words_connector: " и "
+      words_connector: ", "
+  time: 
+    am: утра
+    formats: 
+      default: "%a, %d %b %Y, %H:%M:%S %z"
+      long: "%d %B %Y, %H:%M"
+      short: "%d %b, %H:%M"
+    pm: вечера

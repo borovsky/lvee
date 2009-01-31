@@ -64,6 +64,8 @@ Rails::Initializer.run do |config|
   config.gem "RedCloth", :version => '4.1.1',
     :lib => 'redcloth'
   config.gem "calendar_date_select"
+  config.gem "ya2yaml"
+  config.gem "mocha"
 end
 
 LANGUAGES = ['by','ru','en','ua']

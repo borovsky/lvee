@@ -1,44 +1,10 @@
 <%= flashes_if_any %>
 
-<%= error_messages_for :user,
-:header_message => 'Регистрация не завершена',
-:message => 'Для завершения регистрации вы должны выполнить следующие требования:' %>
+<%= error_messages_for :user %>
 
 <% form_for :user, :url => users_path do |f| -%>
-  <p><label for="login">Login</label> <strong class="required">*</strong><br/>
-  <%= f.text_field :login %></p>
+  <%= render :partial =>"form", :locals => {:f => f } %>
 
- <p><label for="email">E-mail</label> <strong class="required">*</strong><br/>
-  <%= f.text_field :email %></p>
-
-  <p><label for="first_name">Имя</label> <strong class="required">*</strong><br/>
-  <%= f.text_field :first_name %></p>
-
-  <p><label for="last_name">Фамилия</label> <strong class="required">*</strong><br/>
-  <%= f.text_field :last_name %></p>
-
-  <p><label for="country">Страна</label> <strong class="required">*</strong><br/>
-  <%= f.country_select :country, ['Belarus', 'Ukraine', 'Russia'] %></p>
-
-  <p><label for="city">Населенный пункт</label> <strong class="required">*</strong><br/>
-  <%= f.text_field :city %></p>
-
-  <p><label for="location">Место работы/учебы и сфера деятельности</label> <strong class="required">*</strong><br/>
-  <%= f.text_field :occupation %></p>
-
-  <p><label for="projects">Проекты Free Software / Open Source (FS/OS), в которых вы принимали
-и/или принимаете участие и ваша роль в них</label><br/>
-  <%= f.text_area :projects, :style => 'width: 100%', :rows => 5 %></p>
-
-  <p><label for="password">Пароль</label> <strong class="required">*</strong><br/>
-  <%= f.password_field :password %></p>
-
-  <p><label for="password_confirmation">Подтвержедние пароля</label> <strong class="required">*</strong><br/>
-  <%= f.password_field :password_confirmation %></p>
-
-  <p> Поля обозначенные красной звездочкой (<strong class="required">*</strong>) обязательны для заплонения
-  </p>
-
-  <p><%= submit_tag 'Зарегистрироваться' %></p>
+  <p><%= submit_tag t('label.user.create') %></p>
 
 <% end -%>

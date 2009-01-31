@@ -1,14 +1,14 @@
-<h1>Editing conference</h1>
+<h1>t('label.conference.editing')</h1>
 
-<% form_for(@conference, :url => admin_conference_path(@conference)) do |f| %>
+<% form_for(@conference, :url => admin_conference_path(:id =>@conference)) do |f| %>
   <%= f.error_messages %>
 
 <%= render :partial => 'form', :locals => {:f => f}%>
 
 <p>
-  <%= f.submit "Update" %>
+  <%= f.submit t('label.common.update') %>
 </p>
 <% end %>
 
-<%= link_to 'Show', admin_conference_path(@conference) %> |
-<%= link_to 'Back', admin_conferences_path %>
+<%= link_to t('label.common.show'), admin_conference_path(:id => @conference) %> |
+<%= link_to t('label.common.back'), admin_conferences_path %>

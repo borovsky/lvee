@@ -10,7 +10,7 @@ describe "/news/index.html.erb" do
   end
 
   it "should render list of news" do
-    template.stubs(:current_user=>model_stub(User, :site_editor? => true))
+    template.stubs(:current_user=>model_stub(User, :editor? => true))
     render "/news/index.html.erb"
   end
 end

@@ -1,19 +1,27 @@
 <%= flashes_if_any %>
 
-<h1>Последние новости</h1>
-
+<h1><%= t('label.news.last_news')%></h1>
 
 <% for news in @news %>
-<h2><%=h news.title %></h2>
+  <h2><%=h news.title %></h2>
+  <% unless news.published -%>
+    <p><%= t('label.news.unpublished')%></p>
+  <% end -%>
 
-<%= news.lead %>
+  <%= textilize(news.lead) %>
 
-<%= news.user.full_name %>
+  <%= news.user.full_name %>
 
+  <% if current_user.editor? -%>
+    <p><%= link_to t('label.common.edit'), news_item_path(:id => news) %> |
+      <%= link_to t('label.common.delete'), news_item_path(:id => news),
+      :method => :delete, :confirm =>t("message.common.sure") %>
+    </p>
+  <% end -%>
+<hr />
 <% end %>
 
-<hr />
 
-<% if current_user.site_editor? %>
-<%= link_to 'Добавить новость', new_news_item_path %>
+<% if current_user.editor? %>
+<%= link_to t('label.news.add'), new_news_item_path %>
 <% end %>

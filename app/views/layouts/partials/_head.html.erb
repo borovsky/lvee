@@ -18,11 +18,11 @@
 
 <div class="header">
   <div class="lang">
-    select language: <%= links_to_languages LANGUAGES %>  
+    <%= links_to_languages %>
   </div>
   <a href="http://lvee.org"><img src="/images/head-lvee.png" alt="Linux Vacation Eastern Europe in Minsk Belarus" /></a>
 </div>
 
 <div class="content">
 
-  <%= render(:partial => "layouts/partials/menu#{('_' + params[:lang]) if params[:lang]}") %>
+  <%= render(:partial => "layouts/partials/menu") %>

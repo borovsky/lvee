@@ -14,14 +14,16 @@ describe Admin::UsersController do
 
   describe 'index' do
     it "should be accessible by right URL" do
-      params_from(:get, '/admin/users').should == {
+      params_from(:get, '/ru/admin/users').should == {
         :controller => 'admin/users',
         :action => 'index',
+        :lang => 'ru'
       }
-      params_from(:get, '/admin/users.csv').should == {
+      params_from(:get, '/ru/admin/users.csv').should == {
         :controller => 'admin/users',
         :action => 'index',
         :format => 'csv',
+        :lang => 'ru'
       }
     end
 
@@ -83,10 +85,11 @@ describe Admin::UsersController do
 
   describe "destroy" do
     it "should be accessible by right URL" do
-      params_from(:delete, '/admin/users/42').should == {
+      params_from(:delete, '/ru/admin/users/42').should == {
         :controller => 'admin/users',
         :action => 'destroy',
         :id=>'42',
+        :lang=> 'ru'
       }
     end
     it "should forbid delete user if user is not admin" do

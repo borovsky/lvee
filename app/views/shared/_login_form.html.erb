@@ -1,13 +1,12 @@
-
 <% form_tag session_path do -%>
-<p><label for="login">Имя пользователя</label><br/>
+<p><label for="login"><%=t('label.session.login') %></label><br/>
 <%= text_field_tag 'login' %></p>
 
-<p><label for="password">Пароль</label><br/>
+<p><label for="password"><%= t('label.session.password') %></label><br/>
 <%= password_field_tag 'password' %></p>
 
-<p><label for="remember_me">Запомнить меня:</label>
+<p><label for="remember_me"><%= t('label.session.rememberMe') %>:</label>
 <%= check_box_tag 'remember_me' %></p>
 
-<p><%= submit_tag 'Войти' %></p>
+<p><%= submit_tag t('label.session.loginButton') %></p>
 <% end -%>

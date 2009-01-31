@@ -4,6 +4,7 @@ ENV["RAILS_ENV"] = "test"
 require File.expand_path(File.dirname(__FILE__) + "/../config/environment")
 require 'spec'
 require 'spec/rails'
+require 'i18n'
 
 Spec::Runner.configure do |config|
   # If you're not using ActiveRecord you should remove these
@@ -77,10 +78,41 @@ class Spec::Rails::Example::ControllerExampleGroup
   def login_as(user)
     @controller.stubs(:current_user).returns(user)
   end
+
+  %w(get post put delete head).each do |method|
+    class_eval <<-EOV, __FILE__, __LINE__
+      def #{method}(action, params = {}, session = nil, flash = nil)
+        @request.env['REQUEST_METHOD'] = '#{method.upcase}' if defined?(@request)
+        params = {:lang=>'en'}.merge(params)
+        process(action, params, session, flash)
+      end
+    EOV
+  end
 end
 
 class Spec::Rails::Example::ViewExampleGroup
   def login_as(user)
     template.stubs(:current_user).returns(user)
+  end
+end
+
+I18n.class_eval(<<-END
+  class << self
+    def translate(key, options = {})
+      locale = options.delete(:locale) || I18n.locale
+      backend.translate(locale, key, options)
+    end
+
+  end
+END
+)
+
+module ActionView::Helpers::TranslationHelper
+  def translate(key, options = {})
+    I18n.translate(key, options)
+  end
+
+  def t(key, options = {})
+    I18n.translate(key, options)
   end
 end

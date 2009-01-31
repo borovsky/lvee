@@ -13,7 +13,7 @@ describe "/news/edit.html.erb" do
   it "should render edit form" do
     render "/news/edit.html.erb"
 
-    response.should have_tag("form[action=#{news_item_path(@news)}][method=post]") do
+    response.should have_tag("form[action=#{news_item_path(:id => @news)}][method=post]") do
     end
   end
 end

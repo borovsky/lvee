@@ -4,11 +4,12 @@ describe "/news/show.html.erb" do
   before(:each) do
     assigns[:news] = @news = model_stub(News,
       :title => 'xyz',
-      :created_at => Time.new
+      :created_at => Time.new,
+      :user => stub(:full_name => "Test User")
       )
   end
 
-  it "should render attributes in <p>" do
+  it "should render" do
     render "/news/show.html.erb"
   end
 end

@@ -2,7 +2,7 @@
 <% for user in @users %>
 <tr id="<%= dom_id(user) %>">
   <td><%= h user.login %></td>
-  <td><%= link_to user.full_name, user_path(user) %></td>
+  <td><%= link_to user.full_name, user_path(:id => user) %></td>
   <td>
     <% params = {:controller=>'admin/users', :action=>'set_role', :id => user.id} -%>
     <% form_remote_tag(:html => {:id => 'form_'+dom_id(user)}, :url=>params) do -%>
@@ -12,8 +12,8 @@
     <% end -%>
   </td>
   <td>
-    <%= link_to_remote 'delete', :url => user_path(user), :method =>
-    :delete, :confirm => 'Are you sure?' %>
+    <%= link_to_remote 'delete', :url => admin_user_path(:id => user), :method =>
+    :delete, :confirm => t('message.common.sure') %>
     </td>
   <% end %>
 </table>

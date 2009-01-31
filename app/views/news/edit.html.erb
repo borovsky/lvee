@@ -1,28 +1,14 @@
-<h1>Создание новости</h1>
+<h1><%= t('label.news.editing')%></h1>
 
 <%= error_messages_for :news %>
 
-<% form_for(@news, :url => news_item_path(@news)) do |f| %>
-  <p>
-    <b>Заголовок</b><br />
-    <%= f.text_field :title %>
-  </p>
+<% form_for(@news, :url => news_item_path(:id => @news)) do |f| %>
+<%= render :partial => "/news/form", :locals => {:f => f} %>
 
-
-  <p>
-    <b>Лид</b><br />
-    <%= f.text_area :lead %>
-  </p>
-
-  <p>
-    <b>Текст</b><br />
-    <%= f.text_area :body %>
-  </p>
-
-  <p>
-    <%= f.submit "Сохранить" %>
-  </p>
+<p>
+  <%= f.submit t('label.common.save') %>
+</p>
 <% end %>
 
-<%= link_to 'Показать', news_item_path(@news) %> |
-<%= link_to 'Список новостей', news_path %>
+<%= link_to t('label.common.show'), news_item_path(:id => @news) %> |
+<%= link_to t('label.news.back_to_list'), news_path %>

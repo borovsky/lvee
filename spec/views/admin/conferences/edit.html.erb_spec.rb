@@ -10,7 +10,7 @@ describe "/admin/conferences/edit.html.erb" do
   it "should render edit form" do
     render "/admin/conferences/edit.html.erb"
 
-    response.should have_tag("form[action=#{admin_conference_path(@conference)}][method=post]") do
+    response.should have_tag("form[action=#{admin_conference_path(:id => @conference)}][method=post]") do
     end
   end
 end

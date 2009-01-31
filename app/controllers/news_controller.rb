@@ -3,7 +3,11 @@ class NewsController < ApplicationController
   # GET /news
   # GET /news.xml
   def index
-    @news = News.published.find(:all)
+    if(current_user && current_user.editor?)
+      @news = News.find(:all)
+    else
+      @news = News.published.find(:all)
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -65,7 +69,7 @@ class NewsController < ApplicationController
     respond_to do |format|
       if @news.update_attributes(params[:news])
         flash[:notice] = 'Новость была успешно изменена.'
-        format.html { redirect_to(news_item_path(@news)) }
+        format.html { redirect_to(news_item_path(:id=>@news)) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

@@ -7,5 +7,35 @@ class ApplicationController < ActionController::Base
 
   helper :all
 
+  before_filter :language_select
+
   protect_from_forgery # :secret => 'dc50c44338f5eba496ede18e9ea29cb1'
+
+  protected
+
+  def language_select
+    lang = params[:lang] || session[:lang] || I18n.default_locale
+    #FIXME
+    I18n.load_path = Dir.glob(LOCALE_DIR+ "*.yml")
+    I18n.reload!
+    I18n.locale = lang
+
+    session[:lang] = lang
+  end
+
+  def admin_required
+    login_required
+    return if performed?
+    render :text=>"Access denied", :status=>403  unless current_user.admin?
+  end
+
+  def editor_required
+    login_required
+    return if performed?
+    render :text=>"Access denied", :status=>403  unless current_user.editor?
+  end
+
+  def default_url_options(options={})
+    {:lang=>I18n.locale}
+  end
 end

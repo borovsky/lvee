@@ -1,19 +1,19 @@
-<p>
-  <b>Name</b><br />
+ <p>
+  <b><%= t('label.conference.name')%></b><br />
   <%= f.text_field :name %>
 </p>
 
 <p>
-  <b>Start date</b><br />
+  <b><%= t('label.conference.start_date')%></b><br />
   <%= f.calendar_date_select :start_date %>
 </p>
 
 <p>
-  <b>Finish date</b><br />
+  <b><%= t('label.conference.finish_date')%></b><br />
   <%= f.calendar_date_select :finish_date %>
 </p>
 
 <p>
-  <b>Registration opened?</b><br />
+  <b><%= t('label.conference.registration_opened?')%></b><br />
   <%= f.check_box :registration_opened %>
 </p>

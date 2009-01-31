@@ -1,0 +1,22 @@
+<h1><%= t('label.language.listing')%></h1>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+  </tr>
+
+<% for language in @languages %>
+  <tr>
+    <td><%= h language.name %></td>
+    <td><%= h language.description %></td>
+    <td><%= link_to t('label.common.show'), editor_language_path(:id => language) %></td>
+    <td><%= link_to t('label.common.edit'), edit_editor_language_path(:id => language) %></td>
+    <td><%= link_to t('label.common.delete'), editor_language_path(:id => language), :confirm => t('message.common.sure'), :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to t('label.language.new'), new_editor_language_path %>

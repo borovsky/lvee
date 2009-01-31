@@ -9,31 +9,30 @@ class User < ActiveRecord::Base
   # Virtual attribute for the unencrypted password
   attr_accessor :password
 
-  validates_presence_of :login, :message => '^Заполните поле Login'
-  validates_presence_of :email, :message => '^Заполните поле Email'
-  validates_presence_of :first_name, :message => '^Вы забыли указать своё имя'
-  validates_presence_of :last_name,  :message => '^Вы забыли указать фамилию'
-  validates_presence_of :country,    :message => '^Укажите вашу страну'
-  validates_presence_of :city,       :message => '^Укажите ваш населенный пункт'
+  validates_presence_of :login
+  validates_presence_of :email
+  validates_presence_of :first_name
+  validates_presence_of :last_name
+  validates_presence_of :country
+  validates_presence_of :city
 
-  validates_presence_of     :password,                   :if => :password_required?, :message => '^Вы должны выбрать пароль'
-  validates_presence_of     :password_confirmation,      :if => :password_required?, :message => '^Подтверждение пароля не совпадает с введенным паролем'
+  validates_presence_of     :password,                   :if => :password_required?
+  validates_presence_of     :password_confirmation,      :if => :password_required?
 
-  password_lenght_error = '^Пароль должен быть длинной от 4 до 40 символов'
-  validates_length_of       :password, :within => 4..40, :if => :password_required?, :allow_blank => true,
-                                                         :too_short => password_lenght_error, :too_long => password_lenght_error
+  validates_length_of       :password, :within => 4..40, :if => :password_required?, :allow_blank => true
 
-  validates_confirmation_of :password,                   :if => :password_required?, :message => '^Подтверждение пароля не совпадает с введенным паролем'
 
-  validates_format_of :email, :with => /^\S+\@(\[?)[a-zA-Z0-9\-\.]+\.([a-zA-Z]{2,4}|[0-9]{1,4})(\]?)$/ix , :message => '^Ваш Email содержит ошибки'
+  validates_confirmation_of :password,                   :if => :password_required?
 
-  validates_length_of       :login, :within => 3..40, :message => '^Пароль должен быть более 3х символов, но менее 40'
+  validates_format_of :email, :with => /^\S+\@(\[?)[a-zA-Z0-9\-\.]+\.([a-zA-Z]{2,4}|[0-9]{1,4})(\]?)$/ix
 
-  validates_length_of       :first_name, :within => 2..30, :allow_blank => true, :message => '^Имя должно быть указано'
-  validates_length_of       :last_name, :within => 2..30,  :allow_blank => true, :message => '^Фамилия должна быть указана'
+  validates_length_of       :login, :within => 3..40
 
-  validates_uniqueness_of   :login, :message => '^К сожалению выбранный вами логин кто-то уже занял'
-  validates_presence_of     :email, :case_sensitive => false, :message => '^К сожалению выбранный вами Email кто-то уже занял'
+  validates_length_of       :first_name, :within => 2..30, :allow_blank => true
+  validates_length_of       :last_name, :within => 2..30,  :allow_blank => true
+
+  validates_uniqueness_of   :login
+  validates_presence_of     :email, :case_sensitive => false
 
   before_save   :encrypt_password
   before_create :make_activation_code

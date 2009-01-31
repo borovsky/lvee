@@ -1,5 +1,7 @@
+<%= t("mail.title", :full_name => @user.full_name) %>
 
-<%= @user.full_name %>, ваша учетная запись была активирована.  
+<%= t('mail.account.activated') %>
 
-Вы можете войти и редактировать ваши данные:
-<%= @url %>
+<%= t('mail.account.edit_data', :url => @url)%>
+
+<%= t("mail.signature") %>

@@ -127,7 +127,7 @@ describe NewsController do
         News.stubs(:new).returns(n)
         n.expects(:user=).with(@editor)
         post :create, :news => {}
-        response.should redirect_to(news_item_url(n))
+        response.should redirect_to(news_item_url(:id=>n))
       end
 
     end
@@ -189,7 +189,7 @@ describe NewsController do
         mock = mock_news(:update_attributes => true)
         News.stubs(:find).returns(mock)
         put :update, :id => "1"
-        response.should redirect_to(news_item_url(mock))
+        response.should redirect_to(news_item_url(:id=>mock))
       end
 
     end

@@ -18,7 +18,7 @@ class ConferenceRegistrationsController < ApplicationController
     conference_id = @registration.conference_id
     return redirect_to :action => 'index' unless conference_id && Conference.find(conference_id).registration_opened
     if @registration.save
-      redirect_to user_conference_registration_path(@registration.user_id, @registration.id)
+      redirect_to user_conference_registration_path(:user_id => @registration.user_id, :id => @registration.id)
     else
       render :action => 'new'
     end
@@ -33,7 +33,7 @@ class ConferenceRegistrationsController < ApplicationController
     @registration = ConferenceRegistration.find_by_id_and_user_id(params[:id], params[:user_id])
     return render :text => 'Access denied', :status => 403 unless @registration
     if @registration.update_attributes(params[:conference_registration])
-      redirect_to user_conference_registration_path(1, 1)
+      redirect_to user_conference_registration_path(:user_id => params[:user_id], :id => params[:id])
     else
       render :action => 'edit', :id => params[:id]
     end
@@ -49,7 +49,8 @@ class ConferenceRegistrationsController < ApplicationController
     render :text => "Access denied", :status=>403 unless params[:user_id].to_s == current_user.id.to_s
   end
 
-  def default_url_options(options)
-    current_user ? {:user_id => current_user.id} : {}
+  def default_url_options(options={})
+    opts = current_user ? {:user_id => current_user.id} : {}
+    super(options).merge(opts)
   end
 end

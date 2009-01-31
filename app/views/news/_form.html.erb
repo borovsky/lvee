@@ -1,0 +1,19 @@
+<p>
+  <b><%= t('label.news.title')%></b><br />
+  <%= f.text_field :title %>
+</p>
+
+<p>
+  <b><%= t('label.news.abstract')%></b><br />
+  <%= f.text_area :lead, :rows => 4 %>
+</p>
+
+<p>
+  <b><%= t('label.news.body')%></b><br />
+  <%= f.text_area :body %>
+</p>
+
+<p>
+  <b><%= t('label.news.publish')%></b><br />
+  <%= f.check_box :published %>
+</p>

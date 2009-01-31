@@ -1,7 +1,9 @@
-Ваша учетная запись была создана.
+<%= t("mail.title", :full_name => @user.full_name) %>
 
-  Имя пользователя: <%= @user.login %>
-            Пароль: <%= @user.password %>
+<%= t("mail.account.created") %>
 
-Посетите этот адрес для активизации вашей учетной записи:
-<%= @url %>
+<%= t("mail.account.information", :login => @user.login, :password => @user.password) %>
+
+<%= t('mail.account.activate', :url => @url)%>
+
+<%= t("mail.signature") %>

@@ -17,6 +17,6 @@ describe "/conference_registrations/edit" do
     params[:user_id] = '1'
 
     render 'conference_registrations/edit'
-    response.should have_tag("form[action=#{user_conference_registration_path(1, 42)}][method=post]")
+    response.should have_tag("form[action=#{user_conference_registration_path(:user_id => 1, :id =>42)}][method=post]")
   end
 end

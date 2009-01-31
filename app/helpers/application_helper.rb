@@ -15,19 +15,7 @@ module ApplicationHelper
 
   # FIXME
   def format_date(time)
-    time ? time.strftime('%d.%m.%Y') : 'None'
-  end
-
-  def admin_required
-    login_required
-    return if performed?
-    render :text=>"Access denied", :status=>403  unless current_user.admin?
-  end
-
-  def editor_required
-    login_required
-    return if performed?
-    render :text=>"Access denied", :status=>403  unless current_user.editor?
+    time ? localize(time) : t("date.none")
   end
 
   def menu_item(text, url_opts, &block)
@@ -38,14 +26,13 @@ module ApplicationHelper
       current = controller.controller_name == url_opts[:controller]
     end
     url = url_for(url_opts)
-    if block_given?
-      content = capture(&block)
-      concat("<li#{current ? ' class="menu-place"' : ''}><a href=\"#{url}\">#{text}</a>", block.binding)
-      concat(content, block.binding) if current
-      concat("</li>", block.binding)
-    else
-      menu_html = "<li#{current ? ' class="menu-place"' : ''}><a href=\"#{url}\">#{text}</a></li>"
-    end
+
+    menu_html = "<li#{current ? ' class="menu-place"' : ''}><a href=\"#{url}\">#{text}</a>"
+    menu_html << capture(&block) if current && block_given?
+    menu_html << "</li>"
+
+    concat(menu_html) if block_given?
+
     menu_html
   end
 
@@ -60,13 +47,13 @@ module ApplicationHelper
     menu_html = "<a href=\"#{url}\" #{current ? ' class="menu-place"' : ''}>#{text}</a>"
   end
 
-  def links_to_languages(langs)
-    html = []
-    langs.each do |lang|
+  def links_to_languages()
+    langs = Language.published.map{|l| l.name}
+    html = langs.map do |lang|
       if controller.action_name
-        html << link_to_unless_current( lang, :controller => controller.controller_name, :action => controller.action_name, :lang => lang)
+        link_to_unless_current( lang, :controller => controller.controller_name, :action => controller.action_name, :lang => lang, :id => params[:id])
       else
-        html << link_to_unless_current( lang, :controller => controller.controller_name, :lang => lang)
+        link_to_unless_current( lang, :controller => controller.controller_name, :lang => lang, :id => params[:id])
       end
     end
     html.join(' ')

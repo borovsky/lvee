@@ -2,15 +2,19 @@
 
 <p><%=h @news.created_at %></p>
 
-<p><%=h @news.lead %></p>
+<p class="abstract"><%= textilize_without_paragraph(@news.lead) %></p>
 
-<p><%=h @news.body %></p>
+<div class="text">
+  <%=textilize(@news.body) %>
+</div>
 
 <p>
-  <b>Автор:</b>
-  <%=h @news.user_id %>
+  <b><%= t('label.news.author') %>:</b>
+  <%=h @news.user.full_name %>
 </p>
 
 
-<%= link_to 'Редактировать', edit_news_item_path(@news) %> |
-<%= link_to 'Назад', news_path %>
+<%= link_to t('label.common.edit'), edit_news_item_path(:id => @news.id) %> |
+<%= link_to t('label.common.delete'), news_item_path(:id =>@news.id),
+    :method => :delete, :confirm =>t("message.common.sure") %> |
+<%= link_to t('label.news.back_to_list'), news_path %>

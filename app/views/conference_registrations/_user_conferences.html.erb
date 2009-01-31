@@ -3,7 +3,7 @@
 <% available = Conference.available_conferences(regs.map {|c|
    c.conference}) %>
 <% unless regs.empty? -%>
-<h2>You have participated:</h2>
+<h2><%= t('label.conference.participated')%>:</h2>
 <ul>
 <% regs.each  do |reg| -%>
 <% conf = reg.conference -%>
@@ -17,13 +17,13 @@
 <% end -%>
 
 <% unless available.empty? -%>
-<h2>Upcoming conferences:</h2>
+<h2><%= t('label.conference.participated')%>:</h2>
 <ul>
   <% available.each  do |conf| -%>
   <li>
     <%= conf.name %> (<%= format_date(conf.start_date) %> -
     <%= format_date(conf.finish_date) %>)
-    <%= link_to "Register",
+    <%= link_to t('label.conference.register'),
     new_user_conference_registration_path(:user_id => user_id,
     :conference_id => conf.id)  %>
   </li>

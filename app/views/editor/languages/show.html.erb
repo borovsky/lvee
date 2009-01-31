@@ -1,0 +1,11 @@
+<% form_for(:language,
+             :url => {:controller => "editor/languages", :action =>
+             'upload', :id => @language.id},
+             :html => { :multipart => true }) do |form| %>
+  <%= t('label.language.upload')%>: <%= file_field_tag("language" ) %><br/>
+  <%= submit_tag(t('label.common.upload')) %>
+<% end %>
+
+
+<%= link_to t('label.common.edit'), edit_editor_language_path(:id => @language) %> |
+<%= link_to t('label.common.back'), editor_languages_path %>

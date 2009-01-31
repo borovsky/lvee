@@ -1,22 +1,26 @@
 ActionController::Routing::Routes.draw do |map|
+  map.root :controller => "main", :action=>"select_lang"
   map.connect 'activate/:activation_code', :controller => 'users', :action => 'activate' # FIXME other langs?
 
-
-  map.resources :users, :member => { :activate => :get } do |m|1
-    m.resources :conference_registrations, :controller => 'conference_registrations'
-  end
-  map.resource  :session
-  map.namespace :admin do |admin|
+  map.namespace :admin, :namespace => "", :path_prefix =>":lang", :name_prefix => "" do |admin|
     admin.resources :users
     admin.resources :conferences
   end
-  map.resources :news, :has_many => [:comments], :has_one => :user, :singular => 'news_item'
+  map.namespace :editor, :namespace => "", :path_prefix =>":lang", :name_prefix => "" do |editor|
+    editor.resources :languages
+  end
 
-  map.root :controller => "main", :lang => 'ru'
+  map.with_options :path_prefix =>":lang" do |ns|
+    ns.resources :users, :member => { :activate => :get } do |m|1
+      m.resources :conference_registrations, :controller => 'conference_registrations'
+    end
+    ns.resource  :session
 
+    ns.resources :news, :singular => 'news_item'
 
-  # Install the default routes as the lowest priority.
-  map.connect ':lang/:controller/:action/:id', :defaults => { :lang => 'ru' }, :lang => /[a-z]{2}/
-  map.connect ':lang/:controller/:action/:id.:format', :defaults => { :lang => 'ru' }, :lang => /[a-z]{2}/
+    ns.connect ':controller/:action/:id'
+    ns.connect ':controller/:action/:id.:format'
+  end
+  map.connect ':lang', :controller => "main", :action=>"index"
 
 end

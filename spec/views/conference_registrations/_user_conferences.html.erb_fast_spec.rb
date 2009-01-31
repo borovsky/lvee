@@ -11,7 +11,7 @@ describe "/conference_registrations/_user_conferences" do
     Conference.expects(:available_conferences).with([conf1]).returns([avail1])
 
     render 'conference_registrations/_user_conferences'
-    response.should have_tag("a[href=#{user_conference_registration_path(1, reg.id)}]", conf1.name)
+    response.should have_tag("a[href=#{user_conference_registration_path(:user_id =>1, :id =>reg.id)}]", conf1.name)
   end
 
 end

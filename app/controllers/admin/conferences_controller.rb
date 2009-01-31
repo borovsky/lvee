@@ -48,7 +48,7 @@ module Admin
       respond_to do |format|
         if @conference.save
           flash[:notice] = 'Conference was successfully created.'
-          format.html { redirect_to(admin_conference_path(@conference)) }
+          format.html { redirect_to(admin_conference_path(:id=>@conference.id)) }
           format.xml  { render :xml => @conference, :status => :created, :location => @conference }
         else
           format.html { render :action => "new" }
@@ -65,7 +65,7 @@ module Admin
       respond_to do |format|
         if @conference.update_attributes(params[:conference])
           flash[:notice] = 'Conference was successfully updated.'
-          format.html { redirect_to(admin_conference_path(@conference)) }
+          format.html { redirect_to(admin_conference_path(:id => @conference)) }
           format.xml  { head :ok }
         else
           format.html { render :action => "edit" }

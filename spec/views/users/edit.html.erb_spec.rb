@@ -12,11 +12,11 @@ describe "/users/edit.html.erb" do
   end
 
   it "should render new form" do
-    
+
     template.stubs(:current_user).returns(assigns[:user])
     render "/users/edit.html.erb"
 
-    response.should have_tag("form[action=?][method=post]", user_path(@user)) do
+    response.should have_tag("form[action=?][method=post]", user_path(:id => @user)) do
     end
   end
 end

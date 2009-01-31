@@ -2,16 +2,17 @@
   <div class="logpass" >
     <div>
       <% form_tag session_path do -%>
-      Имя пользователя <input type="text" name="login" />&nbsp; &nbsp; &nbsp; Пароль <input type="password" name="password" />&nbsp; &nbsp; 
-      <%= submit_tag 'go', :class => 'log-button' %>
+      <%= t('label.session.login') %>: <input type="text" name="login"/>&nbsp;&nbsp;&nbsp;
+      <%= t('label.session.password') %>: <input type="password" name="password" />&nbsp; &nbsp;
+      <%= submit_tag t('label.session.loginButton'), :class => 'log-button' %>
     <% end %>
     </div>
 
-    <%= link_to 'зарегистрироваться', '/ru/users/new' %> 
+    <%= link_to t('label.user.register'), new_user_path %>
   </div>
 <% else %>
   <div class="logpass" >
-    вы вошли как <%= link_to current_user.login, user_path(current_user) %> |
-    <%= link_to 'выйти', session_path, :method => :delete %>
+    <%= t('message.session.logged', :user_name => link_to(current_user.login, user_path(:id=>current_user.id))) %> |
+    <%= link_to t('label.session.logout'), session_path, :method => :delete %>
   </div>
 <% end %>

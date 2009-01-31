@@ -14,18 +14,20 @@ describe UsersController do
 
   describe 'new' do
     it "should be accessible by right URL" do
-      params_from(:get, '/users/new').should == {
+      params_from(:get, '/ru/users/new').should == {
         :controller => 'users',
-        :action => 'new'
+        :action => 'new',
+        :lang=>'ru'
       }
     end
   end
 
   describe 'create' do
     it "should be accessible by right URL" do
-      params_from(:post, '/users').should == {
+      params_from(:post, '/ru/users').should == {
         :controller => 'users',
-        :action => 'create'
+        :action => 'create',
+        :lang=>'ru'
       }
     end
     it "shouldn't save invalid user" do
@@ -58,7 +60,7 @@ describe UsersController do
       user.expects(:id).returns(69)
       user.expects(:to_s).returns('69')
       get :activate, :activation_code => '42'
-      assert_redirected_to '/users/69'
+      assert_redirected_to '/en/users/69'
     end
 
     it 'should redirect to root if user with activation_code not found' do
@@ -78,10 +80,11 @@ describe UsersController do
 
   describe 'show' do
     it "should be accessible by right URL" do
-      params_from(:get, '/users/42').should == {
+      params_from(:get, '/ru/users/42').should == {
         :controller => 'users',
         :action => 'show',
-        :id=>'42'
+        :id=>'42',
+        :lang => 'ru'
       }
     end
 
@@ -130,10 +133,11 @@ describe UsersController do
 
   describe 'edit' do
     it "should be accessible by right URL" do
-      params_from(:get, '/users/42/edit').should == {
+      params_from(:get, '/ru/users/42/edit').should == {
         :controller => 'users',
         :action => 'edit',
-        :id=>'42'
+        :id=>'42',
+        :lang => 'ru'
       }
     end
 
@@ -174,10 +178,11 @@ describe UsersController do
 
   describe "update" do
     it "should be accessible by right URL" do
-      params_from(:put, '/users/42').should == {
+      params_from(:put, '/be/users/42').should == {
         :controller => 'users',
         :action => 'update',
-        :id=>'42'
+        :id=>'42',
+        :lang => 'be'
       }
     end
 
@@ -190,7 +195,7 @@ describe UsersController do
       login_as(logged_in_user)
 
       post :update, :id=>user.id, :user=>User.valid_data
-      assert_redirected_to user_path(user)
+      assert_redirected_to user_path(:id=>user)
     end
 
     it "should forbid update other user" do
