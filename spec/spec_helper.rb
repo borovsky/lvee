@@ -117,4 +117,6 @@ module ActionView::Helpers::TranslationHelper
   end
 end
 
-Array.alias_method(:count, :length) unless [].respond_to?(:count)
+Array.class_eval do
+  alias_method(:count, :length) 
+end unless [].respond_to?(:count)
