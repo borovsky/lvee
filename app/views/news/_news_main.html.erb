@@ -1,6 +1,6 @@
 <h1><%= t "label.news.title"%></h1>
 <table>
-  <% news = News.published.for_locale(I18n.locale, :limit => 4)%>
+  <% news = News.published.translated(I18n.locale, :limit => 4)%>
   <% news.each do |n| -%>
   <tr>
     <th><%= l(n.published_at.to_date, :format => :default)%></th>
