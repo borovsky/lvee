@@ -18,8 +18,8 @@
         You can login and edit your data:
         {{url}}
       information: |-
-          Имя пользователя: <%= @user.login %>
-          Пароль:           <%= @user.password %>
+          Имя пользователя: {{login}}
+          Пароль:           {{password}}
       activate: |-
         Please visit following URL for activation your account:
         {{url}}

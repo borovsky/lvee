@@ -1,7 +1,7 @@
 class UserMailer < ActionMailer::Base
   def signup_notification(user)
     setup_email(user)
-    @subject    += t('mail.subject.activation')
+    @subject += I18n.t('mail.subject.activation')
 
     @body[:url]  = "http://lvee.org/activate/#{user.activation_code}"
 
@@ -9,7 +9,7 @@ class UserMailer < ActionMailer::Base
 
   def activation(user)
     setup_email(user)
-    @subject    += t('mail.subject.activation_complete')
+    @subject += I18n.t('mail.subject.activation_complete')
     @body[:url]  = "http://lvee.org/"
   end
 

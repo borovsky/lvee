@@ -118,5 +118,5 @@ module ActionView::Helpers::TranslationHelper
 end
 
 Array.class_eval do
-  alias_method(:count, :length) 
+  alias_method(:count, :length)
 end unless [].respond_to?(:count)
