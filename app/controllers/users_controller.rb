@@ -21,7 +21,7 @@ class UsersController < ApplicationController
   end
 
   def current
-    redirect_to user_path(current_user)
+    redirect_to user_path(:id => current_user.id)
   end
 
   def activate

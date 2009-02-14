@@ -1,0 +1,21 @@
+
+== Creating the test database
+
+The default name for the test databases is can be found in the test/lib/database.yml files. By 
+default the tests will run on sqlite3 but can be changed using and ENV['DB'] variable like postresql,
+mysql or even sqlserver.
+
+== Running with Rake
+
+The easiest way to run the unit tests is through Rake. The default task runs all the test cases. 
+There is even a rake task called test_dbs that will run all test cases for each DB.
+
+== Running by hand
+
+Unit tests are located in test directory. If you only want to run a single test suite, 
+or don't want to bother with Rake, you can do so with something like:
+
+   cd test ; ruby -I "test" versioned_test.rb
+   
+Likewise you can just hit Command-R if you are using TextMate.
+

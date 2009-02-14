@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090124201426) do
+ActiveRecord::Schema.define(:version => 20090208171641) do
 
   create_table "conference_registrations", :force => true do |t|
     t.integer "user_id"
@@ -37,10 +37,28 @@ ActiveRecord::Schema.define(:version => 20090124201426) do
     t.text     "lead"
     t.text     "body"
     t.integer  "user_id"
-    t.boolean  "published"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "version"
+    t.string   "locale",       :limit => 2
+    t.integer  "parent_id"
+    t.datetime "published_at"
   end
+
+  create_table "news_versions", :force => true do |t|
+    t.integer  "news_id"
+    t.integer  "version"
+    t.string   "title"
+    t.text     "lead"
+    t.text     "body"
+    t.integer  "user_id"
+    t.datetime "updated_at"
+    t.string   "locale",       :limit => 2
+    t.integer  "parent_id"
+    t.datetime "published_at"
+  end
+
+  add_index "news_versions", ["news_id"], :name => "index_news_versions_on_news_id"
 
   create_table "statuses", :force => true do |t|
     t.string "name"

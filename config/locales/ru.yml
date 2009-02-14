@@ -196,12 +196,16 @@ ru:
       back: Назад
       create: Создать
       delete: Удалить
+      download: Скачать
       edit: Редактировать
+      editTranslation: "Редактировать перевод"
+      publish: Опубликовать
+      publish_now: "Опубликовать сейчас"
       save: Сохранить
       show: Показать
+      translate: Перевести
       update: Обновить
       upload: Закачать
-      download: Скачать
     conference: 
       creating: "Создание конференции"
       finish_date: "Дата окончания"
@@ -241,8 +245,11 @@ ru:
       editing: "Редактирование новости"
       last_news: "Последние новости"
       publish: "Опубликовать новость"
+      published_at: "Опубликовано {{published}}"
       title: Заголовок
+      translating: "Перевод новости"
       unpublished: "Не опубликованно"
+      will_be_published: "Будет опубликовано {{published}}"
     session: 
       login: Логин
       loginButton: Войти

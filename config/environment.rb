@@ -58,14 +58,13 @@ Rails::Initializer.run do |config|
   # config.active_record.default_timezone = :utc
 
   # Gem Dependencies
+  config.gem "RedCloth", :version => '4.1.1',
+    :lib => 'redcloth'
+  #config.gem "acts_as_versioned"
+  config.gem "calendar_date_select"
   config.gem "fastercsv", :version => '1.2.3'
   config.gem "mislav-will_paginate", :version => '2.3.6',
     :lib => 'will_paginate' , :source => 'http://gems.github.com'
-  config.gem "RedCloth", :version => '4.1.1',
-    :lib => 'redcloth'
-  config.gem "calendar_date_select"
-  config.gem "ya2yaml"
   config.gem "mocha"
+  config.gem "ya2yaml"
 end
-
-LANGUAGES = ['by','ru','en','ua']

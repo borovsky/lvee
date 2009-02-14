@@ -1,12 +1,13 @@
 class NewsController < ApplicationController
-  before_filter :editor_required, :except => [:index, :show]
+  before_filter :admin_required, :only => [:publish_now]
+  before_filter :editor_required, :except => [:index, :show, :rss]
   # GET /news
   # GET /news.xml
   def index
     if(current_user && current_user.editor?)
-      @news = News.find(:all)
+      @news = News.translated
     else
-      @news = News.published.find(:all)
+      @news = News.published.translated
     end
 
     respond_to do |format|
@@ -18,7 +19,7 @@ class NewsController < ApplicationController
   # GET /news/1
   # GET /news/1.xml
   def show
-    @news = News.find(params[:id])
+    @news = News.find(params[:id]).translation
 
     respond_to do |format|
       format.html # show.html.erb
@@ -26,10 +27,33 @@ class NewsController < ApplicationController
     end
   end
 
+  def publish
+    @news = News.find(params[:id])
+    @news = News.find(@news.parent_id) if(@news.parent_id)
+    @news.publish
+    redirect_to news_item_url(:id => @news.id)
+  end
+
+  def publish_now
+    @news = News.find(params[:id])
+    @news = News.find(@news.parent_id) if(@news.parent_id)
+    @news.publish_now
+    redirect_to news_item_url(:id => @news.id)
+  end
+
   # GET /news/new
   # GET /news/new.xml
   def new
     @news = News.new
+    @news.locale = params[:locale] || I18n.default_locale
+    if(params[:parent_id])
+      @news.parent_id = params[:parent_id]
+      parent = News.find(params[:parent_id])
+      @news.title = parent.title
+      @news.lead = parent.lead
+      @news.body = parent.body
+    end
+
 
     respond_to do |format|
       format.html # new.html.erb
@@ -88,5 +112,10 @@ class NewsController < ApplicationController
       format.html { redirect_to(news_url) }
       format.xml  { head :ok }
     end
+  end
+
+  def rss
+    @news = News.published.translated
+    render :action => 'rss', :layout => false
   end
 end

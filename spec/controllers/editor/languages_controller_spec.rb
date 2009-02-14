@@ -195,4 +195,59 @@ describe Editor::LanguagesController do
 
   end
 
+  describe "responding to download" do
+    it "should load english language" do
+      login_as(@editor)
+      mock_en = mock
+      YAML.expects(:load_file).with("#{LOCALE_DIR}/en.yml").returns({"en" => mock_en})
+      File.expects(:exist?).with("#{LOCALE_DIR}/be.yml").returns(false)
+      mock_en.expects(:ya2yaml).returns("some yaml")
+
+      get :download, :id => "be", :format => "yml"
+
+      response.body.should == "some yaml"
+    end
+
+    it "should load english language" do
+      login_as(@editor)
+      mock_en = mock
+      mock_be = mock
+      common_mock = mock
+
+      YAML.expects(:load_file).with("#{LOCALE_DIR}/en.yml").returns({"en" => mock_en})
+      File.expects(:exist?).with("#{LOCALE_DIR}/be.yml").returns(true)
+      YAML.expects(:load_file).with("#{LOCALE_DIR}/be.yml").returns({"be" => mock_be})
+      mock_en.expects(:deep_merge).with(mock_be).returns(common_mock)
+
+      common_mock.expects(:ya2yaml).returns("some yaml")
+
+      get :download, :id => "be", :format => "yml"
+      response.body.should == "some yaml"
+    end
+  end
+
+  describe "responding to upload" do
+    it "should merge uploaded language with en" do
+      login_as(@editor)
+
+      mock_en = mock
+      mock_up = mock
+      trans = mock
+      translation = mock
+
+      YAML.expects(:load_file).with("#{LOCALE_DIR}/en.yml").returns({"en" => mock_en})
+      mock_up.expects(:read).returns(trans)
+      YAML.expects(:load).with(trans).returns(translation)
+      mock_en.expects(:deep_merge).with(translation).returns("merged")
+
+      mock_file = mock
+      mock_file.expects(:write).with({'be' => "merged"}.ya2yaml)
+
+      File.expects(:open).with("#{LOCALE_DIR}/be.yml", "w").yields(mock_file)
+
+      get :upload, :id => "be", :language => mock_up
+
+      response.should redirect_to(editor_language_url(:id => 'be'))
+    end
+  end
 end

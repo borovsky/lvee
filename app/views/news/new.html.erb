@@ -1,4 +1,4 @@
-<h1><%= t('label.news.creating')%></h1>
+<h1><%= @news.parent_id ? t('label.news.translating') : t('label.news.creating')%></h1>
 
 <%= error_messages_for :news %>
 

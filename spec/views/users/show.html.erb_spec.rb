@@ -7,7 +7,9 @@ describe "/users/show.html.erb" do
     assigns[:user] = model_stub(User,
       :new_record? => true,
       :errors => [],
-      :full_name => 'xyz'
+      :full_name => 'xyz',
+      :editor? => true,
+      :admin? => true
       )
   end
 

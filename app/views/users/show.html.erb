@@ -8,3 +8,7 @@
   <hr />
   <%= link_to t('label.user.edit'), edit_user_path(:id => @user) %>
 <% end %>
+
+<%# FIXME: Move to sidebar menu! on new design -%>
+<%= render :partial => "/users/editor_dashboard" if current_user.editor? %>
+<%= render :partial => "/users/admin_dashboard" if current_user.admin? %>

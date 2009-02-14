@@ -88,11 +88,11 @@ module Editor
     end
 
     def download
-      def_lang = YAML.load_file("#{LOCALE_DIR}/en.yml") 
+      def_lang = YAML.load_file("#{LOCALE_DIR}/en.yml")
       cur_f = "#{LOCALE_DIR}/#{params[:id]}.yml"
       cur_lang = YAML.load_file(cur_f) if File.exist?(cur_f)
 
-      
+
       hash = def_lang['en']
       hash = hash.deep_merge(cur_lang[params[:id]]) if cur_lang
 
@@ -113,7 +113,7 @@ module Editor
       File.open("#{LOCALE_DIR}/#{params[:id]}.yml", "w") do |f|
         f.write(new_hash.ya2yaml)
       end
-      redirect_to :action => 'show', :language => params[:id]
+      redirect_to editor_language_url(:id => params[:id])
     end
   end
 end

@@ -10,6 +10,10 @@ describe NewsController do
       route_for(:controller => "news", :action => "new", :lang => 'ru').should == "/ru/news/new"
     end
 
+    it "should map #new (translate mode)" do
+      route_for(:controller => "news", :action => "new", :lang => 'ru', :parent_id => "5", :locale => "ru").should == "/ru/news/5/translate/ru"
+    end
+
     it "should map #show" do
       route_for(:controller => "news", :action => "show", :id => 1, :lang => 'ru').should == "/ru/news/1"
     end
@@ -25,6 +29,14 @@ describe NewsController do
     it "should map #destroy" do
       route_for(:controller => "news", :action => "destroy", :id => 1, :lang => 'ru').should == "/ru/news/1"
     end
+
+    it "should map #publish" do
+      route_for(:controller => "news", :action => "publish", :id => 1, :lang => 'ru').should == "/ru/news/1/publish"
+    end
+
+    it "should map #publish_now" do
+      route_for(:controller => "news", :action => "publish_now", :id => 1, :lang => 'ru').should == "/ru/news/1/publish_now"
+    end
   end
 
   describe "route recognition" do
@@ -34,6 +46,10 @@ describe NewsController do
 
     it "should generate params for #new" do
       params_from(:get, "/ru/news/new").should == {:controller => "news", :action => "new", :lang => 'ru'}
+    end
+
+    it "should generate params for #new (translate)" do
+      params_from(:get, "/ru/news/5/translate/ru").should == {:controller => "news", :action => "new", :lang => 'ru', :parent_id => "5", :locale => "ru"}
     end
 
     it "should generate params for #create" do
@@ -54,6 +70,14 @@ describe NewsController do
 
     it "should generate params for #destroy" do
       params_from(:delete, "/ru/news/1").should == {:controller => "news", :action => "destroy", :id => "1", :lang => 'ru'}
+    end
+
+    it "should generate params for #publish" do
+      params_from(:get, "/ru/news/1/publish").should == {:controller => "news", :action => "publish", :id => "1", :lang => 'ru'}
+    end
+
+    it "should generate params for #publish_now" do
+      params_from(:get, "/ru/news/1/publish_now").should == {:controller => "news", :action => "publish_now", :id => "1", :lang => 'ru'}
     end
   end
 end

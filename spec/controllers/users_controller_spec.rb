@@ -225,4 +225,30 @@ describe UsersController do
     end
   end
 
+  describe "current" do
+    it "should be accessible by right URL" do
+      params_from(:get, '/be/users/current').should == {
+        :controller => 'users',
+        :action => 'current',
+        :lang => 'be'
+      }
+    end
+
+    it 'accessible only for logged in user' do
+      @controller.stubs(:logged_in?).returns(false)
+      get :current
+      assert_redirected_to new_session_path
+    end
+
+    it 'should redirect to current user' do
+      logged_in_user = stub(:logged_in_user)
+      logged_in_user.stubs(:id).returns(42)
+      login_as(logged_in_user)
+
+      get :current
+      assert_redirected_to user_path(:id => logged_in_user.id)
+    end
+
+  end
+
 end

@@ -1,0 +1,26 @@
+
+sqlite3:
+  adapter: sqlite3
+  database: ":memory:"
+
+postgresql:
+  adapter: postgresql
+  username: postgres
+  password: postgres
+  database: acts_as_versioned_plugin_test
+  min_messages: ERROR
+
+mysql:
+  adapter: mysql
+  host: localhost
+  username: rails
+  password:
+  database: acts_as_versioned_plugin_test
+
+sqlserver:
+  adapter: sqlserver
+  mode: ODBC
+  username: rails
+  password:
+  dsn: acts_as_versioned_plugin_test
+

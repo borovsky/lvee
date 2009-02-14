@@ -1,6 +1,6 @@
 <h2><%=h @news.title %></h2>
 
-<p><%=h @news.created_at %></p>
+<p><%=format_date(@news.created_at) %></p>
 
 <p class="abstract"><%= textilize_without_paragraph(@news.lead) %></p>
 
@@ -14,7 +14,5 @@
 </p>
 
 
-<%= link_to t('label.common.edit'), edit_news_item_path(:id => @news.id) %> |
-<%= link_to t('label.common.delete'), news_item_path(:id =>@news.id),
-    :method => :delete, :confirm =>t("message.common.sure") %> |
+<%= render(:partial => 'news/editor_actions', :locals => {:news => @news}) if editor? -%>
 <%= link_to t('label.news.back_to_list'), news_path %>

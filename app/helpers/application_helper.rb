@@ -15,7 +15,7 @@ module ApplicationHelper
 
   # FIXME
   def format_date(time)
-    time ? localize(time) : t("date.none")
+    time ? localize(time, :format => :long) : t("date.none")
   end
 
   def menu_item(text, url_opts, &block)
@@ -59,4 +59,11 @@ module ApplicationHelper
     html.join(' ')
   end
 
+  def editor?
+    current_user && current_user.editor?
+  end
+
+  def admin?
+    current_user && current_user.admin?
+  end
 end

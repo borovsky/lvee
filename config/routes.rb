@@ -11,12 +11,16 @@ ActionController::Routing::Routes.draw do |map|
   end
 
   map.with_options :path_prefix =>":lang" do |ns|
-    ns.resources :users, :member => { :activate => :get } do |m|1
+    ns.resources :users, :member => { :activate => :get }, :collection => {:current => :get} do |m|1
       m.resources :conference_registrations, :controller => 'conference_registrations'
     end
     ns.resource  :session
 
-    ns.resources :news, :singular => 'news_item'
+    ns.translate_news "news/:parent_id/translate/:locale",  :controller => "news", :action => "new"
+    ns.resources :news,
+      :singular => 'news_item',
+      :collection => {:rss => :get},
+      :member => {:publish => :get, :publish_now => :get}
 
     ns.connect ':controller/:action/:id'
     ns.connect ':controller/:action/:id.:format'
