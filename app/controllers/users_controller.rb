@@ -38,14 +38,14 @@ class UsersController < ApplicationController
 
   def show
     user_have_access = (current_user.id.to_s == params[:id]) || current_user.admin?
-    return render :text=>t('message.common.access_denied'), :status => 403 unless user_have_access
+    return render(:text=>t('message.common.access_denied'), :status => 403) unless user_have_access
     @user = User.find params[:id]
   end
 
   def edit
     @user = User.find params[:id]
     unless @user.editable_by? current_user
-      return render :text =>t('message.common.access_denied'), :status=> 403
+      return render(:text =>t('message.common.access_denied'), :status=> 403)
     end
   end
 
@@ -53,7 +53,7 @@ class UsersController < ApplicationController
     @user = User.find params[:id]
 
     unless @user.editable_by?(current_user)
-      return render :text =>t('message.common.access_denied'), :status=> 403
+      return render(:text =>t('message.common.access_denied'), :status=> 403)
     end
 
     flash[:notice] = t('message.user.login_change') if params[:user].delete(:login)

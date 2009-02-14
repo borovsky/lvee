@@ -116,3 +116,5 @@ module ActionView::Helpers::TranslationHelper
     I18n.translate(key, options)
   end
 end
+
+Array.alias_method(:count, :length) unless [].respond_to?(:count)
