@@ -1,2 +1,0 @@
-class ParticipantsController < ApplicationController
-end

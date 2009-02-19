@@ -192,6 +192,17 @@ ru:
       second: Секунд
       year: Год
   label: 
+    article: 
+      body: Тело
+      category: Категория
+      creating: "Создание Статьи"
+      editing: "Редактирование Статьи"
+      in_menu: "В меню?"
+      listing: "Список Статей"
+      locale: Язык
+      name: Название
+      new: "Новая статья"
+      title: Заголовок
     common: 
       back: Назад
       create: Создать

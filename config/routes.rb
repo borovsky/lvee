@@ -1,4 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
+
   map.root :controller => "main", :action=>"select_lang"
   map.connect 'activate/:activation_code', :controller => 'users', :action => 'activate' # FIXME other langs?
 
@@ -10,21 +11,31 @@ ActionController::Routing::Routes.draw do |map|
     editor.resources :languages
   end
 
+
   map.with_options :path_prefix =>":lang" do |ns|
+    ns.connect 'main', :controller => "main", :action => "index"
+
+    ns.translate_news "news/:parent_id/translate/:locale",  :controller => "news", :action => "new"
+    ns.resources(:news,
+      :singular => 'news_item',
+      :collection => {:rss => :get},
+      :member => {:publish => :get, :publish_now => :get})
+
+    ns.resources :articles, :member => {:translate => :get}
+
+    ns.connect(':category/:name/:action', :requirements =>
+      {:category => /(main|conference|contacts|sponsors|reports)/},
+      :controller=> "articles",
+      :defaults => {:action => "show", :name => "index"})
+
     ns.resources :users, :member => { :activate => :get }, :collection => {:current => :get} do |m|1
       m.resources :conference_registrations, :controller => 'conference_registrations'
     end
     ns.resource  :session
 
-    ns.translate_news "news/:parent_id/translate/:locale",  :controller => "news", :action => "new"
-    ns.resources :news,
-      :singular => 'news_item',
-      :collection => {:rss => :get},
-      :member => {:publish => :get, :publish_now => :get}
-
     ns.connect ':controller/:action/:id'
     ns.connect ':controller/:action/:id.:format'
   end
-  map.connect ':lang', :controller => "main", :action=>"index"
 
+  map.connect ':lang', :controller => "main", :action=>"index"
 end

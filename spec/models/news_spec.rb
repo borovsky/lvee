@@ -78,5 +78,4 @@ describe News do
       n.publish_now
     end
   end
-
 end

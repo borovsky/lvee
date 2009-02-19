@@ -9,7 +9,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090208171641) do
+ActiveRecord::Schema.define(:version => 20090215083617) do
+
+  create_table "articles", :force => true do |t|
+    t.string   "category"
+    t.string   "name"
+    t.string   "title"
+    t.text     "body"
+    t.boolean  "in_menu"
+    t.string   "locale"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "articles", ["category", "name", "locale"], :name => "index_articles_on_category_and_name_and_locale", :unique => true
+  add_index "articles", ["category", "name"], :name => "index_articles_on_category_and_name", :unique => true
 
   create_table "conference_registrations", :force => true do |t|
     t.integer "user_id"
@@ -39,11 +53,13 @@ ActiveRecord::Schema.define(:version => 20090208171641) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "version"
     t.string   "locale",       :limit => 2
     t.integer  "parent_id"
     t.datetime "published_at"
+    t.integer  "version"
   end
+
+  add_index "news", ["parent_id", "locale"], :name => "index_news_on_parent_id_and_locale", :unique => true
 
   create_table "news_versions", :force => true do |t|
     t.integer  "news_id"

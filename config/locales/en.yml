@@ -18,8 +18,8 @@
         You can login and edit your data:
         {{url}}
       information: |-
-          Имя пользователя: {{login}}
-          Пароль:           {{password}}
+          Login:    {{login}}
+          Password: {{password}}
       activate: |-
         Please visit following URL for activation your account:
         {{url}}
@@ -27,6 +27,17 @@
       activation: 'Account activation for LVEE'
       activation_complete: "Your account for LVEE was activated"      
   label:
+    article:
+      listing: "Listing Articles"
+      category: "Category"
+      name: "Name"
+      locale: "Locale"
+      title: "Title"
+      in_menu: "In menu?"
+      new: "New Article"
+      creating: "Creating Article"
+      editing: "Editing Article"
+      body: "Body"
     common:
       back: "Back"
       create: "Create"

@@ -9,19 +9,19 @@
 *** DONE [#A] Update database
 *** DONE [#A] Add interface for add new year assignment
 
-** Translations [1/3]
+** Translations [3/3]
 *** DONE [#A] Add messages translations
-*** TODO [#A] Make news language-dependant (translation for news)
-*** TODO [#B] Add RSS for news
+*** DONE [#A] Make news language-dependant (translation for news)
+*** DONE [#B] Add RSS for news
 
-** Content edit [0/3]
-*** TODO [#A] Add editor for articles (with translation support)
+** Content edit [1/3]
+*** DONE [#A] Add editor for articles (with translation support)
 *** TODO [#B] Add version control
 *** TODO [#B] Add changes notifications (Editors' RSS?)
 
-** Misc [1/3]
+** Misc [2/3]
 *** DONE [#A] Add normal role support (normal user/editor/admin)
 *** TODO [#C] Add report thesis editor to site (with versioning, RSS, comments, etc)
-*** TODO [#A] Create editor/admin
+*** DONE [#A] Create editor/admin
 
 ** Add new design [/]

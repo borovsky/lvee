@@ -1,0 +1,13 @@
+<h1><%= t('label.article.editing') %></h1>
+
+<% form_for(@article, :url => article_path(:id => @article.id)) do |f| %>
+  <%= f.error_messages %>
+
+  <%= render :partial => "form" , :locals => {:f => f}%>
+
+  <p>
+    <%= f.submit t('label.common.update') %>
+  </p>
+<% end %>
+
+<%= link_to t('label.common.back'), articles_path %>

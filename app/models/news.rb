@@ -6,7 +6,7 @@ class News < ActiveRecord::Base
 
   acts_as_versioned
 
-  validates_presence_of :title, :lead, :body
+  validates_presence_of :title, :lead, :body, :locale
 
   # translation should be unique
   validates_presence_of :locale
@@ -21,8 +21,12 @@ class News < ActiveRecord::Base
   }
 
 
-  def self.translated(locale = nil, params = {})
-    news = find_all_by_parent_id(nil)
+  def self.translated(locale = nil, params={})
+    locale ||= I18n.locale
+    news = []
+    with_scope :find => params do
+      news = find_all_by_parent_id(nil)
+    end
     return news if locale == I18n.default_locale
     news.map { |n| n.translation(locale) }
   end

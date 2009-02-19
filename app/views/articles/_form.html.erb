@@ -1,0 +1,23 @@
+<p>
+  <%= f.label :locale, t('label.article.locale') %>: <%= h @article.locale %>
+</p>
+<p>
+  <%= f.label :category, t('label.article.category') %><br />
+  <%= f.text_field :category %>
+</p>
+<p>
+  <%= f.label :name, t('label.article.name') %><br />
+  <%= f.text_field :name %>
+</p>
+<p>
+  <%= f.label :title, t('label.article.title') %><br />
+  <%= f.text_field :title %>
+</p>
+<p>
+  <%= f.label :body, t('label.article.body') %><br />
+  <%= f.text_area :body %>
+</p>
+<p>
+  <%= f.label :in_menu, t('label.article.in_menu') %><br />
+  <%= f.check_box :in_menu %>
+</p>

@@ -59,6 +59,11 @@ module ApplicationHelper
     html.join(' ')
   end
 
+  def article_output(category, name)
+    a = Article.load_by_name_or_create(category, name)
+    render :partial => "/articles/inline", :locals=> {:article => a}
+  end
+
   def editor?
     current_user && current_user.editor?
   end

@@ -1,0 +1,15 @@
+<p>
+  <% if article.translated? %>
+    <%= link_to t('label.common.editTranslation'), edit_article_path(:id => article.id) %>
+  <% else %>
+    <% if article.locale == I18n.locale %>
+      <%= link_to t('label.common.edit'), edit_article_path(:id => article.id) %>
+    <% else %>
+      <%= link_to t('label.common.translate'), translate_article_path(:id =>
+         article.id) %>
+    <% end %>
+  <% end %> |
+
+  <%= link_to t('label.common.delete'), article_path(:id => article.id),
+  :method => :delete, :confirm =>t("message.common.sure") %>
+</p>

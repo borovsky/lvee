@@ -1,4 +1,4 @@
-<h1><%= t "label.news.title"%></h1>
+<h1><%= t "label.news.last_news"%></h1>
 <table>
   <% news = News.published.translated(I18n.locale, :limit => 4)%>
   <% news.each do |n| -%>
