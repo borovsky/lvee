@@ -101,7 +101,8 @@ body {
 
 	
 /*------------------------------------------------- content ---------------------------------------------------------------*/
-	
+
+
 .content {
   margin: 10px auto 0 auto;
   width: 918px;
@@ -364,6 +365,27 @@ p.gipLink {
 .lang a{
   color: #333;
   }
+
+
+#preview {
+    background-color: #DDDDDD;
+    border: 1px solid black;
+}
+
+#preview_body {
+    padding: 10px;
+}
+h1#preview_title {
+    background-color: #BBBBBB;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 16px;
+    color: #000000;
+}
+
+p.abstract {
+    font-style:italic; 
+}
 
 
 /*------------------------------------------------- /content ---------------------------------------------------------------*/

@@ -59,7 +59,6 @@ describe ArticlesController do
 
     it "should expose a new article as @article" do
       Article.expects(:new).returns(mock_article)
-      mock_article.expects(:id=)
       get :new
       assigns[:article].should equal(mock_article)
     end

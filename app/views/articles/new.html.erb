@@ -1,5 +1,7 @@
 <h1><%= t('label.article.creating') %></h1>
 
+<div id="preview_place"> </div>
+
 <% form_for(@article, :url => articles_path) do |f| %>
   <%= f.error_messages %>
   <%= render :partial => "form" , :locals => {:f => f}%>
@@ -7,6 +9,8 @@
   <%= f.hidden_field :locale %>
 
   <p>
+  <%= submit_to_remote("preview_btn", t('label.common.preview'),
+       :url => {:action => "preview"}, :update => {:success => 'preview_place'}) %>
     <%= f.submit t('label.common.create') %>
   </p>
 <% end %>

@@ -2,10 +2,14 @@
 
 <%= error_messages_for :news %>
 
+<div id="preview_place"> </div>
+
 <% form_for(@news, :url => news_item_path(:id => @news)) do |f| %>
 <%= render :partial => "/news/form", :locals => {:f => f} %>
 
 <p>
+  <%= f.submit__to_remote("preview_btn", t('label.common.preview'),
+       :url => {:action => "preview"}, :update => {:success => 'preview_place'}) %>
   <%= f.submit t('label.common.save') %>
 </p>
 <% end %>

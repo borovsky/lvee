@@ -18,10 +18,12 @@ ActionController::Routing::Routes.draw do |map|
     ns.translate_news "news/:parent_id/translate/:locale",  :controller => "news", :action => "new"
     ns.resources(:news,
       :singular => 'news_item',
-      :collection => {:rss => :get},
+      :collection => {:rss => :get, :preview=>:post},
       :member => {:publish => :get, :publish_now => :get})
 
-    ns.resources :articles, :member => {:translate => :get}
+    ns.resources :articles, :member => {:translate => :get},
+      :collection => {:preview=>:put}
+
 
     ns.connect(':category/:name/:action', :requirements =>
       {:category => /(main|conference|contacts|sponsors|reports)/},

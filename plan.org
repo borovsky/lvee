@@ -19,9 +19,10 @@
 *** TODO [#B] Add version control
 *** TODO [#B] Add changes notifications (Editors' RSS?)
 
-** Misc [2/3]
+** Misc [2/4]
 *** DONE [#A] Add normal role support (normal user/editor/admin)
 *** TODO [#C] Add report thesis editor to site (with versioning, RSS, comments, etc)
 *** DONE [#A] Create editor/admin
+*** TODO [#C] Add support for google's sitemap
 
 ** Add new design [/]

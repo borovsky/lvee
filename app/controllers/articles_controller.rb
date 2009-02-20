@@ -93,6 +93,11 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def preview
+    @article = Article.new(params[:article])
+    render :action => "preview", :layout => false
+  end
+
   protected
   def load_article_by_category
     if(editor?)

@@ -114,6 +114,11 @@ class NewsController < ApplicationController
     end
   end
 
+  def preview
+    @news = News.new(params[:news])
+    render :action => "preview", :layout => false
+  end
+
   def rss
     @news = News.published.translated
     render :action => 'rss', :layout => false

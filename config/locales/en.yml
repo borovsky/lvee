@@ -46,6 +46,7 @@
       edit: "Edit"
       editTranslation: "Edit translation"
       translate: "Translate"
+      preview: "Preview"
       publish: "Publish"
       publish_now: "Publish Now"
       save: "Save"

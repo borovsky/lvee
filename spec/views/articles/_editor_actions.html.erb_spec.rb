@@ -26,7 +26,7 @@ describe "/articles/_editor_actions.html.erb" do
         I18n.stubs(:locale).returns(I18n.default_locale)
 
         render "/articles/_editor_actions.html.erb", :locals => {:article => @article}
-        response.should have_tag("a[href=#{translate_article_path(:parent_id => @article.id, :locale =>I18n.default_locale )}]", "Translate")
+        response.should have_tag("a[href=#{translate_article_path(:id => @article.id)}]", "Translate")
       end
     end
 
