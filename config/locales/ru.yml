@@ -276,6 +276,7 @@ ru:
       first_name: Имя
       last_name: Фамилия
       login: Логин
+      join_us: "Присоединяйся к нам"
       occupation: "Место работы/учёбы, область деятельности"
       password: Пароль
       password_confirmation: "Подтверждение пароль"
@@ -304,12 +305,23 @@ ru:
       activation_complete: "Ваш аккаунт на LVEE.org активирован"
     title: "Здравствуйте, {{full_name}}"
   menu: 
-    about: "О конференции"
+    conference:
+      about: "О конференции"
+      history: "История"
+      press: "Пресса о конференции"
+      place: "Место проведеня конференции"
+      linux: "Linux"
     contacts: Контакты
     main: Главная
     profile: Профиль
-    reports: Доклады
+    reports: 
+      category: Доклады
+      program: Программа конференции
+      abstract: "Правила оформления тезисов"
+      materials: "Материалы прошлых конференций"
     sponsors: Спонсоры
+    organizers: Организаторы
+    information_sponsor: Информационный спонсор
   message: 
     common: 
       access_denied: "Доступ запрещён"
@@ -317,6 +329,7 @@ ru:
     conference: 
       created: "Конференция успешно создана"
       status: "Регистрация на конференцию: {{status}}."
+      slogan: "Пятая междунородная конференция разработчиков и пользователей свободного програмного обеспечения"
       updated: "Конференция успешно обновлена"
     language: 
       created: "Язык успешно создан"

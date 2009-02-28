@@ -1,11 +1,10 @@
-<h1><%= t "label.news.last_news"%></h1>
-<table>
+<h3><%= t "label.news.last_news"%></h3>
+<ul>
   <% news = News.published.translated(I18n.locale, :limit => 4)%>
   <% news.each do |n| -%>
-  <tr>
-    <th><%= l(n.published_at.to_date, :format => :default)%></th>
-    <td><%= n.title %></td>
-  </tr>
+  <li>
+    <%= link_to(n.title, news_item_path(:id =>n.id)) %>
+  </li>
   <% end %>
-</table>
+</ul>
 <p class="gipLink"><%= link_to t('label.news.all_news'), :controller => '/news', :action => 'index'%></p>

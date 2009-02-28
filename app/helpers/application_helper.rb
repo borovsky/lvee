@@ -18,43 +18,14 @@ module ApplicationHelper
     time ? localize(time, :format => :long) : t("date.none")
   end
 
-  def menu_item(text, url_opts, &block)
-    current = false
-    if url_opts[:action]
-      current = controller.action_name == url_opts[:action]
-    else
-      current = controller.controller_name == url_opts[:controller]
-    end
-    url = url_for(url_opts)
-
-    menu_html = "<li#{current ? ' class="menu-place"' : ''}><a href=\"#{url}\">#{text}</a>"
-    menu_html << capture(&block) if current && block_given?
-    menu_html << "</li>"
-
-    concat(menu_html) if block_given?
-
-    menu_html
-  end
-
-  def sub_menu_item(text, url_opts)
-    current = false
-    if url_opts[:action]
-      current = controller.action_name == url_opts[:action]
-    else
-      current = controller.controller_name == url_opts[:controller]
-    end
-    url       = url_for(url_opts)
-    menu_html = "<a href=\"#{url}\" #{current ? ' class="menu-place"' : ''}>#{text}</a>"
-  end
-
-  def links_to_languages()
-    langs = Language.published.map{|l| l.name}
-    html = langs.map do |lang|
-      if controller.action_name
-        link_to_unless_current( lang, :controller => controller.controller_name, :action => controller.action_name, :lang => lang, :id => params[:id])
+  def link_to_languages
+    html = Language.published.map do |lang|
+      img = image_tag("/images/flags/"+lang.name+".png", :alt => lang.description)
+      "<li>" + if controller.action_name
+        link_to_unless_current( img, :controller => controller.controller_name, :action => controller.action_name, :lang => lang.name, :id => params[:id])
       else
-        link_to_unless_current( lang, :controller => controller.controller_name, :lang => lang, :id => params[:id])
-      end
+        link_to_unless_current( img, :controller => controller.controller_name, :lang => lang.name, :id => params[:id])
+      end + "</li>"
     end
     html.join(' ')
   end

@@ -1,0 +1,20 @@
+<div class="header">
+  <div class="left">
+    <ul>
+      <% if current_user %>
+      <li class="first"><%= t('message.session.logged', :user_name =>
+      link_to(current_user.login, user_path(:id=>current_user.id)))
+      %> </li>
+      <li class="stick">|</li>
+      <li><%= link_to t('label.session.logout'), session_path, :method => :delete %></li>
+      <% else %>
+      <li class="first"><%= link_to t('label.user.login'), new_session_path %></li>
+      <li class="stick">|</li>
+      <li><%= link_to t('label.user.register'), new_user_path %></li>
+      <% end %>
+    </ul>
+  </div><!-- left -->
+  <div class="right">
+    <%= render(:partial => 'layouts/partials/menu') %>
+  </div><!-- right -->
+</div><!-- header -->

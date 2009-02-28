@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(:version => 20090215083617) do
   end
 
   add_index "articles", ["category", "name", "locale"], :name => "index_articles_on_category_and_name_and_locale", :unique => true
-  add_index "articles", ["category", "name"], :name => "index_articles_on_category_and_name", :unique => true
+  add_index "articles", ["category", "name"], :name => "index_articles_on_category_and_name"
 
   create_table "conference_registrations", :force => true do |t|
     t.integer "user_id"

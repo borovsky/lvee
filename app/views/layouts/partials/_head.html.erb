@@ -1,29 +1,14 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru">
+<%# Page header, it's common for all pages-%>
 <head>
-    <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
-    <title></title>
-    <meta name="Keywords" content="" />
-    <meta name="Description" content="" />
-    <style type="text/css"> @import url("/stylesheets/style.css");</style>
-    <%= javascript_include_tag :defaults %>
-    <%= calendar_date_select_includes 'silver' %>
-    <%= auto_discovery_link_tag(:rss, rss_news_path) %>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+  <title><%= h(@title || "LVEE") %></title>
+  <meta name="keywords" content="<%= h @keywords %>" />
+  <meta name="description" content="<%= h @description %>" />
+  <style type="text/css"> @import url("/stylesheets/style.css");</style>
+
+  <script type="text/javascript" src="js/jquery-1.2.6.pack.js"></script>
+  <script type="text/javascript" src="js/pngFix.js"></script>
+  <%= javascript_include_tag "prototype" %>
+  <%= calendar_date_select_includes 'silver' %>
+  <%= auto_discovery_link_tag(:rss, rss_news_path) %>
 </head>
-
-<body>
-
-<%= render(:partial => 'layouts/partials/logpass') %>
-
-<div class="all">
-
-<div class="header">
-  <div class="lang">
-    <%= links_to_languages %>
-  </div>
-  <a href="http://lvee.org"><img src="/images/head-lvee.png" alt="Linux Vacation Eastern Europe in Minsk Belarus" /></a>
-</div>
-
-<div class="content">
-
-  <%= render(:partial => "layouts/partials/menu") %>

@@ -1,6 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+  <%= render(:partial => 'layouts/partials/head') %>
+  <body>
+    <div class="all">
+      <%= render(:partial => 'layouts/partials/top') %>
 
-<%= render(:partial => 'layouts/partials/head') %>
+      <div class="content">
+        <div class="common">
+          <div class="left">
+            <%= render(:partial => 'layouts/partials/flags') %>
+            <div class="slogan"><%= t('message.conference.slogan')%></div>
+            <%= article_output('main', 'conference') %>
+            <% unless current_user %>
+            <div class="button-join"><%= link_to  t('label.user.join_us'), new_user_path %></div>
+            <% end %>
+            <div class="box">
+              <div class="box-banner">
+                <img src="images/banner-374x250.gif" alt="" />
+              </div>
+              <div class="box-news">
+                <%= render :partial => "/news/news_main"%>
+              </div>
+            </div>
+          </div><!-- left -->
+          <div class="right">
+            <%= render :partial => "/layouts/partials/sidebar"%>
+          </div><!-- right -->
 
-<%= yield %>
-
-<%= render(:partial => 'layouts/partials/footer') %>
+          <div class="clear"></div>
+        </div> <!-- common layout -->
+      </div><!-- content -->
+      <%= render :partial => "/layouts/partials/footer"%>
+    </div> <!-- all -->
+  </body>
+</html>

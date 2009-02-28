@@ -1,11 +1,22 @@
 "en":
   menu:
-    about: "About"
+    conference:
+      about: "About"
+      history: "History"
+      press: "In the press"
+      place: "Place of the conference"
+      linux: "Linux"
     contacts: "Contacts"
     main: "Main"
     profile: "Profile"
-    reports: "Reports"
+    reports: 
+      category: "Reports"
+      program: "Program"
+      abstract: "Abstract guidelines"
+      materials: "Past conference materials"
     sponsors: "Sponsors"
+    organizers: "Organizers"
+    information_sponsor: "Information Sponsor"
   mail:
     title: "Hello, {{full_name}}"
     signature: |-
@@ -113,6 +124,7 @@
       first_name: "First Name"
       last_name: "Last Name"
       login: "Login"
+      join_us: "Join us today"
       occupation: "Place of work/study and field of activities"
       password: "Password"
       password_confirmation: "Password Confirmation"
@@ -125,6 +137,7 @@
       created: "Language created successfully"
       updated: "Language updated successfully"
     conference:
+      slogan: "The 5th International conference of developers and users of free / open source software - the only one in Belarus"
       status: "Registration to conference {{status}}."
       created: "Conference created successfully"
       updated: "Conference updated successfully"

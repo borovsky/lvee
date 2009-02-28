@@ -1,29 +1,8 @@
-<div id="sub-menu" class="menu">
-  <ul>
-
-    <%= menu_item(t('menu.main'), :controller => 'main') %>
-
-    <% menu_item(t('menu.about'), :controller => "articles", :category => 'conference', :name => 'index', :action => 'show') do %>
-      <div class="sub-menu">
-        <%= sub_menu_item('история', :controller => 'about', :action => 'history') %>
-        <%= sub_menu_item('пресса', :controller => 'about', :action => 'press') %>
-        <%= sub_menu_item('место проведения',  :controller => 'about', :action => 'place') %>
-        <%= sub_menu_item('linux', :controller => 'about', :action => 'linux') %>
-      </div>
-    <% end %>
-
-    <% menu_item(t('menu.reports'),  :controller => "articles", :category => 'reports', :name => 'index', :action => 'show') do %>
-      <div class="sub-menu">
-        <%= sub_menu_item('материалы прошлых конференций', :controller => 'program', :action => 'materials') %>
-      </div>
-    <% end %>
-
-    <%= menu_item(t('menu.profile'), :controller => '/users', :action =>"current") %>
-
-    <%= menu_item(t('menu.sponsors'), :controller => 'sponsors') %>
-
-    <%= menu_item(t('menu.contacts'), :controller => 'contacts')  %>
-
-  </ul>
-  <div class="clear"></div>
-</div>
+<ul>
+  <li class="first"><%= link_to(t('menu.main'), :controller => "main")%></li>
+  <li class="sub"><%= link_to(t('menu.conference.about'), :controller => "articles", :category => 'conference', :name => 'index', :action => 'show')%></li>
+  <li class="sub"><%= link_to(t('menu.reports.category'), :controller => "articles", :category => 'reports', :name => 'index', :action => 'show')%></li>
+  <li class="sub"><%= link_to(t('menu.profile'), :controller => '/users', :action =>"current") %></li>
+  <li><%= link_to(t('menu.sponsors'), :controller => 'sponsors') %></li>
+  <li class="last"><%= link_to(t('menu.contacts'), :controller => 'contacts')  %></li>
+</ul>

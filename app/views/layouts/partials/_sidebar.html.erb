@@ -1,0 +1,24 @@
+
+<ul>
+  <li><%= link_to(t('menu.organizers'), :controller => "articles",
+  :category => 'contacts', :name => 'index', :action => 'show') %>
+    <ul>
+      <li><a href="#"><img src="/images/logos/mlug.gif" alt="" /></a></li>
+    </ul>
+  </li>
+  <li><%= link_to(t('menu.sponsors'), :controller => "articles", :category => 'sponsors', :name => 'index', :action => 'show') %>
+    <ul>
+      <li><a href="#"><img src="/images/logos/sam-solutions.gif" alt="" /></a></li>
+      <li><a href="#"><img src="/images/logos/prom-wad.gif" alt="" /></a></li>
+      <li><a href="#"><img src="/images/logos/epam.gif" alt="" /></a></li>
+      <li><a href="#"><img src="/images/logos/blr-soft.gif" alt="" /></a></li>
+      <li><a href="#"><img src="/images/logos/alatys.gif" alt="" /></a></li>
+      <li><a href="#"><img src="/images/logos/onliner.gif" alt="" /></a></li>
+    </ul>
+  </li>
+  <li><%= link_to(t('menu.information_sponsor'), :controller => "articles", :category => 'sponsors', :name => 'information', :action => 'show') %>
+    <ul>
+      <li><a href="#"><img src="/images/logos/web-solutions.gif" alt="" /></a></li>
+    </ul>
+  </li>
+</ul>

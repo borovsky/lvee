@@ -1,27 +1,36 @@
-</div><!-- content -->
-
 <div class="footer">
-  <div class="sponsors-logo">
-    <a href="http://www.sam-solutions.net/" ><img src="/images/sams-small.png" alt="Sam Solutions" /></a>
-    <a href="http://www.epam.com/"><img src="/images/epam-small.png" alt="EPAM" /></a>
-    <a href="http://www.promwad.com/"><img src="/images/promwad-small.png" alt="Promwad" /></a><br/>
-    <a href="http://www.abaxia.com/"><img src="/images/blrsoft-small.png" alt="Blrsoft" /></a>
-    <a href="http://www.alatys.com/"><img src="/images/alatys-small.png" alt="Alatys" /></a>
-    <a href="http://www.onliner.by/"><img src="/images/onliner.gif" alt="Onliner" /></a>
+  <span class="copy">Copyright © 2009 Minsk Linux User Group</span>
+
+
+  <div class="column">
+    <h4><%= link_to(t('menu.conference.about'), :controller => "articles", :category => 'conference', :name => 'index', :action => 'show')%></h4>
+    <ul>
+      <li><%= link_to(t('menu.conference.about'), :controller => "articles", :category => 'conference', :name => 'index', :action => 'show')%></li>
+      <li><%= link_to(t('menu.conference.history'), :controller => "articles", :category => 'conference', :name => 'history', :action => 'show')%></li>
+      <li><%= link_to(t('menu.conference.press'), :controller => "articles", :category => 'conference', :name => 'press', :action => 'show')%></li>
+      <li><%= link_to(t('menu.conference.place'), :controller => "articles", :category => 'conference', :name => 'place', :action => 'show')%></li>
+      <li><%= link_to(t('menu.conference.linux'), :controller => "articles", :category => 'conference', :name => 'linux', :action => 'show')%></li>
+    </ul>
+  </div>
+  <div class="column">
+    <h4><%= link_to(t('menu.reports.category'), :controller => "articles", :category => 'reports', :name => 'index', :action => 'show')%></h4>
+    <ul>
+      <li><%= link_to(t('menu.reports.program'), :controller => "articles", :category => 'reports', :name => 'program', :action => 'show')%></li>
+      <li><%= link_to(t('menu.reports.abstract'), :controller => "articles", :category => 'reports', :name => 'abstract', :action => 'show')%></li>
+      <li><%= link_to(t('menu.reports.materials'), :controller => "articles", :category => 'reports', :name => 'materials', :action => 'show')%></li>
+    </ul>
+  </div>
+
+
+  <div class="column">
+    <h4><%= link_to(t('menu.profile'), :controller => '/users', :action =>"current") %></h4>
+  </div>
+
+  <div class="column">
+    <h4><%= link_to(t('menu.sponsors'), :controller => 'sponsors') %></h4>
+  </div>
+  <div class="column">
+    <h4><%= link_to(t('menu.contacts'), :controller => 'contacts')  %></h4>
   </div>
 
 </div><!-- footer -->
-</div> <!-- all -->
-
-<div class="licence"><p><img src="/images/copy-left.gif" alt="copy left" /> 2005-2008 LVEE | Valid XHTML 1.0 Strict</p></div>
-
-
-<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
-</script>
-<script type="text/javascript">
-_uacct = "UA-1833850-4";
-urchinTracker();
-</script>
-
-</body>
-</html>
