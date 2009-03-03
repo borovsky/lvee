@@ -321,3 +321,54 @@ div.flags li {
 	}
 /*------------------------------------------------- /footer --------------------------------------------------------------*/
 
+
+
+/* menu */
+
+#sub-menu li ul{	
+	margin: 24px 0 0 0;
+	padding: 0;
+	position: absolute;
+	visibility: hidden;
+	width: 200px;
+	opacity: .90;
+  filter: alpha(opacity=90);
+	border: none;
+	* height: 200px;
+
+
+	
+
+	}
+	
+#sub-menu li ul li {
+	padding: 0;
+	margin: 0;
+	border: none;
+	float: none;
+	display: inline
+	}
+		
+		
+#sub-menu li ul li a{
+	background: #fff;
+	color: #000;
+	display: block;
+	width: auto;
+	border: none;
+	padding-left: 7px;
+	line-height: 16px;
+	border-left: 1px solid #8da1a3;
+	border-right: 1px solid #8da1a3;
+	font-size: 11px;
+	}
+	
+#sub-menu li ul li.last-m a{
+	border-bottom: 1px solid #8da1a3;
+	}
+			
+#sub-menu li ul li a:hover{
+	background: #8da1a3;
+	color: #fff;
+	}
+	
