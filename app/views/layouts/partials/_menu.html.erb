@@ -15,7 +15,7 @@
     <ul>
       <li><%= link_to(t('menu.reports.program'), :controller => "articles", :category => 'reports', :name => 'program', :action => 'show')%></li>
       <li><%= link_to(t('menu.reports.abstract'), :controller => "articles", :category => 'reports', :name => 'abstract', :action => 'show')%></li>
-      <li><%= link_to(t('menu.reports.materials'), :controller => "articles", :category => 'reports', :name => 'materials', :action => 'show')%></li>
+      <li class="last-m"><%= link_to(t('menu.reports.materials'), :controller => "articles", :category => 'reports', :name => 'materials', :action => 'show')%></li>
     </ul>
     <%= link_to(t('menu.reports.category'), :controller => "articles",
     :category => 'reports', :name => 'index', :action => 'show')%>

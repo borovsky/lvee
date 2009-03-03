@@ -336,9 +336,7 @@ div.flags li {
 	border: none;
 	* height: 200px;
 
-
-	
-
+  z-index: 100;
 	}
 	
 #sub-menu li ul li {
