@@ -6,8 +6,7 @@
   <meta name="description" content="<%= h @description %>" />
   <style type="text/css"> @import url("/stylesheets/style.css");</style>
 
-  <%= javascript_include_tag "prototype" %>
-  <script type="text/javascript" src="/javascripts/menu.js"></script>
+  <%= javascript_include_tag "all" %>
   <%= calendar_date_select_includes 'silver' %>
   <%= auto_discovery_link_tag(:rss, rss_news_path) %>
 </head>

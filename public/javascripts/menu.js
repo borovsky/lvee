@@ -15,7 +15,7 @@ function jsddm_close() {
   if(ddmenuitem) {
     ddmenuitem.style.visibility="hidden";
     ddmenuitem = null;
-    
+
   }
 }
 
