@@ -1,3 +1,4 @@
+
 * What we need to do
 
 ** Add tests [3/3]
@@ -25,4 +26,51 @@
 *** DONE [#A] Create editor/admin
 *** TODO [#C] Add support for google's sitemap
 
-** Add new design [/]
+** TODO Add new design [/]
+
+* New
+** Todo
+
+*** TODO [#A] Fix language switch for articles
+
+*** TODO [#B] Admin panel with account statuses and mass mail
+
+*** TODO [#A] "Чем грамотней и точнее вы ответите. тем проще будет с вами связаться"
+
+*** TODO [#A] Организация коротко
+
+*** TODO [#B] Sponsor? organizer. sponsor, information sponsor, technical sponsor
+
+*** TODO [#C] курсы валют 
+
+*** TODO [#A] Avators 150x200 (желательно с лицом)
+
+** Mailman
+*** TODO [#A] mailman subscribtion during registration (option)
+(Organizers maillist)
+
+*** TODO [#B] User status (per conference): organizer, sponsor, user, reporter (admin edit)
+
+*** TODO [#C] Payment status (per conference): shouldn't pay, should pay, payed (сумма)
+
+** Additional fields: 
+
+*** TODO [#A] add checkbox with which days user will go
+
+*** TODO [#A] Предпочтения в еде (вегетарианец/обычный/...) chackbox + field
+
+*** TODO [#A] Размер футболки
+
+*** TODO [#A] Способ добирания до места (сам/маршрутка... / откуда куда) поле
+
+*** TODO [#A] Встречать? где и когда
+
+*** TODO [#A] Текст о нераспространении [c6nference/privacy]
+
+*** TODO [#A] Телефон (с кодом)
+
+не платит: докладчик, спонсор
+
+** later
+*** TODO [#C] Предпочтения по расселению
+*** TODO [#C] Сколько платить

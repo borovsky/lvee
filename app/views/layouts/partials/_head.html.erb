@@ -4,9 +4,10 @@
   <title><%= h(@title || "LVEE") %></title>
   <meta name="keywords" content="<%= h @keywords %>" />
   <meta name="description" content="<%= h @description %>" />
-  <style type="text/css"> @import url("/stylesheets/style.css");</style>
 
-  <%= javascript_include_tag "all" %>
-  <%= calendar_date_select_includes 'silver' %>
+  <%= stylesheet_link_tag "style" %>
+  <%= javascript_include_tag "prototype", "menu" %>
+  <%= javascript_include_tag :defaults if editor? %>
+  <%= calendar_date_select_includes 'silver' if editor? %>
   <%= auto_discovery_link_tag(:rss, rss_news_path) %>
 </head>

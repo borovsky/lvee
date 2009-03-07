@@ -6,9 +6,6 @@ module ApplicationHelper
     html = ''
     flash.each do |key,message|
       html << content_tag(:div, message, :id => key)
-      html << content_tag(:script, :type => "text/javascript") do
-        "new Effect.Pulsate('#{key.to_s}');new Effect.Fade('#{key.to_s}', { delay: 120 } );"
-      end
     end
     html
   end
@@ -21,11 +18,13 @@ module ApplicationHelper
   def link_to_languages
     html = Language.published.map do |lang|
       img = image_tag("/images/flags/"+lang.name+".png", :alt => lang.description)
-      "<li>" + if controller.action_name
-        link_to_unless_current( img, :controller => controller.controller_name, :action => controller.action_name, :lang => lang.name, :id => params[:id])
-      else
-        link_to_unless_current( img, :controller => controller.controller_name, :lang => lang.name, :id => params[:id])
-      end + "</li>"
+      to_params = {:controller => controller.controller_name, :lang => lang.name, :id => params[:id], 
+        :category => params[:category], :name => params[:name], :action => controller.action_name}
+      p params
+      p to_params
+      "<li>" + 
+        link_to_unless_current( img, to_params) + 
+        "</li>"
     end
     html.join(' ')
   end
