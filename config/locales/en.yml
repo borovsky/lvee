@@ -125,7 +125,7 @@
       last_name: "Last Name"
       login: "Login"
       join_us: "Join us today"
-      occupation: "Place of work/study and field of activities"
+      occupation: "Place of work/study and field of activities (with breaf organization name)"
       password: "Password"
       password_confirmation: "Password Confirmation"
       projects: "Free Software / Open Source (FS/OS) projects where you have taken or are taking part in and your role in them"
@@ -147,6 +147,9 @@
       registred: "Thank you for registration"
       activated: "Registration completed"
       login_change: "You can't change your login"
+      accuracy_note: "Accurate and error-free registration form filling will help contacting with you alot"
+      privacy: "Privacy Policy: We {{link}} your account information to anyone, including your email address."
+      privacy_link: "don't sell"
     news:
       created: "News created successfully"
       updated: "News updated successfully"

@@ -15,6 +15,12 @@ ActionController::Routing::Routes.draw do |map|
   map.with_options :path_prefix =>":lang" do |ns|
     ns.connect 'main', :controller => "main", :action => "index"
 
+    ns.connect('users/privacy/:action', :requirements =>
+      {:category => 'users', :name => "privacy"},
+      :controller=> "articles",
+      :defaults => {:action => "show"})
+
+
     ns.translate_news "news/:parent_id/translate/:locale",  :controller => "news", :action => "new"
     ns.resources(:news,
       :singular => 'news_item',

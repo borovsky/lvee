@@ -3,21 +3,21 @@
 
 
   <div class="column">
-    <h4><%= link_to(t('menu.conference.about'), :controller => "articles", :category => 'conference', :name => 'index', :action => 'show')%></h4>
+    <h4><%= article_link(t('menu.conference.about'), 'conference', 'index')%></h4>
     <ul>
-      <li><%= link_to(t('menu.conference.about'), :controller => "articles", :category => 'conference', :name => 'index', :action => 'show')%></li>
-      <li><%= link_to(t('menu.conference.history'), :controller => "articles", :category => 'conference', :name => 'history', :action => 'show')%></li>
-      <li><%= link_to(t('menu.conference.press'), :controller => "articles", :category => 'conference', :name => 'press', :action => 'show')%></li>
-      <li><%= link_to(t('menu.conference.place'), :controller => "articles", :category => 'conference', :name => 'place', :action => 'show')%></li>
-      <li><%= link_to(t('menu.conference.linux'), :controller => "articles", :category => 'conference', :name => 'linux', :action => 'show')%></li>
+      <li><%= article_link(t('menu.conference.about'), 'conference', "index")%></li>
+      <li><%= article_link(t('menu.conference.history'), 'conference', "history") %></li>
+      <li><%= article_link(t('menu.conference.press'), 'conference', "press")%></li>
+      <li><%= article_link(t('menu.conference.place'), 'conference', "place")%></li>
+      <li><%= article_link(t('menu.conference.linux'), 'conference', "linux")%></li>
     </ul>
   </div>
   <div class="column">
-    <h4><%= link_to(t('menu.reports.category'), :controller => "articles", :category => 'reports', :name => 'index', :action => 'show')%></h4>
+    <h4><%= article_link(t('menu.reports.category'), 'reports', 'index')%></h4>
     <ul>
-      <li><%= link_to(t('menu.reports.program'), :controller => "articles", :category => 'reports', :name => 'program', :action => 'show')%></li>
-      <li><%= link_to(t('menu.reports.abstract'), :controller => "articles", :category => 'reports', :name => 'abstract', :action => 'show')%></li>
-      <li><%= link_to(t('menu.reports.materials'), :controller => "articles", :category => 'reports', :name => 'materials', :action => 'show')%></li>
+      <li><%= article_link(t('menu.reports.program'), 'reports', 'program')%></li>
+      <li><%= article_link(t('menu.reports.abstract'),'reports', 'abstract')%></li>
+      <li><%= article_link(t('menu.reports.materials'), 'reports', 'materials')%></li>
     </ul>
   </div>
 
@@ -27,10 +27,10 @@
   </div>
 
   <div class="column">
-    <h4><%= link_to(t('menu.sponsors'), :controller => 'sponsors') %></h4>
+    <h4><%= article_link(t('menu.sponsors'), "sponsors", "index") %></h4>
   </div>
   <div class="column">
-    <h4><%= link_to(t('menu.contacts'), :controller => 'contacts')  %></h4>
+    <h4><%= article_link(t('menu.contacts'), "contacts", "index")  %></h4>
   </div>
 
 </div><!-- footer -->

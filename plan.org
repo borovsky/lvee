@@ -29,15 +29,15 @@
 ** TODO Add new design [/]
 
 * New
-** Todo
+** Todo [3/7]
 
-*** TODO [#A] Fix language switch for articles
+*** DONE [#A] Fix language switch for articles
 
 *** TODO [#B] Admin panel with account statuses and mass mail
 
-*** TODO [#A] "Чем грамотней и точнее вы ответите. тем проще будет с вами связаться"
+*** DONE [#B] "Чем грамотней и точнее вы ответите. тем проще будет с вами связаться"
 
-*** TODO [#A] Организация коротко
+*** DONE [#A] Организация коротко
 
 *** TODO [#B] Sponsor? organizer. sponsor, information sponsor, technical sponsor
 
@@ -65,7 +65,7 @@
 
 *** TODO [#A] Встречать? где и когда
 
-*** TODO [#A] Текст о нераспространении [c6nference/privacy]
+*** DONE [#B] Текст о нераспространении [cоnference/privacy]
 
 *** TODO [#A] Телефон (с кодом)
 
