@@ -370,3 +370,30 @@ div.flags li {
 	color: #fff;
 	}
 	
+#preview {
+    background-color: #DDDDDD;
+    border: 1px solid black;
+}
+
+#preview_body {
+    padding: 10px;
+}
+
+#preview_body h1 {
+    padding-top: 10px
+}
+h1#preview_title {
+	  padding: 5px;
+    background-color: #BBBBBB;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 16px;
+    color: #000000;
+    
+}
+
+p.abstract {
+    font-style:italic; 
+}
+
+
