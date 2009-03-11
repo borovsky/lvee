@@ -5,13 +5,14 @@
 <% regs = regs - participated -%>
 <% available = Conference.available_conferences(regs.map {|c|
    c.conference}) %>
+
 <% unless participated.empty? -%>
 <h2><%= t('label.conference.participated')%>:</h2>
 <ul>
 <% participated.each  do |reg| -%>
 <% conf = reg.conference -%>
   <li>
-    <%= link_to conf.name,  edit_user_conference_registration_path(:user_id => user_id, :id => reg.id) %>
+    <%= h conf.name %>
     (<%= format_date(conf.start_date) %> -
     <%= format_date(conf.finish_date) %>)
   </li>
@@ -34,7 +35,7 @@
 <% end -%>
 
 <% unless available.empty? -%>
-<h2><%= t('label.conference.participated')%>:</h2>
+<h2><%= t('label.conference.available')%>:</h2>
 <ul>
   <% available.each  do |conf| -%>
   <li>
