@@ -11,6 +11,11 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery # :secret => 'dc50c44338f5eba496ede18e9ea29cb1'
 
+  ActiveScaffold.set_defaults do |config|
+    # disables dhtml history globally
+    config.dhtml_history = false
+  end
+
   protected
 
   def language_select
@@ -38,4 +43,9 @@ class ApplicationController < ActionController::Base
   def default_url_options(options={})
     {:lang=>I18n.locale}
   end
+
+  def scaffold_action
+    @active_scaffold = true
+  end
+
 end

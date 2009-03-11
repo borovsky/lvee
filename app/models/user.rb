@@ -123,6 +123,10 @@ class User < ActiveRecord::Base
     :password_confirmation => '1234'}
   end
 
+  def to_s
+    "#{full_name}, #{city}, #{country}"
+  end
+
   protected
     # before filter
     def encrypt_password

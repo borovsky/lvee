@@ -9,14 +9,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090215083617) do
+ActiveRecord::Schema.define(:version => 20090308133803) do
 
   create_table "articles", :force => true do |t|
     t.string   "category"
     t.string   "name"
     t.string   "title"
     t.text     "body"
-    t.boolean  "in_menu"
     t.string   "locale"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -31,6 +30,14 @@ ActiveRecord::Schema.define(:version => 20090215083617) do
     t.integer "quantity"
     t.text    "proposition"
     t.string  "status_name"
+    t.string  "days"
+    t.string  "food"
+    t.string  "tshirt"
+    t.string  "transport"
+    t.string  "meeting"
+    t.string  "phone"
+    t.string  "user_type",     :default => "normal"
+    t.integer "to_pay"
   end
 
   create_table "conferences", :force => true do |t|
@@ -78,11 +85,9 @@ ActiveRecord::Schema.define(:version => 20090215083617) do
 
   create_table "statuses", :force => true do |t|
     t.string "name"
-    t.text   "description"
-    t.string "locale",      :limit => 10
   end
 
-  add_index "statuses", ["name", "locale"], :name => "index_statuses_on_name_and_locale", :unique => true
+  add_index "statuses", ["name"], :name => "index_statuses_on_name_and_locale", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "login"

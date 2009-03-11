@@ -9,17 +9,13 @@ describe "/articles/index.html.erb" do
         :title => "value for title",
         :body => "value for body",
         :category => "value for category",
-        :name => "value for name",
-        :in_menu => false,
-        :locale => "value for locale"
+        :name => "value for name"
       ),
       model_stub(Article,
         :title => "value for title",
         :body => "value for body",
         :category => "value for category",
-        :name => "value for name",
-        :in_menu => false,
-        :locale => "value for locale"
+        :name => "value for name"
       )
     ]
   end
@@ -29,7 +25,5 @@ describe "/articles/index.html.erb" do
     response.should have_tag("tr>td", "value for title".to_s, 2)
     response.should have_tag("tr>td", "value for category".to_s, 2)
     response.should have_tag("tr>td", "value for name".to_s, 2)
-    response.should have_tag("tr>td", false.to_s, 2)
-    response.should have_tag("tr>td", "value for locale".to_s, 2)
   end
 end

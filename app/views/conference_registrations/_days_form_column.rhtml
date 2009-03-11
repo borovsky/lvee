@@ -1,0 +1,25 @@
+<% scope ||= nil %>
+<dl class="<%= column.css_class unless column.css_class.nil? %>">
+  <dt>
+    <label for="<%= active_scaffold_input_options(column, scope)[:id] %>"><%= column.label %></label>
+  </dt>
+  <dd>
+    <div>
+    <% days = I18n.translate(:'date.day_names') %>
+    <% selectable_days = days[4..-1] + [days[0]] %>
+    <% selected_days = @record.days.split(',') %>
+    <ul>
+      <% selectable_days.each do|day| %>
+      <li>
+        <%= check_box_tag("record[days][]", day, checked =
+        selected_days.include?(day))  %>
+        <%= h(day) %> 
+      </li>
+      <% end %>
+    </ul>
+    </div>
+    <% if column.description -%>
+      <span class="description"><%= column.description %></span>
+    <% end -%>
+  </dd>
+</dl>

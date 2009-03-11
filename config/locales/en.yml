@@ -37,6 +37,18 @@
     subject:
       activation: 'Account activation for LVEE'
       activation_complete: "Your account for LVEE was activated"      
+  description:
+    conference_registration:
+      days: "Which days do you plan to participate?"
+      food: "Which type of food do you preffer"
+      meeting: "Would you like to be met ?"
+      phone: "Phone that we can use for contact with you on conference (with country code)"
+      transport: "Which transport will you use to reach the conference"
+      tshirt: "T-Shirt size"
+      quantity: "How many peoples will go to conference"
+      proposition: 'As free software is developed by the community with attracting a lot of volunteers, please tell us how you can contribute to our meeting. Let it be a report or a less formal speech within the limits of a workshop about implementation, usage or development of free software by you or your organization. If you are going to make a report or organize a workshop at the conference, please specify the topic of your report, as well as send its abstracts to "d.kostiuk@lvee.org":mailto:d.kostiuk@lvee.org .'
+      title: "Conference registration for {{conference}}"
+      index: "Registration to conference"
   label:
     article:
       listing: "Listing Articles"
@@ -76,11 +88,18 @@
       registration_opened: "opened"
       registration_closed: "closed"
       participated: "You have participated"
+      registred: "You have registred"
       upcoming: "Upcoming conferences"
       register: "Register"
     conference_registration:
+      days: "Participation days"
+      food: "Preffered food"
+      meeting: "Meeting required?"
+      phone: "Your contact phone"
+      transport: "Transport"
+      tshirt: "T-Shirt size"
       quantity: "Participant quantity"
-      propositions: "Your proposition"
+      proposition: "Your proposition"
       title: "Conference registration for {{conference}}"
       index: "Registration to conference"
     language:

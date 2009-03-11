@@ -1,9 +1,0 @@
-<h1><%= t('label.conference.show', :name => h(@conference.name),
- :start_date => format_date(@conference.start_date),
- :finish_date => format_date(@conference.finish_date)) %>
-</h1>
-<% status = t('label.conference.registration_' + (@conference.registration_opened ? 'opened': 'closed')) %>
-<p><%= t('message.conference.status', :status => "<b>#{status}</b>")%>
-
-<%= link_to t('label.common.edit'), edit_admin_conference_path(:id => @conference) %> |
-<%= link_to t('label.common.back'), admin_conferences_path %>

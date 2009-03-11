@@ -6,7 +6,6 @@
     <th><%= t('label.article.name')%></th>
     <th><%= t('label.article.locale')%></th>
     <th><%= t('label.article.title')%></th>
-    <th><%= t('label.article.in_menu')%></th>
   </tr>
 
 <% for article in @articles %>
@@ -15,7 +14,6 @@
     <td><%=h article.name %></td>
     <td><%=h article.locale %></td>
     <td><%=h article.title %></td>
-    <td><%=h article.in_menu %></td>
     <td><%= link_to t('label.common.show'), article_path(:id => article.id) %></td>
     <td><%= link_to t('label.common.edit'), edit_article_path(:id => article.id) %></td>
     <td><%= link_to t('label.common.delete'), article_path(:id => article.id), :confirm => t('message.common.sure'), :method => :delete %></td>

@@ -8,11 +8,13 @@ class ConferenceRegistration < ActiveRecord::Base
   validates_uniqueness_of :conference_id, :scope => :user_id
 
   def status
-    Status.find_by_name(@status_name)
+    @status ||= Status.find_by_name(@status_name)
+    @status
   end
 
   def status=(status)
     self.status_name = status.name
+    @staqtus = status
   end
 
   def self.find_actual_for_user(user_id)

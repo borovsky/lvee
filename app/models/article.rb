@@ -24,7 +24,6 @@ class Article < ActiveRecord::Base
   def translation(locale=nil)
     locale ||= I18n.locale
     trans = Article.translation_for(self, locale) || self
-    trans.in_menu = self.in_menu
     trans
   end
 

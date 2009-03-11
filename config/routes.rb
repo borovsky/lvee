@@ -5,7 +5,9 @@ ActionController::Routing::Routes.draw do |map|
 
   map.namespace :admin, :namespace => "", :path_prefix =>":lang", :name_prefix => "" do |admin|
     admin.resources :users
-    admin.resources :conferences
+    admin.resources :conferences, :active_scaffold => true
+    admin.resources :conference_registrations, :active_scaffold => true
+    admin.resources :statuses, :active_scaffold => true
   end
   map.namespace :editor, :namespace => "", :path_prefix =>":lang", :name_prefix => "" do |editor|
     editor.resources :languages
@@ -36,8 +38,12 @@ ActionController::Routing::Routes.draw do |map|
       :controller=> "articles",
       :defaults => {:action => "show", :name => "index"})
 
+
     ns.resources :users, :member => { :activate => :get }, :collection => {:current => :get} do |m|1
-      m.resources :conference_registrations, :controller => 'conference_registrations'
+      m.connect('conference_registrations/new/:conference_id',
+        :controller => 'conference_registrations', :action => 'new')
+      m.resources(:conference_registrations, :controller => 'conference_registrations',
+        :active_scaffold => true)
     end
     ns.resource  :session
 

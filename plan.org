@@ -26,10 +26,12 @@
 *** DONE [#A] Create editor/admin
 *** TODO [#C] Add support for google's sitemap
 
-** TODO Add new design [/]
+** Add new design [1/2]
+*** DONE Add DiAnton's design
+*** TODO Add normal design
 
 * New
-** Todo [3/7]
+** Todo [3/8]
 
 *** DONE [#A] Fix language switch for articles
 
@@ -45,11 +47,13 @@
 
 *** TODO [#A] Avators 150x200 (желательно с лицом)
 
+*** TODO City and Country - separate fields
+
 ** Mailman
 *** TODO [#A] mailman subscribtion during registration (option)
 (Organizers maillist)
 
-*** TODO [#B] User status (per conference): organizer, sponsor, user, reporter (admin edit)
+*** TODO [#A] User status (per conference): organizer, sponsor, user, reporter (admin edit)
 
 *** TODO [#C] Payment status (per conference): shouldn't pay, should pay, payed (сумма)
 
@@ -59,9 +63,9 @@
 
 *** TODO [#A] Предпочтения в еде (вегетарианец/обычный/...) chackbox + field
 
-*** TODO [#A] Размер футболки
-
 *** TODO [#A] Способ добирания до места (сам/маршрутка... / откуда куда) поле
+
+*** [#A] Размер футболки
 
 *** TODO [#A] Встречать? где и когда
 

@@ -1,0 +1,52 @@
+
+/* active_scaffold */
+.active-scaffold input.text-input {
+    width: 270px;
+}
+
+.active-scaffold textarea {
+    width: 272px;
+    height: 150px;
+}
+
+.active-scaffold .description {
+    display:block;
+    float:right;
+    width: 250px;
+}
+
+.active-scaffold li.form-element dt {
+    padding-right: 10px;
+    text-align:right;
+}
+
+.active-scaffold dt {
+    padding-right: 10px;
+    text-align:right;
+}
+
+.active-scaffold dt {
+    padding-right: 10px;
+    text-align:right;
+}
+
+.active-scaffold ul {
+    list-style:none;
+}
+
+.active-scaffold li.form-element div {
+    list-style:none;
+    width: 276px;
+    float:left;
+}
+
+.active-scaffold dd span.static-value{
+    width: 272px;
+    min-height: 19px;
+    padding: 6px 3px;
+    display:block;
+    float: left;
+    font: bold 14px arial;
+    margin-bottom: 5px;
+
+}

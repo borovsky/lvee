@@ -7,7 +7,6 @@ describe Article do
       :body => "value for body",
       :category => "value for category",
       :name => "value for name",
-      :in_menu => false,
       :locale => "value for locale"
     }
   end

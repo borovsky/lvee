@@ -1,0 +1,5 @@
+TSHIRT_SIZES = %w(M L XX XL)
+
+
+NEW_STATUS = "new"
+APPROVED_STATUS = "approved"

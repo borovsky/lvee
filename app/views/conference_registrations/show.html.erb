@@ -1,9 +1,0 @@
-<h1><%= t('label.conference_registration.title', :conference =>@registration.conference.name)%></h1>
-
-<p><%= t('label.conference_registration.quantity')%>: <%= @registration.quantity %></p>
-<p><%= t('label.conference_registration.propositions')%>:</p>
-<div id="proposition">
-<%= textilize @registration.proposition %>
-</div>
-<p><%= link_to t('label.common.edit'),
-       edit_user_conference_registration_path(:user_id => params[:user_id], :id => @registration.id)%></p>

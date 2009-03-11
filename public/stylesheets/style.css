@@ -107,7 +107,7 @@ a {
 	}
 
 .header li.sub a{
-	background: url(../images/ico-arrow-menu.gif) no-repeat right 6px;
+	background: url(/images/ico-arrow-menu.gif) no-repeat right 6px;
 	padding-right: 10px;
 	}
 .header li {
@@ -151,13 +151,13 @@ a {
 	}
 	
 .common {
-	background: url(../images/bg-common-content.gif) repeat-y right top; 
+	background: url(/images/bg-common-content.gif) repeat-y right top; 
 	}
 
 
 	
 .content .left {
-	background: url(../images/splash.png) no-repeat top left;
+	background: url(/images/splash.png) no-repeat top left;
 	
 	width: 729px;
 	padding-right: 20px;
@@ -182,7 +182,7 @@ a {
 .button-join a {
 	display: block;
 	color: #fff;
-	background: url(../images/button-join.png) no-repeat bottom left;
+	background: url(/images/button-join.png) no-repeat bottom left;
 	width: 385px;
 	height: 49px;
 	text-align: center;
@@ -192,7 +192,7 @@ a {
 	}
 	
 .button-join a:hover {
-	background: url(../images/button-join.png) no-repeat top left;
+	background: url(/images/button-join.png) no-repeat top left;
 	}
 	
 .box-banner {
@@ -215,7 +215,7 @@ a {
 .box-news li{
 	list-style: none;
 	padding: 6px 0;
-	background: url(../images/ico-dot.png) no-repeat left 12px;
+	background: url(/images/ico-dot.png) no-repeat left 12px;
 	padding-left: 12px;
 	}
 	
@@ -300,7 +300,7 @@ div.flags li {
 	
 .footer li {
 	list-style: none;
-	background: url(../images/ico-arrow2.gif) no-repeat left 11px;
+	background: url(/images/ico-arrow2.gif) no-repeat left 11px;
 	padding: 7px 0 0 10px;
 	
 	}
@@ -395,5 +395,4 @@ h1#preview_title {
 p.abstract {
     font-style:italic; 
 }
-
 

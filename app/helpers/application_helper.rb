@@ -20,8 +20,6 @@ module ApplicationHelper
       img = image_tag("/images/flags/"+lang.name+".png", :alt => lang.description)
       to_params = {:controller => controller.controller_name, :lang => lang.name, :id => params[:id],
         :category => params[:category], :name => params[:name], :action => controller.action_name}
-      p params
-      p to_params
       "<li>" +
         link_to_unless_current( img, to_params) +
         "</li>"
@@ -45,4 +43,5 @@ module ApplicationHelper
   def article_link(title, category, name)
     link_to(title, :category => category, :name => name, :controller => "articles", :action => 'show')
   end
+
 end

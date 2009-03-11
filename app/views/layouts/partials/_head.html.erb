@@ -7,7 +7,17 @@
 
   <%= stylesheet_link_tag "style" %>
   <%= javascript_include_tag "prototype", "menu" %>
-  <%= javascript_include_tag :defaults if editor? %>
-  <%= calendar_date_select_includes 'silver' if editor? %>
-  <%= auto_discovery_link_tag(:rss, rss_news_path) %>
+  <% if @active_scaffold %>
+  <%= active_scaffold_includes %>
+  <%= stylesheet_link_tag "style-end" %>
+  <% end %>
+  <%= auto_discovery_link_tag(:rss, rss_news_path) %>\
+  <% if editor? %>
+  <script type="text/javascript">
+    <% days = I18n.translate(:'date.abbr_day_names') %>
+    Date.weekdays = $w("<%= (days[1..-1] + [days[0]]).join(' ') %>");
+    Date.months = $w("<%=(I18n.translate(:'date.month_names')[1..-1].join(' '))%>");
+    Date.first_day_of_week = 1
+  </script>
+  <% end %>
 </head>

@@ -4,4 +4,8 @@ class Conference < ActiveRecord::Base
   def self.available_conferences(already_subscribed)
      Conference.find_all_by_registration_opened(true) - already_subscribed
   end
+
+  def to_s
+    name
+  end
 end
