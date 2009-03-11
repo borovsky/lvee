@@ -31,11 +31,13 @@
 *** TODO Add normal design
 
 * New
-** Todo [3/8]
+** Todo [4/9]
 
 *** DONE [#A] Fix language switch for articles
 
-*** TODO [#B] Admin panel with account statuses and mass mail
+*** DONE [#B] Admin panel with account statuses 
+
+*** TODO [#B] Admin panel with mass mail
 
 *** DONE [#B] "Чем грамотней и точнее вы ответите. тем проще будет с вами связаться"
 
@@ -53,25 +55,25 @@
 *** TODO [#A] mailman subscribtion during registration (option)
 (Organizers maillist)
 
-*** TODO [#A] User status (per conference): organizer, sponsor, user, reporter (admin edit)
+*** DONE [#A] User status (per conference): organizer, sponsor, user, reporter (admin edit)
 
 *** TODO [#C] Payment status (per conference): shouldn't pay, should pay, payed (сумма)
 
-** Additional fields: 
+** Additional fields [7/7]: 
 
-*** TODO [#A] add checkbox with which days user will go
+*** DONE [#A] add checkbox with which days user will go
 
-*** TODO [#A] Предпочтения в еде (вегетарианец/обычный/...) chackbox + field
+*** DONE [#A] Предпочтения в еде (вегетарианец/обычный/...) chackbox + field
 
-*** TODO [#A] Способ добирания до места (сам/маршрутка... / откуда куда) поле
+*** DONE [#A] Способ добирания до места (сам/маршрутка... / откуда куда) поле
 
-*** [#A] Размер футболки
+*** DONE [#A] Размер футболки
 
-*** TODO [#A] Встречать? где и когда
+*** DONE [#A] Встречать? где и когда
 
 *** DONE [#B] Текст о нераспространении [cоnference/privacy]
 
-*** TODO [#A] Телефон (с кодом)
+*** DONE [#A] Телефон (с кодом)
 
 не платит: докладчик, спонсор
 
