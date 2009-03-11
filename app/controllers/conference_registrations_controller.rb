@@ -15,6 +15,7 @@ class ConferenceRegistrationsController < ApplicationController
   active_scaffold :conference_registrations do |config|
     config.label = "Conference Registration"
     config.actions = [:create, :update, :show]
+    config.columns = COLUMNS
     config.create.columns = FIRST_STEP_COLUMNS + HIDDEN_COLUMNS
 
     config.update.columns = STATIC_COLUMNS + EDITABLE_COLUMNS
