@@ -89,6 +89,7 @@
       registration_closed: "closed"
       participated: "You have participated"
       registred: "You have registred"
+      available: "You can participate following conferences"
       upcoming: "Upcoming conferences"
       register: "Register"
     conference_registration:
