@@ -1,10 +1,10 @@
 <% user_id = params[:user_id] || @user.id -%>
-<% regs = ConferenceRegistration.find_actual_for_user(user_id) -%>
+<% actual = ConferenceRegistration.find_actual_for_user(user_id) -%>
 <% now = Time.now -%>
-<% participated = regs.find_all {|r| r.conference.finish_date.to_time < now} -%>
-<% regs = regs - participated -%>
-<% available = Conference.available_conferences(regs.map {|c|
-   c.conference}) %>
+<% participated = actual.find_all {|r| r.conference.finish_date.to_time < now} -%>
+<% regs = actual - participated -%>
+<% available = Conference.available_conferences(actual.map {|c|  c.conference}) %>
+
 
 <% unless participated.empty? -%>
 <h2><%= t('label.conference.participated')%>:</h2>
