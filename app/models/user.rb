@@ -124,7 +124,7 @@ class User < ActiveRecord::Base
   end
 
   def to_s
-    "#{full_name}, #{city}, #{country}"
+    "#{full_name}"
   end
 
   protected

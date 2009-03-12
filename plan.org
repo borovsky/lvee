@@ -31,7 +31,7 @@
 *** TODO Add normal design
 
 * New
-** Todo [4/9]
+** Todo [5/9]
 
 *** DONE [#A] Fix language switch for articles
 
@@ -49,7 +49,9 @@
 
 *** TODO [#A] Avators 150x200 (желательно с лицом)
 
-*** TODO City and Country - separate fields
+*** TODO [#A] Upload images to server for editor
+
+*** DONE City and Country - separate fields
 
 ** Mailman
 *** TODO [#A] mailman subscribtion during registration (option)
