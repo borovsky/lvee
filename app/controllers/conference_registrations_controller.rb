@@ -34,12 +34,19 @@ class ConferenceRegistrationsController < ApplicationController
 
   protected
   def current_user_only
+    login_required
+    return if performed?
     render :text => t('message.common.access_denied'), :status=>403 unless params[:user_id].to_s == current_user.id.to_s
   end
 
   def default_url_options(options={})
+    base = super(options)
     opts = current_user ? {:user_id => current_user.id} : {}
-    super(options).merge(opts)
+    if options[:controller] == 'conference_registration'
+      base.merge(opts)
+    else
+      base
+    end
   end
 
   def do_new
@@ -94,6 +101,4 @@ class ConferenceRegistrationsController < ApplicationController
     @record.tshirt = @record.tshirt.join(',') if @record.tshirt.kind_of? Array
     @record.status_name = NEW_STATUS
   end
-
-
 end

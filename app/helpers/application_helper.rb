@@ -19,6 +19,7 @@ module ApplicationHelper
     html = Language.published.map do |lang|
       img = image_tag("/images/flags/"+lang.name+".png", :alt => lang.description)
       to_params = {:controller => controller.controller_name, :lang => lang.name, :id => params[:id],
+        :user_id => params[:user_id], :conference_id => params[:conference_id],
         :category => params[:category], :name => params[:name], :action => controller.action_name}
       "<li>" +
         link_to_unless_current( img, to_params) +
