@@ -153,6 +153,10 @@
       to_profile: "To your profile"
       title: "{{full_name}} ({{login}}), your profile in your hands"
   message:
+    iefuck:
+      link: "http://browsehappy.com"
+      link_text: "Why not switch to a browser that is more secure?"
+      message: "Internet Explorer can make your computer unsafe. {{link}}"
     language:
       created: "Language created successfully"
       updated: "Language updated successfully"

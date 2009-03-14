@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   # Virtual attribute for the unencrypted password
   attr_accessor :password
 
-  validates_presence_of :login, :email, :first_name, :last_name, :country, :city
+  validates_presence_of :login, :email, :first_name, :last_name, :country, :city, :projects, :occupation
 
   validates_presence_of     :password,                   :if => :password_required?
   validates_presence_of     :password_confirmation,      :if => :password_required?
@@ -34,7 +34,7 @@ class User < ActiveRecord::Base
 
   # prevents a user from submitting a crafted form that bypasses activation
   # anything else you want your user to change should be added here.
-  attr_accessible :first_name, :last_name, :country, :city, :projects, :email, :login, :password, :password_confirmation
+  attr_accessible :first_name, :last_name, :country, :city, :projects, :occupation, :email, :login, :password, :password_confirmation
 
   def full_name
     "#{first_name} #{last_name}"

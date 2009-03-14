@@ -2,17 +2,23 @@
 /* active_scaffold */
 .active-scaffold input.text-input {
     width: 270px;
+    display:block;
+    clear:none;
+    float:left;
 }
 
 .active-scaffold textarea {
     width: 272px;
     height: 150px;
+    display:block;
+    float:left;
+    clear:none;
 }
 
 .active-scaffold .description {
     display:block;
     float:right;
-    width: 250px;
+    width: 245px;
 }
 
 .active-scaffold li.form-element dt {
