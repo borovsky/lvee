@@ -29,6 +29,7 @@ class MainController < ApplicationController
     }
 
     # sort by quality
+    accepted = accepted.find_all{|l| Language.find_by_name_and_published(l, true)}
     accepted.sort { |l1, l2| l1[1] <=> l2[1] }
   end
 
