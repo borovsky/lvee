@@ -31,7 +31,7 @@
 *** TODO Add normal design
 
 * New
-** Todo [5/9]
+** Todo [6/10]
 
 *** DONE [#A] Fix language switch for articles
 
@@ -49,12 +49,12 @@
 
 *** TODO [#A] Avators 150x200 (желательно с лицом)
 
-*** TODO [#A] Upload images to server for editor
+*** DONE [#A] Upload images to server for editor
 
 *** DONE City and Country - separate fields
 
 ** Mailman
-*** TODO [#A] mailman subscribtion during registration (option)
+*** DONE [#A] mailman subscribtion during registration (option)
 (Organizers maillist)
 
 *** DONE [#A] User status (per conference): organizer, sponsor, user, reporter (admin edit)
