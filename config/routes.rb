@@ -13,6 +13,7 @@ ActionController::Routing::Routes.draw do |map|
   end
   map.namespace :editor, :namespace => "", :path_prefix =>":lang", :name_prefix => "" do |editor|
     editor.resources :languages
+    editor.resources :image_uploads, :active_scaffold => true
   end
 
 

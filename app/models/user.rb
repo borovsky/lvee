@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
 
   validates_confirmation_of :password,                   :if => :password_required?
 
-  validates_format_of :email, :with => /^\S+\@(\[?)[a-zA-Z0-9\-\.]+\.([a-zA-Z]{2,4}|[0-9]{1,4})(\]?)$/ix
+  validates_format_of :email, :with => /^[a-zA-Z0-9\-\.]+\@[a-zA-Z0-9\-\.]+\.([a-zA-Z]{2,4}|[0-9]{1,4})$/ix
 
   validates_length_of       :login, :within => 3..40
 
@@ -125,6 +125,14 @@ class User < ActiveRecord::Base
 
   def to_s
     "#{full_name}"
+  end
+
+  def after_save
+    if subscribed?
+      MaillistSubscriber.subscribe(ALL_USER_MAILLIST, self.email) if activated?
+    else
+      MaillistSubscriber.unsubscribe(ALL_USER_MAILLIST, self.email)
+    end
   end
 
   protected

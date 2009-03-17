@@ -305,6 +305,7 @@ ru:
       register: Зарегистрироваться
       title: "{{full_name}} ({{login}}), ваш профиль в твоих руках"
       to_profile: "На ваш профиль"
+      subscribe: "Подписаться на рассылку"
   mail: 
     account: 
       activate: |-

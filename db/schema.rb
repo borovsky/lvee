@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090308133803) do
+ActiveRecord::Schema.define(:version => 20090315102546) do
 
   create_table "articles", :force => true do |t|
     t.string   "category"
@@ -45,6 +45,14 @@ ActiveRecord::Schema.define(:version => 20090308133803) do
     t.date    "start_date"
     t.date    "finish_date"
     t.boolean "registration_opened"
+  end
+
+  create_table "image_uploads", :force => true do |t|
+    t.string  "description"
+    t.string  "file"
+    t.integer "width"
+    t.integer "height"
+    t.integer "user_id"
   end
 
   create_table "languages", :id => false, :force => true do |t|
@@ -107,6 +115,7 @@ ActiveRecord::Schema.define(:version => 20090308133803) do
     t.string   "activation_code",           :limit => 40
     t.datetime "activated_at"
     t.string   "role"
+    t.boolean  "subscribed"
   end
 
 end

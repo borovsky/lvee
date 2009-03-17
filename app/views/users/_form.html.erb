@@ -27,6 +27,9 @@
 <p><label for="projects"><%= t 'label.user.projects'%></label><br/>
   <%= f.text_area :projects, :style => 'width: 100%', :rows => 5 %></p>
 
+<p><label for="subscribe"><%= t 'label.user.subscribe'%></label><br/>
+  <%= f.check_box :subscribed %></p>
+
 <p> <%= t('message.user.required_fields', :mark => '<strong class="required">*</strong>') %></p>
 
 <p><%= t("message.user.privacy", :link => article_link(t('message.user.privacy_link'), 'users', 'privacy'))%></p>

@@ -152,6 +152,7 @@
       register: "Register"
       to_profile: "To your profile"
       title: "{{full_name}} ({{login}}), your profile in your hands"
+      subscribe: "Subscribe to users maillist"
   message:
     iefuck:
       link: "http://browsehappy.com"
