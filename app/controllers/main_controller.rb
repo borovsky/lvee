@@ -5,13 +5,12 @@ class MainController < ApplicationController
   end
 
   def select_lang
-    langs =  accepted_languages
-    lang = langs.empty? ? 'en' : langs.last[0]
+    lang = preferred_language(Language.find_all_by_published(true).map{|l| l.id})
     redirect_to :controller => "main", :action =>'index', :lang => lang
   end
 
   protected
-  def accepted_languages()
+  def accepted_languages
     # no language accepted
     return [] if request.env["HTTP_ACCEPT_LANGUAGE"].nil?
 
