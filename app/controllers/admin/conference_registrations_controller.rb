@@ -4,11 +4,11 @@ module Admin
     before_filter :admin_required, :scaffold_action
 
     EDITABLE_COLUMNS = [:user_type, :to_pay, :status_name]
-    STATIC_COLUMNS = [:conference, :user, :days, :food, :meeting, :phone, :proposition, :quantity, :transport, :tshirt]
+    STATIC_COLUMNS = [:conference, :user, :avator,  :days, :food, :meeting, :phone, :proposition, :quantity, :transport, :tshirt]
     LIST_COLUMNS = [:id, :conference, :user, :city, :country, :quantity, :status_name, :user_type]
     COLUMNS = (LIST_COLUMNS + STATIC_COLUMNS + EDITABLE_COLUMNS).uniq
 
-    USER_COLUMNS = [:city, :country]
+    USER_COLUMNS = [:city, :country, :avator]
 
     active_scaffold :conference_registrations do |config|
       config.columns = COLUMNS
@@ -16,13 +16,14 @@ module Admin
       config.actions.exclude :create, :delete, :nested
       config.actions.swap :search, :live_search
 
-      config.list.columns = [:id, :conference, :user, :city, :country, :quantity, :status_name, :user_type]
+      config.list.columns = LIST_COLUMNS
 
       USER_COLUMNS.each do |c|
         config.columns[c].search_sql = "users.#{c}"
         config.columns[c].sort = true
         config.columns[c].sort_by :sql => "users.#{c}"
       end
+
       config.list.sorting = {:user => 'ASC'}
       config.list.per_page = 100
 

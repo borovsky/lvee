@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090315102546) do
+ActiveRecord::Schema.define(:version => 20090317220859) do
 
   create_table "articles", :force => true do |t|
     t.string   "category"
@@ -97,25 +97,7 @@ ActiveRecord::Schema.define(:version => 20090315102546) do
 
   add_index "statuses", ["name"], :name => "index_statuses_on_name_and_locale", :unique => true
 
-  create_table "users", :force => true do |t|
-    t.string   "login"
-    t.string   "email"
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "country"
-    t.string   "city"
-    t.string   "occupation"
-    t.text     "projects"
-    t.string   "crypted_password",          :limit => 40
-    t.string   "salt",                      :limit => 40
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "remember_token"
-    t.datetime "remember_token_expires_at"
-    t.string   "activation_code",           :limit => 40
-    t.datetime "activated_at"
-    t.string   "role"
-    t.boolean  "subscribed"
-  end
+# Could not dump table "users" because of following StandardError
+#   Unknown type 'avator' for column 'avator'
 
 end

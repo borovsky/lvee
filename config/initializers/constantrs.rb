@@ -10,3 +10,5 @@ IMAGE_UPLOAD_ROOT = File.join(RAILS_ROOT, 'public', 'images', 'uploaded')
 
 ALL_USER_MAILLIST = "info"
 ADMIN_MAILLIST = "organizer"
+
+AVATOR_SIZE = "200x150"

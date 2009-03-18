@@ -376,6 +376,9 @@ ru:
       privacy_link: "не продаем"
       registred: "Спасибо за регистрацию."
       required_fields: "Поля отмеченные красной звёздочкой ({{mark}}) обязательны для заполнения."
+      avator_upload: "Пожалуйста загрузите ваше фото"
+      upload_avator_link: "Загрузите своё фото {{link}}."
+      upload_avator_link_text: "здесь"
   number: 
     currency: 
       format: 

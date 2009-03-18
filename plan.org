@@ -31,7 +31,7 @@
 *** TODO Add normal design
 
 * New
-** Todo [6/10]
+** Todo [7/10]
 
 *** DONE [#A] Fix language switch for articles
 
@@ -47,7 +47,7 @@
 
 *** TODO [#C] курсы валют 
 
-*** TODO [#A] Avators 150x200 (желательно с лицом)
+*** DONE [#A] Avators 150x200 (желательно с лицом)
 
 *** DONE [#A] Upload images to server for editor
 

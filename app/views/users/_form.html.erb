@@ -29,6 +29,8 @@
 
 <p><label for="subscribe"><%= t 'label.user.subscribe'%></label><br/>
   <%= f.check_box :subscribed %></p>
+<p><label for="avator"><%= t('message.user.avator_upload')%></label>
+  <%= file_column_field("user", "avator") %></p>
 
 <p> <%= t('message.user.required_fields', :mark => '<strong class="required">*</strong>') %></p>
 

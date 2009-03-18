@@ -1,10 +1,12 @@
 require 'digest/sha1'
 class User < ActiveRecord::Base
+  file_column :avator, :magick => {:size => AVATOR_SIZE}
+
   has_many :conference_registrations, :dependent => :delete_all
 
- # Authorization plugin
- # acts_as_authorized_user
- # acts_as_authorizable
+  # Authorization plugin
+  # acts_as_authorized_user
+  # acts_as_authorizable
 
   # Virtual attribute for the unencrypted password
   attr_accessor :password
@@ -34,7 +36,7 @@ class User < ActiveRecord::Base
 
   # prevents a user from submitting a crafted form that bypasses activation
   # anything else you want your user to change should be added here.
-  attr_accessible :first_name, :last_name, :country, :city, :projects, :occupation, :email, :login, :password, :password_confirmation
+  attr_accessible :login, :first_name, :last_name, :country, :city, :projects, :occupation, :email, :password, :password_confirmation, :subscribed, :avator, :avator_temp
 
   def full_name
     "#{first_name} #{last_name}"
@@ -117,10 +119,10 @@ class User < ActiveRecord::Base
 
   def self.valid_data
     {:login => 'login', :email => 'user@example.com',
-    :first_name => 'Vasiliy', :last_name=> 'Pupkin',
-    :country => 'Belarus', :city => 'Minsk',
-    :password => '1234',
-    :password_confirmation => '1234'}
+      :first_name => 'Vasiliy', :last_name=> 'Pupkin',
+      :country => 'Belarus', :city => 'Minsk',
+      :password => '1234',
+      :password_confirmation => '1234'}
   end
 
   def to_s
@@ -136,19 +138,18 @@ class User < ActiveRecord::Base
   end
 
   protected
-    # before filter
-    def encrypt_password
-      return if password.blank?
-      self.salt = Digest::SHA1.hexdigest("--#{Time.now.to_s}--#{login}--") if new_record?
-      self.crypted_password = encrypt(password)
-    end
+  # before filter
+  def encrypt_password
+    return if password.blank?
+    self.salt = Digest::SHA1.hexdigest("--#{Time.now.to_s}--#{login}--") if new_record?
+    self.crypted_password = encrypt(password)
+  end
 
-    def password_required?
-      crypted_password.blank? || !password.blank?
-    end
+  def password_required?
+    crypted_password.blank? || !password.blank?
+  end
 
-    def make_activation_code
-      self.activation_code = Digest::SHA1.hexdigest( Time.now.to_s.split(//).sort_by {rand}.join )
-    end
-
+  def make_activation_code
+    self.activation_code = Digest::SHA1.hexdigest( Time.now.to_s.split(//).sort_by {rand}.join )
+  end
 end

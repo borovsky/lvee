@@ -1,7 +1,7 @@
 require 'RMagick'
 
 class ImageUpload < ActiveRecord::Base
-  file_column :file
+  file_column :file, :magick => {:transform => Proc.new {|i|}}
 
   def before_validation_on_create
     if file
@@ -21,5 +21,8 @@ class ImageUpload < ActiveRecord::Base
 
   def size
     "#{width}x#{height}"
+  end
+
+  def do_nothing
   end
 end

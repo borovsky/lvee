@@ -175,6 +175,9 @@
       accuracy_note: "Accurate and error-free registration form filling will help contacting with you alot"
       privacy: "Privacy Policy: We {{link}} your account information to anyone, including your email address."
       privacy_link: "don't sell"
+      avator_upload: "Please upload you photo"
+      upload_avator_link: "Upload your photo {{link}}."
+      upload_avator_link_text: "here"
     news:
       created: "News created successfully"
       updated: "News updated successfully"
