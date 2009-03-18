@@ -1,5 +1,5 @@
 <ul id="sub-menu">
-  <li class="first"><%= link_to(t('menu.main'), :controller => "main")%></li>
+  <li class="first"><%= link_to(t('menu.main'), :controller => "/main")%></li>
   <li class="sub">
     <ul>
       <li><%= article_link(t('menu.conference.about'), 'conference', "index")%></li>
@@ -12,6 +12,7 @@
   </li>
   <li class="sub">
     <ul>
+      <li><%= article_link(t('menu.reports.about'), 'reports', 'index')%></li>
       <li><%= article_link(t('menu.reports.program'), 'reports', 'program')%></li>
       <li><%= article_link(t('menu.reports.abstract'),'reports', 'abstract')%></li>
       <li class="last-m"><%= article_link(t('menu.reports.materials'), 'reports', 'materials')%></li>

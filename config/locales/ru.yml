@@ -334,16 +334,19 @@ ru:
       place: "Место проведеня конференции"
       press: "Пресса о конференции"
     contacts: Контакты
-    information_sponsor: "Информационный спонсор"
     main: Главная
-    organizers: Организаторы
     profile: Профиль
     reports: 
+      about: "О докладах"
       abstract: "Правила оформления тезисов"
       category: Доклады
       materials: "Материалы прошлых конференций"
       program: "Программа конференции"
     sponsors: Спонсоры
+  sidebar:
+    sponsors: "Спонсоры 2008"
+    organizers: Организаторы
+    information_sponsor: "Информационные партнёры"
   message: 
     common: 
       access_denied: "Доступ запрещён"

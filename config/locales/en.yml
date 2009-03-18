@@ -11,12 +11,15 @@
     profile: "Profile"
     reports: 
       category: "Reports"
+      about: "On Reports"
       program: "Program"
       abstract: "Abstract guidelines"
       materials: "Past conference materials"
     sponsors: "Sponsors"
+  sidebar:
+    sponsors: "Sponsors of 2008"
     organizers: "Organizers"
-    information_sponsor: "Information Sponsor"
+    information_sponsor: "Information Partners"
   mail:
     title: "Hello, {{full_name}}"
     signature: |-
