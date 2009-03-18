@@ -122,7 +122,9 @@ class User < ActiveRecord::Base
       :first_name => 'Vasiliy', :last_name=> 'Pupkin',
       :country => 'Belarus', :city => 'Minsk',
       :password => '1234',
-      :password_confirmation => '1234'}
+      :password_confirmation => '1234',
+      :occupation => "Some",
+      :projects => "Any"}
   end
 
   def to_s
@@ -131,7 +133,7 @@ class User < ActiveRecord::Base
 
   def after_save
     if subscribed?
-      MaillistSubscriber.subscribe(ALL_USER_MAILLIST, self.email) if activated?
+      MaillistSubscriber.subscribe(ALL_USER_MAILLIST, self.email) if active?
     else
       MaillistSubscriber.unsubscribe(ALL_USER_MAILLIST, self.email)
     end

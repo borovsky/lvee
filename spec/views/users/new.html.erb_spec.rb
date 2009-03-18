@@ -6,7 +6,8 @@ describe "/users/new.html.erb" do
       :new_record? => true,
       :errors => [],
       :password => '123',
-      :password_confirmation => '123'
+      :password_confirmation => '123',
+      :avator_temp => nil
     )
   end
 

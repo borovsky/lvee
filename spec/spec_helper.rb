@@ -107,6 +107,12 @@ I18n.class_eval(<<-END
 END
 )
 
+module Kernel
+  #Doesn't exec any commands
+  def system(*args)
+  end
+end
+
 module ActionView::Helpers::TranslationHelper
   def translate(key, options = {})
     I18n.translate(key, options)

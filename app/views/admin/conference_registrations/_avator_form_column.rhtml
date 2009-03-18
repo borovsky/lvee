@@ -1,0 +1,9 @@
+<% scope ||= nil %>
+<dl class="<%= column.css_class unless column.css_class.nil? %>">
+  <dt>
+    <label for="<%= active_scaffold_input_options(column, scope)[:id] %>"><%= column.label %></label>
+  </dt>
+  <dd>
+    <%= image_tag(url_for_file_column(@record.user, "avator")) if @record.user.avator -%>
+  </dd>
+</dl>

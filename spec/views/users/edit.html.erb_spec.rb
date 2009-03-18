@@ -7,7 +7,8 @@ describe "/users/edit.html.erb" do
       :errors => [],
       :full_name => 'xyz',
       :password => '123',
-      :password_confirmation => '123'
+      :password_confirmation => '123',
+      :avator_temp => nil
     )
   end
 
