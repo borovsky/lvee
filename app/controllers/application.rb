@@ -4,6 +4,8 @@
 class ApplicationController < ActionController::Base
   include AuthenticatedSystem
   include ApplicationHelper
+  
+  include ExceptionNotifiable
 
   helper :all
 
