@@ -5,6 +5,7 @@
     display:block;
     clear:none;
     float:left;
+    border: 1px solid #1492A3
 }
 
 .active-scaffold textarea {
@@ -13,12 +14,14 @@
     display:block;
     float:left;
     clear:none;
+    border: 1px solid #1492A3
 }
 
 .active-scaffold .description {
     display:block;
     float:right;
     width: 245px;
+    color: #000;
 }
 
 .active-scaffold li.form-element dt {
@@ -64,4 +67,21 @@
 .active-scaffold p.note {
     margin-left: 160px;
     font-size:11px;
+}
+
+.active-scaffold .view {
+    background:none;
+    border: 1px solid #1492A3
+}
+
+.active-scaffold label {
+    color:#000;
+}
+
+.active-scaffold a:hover {
+    background:none;
+}
+
+.active-scaffold h4, .active-scaffold h5 {
+    color:#1492A3;
 }

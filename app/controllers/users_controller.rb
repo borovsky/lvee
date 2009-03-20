@@ -74,6 +74,6 @@ class UsersController < ApplicationController
       config.columns[c].description = t(LOCALIZATION_DESCRIPTION_PREFIX + c.to_s)
     end
     config.create.label = t('label.user.register')
-    config.update.label = t('label.user.title', :full_name => current_user.full_name, :login => current_user.login)
+    config.update.label = t('label.user.title', :full_name => current_user.full_name, :login => current_user.login) if current_user
   end
 end
