@@ -205,7 +205,7 @@
       logged_out: "You logged out successfully"
       failed: "Login or password incorrect. May be you didn't activate your account"
     common:
-      required_fields: "(fields marked with bold are obligatory for fill in)"
+      required_fields: "(fields marked with bold are obligatory to fill in)"
       sure: "Are you sure?"
       access_denied: "Access denied"
 
