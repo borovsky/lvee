@@ -20,6 +20,7 @@
     sponsors: "Sponsors of 2008"
     organizers: "Organizers"
     information_sponsor: "Information Partners"
+    technical_sponsor: "Technical sponsor"
   mail:
     title: "Hello, {{full_name}}"
     signature: |-
@@ -52,6 +53,19 @@
       proposition: 'As free software is developed by the community with attracting a lot of volunteers, please tell us how you can contribute to our meeting. Let it be a report or a less formal speech within the limits of a workshop about implementation, usage or development of free software by you or your organization. If you are going to make a report or organize a workshop at the conference, please specify the topic of your report, as well as send its abstracts to "d.kostiuk@lvee.org":mailto:d.kostiuk@lvee.org .'
       title: "Conference registration for {{conference}}"
       index: "Registration to conference"
+    user:
+      login: "at least 3 symbols"
+      password: "at least 4 symbols"
+      password_confirmation: "Same to password"
+      email: "Your email"
+      first_name: ""
+      last_name: ""
+      country: "Where are you from"
+      city: ""
+      occupation: "Place of work/study and field of activities (with breaf organization name)"
+      projects: "Free Software / Open Source (FS/OS) projects where you have taken or are taking part in and your role in them"
+      subscribed: ""
+      avator: "Your photo. Will be very good if with face"
   label:
     article:
       listing: "Listing Articles"
@@ -148,14 +162,15 @@
       last_name: "Last Name"
       login: "Login"
       join_us: "Join us today"
-      occupation: "Place of work/study and field of activities (with breaf organization name)"
+      occupation: "Where do you work?"
       password: "Password"
       password_confirmation: "Password Confirmation"
-      projects: "Free Software / Open Source (FS/OS) projects where you have taken or are taking part in and your role in them"
+      projects: "Your projects"
       register: "Register"
       to_profile: "To your profile"
       title: "{{full_name}} ({{login}}), your profile in your hands"
-      subscribe: "Subscribe to users maillist"
+      subscribed: "Subscribe to maillist"
+      avator: "Your photo"
   message:
     iefuck:
       link: "http://browsehappy.com"

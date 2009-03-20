@@ -2,22 +2,35 @@
 
 class UsersController < ApplicationController
   before_filter :login_required, :only => [:show, :index, :edit, :update, :current]
+  before_filter :scaffold_action, :set_common_columns_info
 
-  # render new.rhtml
-  def new
+  USER_EDITABLE_COLUMNS = [:password, :password_confirmation, :email, :first_name, :last_name, :country, :city,
+  :occupation, :projects, :subscribed]
+  ONLY_CREATE_COLUMNS = [:login]
+  COLUMNS = ONLY_CREATE_COLUMNS + USER_EDITABLE_COLUMNS
+  PRIORITY_COUNTRIES = ['Belarus', 'Ukraine', 'Russia']
+
+  LOCALIZATION_LABEL_PREFIX = "label.user."
+  LOCALIZATION_DESCRIPTION_PREFIX = "description.user."
+
+  active_scaffold :users do |config|
+    config.actions = [:create, :update]
+    config.columns = COLUMNS
+    config.create.columns = COLUMNS
+    config.update.columns = USER_EDITABLE_COLUMNS
+
+    config.columns[:subscribed].form_ui = :checkbox
+    config.columns[:password].form_ui = :password
+    config.columns[:password_confirmation].form_ui = :password
+    config.columns[:country].form_ui = :country
+    config.columns[:country].options[:priority] = PRIORITY_COUNTRIES
   end
 
-  def create
-    cookies.delete :auth_token
-    @user = User.new(params[:user])
-    if @user.save
-      UserMailer.deliver_signup_notification(@user)
-      self.current_user = @user
-      flash[:notice] = t('message.user.registred')
-      redirect_to user_path(:id => current_user.id, :lang => params[:lang])
-    else
-      render :action => 'new'
-    end
+
+  def after_create_save(record)
+    UserMailer.deliver_signup_notification(record)
+    self.current_user = record
+    redirect_to user_path(:id => current_user.id, :lang => params[:lang])
   end
 
   def current
@@ -42,25 +55,15 @@ class UsersController < ApplicationController
     @user = User.find params[:id]
   end
 
-  def edit
-    @user = User.find params[:id]
-    unless @user.editable_by? current_user
-      return render(:text =>t('message.common.access_denied'), :status=> 403)
-    end
+  def after_update_save(record)
+    redirect_to user_path(:id=>record)
   end
 
-  def update
-    @user = User.find params[:id]
-
-    unless @user.editable_by?(current_user)
-      return render(:text =>t('message.common.access_denied'), :status=> 403)
-    end
-
-    flash[:notice] = t('message.user.login_change') if params[:user].delete(:login)
-    if(@user.update_attributes(params[:user]))
-      redirect_to user_path(:id=>@user)
-    else
-      render :action => "users/edit"
+  def set_common_columns_info
+    active_scaffold_config.label = t('label.user.register')
+    COLUMNS.each do |c|
+      active_scaffold_config.columns[c].label = t(LOCALIZATION_LABEL_PREFIX + c.to_s)
+      active_scaffold_config.columns[c].description = t(LOCALIZATION_DESCRIPTION_PREFIX + c.to_s)
     end
   end
 end

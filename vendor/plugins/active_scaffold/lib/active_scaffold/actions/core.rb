@@ -61,6 +61,7 @@ module ActiveScaffold::Actions
 
     # Redirect to the main page (override if the ActiveScaffold is used as a component on another controllers page) for Javascript degradation
     def return_to_main
+      return if performed?
       unless params[:parent_controller].nil?
         params[:controller] = params[:parent_controller]
         params[:eid] = nil

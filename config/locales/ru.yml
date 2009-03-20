@@ -203,6 +203,19 @@ ru:
       title: "Регистрация на конференцию {{conference}}"
       transport: "Как вы планируете добираться до конференции?"
       tshirt: "Размер маек"
+    user:
+      login: "от 3 символов"
+      password: "от 4 символов"
+      password_confirmation: "Такой же как пароль"
+      email: "Ваш адрес электронной почты"
+      first_name: ""
+      last_name: ""
+      country: "Откуда вы?"
+      city: ""
+      occupation: "Место работы/учёбы, область деятельности (с кратким названием организации)"
+      projects: "Проекты Free Software / Open Source (FS/OS), в которых вы принимали -и/или принимаете участие и ваша роль в них"
+      subscribed: ""
+      avator: "Ваше фото. Желательно с лицом"
   label: 
     article: 
       body: Тело
@@ -298,14 +311,15 @@ ru:
       join_us: "Присоединяйся к нам"
       last_name: Фамилия
       login: Логин
-      occupation: "Место работы/учёбы, область деятельности (с кратким названием организации)"
+      occupation: "Где вы работаете?"
       password: Пароль
       password_confirmation: "Подтверждение пароль"
-      projects: "Проекты Free Software / Open Source (FS/OS), в которых вы принимали -и/или принимаете участие и ваша роль в них"
+      projects: "Ваши проекты FS/OS"
       register: Зарегистрироваться
       title: "{{full_name}} ({{login}}), ваш профиль в твоих руках"
       to_profile: "На ваш профиль"
-      subscribe: "Подписаться на рассылку"
+      subscribed: "Подписаться на рассылку"
+      avator: "Ваше фото"
   mail: 
     account: 
       activate: |-
@@ -347,6 +361,7 @@ ru:
     sponsors: "Спонсоры 2008"
     organizers: Организаторы
     information_sponsor: "Информационные партнёры"
+    technical_sponsor: "Технический спонсор"
   message: 
     common: 
       access_denied: "Доступ запрещён"

@@ -4,7 +4,7 @@
 class ApplicationController < ActionController::Base
   include AuthenticatedSystem
   include ApplicationHelper
-  
+
   include ExceptionNotifiable
 
   helper :all
@@ -49,5 +49,4 @@ class ApplicationController < ActionController::Base
   def scaffold_action
     @active_scaffold = true
   end
-
 end

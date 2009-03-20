@@ -44,5 +44,4 @@ module ApplicationHelper
   def article_link(title, category, name)
     link_to(title, :category => category, :name => name, :controller => "/articles", :action => 'show')
   end
-
 end
