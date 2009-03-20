@@ -60,3 +60,8 @@
 .active-scaffold select {
     width: 276px;
 }
+
+.active-scaffold p.note {
+    margin-left: 160px;
+    font-size:11px;
+}

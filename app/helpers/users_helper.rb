@@ -15,4 +15,7 @@ module UsersHelper
     country_select(:record, column.name, column.options[:priority] || priority, select_options, column.options)
   end
 
+  def as_(param)
+    t("label.user.#{param}", :default => t("label.common.#{param}"))
+  end
 end

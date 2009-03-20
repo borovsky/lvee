@@ -24,8 +24,12 @@ class UsersController < ApplicationController
     config.columns[:password_confirmation].form_ui = :password
     config.columns[:country].form_ui = :country
     config.columns[:country].options[:priority] = PRIORITY_COUNTRIES
+    User::REQUIRED_FIELDS.each{|i| config.columns[i].required = true }
   end
 
+  def list
+    redirect_to user_path(:id => current_user.id)
+  end
 
   def after_create_save(record)
     UserMailer.deliver_signup_notification(record)
@@ -60,10 +64,16 @@ class UsersController < ApplicationController
   end
 
   def set_common_columns_info
-    active_scaffold_config.label = t('label.user.register')
-    COLUMNS.each do |c|
-      active_scaffold_config.columns[c].label = t(LOCALIZATION_LABEL_PREFIX + c.to_s)
-      active_scaffold_config.columns[c].description = t(LOCALIZATION_DESCRIPTION_PREFIX + c.to_s)
+    config = active_scaffold_config
+    [:password, :password_confirmation].each do |i|
+      config.columns[i].required = ['new', 'create'].include?(action_name)
     end
+    config.label = t('label.user.register')
+    COLUMNS.each do |c|
+      config.columns[c].label = t(LOCALIZATION_LABEL_PREFIX + c.to_s)
+      config.columns[c].description = t(LOCALIZATION_DESCRIPTION_PREFIX + c.to_s)
+    end
+    config.create.label = t('label.user.register')
+    config.update.label = t('label.user.title', :full_name => current_user.full_name, :login => current_user.login)
   end
 end

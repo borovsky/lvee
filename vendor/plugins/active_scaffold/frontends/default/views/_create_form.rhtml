@@ -36,6 +36,8 @@ end -%>
 
   <%= render :partial => 'form', :locals => { :columns => active_scaffold_config.create.columns } %>
 
+  <p class="note"><%= t('message.common.required_fields')%></p>
+
   <p class="form-footer">
     <%= submit_tag as_(:create), :class => "submit" %>
     <%= link_to as_(:cancel), params_for(:controller => params[:parent_controller] ? params[:parent_controller] : params[:controller], :action => 'list', :eid => params[:parent_controller] ? params[:parent_controller] : params[:eid]), :class => 'cancel' %>

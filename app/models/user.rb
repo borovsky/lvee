@@ -11,7 +11,9 @@ class User < ActiveRecord::Base
   # Virtual attribute for the unencrypted password
   attr_accessor :password
 
-  validates_presence_of :login, :email, :first_name, :last_name, :country, :city, :projects, :occupation
+  REQUIRED_FIELDS = [:login, :email, :first_name, :last_name, :country, :city, :occupation]
+
+  validates_presence_of *REQUIRED_FIELDS
 
   validates_presence_of     :password,                   :if => :password_required?
   validates_presence_of     :password_confirmation,      :if => :password_required?

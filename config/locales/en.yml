@@ -93,6 +93,8 @@
       show: "Show"
       update: "Update"
       upload: "Upload"
+      cancel: "Cancel"
+      _select_: "Select"
     conference:
       name: "Name"
       start_date: "Start date"
@@ -185,7 +187,6 @@
       created: "Conference created successfully"
       updated: "Conference updated successfully"
     user:       
-      required_fields: "Fields marked with red asterisk ({{mark}}) are obligatory for filling in."
       describe: "User: {{full_name}} ({{country}}, {{city}})..."
       registred: "Thank you for registration"
       activated: "Registration completed"
@@ -204,6 +205,7 @@
       logged_out: "You logged out successfully"
       failed: "Login or password incorrect. May be you didn't activate your account"
     common:
+      required_fields: "(fields marked with bold are obligatory for fill in)"
       sure: "Are you sure?"
       access_denied: "Access denied"
 
