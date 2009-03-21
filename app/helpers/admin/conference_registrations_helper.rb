@@ -1,5 +1,5 @@
 module Admin
-  module ConferenceRegistrationHelper
+  module ConferenceRegistrationsHelper
 
     def city_column(record)
       record.user.city
