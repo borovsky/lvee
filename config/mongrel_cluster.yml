@@ -1,9 +1,9 @@
 ---
 user: www-data
-cwd: /u/apps/lvee/current
+cwd: /var/www/lvee
 port: "3000"
 environment: production
-group: lvee
-address: 87.230.33.156
+group: partizan
+address: 127.0.0.1
 pid_file: tmp/pids/mongrel.pid
-servers: 2
+servers: 3
