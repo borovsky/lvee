@@ -1,0 +1,373 @@
+--- 
+be: 
+  activerecord: 
+    errors: 
+      messages: 
+        accepted: "трэба прыняць"
+        blank: "трэба запоўніць"
+        confirmation: "не супадае з паўторам"
+        empty: "не можа быць пустым"
+        equal_to: "павінна быць роўным {{count}}"
+        even: "павінна быць цотным"
+        exclusion: зарэзервавана
+        greater_than: "павінна перавышаць {{count}}"
+        greater_than_or_equal_to: "павінна быць не меней за {{count}}"
+        inclusion: "не ўключана ў спіс"
+        invalid: неправільна
+        less_than: "павінна быць меней за {{count}}"
+        less_than_or_equal_to: "павінна быць не болей за {{count}}"
+        not_a_number: "не ёсць лічбай"
+        odd: "павінна быць няцотным"
+        taken: "ужо ўзятае"
+        too_long: "задоўгае (можна як найбольш {{count}} сімвалаў)"
+        too_short: "закароткае (можна як найменьш {{count}} сімвалаў)"
+        wrong_length: "неправільнай даўжыні (трэба {{count}} сімвалаў)"
+      template: 
+        body: "З наступнымі палямі узніклі праблемы:"
+        header: 
+          few: "{{model}}: захаваць не атрымалася з-за {{count}} памылак"
+          many: "{{model}}: захаваць не атрымалася з-за {{count}} памылак"
+          one: "{{model}}: захаваць не атрымалася з-за {{count}} памылкі"
+          other: "{{model}}: захаваць не атрымалася з-за {{count}} памылак"
+  date: 
+    abbr_day_names: 
+      - Нд
+      - Пн
+      - Аў
+      - Ср
+      - Чц
+      - Пт
+      - Сб
+    abbr_month_names: 
+      - ~
+      - стд.
+      - лют.
+      - сак.
+      - крс.
+      - трв.
+      - чрв.
+      - ліп.
+      - жнв.
+      - врс.
+      - кст.
+      - ліст.
+      - снж.
+    day_names: 
+      - нядзеля
+      - панядзелак
+      - аўторак
+      - серада
+      - чацвер
+      - пятніца
+      - субота
+    formats: 
+      default: "%d.%m.%Y"
+      long: "%B %d, %Y"
+      short: "%b %d"
+    month_names: 
+      - ~
+      - студзеня
+      - лютага
+      - сакавіка
+      - красавіка
+      - траўня
+      - чэрвеня
+      - ліпеня
+      - жніўня
+      - верасня
+      - кастрычніка
+      - лістапада
+      - снежня
+    none: Няма
+    order: 
+      - !ruby/symbol day
+      - !ruby/symbol month
+      - !ruby/symbol year
+  datetime: 
+    distance_in_words: 
+      about_x_hours: 
+        one: "about 1 hour"
+        other: "about {{count}} hours"
+      about_x_months: 
+        one: "about 1 month"
+        other: "about {{count}} months"
+      about_x_years: 
+        one: "about 1 year"
+        other: "about {{count}} years"
+      half_a_minute: "half a minute"
+      less_than_x_minutes: 
+        one: "less than a minute"
+        other: "less than {{count}} minutes"
+      less_than_x_seconds: 
+        one: "less than 1 second"
+        other: "less than {{count}} seconds"
+      over_x_years: 
+        one: "over 1 year"
+        other: "over {{count}} years"
+      x_days: 
+        one: "1 day"
+        other: "{{count}} days"
+      x_minutes: 
+        one: "1 minute"
+        other: "{{count}} minutes"
+      x_months: 
+        one: "1 month"
+        other: "{{count}} months"
+      x_seconds: 
+        one: "1 second"
+        other: "{{count}} seconds"
+    prompts: 
+      day: Day
+      hour: Hour
+      minute: Minute
+      month: Month
+      second: Seconds
+      year: Year
+  description: 
+    conference_registration: 
+      days: "Which days do you plan to participate?"
+      food: "Which type of food do you preffer"
+      index: "Registration to conference"
+      meeting: "Would you like to be met ?"
+      phone: "Phone that we can use for contact with you on conference (with country code)"
+      proposition: "As free software is developed by the community with attracting a lot of volunteers, please tell us how you can contribute to our meeting. Let it be a report or a less formal speech within the limits of a workshop about implementation, usage or development of free software by you or your organization. If you are going to make a report or organize a workshop at the conference, please specify the topic of your report, as well as send its abstracts to \"d.kostiuk@lvee.org\":mailto:d.kostiuk@lvee.org ."
+      quantity: "How many peoples will go to conference"
+      title: "Conference registration for {{conference}}"
+      transport: "Which transport will you use to reach the conference"
+      tshirt: "T-Shirt size"
+    user: 
+      avator: "Your photo. Will be very good if with face"
+      city: ""
+      country: "Where are you from"
+      email: "Your email"
+      first_name: ""
+      last_name: ""
+      login: "at least 3 symbols"
+      occupation: "Place of work/study and field of activities (with breaf organization name)"
+      password: "at least 4 symbols"
+      password_confirmation: "Same to password"
+      projects: "Free Software / Open Source (FS/OS) projects where you have taken or are taking part in and your role in them"
+      subscribed: ""
+  label: 
+    article: 
+      body: Body
+      category: Category
+      creating: "Creating Article"
+      editing: "Editing Article"
+      in_menu: "In menu?"
+      listing: "Listing Articles"
+      locale: Locale
+      name: Name
+      new: "New Article"
+      title: Title
+    common: 
+      _select_: Вылучыць
+      back: Назад
+      cancel: Скасаваць
+      create: Стварыць
+      delete: Выдаліць
+      download: Сцягнуць
+      edit: Рэдагаваць
+      editTranslation: "Рэдагаваць пераклад"
+      preview: "Папярэдні прагляд"
+      publish: Публікаваць
+      publish_now: "Апублікаваць зараз"
+      save: Захаваць
+      show: Паказаць
+      translate: Перакласці
+      update: Узнавіць
+      upload: Заліць
+    conference: 
+      available: "You can participate following conferences"
+      creating: "Creating conference"
+      finish_date: "Finish date"
+      listing: "Listing conferences"
+      name: Name
+      new: "New conference"
+      participated: "You have participated"
+      register: Зарэгістравацца
+      registration_closed: closed
+      registration_opened: opened
+      registration_opened?: "Registration opened?"
+      registred: "You have registred"
+      show: "Conference {{name}} ({{start_date}} - {{finish_date}}"
+      start_date: "Start date"
+      upcoming: "Upcoming conferences"
+    conference_registration: 
+      days: "Participation days"
+      food: "Preffered food"
+      index: "Registration to conference"
+      meeting: "Meeting required?"
+      phone: "Your contact phone"
+      proposition: "Your proposition"
+      quantity: "Participant quantity"
+      title: "Conference registration for {{conference}}"
+      transport: Transport
+      tshirt: "T-Shirt size"
+    language: 
+      creating: "Creating Language"
+      editing: "Editing Language"
+      id: "2-letter language id"
+      listing: "Listing Languages"
+      name: "Full language name (in English)"
+      new: "New Language"
+      published: "Language published?"
+      upload: "Заліць мову"
+    news: 
+      abstract: Abstract
+      add: "Add News"
+      all_news: "Усе навіны"
+      author: Author
+      back_to_list: "Back to news list"
+      body: "News Body"
+      creating: "News Creating"
+      editing: "News Editing"
+      last_news: "Апошнія навіны"
+      publish: "Publish News"
+      published_at: "Published at {{published}}"
+      title: Title
+      translating: "News Translation"
+      unpublished: Unpublished
+      will_be_published: "Will be published in {{published}}"
+    session: 
+      login: Увайсці
+      loginButton: Увайсці
+      logout: Выйсці
+      password: Пароль
+      rememberMe: "Памятаць мяне"
+    user: 
+      avator: "Вашае фота"
+      city: Месца
+      country: Краіна
+      create: Зарэгістравацца
+      edit: "Edit profile"
+      email: "Электронная пошта"
+      first_name: Імя
+      join_us: "Далучыся да нас зараз"
+      last_name: Прозвішча
+      login: Увайсці
+      occupation: "Месца вучобы альбо працы"
+      password: Пароль
+      password_confirmation: "Паўтарыце пароля"
+      projects: "Вашыя праекты"
+      register: Зарэгістравацца
+      subscribed: "Падпісацца на спіс рассылкі"
+      title: "{{full_name}} ({{login}}), ваш профіль - ваша справа"
+      to_profile: "Да вашага профіля"
+  mail: 
+    account: 
+      activate: |-
+          Please visit following URL for activation your account:
+          {{url}}
+      activated: "Your account was been activated"
+      created: "Your account was been created"
+      edit_data: |-
+          You can login and edit your data:
+          {{url}}
+      information: |-
+          Login:    {{login}}
+          Password: {{password}}
+    signature: |-
+        -- 
+        LVEE conference site's robot
+    subject: 
+      activation: "Account activation for LVEE"
+      activation_complete: "Your account for LVEE was activated"
+    title: "Hello, {{full_name}}"
+  menu: 
+    conference: 
+      about: "Пра нас"
+      history: Гісторыя
+      linux: Лінукс
+      place: "Месца канферэнцыі"
+      press: "У друку"
+    contacts: Кантакты
+    main: Галоўная
+    profile: Профіль
+    reports: 
+      about: "On Reports"
+      abstract: "Афармленне тэзісаў"
+      category: Даклады
+      materials: "Матэрыялы папярэдніх канферэнцыяў"
+      program: Праграма
+    sponsors: Спонсары
+  message: 
+    common: 
+      access_denied: "Access denied"
+      required_fields: "(fields marked with bold are obligatory to fill in)"
+      sure: "Are you sure?"
+    conference: 
+      created: "Conference created successfully"
+      slogan: "Пятая міжнародная канферэнцыя распрацоўнікаў і карыстальнікаў свабодных праграмаў / праграмаў з адкрытым зыходным кодам"
+      status: "Registration to conference {{status}}."
+      updated: "Conference updated successfully"
+    iefuck: 
+      link: "http://browsehappy.com"
+      link_text: "Why not switch to a browser that is more secure?"
+      message: "Internet Explorer can make your computer unsafe. {{link}}"
+    language: 
+      created: "Language created successfully"
+      updated: "Language updated successfully"
+    news: 
+      created: "News created successfully"
+      updated: "News updated successfully"
+    session: 
+      failed: "Login or password incorrect. May be you didn't activate your account"
+      logged: "Вы увайшлі як {{user_name}}"
+      logged_out: "You logged out successfully"
+    user: 
+      accuracy_note: "Accurate and error-free registration form filling will help contacting with you alot"
+      activated: "Registration completed"
+      avator_upload: "Please upload you photo"
+      describe: "User: {{full_name}} ({{country}}, {{city}})..."
+      login_change: "You can't change your login"
+      privacy: "Privacy Policy: We {{link}} your account information to anyone, including your email address."
+      privacy_link: "don't sell"
+      registred: "Thank you for registration"
+      upload_avator_link: "Upload your photo {{link}}."
+      upload_avator_link_text: here
+  number: 
+    currency: 
+      format: 
+        delimiter: ","
+        format: "%u%n"
+        precision: 2
+        separator: "."
+        unit: $
+    format: 
+      delimiter: ","
+      precision: 3
+      separator: "."
+    human: 
+      format: 
+        delimiter: ""
+        precision: 1
+      storage_units: 
+        - Bytes
+        - KB
+        - MB
+        - GB
+        - TB
+    percentage: 
+      format: 
+        delimiter: ""
+    precision: 
+      format: 
+        delimiter: ""
+  sidebar: 
+    information_sponsor: "Інфармацыйныя партнёры"
+    organizers: Арганізатары
+    sponsors: "Спонсары ў 2008 годзе"
+    technical_sponsor: "Тэхнічны спонсар"
+  support: 
+    array: 
+      last_word_connector: ", and "
+      two_words_connector: " and "
+      words_connector: ", "
+  time: 
+    am: am
+    formats: 
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
+    pm: pm

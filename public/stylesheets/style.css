@@ -396,3 +396,10 @@ p.abstract {
     font-style:italic; 
 }
 
+p.error {
+    color: #990000;
+    background-color: #FF9999;
+    border: 1px solid #990000;
+    padding: 5px;
+    margin: 5px
+}

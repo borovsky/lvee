@@ -105,6 +105,12 @@ module Editor
     end
 
     def upload
+      @language = Language.find(params[:id])
+      unless(params[:language].respond_to? :read)
+        flash[:error] = "Please specify file"
+        return render :action => "show"
+      end
+
       def_lang = YAML.load_file("#{LOCALE_DIR}/en.yml")
       cur_lang = YAML.load(params[:language].read)
 
@@ -114,6 +120,9 @@ module Editor
         f.write(new_hash.ya2yaml)
       end
       redirect_to editor_language_url(:id => params[:id])
+    rescue Exception => e
+      flash[:error] = e.message
+      render :action => "show"
     end
   end
 end
