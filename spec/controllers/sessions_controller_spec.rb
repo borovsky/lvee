@@ -18,8 +18,9 @@ describe SessionsController do
 
     it 'should login user if authenticated' do
       User.expects(:authenticate).with("user", "password").returns(@u)
+      @u.stubs(:id).returns(42)
       post :create, :login => "user", :password=> "password"
-      assert_redirected_to '/'
+      assert_redirected_to '/en/users/42'
     end
 
     it 'should login user and remember me if "remeber me" checked' do
@@ -29,9 +30,10 @@ describe SessionsController do
       time = 42.days.from_now.utc
       @u.expects(:remember_token).returns('test')
       @u.expects(:remember_token_expires_at).returns(time)
+      @u.stubs(:id).returns(42)
 
       post :create, :login => "user", :password=> "password", :remember_me => '1'
-      assert_redirected_to '/'
+      assert_redirected_to '/en/users/42'
       cookies[:auth_token].value.should == ["test"]
       cookies[:auth_token].expires.should == time
     end

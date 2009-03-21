@@ -2,7 +2,7 @@
 
 class UsersController < ApplicationController
   before_filter :login_required, :only => [:show, :index, :edit, :update, :current]
-  before_filter :scaffold_action, :set_common_columns_info
+  before_filter :scaffold_action, :set_common_columns_info, :only => [:edit, :update, :new, :create]
 
   USER_EDITABLE_COLUMNS = [:password, :password_confirmation, :email, :first_name, :last_name, :country, :city,
   :occupation, :projects, :subscribed]

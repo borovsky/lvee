@@ -7,8 +7,6 @@ class ApplicationController < ActionController::Base
 
   include ExceptionNotifiable
 
-  helper :all
-
   before_filter :language_select
 
   protect_from_forgery # :secret => 'dc50c44338f5eba496ede18e9ea29cb1'
