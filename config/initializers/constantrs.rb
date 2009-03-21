@@ -8,7 +8,7 @@ IMAGE_WEB_ROOT = 'images/uploaded'
 IMAGE_UPLOAD_ROOT = File.join(RAILS_ROOT, 'public', 'images', 'uploaded')
 
 
-ALL_USER_MAILLIST = "info"
-ADMIN_MAILLIST = "organizer"
+ALL_USER_MAILLIST = "maillist"
+ADMIN_MAILLIST = "orgmaillist"
 
 AVATOR_SIZE = "200x150"
