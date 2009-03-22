@@ -4,8 +4,9 @@ module ApplicationHelper
   # Displays all flashes if any
   def flashes_if_any
     html = ''
-    flash.each do |key,message|
-      html << content_tag(:p, message, :class => key)
+    [:notice, :error].each do |key|
+      message = flash[key]
+      html << content_tag(:p, message, :class => key) if(message)
     end
     flash.discard
     html
