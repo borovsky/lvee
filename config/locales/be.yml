@@ -86,80 +86,80 @@ be:
   datetime: 
     distance_in_words: 
       about_x_hours: 
-        one: "about 1 hour"
-        other: "about {{count}} hours"
+        one: "каля 1 гадзіны"
+        other: "каля {{count}} гадзін"
       about_x_months: 
-        one: "about 1 month"
-        other: "about {{count}} months"
+        one: "каля 1 месяца"
+        other: "каля {{count}} месяцаў"
       about_x_years: 
-        one: "about 1 year"
-        other: "about {{count}} years"
-      half_a_minute: "half a minute"
+        one: "каля 1 года"
+        other: "каля {{count}} гадоў"
+      half_a_minute: паўхвіліны
       less_than_x_minutes: 
-        one: "less than a minute"
-        other: "less than {{count}} minutes"
+        one: "меней за хвіліну"
+        other: "меней за {{count}} хвілінаў"
       less_than_x_seconds: 
-        one: "less than 1 second"
-        other: "less than {{count}} seconds"
+        one: "меней за 1 секунду"
+        other: "меней за {{count}} секундаў"
       over_x_years: 
-        one: "over 1 year"
-        other: "over {{count}} years"
+        one: "болей за 1 год"
+        other: "болей за {{count}} гадоў"
       x_days: 
-        one: "1 day"
-        other: "{{count}} days"
+        one: "1 дзень"
+        other: "{{count}} дзён"
       x_minutes: 
-        one: "1 minute"
-        other: "{{count}} minutes"
+        one: "1 хвіліна"
+        other: "{{count}} хвілінаў"
       x_months: 
-        one: "1 month"
-        other: "{{count}} months"
+        one: "1 месяц"
+        other: "{{count}} месяцаў"
       x_seconds: 
-        one: "1 second"
-        other: "{{count}} seconds"
+        one: "1 секунда"
+        other: "{{count}} секундаў"
     prompts: 
-      day: Day
-      hour: Hour
-      minute: Minute
-      month: Month
-      second: Seconds
-      year: Year
+      day: Дзень
+      hour: Гадзінаў
+      minute: Хвілінаў
+      month: Месяц
+      second: Секундаў
+      year: Год
   description: 
     conference_registration: 
-      days: "Which days do you plan to participate?"
-      food: "Which type of food do you preffer"
-      index: "Registration to conference"
-      meeting: "Would you like to be met ?"
-      phone: "Phone that we can use for contact with you on conference (with country code)"
-      proposition: "As free software is developed by the community with attracting a lot of volunteers, please tell us how you can contribute to our meeting. Let it be a report or a less formal speech within the limits of a workshop about implementation, usage or development of free software by you or your organization. If you are going to make a report or organize a workshop at the conference, please specify the topic of your report, as well as send its abstracts to \"d.kostiuk@lvee.org\":mailto:d.kostiuk@lvee.org ."
-      quantity: "How many peoples will go to conference"
-      title: "Conference registration for {{conference}}"
-      transport: "Which transport will you use to reach the conference"
-      tshirt: "T-Shirt size"
+      days: "У якія дні вы плануеце свой удзел?"
+      food: "Якой ежы вы аддаеце перавагу?"
+      index: "Рэгістрацыя на канферэнцыю"
+      meeting: "Ці трэба вас сустракаць?"
+      phone: "Нумар тэлефона, па якім можна скантактавацца з вамі падчас канферэнцыі (з кодам краіны)"
+      proposition: "Вядома, што свабодныя праграмы распрацоўвае грамада з узделам шматлікіх добраахвотнікаў, таму распавядзіце, калі ласка, які ўнёсак вы можаце зрабіць у наш сход. Няхай гэта будзе даклад альбо меней фармальнае паведамленне ў рамках круглага стала (workshop), як вы ці ваша арганізацыя укараняеце, выкарыстоўваеце ці распрацоўваеце свабодныя праграмы Калі вы збіраецеся зрабіць даклад ці арганізаваць семінар на канферэнцыі, падайце тэму вашага даклада. Тэзісы дасылайце на адрас: \"d.kostiuk@lvee.org\":mailto:d.kostiuk@lvee.org ."
+      quantity: "Колькі людзей едзе на канферэнцыю?"
+      title: "Рэгістрацыя на канферэнцыю {{conference}}"
+      transport: "Якім транспартам плануеце дабірацца на канферэнцыю?"
+      tshirt: "Ваш памер футболкі"
     user: 
-      avator: "Your photo. Will be very good if with face"
-      city: ""
-      country: "Where are you from"
-      email: "Your email"
-      first_name: ""
-      last_name: ""
-      login: "at least 3 symbols"
-      occupation: "Place of work/study and field of activities (with breaf organization name)"
-      password: "at least 4 symbols"
-      password_confirmation: "Same to password"
-      projects: "Free Software / Open Source (FS/OS) projects where you have taken or are taking part in and your role in them"
+      avator: "Вашае фота. Будзе файна, калі на ім будзе ваш твар."
+      city: Горад
+      country: Краіна
+      email: "Ваш e-mail"
+      first_name: Імя
+      last_name: Прозвішча
+      login: "як найменей тры сімвалы"
+      occupation: "Месца працы альбо вучобы і сфера дзейнасці (з кароткай назвай арганізацыі)"
+      password: "як найменей 4 сімвалы"
+      password_confirmation: "Тое самае, што і пароль"
+      projects: "Праекты Free Software / Open Source (FS/OS), у якіх вы бралі ці бераце ўдзел і вашая роля ў іх"
       subscribed: ""
   label: 
     article: 
-      body: Body
-      category: Category
-      creating: "Creating Article"
-      editing: "Editing Article"
-      in_menu: "In menu?"
-      listing: "Listing Articles"
-      locale: Locale
-      name: Name
-      new: "New Article"
-      title: Title
+      body: Цела
+      category: Катэгорыя
+      creating: "Стварэнне артыкула"
+      editing: "Рэдагаванне артыкула"
+      in_menu: "У меню?"
+      listing: "Спіс артыкулаў"
+      locale: Мова
+      name: Назва
+      new: "Новы артыкул"
+      title: Загаловак
     common: 
       _select_: Вылучыць
       back: Назад
@@ -178,59 +178,59 @@ be:
       update: Узнавіць
       upload: Заліць
     conference: 
-      available: "You can participate following conferences"
-      creating: "Creating conference"
-      finish_date: "Finish date"
-      listing: "Listing conferences"
-      name: Name
-      new: "New conference"
-      participated: "You have participated"
+      available: "Вы можаце ўзяць удзел у наступных канферэнцыях"
+      creating: "Стварэнне канферэнцыі"
+      finish_date: "Дата сканчэння"
+      listing: "Спіс канферэнцыяў"
+      name: Назва
+      new: "Новая канферэнцыя"
+      participated: "Вы бралі ўдзел"
       register: Зарэгістравацца
-      registration_closed: closed
-      registration_opened: opened
-      registration_opened?: "Registration opened?"
-      registred: "You have registred"
-      show: "Conference {{name}} ({{start_date}} - {{finish_date}}"
-      start_date: "Start date"
-      upcoming: "Upcoming conferences"
+      registration_closed: закрыта
+      registration_opened: адкрыта
+      registration_opened?: "Рэгістрацыя адкрытая?"
+      registred: "Вы былі зарэгістраваны"
+      show: "Канферэнцыя {{name}} ({{start_date}} - {{finish_date}}"
+      start_date: "Дата пачатку"
+      upcoming: "Найбліжэйшыя канферэнцыі"
     conference_registration: 
-      days: "Participation days"
-      food: "Preffered food"
-      index: "Registration to conference"
-      meeting: "Meeting required?"
-      phone: "Your contact phone"
-      proposition: "Your proposition"
-      quantity: "Participant quantity"
-      title: "Conference registration for {{conference}}"
-      transport: Transport
-      tshirt: "T-Shirt size"
+      days: "Дні ўдзелу"
+      food: "Пераважная дыета"
+      index: "Рэгістрацыі на канферэнцыю"
+      meeting: "Ці патрабуецца сустрэча"
+      phone: "Ваш кантактны тэлефон"
+      proposition: "Вашыя прапановы"
+      quantity: "Колькасць удзельнікаў"
+      title: "Рэгістрацыя на канферэнцыю {{conference}}"
+      transport: Транспарт
+      tshirt: "Памер футболкі"
     language: 
-      creating: "Creating Language"
-      editing: "Editing Language"
-      id: "2-letter language id"
-      listing: "Listing Languages"
-      name: "Full language name (in English)"
-      new: "New Language"
-      published: "Language published?"
+      creating: "Стварэнне мовы"
+      editing: "Рэдагаванне мовы"
+      id: "Ідэнтыфікатар мовы з двух літар"
+      listing: "Спіс моваў"
+      name: "Поўная назва мовы (па-ангельску)"
+      new: "Новая мова"
+      published: Апублікаваная?
       upload: "Заліць мову"
     news: 
-      abstract: Abstract
-      add: "Add News"
+      abstract: Резюме
+      add: "Дадаць навіну"
       all_news: "Усе навіны"
-      author: Author
-      back_to_list: "Back to news list"
-      body: "News Body"
-      creating: "News Creating"
-      editing: "News Editing"
+      author: Аўтар
+      back_to_list: "Назад да спіса навінаў"
+      body: "Змесціва навіны"
+      creating: "Стварэнне навіны"
+      editing: "Рэдагаванне навіны"
       last_news: "Апошнія навіны"
-      publish: "Publish News"
-      published_at: "Published at {{published}}"
-      title: Title
-      translating: "News Translation"
-      unpublished: Unpublished
-      will_be_published: "Will be published in {{published}}"
+      publish: "Апублікаваць навіну"
+      published_at: "Апублікавана {{published}}"
+      title: Загаловак
+      translating: "Пераклад навіны"
+      unpublished: "Не апублікавана"
+      will_be_published: "Будзе апублікавана {{published}}"
     session: 
-      login: Увайсці
+      login: Лагін
       loginButton: Увайсці
       logout: Выйсці
       password: Пароль
@@ -248,7 +248,7 @@ be:
       login: Увайсці
       occupation: "Месца вучобы альбо працы"
       password: Пароль
-      password_confirmation: "Паўтарыце пароля"
+      password_confirmation: "Паўтарыце пароль"
       projects: "Вашыя праекты"
       register: Зарэгістравацца
       subscribed: "Падпісацца на спіс рассылкі"
@@ -257,23 +257,23 @@ be:
   mail: 
     account: 
       activate: |-
-          Please visit following URL for activation your account:
+          Каб актываваць ваш рахунак, перайдзіце на наступны адрас:
           {{url}}
-      activated: "Your account was been activated"
-      created: "Your account was been created"
+      activated: "Ваш рахунак быў актываваны"
+      created: "Ваш рахунак быў створаны"
       edit_data: |-
-          You can login and edit your data:
+          Вы можаце увайсці і рэдагаваць вашы даныя:
           {{url}}
       information: |-
-          Login:    {{login}}
-          Password: {{password}}
+          Імя карыстальніка: {{login}}
+          Пароль:            {{password}}
     signature: |-
         -- 
-        LVEE conference site's robot
+        Робат сайта LVEE
     subject: 
-      activation: "Account activation for LVEE"
-      activation_complete: "Your account for LVEE was activated"
-    title: "Hello, {{full_name}}"
+      activation: "Актывацыя рахунка LVEE"
+      activation_complete: "Ваш рахунак для LVEE быў актываваны"
+    title: "Вітаю, {{full_name}}"
   menu: 
     conference: 
       about: "Пра нас"
@@ -293,49 +293,49 @@ be:
     sponsors: Спонсары
   message: 
     common: 
-      access_denied: "Access denied"
-      required_fields: "(fields marked with bold are obligatory to fill in)"
-      sure: "Are you sure?"
+      access_denied: "У доступе адмоўлена"
+      required_fields: "(палі, пазначаныя тлустым, запоўніць абавязкова)"
+      sure: "Вы ўпэўненыя?"
     conference: 
-      created: "Conference created successfully"
+      created: "Канферэнцыя створана паспяхова"
       slogan: "Пятая міжнародная канферэнцыя распрацоўнікаў і карыстальнікаў свабодных праграмаў / праграмаў з адкрытым зыходным кодам"
-      status: "Registration to conference {{status}}."
-      updated: "Conference updated successfully"
+      status: "Рэгістрацыя на канферэнцыю {{status}}."
+      updated: "Канферэнцыя абноўлена паспяхова"
     iefuck: 
-      link: "http://browsehappy.com"
-      link_text: "Why not switch to a browser that is more secure?"
-      message: "Internet Explorer can make your computer unsafe. {{link}}"
+      link: "http://upgradebrowser.org/x"
+      link_text: "Чаму б не перайсці на больш бяспечны браўзер?"
+      message: "Internet Explorer можа зрабіць ваш кампутар небяспечным. {{link}}"
     language: 
-      created: "Language created successfully"
-      updated: "Language updated successfully"
+      created: "Мова створана паспяхова"
+      updated: "Мова абноўлена паспяхова"
     news: 
-      created: "News created successfully"
-      updated: "News updated successfully"
+      created: "Навіна створана паспяхова"
+      updated: "Навіна абноўлена паспяхова"
     session: 
-      failed: "Login or password incorrect. May be you didn't activate your account"
+      failed: "Імя карыстальніка або пароль неадпаведныя. Можа, вы не актывавалі ваш рахунак"
       logged: "Вы увайшлі як {{user_name}}"
-      logged_out: "You logged out successfully"
+      logged_out: "Вы выйшлі паспяхова"
     user: 
-      accuracy_note: "Accurate and error-free registration form filling will help contacting with you alot"
-      activated: "Registration completed"
-      avator_upload: "Please upload you photo"
-      describe: "User: {{full_name}} ({{country}}, {{city}})..."
-      login_change: "You can't change your login"
-      privacy: "Privacy Policy: We {{link}} your account information to anyone, including your email address."
-      privacy_link: "don't sell"
-      registred: "Thank you for registration"
-      upload_avator_link: "Upload your photo {{link}}."
-      upload_avator_link_text: here
+      accuracy_note: "Дакладнае і беспамылковае запаўненне рэгістрацыйнай формы дапаможа нам з вамі скантактаваць"
+      activated: "Рэгістрацыя завершана"
+      avator_upload: "Калі ласка, залейце ваша фота"
+      describe: "Карыстальнік: {{full_name}} ({{country}}, {{city}})..."
+      login_change: "Вы не можаце змяніць ваша імя карыстальніка"
+      privacy: "Палітыка таямніцы: мы {{link}} нікому сваю інфармацыю вашага рахунку, улучна з вашым адрасам электроннай пошты."
+      privacy_link: "не прадаем"
+      registred: "Дзякуй за рэгістрацыю."
+      upload_avator_link: "Залейце сваё фота {{link}}."
+      upload_avator_link_text: тут
   number: 
     currency: 
       format: 
-        delimiter: ","
-        format: "%u%n"
+        delimiter: " "
+        format: "%n %u"
         precision: 2
         separator: "."
-        unit: $
+        unit: руб.
     format: 
-      delimiter: ","
+      delimiter: " "
       precision: 3
       separator: "."
     human: 
@@ -343,11 +343,11 @@ be:
         delimiter: ""
         precision: 1
       storage_units: 
-        - Bytes
-        - KB
-        - MB
-        - GB
-        - TB
+        - байт
+        - КБ
+        - МБ
+        - ГБ
+        - ТБ
     percentage: 
       format: 
         delimiter: ""
@@ -361,13 +361,13 @@ be:
     technical_sponsor: "Тэхнічны спонсар"
   support: 
     array: 
-      last_word_connector: ", and "
-      two_words_connector: " and "
+      last_word_connector: " і "
+      two_words_connector: " і "
       words_connector: ", "
   time: 
-    am: am
+    am: раніцы
     formats: 
       default: "%a, %d %b %Y %H:%M:%S %z"
-      long: "%B %d, %Y %H:%M"
-      short: "%d %b %H:%M"
-    pm: pm
+      long: "%d %B  %Y, %H:%M"
+      short: "%d %b, %H:%M"
+    pm: вечара
