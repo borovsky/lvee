@@ -5,7 +5,7 @@
   <%= image_tag(url_for_file_column("user", "avator")) %>
 </div>
 <% else -%>
-<%= t("message.user.upload_avator_link", 
+<%= t("message.user.upload_avator_link",
     :link => link_to(t('message.user.upload_avator_link_text'), edit_user_path(:id => @user))) %>
 <% end -%>
 

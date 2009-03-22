@@ -1,7 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
   map.root :controller => "main", :action=>"select_lang"
 
-  map.connect 'javascripts/ie_fuck.js', :controller => 'djs_css', :action => 'ie_fuck'
+  map.connect 'djs/ie_fuck.js', :controller => 'djs_css', :action => 'ie_fuck'
 
   map.connect 'activate/:activation_code', :controller => 'users', :action => 'activate'
 
