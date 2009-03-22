@@ -10,6 +10,9 @@
           <div class="left">
             <%= render(:partial => 'layouts/partials/flags') %>
             <div class="slogan"><%= t('message.conference.slogan')%></div>
+
+            <%= flashes_if_any %>
+
             <%= article_output('main', 'conference') %>
             <% unless current_user %>
             <div class="button-join"><%= link_to  t('label.user.join_us'), new_user_path %></div>

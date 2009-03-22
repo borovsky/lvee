@@ -7,6 +7,7 @@ module ApplicationHelper
     flash.each do |key,message|
       html << content_tag(:p, message, :class => key)
     end
+    flash.discard
     html
   end
 
