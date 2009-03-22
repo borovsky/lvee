@@ -5,7 +5,7 @@ module ApplicationHelper
   def flashes_if_any
     html = ''
     flash.each do |key,message|
-      html << content_tag(:div, message, :id => key)
+      html << content_tag(:p, message, :class => key)
     end
     html
   end

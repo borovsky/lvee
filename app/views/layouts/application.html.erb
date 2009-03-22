@@ -10,10 +10,8 @@
           <div class="left">
             <%= render(:partial => 'layouts/partials/flags') %>
             <div class="slogan"><%= t('message.conference.slogan')%></div>
-            
-            <% if flash[:error] %>
-             <p class="error"><%= h flash[:error] %></p>
-             <% end %>
+
+            <%= flashes_if_any %>
 
             <%= yield %>
           </div><!-- left -->

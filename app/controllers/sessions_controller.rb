@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
       redirect_back_or_default(user_path(:id => current_user.id))
       flash[:notice] = t('message.session.logged', :user_name => h(params[:login]))
     else
-      flash[:notice] = t('message.session.failed')
+      flash[:error] = t('message.session.failed')
       render :action => 'new'
     end
   end
