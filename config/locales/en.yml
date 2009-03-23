@@ -195,7 +195,7 @@
       privacy_link: "don't sell"
       avator_upload: "Please upload you photo. With face (if possible)"
       incorrect_image: "Can not update your photo. Please check image file"
-      avator_updated: "Photo updated successful"
+      avator_updated: "Photo updated successfully"
     news:
       created: "News created successfully"
       updated: "News updated successfully"
