@@ -4,11 +4,15 @@
 <div id="avator">
   <%= image_tag(url_for_file_column("user", "avator")) %>
 </div>
-<% else -%>
-<%= t("message.user.upload_avator_link",
-    :link => link_to(t('message.user.upload_avator_link_text'), edit_user_path(:id => @user))) %>
 <% end -%>
-
+<div id="uploadAvator">
+<p><%= t("message.user.avator_upload") %></p>
+<% form_tag(upload_user_avator_path(:id => @user), :multipart => true) do %>
+<label for="user_avator"><%= t("label.user.avator") %></label>
+<%= file_column_field "user", "avator" %>
+<%= submit_tag t("label.common.upload")%>
+<% end %>
+</div>
 <p><%= t 'label.user.email'%>: <%= mail_to @user.email %></p>
 <p><%= t 'label.user.occupation'%>: <%= @user.occupation %></p>
 <p><%= t 'label.user.projects'%>: <%= @user.projects %></p>

@@ -31,12 +31,6 @@ class UsersController < ApplicationController
     redirect_to user_path(:id => current_user.id)
   end
 
-  def after_create_save(record)
-    UserMailer.deliver_signup_notification(record)
-    self.current_user = record
-    redirect_to user_path(:id => current_user.id, :lang => params[:lang])
-  end
-
   def current
     redirect_to user_path(:id => current_user.id)
   end
@@ -58,6 +52,27 @@ class UsersController < ApplicationController
     return render(:text=>t('message.common.access_denied'), :status => 403) unless user_have_access
     @user = User.find params[:id]
   end
+
+  def upload_avator
+    @user = User.find(params[:id])
+    user_params = params[:user].slice(:avator, :avator_temp)
+
+    if @user.update_attributes(user_params)
+      flash[:notice] = t("message.user.avator_updated")
+      redirect_to user_path(:id => @user)
+    else
+      flash[:error] = t("message.user.incorrect_image")
+      redirect_to user_path(:id => @user)
+    end
+  end
+
+  protected
+  def after_create_save(record)
+    UserMailer.deliver_signup_notification(record)
+    self.current_user = record
+    redirect_to user_path(:id => current_user.id, :lang => params[:lang])
+  end
+
 
   def after_update_save(record)
     redirect_to user_path(:id=>record)

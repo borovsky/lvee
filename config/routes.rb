@@ -42,6 +42,7 @@ ActionController::Routing::Routes.draw do |map|
       :defaults => {:action => "show", :name => "index"})
 
 
+    ns.upload_user_avator "users/:id/upload_avator", :controller=> "users", :action => "upload_avator"
     ns.resources :users, :member => { :activate => :get }, :collection => {:current => :get} do |m|1
       m.connect('conference_registrations/new/:conference_id',
         :controller => 'conference_registrations', :action => 'new')
