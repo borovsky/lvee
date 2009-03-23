@@ -62,6 +62,7 @@ class UsersController < ApplicationController
       redirect_to user_path(:id => @user)
     else
       flash[:error] = t("message.user.incorrect_image")
+      logger.error user.errors.info
       redirect_to user_path(:id => @user)
     end
   end
