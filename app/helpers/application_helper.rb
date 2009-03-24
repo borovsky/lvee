@@ -49,4 +49,11 @@ module ApplicationHelper
   def w3c_date(date)
     date.utc.strftime("%Y-%m-%dT%H:%M:%S+00:00")
   end
+
+  def params_to_lang(lang)
+    {:controller => controller.controller_name, :lang => lang, :id => params[:id],
+        :user_id => params[:user_id], :conference_id => params[:conference_id],
+        :category => params[:category], :name => params[:name], :action => controller.action_name}
+  end
+
 end

@@ -51,10 +51,4 @@ class ApplicationController < ActionController::Base
   def scaffold_action
     @active_scaffold = true
   end
-
-  def params_to_lang(lang)
-    {:controller => controller.controller_name, :lang => lang, :id => params[:id],
-        :user_id => params[:user_id], :conference_id => params[:conference_id],
-        :category => params[:category], :name => params[:name], :action => controller.action_name}
-  end
 end
