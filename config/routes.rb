@@ -34,8 +34,7 @@ ActionController::Routing::Routes.draw do |map|
       :collection => {:rss => :get, :preview=>:post},
       :member => {:publish => :get, :publish_now => :get})
 
-    ns.resources :articles, :member => {:translate => :get},
-      :collection => {:preview=>:put}
+    ns.resources :articles, :member => {:translate => :get}, :collection => {:preview=>:put}
 
     ns.connect('about/:name/:action',
       :controller=> "articles", :category => "conference",

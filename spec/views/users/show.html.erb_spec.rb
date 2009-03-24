@@ -9,7 +9,8 @@ describe "/users/show.html.erb" do
       :errors => [],
       :full_name => 'xyz',
       :editor? => true,
-      :admin? => true
+      :admin? => true,
+      :avator_temp => nil
       )
   end
 

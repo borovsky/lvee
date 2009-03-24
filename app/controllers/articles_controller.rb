@@ -100,7 +100,14 @@ class ArticlesController < ApplicationController
 
   protected
   def load_article_by_category
-    if(editor?)
+    if(params[:id])
+      @article = Article.find_by_id(params[:id])
+      if(@article)
+        params[:category] = @article.category
+        params[:name] = @article.name
+        params[:id] = nil
+      end
+    elsif (editor?)
       @article = Article.load_by_name_or_create(params[:category], params[:name])
     else
       @article = Article.load_by_name(params[:category], params[:name])

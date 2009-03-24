@@ -36,7 +36,7 @@ describe ArticlesController do
   describe "responding to GET show" do
 
     it "should expose the requested article as @article" do
-      Article.expects(:find).with("37").returns(mock_article)
+      Article.expects(:find_by_id).with("37").returns(mock_article)
       get :show, :id => "37"
       assigns[:article].should equal(mock_article)
     end
@@ -45,7 +45,7 @@ describe ArticlesController do
 
       it "should render the requested article as xml" do
         request.env["HTTP_ACCEPT"] = "application/xml"
-        Article.expects(:find).with("37").returns(mock_article)
+        Article.expects(:find_by_id).with("37").returns(mock_article)
         mock_article.expects(:to_xml).returns("generated XML")
         get :show, :id => "37"
         response.body.should == "generated XML"
@@ -68,7 +68,7 @@ describe ArticlesController do
   describe "responding to GET edit" do
 
     it "should expose the requested article as @article" do
-      Article.expects(:find).with("37").returns(mock_article)
+      Article.expects(:find_by_id).with("37").returns(mock_article)
       get :edit, :id => "37"
       assigns[:article].should equal(mock_article)
     end
@@ -116,19 +116,19 @@ describe ArticlesController do
     describe "with valid params" do
 
       it "should update the requested article" do
-        Article.expects(:find).with("37").returns(mock_article)
+        Article.expects(:find_by_id).with("37").returns(mock_article)
         mock_article.expects(:update_attributes).with({'these' => 'params'})
         put :update, :id => "37", :article => {:these => 'params'}
       end
 
       it "should expose the requested article as @article" do
-        Article.stubs(:find).returns(mock_article(:update_attributes => true))
+        Article.stubs(:find_by_id).returns(mock_article(:update_attributes => true))
         put :update, :id => "1"
         assigns(:article).should equal(mock_article)
       end
 
       it "should redirect to the article" do
-        Article.stubs(:find).returns(mock_article(:update_attributes => true))
+        Article.stubs(:find_by_id).returns(mock_article(:update_attributes => true))
         put :update, :id => "1"
         response.should redirect_to(article_url(:id => mock_article.id))
       end
@@ -138,19 +138,19 @@ describe ArticlesController do
     describe "with invalid params" do
 
       it "should update the requested article" do
-        Article.expects(:find).with("37").returns(mock_article)
+        Article.expects(:find_by_id).with("37").returns(mock_article)
         mock_article.expects(:update_attributes).with({'these' => 'params'})
         put :update, :id => "37", :article => {:these => 'params'}
       end
 
       it "should expose the article as @article" do
-        Article.stubs(:find).returns(mock_article(:update_attributes => false))
+        Article.stubs(:find_by_id).returns(mock_article(:update_attributes => false))
         put :update, :id => "1"
         assigns(:article).should equal(mock_article)
       end
 
       it "should re-render the 'edit' template" do
-        Article.stubs(:find).returns(mock_article(:update_attributes => false))
+        Article.stubs(:find_by_id).returns(mock_article(:update_attributes => false))
         put :update, :id => "1"
         response.should render_template('edit')
       end
@@ -162,7 +162,7 @@ describe ArticlesController do
   describe "responding to DELETE destroy" do
 
     it "should destroy the requested article" do
-      Article.expects(:find).with("37").returns(mock_article)
+      Article.expects(:find_by_id).with("37").returns(mock_article)
       mock_article.expects(:destroy)
       delete :destroy, :id => "37"
     end
