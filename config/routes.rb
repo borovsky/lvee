@@ -4,6 +4,8 @@ ActionController::Routing::Routes.draw do |map|
   map.connect 'djs/ie_fuck.js', :controller => 'djs_css', :action => 'ie_fuck'
 
   map.connect 'activate/:activation_code', :controller => 'users', :action => 'activate'
+  map.connect 'sitemap.xml', :controller => 'main', :action => 'sitemap'
+
 
   map.namespace :admin, :namespace => "", :path_prefix =>":lang", :name_prefix => "" do |admin|
     admin.resources :users

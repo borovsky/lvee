@@ -47,4 +47,8 @@ module ApplicationHelper
   def article_link(title, category, name)
     link_to(title, :category => category, :name => name, :controller => "/articles", :action => 'show')
   end
+
+  def w3c_date(date)
+    date.utc.strftime("%Y-%m-%dT%H:%M:%S+00:00")
+  end
 end

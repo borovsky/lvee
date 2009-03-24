@@ -20,6 +20,13 @@ class News < ActiveRecord::Base
     }
   }
 
+  named_scope :sitemap, lambda { ||
+    { :conditions => [
+        "news.published_at >= ?",
+        3.days.ago ],
+      :order => 'created_at DESC'
+    }
+  }
 
   def self.translated(locale = nil, params={})
     locale ||= I18n.locale
