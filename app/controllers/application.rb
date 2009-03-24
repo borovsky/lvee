@@ -17,9 +17,13 @@ class ApplicationController < ActionController::Base
   end
 
   protected
-
   def language_select
     lang = params[:lang] || session[:lang] || I18n.default_locale
+
+    if(LANGUAGE_MAP[lang])
+      return redirect_to params_to_lang(LANGUAGE_MAP[lang])
+    end
+
     #FIXME
     I18n.load_path = Dir.glob(LOCALE_DIR+ "*.yml")
     I18n.reload!
@@ -46,5 +50,11 @@ class ApplicationController < ActionController::Base
 
   def scaffold_action
     @active_scaffold = true
+  end
+
+  def params_to_lang(lang)
+    {:controller => controller.controller_name, :lang => lang, :id => params[:id],
+        :user_id => params[:user_id], :conference_id => params[:conference_id],
+        :category => params[:category], :name => params[:name], :action => controller.action_name}
   end
 end
