@@ -12,8 +12,10 @@ xml.urlset "xmlns" => "http://www.sitemaps.org/schemas/sitemap/0.9",
         xml.loc         news_item_url(:lang=> language, :id => news_item)
         xml.lastmod     w3c_date(news_item.updated_at)
         xml.changefreq  "monthly"
-        xml.news :publication_date, w3c_date(news_item.created_at)
-        xml.news :keywords, "Linux,LVEE,conference,Open Source,Free Software"
+        xml.news :news do
+          xml.news :publication_date, w3c_date(news_item.created_at)
+          xml.news :keywords, "Linux,LVEE,conference,Open Source,Free Software"
+        end
       end
     end
     @articles.each do |article|

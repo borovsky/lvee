@@ -6,7 +6,6 @@ ActionController::Routing::Routes.draw do |map|
   map.connect 'activate/:activation_code', :controller => 'users', :action => 'activate'
   map.connect 'sitemap.xml', :controller => 'main', :action => 'sitemap'
 
-
   map.namespace :admin, :namespace => "", :path_prefix =>":lang", :name_prefix => "" do |admin|
     admin.resources :users
     admin.resources :conferences, :active_scaffold => true
@@ -19,7 +18,7 @@ ActionController::Routing::Routes.draw do |map|
   end
 
 
-  map.with_options :path_prefix =>":lang" do |ns|
+  map.with_options :path_prefix =>":lang", :requirements => {:lang => /[a-z]{2}/} do |ns|
     ns.connect 'main', :controller => "main", :action => "index"
 
     ns.connect('users/privacy/:action', :requirements =>
@@ -37,6 +36,9 @@ ActionController::Routing::Routes.draw do |map|
     ns.resources :articles, :member => {:translate => :get},
       :collection => {:preview=>:put}
 
+    ns.connect('about/:name/:action',
+      :controller=> "articles", :category => "conference",
+      :defaults => {:action => "show", :name => "index"})
 
     ns.connect(':category/:name/:action', :requirements =>
       {:category => /(main|conference|contacts|sponsors|reports)/},
@@ -56,6 +58,11 @@ ActionController::Routing::Routes.draw do |map|
     ns.connect ':controller/:action/:id'
     ns.connect ':controller/:action/:id.:format'
   end
+
+  map.connect('participants', :controller=> "articles", :category => "conference",
+    :action => "show", :name => "index")
+
+
 
   map.connect ':lang', :controller => "main", :action=>"index"
 end
