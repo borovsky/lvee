@@ -5,6 +5,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.connect 'activate/:activation_code', :controller => 'users', :action => 'activate'
   map.connect 'sitemap.xml', :controller => 'main', :action => 'sitemap'
+  map.connect 'sitemap-news.xml', :controller => 'main', :action => 'sitemap_news'
 
   map.namespace :admin, :namespace => "", :path_prefix =>":lang", :name_prefix => "" do |admin|
     admin.resources :users

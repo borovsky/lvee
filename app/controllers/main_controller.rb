@@ -17,4 +17,10 @@ class MainController < ApplicationController
     render :template => "main/sitemap.rxml", :layout => false
   end
 
+  def sitemap_news
+    @languages = Language.published_names
+    @news = News.published.sitemap.translated(I18n.default_locale)
+    render :template => "main/sitemap_news.rxml", :layout => false
+  end
+
 end

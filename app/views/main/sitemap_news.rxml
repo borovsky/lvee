@@ -1,5 +1,6 @@
 xml.instruct!
-xml.urlset "xmlns" => "http://www.sitemaps.org/schemas/sitemap/0.9" do
+xml.urlset "xmlns" => "http://www.sitemaps.org/schemas/sitemap/0.9",
+  "xmlns:news" => "http://www.google.com/schemas/sitemap-news/0.9" do
   xml.url do
     xml.loc         "http://lvee.org"
     xml.lastmod     w3c_date(Time.now)
@@ -11,13 +12,10 @@ xml.urlset "xmlns" => "http://www.sitemaps.org/schemas/sitemap/0.9" do
         xml.loc         news_item_url(:lang=> language, :id => news_item)
         xml.lastmod     w3c_date(news_item.updated_at)
         xml.changefreq  "monthly"
-      end
-    end
-    @articles.each do |article|
-      xml.url do
-        xml.loc         url_for(:lang=> language, :category => article.category, :name => article.name, :controller => "/articles", :action => 'show', :only_path => false)
-        xml.lastmod     w3c_date(article.updated_at)
-        xml.changefreq  "weekly"
+        xml.news :news do
+          xml.news :publication_date, w3c_date(news_item.created_at)
+          xml.news :keywords, "Linux,LVEE,conference,Open Source,Free Software"
+        end
       end
     end
   end
