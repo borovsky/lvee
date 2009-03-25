@@ -1,11 +1,6 @@
 xml.instruct!
 xml.urlset "xmlns" => "http://www.sitemaps.org/schemas/sitemap/0.9",
   "xmlns:news" => "http://www.google.com/schemas/sitemap-news/0.9" do
-  xml.url do
-    xml.loc         "http://lvee.org"
-    xml.lastmod     w3c_date(Time.now)
-    xml.changefreq  "weekly"
-  end
   @languages.each do |language|
     @news.each do |news_item|
       xml.url do

@@ -13,6 +13,7 @@ ADMIN_MAILLIST = "orgmaillist"
 
 AVATOR_SIZE = "200x150"
 
+RANDOM_PHOTOS_ROOT = 'images/random_photos'
 
 LANGUAGE_MAP = {
   "by" => "be"
