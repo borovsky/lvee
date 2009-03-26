@@ -12,7 +12,7 @@ html, body, ul, ol, li, p, h1, h2, h3, h4, h5, h6, form, fieldset, a, img {
 
 body {
 	color: #3a3c3d;
-	background: #8da1a3 url(../images/bg-body.png) repeat-x top center;
+	background: #a7b7b8 url(../images/bg-body.png) repeat-x top center;
 	font-size: 100%;
 	font-family: 	Arial, "Lucida Sans Unicode",Verdana,sans-serif;
 	font-size: 12px;
@@ -261,7 +261,8 @@ a {
 	}	
 	
 div.flags {
-	position: absolute;
+  z-index: 100px;
+  position: absolute;
 	padding-top: 16px;
 	width: 540px;
 	}
@@ -336,7 +337,9 @@ div.flags li {
 	border: none;
 	* height: 200px;
 
-  z-index: 100;
+
+	
+
 	}
 	
 #sub-menu li ul li {
@@ -344,7 +347,7 @@ div.flags li {
 	margin: 0;
 	border: none;
 	float: none;
-	display: inline
+				display: inline
 	}
 		
 		
@@ -369,6 +372,7 @@ div.flags li {
 	background: #8da1a3;
 	color: #fff;
 	}
+	
 	
 #preview {
     background-color: #DDDDDD;
