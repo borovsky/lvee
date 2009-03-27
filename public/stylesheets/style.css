@@ -261,7 +261,6 @@ a {
 	}	
 	
 div.flags {
-  z-index: 100px;
   position: absolute;
 	padding-top: 16px;
 	width: 540px;
@@ -336,10 +335,7 @@ div.flags li {
   filter: alpha(opacity=90);
 	border: none;
 	* height: 200px;
-
-
-	
-
+  z-index: 100;
 	}
 	
 #sub-menu li ul li {
@@ -347,7 +343,7 @@ div.flags li {
 	margin: 0;
 	border: none;
 	float: none;
-				display: inline
+	display: inline
 	}
 		
 		
