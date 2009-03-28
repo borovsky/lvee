@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
   before_filter :editor_required, :except => :show
 
-  before_filter :load_article_by_category, :except => [:index, :create]
+  before_filter :load_article_by_category, :except => [:index, :create, :translate]
 
   # GET /articles
   # GET /articles.xml
@@ -36,7 +36,7 @@ class ArticlesController < ApplicationController
   end
 
   def translate
-    article ||= Article.find(params[:id])
+    article = Article.find(params[:id])
     @article = Article.new(article.attributes.merge(:locale => params[:lang], :id => nil))
 
     self.new
