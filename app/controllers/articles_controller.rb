@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
   before_filter :editor_required, :except => :show
 
-  before_filter :load_article_by_category, :except => [:index, :create]
+  before_filter :load_article_by_category, :except => [:index, :create, :translate]
 
   # GET /articles
   # GET /articles.xml
