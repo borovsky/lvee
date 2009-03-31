@@ -344,11 +344,11 @@ ru:
   menu: 
     conference: 
       about: "О конференции"
+      attribution: Атрибутика
       history: История
-      linux: Linux
-      place: "Место проведеня конференции"
-      press: "Пресса о конференции"
-      attribution: Аттрибутика
+      linux: GNU/Linux
+      place: "Место проведения"
+      press: Пресса
     contacts: Контакты
     main: Главная
     profile: Профиль

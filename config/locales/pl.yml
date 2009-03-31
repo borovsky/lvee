@@ -1,118 +1,379 @@
-# Polish translations for Ruby on Rails
-# by Jacek Becela (jacek.becela@gmail.com, http://github.com/ncr)
-
-pl:
-  number:
-    format:
-      separator: ","
-      delimiter: " "
-      precision: 2
-    currency:
-      format:
-        format: "%n %u"
-        unit: "PLN"
-    percentage:
-      format:
-        delimiter: ""
-    precision:
-      format:
-        delimiter: ""
-    human:
-      format:
-        delimiter: ""
-        precision: 1
-      storage_units: [B, KB, MB, GB, TB]
-
-  date:
-    formats:
-      default: "%Y-%m-%d"
-      short: "%d %b"
-      long: "%d %B %Y"
-    
-    day_names: [Niedziela, Poniedziałek, Wtorek, Środa, Czwartek, Piątek, Sobota]
-    abbr_day_names: [nie, pon, wto, śro, czw, pia, sob]
-    
-    month_names: [~, Styczeń, Luty, Marzec, Kwiecień, Maj, Czerwiec, Lipiec, Sierpień, Wrzesień, Październik, Listopad, Grudzień]
-    abbr_month_names: [~, sty, lut, mar, kwi, maj, cze, lip, sie, wrz, paź, lis, gru]
-    order: [ :year, :month, :day ]
-
-  time:
-    formats:
-      default: "%a, %d %b %Y, %H:%M:%S %z"
-      short: "%d %b, %H:%M"
-      long: "%d %B %Y, %H:%M"
-    am: "przed południem"
-    pm: "po południu"
-
-  datetime:
-    distance_in_words:
-      half_a_minute: "pół minuty"
-      less_than_x_seconds:
-        one:   "mniej niż sekundę"
-        few:   "mniej niż {{count}} sekundy"
-        other: "mniej niż {{count}} sekund"
-      x_seconds:
-        one:   "sekundę"
-        few:   "{{count}} sekundy"
-        other: "{{count}} sekund"
-      less_than_x_minutes:
-        one:   "mniej niż minutę"
-        few:   "mniej niż {{count}} minuty"
-        other: "mniej niż {{count}} minut"
-      x_minutes:
-        one:   "minutę"
-        few:   "{{count}} minuty"
-        other: "{{count}} minut"
-      about_x_hours:
-        one:   "około godziny"
-        other: "about {{count}} godzin"
-      x_days:
-        one:   "1 dzień"
-        other: "{{count}} dni"
-      about_x_months:
-        one:   "około miesiąca"
-        other: "około {{count}} miesięcy"
-      x_months:
-        one:   "1 miesiąc"
-        few:   "{{count}} miesiące"
-        other: "{{count}} miesięcy"
-      about_x_years:
-        one:   "około roku"
-        other: "około {{count}} lat"
-      over_x_years:
-        one:   "ponad rok"
-        few:   "ponad {{count}} lata"
-        other: "ponad {{count}} lat"
-
-  activerecord:
-    errors:
-      template:
-        header:
-          one:    "{{model}} nie został zachowany z powodu jednego błędu"
-          other:  "{{model}} nie został zachowany z powodu {{count}} błędów"
-        body: "Błędy dotyczą następujących pól:"
-      messages:
-        inclusion: "nie znajduje się na liście dopuszczalnych wartości"
-        exclusion: "znajduje się na liście zabronionych wartości"
-        invalid: "jest nieprawidłowe"
-        confirmation: "nie zgadza się z potwierdzeniem"
+--- 
+pl: 
+  activerecord: 
+    errors: 
+      messages: 
         accepted: "musi być zaakceptowane"
-        empty: "nie może być puste"
         blank: "nie może być puste"
+        confirmation: "nie zgadza się z potwierdzeniem"
+        empty: "nie może być puste"
+        equal_to: "musi być równe {{count}}"
+        even: "musi być parzyste"
+        exclusion: "znajduje się na liście zabronionych wartości"
+        greater_than: "musi być większe niż {{count}}"
+        greater_than_or_equal_to: "musi być większe lub równe {{count}}"
+        inclusion: "nie znajduje się na liście dopuszczalnych wartości"
+        invalid: "jest nieprawidłowe"
+        less_than: "musie być mniejsze niż {{count}}"
+        less_than_or_equal_to: "musi być mniejsze lub równe {{count}}"
+        not_a_number: "nie jest liczbą"
+        odd: "musi być nieparzyste"
+        taken: "zostało już zajęte"
         too_long: "jest za długie (maksymalnie {{count}} znaków)"
         too_short: "jest za krótkie (minimalnie {{count}} znaków)"
         wrong_length: "jest nieprawidłowej długości (powinna wynosić {{count}} znaków)"
-        taken: "zostało już zajęte"
-        not_a_number: "nie jest liczbą"
-        greater_than: "musi być większe niż {{count}}"
-        greater_than_or_equal_to: "musi być większe lub równe {{count}}"
-        equal_to: "musi być równe {{count}}"
-        less_than: "musie być mniejsze niż {{count}}"
-        less_than_or_equal_to: "musi być mniejsze lub równe {{count}}"
-        odd: "musi być nieparzyste"
-        even: "musi być parzyste"
-      
-  support:
-    array:
-      sentence_connector: "i"
+      template: 
+        body: "Błędy dotyczą następujących pól:"
+        header: 
+          one: "{{model}} nie został zachowany z powodu jednego błędu"
+          other: "{{model}} nie został zachowany z powodu {{count}} błędów"
+  date: 
+    abbr_day_names: 
+      - nie
+      - pon
+      - wto
+      - śro
+      - czw
+      - pia
+      - sob
+    abbr_month_names: 
+      - ~
+      - sty
+      - lut
+      - mar
+      - kwi
+      - maj
+      - cze
+      - lip
+      - sie
+      - wrz
+      - paź
+      - lis
+      - gru
+    day_names: 
+      - Niedziela
+      - Poniedziałek
+      - Wtorek
+      - Środa
+      - Czwartek
+      - Piątek
+      - Sobota
+    formats: 
+      default: "%Y-%m-%d"
+      long: "%d %B %Y"
+      short: "%d %b"
+    month_names: 
+      - ~
+      - Styczeń
+      - Luty
+      - Marzec
+      - Kwiecień
+      - Maj
+      - Czerwiec
+      - Lipiec
+      - Sierpień
+      - Wrzesień
+      - Październik
+      - Listopad
+      - Grudzień
+    none: None
+    order: 
+      - !ruby/symbol year
+      - !ruby/symbol month
+      - !ruby/symbol day
+  datetime: 
+    distance_in_words: 
+      about_x_hours: 
+        one: "około godziny"
+        other: "około {{count}} godzin"
+      about_x_months: 
+        one: "około miesiąca"
+        other: "około {{count}} miesięcy"
+      about_x_years: 
+        one: "około roku"
+        other: "około {{count}} lat"
+      half_a_minute: "pół minuty"
+      less_than_x_minutes: 
+        few: "mniej niż {{count}} minuty"
+        one: "mniej niż minutę"
+        other: "mniej niż {{count}} minut"
+      less_than_x_seconds: 
+        few: "mniej niż {{count}} sekundy"
+        one: "mniej niż sekundę"
+        other: "mniej niż {{count}} sekund"
+      over_x_years: 
+        few: "ponad {{count}} lata"
+        one: "ponad rok"
+        other: "ponad {{count}} lat"
+      x_days: 
+        one: "1 dzień"
+        other: "{{count}} dni"
+      x_minutes: 
+        few: "{{count}} minuty"
+        one: minutę
+        other: "{{count}} minut"
+      x_months: 
+        few: "{{count}} miesiące"
+        one: "1 miesiąc"
+        other: "{{count}} miesięcy"
+      x_seconds: 
+        few: "{{count}} sekundy"
+        one: sekundę
+        other: "{{count}} sekund"
+    prompts: 
+      day: Dzień
+      hour: Godzin
+      minute: Minut
+      month: Miesiąc
+      second: Sekund
+      year: Rok
+  description: 
+    conference_registration: 
+      days: "W które dni planujecie Państwo uczestniczyć?"
+      food: "Jakie są Państwa upodobania w jedzeniu?"
+      index: "Rejestracja na konferencje"
+      meeting: "Czy potrzeba Państwo spotkać?"
+      phone: "Telefon dla kontaktu z Państwem podczas konferencji (wraz z kodem kraju)"
+      proposition: "Ponieważ wolne oprogramowanie jest rozwijane przez społeczeństwo z przyciągnięciem wielu ochotników, prosimy opowiedzieć co Państwo możecie wnieść do naszego spotkania. Niech to będzie sprawozdanie albo mniej formalne wygłoszenie w ramach warsztatu na temat wdrażania, wykorzystania lub rozwoju wolnego oprogramowania przez Państwo lub Państwa organizację. Jeżeli zamierzacie Państwo sporządzić sprawozdanie lub zorganizować warsztat prosimy określić temat raportu i wysłać jego streszczenia na adres elektroniczny \"d.kostiuk@lvee.org\":mailto:d.kostiuk@lvee.org ."
+      quantity: "Ilu ludzi pojedzie z Państwem na konferencje?"
+      title: "Rejestracja na konferencję {{conference}}"
+      transport: "Jakim transportem zamierzacie Państwo dostać się na konferencję?"
+      tshirt: "Rozmiar koszulek"
+    user: 
+      city: ""
+      country: "Skąd Państwo pochodzicie?"
+      email: "Państwa adres elektroniczny"
+      first_name: ""
+      last_name: ""
+      login: "co najmniej 3 symboli"
+      occupation: "Miejsce pracy/studiów i dziedziny działalności (z krótką nazwą organizacji)"
+      password: "co najmniej 4 symboli"
+      password_confirmation: "Takie same jak i hasło"
+      projects: "Free Software / Open Source (FS/OS) projekty w których Państwo brali lub bierzecie udział i Państwa rola w nich"
+      subscribed: ""
+  label: 
+    article: 
+      body: Ciało
+      category: Kategoria
+      creating: "Utwórz artykuł"
+      editing: "Edytuj artykuł"
+      in_menu: "W menu?"
+      listing: "Lista artykułów"
+      locale: Język
+      name: Nazwa
+      new: "Nowy artykuł"
+      title: Tytuł
+    common: 
+      _select_: Wybierz
+      back: Wstecz
+      cancel: Anuluj
+      create: Utwórz
+      delete: Skasuj
+      download: Ściągnij
+      edit: Edytuj
+      editTranslation: "Edytuj tłumaczenie"
+      preview: Podgląd
+      publish: Publikuj
+      publish_now: "Publikuj teraz"
+      save: Zachowaj
+      show: Pokaż
+      translate: Tłumacz
+      update: Aktualizuj
+      upload: Prześlij
+    conference: 
+      available: "Możesz uczestniczyć w następujących konferencjach"
+      creating: "Utwórz konferencję"
+      finish_date: "Data ukończenia"
+      listing: "Lista konferencji"
+      name: Nazwa
+      new: "Nowa konferencja"
+      participated: "Brałeś udział"
+      register: "Zarejestrować się"
+      registration_closed: zamknięta
+      registration_opened: otwarta
+      registration_opened?: "Rejestracja otwarta?"
+      registred: "Zarejestrowałeś się"
+      show: "Konferencja {{name}} ({{start_date}} - {{finish_date}}"
+      start_date: "Data rozpoczęcia"
+      upcoming: "Najbliższe konferencje"
+    conference_registration: 
+      days: "Dni uczestnictwa"
+      food: "Upodobania w jedzeniu"
+      index: "Rejestracja na konferencję"
+      meeting: "Czy potrzeba Państwo spotkać?"
+      phone: "Telefon kontaktowy"
+      proposition: "Państwa propozycję"
+      quantity: "Ilość uczestników"
+      title: "Rejestracja na konferencję {{conference}}"
+      transport: Transport
+      tshirt: "Rozmiar koszulek"
+    language: 
+      creating: "Utwórz język"
+      editing: "Edytuj język"
+      id: "2-literowy identyfikator języka"
+      listing: "Lista języków"
+      name: "Pełna nazwa języka (po angielsku)"
+      new: "Nowy język"
+      published: "Czy język jest opublikowany?"
+      upload: "Prześlij język"
+    news: 
+      abstract: Streszczenia
+      add: "Dodaj wiadomość"
+      all_news: "Wszystkie wiadomości"
+      author: Autor
+      back_to_list: "Wstecz do listy wiadomości"
+      body: "Ciało wiadomości"
+      creating: "Stwórz wiadomość"
+      editing: "Edytuj wiadomość"
+      last_news: "Ostatnie wiadomości"
+      publish: "Publikuj wiadomość"
+      published_at: "Opublikowane {{published}}"
+      title: Tytuł
+      translating: "Tłumacz wiadomość"
+      unpublished: "Nie opublikowano"
+      will_be_published: "Będzie opublikowane {{published}}"
+    session: 
+      login: Login
+      loginButton: Zaloguj
+      logout: Wyloguj
+      password: Hasło
+      rememberMe: "Zapamiętać mnie"
+    user: 
+      avator: Zdjęcie
+      city: Miasto
+      country: Kraj
+      create: "Zarejestruj się"
+      edit: "Edytuj profil"
+      email: "Adres elektroniczny"
+      first_name: Imię
+      join_us: "Dołącz się do nas teraz"
+      last_name: Nazwisko
+      login: Login
+      occupation: "Miejsce pracy"
+      password: Hasło
+      password_confirmation: "Potwierdzenie hasła"
+      projects: Projekty
+      register: "Zarejestruj się"
+      subscribed: "Zapisz się na listę mailową"
+      title: "{{full_name}} ({{login}}), Twój profil w Twoich rękach"
+      to_profile: "Do profilu"
+  mail: 
+    account: 
+      activate: |-
+          Odwiedź następujący adres URL do aktywacji konta
+          {{url}}
+      activated: "Twoje konto zostało aktywowane"
+      created: "Twoje konto zostało utworzone"
+      edit_data: |-
+          Możesz się zalogować się i edytować swoje dane:
+          {{url}}
+      information: |-
+          Login:    {{login}}
+          Hasło: {{password}}
+    signature: |-
+        -- 
+        Z poważaniem, robot
+    subject: 
+      activation: "Aktywacja konta na LVEE"
+      activation_complete: "Twoje konto LVEE zostało aktywowane"
+    title: "Witaj, {{full_name}}"
+  menu: 
+    conference: 
+      about: "O konferencji"
+      attribution: Atrybucja
+      history: Historia
+      linux: GNU/Linux
+      place: "Miejsce konferencji"
+      press: "W prasie"
+    contacts: Kontakty
+    main: "Strona główna"
+    profile: Profil
+    reports: 
+      about: Sprawozdania
+      abstract: "Streszczenie wytyczne"
+      category: Sprawozdania
+      materials: "Materiały przeszłych konferencji"
+      program: "Program konferencji"
+    sponsors: Sponsorzy
+  message: 
+    common: 
+      access_denied: "Dostęp zabroniony"
+      required_fields: "(pola oznaczone tłustym drukiem są obowiązkowe do wypełnienia)"
+      sure: "Czy na pewno??"
+    conference: 
+      created: "Pomyślnie utworzono konferencję"
+      slogan: "Piąta Międzynarodowa konferencja twórców i użytkowników Free Software / Open Source (FS/OS) - jedyna na Białorusi"
+      status: "Rejestracja na konferencję: {{status}}."
+      updated: "Pomyślnie zaktualizowano konferencję"
+    iefuck: 
+      link: "http://upgradebrowser.org/x"
+      link_text: "Dowiedzieć się więcej o współczesnych i bezpiecznych przeglądarkach!"
+      message: "Ta wersja programu Internet Explorer niepoprawnie pokazuje współczesne strony internetowe i czyni komputer niebezpiecznym. {{link}}"
+    language: 
+      created: "Pomyślnie utworzono język"
+      updated: "Pomyślnie zaktualizowano język"
+    news: 
+      created: "Pomyślnie utworzono wiadomość"
+      updated: "Pomyślnie zaktualizowano wiadomość"
+    session: 
+      failed: "Login lub hasło są nieprawidłowe. Może nie uaktywniłeś konto."
+      logged: "Jesteś zalogowany jako {{user_name}}"
+      logged_out: "Jesteś wylogowany"
+    user: 
+      accuracy_note: "Dokładne i wolne od błędów wypełnienie formularzu rejestracyjnego bardzo pomoże w kontakcie z Tobą"
+      activated: "Ukończono rejestrację"
+      avator_updated: "Pomyślnie zaktualizowano zdjęcie"
+      avator_upload: "Prosimy przesłać zdjęcie. Z twarzy (jeśli to możliwe)"
+      describe: "Użytkownik: {{full_name}} ({{country}}, {{city}})..."
+      incorrect_image: "Nie można zaktualizować zdjęcia. Proszę sprawdzić plik obrazu"
+      login_change: "Nie można zmienić swój login"
+      privacy: "Polityka prywatności: My {{link}} informację o koncie, w tym adres mailowy, osobom trzecim"
+      privacy_link: "nie sprzedajemy"
+      registred: "Dziękujemy za rejestrację"
+  number: 
+    currency: 
+      format: 
+        delimiter: ","
+        format: "%n %u"
+        precision: 2
+        separator: "."
+        unit: PLN
+    format: 
+      delimiter: " "
+      precision: 2
+      separator: ","
+    human: 
+      format: 
+        delimiter: ""
+        precision: 1
+      storage_units: 
+        - B
+        - KB
+        - MB
+        - GB
+        - TB
+    percentage: 
+      format: 
+        delimiter: ""
+    precision: 
+      format: 
+        delimiter: ""
+  sidebar: 
+    information_sponsor: "Partnerzy informacyjni"
+    organizers: Organizatorzy
+    sponsors: "Sponsorzy of 2008"
+    technical_sponsor: "Sponsorzy techniczni"
+  support: 
+    array: 
+      last_word_connector: ", i "
+      sentence_connector: i
       skip_last_comma: true
+      two_words_connector: " i "
+      words_connector: ", "
+  time: 
+    am: "przed południem"
+    formats: 
+      default: "%a, %d %b %Y, %H:%M:%S %z"
+      long: "%d %B %Y, %H:%M"
+      short: "%d %b, %H:%M"
+    pm: "po południu"
