@@ -4,6 +4,7 @@ class NewsController < ApplicationController
   # GET /news
   # GET /news.xml
   def index
+    @title = t('label.news.last_news')
     if(current_user && current_user.editor?)
       @news = News.translated
     else
@@ -20,6 +21,7 @@ class NewsController < ApplicationController
   # GET /news/1.xml
   def show
     @news = News.find(params[:id]).translation
+    @title = @news.title
 
     respond_to do |format|
       format.html # show.html.erb
@@ -46,6 +48,8 @@ class NewsController < ApplicationController
   def new
     @news = News.new
     @news.locale = params[:locale] || I18n.default_locale
+    @title = @news.parent_id ? t('label.news.translating') : t('label.news.creating')
+
     if(params[:parent_id])
       @news.parent_id = params[:parent_id]
       parent = News.find(params[:parent_id])
@@ -64,14 +68,15 @@ class NewsController < ApplicationController
   # GET /news/1/edit
   def edit
     @news = News.find(params[:id])
+    @title = t('label.news.editing')
   end
 
   # POST /news
   # POST /news.xml
   def create
-
     @news = News.new(params[:news])
     @news.user = current_user
+    @title = @news.parent_id ? t('label.news.translating') : t('label.news.creating')
 
     respond_to do |format|
       if @news.save
@@ -89,6 +94,7 @@ class NewsController < ApplicationController
   # PUT /news/1.xml
   def update
     @news = News.find(params[:id])
+    @title = t('label.news.editing')
 
     respond_to do |format|
       if @news.update_attributes(params[:news])

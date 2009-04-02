@@ -18,6 +18,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1.xml
   def show
     @article ||= Article.find(params[:id])
+    @title = @article.title
 
     respond_to do |format|
       format.html # show.html.erb
@@ -29,6 +30,8 @@ class ArticlesController < ApplicationController
   # GET /articles/new.xml
   def new
     @article ||= Article.new(:locale => I18n.default_locale)
+    @title = t('label.article.creating')
+
     respond_to do |format|
       format.html { render :action => "new" }
       format.xml  { render :xml => @article }
@@ -38,6 +41,7 @@ class ArticlesController < ApplicationController
   def translate
     article = Article.find(params[:id])
     @article = Article.new(article.attributes.merge(:locale => params[:lang], :id => nil))
+    @title = t('label.article.creating')
 
     self.new
   end
@@ -45,12 +49,14 @@ class ArticlesController < ApplicationController
   # GET /articles/1/edit
   def edit
     @article ||= Article.find(params[:id])
+    @title = t('label.article.editing')
   end
 
   # POST /articles
   # POST /articles.xml
   def create
     @article = Article.new(params[:article])
+    @title = t('label.article.creating')
 
     respond_to do |format|
       if @article.save
@@ -68,6 +74,7 @@ class ArticlesController < ApplicationController
   # PUT /articles/1.xml
   def update
     @article ||= Article.find(params[:id])
+    @title = t('label.article.creating')
 
     respond_to do |format|
       if @article.update_attributes(params[:article])

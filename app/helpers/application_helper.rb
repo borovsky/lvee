@@ -13,6 +13,14 @@ module ApplicationHelper
     html
   end
 
+  def page_title
+    if @title.blank?
+      'LVEE'
+    else
+      h("#{@title} - LVEE")
+    end
+  end
+
   # FIXME
   def format_date(time)
     time ? localize(time, :format => :long) : t("date.none")
