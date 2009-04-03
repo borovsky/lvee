@@ -2,7 +2,7 @@
 
 <%= t("mail.account.created") %>
 
-<%= t("mail.account.information", :login => @user.login, :password => @user.password) %>
+<%= t("mail.account.information", :login => @user.login, :password => '*' * @user.password.length) %>
 
 <%= t('mail.account.activate', :url => @url)%>
 

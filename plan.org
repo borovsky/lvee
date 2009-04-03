@@ -88,3 +88,5 @@
 ** later
 *** TODO [#C] Предпочтения по расселению
 *** TODO [#C] Сколько платить
+
+*** TODO Add title teg population for all pages
