@@ -4,7 +4,7 @@
     <label for="<%= active_scaffold_input_options(column, scope)[:id] %>"><%= column.label %></label>
   </dt>
   <dd>
-    <%= select "record", "type", ['organizer', 'sponsor', 'technical', 'information'] %>
+    <%= select "record", "sponsor_type", ['organizer', 'sponsor', 'technical', 'information'] %>
     <% if column.description -%>
       <span class="description"><%= column.description %></span>
     <% end -%>
