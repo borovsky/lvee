@@ -129,6 +129,7 @@ a {
 .header .right ul{
 	border-bottom: 1px solid #000;
 	height: 23px;
+  position:relative;
 	}
 	
 .header ul li.first{
@@ -325,6 +326,7 @@ div.flags li {
 
 /* menu */
 
+
 #sub-menu li ul{	
 	margin: 24px 0 0 0;
 	padding: 0;
@@ -337,9 +339,10 @@ div.flags li {
 	* height: 200px;
   z-index: 100;
 }
-	
+
 #sub-menu li.last ul {
-  right:164px;
+  right:0px;
+  top: 0px;
 }
 
 #sub-menu li ul li {
