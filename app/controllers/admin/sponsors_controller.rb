@@ -3,6 +3,6 @@ class Admin::SponsorsController < ApplicationController
   layout "admin"
 
   active_scaffold :sponsors do |config|
-    config.columns = [:name, :type, :url, :image]
+    config.columns = [:name, :sponsor_type, :url, :image]
   end
 end
