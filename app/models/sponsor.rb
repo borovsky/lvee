@@ -10,7 +10,6 @@ class Sponsor < ActiveRecord::Base
       list[s.sponsor_type] ||= []
       list[s.sponsor_type] << s
     end
-    p list
 
     list
   end

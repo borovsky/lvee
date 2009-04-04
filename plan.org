@@ -31,7 +31,7 @@
 *** TODO Add normal design
 
 * New
-** Todo [7/10]
+** Todo [8/10]
 
 *** DONE [#A] Fix language switch for articles
 
@@ -43,7 +43,7 @@
 
 *** DONE [#A] Организация коротко
 
-*** TODO [#B] Sponsor? organizer. sponsor, information sponsor, technical sponsor
+*** DONE [#B] Sponsor? organizer. sponsor, information sponsor, technical sponsor
 
 *** TODO [#C] курсы валют 
 

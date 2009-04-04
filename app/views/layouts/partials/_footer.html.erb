@@ -31,7 +31,12 @@
     <h4><%= article_link(t('menu.sponsors'), "sponsors", "index") %></h4>
   </div>
   <div class="column">
-    <h4><%= article_link(t('menu.contacts'), "contacts", "index")  %></h4>
+    <h4><%= article_link(t('menu.contacts.category'), "contacts", "index")  %></h4>
+    <ul>
+      <li><%= article_link(t('menu.contacts.official'), "contacts", "official")%></li>
+      <li><%= article_link(t('menu.contacts.organizers'), "contacts", "organizers")%></li>
+      <li><%= article_link(t('menu.contacts.lug'), "contacts", "lug")%></li>
+    </ul>
   </div>
 
 </div><!-- footer -->
