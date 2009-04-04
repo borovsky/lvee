@@ -6,3 +6,6 @@ tags
 config/database.yml
 coverage
 semantic.cache
+public/image_upload
+public/sponsor
+public/user

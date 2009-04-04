@@ -282,7 +282,11 @@ be:
       linux: Лінукс
       place: "Месца канферэнцыі"
       press: "У друку"
-    contacts: Кантакты
+    contacts: 
+      category: Кантакты
+      official: "Контактная информация"
+      organizers: "Оргкомитет"
+      lug: "LUG"
     main: Галоўная
     profile: Профіль
     reports: 

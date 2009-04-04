@@ -1,28 +1,24 @@
+<% sponsors = Sponsor.list %>
 <ul>
   <li><%= link_to(t('sidebar.organizers'), :controller => "articles",
   :category => 'contacts', :name => 'index', :action => 'show') %>
     <ul>
-      <li><a href="http://mlug.linux.by/"><img src="/images/logos/mlug.gif" alt="" /></a></li>
+      <%= render :partial => "layouts/partials/sponsor", :collection => sponsors["organizer"] %>
     </ul>
   </li>
   <li><%= link_to(t('sidebar.sponsors'), :controller => "articles", :category => 'sponsors', :name => 'index', :action => 'show') %>
     <ul>
-      <li><a href="http://sam-solutions.by"><img src="/images/logos/sam-solutions.gif" alt="" /></a></li>
-      <li><a href="http://www.promwad.com/"><img src="/images/logos/prom-wad.gif" alt="" /></a></li>
-      <li><a href="http://www.epam.com/"><img src="/images/logos/epam.gif" alt="" /></a></li>
-      <li><a href="http://www.abaxia.com/"><img src="/images/logos/blr-soft.gif" alt="" /></a></li>
-      <li><a href="http://www.alatys.com/"><img src="/images/logos/alatys.gif" alt="" /></a></li>
-      <li><a href="http://www.onliner.by/"><img src="/images/logos/onliner.gif" alt="" /></a></li>
+      <%= render :partial => "layouts/partials/sponsor", :collection => sponsors["sponsor"] %>
     </ul>
   </li>
   <li><%= link_to(t('sidebar.technical_sponsor'), :controller => "articles", :category => 'sponsors', :name => 'index', :action => 'show') %>
     <ul>
-      <li><a href="http://www.lans.by/"><img src="/images/logos/lans.png" alt="" /></a></li>
+      <%= render :partial => "layouts/partials/sponsor", :collection => sponsors["technical"] %>
     </ul>
   </li>
   <li><%= link_to(t('sidebar.information_sponsor'), :controller => "articles", :category => "conference", :name => "press", :action => 'show') %>
     <ul>
-      <li><a href="http://www.nestor.minsk.by/sr/"><img src="/images/logos/web-solutions.gif" alt="" /></a></li>
+      <%= render :partial => "layouts/partials/sponsor", :collection => sponsors["information"] %>
     </ul>
   </li>
 </ul>

@@ -285,7 +285,11 @@ pl:
       linux: GNU/Linux
       place: "Miejsce konferencji"
       press: "W prasie"
-    contacts: Kontakty
+    contacts: 
+      category: Kontakty
+      official: "Official Contacts"
+      organizers: "Organization Board"
+      lug: "LUG"
     main: "Strona główna"
     profile: Profil
     reports: 

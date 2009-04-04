@@ -349,7 +349,11 @@ ru:
       linux: GNU/Linux
       place: "Место проведения"
       press: Пресса
-    contacts: Контакты
+    contacts: 
+      category: Контакты
+      official: "Контактная информация"
+      organizers: "Оргкомитет"
+      lug: "LUG"
     main: Главная
     profile: Профиль
     reports: 
@@ -357,7 +361,7 @@ ru:
       abstract: "Правила оформления тезисов"
       category: Доклады
       materials: "Материалы прошлых конференций"
-      program: "Программа конференции"
+      program: Программа
     sponsors: Спонсоры
   message: 
     common: 

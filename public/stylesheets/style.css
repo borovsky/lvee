@@ -336,8 +336,12 @@ div.flags li {
 	border: none;
 	* height: 200px;
   z-index: 100;
-	}
+}
 	
+#sub-menu li.last ul {
+  right:164px;
+}
+
 #sub-menu li ul li {
 	padding: 0;
 	margin: 0;
@@ -359,6 +363,7 @@ div.flags li {
 	border-right: 1px solid #8da1a3;
 	font-size: 11px;
 	}
+
 	
 #sub-menu li ul li.last-m a{
 	border-bottom: 1px solid #8da1a3;

@@ -349,7 +349,11 @@ uk:
       linux: Linux
       place: "Місце проведеня конференції"
       press: "Преса про конференцію"
-    contacts: Контакти
+    contacts: 
+      category: Контакти
+      official: "Контактная информация"
+      organizers: "Оргкомитет"
+      lug: "LUG"
     main: Головна
     profile: Профіль
     reports: 

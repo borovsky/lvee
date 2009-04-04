@@ -12,6 +12,7 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :conferences, :active_scaffold => true
     admin.resources :conference_registrations, :active_scaffold => true
     admin.resources :statuses, :active_scaffold => true
+    admin.resources :sponsors, :active_scaffold => true
   end
   map.namespace :editor, :namespace => "", :path_prefix =>":lang", :name_prefix => "" do |editor|
     editor.resources :languages

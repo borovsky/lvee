@@ -1,390 +1,375 @@
-"en":
-  menu:
-    conference:
-      about: "About"
-      history: "History"
-      press: "In the press"
-      place: "Place of the conference"
-      linux: "Linux"
-      attribution: "Attribution"
-    contacts: "Contacts"
-    main: "Main"
-    profile: "Profile"
-    reports: 
-      category: "Reports"
-      about: "On Reports"
-      program: "Program"
-      abstract: "Abstract guidelines"
-      materials: "Past conference materials"
-    sponsors: "Sponsors"
-  sidebar:
-    sponsors: "Sponsors of 2008"
-    organizers: "Organizers"
-    information_sponsor: "Information Partners"
-    technical_sponsor: "Technical sponsor"
-  mail:
-    title: "Hello, {{full_name}}"
-    signature: |-
-      -- 
-      LVEE conference site's robot
-    account:
-      activated: "Your account was been activated"
-      created: "Your account was been created"
-      edit_data: |-
-        You can login and edit your data:
-        {{url}}
-      information: |-
-          Login:    {{login}}
-          Password: {{password}}
-      activate: |-
-        Please visit following URL for activation your account:
-        {{url}}
-    subject:
-      activation: 'Account activation for LVEE'
-      activation_complete: "Your account for LVEE was activated"      
-  description:
-    conference_registration:
+--- 
+en: 
+  activerecord: 
+    errors: 
+      messages: 
+        accepted: "must be accepted"
+        blank: "can't be blank"
+        confirmation: "doesn't match confirmation"
+        empty: "can't be empty"
+        equal_to: "must be equal to {{count}}"
+        even: "must be even"
+        exclusion: "is reserved"
+        greater_than: "must be greater than {{count}}"
+        greater_than_or_equal_to: "must be greater than or equal to {{count}}"
+        inclusion: "is not included in the list"
+        invalid: "is invalid"
+        less_than: "must be less than {{count}}"
+        less_than_or_equal_to: "must be less than or equal to {{count}}"
+        not_a_number: "is not a number"
+        odd: "must be odd"
+        taken: "has already been taken"
+        too_long: "is too long (maximum is {{count}} characters)"
+        too_short: "is too short (minimum is {{count}} characters)"
+        wrong_length: "is the wrong length (should be {{count}} characters)"
+      template: 
+        body: "There were problems with the following fields:"
+        header: 
+          one: "1 error prohibited this {{model}} from being saved"
+          other: "{{count}} errors prohibited this {{model}} from being saved"
+  date: 
+    abbr_day_names: 
+      - Sun
+      - Mon
+      - Tue
+      - Wed
+      - Thu
+      - Fri
+      - Sat
+    abbr_month_names: 
+      - ~
+      - Jan
+      - Feb
+      - Mar
+      - Apr
+      - May
+      - Jun
+      - Jul
+      - Aug
+      - Sep
+      - Oct
+      - Nov
+      - Dec
+    day_names: 
+      - Sunday
+      - Monday
+      - Tuesday
+      - Wednesday
+      - Thursday
+      - Friday
+      - Saturday
+    formats: 
+      default: "%Y-%m-%d"
+      long: "%B %d, %Y"
+      short: "%b %d"
+    month_names: 
+      - ~
+      - January
+      - February
+      - March
+      - April
+      - May
+      - June
+      - July
+      - August
+      - September
+      - October
+      - November
+      - December
+    none: None
+    order: 
+      - !ruby/symbol year
+      - !ruby/symbol month
+      - !ruby/symbol day
+  datetime: 
+    distance_in_words: 
+      about_x_hours: 
+        one: "about 1 hour"
+        other: "about {{count}} hours"
+      about_x_months: 
+        one: "about 1 month"
+        other: "about {{count}} months"
+      about_x_years: 
+        one: "about 1 year"
+        other: "about {{count}} years"
+      half_a_minute: "half a minute"
+      less_than_x_minutes: 
+        one: "less than a minute"
+        other: "less than {{count}} minutes"
+      less_than_x_seconds: 
+        one: "less than 1 second"
+        other: "less than {{count}} seconds"
+      over_x_years: 
+        one: "over 1 year"
+        other: "over {{count}} years"
+      x_days: 
+        one: "1 day"
+        other: "{{count}} days"
+      x_minutes: 
+        one: "1 minute"
+        other: "{{count}} minutes"
+      x_months: 
+        one: "1 month"
+        other: "{{count}} months"
+      x_seconds: 
+        one: "1 second"
+        other: "{{count}} seconds"
+    prompts: 
+      day: Day
+      hour: Hour
+      minute: Minute
+      month: Month
+      second: Seconds
+      year: Year
+  description: 
+    conference_registration: 
       days: "Which days do you plan to participate?"
       food: "Which type of food do you preffer"
+      index: "Registration to conference"
       meeting: "Would you like to be met ?"
       phone: "Phone that we can use for contact with you on conference (with country code)"
+      proposition: "As free software is developed by the community with attracting a lot of volunteers, please tell us how you can contribute to our meeting. Let it be a report or a less formal speech within the limits of a workshop about implementation, usage or development of free software by you or your organization. If you are going to make a report or organize a workshop at the conference, please specify the topic of your report, as well as send its abstracts to \"d.kostiuk@lvee.org\":mailto:d.kostiuk@lvee.org ."
+      quantity: "How many peoples will go to conference"
+      title: "Conference registration for {{conference}}"
       transport: "Which transport will you use to reach the conference"
       tshirt: "T-Shirt size"
-      quantity: "How many peoples will go to conference"
-      proposition: 'As free software is developed by the community with attracting a lot of volunteers, please tell us how you can contribute to our meeting. Let it be a report or a less formal speech within the limits of a workshop about implementation, usage or development of free software by you or your organization. If you are going to make a report or organize a workshop at the conference, please specify the topic of your report, as well as send its abstracts to "d.kostiuk@lvee.org":mailto:d.kostiuk@lvee.org .'
-      title: "Conference registration for {{conference}}"
-      index: "Registration to conference"
-    user:
-      login: "at least 3 symbols"
-      password: "at least 4 symbols"
-      password_confirmation: "Same to password"
+    user: 
+      city: ""
+      country: "Where are you from"
       email: "Your email"
       first_name: ""
       last_name: ""
-      country: "Where are you from"
-      city: ""
+      login: "at least 3 symbols"
       occupation: "Place of work/study and field of activities (with breaf organization name)"
+      password: "at least 4 symbols"
+      password_confirmation: "Same to password"
       projects: "Free Software / Open Source (FS/OS) projects where you have taken or are taking part in and your role in them"
       subscribed: ""
-  label:
-    article:
-      listing: "Listing Articles"
-      category: "Category"
-      name: "Name"
-      locale: "Locale"
-      title: "Title"
-      in_menu: "In menu?"
-      new: "New Article"
+  label: 
+    article: 
+      body: Body
+      category: Category
       creating: "Creating Article"
       editing: "Editing Article"
-      body: "Body"
-    common:
-      back: "Back"
-      create: "Create"
-      delete: "Delete"
-      download: "Download"
-      edit: "Edit"
+      in_menu: "In menu?"
+      listing: "Listing Articles"
+      locale: Locale
+      name: Name
+      new: "New Article"
+      title: Title
+    common: 
+      _select_: Select
+      back: Back
+      cancel: Cancel
+      create: Create
+      delete: Delete
+      download: Download
+      edit: Edit
       editTranslation: "Edit translation"
-      translate: "Translate"
-      preview: "Preview"
-      publish: "Publish"
+      preview: Preview
+      publish: Publish
       publish_now: "Publish Now"
-      save: "Save"
-      show: "Show"
-      update: "Update"
-      upload: "Upload"
-      cancel: "Cancel"
-      _select_: "Select"
-    conference:
-      name: "Name"
-      start_date: "Start date"
-      finish_date: "Finish date"
-      registration_opened?: "Registration opened?"
-      new: "New conference"
-      creating: "Creating conference"
-      listing: "Listing conferences"
-      show: "Conference {{name}} ({{start_date}} - {{finish_date}}"
-      registration_opened: "opened"
-      registration_closed: "closed"
-      participated: "You have participated"
-      registred: "You have registred"
+      save: Save
+      show: Show
+      translate: Translate
+      update: Update
+      upload: Upload
+    conference: 
       available: "You can participate following conferences"
+      creating: "Creating conference"
+      finish_date: "Finish date"
+      listing: "Listing conferences"
+      name: Name
+      new: "New conference"
+      participated: "You have participated"
+      register: Register
+      registration_closed: closed
+      registration_opened: opened
+      registration_opened?: "Registration opened?"
+      registred: "You have registred"
+      show: "Conference {{name}} ({{start_date}} - {{finish_date}}"
+      start_date: "Start date"
       upcoming: "Upcoming conferences"
-      register: "Register"
-    conference_registration:
+    conference_registration: 
       days: "Participation days"
       food: "Preffered food"
+      index: "Registration to conference"
       meeting: "Meeting required?"
       phone: "Your contact phone"
-      transport: "Transport"
-      tshirt: "T-Shirt size"
-      quantity: "Participant quantity"
       proposition: "Your proposition"
+      quantity: "Participant quantity"
       title: "Conference registration for {{conference}}"
-      index: "Registration to conference"
-    language:
-      id: "2-letter language id"
-      name: "Full language name (in English)"
-      published: "Language published?"
+      transport: Transport
+      tshirt: "T-Shirt size"
+    language: 
       creating: "Creating Language"
       editing: "Editing Language"
+      id: "2-letter language id"
       listing: "Listing Languages"
+      name: "Full language name (in English)"
       new: "New Language"
+      published: "Language published?"
       upload: "Upload Language"
-    news:
-      abstract: "Abstract"
+    news: 
+      abstract: Abstract
       add: "Add News"
       all_news: "All News"
-      author: "Author"
+      author: Author
       back_to_list: "Back to news list"
       body: "News Body"
       creating: "News Creating"
-      translating: "News Translation"
       editing: "News Editing"
       last_news: "Last News"
       publish: "Publish News"
       published_at: "Published at {{published}}"
+      title: Title
+      translating: "News Translation"
+      unpublished: Unpublished
       will_be_published: "Will be published in {{published}}"
-      title: "News"
-      title: "Title"
-      unpublished: "Unpublished"
-    session:
-      login: "Login"
-      loginButton: "Login"
-      logout: "Logout"
-      password: "Password"
+    session: 
+      login: Login
+      loginButton: Login
+      logout: Logout
+      password: Password
       rememberMe: "Remember me"
-    user:
-      city: "Location"
-      country: "Country"
-      create: "Register"
+    user: 
+      avator: "Your photo"
+      city: Location
+      country: Country
+      create: Register
       edit: "Edit profile"
-      email: "Email"
+      email: Email
       first_name: "First Name"
-      last_name: "Last Name"
-      login: "Login"
       join_us: "Join us today"
+      last_name: "Last Name"
+      login: Login
       occupation: "Where do you work?"
-      password: "Password"
+      password: Password
       password_confirmation: "Password Confirmation"
       projects: "Your projects"
-      register: "Register"
-      to_profile: "To your profile"
-      title: "{{full_name}} ({{login}}), your profile in your hands"
+      register: Register
       subscribed: "Subscribe to maillist"
-      avator: "Your photo"
-  message:
-    iefuck:
+      title: "{{full_name}} ({{login}}), your profile in your hands"
+      to_profile: "To your profile"
+  mail: 
+    account: 
+      activate: |-
+          Please visit following URL for activation your account:
+          {{url}}
+      activated: "Your account was been activated"
+      created: "Your account was been created"
+      edit_data: |-
+          You can login and edit your data:
+          {{url}}
+      information: |-
+          Login:    {{login}}
+          Password: {{password}}
+    signature: |-
+        -- 
+        LVEE conference site's robot
+    subject: 
+      activation: "Account activation for LVEE"
+      activation_complete: "Your account for LVEE was activated"
+    title: "Hello, {{full_name}}"
+  menu: 
+    conference: 
+      about: About
+      attribution: Attribution
+      history: History
+      linux: GNU/Linux
+      place: "Place of the conference"
+      press: "In the press"
+    contacts: 
+      category: Contacts
+      official: "Official Contacts"
+      organizers: "Organization Board"
+      lug: "LUG"
+    main: Main
+    profile: Profile
+    reports: 
+      about: "On Reports"
+      abstract: "Abstract guidelines"
+      category: Reports
+      materials: "Past conference materials"
+      program: Program
+    sponsors: Sponsors
+  message: 
+    common: 
+      access_denied: "Access denied"
+      required_fields: "(fields marked with bold are obligatory to fill in)"
+      sure: "Are you sure?"
+    conference: 
+      created: "Conference created successfully"
+      slogan: "The 5th International conference of developers and users of free / open source software - the only one in Belarus"
+      status: "Registration to conference {{status}}."
+      updated: "Conference updated successfully"
+    iefuck: 
       link: "http://browsehappy.com"
       link_text: "Find out modern and secure browsers!"
       message: "This version of Internet Explorer improperly shows contemporary websites and makes your computer unsafe. {{link}}"
-    language:
+    language: 
       created: "Language created successfully"
       updated: "Language updated successfully"
-    conference:
-      slogan: "The 5th International conference of developers and users of free / open source software - the only one in Belarus"
-      status: "Registration to conference {{status}}."
-      created: "Conference created successfully"
-      updated: "Conference updated successfully"
-    user:       
-      describe: "User: {{full_name}} ({{country}}, {{city}})..."
-      registred: "Thank you for registration"
-      activated: "Registration completed"
-      login_change: "You can't change your login"
-      accuracy_note: "Accurate and error-free registration form filling will help contacting with you alot"
-      privacy: "Privacy Policy: We {{link}} your account information to anyone, including your email address."
-      privacy_link: "don't sell"
-      avator_upload: "Please upload you photo. With face (if possible)"
-      incorrect_image: "Can not update your photo. Please check image file"
-      avator_updated: "Photo updated successfully"
-    news:
+    news: 
       created: "News created successfully"
       updated: "News updated successfully"
-    session:
+    session: 
+      failed: "Login or password incorrect. May be you didn't activate your account"
       logged: "You logged in as {{user_name}}"
       logged_out: "You logged out successfully"
-      failed: "Login or password incorrect. May be you didn't activate your account"
-    common:
-      required_fields: "(fields marked with bold are obligatory to fill in)"
-      sure: "Are you sure?"
-      access_denied: "Access denied"
-
-  number:
-    # Used in number_with_delimiter()
-    # These are also the defaults for 'currency', 'percentage', 'precision', and 'human'
-    format:
-      # Sets the separator between the units, for more precision (e.g. 1.0 / 2.0 == 0.5)
-      separator: "."
-      # Delimets thousands (e.g. 1,000,000 is a million) (always in groups of three)
-      delimiter: ","
-      # Number of decimals, behind the separator (the number 1 with a precision of 2 gives: 1.00)
-      precision: 3
-      
-    # Used in number_to_currency()
-    currency:
-      format:
-        # Where is the currency sign? %u is the currency unit, %n the number (default: $5.00)
-        format: "%u%n"
-        unit: "$"
-        # These three are to override number.format and are optional
-        separator: "."
+    user: 
+      accuracy_note: "Accurate and error-free registration form filling will help contacting with you alot"
+      activated: "Registration completed"
+      avator_updated: "Photo updated successfully"
+      avator_upload: "Please upload you photo. With face (if possible)"
+      describe: "User: {{full_name}} ({{country}}, {{city}})..."
+      incorrect_image: "Can not update your photo. Please check image file"
+      login_change: "You can't change your login"
+      privacy: "Privacy Policy: We {{link}} your account information to anyone, including your email address."
+      privacy_link: "don't sell"
+      registred: "Thank you for registration"
+  number: 
+    currency: 
+      format: 
         delimiter: ","
+        format: "%u%n"
         precision: 2
-        
-    # Used in number_to_percentage()
-    percentage:
-      format:
-        # These three are to override number.format and are optional
-        # separator: 
-        delimiter: ""
-        # precision: 
-        
-    # Used in number_to_precision()
-    precision:
-      format:
-        # These three are to override number.format and are optional
-        # separator:
-        delimiter: ""
-        # precision:
-        
-    # Used in number_to_human_size()
-    human:
-      format:
-        # These three are to override number.format and are optional
-        # separator: 
+        separator: "."
+        unit: $
+    format: 
+      delimiter: ","
+      precision: 3
+      separator: "."
+    human: 
+      format: 
         delimiter: ""
         precision: 1
-      storage_units: [Bytes, KB, MB, GB, TB]
-
-  # Used in distance_of_time_in_words(), distance_of_time_in_words_to_now(), time_ago_in_words()
-  datetime:
-    distance_in_words:
-      half_a_minute: "half a minute"
-      less_than_x_seconds:
-        one:   "less than 1 second"
-        other: "less than {{count}} seconds"
-      x_seconds:
-        one:   "1 second"
-        other: "{{count}} seconds"
-      less_than_x_minutes:
-        one:   "less than a minute"
-        other: "less than {{count}} minutes"
-      x_minutes:
-        one:   "1 minute"
-        other: "{{count}} minutes"
-      about_x_hours:
-        one:   "about 1 hour"
-        other: "about {{count}} hours"
-      x_days:
-        one:   "1 day"
-        other: "{{count}} days"
-      about_x_months:
-        one:   "about 1 month"
-        other: "about {{count}} months"
-      x_months:
-        one:   "1 month"
-        other: "{{count}} months"
-      about_x_years:
-        one:   "about 1 year"
-        other: "about {{count}} years"
-      over_x_years:
-        one:   "over 1 year"
-        other: "over {{count}} years"
-    prompts:
-      year:   "Year"
-      month:  "Month"
-      day:    "Day"
-      hour:   "Hour"
-      minute: "Minute"
-      second: "Seconds"
-
-  activerecord:
-    errors:
-      template:
-        header:
-          one:    "1 error prohibited this {{model}} from being saved"
-          other:  "{{count}} errors prohibited this {{model}} from being saved"
-        # The variable :count is also available
-        body: "There were problems with the following fields:"
-      messages:
-        inclusion: "is not included in the list"
-        exclusion: "is reserved"
-        invalid: "is invalid"
-        confirmation: "doesn't match confirmation"
-        accepted: "must be accepted"
-        empty: "can't be empty"
-        blank: "can't be blank"
-        too_long: "is too long (maximum is {{count}} characters)"
-        too_short: "is too short (minimum is {{count}} characters)"
-        wrong_length: "is the wrong length (should be {{count}} characters)"
-        taken: "has already been taken"
-        not_a_number: "is not a number"
-        greater_than: "must be greater than {{count}}"
-        greater_than_or_equal_to: "must be greater than or equal to {{count}}"
-        equal_to: "must be equal to {{count}}"
-        less_than: "must be less than {{count}}"
-        less_than_or_equal_to: "must be less than or equal to {{count}}"
-        odd: "must be odd"
-        even: "must be even"
-        # Append your own errors here or at the model/attributes scope.
-
-      # You can define own errors for models or model attributes.
-      # The values :model, :attribute and :value are always available for interpolation.
-      #
-      # For example,
-      #   models:
-      #     user:
-      #       blank: "This is a custom blank message for {{model}}: {{attribute}}"
-      #       attributes:
-      #         login:
-      #           blank: "This is a custom blank message for User login"
-      # Will define custom blank validation message for User model and 
-      # custom blank validation message for login attribute of User model.
-      # models:
-        
-    # Translate model names. Used in Model.human_name().
-    #models:
-      # For example,
-      #   user: "Dude"
-      # will translate User model name to "Dude"
-    
-    # Translate model attribute names. Used in Model.human_attribute_name(attribute).
-    #attributes:
-      # For example,
-      #   user:
-      #     login: "Handle"
-      # will translate User attribute "login" as "Handle"
-
-  date:
-    formats:
-      # Use the strftime parameters for formats.
-      # When no format has been given, it uses default.
-      # You can provide other formats here if you like!
-      default: "%Y-%m-%d"
-      short: "%b %d"
-      long: "%B %d, %Y"
-      
-    day_names: [Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday]
-    abbr_day_names: [Sun, Mon, Tue, Wed, Thu, Fri, Sat]
-      
-    # Don't forget the nil at the beginning; there's no such thing as a 0th month
-    month_names: [~, January, February, March, April, May, June, July, August, September, October, November, December]
-    abbr_month_names: [~, Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec]
-    # Used in date_select and datime_select.
-    order: [ :year, :month, :day ]
-    none: "None"
-
-  time:
-    formats:
-      default: "%a, %d %b %Y %H:%M:%S %z"
-      short: "%d %b %H:%M"
-      long: "%B %d, %Y %H:%M"
-    am: "am"
-    pm: "pm"
-      
-# Used in array.to_sentence.
-  support:
-    array:
-      words_connector: ", "
-      two_words_connector: " and "
+      storage_units: 
+        - Bytes
+        - KB
+        - MB
+        - GB
+        - TB
+    percentage: 
+      format: 
+        delimiter: ""
+    precision: 
+      format: 
+        delimiter: ""
+  sidebar: 
+    information_sponsor: "Information Partners"
+    organizers: Organizers
+    sponsors: "Sponsors of 2008"
+    technical_sponsor: "Technical sponsor"
+  support: 
+    array: 
       last_word_connector: ", and "
+      two_words_connector: " and "
+      words_connector: ", "
+  time: 
+    am: am
+    formats: 
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
+    pm: pm
