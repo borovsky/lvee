@@ -380,6 +380,8 @@ uk:
     language: 
       created: "Мова успішно створена"
       updated: "Мова успішно оновлена"
+    license: 
+      text: "All content besides materials of reports and other specially mentioned documents is licensed under Creative Commons Attribution Share-Alike license"
     news: 
       created: "Новина успішно створена"
       updated: "Новина успішно оновлена"

@@ -303,6 +303,8 @@ en:
       slogan: "The 5th International conference of developers and users of free / open source software - the only one in Belarus"
       status: "Registration to conference {{status}}."
       updated: "Conference updated successfully"
+    license: 
+      text: "All content besides materials of reports and other specially mentioned documents is licensed under Creative Commons Attribution Share-Alike license"
     iefuck: 
       link: "http://browsehappy.com"
       link_text: "Find out modern and secure browsers!"

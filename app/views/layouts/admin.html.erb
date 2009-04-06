@@ -6,6 +6,7 @@
       <%= render(:partial => 'layouts/partials/top') %>
 
       <div class="content admin">
+        <%= flashes_if_any %>
         <%= yield %>
 
       </div><!-- content -->

@@ -316,6 +316,8 @@ pl:
     language: 
       created: "Pomyślnie utworzono język"
       updated: "Pomyślnie zaktualizowano język"
+    license: 
+      text: "All content besides materials of reports and other specially mentioned documents is licensed under Creative Commons Attribution Share-Alike license"
     news: 
       created: "Pomyślnie utworzono wiadomość"
       updated: "Pomyślnie zaktualizowano wiadomość"
