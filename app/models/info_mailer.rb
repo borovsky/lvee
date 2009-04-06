@@ -7,10 +7,10 @@ class InfoMailer < ActionMailer::Base
 
     @body[:text]  = text
 
-    
+
     attachment(:content_type => attachment.content_type,
-      :body => attachment.read, 
+      :body => attachment.read,
       :filename => attachment.original_filename) unless attachment.blank?
-    
+
   end
 end
