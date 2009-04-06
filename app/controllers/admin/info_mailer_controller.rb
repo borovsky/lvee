@@ -7,7 +7,7 @@ class Admin::InfoMailerController < ApplicationController
 
   def send_mail
     InfoMailer.deliver_info_mail(params[:to], params[:subject], params[:body], params[:attachment])
-    flash[:note] = "Mail sent"
+    flash[:notice] = "Mail sent"
     render :action => 'index'
   end
 end
