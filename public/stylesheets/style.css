@@ -6,6 +6,7 @@ html, body, ul, ol, li, p, h1, h2, h3, h4, h5, h6, form, fieldset, a, img {
 	margin:  0;
 	padding: 0;
 	border:  0;
+  line-height: normal;
   }
 
 
@@ -34,6 +35,11 @@ body {
 .right {
 	float: right;
 	}
+
+.content .left {
+	font-size: 14px;
+	line-height: 18px;
+}
 	
 h1 {
 	font-size: 46px;
@@ -69,10 +75,8 @@ h4 a{
 	}
 	
 p {
-	font-size: 14px;
-	line-height: 18px;
-	padding: 8px 0;
-	}
+  padding: 8px 0;
+}
 
 a {
 	color: #093136;
@@ -167,12 +171,10 @@ a {
 .slogan {
 	width: 460px;
 	color: #fff;
-	font-size: 14px;
 	height: 134px;
 	font-family: Arial, Helvetica, sans-serif;
 	padding-top: 96px;
 	padding-left: 30px;
-	line-height: 18px;
 	}	
 	
 .button-join {
@@ -235,7 +237,8 @@ a {
 	border-top: #3b4b53 7px solid;
 	margin-top: 70px;
 	padding-top: 20px;
-
+  font-size:12px;
+  line-height: normal;
 	}
 	
 .content .right ul {
@@ -273,8 +276,6 @@ div.flags li {
 	padding: 0 0 0 10px;
 	}
 /*------------------------------------------------- /content -------------------------------------------------------------*/
-
-
 
 
 /*------------------------------------------------- footer --------------------------------------------------------------*/
