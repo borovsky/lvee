@@ -18,7 +18,7 @@ Rails::Initializer.run do |config|
 
   # Skip frameworks you're not going to use (only works if using vendor/rails).
   # To use Rails without a database, you must remove the Active Record framework
-  # config.frameworks -= [ :active_record, :active_resource, :action_mailer ]
+  config.frameworks -= [ :active_resource ]
 
   # Only load the plugins named here, in the order given. By default, all plugins
   # in vendor/plugins are loaded in alphabetical order.
@@ -49,10 +49,10 @@ Rails::Initializer.run do |config|
   # Use SQL instead of Active Record's schema dumper when creating the test database.
   # This is necessary if your schema can't be completely dumped by the schema dumper,
   # like if you have constraints or database-specific column types
-  # config.active_record.schema_format = :sql
+  config.active_record.schema_format = :sql
 
   # Activate observers that should always be running
-  # config.active_record.observers = :cacher, :garbage_collector
+  config.active_record.observers = :cacher, :garbage_collector
 
   # Make Active Record use UTC-base instead of local time
   # config.active_record.default_timezone = :utc
