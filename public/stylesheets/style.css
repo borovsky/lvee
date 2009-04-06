@@ -319,7 +319,13 @@ div.flags li {
 	color: #555555;
 	display: block;
 	float: right;
-	}
+	width: 182px;
+	padding-left: 5px;
+	}	
+
+.copy img {
+	padding-top: 10px;
+ 	}
 /*------------------------------------------------- /footer --------------------------------------------------------------*/
 
 
