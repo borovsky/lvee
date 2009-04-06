@@ -248,6 +248,9 @@ a {
 .left .box ul {
   margin-right: 0px;
 }
+.content .right {
+    margin-right: 1px;
+}
 .content .right ul {
 	padding: 0;
 	margin: 0;
