@@ -40,6 +40,10 @@ body {
 	font-size: 14px;
 	line-height: 18px;
 }
+
+.content .left ul {
+  margin-right: 20px;
+}
 	
 h1 {
 	font-size: 46px;
@@ -241,6 +245,9 @@ a {
   line-height: normal;
 	}
 	
+.left .box ul {
+  margin-right: 0px;
+}
 .content .right ul {
 	padding: 0;
 	margin: 0;
