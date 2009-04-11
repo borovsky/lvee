@@ -76,7 +76,7 @@ pl:
       - Październik
       - Listopad
       - Grudzień
-    none: None
+    none: "Nie ma"
     order: 
       - !ruby/symbol year
       - !ruby/symbol month
@@ -287,9 +287,9 @@ pl:
       press: "W prasie"
     contacts: 
       category: Kontakty
+      lug: LUG
       official: "Official Contacts"
       organizers: "Organization Board"
-      lug: "LUG"
     main: "Strona główna"
     profile: Profil
     reports: 
@@ -317,7 +317,7 @@ pl:
       created: "Pomyślnie utworzono język"
       updated: "Pomyślnie zaktualizowano język"
     license: 
-      text: "All content besides materials of reports and other specially mentioned documents is licensed under Creative Commons Attribution Share-Alike license"
+      text: "Wszystkie materiały oprócz treści sprawozdań oraz innych wymienionych dokumentów są na licencji Creative Commons Attribution Share-Alike"
     news: 
       created: "Pomyślnie utworzono wiadomość"
       updated: "Pomyślnie zaktualizowano wiadomość"

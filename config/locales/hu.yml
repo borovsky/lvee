@@ -1,117 +1,449 @@
-# Hungarian translations for Ruby on Rails 
-# by Richard Abonyi (richard.abonyi@gmail.com)
-# thanks to KKata, replaced and #hup.hu
-# Cleaned up by László Bácsi (http://lackac.hu)
-
-"hu":
-  date:
-    formats:
-      default: "%Y.%m.%d."
-      short: "%b %e."
-      long: "%Y. %B %e."
-    day_names: [vasárnap, hétfő, kedd, szerda, csütörtök, péntek, szombat]
-    abbr_day_names: [v., h., k., sze., cs., p., szo.]
-    month_names: [~, január, február, március, április, május, június, július, augusztus, szeptember, október, november, december]
-    abbr_month_names: [~, jan., febr., márc., ápr., máj., jún., júl., aug., szept., okt., nov., dec.]
-    order: [ :year, :month, :day ]
-
-  time:
-    formats:
-      default: "%Y. %b %e., %H:%M"
-      short: "%b %e., %H:%M"
-      long: "%Y. %B %e., %A, %H:%M"
-    am: "de."
-    pm: "du."
-
-  datetime:
-    distance_in_words:
-      half_a_minute: 'fél perc'
-      less_than_x_seconds:
-        zero: 'kevesebb, mint 1 másodperc'
-        one: 'kevesebb, mint 1 másodperc'
-        other: 'kevesebb, mint {{count}} másodperc'
-      x_seconds:
-        one: '1 másodperc'
-        other: '{{count}} másodperc'
-      less_than_x_minutes:
-        zero: 'kevesebb, mint 1 perc'
-        one: 'kevesebb, mint 1 perc'
-        other: 'kevesebb, mint {{count}} perc'
-      x_minutes:
-        one: '1 perc'
-        other: '{{count}} perc'
-      about_x_hours:
-        one: 'majdnem 1 óra'
-        other: 'majdnem {{count}} óra'
-      x_days:
-        one: '1 nap'
-        other: '{{count}} nap'
-      about_x_months:
-        one: 'majdnem 1 hónap'
-        other: 'majdnem {{count}} hónap'
-      x_months:
-        one: '1 hónap'
-        other: '{{count}} hónap'
-      about_x_years:
-        one: 'majdnem 1 év'
-        other: 'majdnem {{count}} év'
-      over_x_years:
-        one: 'több, mint 1 év'
-        other: 'több, mint {{count}} év'
-
-  number:
-    format:
-      precision: 2
-      separator: ','
-      delimiter: ' '
-    currency:
-      format:
-        unit: 'Ft'
-        precision: 0
-        format: '%n %u'
-        separator: ""
-        delimiter: ""
-    percentage:
-      format:
-        delimiter: ""
-    precision:
-      format:
-        delimiter: ""
-    human:
-      format:
+--- 
+hu: 
+  activerecord: 
+    errors: 
+      messages: 
+        accepted: "meg kell erősíteni"
+        blank: "nem lehet üres"
+        confirmation: "nem egyezik a megerősítéssel"
+        empty: "nem lehet üres"
+        equal_to: "csak ennyi lehet: {{count}}"
+        even: "csak páratlan lehet"
+        exclusion: "fenntartott értekű"
+        greater_than: "csak több lehet, mint {{count}}"
+        greater_than_or_equal_to: "csak nagyobb vagy egyenlő lehet, mint {{count}}"
+        inclusion: "nem megengedett értékű"
+        invalid: "érvénytelen értékű"
+        less_than: "csak kevesebb lehet, mint {{count}}"
+        less_than_or_equal_to: "csak kisebb vagy egyenlő lehet, mint {{count}}"
+        not_a_number: "nem szám"
+        odd: "csak páros lehet"
+        taken: "már foglalt"
+        too_long: 
+          few: "túl hosszú (nem lehet hosszabb, mint {{count}} leütés)"
+          many: "túl hosszú (nem lehet hosszabb, mint {{count}} leütés)"
+          one: "túl hosszú (nem lehet hosszabb, mint {{count}} leütés)"
+          other: "túl hosszú (nem lehet hosszabb, mint {{count}} leütés)"
+        too_short: 
+          few: "nem elég hosszú (nem lehet rövidebb, mint {{count}} leütés)"
+          many: "nem elég hosszú (nem lehet rövidebb, mint {{count}} leütés)"
+          one: "nem elég hosszú (nem lehet rövidebb, mint {{count}} leütés)"
+          other: "nem elég hosszú (nem lehet rövidebb, mint {{count}} leütés)"
+        wrong_length: 
+          few: "nem megfelelő hosszúságú (csak {{count}} leütés lehet)"
+          many: "nem megfelelő hosszúságú (csak {{count}} leütés lehet)"
+          one: "nem megfelelő hosszúságú (csak {{count}} leütés lehet)"
+          other: "nem megfelelő hosszúságú (csak {{count}} leütés lehet)"
+      template: 
+        body: "A következő mezőkkel van gond:"
+        header: 
+          few: "{{model}}: a mentés nem sikerült {{count}} hiba miatt"
+          many: "{{model}}: a mentés nem sikerült {{count}} hiba miatt"
+          one: "{{model}}: a mentés nem sikerült {{count}} hiba miatt"
+          other: "{{model}}: a mentés nem sikerült {{count}} hiba miatt"
+  date: 
+    abbr_day_names: 
+      - Va
+      - Hé
+      - Ke
+      - Sze
+      - Cs
+      - Pé
+      - Szo
+    abbr_month_names: 
+      - ~
+      - jan.
+      - feb.
+      - már.
+      - ápr.
+      - máj.
+      - jún.
+      - júl.
+      - aug.
+      - sze.
+      - okt.
+      - nov.
+      - dec.
+    day_names: 
+      - vasárnap
+      - hétfő
+      - kedd
+      - szerda
+      - csütörtök
+      - péntek
+      - szombat
+    formats: 
+      default: "%Y.%m.%d"
+      long: "%Y %B %d"
+      short: "%b %d"
+    month_names: 
+      - ~
+      - január
+      - február
+      - március
+      - április
+      - május
+      - június
+      - július
+      - augusztus
+      - szeptember
+      - október
+      - november
+      - december
+    none: Nincs
+    order: 
+      - !ruby/symbol year
+      - !ruby/symbol month
+      - !ruby/symbol day
+    standalone_abbr_month_names: 
+      - ~
+      - jan.
+      - feb.
+      - már.
+      - ápr.
+      - máj.
+      - jún.
+      - júl.
+      - aug.
+      - sze.
+      - okt.
+      - nov.
+      - dec.
+    standalone_day_names: 
+      - Vasárnap
+      - Hétfő
+      - Kedd
+      - Szerda
+      - Csütörtök
+      - Péntek
+      - Szombat
+    standalone_month_names: 
+      - ~
+      - Január
+      - Február
+      - Március
+      - Április
+      - Május
+      - Június
+      - Július
+      - Augusztus
+      - Szeptember
+      - Október
+      - November
+      - December
+  datetime: 
+    distance_in_words: 
+      about_x_hours: 
+        few: "kb. {{count}} óra"
+        many: "kb. {{count}} óra"
+        one: "kb. {{count}} óra"
+        other: "kb. {{count}} óra"
+      about_x_months: 
+        few: "kb. {{count}} hó"
+        many: "kb. {{count}} hó"
+        one: "kb. {{count}} hó"
+        other: "kb. {{count}} hó"
+      about_x_years: 
+        few: "kb. {{count}} év"
+        many: "kb. {{count}} év"
+        one: "kb. {{count}} év"
+        other: "kb. {{count}} év"
+      half_a_minute: "fél perc"
+      less_than_x_minutes: 
+        few: "kevesebb, mint {{count}} perc"
+        many: "kevesebb, mint {{count}} perc"
+        one: "kevesebb, mint {{count}} perc"
+        other: "kevesebb, mint {{count}} perc"
+      less_than_x_seconds: 
+        few: "kevesebb, mint {{count}} másodperc"
+        many: "kevesebb, mint {{count}} másodperc"
+        one: "kevesebb, mint {{count}} másodperc"
+        other: "kevesebb, mint {{count}} másodperc"
+      over_x_years: 
+        few: "több, mint {{count}} év"
+        many: "több, mint {{count}} év"
+        one: "több, mint {{count}} év"
+        other: "több, mint {{count}} év"
+      x_days: 
+        few: "{{count}} nap"
+        many: "{{count}} nap"
+        one: "{{count}} nap"
+        other: "{{count}} nap"
+      x_minutes: 
+        few: "{{count}} perc"
+        many: "{{count}} perc"
+        one: "{{count}} perc"
+        other: "{{count}} perc"
+      x_months: 
+        few: "{{count}} hó"
+        many: "{{count}} hó"
+        one: "{{count}} hó"
+        other: "{{count}} hó"
+      x_seconds: 
+        few: "{{count}} másodperc"
+        many: "{{count}} másodperc"
+        one: "{{count}} másodperc"
+        other: "{{count}} másodperc"
+    prompts: 
+      day: Nap
+      hour: Óra
+      minute: Perc
+      month: Hó
+      second: Másodperc
+      year: Év
+  description: 
+    conference_registration: 
+      days: "Mely napokon kíván részt venni?"
+      food: "Étkezéssel kapcsolatos kívánságok?"
+      index: "Konferencia regisztráció"
+      meeting: "Igényli-e, hogy fogadják?"
+      phone: "Telefonszám, amin a konferencia közben elérhető (országkóddal)"
+      proposition: "Mivel a szabad szoftvert önkéntesek közössége hozza létre, kérjük írja le, mivel tudna hozzájárulni a találkozónkhoz. Lehet előadás vagy kevésbé formális beszámoló kerekasztalbeszélgetés (workshop) keretében szabad szoftver bevezetéséről, használatáról vagy fejlesztéséről ön, vagy cége által. Amennyiben előadást vagy szemináriumot készül a konferencián tartani, kérjük írja meg az előadása címét, és küldje el a \"d.kostiuk@lvee.org\":mailto:d.kostiuk@lvee.org címre az előadás vázlatát."
+      quantity: "Hányan jönnek önnel együtt a rendezvényre?"
+      title: "Regisztrálás az {{conference}} konferenciára"
+      transport: "Milyen közlekedéssel tervezi a konferenciára eljutást?"
+      tshirt: Pólóméret
+    user: 
+      city: Város?
+      country: Ország?
+      email: "Email címe?"
+      first_name: Keresztnév
+      last_name: Családnév
+      login: "minimum 3 karakter"
+      occupation: "Munkahely/iskola, tevékenység (a szervezet/cég rövid elnevezésével)"
+      password: "minimum 4 karakter"
+      password_confirmation: "Jelszó ismétlés"
+      projects: "Free Software / Open Source (FS/OS) projektek, amikben részt vesz vagy a múltban részt vett, szerepének megjelölésével"
+      subscribed: ""
+  label: 
+    article: 
+      body: Тartalom
+      category: Kategória
+      creating: "Сikk létrehozása"
+      editing: "Cikk szerkesztése"
+      in_menu: "A menüben?"
+      listing: Cikklista
+      locale: Nyelv
+      name: Név
+      new: "Új cikk"
+      title: Cím
+    common: 
+      _select_: Kiválasztás
+      back: Vissza
+      cancel: Mégse
+      create: Létrehozni
+      delete: Törölni
+      download: Letölteni
+      edit: Szerkeszteni
+      editTranslation: "Fordítás szerkesztése"
+      preview: Megtekinteni
+      publish: Közzétenni
+      publish_now: "Most közzétenni"
+      save: Elmenteni
+      show: Megmutatni
+      translate: Lefordítani
+      update: Megújítani
+      upload: Feltölteni
+    conference: 
+      available: "Későbbi konferenciákon részt tud venni?"
+      creating: "Konferencia létrehozása"
+      finish_date: Zárónap
+      listing: "Konferencia lista"
+      name: Elnevezés
+      new: "Új konferencia"
+      participated: "Ön részt vett"
+      register: Regisztráció
+      registration_closed: "Regisztráció lezárva"
+      registration_opened: Nyitva
+      registration_opened?: "Regisztráció nyitva?"
+      registred: "Ön regisztrált"
+      show: "{{name}} konferencia ({{start_date}} - {{finish_date}}"
+      start_date: Kezdőnap
+      upcoming: "Soronkövetkező konferenciák"
+    conference_registration: 
+      days: "Részvételi napok"
+      food: "Étkezéssel kapcsolatos kívánságok"
+      index: Konferenciaregisztrációk
+      meeting: "Fogadás szükséges?"
+      phone: "Telefonos elérhetősége"
+      proposition: Felajánlásai
+      quantity: "Résztvevők száma"
+      title: "Regisztrálás a {{conference}} konferenciára"
+      transport: Közlekedés
+      tshirt: Pólóméret
+    language: 
+      creating: "Nyelv létrehozása"
+      editing: "Nyelv szerkesztése"
+      id: "nyelv kétbetüs azonosítója"
+      listing: "Nyelvek listája"
+      name: "A nyelv angol elnevezése"
+      new: "Új nyelv"
+      published: "A nyelv elérhető?"
+      upload: "Nyelv feltöltése"
+    news: 
+      abstract: Összefoglaló
+      add: "Hír hozzáadása"
+      all_news: "Minden hír"
+      author: Szerző
+      back_to_list: "Vissza a hírlistához"
+      body: "Hír tartalma"
+      creating: "Hír létrehozása"
+      editing: "Hír szerkesztése"
+      last_news: "Friss hírek"
+      publish: "Hír közzététele"
+      published_at: "{{published}} közzétéve"
+      title: Cím
+      translating: "Hír fordítása"
+      unpublished: "Nincs közzétéve"
+      will_be_published: "{{published}} közzé lesz téve"
+    session: 
+      login: Felhasználónév
+      loginButton: Belépés
+      logout: Kilépés
+      password: Jelszó
+      rememberMe: "Jegyezz meg"
+    user: 
+      avator: Arckép
+      city: Város
+      country: Ország
+      create: Regisztrálás
+      edit: "Profil szerkesztése"
+      email: "Email cím"
+      first_name: Keresztnév
+      join_us: Csatlakozz
+      last_name: Családnév
+      login: Felhasználónév
+      occupation: "Hol dolgozik?"
+      password: Jelszó
+      password_confirmation: "Jelszó újra"
+      projects: "Szabad szoftver projectjei"
+      register: Regisztrálás
+      subscribed: "Feliratkozás a levlistára"
+      title: "{{full_name}} ({{login}}), profilbabrálás"
+      to_profile: "A profiljához"
+  mail: 
+    account: 
+      activate: |-
+          Kérjük, kövesse a lenti hivatkozást a hozzáférés aktiválásához:
+          {{url}}
+      activated: "Hozzáférése aktiváltatott"
+      created: "Hozzáférése létrejött"
+      edit_data: |-
+          Belépés után szerkesztheti a személyes adatait:
+          {{url}}
+      information: |-
+          Felhasználónév: {{login}}
+          Jelszó:         {{password}}
+    signature: |-
+        -- 
+        Tisztelettel, robot
+    subject: 
+      activation: "LVEE hozzáférés aktiválása"
+      activation_complete: "Az ön LVEE.org hozzáférése aktiváltatott"
+    title: "Üdvözöljük, {{full_name}}"
+  menu: 
+    conference: 
+      about: "A konferenciáról"
+      attribution: Impresszum
+      history: Történelem
+      linux: GNU/Linux
+      place: Helyszín
+      press: Sajtó
+    contacts: 
+      category: Kapcsolatok
+      lug: LUG
+      official: Кapcsolattartás
+      organizers: "Szervező bizottság"
+    main: Főoldal
+    profile: Profil
+    reports: 
+      about: "Az előadásokról"
+      abstract: "Vázlatírási szabályok"
+      category: Előadások
+      materials: "Múltbéli konferenciák anyagai"
+      program: Program
+    sponsors: Szponzorok
+  message: 
+    common: 
+      access_denied: "Hozzáférés megtagadva"
+      required_fields: "(a vastagbetűs mezők kitöltése kötelező)"
+      sure: "Biztos benne?"
+    conference: 
+      created: "A konferencia sikeresen létrejött"
+      slogan: "Szabad szoftvert használók és fejlesztők ötödik nemzetközi konferenciája"
+      status: "Állapota: {{status}}."
+      updated: "A konferencia sikeresen frissítődött"
+    iefuck: 
+      link: "http://upgradebrowser.org/x"
+      link_text: "Tudjon meg többet a korszerű és biztonságos böngészőkről!"
+      message: "Internet Explorer adott verziója hibásan jelenít meg oldalakat és veszélynek teszi ki a számítógépet. {{link}}"
+    language: 
+      created: "A nyelv sikeresen létrejött"
+      updated: "A nyelv siekresen frissítődött"
+    license: 
+      text: "All content besides materials of reports and other specially mentioned documents is licensed under Creative Commons Attribution Share-Alike license"
+    news: 
+      created: "A hír sikeresen létrejött"
+      updated: "A hír sikeresen frissítődött"
+    session: 
+      failed: "Felhasználónév- vagy jelszóhiba. Talán nem követte az aktiválási linket?"
+      logged: "Belépett, mint {{user_name}}"
+      logged_out: "Sikeresen kilépett"
+    user: 
+      accuracy_note: "A jelentkezési lap helyes és pontos kitöltése segíti a kapcsolattartást"
+      activated: "A regisztrálás befejeződött"
+      avator_updated: "Sikeres fényképfrissítés."
+      avator_upload: "Kérjük, töltse fel fényképét"
+      describe: "Felhasználó: {{full_name}} ({{country}}, {{city}})..."
+      incorrect_image: "Sikertelen képfrissítés. Talán rossz fájlt adott meg."
+      login_change: "A felhasználónevet nem tudja megváltoztatni"
+      privacy: "Adatkezelés: személyes adatait, beleértve email címét senkinek {{link}}."
+      privacy_link: "nem adjuk ki"
+      registred: "Köszönjük a regisztrációt."
+  number: 
+    currency: 
+      format: 
+        delimiter: " "
+        format: "%n %u"
+        precision: 2
+        separator: ","
+        unit: rubel
+    format: 
+      delimiter: " "
+      precision: 3
+      separator: ","
+    human: 
+      format: 
         delimiter: ""
         precision: 1
-      storage_units: [bájt, KB, MB, GB, TB]
-
-  support:
-    array:
-      sentence_connector: "és"
+      storage_units: 
+        - bájt
+        - kilobájt
+        - megabájt
+        - gigabájt
+        - terabájt
+    percentage: 
+      format: 
+        delimiter: ""
+    precision: 
+      format: 
+        delimiter: ""
+  sidebar: 
+    information_sponsor: "Információs partnerek"
+    organizers: Szervezők
+    sponsors: "2008-as szponzorok"
+    technical_sponsor: "Műszaki szponzorok"
+  support: 
+    array: 
+      last_word_connector: " és "
+      sentence_connector: és
       skip_last_comma: true
-
-  activerecord:
-    errors:
-      template:
-        header:
-          one: "1 hiba miatt nem menthető a következő: {{model}}"
-          other: "{{count}} hiba miatt nem menthető a következő: {{model}}"
-        body: "Problémás mezők:"
-      messages:
-        inclusion: "nincs a listában"
-        exclusion: "nem elérhető"
-        invalid: "nem megfelelő"
-        confirmation: "nem egyezik"
-        accepted: "nincs elfogadva"
-        empty: "nincs megadva"
-        blank: "nincs megadva"
-        too_long: "túl hosszú (nem lehet több {{count}} karakternél)"
-        too_short: "túl rövid (legalább {{count}} karakter kell legyen)"
-        wrong_length: "nem megfelelő hosszúságú ({{count}} karakter szükséges)"
-        taken: "már foglalt"
-        not_a_number: "nem szám"
-        greater_than: "nagyobb kell legyen, mint {{count}}"
-        greater_than_or_equal_to: "legalább {{count}} kell legyen"
-        equal_to: "pontosan {{count}} kell legyen"
-        less_than: "kevesebb, mint {{count}} kell legyen"
-        less_than_or_equal_to: "legfeljebb {{count}} lehet"
-        odd: "páratlan kell legyen"
-        even: "páros kell legyen"
+      two_words_connector: " és "
+      words_connector: ", "
+  time: 
+    am: délelőtt
+    formats: 
+      default: "%Y, %b %d  %a, %z %H:%M:%S"
+      long: "%Y %B %d, %H:%M"
+      short: "%b %d, %H:%M"
+    pm: délután

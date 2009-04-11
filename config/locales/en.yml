@@ -129,7 +129,7 @@ en:
       meeting: "Would you like to be met ?"
       phone: "Phone that we can use for contact with you on conference (with country code)"
       proposition: "As free software is developed by the community with attracting a lot of volunteers, please tell us how you can contribute to our meeting. Let it be a report or a less formal speech within the limits of a workshop about implementation, usage or development of free software by you or your organization. If you are going to make a report or organize a workshop at the conference, please specify the topic of your report, as well as send its abstracts to \"d.kostiuk@lvee.org\":mailto:d.kostiuk@lvee.org ."
-      quantity: "How many peoples will go to conference"
+      quantity: "How many people will go with you to the conference (including you)"
       title: "Conference registration for {{conference}}"
       transport: "Which transport will you use to reach the conference"
       tshirt: "T-Shirt size"
@@ -281,9 +281,9 @@ en:
       press: "In the press"
     contacts: 
       category: Contacts
+      lug: LUG
       official: "Official Contacts"
       organizers: "Organization Board"
-      lug: "LUG"
     main: Main
     profile: Profile
     reports: 
@@ -303,8 +303,6 @@ en:
       slogan: "The 5th International conference of developers and users of free / open source software - the only one in Belarus"
       status: "Registration to conference {{status}}."
       updated: "Conference updated successfully"
-    license: 
-      text: "All content besides materials of reports and other specially mentioned documents is licensed under Creative Commons Attribution Share-Alike license"
     iefuck: 
       link: "http://browsehappy.com"
       link_text: "Find out modern and secure browsers!"
@@ -312,6 +310,8 @@ en:
     language: 
       created: "Language created successfully"
       updated: "Language updated successfully"
+    license: 
+      text: "All content besides materials of reports and other specially mentioned documents is licensed under Creative Commons Attribution Share-Alike license"
     news: 
       created: "News created successfully"
       updated: "News updated successfully"
