@@ -14,7 +14,7 @@ describe ArticlesController do
   describe "responding to GET index" do
 
     it "should expose all articles as @articles" do
-      Article.expects(:find).with(:all).returns([mock_article])
+      Article.expects(:translated).with().returns([mock_article])
       get :index
       assigns[:articles].should == [mock_article]
     end
@@ -23,7 +23,7 @@ describe ArticlesController do
 
       it "should render all articles as xml" do
         request.env["HTTP_ACCEPT"] = "application/xml"
-        Article.expects(:find).with(:all).returns(articles = mock("Array of Articles"))
+        Article.expects(:translated).with().returns(articles = mock("Array of Articles"))
         articles.expects(:to_xml).returns("generated XML")
         get :index
         response.body.should == "generated XML"

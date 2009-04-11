@@ -1,4 +1,5 @@
 class Article < ActiveRecord::Base
+  acts_as_versioned
 
   validates_presence_of :title, :body, :category, :name
 
@@ -9,7 +10,8 @@ class Article < ActiveRecord::Base
     locale ||= I18n.locale
     articles = []
     with_scope :find => params do
-      articles = find(:all)
+      articles = find(:all, :conditions => ["locale = ?", I18n.default_locale],
+        :order => "category, name")
     end
     return articles if locale == I18n.default_locale
     articles.map { |a| a.translation(locale) }
