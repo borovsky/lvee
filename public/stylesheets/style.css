@@ -274,6 +274,11 @@ a {
 	font-weight: bold;
 	}	
 	
+div.right ul li.logo-lvee {
+    padding-top: 0;
+    padding-bottom: 20px;
+    margin-top: 0;
+}
 div.flags {
   position: absolute;
 	padding-top: 16px;
