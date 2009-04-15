@@ -8,7 +8,7 @@
       <li class="stick">|</li>
       <li><%= link_to t('label.session.logout'), session_path, :method => :delete %></li>
       <% else %>
-      <li class="first"><%= link_to t('label.user.login'), new_session_path %></li>
+      <li class="first"><%= link_to t('label.session.loginButton'), new_session_path %></li>
       <li class="stick">|</li>
       <li><%= link_to t('label.user.register'), new_user_path %></li>
       <% end %>
