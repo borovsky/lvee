@@ -136,13 +136,13 @@ en:
     user: 
       city: ""
       country: "Where are you from"
-      email: "Your email"
+      email: "Your e-mail"
       first_name: ""
       last_name: ""
       login: "at least 3 symbols"
-      occupation: "Place of work/study and field of activities (with breaf organization name)"
+      occupation: "Place of work/study and area of activities (with short organization name)"
       password: "at least 4 symbols"
-      password_confirmation: "Same to password"
+      password_confirmation: "Same as password"
       projects: "Free Software / Open Source (FS/OS) projects where you have taken or are taking part in and your role in them"
       subscribed: ""
   label: 
@@ -233,20 +233,20 @@ en:
       password: Password
       rememberMe: "Remember me"
     user: 
-      avator: "Your photo"
+      avator: "New photo:"
       city: Location
       country: Country
       create: Register
       edit: "Edit profile"
-      email: Email
+      email: E-mail
       first_name: "First Name"
       join_us: "Join us today"
       last_name: "Last Name"
       login: Login
-      occupation: "Where do you work?"
+      occupation: Occupation?
       password: Password
       password_confirmation: "Password Confirmation"
-      projects: "Your projects"
+      projects: "FS/OS projects"
       register: Register
       subscribed: "Subscribe to maillist"
       title: "{{full_name}} ({{login}}), your profile in your hands"
@@ -323,7 +323,7 @@ en:
       accuracy_note: "Accurate and error-free registration form filling will help contacting with you alot"
       activated: "Registration completed"
       avator_updated: "Photo updated successfully"
-      avator_upload: "Please upload you photo. With face (if possible)"
+      avator_upload: "You can upload you photo here. Please choose one with face, if possible."
       describe: "User: {{full_name}} ({{country}}, {{city}})..."
       incorrect_image: "Can not update your photo. Please check image file"
       login_change: "You can't change your login"
