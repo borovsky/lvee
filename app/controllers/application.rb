@@ -66,6 +66,7 @@ class ApplicationController < ActionController::Base
     # parse Accept-Language
     accepted = request.env["HTTP_ACCEPT_LANGUAGE"].split(",")
     accepted = accepted.map { |l| l.strip.split(";") }
+    accepted = accepted.find_all {|l| l.size == 1 || l.size == 2}
     accepted = accepted.map { |l|
       if (l.size == 2)
         # quality present
