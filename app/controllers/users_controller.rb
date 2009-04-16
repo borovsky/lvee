@@ -55,6 +55,7 @@ class UsersController < ApplicationController
 
   def upload_avator
     @user = User.find(params[:id])
+    params[:user] ||= {}
     user_params = params[:user].slice(:avator, :avator_temp)
 
     if @user.update_attributes(user_params)
