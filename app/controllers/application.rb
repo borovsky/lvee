@@ -26,6 +26,7 @@ class ApplicationController < ActionController::Base
 
     unless lang.blank?
       unless(lang =~ /[a-z]{2,3}/ and File.exists?(File.join(LOCALE_DIR, "#{lang}.yml")))
+        session[:lang] = nil
         return redirect_to("/")
       end
     end
