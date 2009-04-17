@@ -24,6 +24,10 @@ class ApplicationController < ActionController::Base
       return redirect_to params_to_lang(LANGUAGE_MAP[lang])
     end
 
+    unless (lang.blank? || lang ==~ /[a-z]{2,3}/ || File.join(LOCALE_DIR, "#{lang}.yml"))
+      return redirect_to("/")
+    end
+
     #FIXME
     I18n.load_path = Dir.glob(LOCALE_DIR+ "*.yml")
     I18n.reload!
