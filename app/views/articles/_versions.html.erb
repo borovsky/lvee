@@ -19,7 +19,7 @@
     <td><%= format_date(v.updated_at) %></td>
     <% user = User.find_by_id(v.user_id) %>
     <td><%= user ? user.full_name :  t("label.common.unknown_user") %>
-      <%= "(#{user.login})" if admin?%>
+      <%= "(#{user.login})" if(user && admin?) %>
     </td>
   </tr>
   <% end -%>
