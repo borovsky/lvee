@@ -18,8 +18,13 @@ def Math.max(a, b)
 end
 
 module REXML
+  class Comment
+		def deep_clone
+			clone
+		end
+  end
 
-	class Text 
+	class Text
 		def deep_clone
 			clone
 		end
@@ -99,9 +104,9 @@ class XHTMLDiff
 
   # This will be called when there is an element in A that isn't in B
   def discard_a(event)
-		@output << wrap(event.old_element, 'del', 'diffdel') 
+		@output << wrap(event.old_element, 'del', 'diffdel')
   end
-  
+
 	def change(event)
 		begin
 			sd = diff(event.old_element, event.new_element)
@@ -125,7 +130,7 @@ class XHTMLDiff
   end
 
 	def wrap(element, tag = nil, class_name = nil)
-		if tag 
+		if tag
 			el = Element.new tag
 			el << element.deep_clone
 		else
@@ -150,9 +155,9 @@ class XHTMLDiff
 
 		# This will be called when there is an element in A that isn't in B
 		def discard_a(event)
-			@output << wrap(event.old_element, 'del', 'diffdel') 
+			@output << wrap(event.old_element, 'del', 'diffdel')
 		end
-		
+
 		# This will be called when there is an element in B that isn't in A
 		def discard_b(event)
 			@output << wrap(event.new_element, 'ins', 'diffins')
@@ -169,7 +174,7 @@ class XHTMLDiff
                         wrapper_element
 		end
 	end
-		
+
 end
 
 if $0 == __FILE__
