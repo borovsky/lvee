@@ -20,9 +20,17 @@
     </ul>
     <%= article_link(t('menu.reports.category'), 'reports', 'index')%>
   </li>
-  <li><%= link_to(t('menu.profile'), :controller => '/users', :action =>"current") %></li>
+  <li class="sub">
+    <ul>
+      <li><%= link_to(t('menu.profile'), :controller => '/users',
+      :action  =>"current") %> </li>
+      <li><%= link_to(t('menu.wiki'), wiki_pages_path)  %></li>
+    </ul>
+    <%= link_to(t('menu.attendants'), :controller => '/users',
+      :action  =>"current") %>
+  </li>
+
   <li><%= article_link(t('menu.sponsors'), "sponsors", "index") %></li>
-  <li><%= link_to(t('menu.wiki'), wiki_pages_path)  %></li>
   <li class="sub last">
     <ul>
       <li><%= article_link(t('menu.contacts.official'), "contacts", "official")%></li>

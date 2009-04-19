@@ -298,6 +298,7 @@ en:
       activation_complete: "Your account for LVEE was activated"
     title: "Hello, {{full_name}}"
   menu: 
+    attendants: "Attendants"
     conference: 
       about: About
       attribution: Attribution

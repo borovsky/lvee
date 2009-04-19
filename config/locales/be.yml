@@ -300,6 +300,7 @@ be:
       activation_complete: "Ваш рахунак для LVEE быў актываваны"
     title: "Вітаю, {{full_name}}"
   menu: 
+    attendants: "Attendants"
     conference: 
       about: "Пра нас"
       attribution: Attribution

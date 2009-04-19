@@ -368,6 +368,7 @@ uk:
       activation_complete: "Ваш аккаунт на LVEE.org активовано"
     title: "Здрастуйте {{full_name}}"
   menu: 
+    attendants: "Attendants"
     conference: 
       about: "Про конференцію"
       history: Історія

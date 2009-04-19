@@ -24,11 +24,12 @@
 
 
   <div class="column">
-    <h4><%= link_to(t('menu.profile'), :controller => '/users', :action =>"current") %></h4>
-  </div>
-
-  <div class="column">
-    <h4><%= link_to(t('menu.wiki'), wiki_pages_path)  %></h4>
+    <h4><%= link_to(t('menu.attendants'), :controller => '/users', :action =>"current") %></h4>
+    <ul>
+      <li><%= link_to(t('menu.profile'), :controller => '/users',
+      :action  =>"current") %> </li>
+      <li><%= link_to(t('menu.wiki'), wiki_pages_path)  %></li>
+    </ul>
   </div>
 
   <div class="column">

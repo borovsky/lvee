@@ -367,6 +367,7 @@ hu:
       activation_complete: "Az ön LVEE.org hozzáférése aktiváltatott"
     title: "Üdvözöljük, {{full_name}}"
   menu: 
+    attendants: "Attendants"
     conference: 
       about: "A konferenciáról"
       attribution: Impresszum

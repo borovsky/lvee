@@ -303,6 +303,7 @@ pl:
       activation_complete: "Twoje konto LVEE zostało aktywowane"
     title: "Witaj, {{full_name}}"
   menu: 
+    attendants: "Attendants"
     conference: 
       about: "O konferencji"
       attribution: Atrybucja

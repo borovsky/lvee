@@ -368,6 +368,7 @@ ru:
       activation_complete: "Ваш аккаунт на LVEE.org активирован"
     title: "Здравствуйте, {{full_name}}"
   menu: 
+    attendants: "Участникам"
     conference: 
       about: "О конференции"
       attribution: Атрибутика
