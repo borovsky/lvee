@@ -18,10 +18,17 @@ class ApplicationController < ActionController::Base
 
   protected
   def language_select
-    lang = params[:lang] || session[:lang] || preferred_language(Language.published_names)
+    lang = params[:lang] || session[:lang]
 
     if(LANGUAGE_MAP[lang])
-      return redirect_to params_to_lang(LANGUAGE_MAP[lang])
+      return redirect_to(params_to_lang(LANGUAGE_MAP[lang]))
+    end
+
+    unless lang.blank?
+      unless(lang =~ /[a-z]{2,3}/ and File.exists?(File.join(LOCALE_DIR, "#{lang}.yml")))
+        session[:lang] = nil
+        return redirect_to("/")
+      end
     end
 
     #FIXME
