@@ -1,0 +1,21 @@
+<h1><%= t('label.wiki_page.listing')%></h1>
+
+<table>
+  <tr>
+    <th><%= t('label.wiki_page.name')%></th>
+    <th><%= t('label.wiki_page.user')%></th>
+  </tr>
+
+<% for wiki_page in @wiki_pages %>
+  <tr>
+    <td><%=h wiki_page.name %></td>
+    <td><%=h wiki_page.user.full_name %></td>
+    <td><%= link_to t('label.common.show'), wiki_page_path(:id => wiki_page.name) %></td>
+    <td><%= link_to t('label.common.edit'), edit_wiki_page_path(:id => wiki_page.name) %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to t('label.wiki_page.new'), new_wiki_page_path %>

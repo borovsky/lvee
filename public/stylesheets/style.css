@@ -455,6 +455,13 @@ ins {
     background-color: #AAFFAA;
     text-decoration:none;
 }
+del p {
+    background-color: #FF9999;
+}
+
+ins p {
+    background-color: #AAFFAA;
+}
 
 
 #article_versions th{

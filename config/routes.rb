@@ -22,14 +22,19 @@ ActionController::Routing::Routes.draw do |map|
 
   map.with_options :path_prefix =>":lang", :requirements => {:lang => /[a-z]{2}/} do |ns|
     ns.connect 'main', :controller => "main", :action => "index"
-    ns.connect 'editor_rss', :controller => "main", :action => "editor_rss"
+    ns.editor_rss 'editor_rss', :controller => "main", :action => "editor_rss"
 
+    ns.diff_article('articles/:id/diff/:version', :controller => "articles", :action => "diff",
+      :defaults => {:version => nil})
+    ns.diff_wiki_page('wiki_pages/:id/diff/:version',
+      :controller => "wiki_pages", :action => "diff", :defaults => {:version => nil})
     ns.resources :articles, :member => {:translate => :get}, :collection => {:preview=>:put}
 
-    ns.connect('users/privacy/:action', :requirements =>
+    ns.resources :wiki_pages, :collection => {:preview=>:put}
+
+    ns.connect('users/privacy', :requirements =>
       {:category => 'users', :name => "privacy"},
-      :controller=> "articles",
-      :defaults => {:action => "show"})
+      :controller=> "articles", :action => "show")
 
 
     ns.translate_news "news/:parent_id/translate/:locale",  :controller => "news", :action => "new"
@@ -38,17 +43,14 @@ ActionController::Routing::Routes.draw do |map|
       :collection => {:rss => :get, :preview=>:post, :editor_rss=> :get},
       :member => {:publish => :get, :publish_now => :get})
 
-    ns.articles_diff('articles/:id/diff/:version',
-      :controller => "articles", :action => "diff", :defaults=> {:version => nil})
+    ns.connect('about/:name',
+      :controller=> "articles", :category => "conference", :action => "show",
+      :defaults => {:name => "index"})
 
-    ns.connect('about/:name/:action',
-      :controller=> "articles", :category => "conference",
-      :defaults => {:action => "show", :name => "index"})
-
-    ns.connect(':category/:name/:action', :requirements =>
-      {:category => /(main|conference|contacts|sponsors|reports)/},
-      :controller=> "articles",
-      :defaults => {:action => "show", :name => "index"})
+    ns.connect(':category/:name', :requirements =>
+      {:category => /(conference|contacts|sponsors|reports)/},
+      :controller=> "articles", :action => "show",
+      :defaults => {:name => "index"})
 
 
     ns.upload_user_avator "users/:id/upload_avator", :controller=> "users", :action => "upload_avator"

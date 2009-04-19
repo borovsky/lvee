@@ -1,7 +1,7 @@
 class Sponsor < ActiveRecord::Base
   file_column :image
 
-  validates_presence_of :name, :type, :url, :image
+  validates_presence_of :name, :sponsor_type, :url, :image
 
   def self.list
     list = {}

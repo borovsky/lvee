@@ -22,7 +22,8 @@
   </li>
   <li><%= link_to(t('menu.profile'), :controller => '/users', :action =>"current") %></li>
   <li><%= article_link(t('menu.sponsors'), "sponsors", "index") %></li>
-  <li class="last sub">
+  <li><%= link_to(t('menu.wiki'), wiki_pages_path)  %></li>
+  <li class="sub last">
     <ul>
       <li><%= article_link(t('menu.contacts.official'), "contacts", "official")%></li>
       <li><%= article_link(t('menu.contacts.organizers'), "contacts", "organizers")%></li>

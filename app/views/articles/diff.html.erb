@@ -1,10 +1,10 @@
 <% if @prev -%>
-<h1><%= t("label.diff.change_title", :article => "#{@article.category}/#{@article.name}", :from => @prev.version, :to => @article.version)%></h1>
+<h1><%= t("label.diff.change_article_title", :article => "#{@article.category}/#{@article.name}", :from => @prev.version, :to => @article.version)%></h1>
 <% else -%>
-<h1><%= t("label.diff.new_title", :article => "#{@article.category}/#{@article.name}")%></h1>
+<h1><%= t("label.diff.new_article_title", :article => "#{@article.category}/#{@article.name}")%></h1>
 <% end -%>
 
 <div id="diff">
-<%= display_diff(@prev, @article)%>
+<%= controller.display_diff(@prev, @article, :render_article)%>
 </div>
 <%= render :partial => "articles/versions"%>

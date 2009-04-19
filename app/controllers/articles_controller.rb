@@ -3,6 +3,8 @@ class ArticlesController < ApplicationController
 
   before_filter :load_article_by_category, :except => [:index, :create, :translate, :diff]
 
+  include DiffHelper
+
   # GET /articles
   # GET /articles.xml
   def index
@@ -111,7 +113,6 @@ class ArticlesController < ApplicationController
     version = params[:version]
     @article = Article.find(params[:id])
 
-    p @article.versions
     if(version)
       @article = @article.find_version(version)
     else
@@ -122,6 +123,10 @@ class ArticlesController < ApplicationController
   end
 
   protected
+  def render_article(article)
+    render_to_string :partial=> "/articles/article", :locals => {:article => article}
+  end
+
   def load_article_by_category
     if(params[:id])
       @article = Article.find_by_id(params[:id])

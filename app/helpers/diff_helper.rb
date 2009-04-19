@@ -1,16 +1,10 @@
 require 'xhtmldiff'
 
-module ArticlesHelper
-  def render_article(article)
-    body = "<h1>#{h(article.title)}</h1>"
-    body << textilize(article.body)
-    body
-  end
-
-  def display_diff(base_article, article)
+module DiffHelper
+  def display_diff(base_article, article, render_method)
     if(base_article)
-      base = "<div>" + render_article(base_article) + "</div>"
-      current = "<div>" + render_article(article) + "</div>"
+      base = "<div>" + send(render_method, base_article) + "</div>"
+      current = "<div>" + send(render_method, article) + "</div>"
 
       diff_doc = REXML::Document.new
       div = REXML::Element.new('div', nil, {:respect_whitespace =>:all})
@@ -28,7 +22,7 @@ module ArticlesHelper
       diff_doc.write(diffs, -1, true, true)
       diffs.gsub(/\A<div class='xhtmldiff_wrapper'>(.*)<\/div>\Z/m, '\1')
     else
-      "<div>" + render_article(article) + "</div>"
+      "<div>" + send(render_method, article) + "</div>"
     end
   end
 end

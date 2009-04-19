@@ -144,7 +144,7 @@ pl:
       country: "Skąd Państwo pochodzicie?"
       email: "Państwa adres elektroniczny"
       first_name: ""
-      last_name: ""
+      last_name: "Conference rules are requiring real names"
       login: "co najmniej 3 symboli"
       occupation: "Miejsce pracy/studiów i dziedziny działalności (z krótką nazwą organizacji)"
       password: "co najmniej 4 symboli"
@@ -166,6 +166,7 @@ pl:
     common: 
       _select_: Wybierz
       back: Wstecz
+      back_to_list: "Back to list"
       cancel: Anuluj
       create: Utwórz
       delete: Skasuj
@@ -214,11 +215,15 @@ pl:
       to: To
       changed_at: "Changed at"
       editor: Editor
-      change_title: "Diff for article {{article}} from version {{from}} to {{to}}"
-      new_title: "Article {{article}} has no previous versions"
+      change_article_title: "Diff for article {{article}} from version {{from}} to {{to}}"
+      new_article_title: "Article {{article}} has no previous versions"
+      change_wiki_title: "Diff for page '{{wiki_page}}' from version {{from}} to {{to}}"
+      new_wiki_title: "Page '{{wiki_page}}' has no previous versions"
     editor_log:
       article_created: "Article {{object}} was created by {{user}}"
       article_changed: "Article {{object}} was changed by {{user}}"
+      wiki_page_created: "Wiki page {{object}} was created by {{user}}"
+      wiki_page_changed: "Wiki page {{object}} was changed by {{user}}"
     language: 
       creating: "Utwórz język"
       editing: "Edytuj język"
@@ -269,6 +274,14 @@ pl:
       subscribed: "Zapisz się na listę mailową"
       title: "{{full_name}} ({{login}}), Twój profil w Twoich rękach"
       to_profile: "Do profilu"
+    wiki_page: 
+      body: Body
+      creating: "Creating Wiki Page"
+      editing: "Editing Wiki Page"
+      listing: "Listing Wiki Pages"
+      name: Name
+      user: "Last Editor"
+      new: "New Wiki Page"
   mail: 
     account: 
       activate: |-
@@ -311,6 +324,7 @@ pl:
       materials: "Materiały przeszłych konferencji"
       program: "Program konferencji"
     sponsors: Sponsorzy
+    wiki: Wiki
   message: 
     common: 
       access_denied: "Dostęp zabroniony"

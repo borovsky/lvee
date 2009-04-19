@@ -138,10 +138,10 @@ en:
       country: "Where are you from"
       email: "Your e-mail"
       first_name: ""
-      last_name: ""
-      login: "at least 3 symbols"
+      last_name: "Conference rules are requiring real names"
+      login: "At least 3 symbols. Also can be used as nickname"
       occupation: "Place of work/study and area of activities (with short organization name)"
-      password: "at least 4 symbols"
+      password: "At least 4 symbols"
       password_confirmation: "Same as password"
       projects: "Free Software / Open Source (FS/OS) projects where you have taken or are taking part in and your role in them"
       subscribed: ""
@@ -160,6 +160,7 @@ en:
     common: 
       _select_: Select
       back: Back
+      back_to_list: "Back to list"
       cancel: Cancel
       create: Create
       delete: Delete
@@ -209,11 +210,15 @@ en:
       to: To
       changed_at: "Changed at"
       editor: Editor
-      change_title: "Diff for article {{article}} from version {{from}} to {{to}}"
-      new_title: "Article {{article}} has no previous versions"
+      change_article_title: "Diff for article {{article}} from version {{from}} to {{to}}"
+      new_article_title: "Article {{article}} has no previous versions"
+      change_wiki_title: "Diff for page '{{wiki_page}}' from version {{from}} to {{to}}"
+      new_wiki_title: "Page '{{wiki_page}}' has no previous versions"
     editor_log:
       article_created: "Article {{object}} was created by {{user}}"
       article_changed: "Article {{object}} was changed by {{user}}"
+      wiki_page_created: "Wiki page {{object}} was created by {{user}}"
+      wiki_page_changed: "Wiki page {{object}} was changed by {{user}}"
     language: 
       creating: "Creating Language"
       editing: "Editing Language"
@@ -264,6 +269,14 @@ en:
       subscribed: "Subscribe to maillist"
       title: "{{full_name}} ({{login}}), your profile in your hands"
       to_profile: "To your profile"
+    wiki_page: 
+      body: Body
+      creating: "Creating Wiki Page"
+      editing: "Editing Wiki Page"
+      listing: "Listing Wiki Pages"
+      name: Name
+      user: "Last Editor"
+      new: "New Wiki Page"
   mail: 
     account: 
       activate: |-
@@ -306,6 +319,7 @@ en:
       materials: "Past conference materials"
       program: Program
     sponsors: Sponsors
+    wiki: Wiki
   message: 
     common: 
       access_denied: "Access denied"

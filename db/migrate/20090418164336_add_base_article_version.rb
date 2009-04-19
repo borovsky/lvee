@@ -18,6 +18,7 @@ class AddBaseArticleVersion < ActiveRecord::Migration
       t.string :user_name
       t.string :object_name
       t.string :change_type
+      t.boolean :public
 
       t.timestamps
     end

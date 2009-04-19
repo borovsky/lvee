@@ -208,10 +208,10 @@ ru:
       country: "Откуда вы?"
       email: "Ваш адрес электронной почты"
       first_name: ""
-      last_name: ""
-      login: "от 3 символов"
+      last_name: "Правила конференции требуют указания реальных имен и фамилий"
+      login: "От 3 символов; заодно может быть использован в качестве ника"
       occupation: "Место работы/учёбы, область деятельности (с кратким названием организации)"
-      password: "от 4 символов"
+      password: "От 4 символов"
       password_confirmation: "То же, что и пароль"
       projects: "Проекты Free Software / Open Source (FS/OS), в которых вы принимали и/или принимаете участие, ваша роль в них"
       subscribed: ""
@@ -230,6 +230,7 @@ ru:
     common: 
       _select_: Выберите
       back: Назад
+      back_to_list: "Назад к списку"
       cancel: Отменить
       create: Создать
       delete: Удалить
@@ -279,11 +280,15 @@ ru:
       to: До
       changed_at: "Изменено"
       editor: Редактор
-      change_title: "Изменения в статье {{article}} от версии {{from}} до {{to}}"
-      new_title: "Статья {{article}} не имеет предыдущих версий"
+      change_article_title: "Изменения статьи {{article}} от версии {{from}} до {{to}}"
+      new_article_title: "Статья {{article}} не имеет предыдущих версий"
+      change_wiki_title: "Изменения страницы '{{wiki_page}}' from version {{from}} to {{to}}"
+      new_wiki_title: "Страница '{{wiki_page}}' не имеет предыдущих версий"
     editor_log:
       article_created: "Статья {{object}} была создана {{user}}"
       article_changed: "Статья {{object}} была изменена {{user}}"
+      wiki_page_created: "Страница Wiki '{{object}}' была создана {{user}}"
+      wiki_page_changed: "Страница Wiki '{{object}}' была изменена {{user}}"
     language: 
       creating: "Создание языка"
       editing: "Редактирование языка"
@@ -334,6 +339,14 @@ ru:
       subscribed: "Подписаться на рассылку"
       title: "{{full_name}} ({{login}}), ваш профиль в ваших руках"
       to_profile: "На ваш профиль"
+    wiki_page: 
+      body: Тело
+      creating: "Создание Wiki страницы"
+      editing: "Редактирование  Wiki страницы"
+      listing: "Список Wiki страниц"
+      name: Имя
+      user: "Последний редактор"
+      new: "Новая Wiki страница"
   mail: 
     account: 
       activate: |-
@@ -376,6 +389,7 @@ ru:
       materials: "Материалы прошлых конференций"
       program: Программа
     sponsors: Спонсоры
+    wiki: Wiki
   message: 
     common: 
       access_denied: "Доступ запрещён"
@@ -394,7 +408,7 @@ ru:
       created: "Язык успешно создан"
       updated: "Язык успешно обновлён"
     license: 
-      text: "All content besides materials of reports and other specially mentioned documents is licensed under Creative Commons Attribution Share-Alike license"
+      text: "Весь контент, за исключением материалов докладов и других специально оговоренных случаев, находится под лицензией Commons Attribution Share-Alike"
     news: 
       created: "Новость успешно создана"
       updated: "Новость успешно обновлена"

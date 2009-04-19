@@ -6,7 +6,8 @@ describe Sponsor do
     @valid_attributes = {
       :name => "value for name",
       :url => "value for url",
-      :image => ActionController::TestUploadedFile.new(file, nil, true)
+      :image => ActionController::TestUploadedFile.new(file, nil, true),
+      :sponsor_type => "information"
     }
   end
 

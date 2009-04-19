@@ -24,7 +24,12 @@ class MainController < ApplicationController
   end
 
   def editor_rss
-    @changes = EditorLog.last
+    @changes = EditorLog.last_private
+    render :action => 'editor_rss', :layout => false
+  end
+
+  def wiki_rss
+    @changes = EditorLog.last_public
     render :action => 'editor_rss', :layout => false
   end
 end

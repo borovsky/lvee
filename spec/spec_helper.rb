@@ -94,6 +94,10 @@ class Spec::Rails::Example::ViewExampleGroup
   def login_as(user)
     template.stubs(:current_user).returns(user)
   end
+
+  before :each do
+    params[:lang] = 'en'
+  end
 end
 
 I18n.class_eval(<<-END

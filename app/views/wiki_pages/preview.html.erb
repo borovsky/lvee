@@ -1,0 +1,9 @@
+<div id="preview">
+  <h1 id="preview_title"><%= t('label.common.preview')%></h1>
+  <div id="preview_body">
+
+    <h1><%=h @wiki_page.title %></h1>
+
+    <%=textilize(@wiki_page.body) %>
+  </div>
+</div>

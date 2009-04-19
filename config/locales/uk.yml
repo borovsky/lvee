@@ -209,10 +209,10 @@ uk:
       country: "Звідки Ви?"
       email: "Ваша адреса електронної пошти"
       first_name: ""
-      last_name: ""
-      login: "від 3-х символів"
+      last_name: "Conference rules are requiring real names"
+      login: "Від 3-х символів. Also can be used as nickname"
       occupation: "Місце роботи/навчання, сфера діяльності (з короткою назвою організації)"
-      password: "від 4-х символів"
+      password: "Від 4-х символів"
       password_confirmation: "Те ж, що і пароль"
       projects: "Проекти Free Software / Open Source (FS/OS), в яких Ви приймали та/або берете участь, Ваша роль в них"
       subscribed: ""
@@ -231,6 +231,7 @@ uk:
     common: 
       _select_: Виберіть
       back: Назад
+      back_to_list: "Back to list"
       cancel: Відмінити
       create: Створити
       delete: Видалити
@@ -279,11 +280,15 @@ uk:
       to: To
       changed_at: "Changed at"
       editor: Editor
-      change_title: "Diff for article {{article}} from version {{from}} to {{to}}"
-      new_title: "Article {{article}} has no previous versions"
+      change_article_title: "Diff for article {{article}} from version {{from}} to {{to}}"
+      new_article_title: "Article {{article}} has no previous versions"
+      change_wiki_title: "Diff for page '{{wiki_page}}' from version {{from}} to {{to}}"
+      new_wiki_title: "Page '{{wiki_page}}' has no previous versions"
     editor_log:
       article_created: "Article {{object}} was created by {{user}}"
       article_changed: "Article {{object}} was changed by {{user}}"
+      wiki_page_created: "Wiki page {{object}} was created by {{user}}"
+      wiki_page_changed: "Wiki page {{object}} was changed by {{user}}"
     language: 
       creating: "Створення мови"
       editing: "Редагування мови"
@@ -334,6 +339,14 @@ uk:
       subscribed: "Підписатися на розсилку"
       title: "{{full_name}} ({{login}}), ваш профіль у ваших руках"
       to_profile: "На ваш профіль"
+    wiki_page: 
+      body: Body
+      creating: "Creating Wiki Page"
+      editing: "Editing Wiki Page"
+      listing: "Listing Wiki Pages"
+      name: Name
+      user: "Last Editor"
+      new: "New Wiki Page"
   mail: 
     account: 
       activate: |-
@@ -375,6 +388,7 @@ uk:
       materials: "Матеріали минулих конференцій"
       program: "Програма конференції"
     sponsors: Спонсори
+    wiki: Wiki
   message: 
     common: 
       access_denied: "Доступ заборонений"

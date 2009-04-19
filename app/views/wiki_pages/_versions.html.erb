@@ -1,7 +1,7 @@
-<% versions = @article.kind_of?(Article) ? @article.versions :  @article.article.versions -%>
+<% versions = @wiki_page.respond_to?(:versions) ? @wiki_page.versions :  @wiki_page.wiki_page.versions -%>
 
-<% form_tag(diff_article_path(:version => nil)) do %>
-<table id="article_versions">
+<% form_tag(diff_wiki_page_path(:version => nil, :id=> @wiki_page.name)) do %>
+<table id="wiki_page_versions">
   <tr>
     <th><%= t("label.diff.version") %></th>
     <th><%= t("label.diff.from") %></th>
@@ -15,7 +15,7 @@
     <td><%= radio_button_tag("prev_version", v.version,
             @prev && (@prev.version == v.version)) %></td>
     <td><%= radio_button_tag("version", v.version,
-            @article.version == v.version)%></td>
+            @wiki_page.version == v.version)%></td>
     <td><%= format_date(v.updated_at) %></td>
     <% user = User.find_by_id(v.user_id) %>
     <td><%= user ? user.full_name :  t("label.common.unknown_user") %>
