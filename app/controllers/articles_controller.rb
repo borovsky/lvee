@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
-  before_filter :editor_required, :except => :show
+  before_filter :editor_required, :except => [:show]
 
-  before_filter :load_article_by_category, :except => [:index, :create, :translate]
+  before_filter :load_article_by_category, :except => [:index, :create, :translate, :diff]
 
   # GET /articles
   # GET /articles.xml
@@ -56,6 +56,7 @@ class ArticlesController < ApplicationController
   # POST /articles.xml
   def create
     @article = Article.new(params[:article])
+    @article.user_id = current_user.id
     @title = t('label.article.creating')
 
     respond_to do |format|
@@ -74,6 +75,7 @@ class ArticlesController < ApplicationController
   # PUT /articles/1.xml
   def update
     @article ||= Article.find(params[:id])
+    @article.user_id = current_user.id
     @title = t('label.article.creating')
 
     respond_to do |format|
@@ -103,6 +105,20 @@ class ArticlesController < ApplicationController
   def preview
     @article = Article.new(params[:article])
     render :action => "preview", :layout => false
+  end
+
+  def diff
+    version = params[:version]
+    @article = Article.find(params[:id])
+
+    p @article.versions
+    if(version)
+      @article = @article.find_version(version)
+    else
+      @article = @article.versions.latest
+    end
+
+    @prev = params[:prev_version] ? Article.find_version(@article.article_id, params[:prev_version]) : @article.previous
   end
 
   protected

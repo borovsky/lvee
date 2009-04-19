@@ -245,6 +245,7 @@ uk:
       translate: Перевести
       update: Відновити
       upload: Закачати
+      view_changes: "View changes"
     conference: 
       available: "Ви можете взяти участь в наступних конференціях"
       creating: "Створення конференції"
@@ -272,6 +273,17 @@ uk:
       title: "Реєстрація на конференцію {{conference}}"
       transport: Транспорт
       tshirt: "Розмір футболки"
+    diff:
+      version: Version
+      from: From
+      to: To
+      changed_at: "Changed at"
+      editor: Editor
+      change_title: "Diff for article {{article}} from version {{from}} to {{to}}"
+      new_title: "Article {{article}} has no previous versions"
+    editor_log:
+      article_created: "Article {{object}} was created by {{user}}"
+      article_changed: "Article {{object}} was changed by {{user}}"
     language: 
       creating: "Створення мови"
       editing: "Редагування мови"

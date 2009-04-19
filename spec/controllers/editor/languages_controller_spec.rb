@@ -234,9 +234,13 @@ describe Editor::LanguagesController do
       mock_up = mock
       trans = mock
       translation = mock
+      
+      lang = mock
+      Language.expects(:find).with('be').returns(lang)
 
       YAML.expects(:load_file).with("#{LOCALE_DIR}/en.yml").returns({"en" => mock_en})
       mock_up.expects(:read).returns(trans)
+
       YAML.expects(:load).with(trans).returns(translation)
       mock_en.expects(:deep_merge).with(translation).returns("merged")
 

@@ -23,4 +23,8 @@ class MainController < ApplicationController
     render :template => "main/sitemap_news.rxml", :layout => false
   end
 
+  def editor_rss
+    @changes = EditorLog.last
+    render :action => 'editor_rss', :layout => false
+  end
 end

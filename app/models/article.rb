@@ -1,4 +1,5 @@
 class Article < ActiveRecord::Base
+  belongs_to :user
   acts_as_versioned
 
   validates_presence_of :title, :body, :category, :name
@@ -50,4 +51,11 @@ class Article < ActiveRecord::Base
       :locale => I18n.default_locale)
   end
 
+  def self.find_version(id, version)
+    Version.find(:first, :conditions=>{:article_id => id, :version => version})
+  end
+
+  def find_version(version)
+    Article.find_version(self.id, version)
+  end
 end

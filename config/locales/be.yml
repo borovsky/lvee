@@ -177,6 +177,7 @@ be:
       translate: Перакласці
       update: Узнавіць
       upload: Заліць
+      view_changes: "View changes"
     conference: 
       available: "Вы можаце ўзяць удзел у наступных канферэнцыях"
       creating: "Стварэнне канферэнцыі"
@@ -204,6 +205,17 @@ be:
       title: "Рэгістрацыя на канферэнцыю {{conference}}"
       transport: Транспарт
       tshirt: "Памер футболкі"
+    diff:
+      version: Version
+      from: From
+      to: To
+      changed_at: "Changed at"
+      editor: Editor
+      change_title: "Diff for article {{article}} from version {{from}} to {{to}}"
+      new_title: "Article {{article}} has no previous versions"
+    editor_log:
+      article_created: "Article {{object}} was created by {{user}}"
+      article_changed: "Article {{object}} was changed by {{user}}"
     language: 
       creating: "Стварэнне мовы"
       editing: "Рэдагаванне мовы"

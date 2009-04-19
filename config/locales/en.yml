@@ -174,6 +174,8 @@ en:
       translate: Translate
       update: Update
       upload: Upload
+      view_changes: "View changes"
+      unknown_user: "Unknown"
     conference: 
       available: "You can participate following conferences"
       creating: "Creating conference"
@@ -201,6 +203,17 @@ en:
       title: "Conference registration for {{conference}}"
       transport: Transport
       tshirt: "T-Shirt size"
+    diff:
+      version: Version
+      from: From
+      to: To
+      changed_at: "Changed at"
+      editor: Editor
+      change_title: "Diff for article {{article}} from version {{from}} to {{to}}"
+      new_title: "Article {{article}} has no previous versions"
+    editor_log:
+      article_created: "Article {{object}} was created by {{user}}"
+      article_changed: "Article {{object}} was changed by {{user}}"
     language: 
       creating: "Creating Language"
       editing: "Editing Language"

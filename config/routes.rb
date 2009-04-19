@@ -22,6 +22,9 @@ ActionController::Routing::Routes.draw do |map|
 
   map.with_options :path_prefix =>":lang", :requirements => {:lang => /[a-z]{2}/} do |ns|
     ns.connect 'main', :controller => "main", :action => "index"
+    ns.connect 'editor_rss', :controller => "main", :action => "editor_rss"
+
+    ns.resources :articles, :member => {:translate => :get}, :collection => {:preview=>:put}
 
     ns.connect('users/privacy/:action', :requirements =>
       {:category => 'users', :name => "privacy"},
@@ -32,10 +35,11 @@ ActionController::Routing::Routes.draw do |map|
     ns.translate_news "news/:parent_id/translate/:locale",  :controller => "news", :action => "new"
     ns.resources(:news,
       :singular => 'news_item',
-      :collection => {:rss => :get, :preview=>:post},
+      :collection => {:rss => :get, :preview=>:post, :editor_rss=> :get},
       :member => {:publish => :get, :publish_now => :get})
 
-    ns.resources :articles, :member => {:translate => :get}, :collection => {:preview=>:put}
+    ns.articles_diff('articles/:id/diff/:version',
+      :controller => "articles", :action => "diff", :defaults=> {:version => nil})
 
     ns.connect('about/:name/:action',
       :controller=> "articles", :category => "conference",

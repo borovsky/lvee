@@ -1,4 +1,5 @@
 <p>
+  <%= link_to t('label.common.view_changes'), articles_diff_path(:id =>  article.id) %> |
   <% if article.translated? %>
     <%= link_to t('label.common.editTranslation'), edit_article_path(:id => article.id) %>
   <% else %>

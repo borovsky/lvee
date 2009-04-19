@@ -445,3 +445,48 @@ p.notice {
 label {
     display:block;
 }
+
+del {
+    background-color: #FF9999;
+    text-decoration:none;
+}
+
+ins {
+    background-color: #AAFFAA;
+    text-decoration:none;
+}
+
+
+#article_versions th{
+    background-color:#000000;
+    color:#FFFFFF;
+    padding:2px;
+}
+#article_versions td {
+    border:1px solid #DDDDDD;
+    padding:3px;
+}
+
+#article_versions tr.odd td{
+    background-color: #E6F2FF;
+}
+#article_versions tr.even td{
+    background-color: #FFFFFF;
+}
+
+#article_versions {
+    border-spacing: 0px;
+    border-collapse:collapse;
+    font-size:11px;
+}
+
+#diff {
+    padding: 5px;
+    background: white;
+    border: solid 2px #1492A3;
+    margin-bottom: 10px;
+}
+
+#diff h1 {
+    padding-top: 0px;
+}

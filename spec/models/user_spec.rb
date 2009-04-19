@@ -123,7 +123,7 @@ describe User do
       u.admin?.should == false
     end
   end
-  
+
   describe 'editor?' do
     it 'should be true if role is admin' do
       u = User.new

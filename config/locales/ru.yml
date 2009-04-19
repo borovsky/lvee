@@ -242,8 +242,10 @@ ru:
       save: Сохранить
       show: Показать
       translate: Перевести
+      unknown_user: "Неизвестно"
       update: Обновить
       upload: Закачать
+      view_changes: "Изменения"
     conference: 
       available: "Вы можете принять участие в следующих конференциях"
       creating: "Создание конференции"
@@ -271,6 +273,17 @@ ru:
       title: "Регистрация на конференцию {{conference}}"
       transport: Транспорт
       tshirt: "Размер футболки"
+    diff:
+      version: Версия
+      from: От
+      to: До
+      changed_at: "Изменено"
+      editor: Редактор
+      change_title: "Изменения в статье {{article}} от версии {{from}} до {{to}}"
+      new_title: "Статья {{article}} не имеет предыдущих версий"
+    editor_log:
+      article_created: "Статья {{object}} была создана {{user}}"
+      article_changed: "Статья {{object}} была изменена {{user}}"
     language: 
       creating: "Создание языка"
       editing: "Редактирование языка"
