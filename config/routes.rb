@@ -23,6 +23,7 @@ ActionController::Routing::Routes.draw do |map|
   map.with_options :path_prefix =>":lang", :requirements => {:lang => /[a-z]{2}/} do |ns|
     ns.connect 'main', :controller => "main", :action => "index"
     ns.editor_rss 'editor_rss', :controller => "main", :action => "editor_rss"
+    ns.wiki_rss 'wiki_rss', :controller => "main", :action => "wiki_rss"
 
     ns.diff_article('articles/:id/diff/:version', :controller => "articles", :action => "diff",
       :defaults => {:version => nil})
