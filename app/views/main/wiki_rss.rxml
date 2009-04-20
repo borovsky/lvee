@@ -1,7 +1,7 @@
 xml.instruct! :xml, :version=>"1.0"
 xml.rss(:version=>"2.0") do
   xml.channel do
-    xml.title("LVEE site changes")
+    xml.title("LVEE wiki changes")
     xml.link("http://lvee.org/")
     xml.description("LVEE conference wiki changes")
     xml.language(I18n.locale)
