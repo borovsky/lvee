@@ -13,9 +13,9 @@
 <%= submit_tag t("label.common.upload")%>
 <% end %>
 </div>
-<p><%= t 'label.user.email'%>: <%= mail_to @user.email %></p>
-<p><%= t 'label.user.occupation'%>: <%= h @user.occupation %></p>
-<p><%= t 'label.user.projects'%>:</p>
+<p><label><%= t 'label.user.email'%>:</label> <%= mail_to @user.email %></p>
+<p><label><%= t 'label.user.occupation'%>:</label> <%= h @user.occupation %></p>
+<p><label><%= t 'label.user.projects'%>:</label></p>
 <%= simple_format(@user.projects) %>
 
 

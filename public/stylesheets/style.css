@@ -444,6 +444,7 @@ p.notice {
 
 label {
     display:block;
+	  font-weight: bold;
 }
 
 del {
