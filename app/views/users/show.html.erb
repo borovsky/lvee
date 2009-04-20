@@ -14,8 +14,9 @@
 <% end %>
 </div>
 <p><%= t 'label.user.email'%>: <%= mail_to @user.email %></p>
-<p><%= t 'label.user.occupation'%>: <%= @user.occupation %></p>
-<p><%= t 'label.user.projects'%>: <%= @user.projects %></p>
+<p><%= t 'label.user.occupation'%>: <%= h @user.occupation %></p>
+<p><%= t 'label.user.projects'%>:</p>
+<%= simple_format(@user.projects) %>
 
 
 <% if @user.id == current_user.id %>

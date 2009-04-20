@@ -41,7 +41,7 @@ ActionController::Routing::Routes.draw do |map|
     ns.translate_news "news/:parent_id/translate/:locale",  :controller => "news", :action => "new"
     ns.resources(:news,
       :singular => 'news_item',
-      :collection => {:rss => :get, :preview=>:post, :editor_rss=> :get},
+      :collection => {:rss => :get, :preview=>:post, :editor_rss=> :get, :preview => :put},
       :member => {:publish => :get, :publish_now => :get})
 
     ns.connect('about/:name',
