@@ -15,10 +15,14 @@ AVATOR_SIZE = "200x150"
 
 RANDOM_PHOTOS_ROOT = 'images/random_photos'
 
+# Map old language names to new
 LANGUAGE_MAP = {
   "by" => "be",
   "ua" => "uk"
 }
 
+# Diff stuff
 INS_STYLE = "background-color: #AAFFAA; text-decoration:none;"
 DEL_STYLE = "background-color: #FF9999; text-decoration:none;"
+INS_CLASS = "ins"
+DEL_CLASS = "del"

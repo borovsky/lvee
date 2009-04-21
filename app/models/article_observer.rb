@@ -4,11 +4,6 @@ class ArticleObserver < ActiveRecord::Observer
   ARTICLE_CREATED = "article_created"
   ARTICLE_CHANGED = "article_changed"
 
-  def add_inline_style(text)
-    text.gsub(/<del /, "<del style='#{DEL_STYLE}' ").
-      gsub(/<ins /, "<ins style='#{INS_STYLE}' ")
-  end
-
   def render_article(article)
     body = "<h1>#{h(article.title)}</h1>"
     body << textilize(article.body)
@@ -26,7 +21,7 @@ class ArticleObserver < ActiveRecord::Observer
     article = model.versions.last
     if(article)
       prev = article.previous
-      body = add_inline_style(display_diff(prev, article, :render_article))
+      body = display_diff(prev, article, :render_article, :rss)
       url = "articles/#{model.id}/diff/#{model.version}"
       user_name = model.user.full_name if model.user
 

@@ -456,12 +456,12 @@ ins {
     background-color: #AAFFAA;
     text-decoration:none;
 }
-del p {
-    background-color: #FF9999;
+p.ins, li.ins, td.ins, tr.ins {
+    background-color: #AAFFAA;
 }
 
-ins p {
-    background-color: #AAFFAA;
+p.del, li.ins, td.ins, tr.ins {
+    background-color: #FF9999;
 }
 
 

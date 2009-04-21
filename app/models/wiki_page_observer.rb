@@ -4,11 +4,6 @@ class WikiPageObserver < ActiveRecord::Observer
   WIKI_PAGE_CREATED = "wiki_page_created"
   WIKI_PAGE_CHANGED = "wiki_page_changed"
 
-  def add_inline_style(text)
-    text.gsub(/<del /, "<del style='#{DEL_STYLE}' ").
-      gsub(/<ins /, "<ins style='#{INS_STYLE}' ")
-  end
-
   def render_wiki_page(page)
     body = "<h1>#{h(page.name)}</h1>"
     body << textilize(page.body)
@@ -25,7 +20,7 @@ class WikiPageObserver < ActiveRecord::Observer
 
     wiki_page = model.versions.last
     prev = wiki_page.previous
-    body = add_inline_style(display_diff(prev, wiki_page, :render_wiki_page))
+    body = display_diff(prev, wiki_page, :render_wiki_page, :rss)
     url = "wiki_pages/#{model.id}/diff/#{model.version}"
     user_name = model.user.full_name if model.user
 
