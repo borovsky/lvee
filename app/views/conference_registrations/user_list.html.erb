@@ -10,7 +10,8 @@
   </tr>
   <% @registrations.each_with_index do |reg, i| -%>
   <tr class="<%= i % 2 == 1 ? 'odd' : 'even'%>">
-    <td><%= image_tag(url_for_image_column(reg.user, 'avator', :list)) %></td>
+    <% image_path = url_for_image_column(reg.user, 'avator', :list) %>
+    <td><%= image_tag(image_path) if image_path %></td>
     <td><%= h reg.user.full_name %></td>
     <td><%= h reg.user.country %></td>
     <td><%= h reg.user.city %></td>

@@ -45,8 +45,11 @@ module FileColumn # :nodoc:
       else
         version_options = MagickExtension::process_options(version)
       end
-
-      unless File.exists?(absolute_path(version_options[:name]))
+      
+      path = absolute_path(version_options[:name])
+      return nil unless path
+      
+      unless File.exists?(path)
         begin
           img = ::Magick::Image::read(absolute_path).first
         rescue ::Magick::ImageMagickError
