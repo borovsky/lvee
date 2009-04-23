@@ -1,5 +1,6 @@
 class ConferenceRegistrationsController < ApplicationController
-  before_filter :current_user_only, :scaffold_action, :set_common_columns_info
+  before_filter :current_user_only, :scaffold_action, :set_common_columns_info, :except => :user_list
+  before_filter :login_required, :only => :user_list
 
   EDITABLE_COLUMNS = [:days, :food, :meeting, :phone, :transport, :tshirt]
   STATIC_COLUMNS = [:proposition, :quantity]
@@ -30,6 +31,14 @@ class ConferenceRegistrationsController < ApplicationController
 
   def list
     redirect_to user_path(:id => current_user.id)
+  end
+
+  def user_list
+    @conference = Conference.find_by_name!(params[:id])
+    @registrations = ConferenceRegistration.find(:all,
+      :conditions => {:conference_id => @conference},
+      :include => [:user],
+      :order => "users.country ASC, users.city ASC, users.last_name ASC, users.first_name")
   end
 
   protected

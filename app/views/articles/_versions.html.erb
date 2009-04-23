@@ -1,7 +1,7 @@
 <% versions = @article.kind_of?(Article) ? @article.versions :  @article.article.versions -%>
 
 <% form_tag(diff_article_path(:version => nil)) do %>
-<table id="article_versions">
+<table class="data">
   <tr>
     <th><%= t("label.diff.version") %></th>
     <th><%= t("label.diff.from") %></th>

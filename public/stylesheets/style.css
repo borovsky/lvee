@@ -465,27 +465,34 @@ p.del, li.del, td.del, tr.del {
 }
 
 
-#article_versions th{
+.data th{
     background-color:#000000;
     color:#FFFFFF;
     padding:2px;
 }
-#article_versions td {
+.data td {
     border:1px solid #DDDDDD;
     padding:3px;
-}
-
-#article_versions tr.odd td{
-    background-color: #E6F2FF;
-}
-#article_versions tr.even td{
+    vertical-align: top;
     background-color: #FFFFFF;
 }
 
-#article_versions {
+.data p {
+    padding: 2px 0;
+}
+
+.data tr.odd td{
+    background-color: #E6F2FF;
+}
+.data tr.even td{
+    background-color: #FFFFFF;
+}
+
+table.data {
     border-spacing: 0px;
     border-collapse:collapse;
     font-size:11px;
+    width:99%
 }
 
 #diff {

@@ -1,0 +1,20 @@
+<h1><%= h @conference.name %></h1>
+
+<table class="data">
+  <tr>
+    <th><%= t('label.user.photo') %></th>
+    <th><%= t('label.user.full_name') %></th>
+    <th><%= t('label.user.country') %></th>
+    <th><%= t('label.user.city') %></th>
+    <th><%= t('label.conference_registration.proposition_list') %></th>
+  </tr>
+  <% @registrations.each_with_index do |reg, i| -%>
+  <tr class="<%= i % 2 == 1 ? 'odd' : 'even'%>">
+    <td><%= image_tag(url_for_image_column(reg.user, 'avator', :list)) %></td>
+    <td><%= h reg.user.full_name %></td>
+    <td><%= h reg.user.country %></td>
+    <td><%= h reg.user.city %></td>
+    <td><%= simple_format(reg.proposition)%></td>
+  </tr>
+  <% end -%>
+</table>

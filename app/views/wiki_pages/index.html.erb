@@ -1,13 +1,15 @@
 <h1><%= t('label.wiki_page.listing')%></h1>
 
-<table>
+<table class="data">
   <tr>
     <th><%= t('label.wiki_page.name')%></th>
     <th><%= t('label.wiki_page.user')%></th>
+    <th> </th>
+    <th> </th>
   </tr>
 
-<% for wiki_page in @wiki_pages %>
-  <tr>
+<% @wiki_pages.each_with_index do |wiki_page, i| %>
+  <tr class="<%= (i % 2 == 0) ? 'even' : 'odd' %>">
     <td><%=h wiki_page.name %></td>
     <td><%=h wiki_page.user.full_name %></td>
     <td><%= link_to t('label.common.show'), wiki_page_path(:id => wiki_page.name) %></td>

@@ -22,11 +22,13 @@
   </li>
   <li class="sub">
     <ul>
-      <li><%= link_to(t('menu.profile'), :controller => '/users',
+      <li><%= link_to(t('menu.user.profile'), :controller => '/users',
       :action  =>"current") %> </li>
-      <li class="last-m"><%= link_to(t('menu.wiki'), wiki_pages_path)  %></li>
+      <li><%= link_to(t('menu.user.wiki'), wiki_pages_path)  %></li>
+      <li class="last-m"><%= link_to(t('menu.user.conference_registration'),
+      conference_registration_list_path(:id => "LVEE 2009"))  %></li>
     </ul>
-    <%= link_to(t('menu.attendants'), :controller => '/users',
+    <%= link_to(t('menu.user.category'), :controller => '/users',
       :action  =>"current") %>
   </li>
 

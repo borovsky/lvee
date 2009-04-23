@@ -1,7 +1,7 @@
 <% versions = @wiki_page.respond_to?(:versions) ? @wiki_page.versions :  @wiki_page.wiki_page.versions -%>
 
 <% form_tag(diff_wiki_page_path(:version => nil, :id=> @wiki_page.name)) do %>
-<table id="wiki_page_versions">
+<table class="data">
   <tr>
     <th><%= t("label.diff.version") %></th>
     <th><%= t("label.diff.from") %></th>

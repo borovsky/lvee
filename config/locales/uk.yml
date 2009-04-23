@@ -270,6 +270,7 @@ uk:
       meeting: "Чи потрібна зустріч?"
       phone: "Ваш контактний телефон"
       proposition: "Ваші пропозиції"
+      proposition_list: "Report"
       quantity: "Кількість учасників"
       title: "Реєстрація на конференцію {{conference}}"
       transport: Транспорт
@@ -328,12 +329,14 @@ uk:
       edit: "Редагувати профіль"
       email: "Адреса електронної пошти"
       first_name: Ім'я
+      full_name: "Name"
       join_us: "Приєднуйтесь до нас"
       last_name: Прізвище
       login: Логін
       occupation: "Де ви працюєте?"
       password: Пароль
       password_confirmation: "Підтвердження пароля"
+      photo: Photo
       projects: "Ваші проекти FS/OS"
       register: Реєструватися
       subscribed: "Підписатися на розсилку"
@@ -368,7 +371,6 @@ uk:
       activation_complete: "Ваш аккаунт на LVEE.org активовано"
     title: "Здрастуйте {{full_name}}"
   menu: 
-    attendants: "Attendants"
     conference: 
       about: "Про конференцію"
       history: Історія
@@ -381,7 +383,6 @@ uk:
       organizers: "Оргкомитет"
       lug: "LUG"
     main: Головна
-    profile: Профіль
     reports: 
       about: "Про доповіді"
       abstract: "Правила оформлення тез"
@@ -389,7 +390,11 @@ uk:
       materials: "Матеріали минулих конференцій"
       program: "Програма конференції"
     sponsors: Спонсори
-    wiki: Wiki
+    user:
+      category: Participants
+      profile: Профіль
+      wiki: Wiki
+      conference_registration: "Participants of the Conference"
   message: 
     common: 
       access_denied: "Доступ заборонений"
@@ -460,7 +465,7 @@ uk:
   sidebar: 
     information_sponsor: "Інформаційні партнери"
     organizers: Організатори
-    sponsors: "Спонсори 2008"
+    sponsors: "Спонсори 2009"
     technical_sponsor: "Технічний спонсор"
   support: 
     array: 

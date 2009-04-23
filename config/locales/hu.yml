@@ -269,6 +269,7 @@ hu:
       meeting: "Fogadás szükséges?"
       phone: "Telefonos elérhetősége"
       proposition: Felajánlásai
+      proposition_list: "Report"
       quantity: "Résztvevők száma"
       title: "Regisztrálás a {{conference}} konferenciára"
       transport: Közlekedés
@@ -327,12 +328,14 @@ hu:
       edit: "Profil szerkesztése"
       email: "Email cím"
       first_name: Keresztnév
+      full_name: "Name"
       join_us: Csatlakozz
       last_name: Családnév
       login: Felhasználónév
       occupation: "Hol dolgozik?"
       password: Jelszó
       password_confirmation: "Jelszó újra"
+      photo: Photo
       projects: "Szabad szoftver projectjei"
       register: Regisztrálás
       subscribed: "Feliratkozás a levlistára"
@@ -366,8 +369,7 @@ hu:
       activation: "LVEE hozzáférés aktiválása"
       activation_complete: "Az ön LVEE.org hozzáférése aktiváltatott"
     title: "Üdvözöljük, {{full_name}}"
-  menu: 
-    attendants: "Attendants"
+  menu:  
     conference: 
       about: "A konferenciáról"
       attribution: Impresszum
@@ -381,7 +383,6 @@ hu:
       official: Кapcsolattartás
       organizers: "Szervező bizottság"
     main: Főoldal
-    profile: Profil
     reports: 
       about: "Az előadásokról"
       abstract: "Vázlatírási szabályok"
@@ -389,7 +390,11 @@ hu:
       materials: "Múltbéli konferenciák anyagai"
       program: Program
     sponsors: Szponzorok
-    wiki: Wiki
+    user:
+      category: Participants
+      profile: Profil
+      wiki: Wiki
+      conference_registration: "Participants of the Conference"
   message: 
     common: 
       access_denied: "Hozzáférés megtagadva"
@@ -458,7 +463,7 @@ hu:
   sidebar: 
     information_sponsor: "Információs partnerek"
     organizers: Szervezők
-    sponsors: "2008-as szponzorok"
+    sponsors: "2009-as szponzorok"
     technical_sponsor: "Műszaki szponzorok"
   support: 
     array: 

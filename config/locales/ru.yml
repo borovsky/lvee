@@ -207,12 +207,12 @@ ru:
       city: ""
       country: "Откуда вы?"
       email: "Ваш адрес электронной почты"
-      first_name: ""
-      last_name: "Правила конференции требуют указания реальных имен и фамилий"
-      login: "От 3 символов; заодно может быть использован в качестве ника"
+      first_name: "Правила конференции требуют указания реальных имен и фамилий"
+      last_name: ""
+      login: "Не менее 3-х символов; рекомендуется использовать свой ник"
       occupation: "Место работы/учёбы, область деятельности (с кратким названием организации)"
-      password: "От 4 символов"
-      password_confirmation: "То же, что и пароль"
+      password: "Не менее 4-х символов"
+      password_confirmation: ""
       projects: "Проекты Free Software / Open Source (FS/OS), в которых вы принимали и/или принимаете участие, ваша роль в них"
       subscribed: ""
   label: 
@@ -243,10 +243,10 @@ ru:
       save: Сохранить
       show: Показать
       translate: Перевести
-      unknown_user: "Неизвестно"
+      unknown_user: Неизвестно
       update: Обновить
       upload: Закачать
-      view_changes: "Изменения"
+      view_changes: Изменения
     conference: 
       available: "Вы можете принять участие в следующих конференциях"
       creating: "Создание конференции"
@@ -270,25 +270,26 @@ ru:
       meeting: "Требуется ли встреча?"
       phone: "Ваш контактный телефон"
       proposition: "Ваши предложения"
+      proposition_list: "Доклад"
       quantity: "Количество участников"
       title: "Регистрация на конференцию {{conference}}"
       transport: Транспорт
       tshirt: "Размер футболки"
-    diff:
-      version: Версия
-      from: От
-      to: До
-      changed_at: "Изменено"
-      editor: Редактор
+    diff: 
       change_article_title: "Изменения статьи {{article}} от версии {{from}} до {{to}}"
-      new_article_title: "Статья {{article}} не имеет предыдущих версий"
       change_wiki_title: "Изменения страницы '{{wiki_page}}' from version {{from}} to {{to}}"
+      changed_at: Изменено
+      editor: Редактор
+      from: От
+      new_article_title: "Статья {{article}} не имеет предыдущих версий"
       new_wiki_title: "Страница '{{wiki_page}}' не имеет предыдущих версий"
-    editor_log:
-      article_created: "Статья {{object}} была создана {{user}}"
+      to: До
+      version: Версия
+    editor_log: 
       article_changed: "Статья {{object}} была изменена {{user}}"
-      wiki_page_created: "Страница Wiki '{{object}}' была создана {{user}}"
+      article_created: "Статья {{object}} была создана {{user}}"
       wiki_page_changed: "Страница Wiki '{{object}}' была изменена {{user}}"
+      wiki_page_created: "Страница Wiki '{{object}}' была создана {{user}}"
     language: 
       creating: "Создание языка"
       editing: "Редактирование языка"
@@ -325,16 +326,18 @@ ru:
       city: Город
       country: Страна
       create: Зарегистрироваться
-      edit: "Редактировать профиль"
+      edit: "Редактировать личные данные"
       email: "Адрес e-mail"
       first_name: Имя
+      full_name: "ФИО"
       join_us: "Присоединяйтесь к нам"
       last_name: Фамилия
       login: Логин
       occupation: "Место работы"
       password: Пароль
       password_confirmation: "Подтверждение пароля"
-      projects: "Проекты FS/OS"
+      photo: Фото
+      projects: "Проекты FOSS"
       register: Зарегистрироваться
       subscribed: "Подписаться на рассылку"
       title: "{{full_name}} ({{login}}), ваш профиль в ваших руках"
@@ -345,8 +348,8 @@ ru:
       editing: "Редактирование  Wiki страницы"
       listing: "Список Wiki страниц"
       name: Имя
-      user: "Последний редактор"
       new: "Новая Wiki страница"
+      user: "Последний редактор"
   mail: 
     account: 
       activate: |-
@@ -368,7 +371,6 @@ ru:
       activation_complete: "Ваш аккаунт на LVEE.org активирован"
     title: "Здравствуйте, {{full_name}}"
   menu: 
-    attendants: "Участникам"
     conference: 
       about: "О конференции"
       attribution: Атрибутика
@@ -382,7 +384,6 @@ ru:
       official: "Контактная информация"
       organizers: Оргкомитет
     main: Главная
-    profile: Профиль
     reports: 
       about: "О докладах"
       abstract: "Правила оформления тезисов"
@@ -390,11 +391,15 @@ ru:
       materials: "Материалы прошлых конференций"
       program: Программа
     sponsors: Спонсоры
-    wiki: Wiki
+    user:
+      category: Участники
+      profile: "Личный профиль"
+      wiki: Wiki
+      conference_registration: "Участники конференции"
   message: 
     common: 
       access_denied: "Доступ запрещён"
-      required_fields: "(поля, отмеченные жирным, обязательны для заполнения)"
+      required_fields: "(названия полей, обязательных для заполнения, выделены жирным шрифтом)"
       sure: "Вы уверены?"
     conference: 
       created: "Конференция успешно создана"
@@ -409,7 +414,7 @@ ru:
       created: "Язык успешно создан"
       updated: "Язык успешно обновлён"
     license: 
-      text: "Весь контент, за исключением материалов докладов и других специально оговоренных случаев, находится под лицензией Commons Attribution Share-Alike"
+      text: "Весь контент, за исключением материалов докладов и других специально оговоренных случаев, находится под лицензией Creative Commons Attribution Share-Alike"
     news: 
       created: "Новость успешно создана"
       updated: "Новость успешно обновлена"
@@ -459,7 +464,7 @@ ru:
   sidebar: 
     information_sponsor: "Информационные партнёры"
     organizers: Организаторы
-    sponsors: "Спонсоры 2008"
+    sponsors: "Спонсоры 2009"
     technical_sponsor: "Технический спонсор"
   support: 
     array: 

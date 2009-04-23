@@ -143,7 +143,7 @@ en:
       occupation: "Place of work/study and area of activities (with short organization name)"
       password: "At least 4 symbols"
       password_confirmation: "Same as password"
-      projects: "Free Software / Open Source (FS/OS) projects where you have taken or are taking part in and your role in them"
+      projects: "Free / Open Source Software (FOSS) projects where you have taken or are taking part in and your role in them"
       subscribed: ""
   label: 
     article: 
@@ -173,10 +173,10 @@ en:
       save: Save
       show: Show
       translate: Translate
+      unknown_user: Unknown
       update: Update
       upload: Upload
       view_changes: "View changes"
-      unknown_user: "Unknown"
     conference: 
       available: "You can participate following conferences"
       creating: "Creating conference"
@@ -200,25 +200,26 @@ en:
       meeting: "Meeting required?"
       phone: "Your contact phone"
       proposition: "Your proposition"
+      proposition_list: "Report"      
       quantity: "Participant quantity"
       title: "Conference registration for {{conference}}"
       transport: Transport
       tshirt: "T-Shirt size"
-    diff:
-      version: Version
-      from: From
-      to: To
+    diff: 
+      change_article_title: "Diff for article {{article}} from version {{from}} to {{to}}"
+      change_wiki_title: "Diff for page '{{wiki_page}}' from version {{from}} to {{to}}"
       changed_at: "Changed at"
       editor: Editor
-      change_article_title: "Diff for article {{article}} from version {{from}} to {{to}}"
+      from: From
       new_article_title: "Article {{article}} has no previous versions"
-      change_wiki_title: "Diff for page '{{wiki_page}}' from version {{from}} to {{to}}"
       new_wiki_title: "Page '{{wiki_page}}' has no previous versions"
-    editor_log:
-      article_created: "Article {{object}} was created by {{user}}"
+      to: To
+      version: Version
+    editor_log: 
       article_changed: "Article {{object}} was changed by {{user}}"
-      wiki_page_created: "Wiki page {{object}} was created by {{user}}"
+      article_created: "Article {{object}} was created by {{user}}"
       wiki_page_changed: "Wiki page {{object}} was changed by {{user}}"
+      wiki_page_created: "Wiki page {{object}} was created by {{user}}"
     language: 
       creating: "Creating Language"
       editing: "Editing Language"
@@ -255,19 +256,21 @@ en:
       city: Location
       country: Country
       create: Register
-      edit: "Edit profile"
+      edit: "Edit personal data"
       email: E-mail
       first_name: "First Name"
+      full_name: "Name"
       join_us: "Join us today"
       last_name: "Last Name"
       login: Login
-      occupation: Occupation?
+      occupation: Occupation
       password: Password
       password_confirmation: "Password Confirmation"
-      projects: "FS/OS projects"
+      photo: Photo
+      projects: "FOSS projects"
       register: Register
       subscribed: "Subscribe to maillist"
-      title: "{{full_name}} ({{login}}), your profile in your hands"
+      title: "{{full_name}} ({{login}}), your profile is in your hands"
       to_profile: "To your profile"
     wiki_page: 
       body: Body
@@ -275,8 +278,8 @@ en:
       editing: "Editing Wiki Page"
       listing: "Listing Wiki Pages"
       name: Name
-      user: "Last Editor"
       new: "New Wiki Page"
+      user: "Last Editor"
   mail: 
     account: 
       activate: |-
@@ -298,7 +301,6 @@ en:
       activation_complete: "Your account for LVEE was activated"
     title: "Hello, {{full_name}}"
   menu: 
-    attendants: "Attendants"
     conference: 
       about: About
       attribution: Attribution
@@ -312,15 +314,18 @@ en:
       official: "Official Contacts"
       organizers: "Organization Board"
     main: Main
-    profile: Profile
     reports: 
-      about: "On Reports"
+      about: "On presentations"
       abstract: "Abstract guidelines"
-      category: Reports
-      materials: "Past conference materials"
+      category: Presentations
+      materials: "Past conferences materials"
       program: Program
     sponsors: Sponsors
-    wiki: Wiki
+    user:
+      category: Participants
+      profile: "Personal profile"
+      wiki: Wiki
+      conference_registration: "Participants of the Conference"
   message: 
     common: 
       access_denied: "Access denied"
@@ -339,7 +344,7 @@ en:
       created: "Language created successfully"
       updated: "Language updated successfully"
     license: 
-      text: "All content besides materials of reports and other specially mentioned documents is licensed under Creative Commons Attribution Share-Alike license"
+      text: "All content besides materials of presentations and other specially mentioned documents is licensed under Creative Commons Attribution Share-Alike license"
     news: 
       created: "News created successfully"
       updated: "News updated successfully"
@@ -389,7 +394,7 @@ en:
   sidebar: 
     information_sponsor: "Information Partners"
     organizers: Organizers
-    sponsors: "Sponsors of 2008"
+    sponsors: "Sponsors of 2009"
     technical_sponsor: "Technical sponsor"
   support: 
     array: 
