@@ -1,15 +1,21 @@
 <h1><%= t('label.language.listing')%></h1>
 
-<table>
+<table class="data">
   <tr>
     <th>Id</th>
+    <th>Code3</th>
     <th>Name</th>
     <th>Published?</th>
+    <th />
+    <th />
+    <th />
+    <th />
   </tr>
 
 <% for language in @languages %>
   <tr>
     <td><%= h language.name %></td>
+    <td><%= h language.code3 %></td>
     <td><%= h language.description %></td>
     <td><%= h language.published %></td>
     <td><%= link_to t('label.common.upload'), editor_language_path(:id => language) %></td>

@@ -38,7 +38,7 @@ class ConferenceStatisticsPresenter
       self.total_registrations += 1
       self.total_mans += reg.quantity || 0
       if reg.status_name == APPROVED_STATUS
-        self.approved_mans += reg.quantity 
+        self.approved_mans += reg.quantity
         self.approved_registrations += 1
       end
     end

@@ -291,6 +291,7 @@ ru:
       wiki_page_changed: "Страница Wiki '{{object}}' была изменена {{user}}"
       wiki_page_created: "Страница Wiki '{{object}}' была создана {{user}}"
     language: 
+      code3: "3-буквенный (ISO 639-2) код языка"
       creating: "Создание языка"
       editing: "Редактирование языка"
       id: "двухбуквенный идентификатор языка"

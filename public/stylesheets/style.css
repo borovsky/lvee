@@ -289,7 +289,10 @@ div.flags li {
 	list-style: none;
 	float: right;
 	padding: 0 0 0 10px;
+  font-weight:bold;
+  font-size: 12px;
 	}
+
 /*------------------------------------------------- /content -------------------------------------------------------------*/
 
 
