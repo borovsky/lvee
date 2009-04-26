@@ -270,7 +270,7 @@ ru:
       meeting: "Требуется ли встреча?"
       phone: "Ваш контактный телефон"
       proposition: "Ваши предложения"
-      proposition_list: "Доклад"
+      proposition_list: Доклад
       quantity: "Количество участников"
       title: "Регистрация на конференцию {{conference}}"
       transport: Транспорт
@@ -329,7 +329,7 @@ ru:
       edit: "Редактировать личные данные"
       email: "Адрес e-mail"
       first_name: Имя
-      full_name: "ФИО"
+      full_name: ФИО
       join_us: "Присоединяйтесь к нам"
       last_name: Фамилия
       login: Логин
@@ -391,11 +391,11 @@ ru:
       materials: "Материалы прошлых конференций"
       program: Программа
     sponsors: Спонсоры
-    user:
+    user: 
       category: Участники
+      conference_registration: Список
       profile: "Личный профиль"
       wiki: Wiki
-      conference_registration: "Участники конференции"
   message: 
     common: 
       access_denied: "Доступ запрещён"

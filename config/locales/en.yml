@@ -200,7 +200,7 @@ en:
       meeting: "Meeting required?"
       phone: "Your contact phone"
       proposition: "Your proposition"
-      proposition_list: "Report"      
+      proposition_list: Report
       quantity: "Participant quantity"
       title: "Conference registration for {{conference}}"
       transport: Transport
@@ -259,7 +259,7 @@ en:
       edit: "Edit personal data"
       email: E-mail
       first_name: "First Name"
-      full_name: "Name"
+      full_name: Name
       join_us: "Join us today"
       last_name: "Last Name"
       login: Login
@@ -321,11 +321,11 @@ en:
       materials: "Past conferences materials"
       program: Program
     sponsors: Sponsors
-    user:
+    user: 
       category: Participants
+      conference_registration: List
       profile: "Personal profile"
       wiki: Wiki
-      conference_registration: "Participants of the Conference"
   message: 
     common: 
       access_denied: "Access denied"
