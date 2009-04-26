@@ -9,7 +9,7 @@ class AddLanguageCodes < ActiveRecord::Migration
     :uk => :ukr
   }
   def self.up
-    #add_column :languages, :code3, :string, :limit => 3
+    add_column :languages, :code3, :string, :limit => 3
     Language.all.each do |l|
       l.code3 = LANGUAGE_MAPPING[l.name.to_sym].to_s if(LANGUAGE_MAPPING[l.name.to_sym])
       l.code3 = l.name + "?" unless l.code3
