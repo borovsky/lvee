@@ -1,5 +1,23 @@
 <table class="data">
   <tr>
+    <th>Type</th>
+    <% @conferences.each do |c| %>
+      <th><%= h c.name %></th>
+    <% end %>
+  </tr>
+  <% STATISTICS_TYPES.each_with_index do |type, i| %>
+  <tr  class="<%= (i % 2 == 0) ? 'even' : 'odd' %>">
+    <td><%= type[1] %></td>
+    <% @conferences.each do |c| %>
+      <td><%= @statistics.list[c.name].send(type[0]) %></td>
+    <% end %>
+  </tr>
+  <% end %>
+</table>
+
+
+<table class="data">
+  <tr>
     <th>Id</th>
     <th>Login</th>
     <th>Name</th>
@@ -9,7 +27,7 @@
   </tr>
   <% @users.each_with_index do |user, i| %>
   <tr id="<%= dom_id(user) %>" class="<%= (i % 2 == 0) ? 'even' : 'odd' %>">
-    <td><%= i %></td>
+    <td><%= i+1 %></td>
     <td><%= h user.login %></td>
     <td><%= link_to user.full_name, user_path(:id => user) %></td>
     <td><%= h user.conference_registrations.map{|r| r.conference.name}.join(', ') %></td>

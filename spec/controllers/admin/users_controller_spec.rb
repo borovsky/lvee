@@ -41,14 +41,14 @@ describe Admin::UsersController do
 
     it "should render html if requested" do
       login_as @admin
-      User.stubs(:find).with(:all).returns([])
+      User.stubs(:find).with(:all, :include => :conference_registrations).returns([])
       get :index, :format=>'html'
       assert_response :success
     end
 
     it "should render csv if requested" do
       login_as @admin
-      User.stubs(:find).with(:all).returns([])
+      User.stubs(:find).with(:all, :include => :conference_registrations).returns([])
       get :index, :format=>'csv'
       assert_response :success
     end
