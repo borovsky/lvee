@@ -3,7 +3,7 @@ module Admin
     before_filter :admin_required
 
     def index
-      @users = User.find :all
+      @users = User.find(:all, :include => :conference_registrations)
       respond_to do |format|
         format.html
         format.csv do

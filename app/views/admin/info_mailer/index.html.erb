@@ -1,7 +1,7 @@
 <h1>Mailer</h1>
 <% form_tag({:action => "send_mail"}, :multipart => true) do -%>
 <p><label to="to">To:</label>
-<%= text_field_tag "to", params[:to] %></p>
+<%= text_field_tag "to", @to %></p>
 
 <p><label to="subject">Subject:</label>
 <%= text_field_tag "subject", params[:subject] %></p>

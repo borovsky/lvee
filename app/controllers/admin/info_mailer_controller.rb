@@ -3,6 +3,9 @@ class Admin::InfoMailerController < ApplicationController
   layout "admin"
 
   def index
+    @user = User.find_by_id(params[:id]) if params[:id]
+    @to = @user.email if @user
+    @to ||= params[:to]
   end
 
   def send_mail
