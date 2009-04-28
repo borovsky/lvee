@@ -325,6 +325,7 @@ en:
     user: 
       category: Participants
       conference_registration: List
+      payment: "Payments"
       profile: "Personal profile"
       wiki: Wiki
   message: 

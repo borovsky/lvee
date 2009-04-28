@@ -393,9 +393,10 @@ uk:
     sponsors: Спонсори
     user:
       category: Participants
+      conference_registration: "Participants of the Conference"
+      payment: "Payments"
       profile: Профіль
       wiki: Wiki
-      conference_registration: "Participants of the Conference"
   message: 
     common: 
       access_denied: "Доступ заборонений"

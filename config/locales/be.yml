@@ -320,9 +320,10 @@ be:
     main: Галоўная
     user: 
       category: Удзельнiкi
+      conference_registration: "Participants of the Conference"
+      payment: "Payment"
       profile: Профіль
       wiki: Wiki
-      conference_registration: "Participants of the Conference"
     reports: 
       about: "Пра даклады"
       abstract: "Афармленне тэзісаў"

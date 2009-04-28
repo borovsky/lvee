@@ -330,9 +330,10 @@ pl:
     sponsors: Sponsorzy
     user:
       category: Uczestnicy
+      conference_registration: "Participants of the Conference"
+      payment: "Payments"
       profile: Profil
       wiki: Wiki
-      conference_registration: "Participants of the Conference"
   message: 
     common: 
       access_denied: "Dostęp zabroniony"

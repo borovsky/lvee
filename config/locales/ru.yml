@@ -395,6 +395,7 @@ ru:
     user: 
       category: Участники
       conference_registration: Список
+      payment: "Оплата оргвзноса"
       profile: "Личный профиль"
       wiki: Wiki
   message: 
