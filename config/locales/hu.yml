@@ -376,6 +376,7 @@ hu:
       attribution: Impresszum
       history: Történelem
       linux: GNU/Linux
+      payment: "Payments"
       place: Helyszín
       press: Sajtó
     contacts: 
@@ -394,7 +395,6 @@ hu:
     user:
       category: Participants
       conference_registration: "Participants of the Conference"
-      payment: "Payments"
       profile: Profil
       wiki: Wiki
   message: 

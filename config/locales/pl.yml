@@ -313,6 +313,7 @@ pl:
       attribution: Atrybucja
       history: Historia
       linux: GNU/Linux
+      payment: "Payments"
       place: "Miejsce konferencji"
       press: "W prasie"
     contacts: 
@@ -331,7 +332,6 @@ pl:
     user:
       category: Uczestnicy
       conference_registration: "Participants of the Conference"
-      payment: "Payments"
       profile: Profil
       wiki: Wiki
   message: 

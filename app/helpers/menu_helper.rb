@@ -1,0 +1,54 @@
+module MenuHelper
+  MAIN_MENU_ID = 'sub-menu'
+  MAIN_MENU_SUBMENU_CLASS = 'sub'
+  MAIN_MENU_FIRST_ITEM_CLASS = 'first'
+  MAIN_MENU_LAST_ITEM_CLASS = 'last'
+  MAIN_MENU_LAST_SUBITEM_CLASS = 'last-m'
+
+  def render_main_menu
+    items = MENU_ITEMS.map {|i| render_main_menu_item(i)}
+    content_tag(:ul, items, :id => MAIN_MENU_ID)
+  end
+
+  def render_main_menu_item(item)
+    classes = []
+    classes << MAIN_MENU_SUBMENU_CLASS if item[2]
+    classes << MAIN_MENU_FIRST_ITEM_CLASS if item == MENU_ITEMS.first
+    classes << MAIN_MENU_LAST_ITEM_CLASS if item == MENU_ITEMS.last
+    classes = classes.join(' ')
+    submenu = render_main_submenu(item[2]) if item[2]
+    link = link_to_menu_item(item[0], item[1])
+    content = "#{submenu}#{link}"
+    content_tag(:li, content, :class => classes)
+  end
+
+  def render_main_submenu(submenu)
+    items = submenu.map {|i| render_main_submenu_item(i, i == submenu.last)}
+    content_tag(:ul, items.join(''))
+  end
+
+  def render_main_submenu_item(item, last)
+    cls = MAIN_MENU_LAST_SUBITEM_CLASS if last
+    link = link_to_menu_item(*item)
+    content_tag(:li, link, :class => cls)
+  end
+
+  def link_to_menu_item(title, link)
+    link_to(t(title), "/#{I18n.locale}/#{link}")
+  end
+
+  def render_footer_menu
+    MENU_ITEMS.delete_if {|i| i[1] == 'main'}.map do |item|
+      header = content_tag(:h4, link_to_menu_item(item[0], item[1]))
+      submenu = render_footer_submenu(item[2]) if item[2]
+      content_tag(:div, header + submenu.to_s, :class => 'column')
+    end.join('')
+  end
+  
+  def render_footer_submenu(submenu)
+    items = submenu.map do |i|
+      content_tag(:li, link_to_menu_item(*i))
+    end.join('')
+    content_tag(:ul, items)
+  end
+end

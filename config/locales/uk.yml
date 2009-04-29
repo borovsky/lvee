@@ -376,6 +376,7 @@ uk:
       about: "Про конференцію"
       history: Історія
       linux: Linux
+      payment: "Payments"
       place: "Місце проведеня конференції"
       press: "Преса про конференцію"
     contacts: 
@@ -394,7 +395,6 @@ uk:
     user:
       category: Participants
       conference_registration: "Participants of the Conference"
-      payment: "Payments"
       profile: Профіль
       wiki: Wiki
   message: 

@@ -307,6 +307,7 @@ en:
       attribution: Attribution
       history: History
       linux: GNU/Linux
+      payment: "Payments"
       place: "Place of the conference"
       press: "In the press"
     contacts: 
@@ -325,7 +326,6 @@ en:
     user: 
       category: Participants
       conference_registration: List
-      payment: "Payments"
       profile: "Personal profile"
       wiki: Wiki
   message: 

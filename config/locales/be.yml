@@ -310,6 +310,7 @@ be:
       attribution: Атрыбутыка
       history: Гісторыя
       linux: GNU/Linux
+      payment: "Payment"
       place: "Месца канферэнцыі"
       press: "У друку"
     contacts: 
@@ -321,7 +322,6 @@ be:
     user: 
       category: Удзельнiкi
       conference_registration: "Participants of the Conference"
-      payment: "Payment"
       profile: Профіль
       wiki: Wiki
     reports: 
