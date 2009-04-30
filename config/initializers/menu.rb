@@ -10,7 +10,7 @@ MENU_ITEMS = [
       ['menu.conference.payment', 'conference/payment'],
     ]],
   ['menu.reports.category', 'reports', [
-      ['menu.reports.about', 'reports/about'],
+      ['menu.reports.about', 'reports'],
       ['menu.reports.program', 'reports/program'],
       ['menu.reports.abstract', 'reports/abstract'],
       ['menu.reports.materials', 'reports/materials'],
