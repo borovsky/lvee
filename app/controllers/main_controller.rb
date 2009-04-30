@@ -30,6 +30,6 @@ class MainController < ApplicationController
 
   def wiki_rss
     @changes = EditorLog.last_public
-    render :action => 'editor_rss', :layout => false
+    render :action => 'wiki_rss', :layout => false
   end
 end
