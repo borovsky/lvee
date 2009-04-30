@@ -22,8 +22,8 @@ MENU_ITEMS = [
     ]],
   ['menu.sponsors', 'sponsors'],
   ['menu.contacts.category', 'contacts', [
-      ['menu.contacts.official', 'contatcs/official'],
-      ['menu.contacts.organizers', 'contatcs/organizers'],
-      ['menu.contacts.lug', 'contatcs/lug']
+      ['menu.contacts.official', 'contacts/official'],
+      ['menu.contacts.organizers', 'contacts/organizers'],
+      ['menu.contacts.lug', 'contacts/lug']
     ]]
 ]
