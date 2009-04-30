@@ -18,7 +18,7 @@ MENU_ITEMS = [
   ['menu.user.category', 'users/current', [
       ['menu.user.profile', 'users/current'],
       ['menu.user.wiki', 'wiki_pages'],
-      ['menu.user.conference_registration', 'wiki_pages'],
+      ['menu.user.conference_registration', 'conference_registrations/LVEE 2009'],
     ]],
   ['menu.sponsors', 'sponsors'],
   ['menu.contacts.category', 'contacts', [
