@@ -32,7 +32,6 @@ DEL_CLASS = "del"
 STATISTICS_TYPES = {
   :total_registrations => "Total conference registrations",
   :approved_registrations => "Approved conference registrations",
-  :total_mans => "Total mans",
-  :approved_mans => "Approved mans",
-
+  :total_men => "Total men",
+  :approved_men => "Approved men",
 }

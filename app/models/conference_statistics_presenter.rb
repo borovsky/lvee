@@ -36,9 +36,9 @@ class ConferenceStatisticsPresenter
 
     def update_statistics(reg)
       self.total_registrations += 1
-      self.total_mans += reg.quantity || 0
+      self.total_men += reg.quantity || 0
       if reg.status_name == APPROVED_STATUS
-        self.approved_mans += reg.quantity
+        self.approved_men += reg.quantity
         self.approved_registrations += 1
       end
     end
