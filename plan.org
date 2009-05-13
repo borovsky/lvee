@@ -61,7 +61,7 @@
 
 *** TODO [#C] Payment status (per conference): shouldn't pay, should pay, payed (сумма)
 
-** Additional fields [7/8]: 
+** Additional fields [8/8]: 
 
 *** DONE [#A] add checkbox with which days user will go
 
@@ -77,7 +77,7 @@
 
 *** DONE [#A] Телефон (с кодом)
 
-*** TODO [#A] Some ui fixes
+*** DONE [#A] Some ui fixes
 [09:44:55] Dmitriy Kostiuk: 1) пояснения к полям я бы тоже вертикально выравнивал по центру поля ввода (ну, это мы обсуждали вроде раньше, так что видимо чисто потому что тестовая форма)
 [09:45:17] Partizan: ок
 [09:45:17] Dmitriy Kostiuk: 2) галочка для подписки на мэйллист с выравниванием как-то не того ;)

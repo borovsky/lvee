@@ -4,12 +4,25 @@ class UserMailer < ActionMailer::Base
     @subject += I18n.t('mail.subject.activation')
 
     @body[:url]  = "http://lvee.org/activate/#{user.activation_code}"
-
   end
+
+  def activation_restore(user)
+    setup_email(user)
+    @subject += I18n.t('mail.subject.activation_restore')
+
+    @body[:url]  = "http://lvee.org/activate/#{user.activation_code}"
+  end
+
 
   def activation(user)
     setup_email(user)
     @subject += I18n.t('mail.subject.activation_complete')
+    @body[:url]  = "http://lvee.org/"
+  end
+
+  def password_restore(user)
+    setup_email(user)
+    @subject += I18n.t('mail.subject.password_restore')
     @body[:url]  = "http://lvee.org/"
   end
 

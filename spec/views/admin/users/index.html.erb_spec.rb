@@ -16,7 +16,7 @@ describe "/languages/show.html.erb" do
     assigns[:conferences] = [conf]
     assigns[:statistics] = stub(
       :list => {"LVEE 2009" =>
-        stub(:total_mans =>20, :approved_mans => 10,
+        stub(:total_men =>20, :approved_men => 10,
           :total_registrations =>10, :approved_registrations => 5 )
       }
       )

@@ -60,7 +60,8 @@ ActionController::Routing::Routes.draw do |map|
     ns.conference_registration_list("conference_registrations/:id",
       :controller => 'conference_registrations', :action => 'user_list')
 
-    ns.resources :users, :member => { :activate => :get }, :collection => {:current => :get} do |m|
+    ns.resources :users, :member => { :activate => :get },
+      :collection => {:current => :get, :restore => :any} do |m|
       m.connect('conference_registrations/new/:conference_id',
         :controller => 'conference_registrations', :action => 'new')
       m.resources(:conference_registrations, :controller => 'conference_registrations',

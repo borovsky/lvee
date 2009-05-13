@@ -35,6 +35,22 @@ class UsersController < ApplicationController
     redirect_to user_path(:id => current_user.id)
   end
 
+  def restore
+    if params[:email]
+      user = User.find_by_email(params[:email])
+      if user
+        if user.activated?
+          user.password = random_pronouncable_password
+          user.password_confirmation = user.password
+          users_controller.rb.save
+          UserMailer.deliver_password_restore(user)
+        else
+          UserMailer.deliver_activation_restore(user)
+        end
+      end
+    end
+  end
+
   def activate
     user = params[:activation_code].blank? ? false : User.find_by_activation_code(params[:activation_code])
     if user && !user.active?
@@ -92,5 +108,16 @@ class UsersController < ApplicationController
     end
     config.create.label = t('label.user.register')
     config.update.label = t('label.user.title', :full_name => current_user.full_name, :login => current_user.login) if current_user
+  end
+
+  def random_pronouncable_password(size = 4)
+    c = %w(b c d f g h j k l m n p qu r s t v w x z ch cr fr nd ng nk nt ph pr rd sh sl sp st th tr)
+    v = %w(a e i o u y)
+    f, r = true, ''
+    (size * 2).times do
+      r << (f ? c[rand * c.size] : v[rand * v.size])
+      f = !f
+    end
+    r
   end
 end
