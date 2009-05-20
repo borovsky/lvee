@@ -1,7 +1,7 @@
 module Editor
-  include LanguageUpdateHelper
-
   class LanguagesController < ApplicationController
+    include LanguageUpdateHelper
+
     before_filter :editor_required
     # GET /languages
     # GET /languages.xml
