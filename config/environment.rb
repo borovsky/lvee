@@ -67,4 +67,7 @@ Rails::Initializer.run do |config|
     :lib => 'will_paginate' , :source => 'http://gems.github.com'
   config.gem "mocha"
   config.gem "ya2yaml"
+
+  config.gem "jnunemaker-happymapper", :lib => 'happymapper'
+  config.gem "garb"
 end
