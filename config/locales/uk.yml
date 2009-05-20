@@ -244,6 +244,7 @@ uk:
       save: Зберегти
       show: Показати
       translate: Перевести
+      unknown_user: Unknown
       update: Відновити
       upload: Закачати
       view_changes: "View changes"
@@ -270,26 +271,26 @@ uk:
       meeting: "Чи потрібна зустріч?"
       phone: "Ваш контактний телефон"
       proposition: "Ваші пропозиції"
-      proposition_list: "Report"
+      proposition_list: Report
       quantity: "Кількість учасників"
       title: "Реєстрація на конференцію {{conference}}"
       transport: Транспорт
       tshirt: "Розмір футболки"
-    diff:
-      version: Version
-      from: From
-      to: To
+    diff: 
+      change_article_title: "Diff for article {{article}} from version {{from}} to {{to}}"
+      change_wiki_title: "Diff for page '{{wiki_page}}' from version {{from}} to {{to}}"
       changed_at: "Changed at"
       editor: Editor
-      change_article_title: "Diff for article {{article}} from version {{from}} to {{to}}"
+      from: From
       new_article_title: "Article {{article}} has no previous versions"
-      change_wiki_title: "Diff for page '{{wiki_page}}' from version {{from}} to {{to}}"
       new_wiki_title: "Page '{{wiki_page}}' has no previous versions"
-    editor_log:
-      article_created: "Article {{object}} was created by {{user}}"
+      to: To
+      version: Version
+    editor_log: 
       article_changed: "Article {{object}} was changed by {{user}}"
-      wiki_page_created: "Wiki page {{object}} was created by {{user}}"
+      article_created: "Article {{object}} was created by {{user}}"
       wiki_page_changed: "Wiki page {{object}} was changed by {{user}}"
+      wiki_page_created: "Wiki page {{object}} was created by {{user}}"
     language: 
       code3: "3-letter (ISO 639-2) language code id"
       creating: "Створення мови"
@@ -330,13 +331,15 @@ uk:
       edit: "Редагувати профіль"
       email: "Адреса електронної пошти"
       first_name: Ім'я
-      full_name: "Name"
+      full_name: Name
       join_us: "Приєднуйтесь до нас"
       last_name: Прізвище
       login: Логін
       occupation: "Де ви працюєте?"
       password: Пароль
       password_confirmation: "Підтвердження пароля"
+      password_restore: "Password Restore"
+      password_restore_link: Restore
       photo: Photo
       projects: "Ваші проекти FS/OS"
       register: Реєструватися
@@ -349,14 +352,15 @@ uk:
       editing: "Editing Wiki Page"
       listing: "Listing Wiki Pages"
       name: Name
-      user: "Last Editor"
       new: "New Wiki Page"
+      user: "Last Editor"
   mail: 
     account: 
       activate: |-
           Будь ласка відкрийте наступну адресу для активації вашого аккаунта:
           {{url}}
       activated: "Ваш аккаунт був активований"
+      activation_restore: "You account should be activated before login"
       created: "Ваш аккаунт був створений"
       edit_data: |-
           Ви можете зайти і відредагувати ваші дані:
@@ -364,6 +368,9 @@ uk:
       information: |-
           Ім'я користувача: {{login}}
           Пароль:           {{password}}
+      restore: |-
+          Password restore was requested from {{ip}}. 
+          We reseted your password. Above you can find new login information.
     signature: |-
         -- 
         З повагою, робот
@@ -374,16 +381,17 @@ uk:
   menu: 
     conference: 
       about: "Про конференцію"
+      attribution: Attribution
       history: Історія
       linux: Linux
-      payment: "Payments"
+      payment: Payments
       place: "Місце проведеня конференції"
       press: "Преса про конференцію"
     contacts: 
       category: Контакти
+      lug: LUG
       official: "Контактная информация"
-      organizers: "Оргкомитет"
-      lug: "LUG"
+      organizers: Оргкомитет
     main: Головна
     reports: 
       about: "Про доповіді"
@@ -392,7 +400,7 @@ uk:
       materials: "Матеріали минулих конференцій"
       program: "Програма конференції"
     sponsors: Спонсори
-    user:
+    user: 
       category: Participants
       conference_registration: "Participants of the Conference"
       profile: Профіль
@@ -431,6 +439,9 @@ uk:
       describe: "Користувач: {{full_name}} ({{country}}, {{city}})..."
       incorrect_image: "Can not update your photo. Please check image file"
       login_change: "Ви не можете змінити свій логін"
+      not_found_by_email: "User not found by email. Please check email."
+      password_restore: "Forgot password? {{link}} it."
+      password_restore_note: "Mail with restore information sent."
       privacy: "Політика конфіденційності: ми {{link}} нікому ніяку інформацію про ваш обліковий запис, включаючи вашу адресу електронної пошти."
       privacy_link: "не продаємо"
       registred: "Спасибі за реєстрацію."

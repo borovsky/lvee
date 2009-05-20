@@ -40,13 +40,18 @@ class UsersController < ApplicationController
       user = User.find_by_email(params[:email])
       if user
         if user.activated?
-          user.password = random_pronouncable_password
-          user.password_confirmation = user.password
-          users_controller.rb.save
-          UserMailer.deliver_password_restore(user)
+          password = random_pronouncable_password
+
+          user.password = password
+          user.password_confirmation = password
+          user.save
+          UserMailer.deliver_password_restore(user, request.remote_ip)
         else
           UserMailer.deliver_activation_restore(user)
         end
+        flash[:notice] = t('message.user.password_restore_note')
+      else
+        flash[:notice] = t('message.user.not_found_by_email')
       end
     end
   end

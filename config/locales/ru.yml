@@ -337,6 +337,8 @@ ru:
       occupation: "Место работы"
       password: Пароль
       password_confirmation: "Подтверждение пароля"
+      password_restore: "Восстановить пароль"
+      password_restore_link: Восстановить
       photo: Фото
       projects: "Проекты FOSS"
       register: Зарегистрироваться
@@ -357,6 +359,7 @@ ru:
           Пожалуйста, откройте следующий адрес для активации вашего аккаунта:
           {{url}}
       activated: "Ваш аккаунт был активирован"
+      activation_restore: "Вы должны активировать аккаунт перед входом на сайт"
       created: "Ваш аккаунт был создан"
       edit_data: |-
           Вы можете зайти и отредактировать ваши данные:
@@ -364,6 +367,9 @@ ru:
       information: |-
           Имя пользователя: {{login}}
           Пароль:           {{password}}
+      restore: |-
+          Восстановление пароля было запрошено с {{ip}}. 
+          Мы сбросили ваш пароль. Ниже приведена новая контактная информация.
     signature: |-
         -- 
         С уважением, робот
@@ -432,6 +438,9 @@ ru:
       describe: "Пользователь: {{full_name}} ({{country}}, {{city}})..."
       incorrect_image: "Не удается обновить фото. Возможно, вы указали неправильный файл."
       login_change: "Вы не можете изменить свой логин"
+      not_found_by_email: "User not found by email. Please check email."
+      password_restore: "Забыли пароль? {{link}} пароль."
+      password_restore_note: "Mail with restore information sent."
       privacy: "Политика конфиденциальности: мы {{link}} никому никакую информацию о вашей учетной записи, включая ваш адрес электронной почты."
       privacy_link: "не продаем"
       registred: "Спасибо за регистрацию."

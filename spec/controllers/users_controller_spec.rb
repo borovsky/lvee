@@ -122,7 +122,37 @@ describe UsersController do
       get :current
       assert_redirected_to user_path(:id => logged_in_user.id)
     end
-
   end
 
+
+  describe "restore" do
+    before :each do
+      @email = "test@email#{Time.now.to_i}"
+      @password = "BigPassword#{Time.now.to_i}"
+      @user.stubs(:full_name).returns("Test User")
+    end
+
+    it "should resend activation if user not activated" do
+      User.expects(:find_by_email).with(@email).returns(@user)
+      @user.expects(:activated?).returns(false)
+      post :restore, :email => @email
+    end
+
+    it "should update user password if user activated" do
+      User.expects(:find_by_email).with(@email).returns(@user)
+      controller.expects(:random_pronouncable_password).returns(@password)
+      @user.expects(:activated?).returns(true)
+      @user.expects(:password=).with(@password)
+      @user.expects(:password_confirmation=).with(@password)
+      @user.stubs(:password).returns(@password)
+      @user.expects(:save)
+
+      post :restore, :email => @email
+    end
+
+    it "should properly work if user not exists" do
+      User.expects(:find_by_email).with(@email).returns(nil)
+      post :restore, :email => @email
+    end
+  end
 end

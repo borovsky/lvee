@@ -1,4 +1,6 @@
 module Editor
+  include LanguageUpdateHelper
+
   class LanguagesController < ApplicationController
     before_filter :editor_required
     # GET /languages
@@ -113,7 +115,9 @@ module Editor
 
       def_lang = YAML.load_file("#{LOCALE_DIR}/en.yml")
       cur_lang = YAML.load(params[:language].read)
+      cur_lang = { params[:id] => cur_lang}
 
+      store_merged_language(def_lang, cur_lang, params[:id])
       hash = def_lang['en'].deep_merge(cur_lang)
       new_hash = {params[:id] => hash}
       File.open("#{LOCALE_DIR}/#{params[:id]}.yml", "w") do |f|

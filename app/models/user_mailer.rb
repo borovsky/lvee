@@ -20,10 +20,11 @@ class UserMailer < ActionMailer::Base
     @body[:url]  = "http://lvee.org/"
   end
 
-  def password_restore(user)
+  def password_restore(user, ip)
     setup_email(user)
     @subject += I18n.t('mail.subject.password_restore')
     @body[:url]  = "http://lvee.org/"
+    @body[:ip] = ip
   end
 
   protected

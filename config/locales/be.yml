@@ -203,7 +203,7 @@ be:
       meeting: "Ці патрабуецца сустрэча"
       phone: "Ваш кантактны тэлефон"
       proposition: "Вашыя прапановы"
-      proposition_list: "Report"
+      proposition_list: Report
       quantity: "Колькасць удзельнікаў"
       title: "Рэгістрацыя на канферэнцыю {{conference}}"
       transport: Транспарт
@@ -263,13 +263,15 @@ be:
       edit: "Edit profile"
       email: "Электронная пошта"
       first_name: Імя
-      full_name: "Name"
+      full_name: Name
       join_us: "Далучыся да нас зараз"
       last_name: Прозвішча
       login: Увайсці
       occupation: "Месца вучобы альбо працы"
       password: Пароль
       password_confirmation: "Паўтарыце пароль"
+      password_restore: "Password Restore"
+      password_restore_link: Restore
       photo: Photo
       projects: "Праекты FOSS"
       register: Зарэгістравацца
@@ -290,6 +292,7 @@ be:
           Каб актываваць ваш рахунак, перайдзіце на наступны адрас:
           {{url}}
       activated: "Ваш рахунак быў актываваны"
+      activation_restore: "You account should be activated before login"
       created: "Ваш рахунак быў створаны"
       edit_data: |-
           Вы можаце увайсці і рэдагаваць вашы даныя:
@@ -297,6 +300,9 @@ be:
       information: |-
           Імя карыстальніка: {{login}}
           Пароль:            {{password}}
+      restore: |-
+          Password restore was requested from {{ip}}. 
+          We reseted your password. Above you can find new login information.
     signature: |-
         -- 
         Робат сайта LVEE
@@ -310,7 +316,7 @@ be:
       attribution: Атрыбутыка
       history: Гісторыя
       linux: GNU/Linux
-      payment: "Payment"
+      payment: Payment
       place: "Месца канферэнцыі"
       press: "У друку"
     contacts: 
@@ -319,11 +325,6 @@ be:
       official: "Кантактная інфармацыя"
       organizers: Аргкамітет
     main: Галоўная
-    user: 
-      category: Удзельнiкi
-      conference_registration: "Participants of the Conference"
-      profile: Профіль
-      wiki: Wiki
     reports: 
       about: "Пра даклады"
       abstract: "Афармленне тэзісаў"
@@ -331,6 +332,11 @@ be:
       materials: "Матэрыялы папярэдніх канферэнцыяў"
       program: Праграма
     sponsors: Спонсары
+    user: 
+      category: Удзельнiкi
+      conference_registration: "Participants of the Conference"
+      profile: Профіль
+      wiki: Wiki
   message: 
     common: 
       access_denied: "У доступе адмоўлена"
@@ -365,6 +371,9 @@ be:
       describe: "Карыстальнік: {{full_name}} ({{country}}, {{city}})..."
       incorrect_image: "Не атрымалася абнавіць вашае фота. Праверце ваш файл выявы."
       login_change: "Вы не можаце змяніць ваша імя карыстальніка"
+      not_found_by_email: "User not found by email. Please check email."
+      password_restore: "Forgot password? {{link}} it."
+      password_restore_note: "Mail with restore information sent."
       privacy: "Палітыка таямніцы: мы {{link}} нікому сваю інфармацыю вашага рахунку, улучна з вашым адрасам электроннай пошты."
       privacy_link: "не прадаем"
       registred: "Дзякуй за рэгістрацыю."

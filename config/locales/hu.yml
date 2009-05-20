@@ -243,6 +243,7 @@ hu:
       save: Elmenteni
       show: Megmutatni
       translate: Lefordítani
+      unknown_user: Unknown
       update: Megújítani
       upload: Feltölteni
       view_changes: "View changes"
@@ -269,26 +270,26 @@ hu:
       meeting: "Fogadás szükséges?"
       phone: "Telefonos elérhetősége"
       proposition: Felajánlásai
-      proposition_list: "Report"
+      proposition_list: Report
       quantity: "Résztvevők száma"
       title: "Regisztrálás a {{conference}} konferenciára"
       transport: Közlekedés
       tshirt: Pólóméret
-    diff:
-      version: Version
-      from: From
-      to: To
+    diff: 
+      change_article_title: "Diff for article {{article}} from version {{from}} to {{to}}"
+      change_wiki_title: "Diff for page '{{wiki_page}}' from version {{from}} to {{to}}"
       changed_at: "Changed at"
       editor: Editor
-      change_article_title: "Diff for article {{article}} from version {{from}} to {{to}}"
+      from: From
       new_article_title: "Article {{article}} has no previous versions"
-      change_wiki_title: "Diff for page '{{wiki_page}}' from version {{from}} to {{to}}"
       new_wiki_title: "Page '{{wiki_page}}' has no previous versions"
-    editor_log:
-      article_created: "Article {{object}} was created by {{user}}"
+      to: To
+      version: Version
+    editor_log: 
       article_changed: "Article {{object}} was changed by {{user}}"
-      wiki_page_created: "Wiki page {{object}} was created by {{user}}"
+      article_created: "Article {{object}} was created by {{user}}"
       wiki_page_changed: "Wiki page {{object}} was changed by {{user}}"
+      wiki_page_created: "Wiki page {{object}} was created by {{user}}"
     language: 
       code3: "3-letter (ISO 639-2) language code id"
       creating: "Nyelv létrehozása"
@@ -329,13 +330,15 @@ hu:
       edit: "Profil szerkesztése"
       email: "Email cím"
       first_name: Keresztnév
-      full_name: "Name"
+      full_name: Name
       join_us: Csatlakozz
       last_name: Családnév
       login: Felhasználónév
       occupation: "Hol dolgozik?"
       password: Jelszó
       password_confirmation: "Jelszó újra"
+      password_restore: "Password Restore"
+      password_restore_link: Restore
       photo: Photo
       projects: "Szabad szoftver projectjei"
       register: Regisztrálás
@@ -348,14 +351,15 @@ hu:
       editing: "Editing Wiki Page"
       listing: "Listing Wiki Pages"
       name: Name
-      user: "Last Editor"
       new: "New Wiki Page"
+      user: "Last Editor"
   mail: 
     account: 
       activate: |-
           Kérjük, kövesse a lenti hivatkozást a hozzáférés aktiválásához:
           {{url}}
       activated: "Hozzáférése aktiváltatott"
+      activation_restore: "You account should be activated before login"
       created: "Hozzáférése létrejött"
       edit_data: |-
           Belépés után szerkesztheti a személyes adatait:
@@ -363,6 +367,9 @@ hu:
       information: |-
           Felhasználónév: {{login}}
           Jelszó:         {{password}}
+      restore: |-
+          Password restore was requested from {{ip}}. 
+          We reseted your password. Above you can find new login information.
     signature: |-
         -- 
         Tisztelettel, robot
@@ -370,13 +377,13 @@ hu:
       activation: "LVEE hozzáférés aktiválása"
       activation_complete: "Az ön LVEE.org hozzáférése aktiváltatott"
     title: "Üdvözöljük, {{full_name}}"
-  menu:  
+  menu: 
     conference: 
       about: "A konferenciáról"
       attribution: Impresszum
       history: Történelem
       linux: GNU/Linux
-      payment: "Payments"
+      payment: Payments
       place: Helyszín
       press: Sajtó
     contacts: 
@@ -392,7 +399,7 @@ hu:
       materials: "Múltbéli konferenciák anyagai"
       program: Program
     sponsors: Szponzorok
-    user:
+    user: 
       category: Participants
       conference_registration: "Participants of the Conference"
       profile: Profil
@@ -431,6 +438,9 @@ hu:
       describe: "Felhasználó: {{full_name}} ({{country}}, {{city}})..."
       incorrect_image: "Sikertelen képfrissítés. Talán rossz fájlt adott meg."
       login_change: "A felhasználónevet nem tudja megváltoztatni"
+      not_found_by_email: "User not found by email. Please check email."
+      password_restore: "Forgot password? {{link}} it."
+      password_restore_note: "Mail with restore information sent."
       privacy: "Adatkezelés: személyes adatait, beleértve email címét senkinek {{link}}."
       privacy_link: "nem adjuk ki"
       registred: "Köszönjük a regisztrációt."

@@ -44,7 +44,7 @@ module MenuHelper
       content_tag(:div, header + submenu.to_s, :class => 'column')
     end.join('')
   end
-  
+
   def render_footer_submenu(submenu)
     items = submenu.map do |i|
       content_tag(:li, link_to_menu_item(*i))

@@ -53,6 +53,11 @@
 
 *** DONE City and Country - separate fields
 
+*** TODO [#C] Statistics
+
+- Статистика: за последнюю неделю, за последний месяц, с момента объявления конференции
+- отчёты: Посетители по странам
+
 ** Mailman
 *** DONE [#A] mailman subscribtion during registration (option)
 (Organizers maillist)
@@ -61,7 +66,7 @@
 
 *** TODO [#C] Payment status (per conference): shouldn't pay, should pay, payed (сумма)
 
-** Additional fields [8/8]: 
+** Additional fields [8/9]: 
 
 *** DONE [#A] add checkbox with which days user will go
 
@@ -83,6 +88,8 @@
 [09:45:17] Dmitriy Kostiuk: 2) галочка для подписки на мэйллист с выравниванием как-то не того ;)
 [09:44:44] Partizan: выбор страны пока сломан 
 [09:45:56] Partizan: ещё переводы заголовка и кнопок
+
+*** TODO [#C] Other
 не платит: докладчик, спонсор
 
 ** later

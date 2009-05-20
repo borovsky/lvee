@@ -267,6 +267,8 @@ en:
       occupation: Occupation
       password: Password
       password_confirmation: "Password Confirmation"
+      password_restore: "Password Restore"
+      password_restore_link: "Restore"
       photo: Photo
       projects: "FOSS projects"
       register: Register
@@ -287,6 +289,7 @@ en:
           Please visit following URL for activation your account:
           {{url}}
       activated: "Your account was been activated"
+      activation_restore: "You account should be activated before login"
       created: "Your account was been created"
       edit_data: |-
           You can login and edit your data:
@@ -294,6 +297,9 @@ en:
       information: |-
           Login:    {{login}}
           Password: {{password}}
+      restore: |-
+        Password restore was requested from {{ip}}. 
+        We reseted your password. Above you can find new login information.
     signature: |-
         -- 
         LVEE conference site's robot
@@ -362,9 +368,13 @@ en:
       describe: "User: {{full_name}} ({{country}}, {{city}})..."
       incorrect_image: "Can not update your photo. Please check image file"
       login_change: "You can't change your login"
+      not_found_by_email: "User not found by email. Please check email."
+      password_restore: "Forgot password? {{link}} it."
+      password_restore_note: "Mail with restore information sent."
       privacy: "Privacy Policy: We {{link}} your account information to anyone, including your email address."
       privacy_link: "don't sell"
       registred: "Thank you for registration"
+      
   number: 
     currency: 
       format: 

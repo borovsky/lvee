@@ -1,7 +1,7 @@
-<h1><%= t('label.user.password_restore')</h1>
+<h1><%= t('label.user.password_restore') %></h1>
 
-<% form_tag restore_users_path do -%>
-<p><label for="email"><%=t('label.user.email') %></label><br/>
+<% form_tag(restore_users_path) do -%>
+<p><label for="email"><%= t('label.user.email') %></label><br/>
 <%= text_field_tag 'email' %></p>
-<p><%= submit_tag t('label.session.loginButton') %></p>
+<p><%= submit_tag t('label.user.password_restore') %></p>
 <% end -%>
