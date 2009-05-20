@@ -309,6 +309,8 @@ be:
     subject: 
       activation: "Актывацыя рахунка LVEE"
       activation_complete: "Ваш рахунак для LVEE быў актываваны"
+      activation_restore: "Account activation for LVEE (repeat)"
+      password_restore: "Password restore for LVEE"
     title: "Вітаю, {{full_name}}"
   menu: 
     conference: 

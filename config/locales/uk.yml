@@ -377,6 +377,8 @@ uk:
     subject: 
       activation: "Активація аккаунта з LVEE"
       activation_complete: "Ваш аккаунт на LVEE.org активовано"
+      activation_restore: "Account activation for LVEE (repeat)"
+      password_restore: "Password restore for LVEE"
     title: "Здрастуйте {{full_name}}"
   menu: 
     conference: 

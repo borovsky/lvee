@@ -376,6 +376,8 @@ ru:
     subject: 
       activation: "Активация аккаунта на LVEE"
       activation_complete: "Ваш аккаунт на LVEE.org активирован"
+      activation_restore: "Активация аккаунта на LVEE (повтор)"
+      password_restore: "Восстановление пароля для LVEE"
     title: "Здравствуйте, {{full_name}}"
   menu: 
     conference: 

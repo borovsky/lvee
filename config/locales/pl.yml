@@ -314,6 +314,8 @@ pl:
     subject: 
       activation: "Aktywacja konta na LVEE"
       activation_complete: "Twoje konto LVEE zostało aktywowane"
+      activation_restore: "Account activation for LVEE (repeat)"
+      password_restore: "Password restore for LVEE"
     title: "Witaj, {{full_name}}"
   menu: 
     conference: 
