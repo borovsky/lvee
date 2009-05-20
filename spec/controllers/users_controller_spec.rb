@@ -134,14 +134,14 @@ describe UsersController do
 
     it "should resend activation if user not activated" do
       User.expects(:find_by_email).with(@email).returns(@user)
-      @user.expects(:activated?).returns(false)
+      @user.expects(:active?).returns(false)
       post :restore, :email => @email
     end
 
     it "should update user password if user activated" do
       User.expects(:find_by_email).with(@email).returns(@user)
       controller.expects(:random_pronouncable_password).returns(@password)
-      @user.expects(:activated?).returns(true)
+      @user.expects(:active?).returns(true)
       @user.expects(:password=).with(@password)
       @user.expects(:password_confirmation=).with(@password)
       @user.stubs(:password).returns(@password)

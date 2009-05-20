@@ -2,7 +2,7 @@ module Editor
   class ImageUploadsController < ApplicationController
     before_filter :editor_required, :scaffold_action
     layout "admin"
-    
+
     COLUMNS = [:id, :file, :description, :size]
     CREATE_COLUMNS = [:file, :description]
     LIST_COLUMNS = [:description, :file, :size]

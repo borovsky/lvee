@@ -127,6 +127,8 @@ module Editor
     rescue Exception => e
       flash[:error] = e.message
       render :action => "show"
+      logger.error e.message
+      logger.error e.backtrace.join("\n")
     end
   end
 end

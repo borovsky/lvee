@@ -39,7 +39,7 @@ class UsersController < ApplicationController
     if params[:email]
       user = User.find_by_email(params[:email])
       if user
-        if user.activated?
+        if user.active?
           password = random_pronouncable_password
 
           user.password = password
@@ -51,7 +51,7 @@ class UsersController < ApplicationController
         end
         flash[:notice] = t('message.user.password_restore_note')
       else
-        flash[:notice] = t('message.user.not_found_by_email')
+        flash[:error] = t('message.user.not_found_by_email')
       end
     end
   end
