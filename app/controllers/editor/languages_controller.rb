@@ -118,11 +118,7 @@ module Editor
       cur_lang = { params[:id] => cur_lang}
 
       store_merged_language(def_lang, cur_lang, params[:id])
-      hash = def_lang['en'].deep_merge(cur_lang)
-      new_hash = {params[:id] => hash}
-      File.open("#{LOCALE_DIR}/#{params[:id]}.yml", "w") do |f|
-        f.write(new_hash.ya2yaml)
-      end
+
       redirect_to editor_language_url(:id => params[:id])
     rescue Exception => e
       flash[:error] = e.message
