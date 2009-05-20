@@ -252,6 +252,19 @@ en:
       logout: Logout
       password: Password
       rememberMe: "Remember me"
+    statistics:
+      title:
+        browser_statistic: "Visitor's Browser Statistics"
+        country_statistic: "Visitor's Country Statistic"
+        full: "Statistics from 20th of April 2009"
+        month: "Statistics for last month"
+        month: "Statistics for last week"
+        os_statistic: "Visitor's Operating Systems Statistics"
+      browser: Browser
+      country: Country
+      operating_system: "Operating system"
+      visits: Visits
+      
     user: 
       avator: "New photo:"
       city: Location

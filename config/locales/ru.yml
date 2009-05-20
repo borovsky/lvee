@@ -322,6 +322,17 @@ ru:
       logout: Выйти
       password: Пароль
       rememberMe: "Запомнить меня"
+    statistics: 
+      browser: Браузер
+      country: Страна
+      operating_system: "Операционная система"
+      title: 
+        browser_statistic: "Статистика используемых браузеров"
+        country_statistic: "Распределение посетителей по странам"
+        full: "Статистика с 20 апреля 2009"
+        month: "Статистика за последнюю неделю"
+        os_statistic: "Статистика используемых операционных систем"
+      visits: Посещения
     user: 
       avator: "Новое фото:"
       city: Город

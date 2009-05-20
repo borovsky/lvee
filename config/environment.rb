@@ -54,6 +54,8 @@ Rails::Initializer.run do |config|
   # Activate observers that should always be running
   config.active_record.observers = :user_observer, :article_observer, :wiki_page_observer
 
+  config.action_controller.cache_store = :file_store, File.join(RAILS_ROOT, "cache")
+
   # Make Active Record use UTC-base instead of local time
   # config.active_record.default_timezone = :utc
 

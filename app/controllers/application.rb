@@ -103,5 +103,4 @@ class ApplicationController < ActionController::Base
       preferred_languages.last[0]
     end
   end
-
 end

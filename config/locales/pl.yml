@@ -260,6 +260,17 @@ pl:
       logout: Wyloguj
       password: Hasło
       rememberMe: "Zapamiętać mnie"
+    statistics: 
+      browser: Browser
+      country: Country
+      operating_system: "Operating system"
+      title: 
+        browser_statistic: "Visitor's Browser Statistics"
+        country_statistic: "Visitor's Country Statistic"
+        full: "Statistics from 20th of April 2009"
+        month: "Statistics for last week"
+        os_statistic: "Visitor's Operating Systems Statistics"
+      visits: Visits
     user: 
       avator: Zdjęcie
       city: Miasto

@@ -1,0 +1,40 @@
+<h1><%= t("label.statistics.title.full") %></h1>
+<% fetch_statistics %>
+<h2><%= t('label.statistics.title.country_statistic') %>
+<table class="data">
+  <tr>
+    <th><%= t("label.statistics.country") %></th>
+    <th><%= t("label.statistics.visits") %></th>
+  </tr>
+  <% @report_country.each_with_index do |l, i| %>
+  <tr class="<%= (i % 2 == 0) ? 'even' : 'odd' %>">
+    <td><%= l.country %></td>
+    <td><%= l.visits %></td>
+  <% end %>
+</table>
+
+<h2><%= t('label.statistics.title.browser_statistic') %>
+<table class="data">
+  <tr>
+    <th><%= t("label.statistics.browser") %></th>
+    <th><%= t("label.statistics.visits") %></th>
+  </tr>
+  <% @report_browser.each_with_index do |l, i| %>
+  <tr class="<%= (i % 2 == 0) ? 'even' : 'odd' %>">
+    <td><%= l.browser %></td>
+    <td><%= l.visits %></td>
+  <% end %>
+</table>
+
+<h2><%= t('label.statistics.title.os_statistic') %>
+<table class="data">
+  <tr>
+    <th><%= t("label.statistics.operating_system") %></th>
+    <th><%= t("label.statistics.visits") %></th>
+  </tr>
+  <% @report_os.each_with_index do |l, i| %>
+  <tr class="<%= (i % 2 == 0) ? 'even' : 'odd' %>">
+    <td><%= l.operating_system %></td>
+    <td><%= l.visits %></td>
+  <% end %>
+</table>

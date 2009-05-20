@@ -64,5 +64,4 @@ module ApplicationHelper
         :user_id => params[:user_id], :conference_id => params[:conference_id],
         :category => params[:category], :name => params[:name], :action => controller.action_name}
   end
-
 end
