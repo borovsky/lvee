@@ -8,6 +8,7 @@ MENU_ITEMS = [
       ['menu.conference.payment', 'conference/payment'],
       ['menu.conference.attribution', 'conference/attribution'],
       ['menu.conference.linux', 'conference/linux'],
+      ['menu.conference.statistics', 'statistics'],
     ]],
   ['menu.reports.category', 'reports', [
       ['menu.reports.about', 'reports'],

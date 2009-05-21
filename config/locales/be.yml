@@ -333,6 +333,7 @@ be:
       payment: Payment
       place: "Месца канферэнцыі"
       press: "У друку"
+      statistics: "Site statistics"
     contacts: 
       category: Кантакты
       lug: LUG

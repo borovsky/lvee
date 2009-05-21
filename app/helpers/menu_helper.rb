@@ -38,7 +38,7 @@ module MenuHelper
   end
 
   def render_footer_menu
-    MENU_ITEMS.delete_if {|i| i[1] == 'main'}.map do |item|
+    MENU_ITEMS.dup.delete_if {|i| i[1] == 'main'}.map do |item|
       header = content_tag(:h4, link_to_menu_item(item[0], item[1]))
       submenu = render_footer_submenu(item[2]) if item[2]
       content_tag(:div, header + submenu.to_s, :class => 'column')

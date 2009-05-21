@@ -338,6 +338,7 @@ pl:
       payment: Payments
       place: "Miejsce konferencji"
       press: "W prasie"
+      statistics: "Site statistics"
     contacts: 
       category: Kontakty
       lug: LUG
