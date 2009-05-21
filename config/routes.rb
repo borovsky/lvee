@@ -13,7 +13,7 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :conference_registrations, :active_scaffold => true
     admin.resources :statuses, :active_scaffold => true
     admin.resources :sponsors, :active_scaffold => true
-    admin.mail_user 'users/:id/mail', :controller => "info_mailer", :action => "index"
+    admin.mail_user 'users/:to_list/mail', :controller => "info_mailer", :action => "index"
   end
   map.namespace :editor, :namespace => "", :path_prefix =>":lang", :name_prefix => "" do |editor|
     editor.resources :languages

@@ -15,10 +15,16 @@
   <% end %>
 </table>
 
+<p>
+  <%= link_to_function "Mark All", "mark_all_users()" %> |
+  <%= link_to_function "Unmark All", "unmark_all_users()" %> |
+  <%= link_to_function "Send mail to checked", "send_mail_to_checked_users()" %>
+</p>
 
-<table class="data">
+<table class="data" id="users">
   <tr>
     <th>Id</th>
+    <th></th>
     <th>Login</th>
     <th>Name</th>
     <th>Conferences</th>
@@ -28,6 +34,8 @@
   <% @users.each_with_index do |user, i| %>
   <tr id="<%= dom_id(user) %>" class="<%= (i % 2 == 0) ? 'even' : 'odd' %>">
     <td><%= i+1 %></td>
+    <td><%= check_box_tag "to_user[]", user.id, false, :class =>
+    "user_check", :id => "to_#{dom_id(user)}" %></td>
     <td><%= h user.login %></td>
     <td><%= link_to user.full_name, user_path(:id => user) %></td>
     <td><%= h user.conference_registrations.map{|r| r.conference.name}.join(', ') %></td>
@@ -42,7 +50,7 @@
     <td>
       <%= link_to_remote 'delete', :url => admin_user_path(:id => user), :method =>
       :delete, :confirm => t('message.common.sure') %> |
-      <%= link_to('send email', admin_mail_user_path(:id => user)) %>
+      <%= link_to('send email', admin_mail_user_path(:to_list => user)) %>
     </td>
     <% end %>
   </tr>
