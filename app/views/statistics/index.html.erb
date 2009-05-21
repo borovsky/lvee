@@ -14,7 +14,7 @@
   <tr>
     <th style="width: 50px">#</th>
     <th><%= t("label.statistics.country") %></th>
-    <th style="width: 100px"><%= t("label.statistics.visits") %></th>
+    <th style="width: 200px"><%= t("label.statistics.visits") %></th>
   </tr>
   <% @report_country.each_with_index do |l, i| %>
   <tr class="<%= (i % 2 == 0) ? 'even' : 'odd' %>">
@@ -29,7 +29,7 @@
   <tr>
     <th style="width: 50px">#</th>
     <th><%= t("label.statistics.browser") %></th>
-    <th style="width: 100px"><%= t("label.statistics.visits") %></th>
+    <th style="width: 200px"><%= t("label.statistics.visits") %></th>
   </tr>
   <% @report_browser.each_with_index do |l, i| %>
   <tr class="<%= (i % 2 == 0) ? 'even' : 'odd' %>">
@@ -44,7 +44,7 @@
   <tr>
     <th style="width: 50px">#</th>
     <th><%= t("label.statistics.operating_system") %></th>
-    <th style="width: 100px"><%= t("label.statistics.visits") %></th>
+    <th style="width: 200px"><%= t("label.statistics.visits") %></th>
   </tr>
   <% @report_os.each_with_index do |l, i| %>
   <tr class="<%= (i % 2 == 0) ? 'even' : 'odd' %>">
