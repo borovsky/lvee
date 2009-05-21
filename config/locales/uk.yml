@@ -333,6 +333,7 @@ uk:
         full: "Statistics from 20th of April 2009"
         month: "Statistics for last month"
         os_statistic: "Visitor's Operating Systems Statistics"
+        total_visitors: "Total visitors: {{count}}"
         week: "Statistics for last week"
       visits: Visits
     user: 

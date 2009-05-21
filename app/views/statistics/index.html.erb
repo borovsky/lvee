@@ -9,6 +9,9 @@
       statistics_path(:length => "week"))%></li>
 </ul>
 <% fetch_statistics %>
+
+<h2><%= t('label.statistics.title.total_visitors', :count => @total_visitors ) %>
+
 <h2><%= t('label.statistics.title.country_statistic') %>
 <table class="data">
   <tr>
