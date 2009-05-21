@@ -6,6 +6,7 @@
     <th><%= t('label.user.full_name') %></th>
     <th><%= t('label.user.country') %></th>
     <th><%= t('label.user.city') %></th>
+    <th><%= t('label.user.projects') %></th>
     <th><%= t('label.conference_registration.proposition_list') %></th>
   </tr>
   <% @registrations.each_with_index do |reg, i| -%>
@@ -15,6 +16,7 @@
     <td><%= h reg.user.full_name %></td>
     <td><%= h reg.user.country %></td>
     <td><%= h reg.user.city %></td>
+    <td><%= simple_format(reg.user.projects)%></td>
     <td><%= simple_format(reg.proposition)%></td>
   </tr>
   <% end -%>

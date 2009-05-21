@@ -1,13 +1,24 @@
-<h1><%= t("label.statistics.title.full") %></h1>
+<h1><%= t("label.statistics.title.#{params[:length]}") %></h1>
+
+<ul>
+  <li><%= link_to_unless_current(t("label.statistics.title.full"),
+      statistics_path(:length => "full"))%></li>
+  <li><%= link_to_unless_current(t("label.statistics.title.month"),
+      statistics_path(:length => "month"))%></li>
+  <li><%= link_to_unless_current(t("label.statistics.title.week"),
+      statistics_path(:length => "week"))%></li>
+</ul>
 <% fetch_statistics %>
 <h2><%= t('label.statistics.title.country_statistic') %>
 <table class="data">
   <tr>
+    <th>#</th>
     <th><%= t("label.statistics.country") %></th>
     <th><%= t("label.statistics.visits") %></th>
   </tr>
   <% @report_country.each_with_index do |l, i| %>
   <tr class="<%= (i % 2 == 0) ? 'even' : 'odd' %>">
+    <td><%= i+1 %></td>
     <td><%= l.country %></td>
     <td><%= l.visits %></td>
   <% end %>
@@ -16,11 +27,13 @@
 <h2><%= t('label.statistics.title.browser_statistic') %>
 <table class="data">
   <tr>
+    <th>#</th>
     <th><%= t("label.statistics.browser") %></th>
     <th><%= t("label.statistics.visits") %></th>
   </tr>
   <% @report_browser.each_with_index do |l, i| %>
   <tr class="<%= (i % 2 == 0) ? 'even' : 'odd' %>">
+    <td><%= i+1 %></td>
     <td><%= l.browser %></td>
     <td><%= l.visits %></td>
   <% end %>
@@ -29,11 +42,13 @@
 <h2><%= t('label.statistics.title.os_statistic') %>
 <table class="data">
   <tr>
+    <th>#</th>
     <th><%= t("label.statistics.operating_system") %></th>
     <th><%= t("label.statistics.visits") %></th>
   </tr>
   <% @report_os.each_with_index do |l, i| %>
   <tr class="<%= (i % 2 == 0) ? 'even' : 'odd' %>">
+    <td><%= i+1 %></td>
     <td><%= l.operating_system %></td>
     <td><%= l.visits %></td>
   <% end %>

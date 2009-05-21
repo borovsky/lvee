@@ -26,6 +26,9 @@ ActionController::Routing::Routes.draw do |map|
     ns.editor_rss 'editor_rss', :controller => "main", :action => "editor_rss"
     ns.wiki_rss 'wiki_rss', :controller => "main", :action => "wiki_rss"
 
+    ns.statistics "statistics/:length", :controller => "statistics", :action => "index",
+      :defaults => {:length => "full" }
+
     ns.diff_article('articles/:id/diff/:version', :controller => "articles", :action => "diff",
       :defaults => {:version => nil})
     ns.diff_wiki_page('wiki_pages/:id/diff/:version',
