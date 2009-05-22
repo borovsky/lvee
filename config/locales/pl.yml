@@ -170,6 +170,7 @@ pl:
       back: Wstecz
       back_to_list: "Back to list"
       cancel: Anuluj
+      count: Count
       create: Utwórz
       delete: Skasuj
       download: Ściągnij

@@ -1,5 +1,22 @@
 <h1><%= h @conference.name %></h1>
 
+<% countries = @registrations.map(&:user).group_by(&:country).
+   sort_by{|item| -item.second.length} %>
+
+<h2>Statistics by countries:</h2>
+<table class="data">
+  <tr>
+    <th><%= t('label.user.country') %></th>
+    <th><%= t('label.common.count') %></th>
+  </tr>
+  <% countries.each_with_index do |stat, i| -%>
+  <tr class="<%= i % 2 == 1 ? 'odd' : 'even'%>">
+    <td><%= stat.first%></td>
+    <td><%= stat.second.length %></td>
+  </tr>
+  <% end %>
+</title>
+
 <table class="data">
   <tr>
     <th><%= t('label.user.photo') %></th>
