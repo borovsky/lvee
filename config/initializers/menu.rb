@@ -34,7 +34,7 @@ EDITOR_MENU = [
       ['menu.editor.language', 'editor/languages'],
       ['menu.editor.news', 'news'],
       ['menu.editor.image_uploader', 'editor/image_uploads'],
-      ['menu.editor.articles', 'editor/articles'],
+      ['menu.editor.articles', 'articles'],
       ['menu.editor.rss', 'main/editor_rss'],
     ]]
 ]
