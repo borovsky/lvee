@@ -338,6 +338,21 @@ en:
       lug: LUG
       official: "Official Contacts"
       organizers: "Organization Board"
+    editor:
+      articles: "Article editor"
+      image_uploader: "Image uploader"
+      language: "Language editor"
+      news: "News editor"
+      rss: "Editor RSS"
+      title: "Editor"
+    admin:
+      title: "Admin"
+      users: "Users admin"
+      conferences: "Conferences admin"
+      statuses: "Statuses admin"
+      conference_registrations: "Conference registrations admin"
+      sponsors: "Sponsors admin"
+      info_mailer: "Mailer from info@lvee.org"
     main: Main
     reports: 
       about: "On presentations"

@@ -1,5 +1,6 @@
 module Admin
   class UsersController < ApplicationController
+    layout "admin"
     before_filter :admin_required
 
     def index

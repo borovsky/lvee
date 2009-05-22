@@ -331,6 +331,14 @@ pl:
       password_restore: "Password restore for LVEE"
     title: "Witaj, {{full_name}}"
   menu: 
+    admin: 
+      conference_registrations: "Conference registrations admin"
+      conferences: "Conferences admin"
+      info_mailer: "Mailer from info@lvee.org"
+      sponsors: "Sponsors admin"
+      statuses: "Statuses admin"
+      title: Admin
+      users: "Users admin"
     conference: 
       about: "O konferencji"
       attribution: Atrybucja
@@ -345,6 +353,13 @@ pl:
       lug: LUG
       official: "Official Contacts"
       organizers: "Organization Board"
+    editor: 
+      articles: "Article editor"
+      image_uploader: "Image uploader"
+      language: "Language editor"
+      news: "News editor"
+      rss: "Editor RSS"
+      title: Editor
     main: "Strona główna"
     reports: 
       about: Sprawozdania

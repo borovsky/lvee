@@ -393,6 +393,14 @@ ru:
       password_restore: "Восстановление пароля для LVEE"
     title: "Здравствуйте, {{full_name}}"
   menu: 
+    admin: 
+      conference_registrations: "Регистрации на конференцию"
+      conferences: "Редактор конференций"
+      info_mailer: "Рассылка писем с  info@lvee.org"
+      sponsors: "Редактор спонсоров"
+      statuses: "Редактор статусов"
+      title: Админ
+      users: "Управление пользователями"
     conference: 
       about: "О конференции"
       attribution: Атрибутика
@@ -407,6 +415,13 @@ ru:
       lug: LUG
       official: "Контактная информация"
       organizers: Оргкомитет
+    editor: 
+      articles: "Редактор статей"
+      image_uploader: "Загрузка картинок"
+      language: "Редактор языков"
+      news: "Редактор новостей"
+      rss: "RSS правок"
+      title: Редактор
     main: Главная
     reports: 
       about: "О докладах"

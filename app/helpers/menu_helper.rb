@@ -6,15 +6,15 @@ module MenuHelper
   MAIN_MENU_LAST_SUBITEM_CLASS = 'last-m'
 
   def render_main_menu
-    items = MENU_ITEMS.map {|i| render_main_menu_item(i)}
+    items = menu_items.map {|i| render_main_menu_item(i)}
     content_tag(:ul, items, :id => MAIN_MENU_ID)
   end
 
   def render_main_menu_item(item)
     classes = []
     classes << MAIN_MENU_SUBMENU_CLASS if item[2]
-    classes << MAIN_MENU_FIRST_ITEM_CLASS if item == MENU_ITEMS.first
-    classes << MAIN_MENU_LAST_ITEM_CLASS if item == MENU_ITEMS.last
+    classes << MAIN_MENU_FIRST_ITEM_CLASS if item == menu_items.first
+    classes << MAIN_MENU_LAST_ITEM_CLASS if item == menu_items.last
     classes = classes.join(' ')
     submenu = render_main_submenu(item[2]) if item[2]
     link = link_to_menu_item(item[0], item[1])
@@ -50,5 +50,15 @@ module MenuHelper
       content_tag(:li, link_to_menu_item(*i))
     end.join('')
     content_tag(:ul, items)
+  end
+
+  def menu_items
+    unless @menu_items
+      @menu_items = MENU_ITEMS
+      @menu_items += EDITOR_MENU if editor?
+      @menu_items += ADMIN_MENU if admin?
+    end
+
+    @menu_items
   end
 end

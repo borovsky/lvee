@@ -393,6 +393,14 @@ hu:
       password_restore: "Password restore for LVEE"
     title: "Üdvözöljük, {{full_name}}"
   menu: 
+    admin: 
+      conference_registrations: "Conference registrations admin"
+      conferences: "Conferences admin"
+      info_mailer: "Mailer from info@lvee.org"
+      sponsors: "Sponsors admin"
+      statuses: "Statuses admin"
+      title: Admin
+      users: "Users admin"
     conference: 
       about: "A konferenciáról"
       attribution: Impresszum
@@ -407,6 +415,13 @@ hu:
       lug: LUG
       official: Кapcsolattartás
       organizers: "Szervező bizottság"
+    editor: 
+      articles: "Article editor"
+      image_uploader: "Image uploader"
+      language: "Language editor"
+      news: "News editor"
+      rss: "Editor RSS"
+      title: Editor
     main: Főoldal
     reports: 
       about: "Az előadásokról"
