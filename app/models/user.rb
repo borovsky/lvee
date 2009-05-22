@@ -28,7 +28,7 @@ class User < ActiveRecord::Base
 
   validates_confirmation_of :password,                   :if => :password_required?
 
-  validates_format_of :email, :with => /^[a-zA-Z0-9\-\.]+\@[a-zA-Z0-9\-\.]+\.([a-zA-Z]{2,4}|[0-9]{1,4})$/ix
+  validates_format_of :email, :with => /^[a-zA-Z0-9\-\._]+\@[a-zA-Z0-9\-\.]+\.([a-zA-Z]{2,4}|[0-9]{1,4})$/ix
 
   validates_length_of       :login, :within => 3..40
 
