@@ -1,5 +1,3 @@
-#!/usr/bin/ruby
-
 require File.dirname(__FILE__) + '/../../spec_helper'
 
 describe Admin::UsersController do

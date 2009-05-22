@@ -5,7 +5,7 @@ describe ConferenceRegistrationsController do
 
   #Delete this example and add some real ones
   it "should show new page" do
-    user = model_stub(User, :editor? => false, :id => 2)
+    user = model_stub(User, :editor? => false, :id => 2, :admin? => false)
 
     conference = model_stub(Conference, :name => "Test Conference")
 

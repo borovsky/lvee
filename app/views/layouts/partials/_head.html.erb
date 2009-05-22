@@ -7,6 +7,7 @@
 
   <%= stylesheet_link_tag "style" %>
   <%= javascript_include_tag "prototype", "menu" %>
+  <%= javascript_include_tag "admin" if admin?%>
   <% if @active_scaffold %>
   <%= active_scaffold_includes %>
   <%= stylesheet_link_tag "style-end" %>
