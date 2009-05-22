@@ -13,3 +13,4 @@ db/development.sqlite3.save
 db/development_structure.sql
 db/schema.rb
 config/initializers/google_parameters.rb
+cache

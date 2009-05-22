@@ -16,6 +16,21 @@ class ApplicationController < ActionController::Base
     config.dhtml_history = false
   end
 
+  def cache_result_for(key, timeout, &block)
+    key = fragment_cache_key(key)
+    fragment = read_fragment(key)
+
+    if(fragment.kind_of?(Array) and
+        fragment.length == 2 and
+        fragment.first > timeout.ago)
+      return fragment.second
+    end
+    result = yield
+    p result
+    write_fragment(key, [Time.new, result])
+    result
+  end
+
   protected
   def language_select
     lang = params[:lang] || session[:lang]

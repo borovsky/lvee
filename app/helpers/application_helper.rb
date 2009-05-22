@@ -3,6 +3,15 @@ module ApplicationHelper
   include MenuHelper
 
   protected
+
+  def cache_with_timeout(key, timeout, &block)
+    key ||= request.path
+    result = controller.cache_result_for(key, timeout) do
+      capture(&block)
+    end
+    concat(result)
+  end
+
   # Displays all flashes if any
   def flashes_if_any
     html = ''

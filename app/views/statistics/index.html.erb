@@ -8,6 +8,8 @@
   <li><%= link_to_unless_current(t("label.statistics.title.week"),
       statistics_path(:length => "week"))%></li>
 </ul>
+
+<% cache_with_timeout(nil, 2.hours) do %>
 <% fetch_statistics %>
 
 <h2><%= t('label.statistics.title.total_visitors', :count => @total_visitors ) %>
@@ -56,3 +58,4 @@
     <td><%= l.visits %></td>
   <% end %>
 </table>
+<% end %>

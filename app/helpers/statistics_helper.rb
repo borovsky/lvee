@@ -18,7 +18,7 @@ module StatisticsHelper
       @report_browser = StatisticsReportBrowser.results(@profile, :limit => 10, :start_date => from_date) do
         sort(:visits.desc)
       end
-      
+
       GC.start
 
       @total_visitors = @report_os.inject(0) {|sum, i| sum + i.visits.to_i }
