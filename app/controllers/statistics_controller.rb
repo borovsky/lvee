@@ -9,7 +9,11 @@ class StatisticsController < ApplicationController
       :include => [:user],
       :order => "users.country ASC, users.city ASC, users.last_name ASC, users.first_name")
 
-    @countries = @registrations.map(&:user).group_by(&:country).
-      sort_by{|item| -item.second.length}
+    @countries = @registrations.map {|i| [i.user.country, i.quantity]}. #fetch required fields
+      group_by(&:first) #group by country
+    @countries = @countries.map do |item|
+      item[1] = item[1].map(&:second).inject{|sum, i| sum + i} #second to sum of quantities
+      item
+    end.sort_by(&:second).reverse # sort
   end
 end

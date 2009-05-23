@@ -16,8 +16,8 @@ describe StatisticsController do
       @user2 = User.create!(User.valid_data.merge(:login => "test2"))
       @user3 = User.create!(User.valid_data.merge(:login => "test3", :country => "Russia"))
       @reg1 = ConferenceRegistration.create!(:user => @user1, :conference => @conference, :quantity => 1)
-      @reg2 = ConferenceRegistration.create!(:user => @user2, :conference => @conference, :quantity => 1)
-      @reg3 = ConferenceRegistration.create!(:user => @user3, :conference => @conference, :quantity => 1)
+      @reg2 = ConferenceRegistration.create!(:user => @user2, :conference => @conference, :quantity => 3)
+      @reg3 = ConferenceRegistration.create!(:user => @user3, :conference => @conference, :quantity => 2)
     end
 
     it "should be successful" do
@@ -29,6 +29,9 @@ describe StatisticsController do
       assigns[:registrations].length.should == 3
       assigns[:countries].length.should == 2
       assigns[:countries].first.first.should == "Belarus"
+      assigns[:countries].first.second.should == 4
+      assigns[:countries].second.first.should == "Russia"
+      assigns[:countries].second.second.should == 2
     end
   end
 end

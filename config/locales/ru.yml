@@ -330,7 +330,7 @@ ru:
       operating_system: "Операционная система"
       title: 
         browser_statistic: "Статистика используемых браузеров"
-        conference: "Conference registration statistics"
+        conference: "Статистика регистраций на конференцию"
         country_statistic: "Распределение посетителей по странам"
         full: "Статистика с 20 апреля 2009"
         month: "Статистика за последний месяц"
