@@ -263,10 +263,12 @@ pl:
       rememberMe: "Zapamiętać mnie"
     statistics: 
       browser: Browser
+      conference: "Registration statistics for {{conference}}"
       country: Country
       operating_system: "Operating system"
       title: 
         browser_statistic: "Visitor's Browser Statistics"
+        conference: "Conference registration statistics"
         country_statistic: "Visitor's Country Statistic"
         full: "Statistics from 20th of April 2009"
         month: "Statistics for last month"
@@ -348,7 +350,7 @@ pl:
       payment: Payments
       place: "Miejsce konferencji"
       press: "W prasie"
-      statistics: "Site statistics"
+      statistics: Statistics
     contacts: 
       category: Kontakty
       lug: LUG

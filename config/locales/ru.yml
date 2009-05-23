@@ -325,10 +325,12 @@ ru:
       rememberMe: "Запомнить меня"
     statistics: 
       browser: Браузер
+      conference: "Registration statistics for {{conference}}"
       country: Страна
       operating_system: "Операционная система"
       title: 
         browser_statistic: "Статистика используемых браузеров"
+        conference: "Conference registration statistics"
         country_statistic: "Распределение посетителей по странам"
         full: "Статистика с 20 апреля 2009"
         month: "Статистика за последний месяц"
@@ -410,7 +412,7 @@ ru:
       payment: "Оплата оргвзноса"
       place: "Место проведения"
       press: Пресса
-      statistics: "Статистика посещений"
+      statistics: Статистика
     contacts: 
       category: Контакты
       lug: LUG

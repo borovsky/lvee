@@ -254,6 +254,10 @@ en:
       password: Password
       rememberMe: "Remember me"
     statistics:
+      browser: Browser
+      conference: "Registration statistics for {{conference}}"
+      country: Country
+      operating_system: "Operating system"
       title:
         browser_statistic: "Visitor's Browser Statistics"
         country_statistic: "Visitor's Country Statistic"
@@ -262,9 +266,7 @@ en:
         os_statistic: "Visitor's Operating Systems Statistics"
         total_visitors: "Total visitors: {{count}}"
         week: "Statistics for last week"
-      browser: Browser
-      country: Country
-      operating_system: "Operating system"
+        conference: "Conference registration statistics"
       visits: Visits
       
     user: 
@@ -333,7 +335,7 @@ en:
       payment: "Payments"
       place: "Place of the conference"
       press: "In the press"
-      statistics: "Site statistics"
+      statistics: "Statistics"
     contacts: 
       category: Contacts
       lug: LUG

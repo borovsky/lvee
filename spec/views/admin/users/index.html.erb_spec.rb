@@ -7,11 +7,13 @@ describe "/languages/show.html.erb" do
     assigns[:users] = [
       model_stub(User, :full_name => "x y",
         :conference_registrations =>
-        [stub(:conference => conf)]
+        [stub(:conference => conf)],
+        :active? => true
         ),
       model_stub(User, :full_name => "a b",
         :conference_registrations =>
-        [stub(:conference => conf)]
+        [stub(:conference => conf)],
+        :active? => false
         )]
     assigns[:conferences] = [conf]
     assigns[:statistics] = stub(

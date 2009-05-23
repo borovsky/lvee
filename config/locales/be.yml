@@ -258,10 +258,12 @@ be:
       rememberMe: "Памятаць мяне"
     statistics: 
       browser: Browser
+      conference: "Registration statistics for {{conference}}"
       country: Country
       operating_system: "Operating system"
       title: 
         browser_statistic: "Visitor's Browser Statistics"
+        conference: "Conference registration statistics"
         country_statistic: "Visitor's Country Statistic"
         full: "Statistics from 20th of April 2009"
         month: "Statistics for last month"
@@ -343,7 +345,7 @@ be:
       payment: Payment
       place: "Месца канферэнцыі"
       press: "У друку"
-      statistics: "Site statistics"
+      statistics: Statistics
     contacts: 
       category: Кантакты
       lug: LUG

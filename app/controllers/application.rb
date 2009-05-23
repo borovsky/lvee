@@ -26,7 +26,6 @@ class ApplicationController < ActionController::Base
       return fragment.second
     end
     result = yield
-    p result
     write_fragment(key, [Time.new, result])
     result
   end

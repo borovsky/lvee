@@ -1,13 +1,6 @@
 <h1><%= t("label.statistics.title.#{params[:length]}") %></h1>
 
-<ul>
-  <li><%= link_to_unless_current(t("label.statistics.title.full"),
-      statistics_path(:length => "full"))%></li>
-  <li><%= link_to_unless_current(t("label.statistics.title.month"),
-      statistics_path(:length => "month"))%></li>
-  <li><%= link_to_unless_current(t("label.statistics.title.week"),
-      statistics_path(:length => "week"))%></li>
-</ul>
+<%= render :partial => "statistics/menu" %>
 
 <% cache_with_timeout(nil, 2.hours) do %>
 <% fetch_statistics %>
