@@ -108,6 +108,5 @@ class ConferenceRegistrationsController < ApplicationController
   def before_update_save(record)
     @record.days = @record.days.join(',') if @record.days.kind_of? Array
     @record.tshirt = @record.tshirt.join(',') if @record.tshirt.kind_of? Array
-    @record.status_name = NEW_STATUS
   end
 end

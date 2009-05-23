@@ -5,7 +5,8 @@
   </dt>
   <dd>
     <div>
-    <% selected_sizes = @record.days.split(',') %>
+     
+    <% selected_sizes = @record.tshirt.split(',') %>
       <% @record.quantity.times do|i| %>
         <%= select_tag("record[tshirt][]", options_for_select(TSHIRT_SIZES, selected_sizes[i])) %>
       <% end %>
