@@ -149,8 +149,8 @@ pl:
       occupation: "Miejsce pracy/studiów i dziedziny działalności (z krótką nazwą organizacji)"
       password: "co najmniej 4 symboli"
       password_confirmation: "Takie same jak i hasło"
-      password_restore: "Password Restore"
-      password_restore_link: Restore
+      password_restore: "Przywracanie hasła"
+      password_restore_link: Przywróć
       projects: "Free Software / Open Source (FS/OS) projekty w których Państwo brali lub bierzecie udział i Państwa rola w nich"
       subscribed: ""
   label: 
@@ -170,7 +170,7 @@ pl:
       back: Wstecz
       back_to_list: "Back to list"
       cancel: Anuluj
-      count: Count
+      count: Ilość
       create: Utwórz
       delete: Skasuj
       download: Ściągnij
@@ -209,7 +209,7 @@ pl:
       meeting: "Czy potrzeba Państwo spotkać?"
       phone: "Telefon kontaktowy"
       proposition: "Państwa propozycję"
-      proposition_list: Report
+      proposition_list: Sprawozdanie
       quantity: "Ilość uczestników"
       title: "Rejestracja na konferencję {{conference}}"
       transport: Transport
@@ -230,7 +230,7 @@ pl:
       wiki_page_changed: "Wiki page {{object}} was changed by {{user}}"
       wiki_page_created: "Wiki page {{object}} was created by {{user}}"
     language: 
-      code3: "3-letter (ISO 639-2) language code id"
+      code3: "3-literowy (ISO 639-2) kod języka"
       creating: "Utwórz język"
       editing: "Edytuj język"
       id: "2-literowy identyfikator języka"
@@ -262,20 +262,20 @@ pl:
       password: Hasło
       rememberMe: "Zapamiętać mnie"
     statistics: 
-      browser: Browser
-      conference: "Registration statistics for {{conference}}"
-      country: Country
-      operating_system: "Operating system"
+      browser: Przeglądarka
+      conference: "Statystyka rejestracji na {{conference}}"
+      country: Kraj
+      operating_system: "System operacyjny"
       title: 
-        browser_statistic: "Visitor's Browser Statistics"
-        conference: "Conference registration statistics"
-        country_statistic: "Visitor's Country Statistic"
-        full: "Statistics from 20th of April 2009"
-        month: "Statistics for last month"
-        os_statistic: "Visitor's Operating Systems Statistics"
-        total_visitors: "Total visitors: {{count}}"
-        week: "Statistics for last week"
-      visits: Visits
+        browser_statistic: "Statystyka używanych przeglądarek"
+        conference: "Statystyka rejestracji na konferencję"
+        country_statistic: "Podział odwiedzających według kraju"
+        full: "Statystyka z 20 kwietnia 2009"
+        month: "Statystyka z ostatniego miesiąca"
+        os_statistic: "Statystyka używanych systemów operacyjnych"
+        total_visitors: "Łączna suma odwiedzin: {{count}}"
+        week: "Statystyka z ostatniego tygodnia"
+      visits: Odwiedziny
     user: 
       avator: Zdjęcie
       city: Miasto
@@ -284,17 +284,16 @@ pl:
       edit: "Edytuj profil"
       email: "Adres elektroniczny"
       first_name: Imię
-      from: From
-      full_name: Name
+      full_name: "Pełne imię i nazwisko"
       join_us: "Dołącz się do nas teraz"
       last_name: Nazwisko
       login: Login
       occupation: "Miejsce pracy"
       password: Hasło
       password_confirmation: "Potwierdzenie hasła"
-      password_restore: "Password Restore"
-      password_restore_link: Restore
-      photo: Photo
+      password_restore: "Przywracanie hasła"
+      password_restore_link: Przywróć
+      photo: Zdjęcie
       projects: Projekty
       register: "Zarejestruj się"
       subscribed: "Zapisz się na listę mailową"
@@ -314,7 +313,7 @@ pl:
           Odwiedź następujący adres URL do aktywacji konta
           {{url}}
       activated: "Twoje konto zostało aktywowane"
-      activation_restore: "You account should be activated before login"
+      activation_restore: "Konto musi zostać aktywowane przed logowaniem"
       created: "Twoje konto zostało utworzone"
       edit_data: |-
           Możesz się zalogować się i edytować swoje dane:
@@ -323,47 +322,47 @@ pl:
           Login:    {{login}}
           Hasło: {{password}}
       restore: |-
-          Password restore was requested from {{ip}}. 
-          We reseted your password. Above you can find new login information.
+          Przywrócenie hasła zażądane od adresu {{ip}}.
+          Hasło zostało zresetowane. Powyżej znajdziesz nowe informacje logowania.
     signature: |-
         -- 
         Z poważaniem, robot
     subject: 
       activation: "Aktywacja konta na LVEE"
       activation_complete: "Twoje konto LVEE zostało aktywowane"
-      activation_restore: "Account activation for LVEE (repeat)"
-      password_restore: "Password restore for LVEE"
+      activation_restore: "Aktywacją konta LVEE (powtórzyć)"
+      password_restore: "Przywracanie hasła LVEE"
     title: "Witaj, {{full_name}}"
   menu: 
     admin: 
-      conference_registrations: "Conference registrations admin"
-      conferences: "Conferences admin"
-      info_mailer: "Mailer from info@lvee.org"
-      sponsors: "Sponsors admin"
-      statuses: "Statuses admin"
-      title: Admin
-      users: "Users admin"
+      conference_registrations: "Administrator rejestracji na konferencję"
+      conferences: "Administrator konferencji"
+      info_mailer: "Rozsyłanie listy mailingowej z info@lvee.org"
+      sponsors: "Administrator sponsorów"
+      statuses: "Administrator statusów"
+      title: Administrator
+      users: "Zarządzanie użytkownikami"
     conference: 
       about: "O konferencji"
       attribution: Atrybucja
       history: Historia
       linux: GNU/Linux
-      payment: Payments
+      payment: Opłaty
       place: "Miejsce konferencji"
       press: "W prasie"
-      statistics: Statistics
+      statistics: Statystyki
     contacts: 
       category: Kontakty
       lug: LUG
       official: "Official Contacts"
       organizers: "Organization Board"
     editor: 
-      articles: "Article editor"
-      image_uploader: "Image uploader"
-      language: "Language editor"
-      news: "News editor"
-      rss: "Editor RSS"
-      title: Editor
+      articles: "Edytor artykułów"
+      image_uploader: "Uploader obrazów"
+      language: "Edytor języków"
+      news: "Edytor wiadomości"
+      rss: "Edytor RSS"
+      title: Edytor
     main: "Strona główna"
     reports: 
       about: Sprawozdania
@@ -374,7 +373,7 @@ pl:
     sponsors: Sponsorzy
     user: 
       category: Uczestnicy
-      conference_registration: "Participants of the Conference"
+      conference_registration: "Uczestnicy konferencji"
       profile: Profil
       wiki: Wiki
   message: 
@@ -411,9 +410,9 @@ pl:
       describe: "Użytkownik: {{full_name}} ({{country}}, {{city}})..."
       incorrect_image: "Nie można zaktualizować zdjęcia. Proszę sprawdzić plik obrazu"
       login_change: "Nie można zmienić swój login"
-      not_found_by_email: "User not found by email. Please check email."
-      password_restore: "Forgot password? {{link}} it."
-      password_restore_note: "Mail with restore information sent."
+      not_found_by_email: "Nie znaleziono użytkownika według adresu e-mail. Proszę sprawdzić e-mail."
+      password_restore: "Zapomniałeś hasło? {{link}} hasło."
+      password_restore_note: "Poczta z informacją o przywróceniu hasła została wysłana."
       privacy: "Polityka prywatności: My {{link}} informację o koncie, w tym adres mailowy, osobom trzecim"
       privacy_link: "nie sprzedajemy"
       registred: "Dziękujemy za rejestrację"
@@ -448,7 +447,7 @@ pl:
   sidebar: 
     information_sponsor: "Partnerzy informacyjni"
     organizers: Organizatorzy
-    sponsors: "Sponsorzy of 2009"
+    sponsors: "Sponsorzy w roku 2009"
     technical_sponsor: "Sponsorzy techniczni"
   support: 
     array: 
