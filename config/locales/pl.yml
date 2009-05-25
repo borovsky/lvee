@@ -284,6 +284,7 @@ pl:
       edit: "Edytuj profil"
       email: "Adres elektroniczny"
       first_name: Imię
+      from: From
       full_name: Name
       join_us: "Dołącz się do nas teraz"
       last_name: Nazwisko

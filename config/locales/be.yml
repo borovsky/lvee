@@ -279,6 +279,7 @@ be:
       edit: "Edit profile"
       email: "Электронная пошта"
       first_name: Імя
+      from: From
       full_name: Name
       join_us: "Далучыся да нас зараз"
       last_name: Прозвішча

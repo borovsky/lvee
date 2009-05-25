@@ -277,6 +277,7 @@ en:
       edit: "Edit personal data"
       email: E-mail
       first_name: "First Name"
+      from: From
       full_name: Name
       join_us: "Join us today"
       last_name: "Last Name"
