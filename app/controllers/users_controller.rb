@@ -1,8 +1,11 @@
 # Controller for work with users: create(signup), update, delete, activate
 
 class UsersController < ApplicationController
-  before_filter :login_required, :only => [:show, :index, :edit, :update, :current]
+  before_filter :login_required, :only => [:current]
   before_filter :scaffold_action, :set_common_columns_info, :only => [:edit, :update, :new, :create]
+  before_filter(:current_user_only, :unless => :admin?,
+    :except => [:restore, :activate, :current])
+
 
   USER_EDITABLE_COLUMNS = [:password, :password_confirmation, :email, :first_name, :last_name, :country, :city,
   :occupation, :projects, :subscribed]
@@ -25,10 +28,6 @@ class UsersController < ApplicationController
     config.columns[:country].form_ui = :country
     config.columns[:country].options[:priority] = PRIORITY_COUNTRIES
     User::REQUIRED_FIELDS.each{|i| config.columns[i].required = true }
-  end
-
-  def list
-    redirect_to user_path(:id => current_user.id)
   end
 
   def current
@@ -90,6 +89,12 @@ class UsersController < ApplicationController
   end
 
   protected
+  def current_user_only
+    login_required
+    return if performed?
+    render :text => t('message.common.access_denied'), :status=>403 unless params[:id].to_s == current_user.id.to_s
+  end
+
   def after_create_save(record)
     UserMailer.deliver_signup_notification(record)
     self.current_user = record

@@ -8,7 +8,7 @@ describe UsersController do
   end
 
   before :all do
-    @user = mock_user(:id => 100)
+    @user = mock_user(:id => 100, :admin? => false)
     @admin = mock_user(:id => 1, :admin? => true)
   end
 
@@ -63,11 +63,11 @@ describe UsersController do
     end
 
     it 'can show current user' do
-      logged_in_user = stub(:logged_in_user)
+      logged_in_user = stub("logged_in_user", :admin? => false)
       logged_in_user.stubs(:id).returns(42)
       login_as(logged_in_user)
 
-      user = stub(:user)
+      user = stub("user")
       User.stubs(:find).with('42').returns(user)
 
       get :show, :id=> '42'
@@ -99,6 +99,30 @@ describe UsersController do
     end
   end
 
+  describe "edit" do
+    it "should be accessible for current user" do
+      login_as @user
+      @user.stubs(:full_name).returns("Test")
+
+      User.stubs(:find).with('100').returns(@user)
+      controller.stubs(:edit).returns(true)
+
+      get :edit, :id => '100'
+      assert_response :success
+    end
+
+    it "should not be  accessible for other user" do
+      login_as @user
+      @user.stubs(:full_name).returns("Test")
+
+      User.stubs(:find).with('42').returns(@user)
+      controller.stubs(:edit).returns(true)
+
+      get :edit, :id => '42'
+      assert_response 403
+    end
+  end
+
   describe "current" do
     it "should be accessible by right URL" do
       params_from(:get, '/be/users/current').should == {
@@ -115,7 +139,7 @@ describe UsersController do
     end
 
     it 'should redirect to current user' do
-      logged_in_user = stub(:logged_in_user)
+      logged_in_user = stub("logged_in_user", :admin? => false)
       logged_in_user.stubs(:id).returns(42)
       login_as(logged_in_user)
 
