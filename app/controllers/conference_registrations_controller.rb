@@ -45,6 +45,7 @@ class ConferenceRegistrationsController < ApplicationController
   def current_user_only
     login_required
     return if performed?
+    return if admin?
     render :text => t('message.common.access_denied'), :status=>403 unless params[:user_id].to_s == current_user.id.to_s
     ConferenceRegistration.find_by_id_and_user_id!(params[:id], params[:user_id]) if params[:id]
   end
