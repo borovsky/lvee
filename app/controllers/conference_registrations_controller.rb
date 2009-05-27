@@ -103,7 +103,7 @@ class ConferenceRegistrationsController < ApplicationController
   end
 
   def before_create_save(record)
-    record.user = current_user
+    record.user_id = params[:user_id]
     @record.status_name = NEW_STATUS
   end
 
