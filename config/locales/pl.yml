@@ -137,7 +137,8 @@ pl:
       proposition: "Ponieważ wolne oprogramowanie jest rozwijane przez społeczeństwo z przyciągnięciem wielu ochotników, prosimy opowiedzieć co Państwo możecie wnieść do naszego spotkania. Niech to będzie sprawozdanie albo mniej formalne wygłoszenie w ramach warsztatu na temat wdrażania, wykorzystania lub rozwoju wolnego oprogramowania przez Państwo lub Państwa organizację. Jeżeli zamierzacie Państwo sporządzić sprawozdanie lub zorganizować warsztat prosimy określić temat raportu i wysłać jego streszczenia na adres elektroniczny \"d.kostiuk@lvee.org\":mailto:d.kostiuk@lvee.org ."
       quantity: "Ilu ludzi pojedzie z Państwem na konferencje?"
       title: "Rejestracja na konferencję {{conference}}"
-      transport: "Jakim transportem zamierzacie Państwo dostać się na konferencję?"
+      transport_from: "Which transport will you use to leave the conference"
+      transport_to: "Jakim transportem zamierzacie Państwo dostać się na konferencję?"
       tshirt: "Rozmiar koszulek"
     user: 
       city: ""
@@ -212,7 +213,16 @@ pl:
       proposition_list: Sprawozdanie
       quantity: "Ilość uczestników"
       title: "Rejestracja na konferencję {{conference}}"
-      transport: Transport
+      transport_from: "Transport from conference"
+      transport_from_list: 
+        bus_grodno: "Minibus from Grodno"
+        bus_minsk: "Minibus from Minsk"
+        independent: Independent
+      transport_to: "Transport to conference"
+      transport_to_list: 
+        bus_grodno: "Minibus to Grodno"
+        bus_minsk: "Minibus to Minsk"
+        independent: Independent
       tshirt: "Rozmiar koszulek"
     diff: 
       change_article_title: "Diff for article {{article}} from version {{from}} to {{to}}"

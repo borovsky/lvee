@@ -133,7 +133,8 @@ be:
       proposition: "Вядома, што свабодныя праграмы распрацоўвае грамада з узделам шматлікіх добраахвотнікаў, таму распавядзіце, калі ласка, які ўнёсак вы можаце зрабіць у наш сход. Няхай гэта будзе даклад альбо меней фармальнае паведамленне ў рамках круглага стала (workshop), як вы ці ваша арганізацыя укараняеце, выкарыстоўваеце ці распрацоўваеце свабодныя праграмы Калі вы збіраецеся зрабіць даклад ці арганізаваць семінар на канферэнцыі, падайце тэму вашага даклада. Тэзісы дасылайце на адрас: \"d.kostiuk@lvee.org\":mailto:d.kostiuk@lvee.org ."
       quantity: "Колькі людзей едзе на канферэнцыю?"
       title: "Рэгістрацыя на канферэнцыю {{conference}}"
-      transport: "Якім транспартам плануеце дабірацца на канферэнцыю?"
+      transport_from: "Якім транспартам плануеце дабірацца з канферэнцыі?"
+      transport_to: "Якім транспартам плануеце дабірацца на канферэнцыю?"
       tshirt: "Ваш памер футболкі"
     user: 
       avator: "Вашае фота. Будзе файна, калі на ім будзе ваш твар."
@@ -207,7 +208,16 @@ be:
       proposition_list: Report
       quantity: "Колькасць удзельнікаў"
       title: "Рэгістрацыя на канферэнцыю {{conference}}"
-      transport: Транспарт
+      transport_from: "Транспарт з канферэнцыі"
+      transport_from_list: 
+        bus_grodno: "Bus from Grodno"
+        bus_minsk: "Bus from Minsk"
+        independent: "Самастойна"
+      transport_to: "Транспарт на канферэнцыю"
+      transport_to_list: 
+        bus_grodno: "Minibus to Grodno"
+        bus_minsk: "Minibus to Minsk"
+        independent: "Самастойна"
       tshirt: "Памер футболкі"
     diff: 
       change_article_title: "Diff for article {{article}} from version {{from}} to {{to}}"

@@ -201,7 +201,8 @@ hu:
       proposition: "Mivel a szabad szoftvert önkéntesek közössége hozza létre, kérjük írja le, mivel tudna hozzájárulni a találkozónkhoz. Lehet előadás vagy kevésbé formális beszámoló kerekasztalbeszélgetés (workshop) keretében szabad szoftver bevezetéséről, használatáról vagy fejlesztéséről ön, vagy cége által. Amennyiben előadást vagy szemináriumot készül a konferencián tartani, kérjük írja meg az előadása címét, és küldje el a \"d.kostiuk@lvee.org\":mailto:d.kostiuk@lvee.org címre az előadás vázlatát."
       quantity: "Hányan jönnek önnel együtt a rendezvényre?"
       title: "Regisztrálás az {{conference}} konferenciára"
-      transport: "Milyen közlekedéssel tervezi a konferenciára eljutást?"
+      transport_from: "Which transport will you use to leave the conference"
+      transport_to: "Milyen közlekedéssel tervezi a konferenciára eljutást?"
       tshirt: Pólóméret
     user: 
       city: Város?
@@ -274,7 +275,16 @@ hu:
       proposition_list: Report
       quantity: "Résztvevők száma"
       title: "Regisztrálás a {{conference}} konferenciára"
-      transport: Közlekedés
+      transport_from: "Transport from conference"
+      transport_from_list: 
+        bus_grodno: "Minibus from Grodno"
+        bus_minsk: "Minibus from Minsk"
+        independent: Independent
+      transport_to: "Transport to conference"
+      transport_to_list: 
+        bus_grodno: "Minibus to Grodno"
+        bus_minsk: "Minibus to Minsk"
+        independent: Independent
       tshirt: Pólóméret
     diff: 
       change_article_title: "Diff for article {{article}} from version {{from}} to {{to}}"

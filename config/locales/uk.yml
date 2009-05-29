@@ -201,7 +201,8 @@ uk:
       proposition: "Оскільки вільне ПЗ створюється співтовариством із залученням великої кількості добровольців, розкажіть, будь ласка, що Ви могли б привнести в нашу зустріч. Нехай це буде доповідь або менш формальна розповідь в рамках круглого столу про впровадження, використання або розробку вільного ПЗ Вами або у Вашій організації. Якщо Ви збираєтесь зробити доповідь або організувати семінар на конференції, вкажіть тему доповіді, а також надішліть на \"d.kostiuk@lvee.org\":mailto:d.kostiuk@lvee.org тези виступу."
       quantity: "Скільки людей поїде з Вами на конференцію?"
       title: "Реєстрація на конференцію {{conference}}"
-      transport: "Як Ви плануєте добиратися до місця проведення конференції?"
+      transport_from: "Which transport will you use to leave the conference"
+      transport_to: "Як Ви плануєте добиратися до місця проведення конференції?"
       tshirt: "Розмір футболки"
     user: 
       avator: "Ваше фото. Бажано з обличчям"
@@ -275,7 +276,16 @@ uk:
       proposition_list: Повідомлення
       quantity: "Кількість учасників"
       title: "Реєстрація на конференцію {{conference}}"
-      transport: Транспорт
+      transport_from: "Transport from conference"
+      transport_from_list: 
+        bus_grodno: "Minibus from Grodno"
+        bus_minsk: "Minibus from Minsk"
+        independent: Independent
+      transport_to: "Transport to conference"
+      transport_to_list: 
+        bus_grodno: "Minibus to Grodno"
+        bus_minsk: "Minibus to Minsk"
+        independent: Independent
       tshirt: "Розмір футболки"
     diff: 
       change_article_title: "Порівняння статті {{article}} з {{from}} до {{to}}"

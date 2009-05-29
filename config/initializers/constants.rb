@@ -35,3 +35,5 @@ STATISTICS_TYPES = {
   :total_men => "Total men",
   :approved_men => "Approved men",
 }
+
+TRANSPORT = %w(bus_minsk bus_grodno independent)

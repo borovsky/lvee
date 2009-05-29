@@ -5,11 +5,7 @@
   </dt>
   <dd>
     <div>
-
-    <% selected_sizes = @record.tshirt.split(',') %>
-      <% @record.quantity.times do|i| %>
-        <%= select_tag("record[tshirt][]", options_for_select(TSHIRT_SIZES, selected_sizes[i])) %>
-      <% end %>
+      <%= select_tag("record[transport_from]",  transport_options(@record.transport_from, "from")) %>
     </div>
     <% if column.description -%>
       <span class="description"><%= column.description %></span>

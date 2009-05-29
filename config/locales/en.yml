@@ -131,7 +131,8 @@ en:
       proposition: "As free software is developed by the community with attracting a lot of volunteers, please tell us how you can contribute to our meeting. Let it be a report or a less formal speech within the limits of a workshop about implementation, usage or development of free software by you or your organization. If you are going to make a report or organize a workshop at the conference, please specify the topic of your report, as well as send its abstracts to \"d.kostiuk@lvee.org\":mailto:d.kostiuk@lvee.org ."
       quantity: "How many people will go with you to the conference (including you)"
       title: "Conference registration for {{conference}}"
-      transport: "Which transport will you use to reach the conference"
+      transport_from: "Which transport will you use to leave the conference"
+      transport_to: "Which transport will you use to reach the conference"
       tshirt: "T-Shirt size"
     user: 
       city: ""
@@ -204,7 +205,16 @@ en:
       proposition_list: Report
       quantity: "Participant quantity"
       title: "Conference registration for {{conference}}"
-      transport: Transport
+      transport_from: "Transport from conference"
+      transport_from_list:
+        bus_minsk: "Minibus from Minsk"
+        bus_grodno: "Minibus from Grodno"
+        independent: "Independent"
+      transport_to: "Transport to conference"
+      transport_to_list:
+        bus_minsk: "Minibus to Minsk"
+        bus_grodno: "Minibus to Grodno"
+        independent: "Independent"
       tshirt: "T-Shirt size"
     diff: 
       change_article_title: "Diff for article {{article}} from version {{from}} to {{to}}"
