@@ -15,10 +15,10 @@
 *** DONE [#A] Make news language-dependant (translation for news)
 *** DONE [#B] Add RSS for news
 
-** Content edit [1/3]
+** Content edit [3/3]
 *** DONE [#A] Add editor for articles (with translation support)
-*** TODO [#B] Add version control
-*** TODO [#B] Add changes notifications (Editors' RSS?)
+*** DONE [#B] Add version control
+*** DONE [#B] Add changes notifications (Editors' RSS?)
 
 ** Misc [3/4]
 *** DONE [#A] Add normal role support (normal user/editor/admin)
@@ -31,13 +31,13 @@
 *** TODO Add normal design
 
 * New
-** Todo [8/10]
+** Todo [10/11]
 
 *** DONE [#A] Fix language switch for articles
 
 *** DONE [#B] Admin panel with account statuses 
 
-*** TODO [#B] Admin panel with mass mail
+*** DONE [#B] Admin panel with mass mail
 
 *** DONE [#B] "Чем грамотней и точнее вы ответите. тем проще будет с вами связаться"
 
@@ -53,7 +53,7 @@
 
 *** DONE City and Country - separate fields
 
-*** TODO [#C] Statistics
+*** DONE [#C] Statistics
 
 - Статистика: за последнюю неделю, за последний месяц, с момента объявления конференции
 - отчёты: Посетители по странам
@@ -96,4 +96,4 @@
 *** TODO [#C] Предпочтения по расселению
 *** TODO [#C] Сколько платить
 
-*** TODO Add title teg population for all pages
+*** TODO Add title tag population for all pages
