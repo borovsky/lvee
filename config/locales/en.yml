@@ -207,13 +207,13 @@ en:
       title: "Conference registration for {{conference}}"
       transport_from: "Transport from conference"
       transport_from_list:
-        bus_minsk: "Minibus from Minsk"
-        bus_grodno: "Minibus from Grodno"
+        bus_minsk: "Minibus to Minsk"
+        bus_grodno: "Minibus to Grodno"
         independent: "Independent"
       transport_to: "Transport to conference"
       transport_to_list:
-        bus_minsk: "Minibus to Minsk"
-        bus_grodno: "Minibus to Grodno"
+        bus_minsk: "Minibus from Minsk"
+        bus_grodno: "Minibus from Grodno"
         independent: "Independent"
       tshirt: "T-Shirt size"
     diff: 

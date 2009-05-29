@@ -210,13 +210,13 @@ be:
       title: "Рэгістрацыя на канферэнцыю {{conference}}"
       transport_from: "Транспарт з канферэнцыі"
       transport_from_list: 
-        bus_grodno: "Bus from Grodno"
-        bus_minsk: "Bus from Minsk"
+        bus_grodno: "Bus to Grodno"
+        bus_minsk: "Bus to Minsk"
         independent: "Самастойна"
       transport_to: "Транспарт на канферэнцыю"
       transport_to_list: 
-        bus_grodno: "Minibus to Grodno"
-        bus_minsk: "Minibus to Minsk"
+        bus_grodno: "Minibus from Grodno"
+        bus_minsk: "Minibus from Minsk"
         independent: "Самастойна"
       tshirt: "Памер футболкі"
     diff: 
