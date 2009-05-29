@@ -35,7 +35,9 @@ module Admin
       end
     end
 
-    def statistics
+    protected
+    def before_save(record)
+      @record.admin = true
     end
   end
 end
