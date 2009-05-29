@@ -15,6 +15,8 @@ module Admin
       config.label = "Conference Registration"
       config.actions.exclude :create, :delete, :nested
       config.actions.swap :search, :live_search
+      config.actions.add :conference_registration_statistics
+      config.conference_registration_statistics.label = "Statistics"
 
       config.list.columns = LIST_COLUMNS
 
@@ -31,6 +33,9 @@ module Admin
       STATIC_COLUMNS.each do |c|
         config.columns[c].form_ui = :static if  config.update.columns[c]
       end
+    end
+
+    def statistics
     end
   end
 end
