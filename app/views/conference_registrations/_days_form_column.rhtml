@@ -5,18 +5,21 @@
   </dt>
   <dd>
     <div>
-    <% days = I18n.translate(:'date.day_names') %>
+    <% translated_days = I18n.translate(:'date.day_names') %>
+    <% def_days = I18n.translate(:'date.day_names', :locale => I18n.default_locale) %>
+    <% days = translated_days.zip(def_days) %>
     <% selectable_days = days[4..-1] + [days[0]] %>
-    <% selected_days = @record.days.split(',') %>
+    <% selected_days = @record.days %>
+
     <ul>
       <% selectable_days.each do|day| %>
       <li>
-        <%= check_box_tag("record[days][]", day, checked =
-        selected_days.include?(day))  %>
-        <%= h(day) %> 
+        <%= check_box_tag("record[days][]", day[1], selected_days.include?(day[1]))  %>
+        <%= h(day[0]) %>
       </li>
       <% end %>
     </ul>
+    <%= tag("input", "name" => "record[days][]", "type" => "hidden", "value" => "")%>
     </div>
     <% if column.description -%>
       <span class="description"><%= column.description %></span>

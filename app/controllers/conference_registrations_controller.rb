@@ -108,7 +108,7 @@ class ConferenceRegistrationsController < ApplicationController
   end
 
   def before_update_save(record)
-    @record.days = @record.days.join(',') if @record.days.kind_of? Array
+    @record.days = @record.days.delete_if(&:blank?).join(',') if @record.days.kind_of? Array
     @record.tshirt = @record.tshirt.join(',') if @record.tshirt.kind_of? Array
   end
 end
