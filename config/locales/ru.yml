@@ -283,7 +283,7 @@ ru:
       transport_to: "Транспорт на конференцию"
       transport_to_list: 
         bus_grodno: "Маршрутка из Гродно"
-        bus_minsk: "Маршрутка в Минск"
+        bus_minsk: "Маршрутка из Минска"
         independent: "Самостоятельно"
       tshirt: "Размер футболки"
     diff: 
