@@ -29,6 +29,6 @@ class ConferenceRegistration < ActiveRecord::Base
 
   protected
   def check_transport
-    admin && status_name == 'activated'
+    !admin && status_name == 'approved'
   end
 end

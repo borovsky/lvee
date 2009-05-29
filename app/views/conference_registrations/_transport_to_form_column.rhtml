@@ -5,7 +5,7 @@
   </dt>
   <dd>
     <div>
-      <%= select_tag("record[transport_to]",  transport_options(@record.transport_to, "to")) %>
+      <%= select("record", "transport_to",  transport_options(:to)) %>
     </div>
     <% if column.description -%>
       <span class="description"><%= column.description %></span>
