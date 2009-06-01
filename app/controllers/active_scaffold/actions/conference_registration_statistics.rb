@@ -5,11 +5,6 @@ module ActiveScaffold::Actions
     end
 
     def show_statistics
-      @users = User.find(:all, :include => :conference_registrations)
-      @conferences = Conference.all
-
-      @statistics = ConferenceStatisticsPresenter.new(@users, @conferences)
-
       respond_to do |type|
         type.html do
           if successful?

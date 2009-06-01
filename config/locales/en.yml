@@ -268,6 +268,15 @@ en:
       conference: "Registration statistics for {{conference}}"
       country: Country
       operating_system: "Operating system"
+      registration:
+        approved_men: "Approved men"
+        approved_registrations: "Approved registration"
+        days_title: "Participance days statistics"
+        registration_title: "Registration statistics"
+        total_men: "Total men"
+        total_registrations: "Total registration"
+        transport_from_title: "Transport from conference statistics"
+        transport_to_title: "Transport to conference statistics"
       title:
         browser_statistic: "Visitor's Browser Statistics"
         country_statistic: "Visitor's Country Statistic"

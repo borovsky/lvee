@@ -16,7 +16,6 @@ module Admin
       config.actions.exclude :create, :delete, :nested
       config.actions.swap :search, :live_search
       config.actions.add :conference_registration_statistics
-      config.conference_registration_statistics.label = "Statistics"
 
       config.list.columns = LIST_COLUMNS
 

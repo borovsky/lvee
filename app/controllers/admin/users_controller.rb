@@ -5,9 +5,6 @@ module Admin
 
     def index
       @users = User.find(:all, :include => :conference_registrations)
-      @conferences = Conference.all
-
-      @statistics = ConferenceStatisticsPresenter.new(@users, @conferences)
 
       respond_to do |format|
         format.html

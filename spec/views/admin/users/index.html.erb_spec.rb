@@ -1,6 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/../../../spec_helper')
 
-describe "/languages/show.html.erb" do
+describe "/admin/users/index.html.erb" do
   before(:each) do
     conf = stub(:name =>"LVEE 2009")
 
@@ -18,10 +18,10 @@ describe "/languages/show.html.erb" do
     assigns[:conferences] = [conf]
     assigns[:statistics] = stub(
       :list => {"LVEE 2009" =>
-        stub(:total_men =>20, :approved_men => 10,
-          :total_registrations =>10, :approved_registrations => 5 )
-      }
+        stub(:statistics => {:total_men =>20, :approved_men => 10,
+            :total_registrations =>10, :approved_registrations => 5 }
       )
+      })
   end
 
   it "should render attributes in <p>" do

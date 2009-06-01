@@ -27,20 +27,31 @@ class ConferenceStatisticsPresenter
   end
 
   class ConferenceStatistics
-    STATISTIC_ITEMS =  STATISTICS_TYPES.keys
-    attr_accessor *STATISTIC_ITEMS
+    attr_reader :statistics
 
     def initialize
-      STATISTIC_ITEMS.each {|i| send("#{i}=", 0)}
+      @statistics = Hash.new(0)
     end
 
     def update_statistics(reg)
-      self.total_registrations += 1
-      self.total_men += reg.quantity || 0
+      add_statistics :total_registrations
+      add_statistics :total_men, reg.quantity
       if reg.status_name == APPROVED_STATUS
-        self.approved_men += reg.quantity
-        self.approved_registrations += 1
+        add_statistics :approved_registrations
+        add_statistics :approved_men, reg.quantity
+
+        add_statistics "transport_from_#{reg.transport_from}".to_sym
+        add_statistics "transport_to_#{reg.transport_to}".to_sym
+
+        (reg.days || "").downcase.split(",").each do |d|
+          add_statistics "days_#{d}".to_sym
+        end
       end
+    end
+
+    def add_statistics(key, count = 1)
+      count ||= 0
+      @statistics[key] +=  count
     end
   end
 end

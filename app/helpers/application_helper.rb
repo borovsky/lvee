@@ -4,6 +4,15 @@ module ApplicationHelper
 
   protected
 
+  def render_statistics
+    @users ||= User.find(:all, :include => :conference_registrations)
+    @conferences ||= Conference.all
+
+    @statistics ||= ConferenceStatisticsPresenter.new(@users, @conferences)
+
+    render :partial => "/admin/shared/statistics"
+  end
+
   def cache_with_timeout(key, timeout, &block)
     key ||= request.path
     result = controller.cache_result_for(key, timeout) do

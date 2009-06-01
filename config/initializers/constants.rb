@@ -29,11 +29,11 @@ INS_CLASS = "ins"
 DEL_CLASS = "del"
 
 # Statistics
-STATISTICS_TYPES = {
-  :total_registrations => "Total conference registrations",
-  :approved_registrations => "Approved conference registrations",
-  :total_men => "Total men",
-  :approved_men => "Approved men",
-}
+STATISTICS_TYPES = [
+  :total_registrations,
+  :approved_registrations,
+  :total_men,
+  :approved_men,
+]
 
 TRANSPORT = %w(bus_minsk bus_grodno independent)

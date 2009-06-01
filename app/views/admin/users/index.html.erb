@@ -1,19 +1,4 @@
-<table class="data">
-  <tr>
-    <th>Type</th>
-    <% @conferences.each do |c| %>
-      <th><%= h c.name %></th>
-    <% end %>
-  </tr>
-  <% STATISTICS_TYPES.each_with_index do |type, i| %>
-  <tr  class="<%= (i % 2 == 0) ? 'even' : 'odd' %>">
-    <td><%= type[1] %></td>
-    <% @conferences.each do |c| %>
-      <td><%= @statistics.list[c.name].send(type[0]) %></td>
-    <% end %>
-  </tr>
-  <% end %>
-</table>
+<%= render_statistics %>
 
 <p>
   <%= link_to_function "Mark All", "mark_all_users()" %> |

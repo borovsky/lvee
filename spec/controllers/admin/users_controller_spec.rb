@@ -6,11 +6,12 @@ describe Admin::UsersController do
   end
 
   before :all do
-    @user = mock_user(:id => 100, :admin? => false)
-    @admin = mock_user(:id => 1, :admin? => true)
+    @user = mock_user(:id => 100, :admin? => false, :editor? => false)
+    @admin = mock_user(:id => 1, :admin? => true, :editor? => true)
   end
 
   describe 'index' do
+    integrate_views
     it "should be accessible by right URL" do
       params_from(:get, '/ru/admin/users').should == {
         :controller => 'admin/users',
@@ -44,10 +45,17 @@ describe Admin::UsersController do
       assert_response :success
     end
 
-    it "should render csv if requested" do
-      login_as @admin
-      User.stubs(:find).with(:all, :include => :conference_registrations).returns([])
-      get :index, :format=>'csv'
+    it "should render all if required" do
+      login_as(@admin)
+      @conference = Conference.create!(:name => "LVEE 2009")
+      @user = User.create!(User.valid_data)
+      @reg = ConferenceRegistration.create!(:conference => @conference, :user => @user,
+        :status_name => "approved",
+        :transport_from => "bus_minsk",
+        :transport_to => "bus_minsk"
+        )
+
+      get :index, :format=>'html'
       assert_response :success
     end
   end
