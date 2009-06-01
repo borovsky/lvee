@@ -279,12 +279,12 @@ ru:
       transport_from_list: 
         bus_grodno: "Маршрутка в Гродно"
         bus_minsk: "Маршрутка в Минск"
-        independent: "Самостоятельно"
+        independent: Самостоятельно
       transport_to: "Транспорт на конференцию"
       transport_to_list: 
         bus_grodno: "Маршрутка из Гродно"
         bus_minsk: "Маршрутка из Минска"
-        independent: "Самостоятельно"
+        independent: Самостоятельно
       tshirt: "Размер футболки"
     diff: 
       change_article_title: "Изменения статьи {{article}} от версии {{from}} до {{to}}"
@@ -338,6 +338,15 @@ ru:
       conference: "Registration statistics for {{conference}}"
       country: Страна
       operating_system: "Операционная система"
+      registration: 
+        approved_men: "Approved men"
+        approved_registrations: "Approved registration"
+        days_title: "Participance days statistics"
+        registration_title: "Registration statistics"
+        total_men: "Total men"
+        total_registrations: "Total registration"
+        transport_from_title: "Transport from conference statistics"
+        transport_to_title: "Transport to conference statistics"
       title: 
         browser_statistic: "Статистика используемых браузеров"
         conference: "Статистика регистраций на конференцию"
