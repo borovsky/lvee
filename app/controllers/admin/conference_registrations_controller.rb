@@ -35,7 +35,7 @@ module Admin
     end
 
     protected
-    def before_save(record)
+    def before_update_save(record)
       @record.admin = true
     end
   end
