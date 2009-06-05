@@ -4,7 +4,10 @@ module Admin
     before_filter :admin_required, :scaffold_action
 
     EDITABLE_COLUMNS = [:user_type, :to_pay, :status_name]
-    STATIC_COLUMNS = [:conference, :user, :avator,  :days, :food, :meeting, :phone, :proposition, :quantity, :transport_to, :transport_from, :tshirt]
+    STATIC_COLUMNS = [:conference, :user, :avator, :phone,
+      :proposition, :projects, :work,
+      :days, :food,
+      :quantity, :meeting, :transport_to, :transport_from, :tshirt]
     LIST_COLUMNS = [:id, :conference, :user, :city, :country, :quantity, :status_name, :user_type]
     COLUMNS = (LIST_COLUMNS + STATIC_COLUMNS + EDITABLE_COLUMNS).uniq
 
