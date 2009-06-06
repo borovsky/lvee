@@ -130,14 +130,14 @@ pl:
   description: 
     conference_registration: 
       days: "W które dni planujecie Państwo uczestniczyć?"
-      floor: "Are you accept following conditions: organization fee decreases; sleeping place not provided; food saved? You can sleep in sleeping on floor in houses."
+      floor: "Do you accept the following conditions: organization fee decreases; bed is not provided; food is provided? You can sleep in sleeping bag on the floor in the room with other participants?"
       food: "Jakie są Państwa upodobania w jedzeniu?"
       index: "Rejestracja na konferencje"
       meeting: "Czy potrzeba Państwo spotkać?"
       phone: "Telefon dla kontaktu z Państwem podczas konferencji (wraz z kodem kraju)"
       proposition: "Ponieważ wolne oprogramowanie jest rozwijane przez społeczeństwo z przyciągnięciem wielu ochotników, prosimy opowiedzieć co Państwo możecie wnieść do naszego spotkania. Niech to będzie sprawozdanie albo mniej formalne wygłoszenie w ramach warsztatu na temat wdrażania, wykorzystania lub rozwoju wolnego oprogramowania przez Państwo lub Państwa organizację. Jeżeli zamierzacie Państwo sporządzić sprawozdanie lub zorganizować warsztat prosimy określić temat raportu i wysłać jego streszczenia na adres elektroniczny \"d.kostiuk@lvee.org\":mailto:d.kostiuk@lvee.org ."
       quantity: "Ilu ludzi pojedzie z Państwem na konferencje?"
-      residence: "With which of the registered participants you want to share room"
+      residence: "Who of the registered participants you want to share room with?"
       title: "Rejestracja na konferencję {{conference}}"
       transport_from: "Which transport will you use to leave the conference"
       transport_to: "Jakim transportem zamierzacie Państwo dostać się na konferencję?"
@@ -207,7 +207,7 @@ pl:
       upcoming: "Najbliższe konferencje"
     conference_registration: 
       days: "Dni uczestnictwa"
-      floor: "Can you sleep on floor?"
+      floor: "Can you sleep on the floor?"
       food: "Upodobania w jedzeniu"
       index: "Rejestracja na konferencję"
       meeting: "Czy potrzeba Państwo spotkać?"
@@ -215,7 +215,7 @@ pl:
       proposition: "Państwa propozycję"
       proposition_list: Sprawozdanie
       quantity: "Ilość uczestników"
-      residence: Residence
+      residence: Accommodation
       title: "Rejestracja na konferencję {{conference}}"
       transport_from: "Transport from conference"
       transport_from_list: 

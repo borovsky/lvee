@@ -277,7 +277,7 @@ ru:
       proposition: "Ваши предложения"
       proposition_list: Доклад
       quantity: "Количество участников"
-      residence: "Расселение"
+      residence: Расселение
       title: "Регистрация на конференцию {{conference}}"
       transport_from: "Транспорт с конференции"
       transport_from_list: 
