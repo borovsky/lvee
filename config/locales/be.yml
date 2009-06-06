@@ -126,12 +126,14 @@ be:
   description: 
     conference_registration: 
       days: "У якія дні вы плануеце свой удзел?"
+      floor: "Are you accept following conditions: organization fee decreases; sleeping place not provided; food saved? You can sleep in sleeping on floor in houses."
       food: "Якой ежы вы аддаеце перавагу?"
       index: "Рэгістрацыя на канферэнцыю"
       meeting: "Ці трэба вас сустракаць?"
       phone: "Нумар тэлефона, па якім можна скантактавацца з вамі падчас канферэнцыі (з кодам краіны)"
       proposition: "Вядома, што свабодныя праграмы распрацоўвае грамада з узделам шматлікіх добраахвотнікаў, таму распавядзіце, калі ласка, які ўнёсак вы можаце зрабіць у наш сход. Няхай гэта будзе даклад альбо меней фармальнае паведамленне ў рамках круглага стала (workshop), як вы ці ваша арганізацыя укараняеце, выкарыстоўваеце ці распрацоўваеце свабодныя праграмы Калі вы збіраецеся зрабіць даклад ці арганізаваць семінар на канферэнцыі, падайце тэму вашага даклада. Тэзісы дасылайце на адрас: \"d.kostiuk@lvee.org\":mailto:d.kostiuk@lvee.org ."
       quantity: "Колькі людзей едзе на канферэнцыю?"
+      residence: "With which of the registered participants you want to share room"
       title: "Рэгістрацыя на канферэнцыю {{conference}}"
       transport_from: "Якім транспартам плануеце дабірацца з канферэнцыі?"
       transport_to: "Якім транспартам плануеце дабірацца на канферэнцыю?"
@@ -200,6 +202,7 @@ be:
       upcoming: "Найбліжэйшыя канферэнцыі"
     conference_registration: 
       days: "Дні ўдзелу"
+      floor: "Can you sleep on floor?"
       food: "Пераважная дыета"
       index: "Рэгістрацыі на канферэнцыю"
       meeting: "Ці патрабуецца сустрэча"
@@ -207,6 +210,7 @@ be:
       proposition: "Вашыя прапановы"
       proposition_list: Report
       quantity: "Колькасць удзельнікаў"
+      residence: Residence
       title: "Рэгістрацыя на канферэнцыю {{conference}}"
       transport_from: "Транспарт з канферэнцыі"
       transport_from_list: 

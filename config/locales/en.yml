@@ -124,12 +124,14 @@ en:
   description: 
     conference_registration: 
       days: "Which days do you plan to participate?"
+      floor: "Are you accept following conditions: organization fee decreases; sleeping place not provided; food saved? You can sleep in sleeping on floor in houses."
       food: "Which type of food do you preffer"
       index: "Registration to conference"
       meeting: "Would you like to be met ?"
       phone: "Phone that we can use for contact with you on conference (with country code)"
       proposition: "As free software is developed by the community with attracting a lot of volunteers, please tell us how you can contribute to our meeting. Let it be a report or a less formal speech within the limits of a workshop about implementation, usage or development of free software by you or your organization. If you are going to make a report or organize a workshop at the conference, please specify the topic of your report, as well as send its abstracts to \"d.kostiuk@lvee.org\":mailto:d.kostiuk@lvee.org ."
       quantity: "How many people will go with you to the conference (including you)"
+      residence: "With which of the registered participants you want to share room"
       title: "Conference registration for {{conference}}"
       transport_from: "Which transport will you use to leave the conference"
       transport_to: "Which transport will you use to reach the conference"
@@ -197,6 +199,7 @@ en:
       upcoming: "Upcoming conferences"
     conference_registration: 
       days: "Participation days"
+      floor: "Can you sleep on floor?"
       food: "Preffered food"
       index: "Registration to conference"
       meeting: "Meeting required?"
@@ -204,6 +207,7 @@ en:
       proposition: "Your proposition"
       proposition_list: Report
       quantity: "Participant quantity"
+      residence: "Residence"
       title: "Conference registration for {{conference}}"
       transport_from: "Transport from conference"
       transport_from_list:
