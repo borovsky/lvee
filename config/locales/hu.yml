@@ -194,12 +194,14 @@ hu:
   description: 
     conference_registration: 
       days: "Mely napokon kíván részt venni?"
+      floor: "Do you accept the following conditions: organization fee decreases; bed is not provided; food is provided? You can sleep in sleeping bag on the floor in the room with other participants?"
       food: "Étkezéssel kapcsolatos kívánságok?"
       index: "Konferencia regisztráció"
       meeting: "Igényli-e, hogy fogadják?"
       phone: "Telefonszám, amin a konferencia közben elérhető (országkóddal)"
       proposition: "Mivel a szabad szoftvert önkéntesek közössége hozza létre, kérjük írja le, mivel tudna hozzájárulni a találkozónkhoz. Lehet előadás vagy kevésbé formális beszámoló kerekasztalbeszélgetés (workshop) keretében szabad szoftver bevezetéséről, használatáról vagy fejlesztéséről ön, vagy cége által. Amennyiben előadást vagy szemináriumot készül a konferencián tartani, kérjük írja meg az előadása címét, és küldje el a \"d.kostiuk@lvee.org\":mailto:d.kostiuk@lvee.org címre az előadás vázlatát."
       quantity: "Hányan jönnek önnel együtt a rendezvényre?"
+      residence: "Who of the registered participants you want to share room with?"
       title: "Regisztrálás az {{conference}} konferenciára"
       transport_from: "Which transport will you use to leave the conference"
       transport_to: "Milyen közlekedéssel tervezi a konferenciára eljutást?"
@@ -267,6 +269,7 @@ hu:
       upcoming: "Soronkövetkező konferenciák"
     conference_registration: 
       days: "Részvételi napok"
+      floor: "Can you sleep on the floor?"
       food: "Étkezéssel kapcsolatos kívánságok"
       index: Konferenciaregisztrációk
       meeting: "Fogadás szükséges?"
@@ -274,6 +277,7 @@ hu:
       proposition: Felajánlásai
       proposition_list: Report
       quantity: "Résztvevők száma"
+      residence: Accommodation
       title: "Regisztrálás a {{conference}} konferenciára"
       transport_from: "Transport from conference"
       transport_from_list: 

@@ -194,12 +194,14 @@ uk:
   description: 
     conference_registration: 
       days: "У які дні Ви плануєте бути присутнім?"
+      floor: "Do you accept the following conditions: organization fee decreases; bed is not provided; food is provided? You can sleep in sleeping bag on the floor in the room with other participants?"
       food: "Ваші переваги щодо їжі?"
       index: "Реєстрація на конференцію"
       meeting: "Чи потрібно Вас зустрічати?"
       phone: "Телефон для зв'язку з Вами під час конференції (з кодом країни)"
       proposition: "Оскільки вільне ПЗ створюється співтовариством із залученням великої кількості добровольців, розкажіть, будь ласка, що Ви могли б привнести в нашу зустріч. Нехай це буде доповідь або менш формальна розповідь в рамках круглого столу про впровадження, використання або розробку вільного ПЗ Вами або у Вашій організації. Якщо Ви збираєтесь зробити доповідь або організувати семінар на конференції, вкажіть тему доповіді, а також надішліть на \"d.kostiuk@lvee.org\":mailto:d.kostiuk@lvee.org тези виступу."
       quantity: "Скільки людей поїде з Вами на конференцію?"
+      residence: "Who of the registered participants you want to share room with?"
       title: "Реєстрація на конференцію {{conference}}"
       transport_from: "Which transport will you use to leave the conference"
       transport_to: "Як Ви плануєте добиратися до місця проведення конференції?"
@@ -268,6 +270,7 @@ uk:
       upcoming: "Найближчі конференції"
     conference_registration: 
       days: "Дні участі"
+      floor: "Can you sleep on the floor?"
       food: "Переваги в харчуванні"
       index: "Реєстрації на конференції"
       meeting: "Чи потрібна зустріч?"
@@ -275,6 +278,7 @@ uk:
       proposition: "Ваші пропозиції"
       proposition_list: Повідомлення
       quantity: "Кількість учасників"
+      residence: Accommodation
       title: "Реєстрація на конференцію {{conference}}"
       transport_from: "Transport from conference"
       transport_from_list: 
