@@ -3,25 +3,12 @@
   <li class="logo-lvee">
     <a href="/"><img src="/images/logos/lvee.gif" alt="" /></a>
   </li>
-  <li><%= link_to(t('sidebar.organizers'), :controller => "articles",
+  <% SPONSOR_TYPES.each do |type| -%>
+  <li><%= link_to(t("sidebar.#{type[1]}"), :controller => "articles",
   :category => 'contacts', :name => 'index', :action => 'show') %>
     <ul>
-      <%= render :partial => "layouts/partials/sponsor", :collection => sponsors["organizer"] %>
+      <%= render :partial => "layouts/partials/sponsor", :collection => sponsors[type[0]] %>
     </ul>
   </li>
-  <li><%= link_to(t('sidebar.sponsors'), :controller => "articles", :category => 'sponsors', :name => 'index', :action => 'show') %>
-    <ul>
-      <%= render :partial => "layouts/partials/sponsor", :collection => sponsors["sponsor"] %>
-    </ul>
-  </li>
-  <li><%= link_to(t('sidebar.technical_sponsor'), :controller => "articles", :category => 'sponsors', :name => 'index', :action => 'show') %>
-    <ul>
-      <%= render :partial => "layouts/partials/sponsor", :collection => sponsors["technical"] %>
-    </ul>
-  </li>
-  <li><%= link_to(t('sidebar.information_sponsor'), :controller => "articles", :category => "conference", :name => "press", :action => 'show') %>
-    <ul>
-      <%= render :partial => "layouts/partials/sponsor", :collection => sponsors["information"] %>
-    </ul>
-  </li>
+  <% end -%>
 </ul>

@@ -467,6 +467,7 @@ en:
     organizers: Organizers
     sponsors: "Sponsors of 2009"
     technical_sponsor: "Technical sponsor"
+    technical_partner: "Technical partner"
   support: 
     array: 
       last_word_connector: ", and "
