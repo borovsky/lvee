@@ -79,7 +79,7 @@ class ConferenceRegistrationsController < ApplicationController
 
     if @record.status_name == APPROVED_STATUS
       active_scaffold_config.update.columns = COLUMNS
-      STATIC_COLUMNS.each { |c| active_scaffold_config.columns[c].form_ui = :static}
+      #STATIC_COLUMNS.each { |c| active_scaffold_config.columns[c].form_ui = :static}
     else
       active_scaffold_config.update.columns = FIRST_STEP_COLUMNS
     end
