@@ -6,6 +6,7 @@ class ConferenceRegistration < ActiveRecord::Base
   validates_presence_of :conference_id
   validates_presence_of :transport_to, :if => :check_transport
   validates_presence_of :transport_from, :if => :check_transport
+  validates_numericality_of :quantity, :only_integer => true, :greater_than => 0
 
   validates_uniqueness_of :conference_id, :scope => :user_id
 
@@ -30,5 +31,14 @@ class ConferenceRegistration < ActiveRecord::Base
   protected
   def check_transport
     !admin && status_name == 'approved'
+  end
+
+  def validate
+    if status_name == APPROVED_STATUS
+      self.errors.add("quantity",
+        I18n.t("activerecord.errors.messages.less_than_or_equal_to",
+          :count => self.quantity_was)) if self.quantity.to_i > self.quantity_was
+
+    end
   end
 end
