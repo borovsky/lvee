@@ -29,5 +29,6 @@ class ArticleObserver < ActiveRecord::Observer
         :user_name => user_name, :object_name => object_name, :public => false)
       log.save
     end
+  rescue Exception => e
   end
 end
