@@ -27,5 +27,6 @@ class WikiPageObserver < ActiveRecord::Observer
     log = EditorLog.new(:change_type => change_type, :body => body, :url => url,
       :user_name => user_name, :object_name => object_name, :public => true)
     log.save
+  rescue Exception => e
   end
 end
