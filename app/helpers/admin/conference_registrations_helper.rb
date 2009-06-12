@@ -43,5 +43,9 @@ module Admin
       text = image_tag(url_for_file_column(@record.user, "avator")) if @record.user.avator
       content_tag(:span, text, :class => "static-value")
     end
+
+    def comment_form_column(record, input_name)
+      text_area "record", "comment"
+    end
   end
 end
