@@ -21,6 +21,13 @@ module Admin
       h(record.user.occupation)
     end
 
+    def filled_column(record)
+      ((record.quantity || 0) > 0) and
+        !record.days.blank? and
+        !record.transport_to.blank? and
+        !record.transport_from.blank?
+    end
+
     def status_name_form_column(record, input_name)
       select "record", "status_name", Status.available_statuses
     end
