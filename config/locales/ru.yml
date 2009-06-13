@@ -263,7 +263,7 @@ ru:
       registration_closed: закрыта
       registration_opened: открыта
       registration_opened?: "Регистрация открыта?"
-      registred: "ВЫ были зарегистрированны"
+      registred: "Вы были зарегистрированы"
       show: "Конференция {{name}} ({{start_date}} - {{finish_date}}"
       start_date: "Дата начала"
       upcoming: "Ближайшие конференции"
