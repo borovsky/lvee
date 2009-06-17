@@ -10,7 +10,7 @@ module Admin
       config.columns = [:name, :start_date, :finish_date, :registration_opened]
       config.columns[:registration_opened].form_ui = :checkbox
       config.action_links <<
-        ActiveScaffold::DataStructures::ActionLink.new(:csv, :label => :csv_export, :type => :record, :inline => false)
+        ActiveScaffold::DataStructures::ActionLink.new(:csv, :label => :csv_export, :type => :record, :inline => false, :parameters => {:format =>"csv" })
     end
 
     def csv
