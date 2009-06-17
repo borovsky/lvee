@@ -8,7 +8,7 @@ module Admin
       :proposition, :projects, :work,
       :days, :food, :residence, :floor,
       :quantity, :meeting, :transport_to, :transport_from, :tshirt]
-    LIST_COLUMNS = [:id, :conference, :user, :city, :country, :quantity, :status_name, :user_type]
+    LIST_COLUMNS = [:id, :conference, :filled, :user, :city, :country, :quantity, :status_name, :user_type]
     COLUMNS = (LIST_COLUMNS + STATIC_COLUMNS + EDITABLE_COLUMNS).uniq
 
     USER_COLUMNS = [:city, :country, :avator]

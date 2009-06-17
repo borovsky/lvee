@@ -207,18 +207,18 @@ en:
       proposition: "Your proposition"
       proposition_list: Report
       quantity: "Participant quantity"
-      residence: "Accommodation"
+      residence: Accommodation
       title: "Conference registration for {{conference}}"
       transport_from: "Transport from conference"
-      transport_from_list:
-        bus_minsk: "Minibus to Minsk"
+      transport_from_list: 
         bus_grodno: "Minibus to Grodno"
-        independent: "Independent"
+        bus_minsk: "Minibus to Minsk"
+        independent: Independent
       transport_to: "Transport to conference"
-      transport_to_list:
-        bus_minsk: "Minibus from Minsk"
+      transport_to_list: 
         bus_grodno: "Minibus from Grodno"
-        independent: "Independent"
+        bus_minsk: "Minibus from Minsk"
+        independent: Independent
       tshirt: "T-Shirt size"
     diff: 
       change_article_title: "Diff for article {{article}} from version {{from}} to {{to}}"
@@ -267,12 +267,12 @@ en:
       logout: Logout
       password: Password
       rememberMe: "Remember me"
-    statistics:
+    statistics: 
       browser: Browser
       conference: "Registration statistics for {{conference}}"
       country: Country
       operating_system: "Operating system"
-      registration:
+      registration: 
         approved_men: "Approved men"
         approved_registrations: "Approved registration"
         days_title: "Participance days statistics"
@@ -281,17 +281,16 @@ en:
         total_registrations: "Total registration"
         transport_from_title: "Transport from conference statistics"
         transport_to_title: "Transport to conference statistics"
-      title:
+      title: 
         browser_statistic: "Visitor's Browser Statistics"
+        conference: "Conference registration statistics"
         country_statistic: "Visitor's Country Statistic"
         full: "Statistics from 20th of April 2009"
         month: "Statistics for last month"
         os_statistic: "Visitor's Operating Systems Statistics"
         total_visitors: "Total visitors: {{count}}"
         week: "Statistics for last week"
-        conference: "Conference registration statistics"
       visits: Visits
-      
     user: 
       avator: "New photo:"
       city: Location
@@ -309,7 +308,7 @@ en:
       password: Password
       password_confirmation: "Password Confirmation"
       password_restore: "Password Restore"
-      password_restore_link: "Restore"
+      password_restore_link: Restore
       photo: Photo
       projects: "FOSS projects"
       register: Register
@@ -339,8 +338,8 @@ en:
           Login:    {{login}}
           Password: {{password}}
       restore: |-
-        Password restore was requested from {{ip}}. 
-        We reseted your password. Above you can find new login information.
+          Password restore was requested from {{ip}}. 
+          We reseted your password. Above you can find new login information.
     signature: |-
         -- 
         LVEE conference site's robot
@@ -351,35 +350,35 @@ en:
       password_restore: "Password restore for LVEE"
     title: "Hello, {{full_name}}"
   menu: 
+    admin: 
+      conference_registrations: "Conference registrations admin"
+      conferences: "Conferences admin"
+      info_mailer: "Mailer from info@lvee.org"
+      sponsors: "Sponsors admin"
+      statuses: "Statuses admin"
+      title: Admin
+      users: "Users admin"
     conference: 
       about: About
       attribution: Attribution
       history: History
       linux: GNU/Linux
-      payment: "Payments"
+      payment: Payment
       place: "Place of the conference"
       press: "In the press"
-      statistics: "Statistics"
+      statistics: Statistics
     contacts: 
       category: Contacts
       lug: LUG
       official: "Official Contacts"
       organizers: "Organization Board"
-    editor:
+    editor: 
       articles: "Article editor"
       image_uploader: "Image uploader"
       language: "Language editor"
       news: "News editor"
       rss: "Editor RSS"
-      title: "Editor"
-    admin:
-      title: "Admin"
-      users: "Users admin"
-      conferences: "Conferences admin"
-      statuses: "Statuses admin"
-      conference_registrations: "Conference registrations admin"
-      sponsors: "Sponsors admin"
-      info_mailer: "Mailer from info@lvee.org"
+      title: Editor
     main: Main
     reports: 
       about: "On presentations"
@@ -433,7 +432,6 @@ en:
       privacy: "Privacy Policy: We {{link}} your account information to anyone, including your email address."
       privacy_link: "don't sell"
       registred: "Thank you for registration"
-      
   number: 
     currency: 
       format: 
@@ -466,8 +464,8 @@ en:
     information_sponsor: "Information Partners"
     organizers: Organizers
     sponsors: "Sponsors of 2009"
-    technical_sponsor: "Technical sponsor"
     technical_partner: "Technical partner"
+    technical_sponsor: "Technical sponsor"
   support: 
     array: 
       last_word_connector: ", and "

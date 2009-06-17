@@ -366,10 +366,10 @@ be:
       attribution: Атрыбутыка
       history: Гісторыя
       linux: GNU/Linux
-      payment: Payment
+      payment: Аплата
       place: "Месца канферэнцыі"
       press: "У друку"
-      statistics: Statistics
+      statistics: Статыстыка
     contacts: 
       category: Кантакты
       lug: LUG
@@ -392,7 +392,7 @@ be:
     sponsors: Спонсары
     user: 
       category: Удзельнiкi
-      conference_registration: "Participants of the Conference"
+      conference_registration: Спiс
       profile: Профіль
       wiki: Wiki
   message: 

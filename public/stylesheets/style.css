@@ -272,7 +272,15 @@ a {
 	color: #414444;
 	text-decoration: none;
 	font-weight: bold;
-	}	
+}	
+
+.content .right li.sponsor{
+	margin-top: 40px
+}	
+
+.content .right ul.sponsors {
+  padding-bottom: 70px
+}
 	
 div.right ul li.logo-lvee {
     padding-top: 0;

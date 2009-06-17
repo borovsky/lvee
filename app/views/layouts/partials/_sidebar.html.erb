@@ -1,10 +1,10 @@
 <% sponsors = Sponsor.list %>
-<ul>
+<ul class="sponsors">
   <li class="logo-lvee">
     <a href="/"><img src="/images/logos/lvee.gif" alt="" /></a>
   </li>
   <% SPONSOR_TYPES.each do |type| -%>
-  <li><%= link_to(t("sidebar.#{type[1]}"), :controller => "articles",
+  <li class="sponsor"><%= link_to(t("sidebar.#{type[1]}"), :controller => "articles",
   :category => 'contacts', :name => 'index', :action => 'show') %>
     <ul>
       <%= render :partial => "layouts/partials/sponsor", :collection => sponsors[type[0]] %>
