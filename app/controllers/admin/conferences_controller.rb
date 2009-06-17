@@ -2,7 +2,7 @@ module Admin
   class ConferencesController < ApplicationController
     before_filter :admin_required, :scaffold_action
 
-    USER_CSV_COLUMNS = [:full_name, :email, :country, :city, :occupation, :projects]
+    USER_CSV_COLUMNS = [:login, :full_name, :email, :country, :city, :occupation, :projects]
     REGISTRATION_CSV_COLUMNS = [:status_name, :comment, :proposition, :quantity, :days, :meeting, :phone, :residence, :floor, :transport_to, :transport_from, :food, :tshirt]
 
     layout "admin"
