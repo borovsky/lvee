@@ -9,7 +9,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.namespace :admin, :namespace => "", :path_prefix =>":lang", :name_prefix => "" do |admin|
     admin.resources :users
-    admin.resources :conferences, :active_scaffold => true
+    admin.resources :conferences, :active_scaffold => true, :collection => {:csv => :get}
     admin.resources :conference_registrations, :active_scaffold => true, :collection => {:show_statistics => :get}
     admin.resources :statuses, :active_scaffold => true
     admin.resources :sponsors, :active_scaffold => true

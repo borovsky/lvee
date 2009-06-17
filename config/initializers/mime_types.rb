@@ -2,4 +2,5 @@
 
 # Add new mime types for use in respond_to blocks:
 Mime::Type.register "text/yaml", :yml
+Mime::Type.register "text/csv", :csv
 # Mime::Type.register_alias "text/html", :iphone
