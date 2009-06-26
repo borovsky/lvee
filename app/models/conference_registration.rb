@@ -2,6 +2,8 @@ class ConferenceRegistration < ActiveRecord::Base
   belongs_to :user
   belongs_to :conference
 
+  has_many :badges, :dependent => :delete_all
+
   validates_presence_of :user_id
   validates_presence_of :conference_id
   validates_presence_of :transport_to, :if => :check_transport
@@ -35,6 +37,18 @@ class ConferenceRegistration < ActiveRecord::Base
       !self.transport_from.blank?
   end
 
+  def populate_badges
+    if quantity
+      while badges.length < quantity
+        self.badges.create(:top => self.user.full_name, :bottom => self.user.from)
+      end
+
+      while badges.length > quantity
+        self.badges.delete(self.badges.last)
+      end
+    end
+  end
+
   protected
   def check_transport
     !admin && status_name == 'approved'
@@ -46,5 +60,9 @@ class ConferenceRegistration < ActiveRecord::Base
         I18n.t("activerecord.errors.messages.less_than_or_equal_to",
           :count => self.quantity_was)) if self.quantity_was && (self.quantity.to_i > self.quantity_was)
     end
+  end
+
+  def after_save
+    populate_badges
   end
 end

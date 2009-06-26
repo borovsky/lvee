@@ -15,6 +15,7 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :sponsors, :active_scaffold => true
     admin.mail_user 'users/:to_list/mail', :controller => "info_mailer", :action => "index"
   end
+
   map.namespace :editor, :namespace => "", :path_prefix =>":lang", :name_prefix => "" do |editor|
     editor.resources :languages
     editor.resources :image_uploads, :active_scaffold => true
@@ -69,7 +70,7 @@ ActionController::Routing::Routes.draw do |map|
       m.connect('conference_registrations/new/:conference_id',
         :controller => 'conference_registrations', :action => 'new')
       m.resources(:conference_registrations, :controller => 'conference_registrations',
-        :active_scaffold => true)
+        :active_scaffold => true, :member => {:badges => :any})
     end
     ns.resource  :session
 
@@ -79,8 +80,6 @@ ActionController::Routing::Routes.draw do |map|
 
   map.connect('participants', :controller=> "articles", :category => "conference",
     :action => "show", :name => "index")
-
-
 
   map.connect ':lang', :controller => "main", :action=>"index"
 end

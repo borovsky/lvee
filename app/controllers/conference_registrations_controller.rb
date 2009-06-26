@@ -41,6 +41,20 @@ class ConferenceRegistrationsController < ApplicationController
       :order => "users.country ASC, users.city ASC, users.last_name ASC, users.first_name")
   end
 
+  def badges
+    @conference_registration = ConferenceRegistration.find(params[:id])
+    @conference = @conference_registration.conference
+    if params[:badges]
+      @conference_registration.badges.clear
+      params[:badges].each  do|b|
+        @conference_registration.badges.create!(b)
+      end
+      redirect_to user_path(:id => params[:user_id])
+    else
+      @badges = @conference_registration.badges
+    end
+  end
+
   protected
   def current_user_only
     login_required

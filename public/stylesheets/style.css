@@ -203,7 +203,7 @@ a {
 	}
 
 a.big-button {
-	display: block;
+	display: inline-block;
 	color: #fff;
 	background: url(/images/button-join.png) no-repeat bottom left;
 	width: 500px;
@@ -216,6 +216,22 @@ a.big-button {
 	
 a.big-button:hover {
 	  background: url(/images/button-join.png) no-repeat top left;
+}
+
+a.small-button {
+	display: inline-block;
+	color: #fff;
+	background: url(/images/button-small.png) no-repeat bottom left;
+	width: 150px;
+	height: 49px;
+	text-align: center;
+	text-decoration: none;
+	font-size: 24px;
+	line-height: 40px;
+	}
+	
+a.small-button:hover {
+	  background: url(/images/button-small.png) no-repeat top left;
 }
 
 	
@@ -533,3 +549,39 @@ table.data {
 #diff h1 {
     padding-top: 0px;
 }
+
+#badges .badge {
+    width: 673px;
+    height: 408px;
+    background: url(/images/badge.png) no-repeat bottom left;
+    margin-bottom: 20px;
+}
+
+#badges .badge input {
+    border: 1px solid #1492A3;
+    background:#FFFFCC;
+    position: relative;
+    text-align: center;
+}
+
+#badges .badge .tags {
+    left: 300px;
+    width: 350px;
+    top: 10px;
+    font-size: 20px;
+}
+
+#badges .badge .top {
+    left: 28px;
+    width: 621px;
+    top: 224px;
+    font-size: 30px;
+}
+
+#badges .badge .bottom {
+    left: 28px;
+    width: 621px;
+    top: 257px;
+    font-size: 30px;
+}
+

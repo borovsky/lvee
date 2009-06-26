@@ -163,6 +163,10 @@ be:
       name: Назва
       new: "Новы артыкул"
       title: Загаловак
+    badge: 
+      bottom: Bottom
+      tags: Tags
+      top: Top
     common: 
       _select_: Вылучыць
       back: Назад
@@ -202,6 +206,8 @@ be:
       upcoming: "Найбліжэйшыя канферэнцыі"
     conference_registration: 
       approved_edit: "Confirm participation in {{conference}}"
+      badges: Badges
+      badges_title: "Badges for {{conference}}"
       days: "Дні ўдзелу"
       edit: " {{conference}} participant's data"
       floor: "Can you sleep on the floor?"

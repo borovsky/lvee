@@ -230,6 +230,10 @@ hu:
       name: Név
       new: "Új cikk"
       title: Cím
+    badge: 
+      bottom: Bottom
+      tags: Tags
+      top: Top
     common: 
       _select_: Kiválasztás
       back: Vissza
@@ -269,6 +273,8 @@ hu:
       upcoming: "Soronkövetkező konferenciák"
     conference_registration: 
       approved_edit: "Confirm participation in {{conference}}"
+      badges: Badges
+      badges_title: "Badges for {{conference}}"
       days: "Részvételi napok"
       edit: " {{conference}} participant's data"
       floor: "Can you sleep on the floor?"

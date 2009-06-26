@@ -230,6 +230,10 @@ ru:
       name: Название
       new: "Новая статья"
       title: Заголовок
+    badge: 
+      bottom: Bottom
+      tags: Tags
+      top: Top
     common: 
       _select_: Выберите
       back: Назад
@@ -269,6 +273,8 @@ ru:
       upcoming: "Ближайшие конференции"
     conference_registration: 
       approved_edit: "Подтвердить участие в  {{conference}}"
+      badges: Badges
+      badges_title: "Беджи для {{conference}}"
       days: "Дни участия"
       edit: "Анкета участника {{conference}}"
       floor: "Готовы ли вы спать на полу?"

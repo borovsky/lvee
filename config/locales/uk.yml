@@ -231,6 +231,10 @@ uk:
       name: Назва
       new: "Нова стаття"
       title: Заголовок
+    badge: 
+      bottom: Bottom
+      tags: Tags
+      top: Top
     common: 
       _select_: Виберіть
       back: Назад
@@ -270,6 +274,8 @@ uk:
       upcoming: "Найближчі конференції"
     conference_registration: 
       approved_edit: "Confirm participation in {{conference}}"
+      badges: Badges
+      badges_title: "Badges for {{conference}}"
       days: "Дні участі"
       edit: " {{conference}} participant's data"
       floor: "Can you sleep on the floor?"

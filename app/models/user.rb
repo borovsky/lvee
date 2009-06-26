@@ -49,6 +49,10 @@ class User < ActiveRecord::Base
     "#{first_name} #{last_name}"
   end
 
+  def from
+    "#{city}, #{country}"
+  end
+
   # Activates the user in the database.
   def activate
     @activated = true

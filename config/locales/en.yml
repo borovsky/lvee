@@ -160,6 +160,10 @@ en:
       name: Name
       new: "New Article"
       title: Title
+    badge:
+      bottom: Bottom
+      tags: Tags
+      top: Top
     common: 
       _select_: Select
       back: Back
@@ -199,6 +203,8 @@ en:
       upcoming: "Upcoming conferences"
     conference_registration: 
       approved_edit: "Confirm participation in {{conference}}"
+      badges: "Badges"
+      badges_title: "Badges for {{conference}}"
       days: "Participation days"
       edit: " {{conference}} participant's data"
       floor: "Can you sleep on the floor?"
