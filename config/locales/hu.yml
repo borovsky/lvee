@@ -259,7 +259,7 @@ hu:
       name: Elnevezés
       new: "Új konferencia"
       participated: "Ön részt vett"
-      register: Regisztráció
+      register: "Register to {{conference}}"
       registration_closed: "Regisztráció lezárva"
       registration_opened: Nyitva
       registration_opened?: "Regisztráció nyitva?"
@@ -268,7 +268,9 @@ hu:
       start_date: Kezdőnap
       upcoming: "Soronkövetkező konferenciák"
     conference_registration: 
+      approved_edit: "Confirm participation in {{conference}}"
       days: "Részvételi napok"
+      edit: " {{conference}} participant's data"
       floor: "Can you sleep on the floor?"
       food: "Étkezéssel kapcsolatos kívánságok"
       index: Konferenciaregisztrációk

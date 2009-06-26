@@ -28,6 +28,13 @@ class ConferenceRegistration < ActiveRecord::Base
       :include => [:conference, :user])
   end
 
+  def filled
+    ((self.quantity || 0) > 0) and
+      !self.days.blank? and
+      !self.transport_to.blank? and
+      !self.transport_from.blank?
+  end
+
   protected
   def check_transport
     !admin && status_name == 'approved'

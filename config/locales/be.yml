@@ -192,7 +192,7 @@ be:
       name: Назва
       new: "Новая канферэнцыя"
       participated: "Вы бралі ўдзел"
-      register: Зарэгістравацца
+      register: "Зарэгістравацца на {{conference}}"
       registration_closed: закрыта
       registration_opened: адкрыта
       registration_opened?: "Рэгістрацыя адкрытая?"
@@ -201,7 +201,9 @@ be:
       start_date: "Дата пачатку"
       upcoming: "Найбліжэйшыя канферэнцыі"
     conference_registration: 
+      approved_edit: "Confirm participation in {{conference}}"
       days: "Дні ўдзелу"
+      edit: " {{conference}} participant's data"
       floor: "Can you sleep on the floor?"
       food: "Пераважная дыета"
       index: "Рэгістрацыі на канферэнцыю"

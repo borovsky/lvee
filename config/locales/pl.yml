@@ -197,7 +197,7 @@ pl:
       name: Nazwa
       new: "Nowa konferencja"
       participated: "Brałeś udział"
-      register: "Zarejestrować się"
+      register: "Register to {{conference}}"
       registration_closed: zamknięta
       registration_opened: otwarta
       registration_opened?: "Rejestracja otwarta?"
@@ -206,7 +206,9 @@ pl:
       start_date: "Data rozpoczęcia"
       upcoming: "Najbliższe konferencje"
     conference_registration: 
+      approved_edit: "Confirm participation in {{conference}}"
       days: "Dni uczestnictwa"
+      edit: " {{conference}} participant's data"
       floor: "Can you sleep on the floor?"
       food: "Upodobania w jedzeniu"
       index: "Rejestracja na konferencję"

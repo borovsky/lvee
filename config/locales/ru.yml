@@ -259,7 +259,7 @@ ru:
       name: Название
       new: "Новая конференция"
       participated: "Вы принимали участие"
-      register: Зарегистрироваться
+      register: "Зарегистрироваться на {{conference}}"
       registration_closed: закрыта
       registration_opened: открыта
       registration_opened?: "Регистрация открыта?"
@@ -268,7 +268,9 @@ ru:
       start_date: "Дата начала"
       upcoming: "Ближайшие конференции"
     conference_registration: 
+      approved_edit: "Подтвердить участие в  {{conference}}"
       days: "Дни участия"
+      edit: "Анкета участника {{conference}}"
       floor: "Готовы ли вы спать на полу?"
       food: "Предпочтения в диете"
       index: "Регистрации на конференции"

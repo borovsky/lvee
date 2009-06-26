@@ -190,7 +190,7 @@ a {
 	display: block;
 	color: #fff;
 	background: url(/images/button-join.png) no-repeat bottom left;
-	width: 385px;
+	width: 500px;
 	height: 49px;
 	text-align: center;
 	text-decoration: none;
@@ -201,6 +201,23 @@ a {
 .button-join a:hover {
 	background: url(/images/button-join.png) no-repeat top left;
 	}
+
+a.big-button {
+	display: block;
+	color: #fff;
+	background: url(/images/button-join.png) no-repeat bottom left;
+	width: 500px;
+	height: 49px;
+	text-align: center;
+	text-decoration: none;
+	font-size: 24px;
+	line-height: 40px;
+	}
+	
+a.big-button:hover {
+	  background: url(/images/button-join.png) no-repeat top left;
+}
+
 	
 .box-banner {
 	width: 374px;

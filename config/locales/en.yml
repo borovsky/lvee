@@ -189,7 +189,7 @@ en:
       name: Name
       new: "New conference"
       participated: "You have participated"
-      register: Register
+      register: "Register to {{conference}}"
       registration_closed: closed
       registration_opened: opened
       registration_opened?: "Registration opened?"
@@ -198,7 +198,9 @@ en:
       start_date: "Start date"
       upcoming: "Upcoming conferences"
     conference_registration: 
+      approved_edit: "Confirm participation in {{conference}}"
       days: "Participation days"
+      edit: " {{conference}} participant's data"
       floor: "Can you sleep on the floor?"
       food: "Preferred food"
       index: "Registration to conference"

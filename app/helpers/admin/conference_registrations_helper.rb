@@ -22,10 +22,7 @@ module Admin
     end
 
     def filled_column(record)
-      ((record.quantity || 0) > 0) and
-        !record.days.blank? and
-        !record.transport_to.blank? and
-        !record.transport_from.blank?
+      record.filled
     end
 
     def status_name_form_column(record, input_name)
