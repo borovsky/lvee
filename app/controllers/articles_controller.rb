@@ -124,7 +124,7 @@ class ArticlesController < ApplicationController
 
   protected
   def render_article(article)
-    render_to_string :partial=> "/articles/article", :locals => {:article => article}
+    render_to_string :partial=> "/articles/diff_article", :locals => {:article => article}
   end
 
   def load_article_by_category

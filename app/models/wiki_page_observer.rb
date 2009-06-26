@@ -1,12 +1,14 @@
 class WikiPageObserver < ActiveRecord::Observer
   include DiffHelper
+  include ActionView::Helpers::TextHelper
+  include ActionView::Helpers::TagHelper
 
   WIKI_PAGE_CREATED = "wiki_page_created"
   WIKI_PAGE_CHANGED = "wiki_page_changed"
 
   def render_wiki_page(page)
-    body = "<h1>#{h(page.name)}</h1>"
-    body << textilize(page.body)
+    body = "<h1>#{page.name}</h1>"
+    body << simple_format(page.body)
     body
   end
 
@@ -28,5 +30,7 @@ class WikiPageObserver < ActiveRecord::Observer
       :user_name => user_name, :object_name => object_name, :public => true)
     log.save
   rescue Exception => e
+    puts e.message
+    puts e.backtrace.join
   end
 end

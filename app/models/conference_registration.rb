@@ -37,8 +37,7 @@ class ConferenceRegistration < ActiveRecord::Base
     if status_name == APPROVED_STATUS
       self.errors.add("quantity",
         I18n.t("activerecord.errors.messages.less_than_or_equal_to",
-          :count => self.quantity_was)) if self.quantity.to_i > self.quantity_was
-
+          :count => self.quantity_was)) if self.quantity_was && (self.quantity.to_i > self.quantity_was)
     end
   end
 end

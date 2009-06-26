@@ -88,7 +88,7 @@ class WikiPagesController < ApplicationController
 
   protected
   def render_wiki_page(page)
-    render_to_string :partial=> "/wiki_pages/wiki_page", :locals => {:wiki_page => page}
+    render_to_string :partial=> "/wiki_pages/diff_wiki_page", :locals => {:wiki_page => page}
   end
 
   def load_wiki_page_by_name

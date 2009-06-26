@@ -1,12 +1,14 @@
 class ArticleObserver < ActiveRecord::Observer
   include DiffHelper
+  include ActionView::Helpers::TextHelper
+  include ActionView::Helpers::TagHelper
 
   ARTICLE_CREATED = "article_created"
   ARTICLE_CHANGED = "article_changed"
 
   def render_article(article)
     body = "<h1>#{h(article.title)}</h1>"
-    body << textilize(article.body)
+    body << simple_format(article.body)
     body
   end
 
@@ -30,5 +32,7 @@ class ArticleObserver < ActiveRecord::Observer
       log.save
     end
   rescue Exception => e
+    puts e.message
+    puts e.backtrace.join
   end
 end

@@ -52,7 +52,8 @@ describe Admin::UsersController do
       @reg = ConferenceRegistration.create!(:conference => @conference, :user => @user,
         :status_name => "approved",
         :transport_from => "bus_minsk",
-        :transport_to => "bus_minsk"
+        :transport_to => "bus_minsk",
+        :quantity => 1
         )
 
       get :index, :format=>'html'
