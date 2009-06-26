@@ -273,7 +273,7 @@ ru:
       upcoming: "Ближайшие конференции"
     conference_registration: 
       approved_edit: "Подтвердить участие в  {{conference}}"
-      badges: Badges
+      badges: Беджи
       badges_title: "Беджи для {{conference}}"
       days: "Дни участия"
       edit: "Анкета участника {{conference}}"
