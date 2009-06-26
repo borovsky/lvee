@@ -36,7 +36,7 @@ class ConferenceStatisticsPresenter
     def update_statistics(reg)
       add_statistics :total_registrations
       add_statistics :total_men, reg.quantity
-      if reg.status_name == APPROVED_STATUS
+      if reg.approved?
         add_statistics :approved_registrations
         add_statistics :approved_men, reg.quantity
 

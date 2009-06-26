@@ -20,12 +20,12 @@
 <% regs.each  do |reg| -%>
 <% conf = reg.conference -%>
   <p>
-    <% type = (reg.status_name == "approved" ? (reg.filled ?
+    <% type = (reg.approved? ? (reg.filled ?
     "edit" : "approved_edit") : "edit") %>
     <% title = "label.conference_registration." + type %>
     <%= link_to(t(title, :conference => conf.name), edit_user_conference_registration_path(:user_id => user_id, :id => reg.id),
     :class => "big-button")%>
-    <% if reg.status_name == "approved" and reg.filled -%>
+    <% if reg.approved? and reg.filled -%>
     <%= link_to(t("label.conference_registration.badges"), badges_user_conference_registration_path(:user_id => user_id, :id => reg.id),
     :class => "small-button")%>
     <% end -%>

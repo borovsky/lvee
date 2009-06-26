@@ -45,10 +45,12 @@ module Admin
         badges = conf.badges
         badges.each do |badge|
           user = badge.conference_registration.user
-          row = BADGE_USER_COLUMNS.map {|c| user.send(c) }
-          row += BADGE_COLUMNS.map {|c| badge.send(c) }
-          row.map!{ |i| i.to_s.gsub("\n", " ").gsub("\r", " ")}
-          csv << row
+          if badge.conference_registration.approved?
+            row = BADGE_USER_COLUMNS.map {|c| user.send(c) }
+            row += BADGE_COLUMNS.map {|c| badge.send(c) }
+            row.map!{ |i| i.to_s.gsub("\n", " ").gsub("\r", " ")}
+            csv << row
+          end
         end
       end
       render :text => out, :content_type => "text/csv"

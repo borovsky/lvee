@@ -21,7 +21,11 @@ class ConferenceRegistration < ActiveRecord::Base
 
   def status=(status)
     self.status_name = status.name
-    @staqtus = status
+    @status = status
+  end
+
+  def approved?
+    status_name == APPROVED_STATUS
   end
 
   def self.find_actual_for_user(user_id)
@@ -51,7 +55,7 @@ class ConferenceRegistration < ActiveRecord::Base
 
   protected
   def check_transport
-    !admin && status_name == 'approved'
+    !admin && approved?
   end
 
   def validate
