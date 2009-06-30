@@ -8,7 +8,7 @@ class WikiPageObserver < ActiveRecord::Observer
 
   def render_wiki_page(page)
     body = "<h1>#{page.name}</h1>"
-    body << simple_format(page.body)
+    body << simple_format(h(page.body))
     body
   end
 

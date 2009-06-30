@@ -8,7 +8,7 @@ class ArticleObserver < ActiveRecord::Observer
 
   def render_article(article)
     body = "<h1>#{h(article.title)}</h1>"
-    body << simple_format(article.body)
+    body << simple_format(h(article.body))
     body
   end
 
