@@ -6,6 +6,7 @@
   <meta name="description" content="<%= h @description %>" />
 
   <%= stylesheet_link_tag "style" %>
+  <%= stylesheet_link_tag "print", :media => "print" %>
   <%= javascript_include_tag "prototype", "menu" %>
   <%= javascript_include_tag "admin" if admin?%>
   <% if @active_scaffold %>

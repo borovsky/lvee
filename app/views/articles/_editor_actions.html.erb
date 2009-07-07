@@ -1,4 +1,4 @@
-<p>
+<p class="controls">
   <%= link_to t('label.common.view_changes'), diff_article_path(:id => article.id) %> |
   <% if article.translated? %>
     <%= link_to t('label.common.editTranslation'), edit_article_path(:id => article.id) %>

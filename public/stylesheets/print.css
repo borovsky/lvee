@@ -1,0 +1,32 @@
+.header {
+    display: none;
+}
+
+.flags {
+    display:none;
+}
+
+.sponsors {
+    display: none;
+}
+
+.footer .column {
+    display: none
+}
+
+.footer .copy {
+    display: block;
+    font-size: 80%;
+}
+
+p.notice {
+    display: none;
+}
+
+p.warn {
+    display: none;
+}
+
+p.controls {
+    display: none;
+}
