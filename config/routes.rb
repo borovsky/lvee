@@ -1,11 +1,13 @@
 ActionController::Routing::Routes.draw do |map|
   map.root :controller => "main", :action=>"select_lang"
 
+
   map.connect 'djs/ie_fuck.js', :controller => 'djs_css', :action => 'ie_fuck'
 
   map.connect 'activate/:activation_code', :controller => 'users', :action => 'activate'
   map.connect 'sitemap.xml', :controller => 'main', :action => 'sitemap'
   map.connect 'sitemap-news.xml', :controller => 'main', :action => 'sitemap_news'
+  map.connect 'tracker', :controller => 'admin/tracker', :action => 'tracker'
 
   map.namespace :admin, :namespace => "", :path_prefix =>":lang", :name_prefix => "" do |admin|
     admin.resources :users

@@ -72,4 +72,6 @@ Rails::Initializer.run do |config|
 
   config.gem "jnunemaker-happymapper", :lib => 'happymapper'
   config.gem "garb"
+
+  config.gem "bencode"
 end
