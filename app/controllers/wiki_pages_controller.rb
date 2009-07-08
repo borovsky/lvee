@@ -58,11 +58,17 @@ class WikiPagesController < ApplicationController
     @title = t('label.wiki_page.creating')
 
     respond_to do |format|
-      if @wiki_page.update_attributes(params[:wiki_page])
-        flash[:notice] = 'WikiPage was successfully updated.'
-        format.html { redirect_to(wiki_page_path(:id=>@wiki_page.name)) }
-        format.xml  { head :ok }
-      else
+      begin
+        if @wiki_page.update_attributes(params[:wiki_page])
+          flash[:notice] = 'WikiPage was successfully updated.'
+          format.html { redirect_to(wiki_page_path(:id=>@wiki_page.name)) }
+          format.xml  { head :ok }
+        else
+          format.html { render :action => "edit" }
+          format.xml  { render :xml => @wiki_page.errors, :status => :unprocessable_entity }
+        end
+      rescue ActiveRecord::StaleObjectError => e
+        flash[:error] = "WikiPage modified by other user. Please return to previous page, reload it and apply your changes."
         format.html { render :action => "edit" }
         format.xml  { render :xml => @wiki_page.errors, :status => :unprocessable_entity }
       end

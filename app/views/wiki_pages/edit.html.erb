@@ -5,6 +5,7 @@
 <% form_for(@wiki_page, :url => wiki_page_path(:id => @wiki_page.name)) do |f| %>
   <%= f.error_messages %>
 
+  <%= hidden_field "wiki_page", "version" %>
   <%= render :partial => "form" , :locals => {:f => f}%>
 
   <p>
