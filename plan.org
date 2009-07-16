@@ -1,25 +1,6 @@
 
 * What we need to do
 
-** Add tests [3/3]
-*** DONE Add tests for registration
-*** DONE Add tests for news
-*** DONE Add tests for login
-
-** Add ability to use existant account for 2009 [2/2]
-*** DONE [#A] Update database
-*** DONE [#A] Add interface for add new year assignment
-
-** Translations [3/3]
-*** DONE [#A] Add messages translations
-*** DONE [#A] Make news language-dependant (translation for news)
-*** DONE [#B] Add RSS for news
-
-** Content edit [3/3]
-*** DONE [#A] Add editor for articles (with translation support)
-*** DONE [#B] Add version control
-*** DONE [#B] Add changes notifications (Editors' RSS?)
-
 ** Misc [3/4]
 *** DONE [#A] Add normal role support (normal user/editor/admin)
 *** TODO [#C] Add report thesis editor to site (with versioning, RSS, comments, etc)
@@ -29,71 +10,118 @@
 ** Add new design [1/2]
 *** DONE Add DiAnton's design
 *** TODO Add normal design
-
 * New
-** Todo [10/11]
-
-*** DONE [#A] Fix language switch for articles
-
-*** DONE [#B] Admin panel with account statuses 
-
-*** DONE [#B] Admin panel with mass mail
-
-*** DONE [#B] "Чем грамотней и точнее вы ответите. тем проще будет с вами связаться"
-
-*** DONE [#A] Организация коротко
-
-*** DONE [#B] Sponsor? organizer. sponsor, information sponsor, technical sponsor
-
-*** TODO [#C] курсы валют 
-
-*** DONE [#A] Avators 150x200 (желательно с лицом)
-
-*** DONE [#A] Upload images to server for editor
-
-*** DONE City and Country - separate fields
-
-*** DONE [#C] Statistics
-
-- Статистика: за последнюю неделю, за последний месяц, с момента объявления конференции
-- отчёты: Посетители по странам
-
-** Mailman
-*** DONE [#A] mailman subscribtion during registration (option)
-(Organizers maillist)
-
-*** DONE [#A] User status (per conference): organizer, sponsor, user, reporter (admin edit)
-
-*** TODO [#C] Payment status (per conference): shouldn't pay, should pay, payed (сумма)
-
-** Additional fields [8/9]: 
-
-*** DONE [#A] add checkbox with which days user will go
-
-*** DONE [#A] Предпочтения в еде (вегетарианец/обычный/...) chackbox + field
-
-*** DONE [#A] Способ добирания до места (сам/маршрутка... / откуда куда) поле
-
-*** DONE [#A] Размер футболки
-
-*** DONE [#A] Встречать? где и когда
-
-*** DONE [#B] Текст о нераспространении [cоnference/privacy]
-
-*** DONE [#A] Телефон (с кодом)
-
-*** DONE [#A] Some ui fixes
-[09:44:55] Dmitriy Kostiuk: 1) пояснения к полям я бы тоже вертикально выравнивал по центру поля ввода (ну, это мы обсуждали вроде раньше, так что видимо чисто потому что тестовая форма)
-[09:45:17] Partizan: ок
-[09:45:17] Dmitriy Kostiuk: 2) галочка для подписки на мэйллист с выравниванием как-то не того ;)
-[09:44:44] Partizan: выбор страны пока сломан 
-[09:45:56] Partizan: ещё переводы заголовка и кнопок
-
-*** TODO [#C] Other
-не платит: докладчик, спонсор
 
 ** later
 *** TODO [#C] Предпочтения по расселению
 *** TODO [#C] Сколько платить
 
 *** TODO Add title tag population for all pages
+
+*** TODO Torrent tracker
+*** TODO Photo gallery
+*** TODO Refactor diff design
+*** TODO [#C] курсы валют 
+*** TODO [#C] Payment status (per conference): shouldn't pay, should pay, payed (сумма)
+
+*** TODO [#B] Archive                                                  :ARCHIVE:
+
+**** Add tests [3/3]
+     :PROPERTIES:
+     :ARCHIVE_TIME: 2009-07-16 Чтв 13:35
+     :END:
+***** DONE Add tests for registration
+***** DONE Add tests for news
+***** DONE Add tests for login
+
+**** Add ability to use existant account for 2009 [2/2]
+     :PROPERTIES:
+     :ARCHIVE_TIME: 2009-07-16 Чтв 13:35
+     :END:
+***** DONE [#A] Update database
+***** DONE [#A] Add interface for add new year assignment
+
+**** Translations [3/3]
+     :PROPERTIES:
+     :ARCHIVE_TIME: 2009-07-16 Чтв 13:35
+     :END:
+***** DONE [#A] Add messages translations
+***** DONE [#A] Make news language-dependant (translation for news)
+***** DONE [#B] Add RSS for news
+
+**** Content edit [3/3]
+     :PROPERTIES:
+     :ARCHIVE_TIME: 2009-07-16 Чтв 13:35
+     :END:
+***** DONE [#A] Add editor for articles (with translation support)
+***** DONE [#B] Add version control
+***** DONE [#B] Add changes notifications (Editors' RSS?)
+
+
+* Archive                                                              :ARCHIVE:
+*** Todo [10/11]
+    :PROPERTIES:
+    :ARCHIVE_TIME: 2009-07-16 Чтв 13:36
+    :END:
+
+**** DONE [#A] Fix language switch for articles
+
+**** DONE [#B] Admin panel with account statuses 
+
+**** DONE [#B] Admin panel with mass mail
+
+**** DONE [#B] "Чем грамотней и точнее вы ответите. тем проще будет с вами связаться"
+
+**** DONE [#A] Организация коротко
+
+**** DONE [#B] Sponsor? organizer. sponsor, information sponsor, technical sponsor
+
+**** DONE [#A] Avators 150x200 (желательно с лицом)
+
+**** DONE [#A] Upload images to server for editor
+
+**** DONE City and Country - separate fields
+
+**** DONE [#C] Statistics
+
+- Статистика: за последнюю неделю, за последний месяц, с момента объявления конференции
+- отчёты: Посетители по странам
+
+*** Mailman
+    :PROPERTIES:
+    :ARCHIVE_TIME: 2009-07-16 Чтв 13:36
+    :END:
+**** DONE [#A] mailman subscribtion during registration (option)
+(Organizers maillist)
+
+**** DONE [#A] User status (per conference): organizer, sponsor, user, reporter (admin edit)
+
+
+
+*** Additional fields [9/9]:
+    :PROPERTIES:
+    :ARCHIVE_TIME: 2009-07-16 Чтв 13:37
+    :END: 
+
+**** DONE [#A] add checkbox with which days user will go
+
+**** DONE [#A] Предпочтения в еде (вегетарианец/обычный/...) chackbox + field
+
+**** DONE [#A] Способ добирания до места (сам/маршрутка... / откуда куда) поле
+
+**** DONE [#A] Размер футболки
+
+**** DONE [#A] Встречать? где и когда
+
+**** DONE [#B] Текст о нераспространении [cоnference/privacy]
+
+**** DONE [#A] Телефон (с кодом)
+
+**** DONE [#A] Some ui fixes
+[09:44:55] Dmitriy Kostiuk: 1) пояснения к полям я бы тоже вертикально выравнивал по центру поля ввода (ну, это мы обсуждали вроде раньше, так что видимо чисто потому что тестовая форма)
+[09:45:17] Partizan: ок
+[09:45:17] Dmitriy Kostiuk: 2) галочка для подписки на мэйллист с выравниванием как-то не того ;)
+[09:44:44] Partizan: выбор страны пока сломан 
+[09:45:56] Partizan: ещё переводы заголовка и кнопок
+
+
