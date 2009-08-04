@@ -11,7 +11,7 @@
 <% @wiki_pages.each_with_index do |wiki_page, i| %>
   <tr class="<%= (i % 2 == 0) ? 'even' : 'odd' %>">
     <td><%=h wiki_page.name %></td>
-    <td><%=h wiki_page.user.full_name %></td>
+    <td><%=h wiki_page.user ? wiki_page.user.full_name : "Unknown" %></td>
     <td><%= link_to t('label.common.show'), wiki_page_path(:id => wiki_page.name) %></td>
     <td><%= link_to t('label.common.edit'), edit_wiki_page_path(:id => wiki_page.name) %></td>
   </tr>
