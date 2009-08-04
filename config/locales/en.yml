@@ -160,7 +160,7 @@ en:
       name: Name
       new: "New Article"
       title: Title
-    badge:
+    badge: 
       bottom: Bottom
       tags: Tags
       top: Top
@@ -203,7 +203,7 @@ en:
       upcoming: "Upcoming conferences"
     conference_registration: 
       approved_edit: "Confirm participation in {{conference}}"
-      badges: "Badges"
+      badges: Badges
       badges_title: "Badges for {{conference}}"
       days: "Participation days"
       edit: " {{conference}} participant's data"
@@ -469,10 +469,10 @@ en:
       format: 
         delimiter: ""
   sidebar: 
-    information_sponsor: "Information Partners"
+    information_sponsor: "Information partners"
     organizers: Organizers
     sponsors: "Sponsors of 2009"
-    technical_partner: "Technical partner"
+    technical_partner: "Technical partners"
     technical_sponsor: "Technical sponsor"
   support: 
     array: 
