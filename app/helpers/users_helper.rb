@@ -11,7 +11,6 @@ module UsersHelper
     priority = PRIORITY_COUNTRIES
     select_options = {:prompt => as_(:_select_)}
     select_options.merge!(options)
-    p column.options
     country_select(:record, column.name, column.options[:priority] || priority, select_options, column.options)
   end
 

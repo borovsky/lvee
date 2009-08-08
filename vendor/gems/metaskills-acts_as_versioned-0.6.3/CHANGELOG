@@ -3,6 +3,10 @@
 
   * 
 
+[0.6.3]
+  
+  * (04 Apr 2009) Remove :dependent => :delete_all options as it is hard to override with 
+    association_options. [Ken Collins]
 
 [0.6.2]
 

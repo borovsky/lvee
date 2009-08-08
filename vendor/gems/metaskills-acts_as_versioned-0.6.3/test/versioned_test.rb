@@ -252,13 +252,12 @@ class VersionedTest < AAVTestCase
   test "referential integrity" do
     pages(:welcome).destroy
     assert_equal 0, Page.count
-    assert_equal 0, Page::Version.count
+    assert_equal 2, Page::Version.count
   end
 
   test "association options" do
     association = Page.reflect_on_association(:versions)
     options = association.options
-    assert_equal :delete_all, options[:dependent]
     association = Widget.reflect_on_association(:versions)
     options = association.options
     assert_equal :nullify, options[:dependent]
@@ -269,7 +268,7 @@ class VersionedTest < AAVTestCase
     assert_equal 1, Widget.versioned_class.count
     widget.destroy
     assert_equal 0, Widget.count
-    assert_equal 1, Widget.versioned_class.count
+    assert_equal 1, Widget::Version.count
   end
 
   test "versioned records should belong to parent" do

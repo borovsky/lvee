@@ -1,5 +1,7 @@
 --- 
 en: 
+  active_scaffold:
+    are_you_sure: "Are you sure?"
   activerecord: 
     errors: 
       messages: 
@@ -206,7 +208,6 @@ en:
       badges: Badges
       badges_title: "Badges for {{conference}}"
       days: "Participation days"
-      edit: " {{conference}} participant's data"
       floor: "Can you sleep on the floor?"
       food: "Preferred food"
       index: "Registration to conference"
@@ -228,6 +229,7 @@ en:
         bus_minsk: "Minibus from Minsk"
         independent: Independent
       tshirt: "T-Shirt size"
+      update_model: "Conference Registration"
     diff: 
       change_article_title: "Diff for article {{article}} from version {{from}} to {{to}}"
       change_wiki_title: "Diff for page '{{wiki_page}}' from version {{from}} to {{to}}"
@@ -323,6 +325,7 @@ en:
       subscribed: "Subscribe to maillist"
       title: "{{full_name}} ({{login}}), your profile is in your hands"
       to_profile: "To your profile"
+      update_model: "Edit your personal data"
     wiki_page: 
       body: Body
       creating: "Creating Wiki Page"

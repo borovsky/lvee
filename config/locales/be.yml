@@ -1,5 +1,7 @@
 --- 
 be: 
+  active_scaffold: 
+    are_you_sure: "Are you sure?"
   activerecord: 
     errors: 
       messages: 
@@ -231,6 +233,7 @@ be:
         bus_minsk: "Minibus from Minsk"
         independent: Самастойна
       tshirt: "Памер футболкі"
+      update_model: "Conference Registration"
     diff: 
       change_article_title: "Diff for article {{article}} from version {{from}} to {{to}}"
       change_wiki_title: "Diff for page '{{wiki_page}}' from version {{from}} to {{to}}"
@@ -326,6 +329,7 @@ be:
       subscribed: "Падпісацца на спіс рассылкі"
       title: "{{full_name}} ({{login}}), ваш профіль - ваша справа"
       to_profile: "Да вашага профіля"
+      update_model: "Edit your personal data"
     wiki_page: 
       body: Body
       creating: "Стварыць Wiki старонку"

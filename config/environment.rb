@@ -76,4 +76,6 @@ Rails::Initializer.run do |config|
   config.gem "rspec", :version => "1.2.8", :lib => "spec"
   config.gem "rspec-rails", :version => "1.2.7.1", :lib => 'spec/rails'
   config.gem "mocha", :version => "0.9.7"
+
+  config.gem 'metaskills-acts_as_versioned', :version => "0.6.3", :lib => 'acts_as_versioned'
 end
