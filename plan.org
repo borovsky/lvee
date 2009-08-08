@@ -1,5 +1,9 @@
 
 * What we need to do
+** Maillist [0/2]
+*** TODO Add to profile registration to talks@
+*** TODO Make maillist@ readonly for all except me 
+
 
 ** Misc [3/4]
 *** DONE [#A] Add normal role support (normal user/editor/admin)
