@@ -73,4 +73,7 @@ Rails::Initializer.run do |config|
   config.gem "garb"
 
   config.gem "bencode"
+  config.gem "rspec", :version => "1.2.8", :lib => "spec"
+  config.gem "rspec-rails", :version => "1.2.7.1", :lib => 'spec/rails'
+  config.gem "mocha", :version => "0.9.7"
 end
