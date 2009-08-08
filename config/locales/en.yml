@@ -149,7 +149,8 @@ en:
       password: "At least 4 symbols"
       password_confirmation: "Same as password"
       projects: "Free / Open Source Software (FOSS) projects where you have taken or are taking part in and your role in them"
-      subscribed: ""
+      subscribed: "This option allows to receive news and other useful information from the Conference organizers."
+      subscribed_talks: "By choosing this You are going to take part in working discussions on the Conference preparing and carrying on. Being a volunteer project, LVEE is often subject to shortage of performers, and therefore we recomend to activate this option and to actively participate in work of the organization board."
   label: 
     article: 
       body: Body
@@ -322,7 +323,8 @@ en:
       photo: Photo
       projects: "FOSS projects"
       register: Register
-      subscribed: "Subscribe to maillist"
+      subscribed: "Subscribe to information maillist"
+      subscribed_talks: "Subscribe to organization board talks mailllist"
       title: "{{full_name}} ({{login}}), your profile is in your hands"
       to_profile: "To your profile"
       update_model: "Edit your personal data"

@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
 
   USER_EDITABLE_COLUMNS = [:password, :password_confirmation, :email, :first_name, :last_name, :country, :city,
-  :occupation, :projects, :subscribed]
+    :occupation, :projects, :subscribed, :subscribed_talks]
   ONLY_CREATE_COLUMNS = [:login]
   COLUMNS = ONLY_CREATE_COLUMNS + USER_EDITABLE_COLUMNS
   PRIORITY_COUNTRIES = ['Belarus', 'Ukraine', 'Russia']
@@ -24,6 +24,7 @@ class UsersController < ApplicationController
     self.update.columns = cls::USER_EDITABLE_COLUMNS
 
     self.columns[:subscribed].form_ui = :checkbox
+    self.columns[:subscribed_talks].form_ui = :checkbox
     self.columns[:password].form_ui = :password
     self.columns[:password_confirmation].form_ui = :password
     self.columns[:country].form_ui = :country

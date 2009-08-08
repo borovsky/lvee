@@ -219,7 +219,8 @@ hu:
       password: "minimum 4 karakter"
       password_confirmation: "Jelszó ismétlés"
       projects: "Free Software / Open Source (FS/OS) projektek, amikben részt vesz vagy a múltban részt vett, szerepének megjelölésével"
-      subscribed: ""
+      subscribed: "This option allows to receive news and other useful information from the Conference organizers."
+      subscribed_talks: "By choosing this You are going to take part in working discussions on the Conference preparing and carrying on. Being a volunteer project, LVEE is often subject to shortage of performers, and therefore we recomend to activate this option and to actively participate in work of the organization board."
   label: 
     article: 
       body: Тartalom
@@ -393,7 +394,8 @@ hu:
       photo: Photo
       projects: "Szabad szoftver projectjei"
       register: Regisztrálás
-      subscribed: "Feliratkozás a levlistára"
+      subscribed: "Subscribe to information maillist"
+      subscribed_talks: "Subscribe to organization board talks mailllist"
       title: "{{full_name}} ({{login}}), profilbabrálás"
       to_profile: "A profiljához"
       update_model: "Edit your personal data"

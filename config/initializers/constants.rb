@@ -9,6 +9,7 @@ IMAGE_UPLOAD_ROOT = File.join(RAILS_ROOT, 'public', 'images', 'uploaded')
 
 
 ALL_USER_MAILLIST = "maillist"
+TALKS_MAILLIST = "talks"
 ADMIN_MAILLIST = "orgmaillist"
 
 AVATAR_SIZE = "200x150"

@@ -148,6 +148,11 @@ class User < ActiveRecord::Base
     else
       MaillistSubscriber.unsubscribe(ALL_USER_MAILLIST, self.email)
     end
+    if subscribed_talks?
+      MaillistSubscriber.subscribe(TALKS_MAILLIST, self.email) if active?
+    else
+      MaillistSubscriber.unsubscribe(TALKS_MAILLIST, self.email)
+    end
   end
 
   protected

@@ -157,7 +157,8 @@ pl:
       password_restore: "Przywracanie hasła"
       password_restore_link: Przywróć
       projects: "Free Software / Open Source (FS/OS) projekty w których Państwo brali lub bierzecie udział i Państwa rola w nich"
-      subscribed: ""
+      subscribed: "This option allows to receive news and other useful information from the Conference organizers."
+      subscribed_talks: "By choosing this You are going to take part in working discussions on the Conference preparing and carrying on. Being a volunteer project, LVEE is often subject to shortage of performers, and therefore we recomend to activate this option and to actively participate in work of the organization board."
   label: 
     article: 
       body: Ciało
@@ -331,7 +332,8 @@ pl:
       photo: Zdjęcie
       projects: Projekty
       register: "Zarejestruj się"
-      subscribed: "Zapisz się na listę mailową"
+      subscribed: "Subscribe to information maillist"
+      subscribed_talks: "Subscribe to organization board talks mailllist"
       title: "{{full_name}} ({{login}}), Twój profil w Twoich rękach"
       to_profile: "Do profilu"
       update_model: "Edit your personal data"

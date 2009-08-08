@@ -220,7 +220,8 @@ uk:
       password: "Від 4-х символів"
       password_confirmation: "Те ж, що і пароль"
       projects: "Проекти Free Software / Open Source (FS/OS), в яких Ви приймали та/або берете участь, Ваша роль в них"
-      subscribed: ""
+      subscribed: "This option allows to receive news and other useful information from the Conference organizers."
+      subscribed_talks: "By choosing this You are going to take part in working discussions on the Conference preparing and carrying on. Being a volunteer project, LVEE is often subject to shortage of performers, and therefore we recomend to activate this option and to actively participate in work of the organization board."
   label: 
     article: 
       body: "Змістовна частина"
@@ -394,7 +395,8 @@ uk:
       photo: Фото
       projects: "Ваші проекти FS/OS"
       register: Реєструватися
-      subscribed: "Підписатися на розсилку"
+      subscribed: "Subscribe to information maillist"
+      subscribed_talks: "Subscribe to organization board talks mailllist"
       title: "{{full_name}} ({{login}}), ваш профіль у ваших руках"
       to_profile: "На ваш профіль"
       update_model: "Edit your personal data"
