@@ -202,6 +202,8 @@ module ActiveResource
   # sets the <tt>read_timeout</tt> of the internal Net::HTTP instance to the same value. The default
   # <tt>read_timeout</tt> is 60 seconds on most Ruby implementations.
   class Base
+    ##
+    # :singleton-method:
     # The logger for diagnosing and tracing Active Resource calls.
     cattr_accessor :logger
 
@@ -460,7 +462,7 @@ module ActiveResource
       #   that_guy.valid? # => false
       #   that_guy.new?   # => true
       def create(attributes = {})
-        returning(self.new(attributes)) { |res| res.save }
+        self.new(attributes).tap { |resource| resource.save }
       end
 
       # Core method for finding resources.  Used similarly to Active Record's +find+ method.
@@ -598,7 +600,7 @@ module ActiveResource
         end
 
         def instantiate_record(record, prefix_options = {})
-          returning new(record) do |resource|
+          new(record).tap do |resource|
             resource.prefix_options = prefix_options
           end
         end
@@ -704,6 +706,7 @@ module ActiveResource
     def new?
       id.nil?
     end
+    alias :new_record? :new?
 
     # Gets the <tt>\id</tt> attribute of the resource.
     def id
@@ -743,7 +746,7 @@ module ActiveResource
     #   # => true
     #
     def ==(other)
-      other.equal?(self) || (other.instance_of?(self.class) && !other.new? && other.id == id)
+      other.equal?(self) || (other.instance_of?(self.class) && other.id == id && other.prefix_options == prefix_options)
     end
 
     # Tests for equality (delegates to ==).
@@ -770,7 +773,7 @@ module ActiveResource
     #   my_invoice.customer   # => That Company
     #   next_invoice.customer # => That Company
     def dup
-      returning self.class.new do |resource|
+      self.class.new.tap do |resource|
         resource.attributes     = @attributes
         resource.prefix_options = @prefix_options
       end
@@ -829,7 +832,7 @@ module ActiveResource
       !new? && self.class.exists?(to_param, :params => prefix_options)
     end
 
-    # A method to convert the the resource to an XML string.
+     # Converts the resource to an XML string representation.
     #
     # ==== Options
     # The +options+ parameter is handed off to the +to_xml+ method on each
@@ -838,7 +841,14 @@ module ActiveResource
     #
     # * <tt>:indent</tt> - Set the indent level for the XML output (default is +2+).
     # * <tt>:dasherize</tt> - Boolean option to determine whether or not element names should
-    #   replace underscores with dashes (default is <tt>false</tt>).
+    #   replace underscores with dashes. Default is <tt>true</tt>. The default can be set to <tt>false</tt>
+    #   by setting the module attribute <tt>ActiveSupport.dasherize_xml = false</tt> in an initializer. Because save
+    #   uses this method, and there are no options on save, then you will have to set the default if you don't
+    #   want underscores in element names to become dashes when the resource is saved. This is important when
+    #   integrating with non-Rails applications.
+    # * <tt>:camelize</tt> - Boolean option to determine whether or not element names should be converted
+    #   to camel case, e.g some_name to SomeName. Default is <tt>false</tt>. Like <tt>:dasherize</tt> you can
+    #   change the default by setting the module attribute <tt>ActiveSupport.camelise_xml = true</tt> in an initializer.
     # * <tt>:skip_instruct</tt> - Toggle skipping the +instruct!+ call on the XML builder
     #   that generates the XML declaration (default is <tt>false</tt>).
     #
@@ -858,8 +868,7 @@ module ActiveResource
       attributes.to_xml({:root => self.class.element_name}.merge(options))
     end
 
-    # Returns a JSON string representing the model. Some configuration is
-    # available through +options+.
+    # Coerces to a hash for JSON encoding.
     #
     # ==== Options
     # The +options+ are passed to the +to_json+ method on each
@@ -883,8 +892,8 @@ module ActiveResource
     #
     #   person.to_json(:except => ["first_name"])
     #   # => {"last_name": "Smith"}
-    def to_json(options={})
-      attributes.to_json(options)
+    def as_json(options = nil)
+      attributes.as_json(options)
     end
 
     # Returns the serialized string representation of the resource in the configured
@@ -982,14 +991,14 @@ module ActiveResource
 
       # Update the resource on the remote service.
       def update
-        returning connection.put(element_path(prefix_options), encode, self.class.headers) do |response|
+        connection.put(element_path(prefix_options), encode, self.class.headers).tap do |response|
           load_attributes_from_response(response)
         end
       end
 
       # Create (i.e., \save to the remote service) the \new resource.
       def create
-        returning connection.post(collection_path, encode, self.class.headers) do |response|
+        connection.post(collection_path, encode, self.class.headers).tap do |response|
           self.id = id_from_response(response)
           load_attributes_from_response(response)
         end
@@ -1003,7 +1012,7 @@ module ActiveResource
 
       # Takes a response from a typical create post and pulls the ID out
       def id_from_response(response)
-        response['Location'][/\/([^\/]*?)(\.\w+)?$/, 1]
+        response['Location'][/\/([^\/]*?)(\.\w+)?$/, 1] if response['Location']
       end
 
       def element_path(options = nil)

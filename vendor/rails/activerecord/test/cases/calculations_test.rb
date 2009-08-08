@@ -2,6 +2,9 @@ require "cases/helper"
 require 'models/company'
 require 'models/topic'
 require 'models/edge'
+require 'models/owner'
+require 'models/pet'
+require 'models/toy'
 
 Company.has_many :accounts
 
@@ -10,7 +13,7 @@ class NumericData < ActiveRecord::Base
 end
 
 class CalculationsTest < ActiveRecord::TestCase
-  fixtures :companies, :accounts, :topics
+  fixtures :companies, :accounts, :topics, :owners, :pets, :toys
 
   def test_should_sum_field
     assert_equal 318, Account.sum(:credit_limit)
@@ -92,6 +95,14 @@ class CalculationsTest < ActiveRecord::TestCase
     assert_equal 60,  c[2]
   end
 
+  def test_should_group_by_summed_field_having_sanitized_condition
+    c = Account.sum(:credit_limit, :group => :firm_id,
+                                   :having => ['sum(credit_limit) > ?', 50])
+    assert_nil        c[1]
+    assert_equal 105, c[6]
+    assert_equal 60,  c[2]
+  end
+
   def test_should_group_by_summed_association
     c = Account.sum(:credit_limit, :group => :firm)
     assert_equal 50,   c[companies(:first_firm)]
@@ -156,24 +167,23 @@ class CalculationsTest < ActiveRecord::TestCase
     assert_equal 1, c[companies(:first_client)]
   end
 
-  uses_mocha 'group_by_non_numeric_foreign_key_association' do
-    def test_should_group_by_association_with_non_numeric_foreign_key
-      ActiveRecord::Base.connection.expects(:select_all).returns([{"count_all" => 1, "firm_id" => "ABC"}])
+  def test_should_group_by_association_with_non_numeric_foreign_key
+    ActiveRecord::Base.connection.expects(:select_all).returns([{"count_all" => 1, "firm_id" => "ABC"}])
 
-      firm = mock()
-      firm.expects(:id).returns("ABC")
-      firm.expects(:class).returns(Firm)
-      Company.expects(:find).with(["ABC"]).returns([firm])
+    firm = mock()
+    firm.expects(:id).returns("ABC")
+    firm.expects(:class).returns(Firm)
+    Company.expects(:find).with(["ABC"]).returns([firm])
 
-      column = mock()
-      column.expects(:name).at_least_once.returns(:firm_id)
-      column.expects(:type_cast).with("ABC").returns("ABC")
-      Account.expects(:columns).at_least_once.returns([column])
+    column = mock()
+    column.expects(:name).at_least_once.returns(:firm_id)
+    column.expects(:type_cast).with("ABC").returns("ABC")
+    Account.expects(:columns).at_least_once.returns([column])
 
-      c = Account.count(:all, :group => :firm)
-      assert_equal Firm, c.first.first.class
-      assert_equal 1, c.first.last
-    end
+    c = Account.count(:all, :group => :firm)
+    first_key = c.keys.first
+    assert_equal Firm, first_key.class
+    assert_equal 1, c[first_key]
   end
 
   def test_should_calculate_grouped_association_with_foreign_key_option
@@ -248,8 +258,8 @@ class CalculationsTest < ActiveRecord::TestCase
       Company.send(:validate_calculation_options, :count, :include => true)
     end
 
-    assert_raises(ArgumentError) { Company.send(:validate_calculation_options, :sum,   :foo => :bar) }
-    assert_raises(ArgumentError) { Company.send(:validate_calculation_options, :count, :foo => :bar) }
+    assert_raise(ArgumentError) { Company.send(:validate_calculation_options, :sum,   :foo => :bar) }
+    assert_raise(ArgumentError) { Company.send(:validate_calculation_options, :count, :foo => :bar) }
   end
 
   def test_should_count_selected_field_with_include
@@ -275,6 +285,10 @@ class CalculationsTest < ActiveRecord::TestCase
 
   def test_count_with_too_many_parameters_raises
     assert_raise(ArgumentError) { Account.count(1, 2, 3) }
+  end
+
+  def test_count_with_scoped_has_many_through_association
+    assert_equal 1, owners(:blackbeard).toys.with_name('Bone').count
   end
 
   def test_should_sum_expression
