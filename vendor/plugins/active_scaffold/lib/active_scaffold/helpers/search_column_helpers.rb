@@ -58,7 +58,7 @@ module ActiveScaffold
       def active_scaffold_search_multi_select(column, options)
         associated_options = @record.send(column.association.name).collect {|r| [r.to_label, r.id]}
         select_options = associated_options | options_for_association(column.association, true)
-        return 'no options' if select_options.empty?
+        return as_(:no_options) if select_options.empty?
 
         html = "<ul class=\"checkbox-list\" id=\"#{options[:id]}\">"
 
@@ -106,8 +106,8 @@ module ActiveScaffold
       def active_scaffold_search_boolean(column, options)
         select_options = []
         select_options << [as_(:_select_), nil]
-        select_options << [as_(:true), 1]
-        select_options << [as_(:false), 0]
+        select_options << [as_(:true), true]
+        select_options << [as_(:false), false]
 
         select_tag(options[:name], options_for_select(select_options, @record.send(column.name)))
       end

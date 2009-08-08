@@ -65,7 +65,7 @@ module ActiveScaffold
 
             elsif column.singular_association?
               hash = value
-              record = find_or_create_for_params(hash, column, parent_record.send("#{column.name}"))
+              record = find_or_create_for_params(hash, column, parent_record)
               if record
                 record_columns = active_scaffold_config_for(column.association.klass).subform.columns
                 update_record_from_params(record, record_columns, hash)
@@ -76,7 +76,7 @@ module ActiveScaffold
             elsif column.plural_association?
               collection = value.collect do |key_value_pair|
                 hash = key_value_pair[1]
-                record = find_or_create_for_params(hash, column, parent_record.send("#{column.name}"))
+                record = find_or_create_for_params(hash, column, parent_record)
                 if record
                   record_columns = active_scaffold_config_for(column.association.klass).subform.columns
                   update_record_from_params(record, record_columns, hash)
@@ -124,7 +124,7 @@ module ActiveScaffold
       if parent_record.new_record?
         parent_record.class.reflect_on_all_associations.each do |a|
           next unless [:has_one, :has_many].include?(a.macro) and not a.options[:through]
-          next unless association_proxy = parent_record.instance_variable_get("@#{a.name}")
+          next unless association_proxy = parent_record.send(a.name)
 
           raise ActiveScaffold::ReverseAssociationRequired, "In order to support :has_one and :has_many where the parent record is new and the child record(s) validate the presence of the parent, ActiveScaffold requires the reverse association (the belongs_to)." unless a.reverse
 
@@ -139,7 +139,8 @@ module ActiveScaffold
     # Attempts to create or find an instance of klass (which must be an ActiveRecord object) from the
     # request parameters given. If params[:id] exists it will attempt to find an existing object
     # otherwise it will build a new one.
-    def find_or_create_for_params(params, parent_column, current)
+    def find_or_create_for_params(params, parent_column, parent_record)
+      current = parent_record.send(parent_column.name)
       klass = parent_column.association.klass
       return nil if parent_column.show_blank_record and attributes_hash_is_empty?(params, klass)
 
@@ -155,7 +156,13 @@ module ActiveScaffold
           return klass.find(params[:id])
         end
       else
-        return klass.new if klass.authorized_for?(:action => :create)
+        if klass.authorized_for?(:action => :create)
+          if parent_column.singular_association?
+            return parent_record.send("build_#{parent_column.name}")
+          else
+            return parent_record.send(parent_column.name).build
+          end
+        end
       end
     end
 

@@ -28,6 +28,7 @@
       :loading => 'Loading…',
       :next => 'Next',
       :no_entries => 'No Entries',
+      :no_options => 'no options',
       :omit_header => 'Omit Header',
       :options => 'Options',
       :pdf => 'PDF',
@@ -58,6 +59,7 @@
       :between => 'Between',
 
       # error_messages
+      :cant_destroy_record => "{{record}} can't be destroyed",
       :internal_error => 'Request Failed (code 500, Internal Error)',
       :version_inconsistency => 'Version inconsistency - this record has been modified since you started editing it.'
     }

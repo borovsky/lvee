@@ -1,5 +1,4 @@
-#!ruby19
-# encoding: utf-8
+# coding: utf-8
 module ActiveScaffold
   module Helpers
     # Helpers that assist with the rendering of a List Column
@@ -33,11 +32,20 @@ module ActiveScaffold
                 if column.associated_limit.nil?
                   firsts = value.collect { |v| v.to_label }
                 else
-                  firsts = value.first(column.associated_limit + 1).collect { |v| v.to_label }
+                  firsts = if value.loaded? # we are using eager loading, use first in order not to query the database
+                    value.first(column.associated_limit + 1)
+                  else
+                    value.find(:all, :limit => column.associated_limit + 1)
+                  end
+                  firsts.collect! { |v| v.to_label }
                   firsts[column.associated_limit] = '…' if firsts.length > column.associated_limit
                 end
-                formatted_value = clean_column_value(format_value(firsts.join(', ')))
-                formatted_value << " (#{value.length})" if column.associated_number? and column.associated_limit and firsts.length > column.associated_limit
+                if column.associated_limit == 0
+                  formatted_value = value.size if column.associated_number?
+                else
+                  formatted_value = clean_column_value(format_value(firsts.join(', ')))
+                  formatted_value << " (#{value.size})" if column.associated_number? and column.associated_limit and firsts.length > column.associated_limit
+                end
                 formatted_value
             end
           end
@@ -54,34 +62,63 @@ module ActiveScaffold
       # TODO: we need to distinguish between the automatic links *we* create and the ones that the dev specified. some logic may not apply if the dev specified the link.
       def render_list_column(text, column, record)
         if column.link
-          link = column.link.clone
-          if column.singular_association? and column_empty?(text)
-            column_model = column.association.klass
-            controller_actions = active_scaffold_config_for(column_model).actions
-            if controller_actions.include?(:create) and column.actions_for_association_links.include? :new and column_model.authorized_for?(:action => :create)
-              link.action = 'new'
-              link.crud_type = :create
-              text = as_(:create_new)
-            end
-          end
-          return "<a class='disabled'>#{text}</a>" unless record.authorized_for?(:action => column.link.crud_type)
-
+          link = column.link
+          associated = record.send(column.association.name) if column.association
           url_options = params_for(:action => nil, :id => record.id, :link => text)
-          if column.singular_association? and column.link.action != 'nested'
-            if associated = record.send(column.association.name)
-              url_options[:id] = associated.id
-            elsif link.action == 'new'
-              url_options.delete :id
+          url_options[:parent_controller] = params[:controller] if link.controller and link.controller.to_s != params[:controller]
+          url_options[:id] = associated.id if associated and link.controller and link.controller.to_s != params[:controller]
+
+          # setup automatic link
+          if column.autolink # link to nested scaffold or inline form
+            link = action_link_to_inline_form(column, associated) if link.crud_type.nil? # automatic link to inline form (singular association)
+            return text if link.crud_type.nil?
+            if link.crud_type == :create
+              url_options[:link] = as_(:create_new)
               url_options[:parent_id] = record.id
               url_options[:parent_column] = column.association.reverse
               url_options[:parent_model] = record.class.name # needed for polymorphic associations
+              url_options.delete :id
             end
           end
+
+          # check authorization
+          if column.association
+            associated_for_authorized = if associated.nil? || (associated.respond_to?(:empty?) && associated.empty?)
+              column.association.klass
+            elsif column.plural_association?
+              associated.first
+            else
+              associated
+            end
+            authorized = associated_for_authorized.authorized_for?(:action => link.crud_type)
+            authorized = authorized and record.authorized_for?(:action => :update, :column => column.name) if link.crud_type == :create
+          else
+            authorized = record.authorized_for?(:action => link.crud_type)
+          end
+          return "<a class='disabled'>#{text}</a>" unless authorized
 
           render_action_link(link, url_options)
         else
           text
         end
+      end
+
+      # setup the action link to inline form
+      def action_link_to_inline_form(column, associated)
+        link = column.link.clone
+        if column_empty?(associated) # if association is empty, we only can link to create form
+          if column.actions_for_association_links.include?(:new)
+            link.action = 'new'
+            link.crud_type = :create
+          end
+        elsif column.actions_for_association_links.include?(:edit)
+          link.action = 'edit'
+          link.crud_type = :update
+        elsif column.actions_for_association_links.include?(:show)
+          link.action = 'show'
+          link.crud_type = :read
+        end
+        link
       end
 
       # There are two basic ways to clean a column's value: h() and sanitize(). The latter is useful
@@ -99,7 +136,7 @@ module ActiveScaffold
       ## Overrides
       ##
       def active_scaffold_column_text(column, record)
-        truncate(clean_column_value(record.send(column.name)), :length => 50)
+        truncate(clean_column_value(record.send(column.name)), :length => column.options[:truncate] || 50)
       end
 
       def active_scaffold_column_checkbox(column, record)
@@ -109,7 +146,7 @@ module ActiveScaffold
           id_options = {:id => record.id.to_s, :action => 'update_column', :name => column.name.to_s}
           tag_options = {:tag => "span", :id => element_cell_id(id_options), :class => "in_place_editor_field"}
           script = remote_function(:method => 'POST', :url => {:controller => params_for[:controller], :action => "update_column", :column => column.name, :id => record.id.to_s, :value => !column_value, :eid => params[:eid]})
-          content_tag(:span, check_box_tag(tag_options[:id], 1, checked, {:onchange => script}) , tag_options)
+          content_tag(:span, check_box_tag(tag_options[:id], 1, checked, {:onclick => script}) , tag_options)
         else
           check_box_tag(nil, 1, checked, :disabled => true)
         end
@@ -138,11 +175,7 @@ module ActiveScaffold
 
       def format_value(column_value, options = {})
         if column_empty?(column_value)
-          if active_scaffold_config.actions.include?(:list)
-            active_scaffold_config.list.empty_field_text
-          else
-            "-"
-          end
+          active_scaffold_config.list.empty_field_text
         elsif column_value.is_a?(Time) || column_value.is_a?(Date)
           l(column_value, :format => options[:format] || :default)
         else
@@ -161,7 +194,7 @@ module ActiveScaffold
           clean_column_value(format_value(value))
         end
       end
-
+      
       def active_scaffold_inplace_edit(record, column)
         formatted_column = format_inplace_edit_column(record,column)
         id_options = {:id => record.id.to_s, :action => 'update_column', :name => column.name.to_s}

@@ -9,6 +9,7 @@ module ActiveScaffold
       include ActiveScaffold::Helpers::ListColumnHelpers
       include ActiveScaffold::Helpers::ShowColumnHelpers
       include ActiveScaffold::Helpers::FormColumnHelpers
+      include ActiveScaffold::Helpers::CountryHelpers
       include ActiveScaffold::Helpers::SearchColumnHelpers
 
       ##
@@ -86,13 +87,13 @@ module ActiveScaffold
           ActiveScaffold::Config::Core.asset_path(name, frontend)
         end
       end
-
+      
       # Provides stylesheets to include with +stylesheet_link_tag+
       def active_scaffold_stylesheets(frontend = :default)
         [ActiveScaffold::Config::Core.asset_path("stylesheet.css", frontend)]
       end
 
-      # Provides stylesheets for IE to include with +stylesheet_link_tag+
+      # Provides stylesheets for IE to include with +stylesheet_link_tag+ 
       def active_scaffold_ie_stylesheets(frontend = :default)
         [ActiveScaffold::Config::Core.asset_path("stylesheet-ie.css", frontend)]
       end
@@ -104,6 +105,8 @@ module ActiveScaffold
         js = javascript_include_tag(*active_scaffold_javascripts(frontend).push(options))
 
         css = stylesheet_link_tag(*active_scaffold_stylesheets(frontend).push(options))
+        options[:cache] += '_ie' if options[:cache].is_a? String
+        options[:concat] += '_ie' if options[:concat].is_a? String
         ie_css = stylesheet_link_tag(*active_scaffold_ie_stylesheets(frontend).push(options))
 
         js + "\n" + css + "\n<!--[if IE]>" + ie_css + "<![endif]-->\n"
@@ -143,7 +146,7 @@ module ActiveScaffold
             url_options[:authenticity_token] = form_authenticity_token
           end
 
-          # robd: protect against submitting get links as forms, since this causes annoying
+          # robd: protect against submitting get links as forms, since this causes annoying 
           # 'Do you wish to resubmit your form?' messages whenever you go back and forwards.
         elsif link.method != :get
           # Needs to be in html_options to as the adding _method to the url is no longer supported by Rails
@@ -154,7 +157,7 @@ module ActiveScaffold
         html_options[:position] = link.position if link.position and link.inline?
         html_options[:class] += ' action' if link.inline?
         html_options[:popup] = true if link.popup?
-        html_options[:id] = action_link_id(url_options[:action],url_options[:id] || url_options[:parent_id])
+        html_options[:id] = action_link_id("#{url_options[:parent_controller] + '_' if url_options[:parent_controller]}" + url_options[:action],url_options[:id] || url_options[:parent_id])
 
         if link.dhtml_confirm?
           html_options[:class] += ' action' if !link.inline?
@@ -182,8 +185,7 @@ module ActiveScaffold
       def column_empty?(column_value)
         empty = column_value.nil?
         empty ||= column_value.empty? if column_value.respond_to? :empty?
-        empty ||= (column_value == '&nbsp;')
-        empty ||= (column_value == active_scaffold_config.list.empty_field_text) if active_scaffold_config.actions.include? :list
+        empty ||= ['&nbsp;', active_scaffold_config.list.empty_field_text].include? column_value if String === column_value
         return empty
       end
 
