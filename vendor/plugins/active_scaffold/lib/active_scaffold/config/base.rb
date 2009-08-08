@@ -33,11 +33,11 @@ module ActiveScaffold::Config
         @conf = conf
       end
     end
-    
+
     def formats
       @formats ||= []
     end
-    
+
     def formats=(val)
       @formats=val
     end

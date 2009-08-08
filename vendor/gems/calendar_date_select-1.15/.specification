@@ -1,7 +1,7 @@
 --- !ruby/object:Gem::Specification 
 name: calendar_date_select
 version: !ruby/object:Gem::Version 
-  version: "1.13"
+  version: "1.15"
 platform: ruby
 authors: 
 - Tim Harper
@@ -9,7 +9,7 @@ autorequire:
 bindir: bin
 cert_chain: []
 
-date: 2008-11-30 00:00:00 +02:00
+date: 2009-02-19 00:00:00 +02:00
 default_executable: 
 dependencies: 
 - !ruby/object:Gem::Dependency 
@@ -78,6 +78,8 @@ files:
 - spec/spec_helper.rb
 has_rdoc: true
 homepage: http://code.google.com/p/calendardateselect/
+licenses: []
+
 post_install_message: 
 rdoc_options: 
 - --main
@@ -98,8 +100,8 @@ required_rubygems_version: !ruby/object:Gem::Requirement
   version: 
 requirements: []
 
-rubyforge_project: calendar_date_select
-rubygems_version: 1.3.1
+rubyforge_project: cds
+rubygems_version: 1.3.4
 signing_key: 
 specification_version: 2
 summary: ""

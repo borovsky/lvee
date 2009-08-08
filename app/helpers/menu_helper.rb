@@ -6,7 +6,7 @@ module MenuHelper
   MAIN_MENU_LAST_SUBITEM_CLASS = 'last-m'
 
   def render_main_menu
-    items = menu_items.map {|i| render_main_menu_item(i)}
+    items = menu_items.map {|i| render_main_menu_item(i)}.join("")
     content_tag(:ul, items, :id => MAIN_MENU_ID)
   end
 

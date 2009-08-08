@@ -63,7 +63,7 @@ Rails::Initializer.run do |config|
   config.gem "RedCloth", :version => '4.2.2',
     :lib => 'redcloth'
   #config.gem "acts_as_versioned"
-  config.gem "calendar_date_select"
+  config.gem "calendar_date_select", :version => "1.15"
   config.gem "mislav-will_paginate", :version => '2.3.6',
     :lib => 'will_paginate' , :source => 'http://gems.github.com'
   config.gem "mocha"
