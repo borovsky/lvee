@@ -1,9 +1,10 @@
 
 * What we need to do
-** Maillist [0/2]
-*** TODO Add to profile registration to talks@
-*** TODO Make maillist@ readonly for all except me 
-
+** Maillist [3/4]
+*** DONE Add to profile registration to talks@
+*** DONE Create talks@ maillist
+*** DONE Make maillist@ readonly for all
+*** TODO Refactor maillist: add UI for list maintenance
 
 ** Misc [3/4]
 *** DONE [#A] Add normal role support (normal user/editor/admin)
@@ -27,8 +28,8 @@
 *** TODO Refactor diff design
 *** TODO [#C] курсы валют 
 *** TODO [#C] Payment status (per conference): shouldn't pay, should pay, payed (сумма)
-
-*** TODO [#B] Archive                                                  :ARCHIVE:
+    
+*** TODO [#C] Archive                                                  :ARCHIVE:
 
 **** Add tests [3/3]
      :PROPERTIES:

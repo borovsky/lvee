@@ -78,8 +78,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    user_have_access = (current_user.id.to_s == params[:id]) || current_user.admin?
-    return render(:text=>t('message.common.access_denied'), :status => 403) unless user_have_access
     @user = User.find params[:id]
   end
 

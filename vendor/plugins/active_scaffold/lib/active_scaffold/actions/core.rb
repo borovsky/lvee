@@ -82,22 +82,23 @@ module ActiveScaffold::Actions
         params[:parent_column] = nil
         params[:parent_id] = nil
       end
+      return if performed?
       redirect_to params_for(:action => "index", :id => nil)
     end
 
     # Override this method on your controller to define conditions to be used when querying a recordset (e.g. for List). The return of this method should be any format compatible with the :conditions clause of ActiveRecord::Base's find.
     def conditions_for_collection
     end
-  
+
     # Override this method on your controller to define joins to be used when querying a recordset (e.g. for List).  The return of this method should be any format compatible with the :joins clause of ActiveRecord::Base's find.
     def joins_for_collection
     end
-  
+
     # Override this method on your controller to provide custom finder options to the find() call. The return of this method should be a hash.
     def custom_finder_options
       {}
     end
-  
+
 
     # Builds search conditions by search params for column names. This allows urls like "contacts/list?company_id=5".
     def conditions_from_params
