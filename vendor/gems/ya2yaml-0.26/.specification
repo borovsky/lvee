@@ -29,6 +29,8 @@ files:
 - test/test.rb
 has_rdoc: true
 homepage: http://rubyforge.org/projects/ya2yaml/
+licenses: []
+
 post_install_message: 
 rdoc_options: 
 - --main
@@ -52,7 +54,7 @@ required_rubygems_version: !ruby/object:Gem::Requirement
 requirements: []
 
 rubyforge_project: 
-rubygems_version: 1.3.1
+rubygems_version: 1.3.4
 signing_key: 
 specification_version: 1
 summary: An UTF8 safe YAML dumper.

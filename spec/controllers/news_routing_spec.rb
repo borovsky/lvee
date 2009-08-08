@@ -15,27 +15,19 @@ describe NewsController do
     end
 
     it "should map #show" do
-      route_for(:controller => "news", :action => "show", :id => 1, :lang => 'ru').should == "/ru/news/1"
+      route_for(:controller => "news", :action => "show", :id => "1", :lang => 'ru').should == "/ru/news/1"
     end
 
     it "should map #edit" do
-      route_for(:controller => "news", :action => "edit", :id => 1, :lang => 'ru').should == "/ru/news/1/edit"
-    end
-
-    it "should map #update" do
-      route_for(:controller => "news", :action => "update", :id => 1, :lang => 'ru').should == "/ru/news/1"
-    end
-
-    it "should map #destroy" do
-      route_for(:controller => "news", :action => "destroy", :id => 1, :lang => 'ru').should == "/ru/news/1"
+      route_for(:controller => "news", :action => "edit", :id => "1", :lang => 'ru').should == "/ru/news/1/edit"
     end
 
     it "should map #publish" do
-      route_for(:controller => "news", :action => "publish", :id => 1, :lang => 'ru').should == "/ru/news/1/publish"
+      route_for(:controller => "news", :action => "publish", :id => "1", :lang => 'ru').should == "/ru/news/1/publish"
     end
 
     it "should map #publish_now" do
-      route_for(:controller => "news", :action => "publish_now", :id => 1, :lang => 'ru').should == "/ru/news/1/publish_now"
+      route_for(:controller => "news", :action => "publish_now", :id => "1", :lang => 'ru').should == "/ru/news/1/publish_now"
     end
   end
 

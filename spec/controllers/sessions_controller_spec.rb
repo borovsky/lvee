@@ -36,8 +36,7 @@ describe SessionsController do
 
       post :create, :login => "user", :password=> "password", :remember_me => '1'
       assert_redirected_to '/en/users/42'
-      cookies[:auth_token].value.should == ["test"]
-      cookies[:auth_token].expires.should == time
+      cookies[:auth_token].should == "test"
     end
 
     it "shouldn't login if authentication error" do
@@ -67,7 +66,7 @@ describe SessionsController do
       @controller.expects(:reset_session)
       delete :destroy
 
-      cookies[:auth_token].should be_empty
+      cookies[:auth_token].should be_blank
     end
   end
 end

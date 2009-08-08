@@ -11,19 +11,11 @@ describe ArticlesController do
     end
 
     it "should map #show" do
-      route_for(:controller => "articles", :action => "show", :id => 1, :lang=>"be").should == "/be/articles/1"
+      route_for(:controller => "articles", :action => "show", :id => "1", :lang=>"be").should == "/be/articles/1"
     end
 
     it "should map #edit" do
-      route_for(:controller => "articles", :action => "edit", :id => 1, :lang=>"be").should == "/be/articles/1/edit"
-    end
-
-    it "should map #update" do
-      route_for(:controller => "articles", :action => "update", :id => 1, :lang=>"be").should == "/be/articles/1"
-    end
-
-    it "should map #destroy" do
-      route_for(:controller => "articles", :action => "destroy", :id => 1, :lang=>"be").should == "/be/articles/1"
+      route_for(:controller => "articles", :action => "edit", :id => "1", :lang=>"be").should == "/be/articles/1/edit"
     end
   end
 

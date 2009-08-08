@@ -46,6 +46,7 @@ files:
 - test/encode/test_array.rb
 has_rdoc: true
 homepage: bencode.rubyforge.org
+licenses: 
 post_install_message: 
 rdoc_options: []
 
@@ -66,7 +67,7 @@ required_rubygems_version: !ruby/object:Gem::Requirement
 requirements: []
 
 rubyforge_project: bencode
-rubygems_version: 1.3.1
+rubygems_version: 1.3.4
 signing_key: 
 specification_version: 1
 summary: A Ruby implementation of the Bencode encoding used by BitTorrent

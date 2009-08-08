@@ -41,7 +41,7 @@ describe News do
     it "should set published_at to now plus 1 day" do
       n = News.new
       now = Time.new
-      Time.expects(:now).returns(now)
+      Time.stubs(:now).returns(now)
       n.expects(:published_at=).with(now + 1.day)
       n.publish
     end
@@ -65,7 +65,7 @@ describe News do
     it "should set published_at to now" do
       n = News.new
       now = Time.new
-      Time.expects(:now).returns(now)
+      Time.stubs(:now).returns(now)
       n.expects(:published_at=).with(now)
       n.publish_now
     end
