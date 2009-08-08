@@ -13,15 +13,16 @@ class ConferenceRegistrationsController < ApplicationController
   FIRST_STEP_COLUMNS = [:proposition, :quantity]
 
   @@default_column_ui ||= {}
-  active_scaffold :conference_registrations do |config|
-    config.label = "Conference Registration"
-    config.actions = [:create, :update, :show]
-    config.columns = COLUMNS
-    config.create.columns = FIRST_STEP_COLUMNS + HIDDEN_COLUMNS
+  active_scaffold :conference_registrations do
+    cls = ConferenceRegistrationsController
+    self.label = "Conference Registration"
+    self.actions = [:create, :update, :show]
+    self.columns = cls::COLUMNS
+    self.create.columns = cls::FIRST_STEP_COLUMNS + cls::HIDDEN_COLUMNS
 
-    config.update.columns = STATIC_COLUMNS + EDITABLE_COLUMNS
-    STATIC_COLUMNS.each do |c|
-      config.columns[c].form_ui = :static if config.update.columns[c]
+    self.update.columns = cls::STATIC_COLUMNS + cls::EDITABLE_COLUMNS
+    cls::STATIC_COLUMNS.each do |c|
+      self.columns[c].form_ui = :static if self.update.columns[c]
     end
   end
 

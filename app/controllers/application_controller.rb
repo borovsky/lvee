@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
 
   ActiveScaffold.set_defaults do |config|
     # disables dhtml history globally
-    config.dhtml_history = false
+    self.dhtml_history = false
   end
 
   def cache_result_for(key, timeout, &block)

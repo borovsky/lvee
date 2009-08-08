@@ -9,12 +9,12 @@ module Admin
     BADGE_COLUMNS = [:tags, :top, :bottom]
 
     layout "admin"
-    active_scaffold :conferences do |config|
-      config.columns = [:name, :start_date, :finish_date, :registration_opened]
-      config.columns[:registration_opened].form_ui = :checkbox
-      config.action_links <<
+    active_scaffold :conferences do
+      self.columns = [:name, :start_date, :finish_date, :registration_opened]
+      self.columns[:registration_opened].form_ui = :checkbox
+      self.action_links <<
         ActiveScaffold::DataStructures::ActionLink.new(:csv, :label => :csv_export, :type => :record, :inline => false, :parameters => {:format =>"csv" })
-      config.action_links <<
+      self.action_links <<
         ActiveScaffold::DataStructures::ActionLink.new(:badges_csv, :label => :badges_csv_export, :type => :record, :inline => false, :parameters => {:format =>"csv" })
     end
 

@@ -16,18 +16,27 @@ class UsersController < ApplicationController
   LOCALIZATION_LABEL_PREFIX = "label.user."
   LOCALIZATION_DESCRIPTION_PREFIX = "description.user."
 
-  active_scaffold :users do |config|
-    config.actions = [:create, :update]
-    config.columns = COLUMNS
-    config.create.columns = COLUMNS
-    config.update.columns = USER_EDITABLE_COLUMNS
+  active_scaffold :users do
+    cls = UsersController
+    self.actions = [:create, :update]
+    self.columns = cls::COLUMNS
+    self.create.columns = cls::COLUMNS
+    self.update.columns = cls::USER_EDITABLE_COLUMNS
 
-    config.columns[:subscribed].form_ui = :checkbox
-    config.columns[:password].form_ui = :password
-    config.columns[:password_confirmation].form_ui = :password
-    config.columns[:country].form_ui = :country
-    config.columns[:country].options[:priority] = PRIORITY_COUNTRIES
-    User::REQUIRED_FIELDS.each{|i| config.columns[i].required = true }
+    self.columns[:subscribed].form_ui = :checkbox
+    self.columns[:password].form_ui = :password
+    self.columns[:password_confirmation].form_ui = :password
+    self.columns[:country].form_ui = :country
+    self.columns[:country].options[:priority] = cls::PRIORITY_COUNTRIES
+    User::REQUIRED_FIELDS.each{|i| self.columns[i].required = true }
+  end
+
+  def list
+    redirect_to  user_path(:id => current_user.id)
+  end
+
+  def index
+    redirect_to  user_path(:id => current_user.id)
   end
 
   def current

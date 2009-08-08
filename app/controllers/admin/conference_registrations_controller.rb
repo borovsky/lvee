@@ -13,27 +13,28 @@ module Admin
 
     USER_COLUMNS = [:city, :country, :avator]
 
-    active_scaffold :conference_registrations do |config|
-      config.columns = COLUMNS
-      config.label = "Conference Registration"
-      config.actions.exclude :create, :delete, :nested
-      config.actions.swap :search, :live_search
-      config.actions.add :conference_registration_statistics
+    active_scaffold :conference_registrations do
+      cls = Admin::ConferenceRegistrationsController
+      self.columns = cls::COLUMNS
+      self.label = "Conference Registration"
+      self.actions.exclude :create, :delete, :nested
+      self.actions.swap :search, :live_search
+      self.actions.add :conference_registration_statistics
 
-      config.list.columns = LIST_COLUMNS
+      self.list.columns = cls::LIST_COLUMNS
 
-      USER_COLUMNS.each do |c|
-        config.columns[c].search_sql = "users.#{c}"
-        config.columns[c].sort = true
-        config.columns[c].sort_by :sql => "users.#{c}"
+      cls::USER_COLUMNS.each do |c|
+        self.columns[c].search_sql = "users.#{c}"
+        self.columns[c].sort = true
+        self.columns[c].sort_by :sql => "users.#{c}"
       end
 
-      config.list.sorting = {:user => 'ASC'}
-      config.list.per_page = 100
+      self.list.sorting = {:user => 'ASC'}
+      self.list.per_page = 100
 
-      config.update.columns = STATIC_COLUMNS + EDITABLE_COLUMNS
-      STATIC_COLUMNS.each do |c|
-        config.columns[c].form_ui = :static if  config.update.columns[c]
+      self.update.columns = cls::STATIC_COLUMNS + cls::EDITABLE_COLUMNS
+      cls::STATIC_COLUMNS.each do |c|
+        self.columns[c].form_ui = :static if  self.update.columns[c]
       end
     end
 
