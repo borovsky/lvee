@@ -14,6 +14,7 @@ module Editor
       self.file_column_fields = :file
       self.columns = cls::COLUMNS
       self.create.columns = cls::CREATE_COLUMNS
+      self.list.per_page = 100
     end
   end
 end
