@@ -1,5 +1,7 @@
 module Editor
   class ImageUploadsController < ApplicationController
+    include ActiveScaffold
+
     before_filter :editor_required, :scaffold_action
     layout "admin"
 
