@@ -1,5 +1,7 @@
 module Admin
   class ConferenceRegistrationsController < ApplicationController
+    include ActiveScaffold
+
     layout "admin"
     before_filter :admin_required, :scaffold_action
 
