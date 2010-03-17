@@ -1,5 +1,7 @@
 module Admin
   class ConferencesController < ApplicationController
+    include ActiveScaffold
+
     before_filter :admin_required, :scaffold_action
 
     USER_CSV_COLUMNS = [:login, :full_name, :email, :country, :city, :occupation, :projects]
