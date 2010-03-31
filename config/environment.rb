@@ -76,4 +76,11 @@ Rails::Initializer.run do |config|
   config.gem "mocha", :version => "0.9.8"
 
   config.gem 'metaskills-acts_as_versioned', :version => "0.6.3", :lib => 'acts_as_versioned'
+
+  if RUBY_VERSION < '1.9'
+    config.gem 'fastercsv'
+  else
+    require 'csv'
+    ::FasterCSV = CSV
+  end
 end
