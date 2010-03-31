@@ -349,6 +349,7 @@ module FileColumn # :nodoc:
       @dir = File.join(store_dir, relative_path_prefix)
       @filename = @instance[@attr]
       @filename = nil if @filename.empty?
+			FileUtils.mkpath(File.dirname(@dir)) unless File.exists?(File.dirname(@dir))
     end
 
     def move_from(local_dir, just_uploaded)
@@ -396,7 +397,7 @@ module FileColumn # :nodoc:
     
     def relative_path_prefix
       raise RuntimeError.new("Trying to access file_column, but primary key got lost.") if @instance.id.to_s.empty?
-      @instance.id.to_s
+      File.join(*("%08d" % @instance.id).scan(/..../))
     end
   end
     
@@ -616,7 +617,7 @@ module FileColumn # :nodoc:
       options = DEFAULT_OPTIONS.merge(options) if options
       
       my_options = FileColumn::init_options(options, 
-                                            self.name.underscore,
+                                            ActiveSupport::Inflector.underscore(self.name).to_s,
                                             attr.to_s)
       
       state_attr = "@#{attr}_state".to_sym

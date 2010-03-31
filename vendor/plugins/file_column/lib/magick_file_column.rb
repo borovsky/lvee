@@ -1,5 +1,5 @@
 module FileColumn # :nodoc:
-
+  
   class BaseUploadedFile # :nodoc:
     def transform_with_magick
       if needs_transform?
@@ -12,7 +12,7 @@ module FileColumn # :nodoc:
           end
           return
         end
-
+        
         if options[:magick][:versions]
           options[:magick][:versions].each_pair do |version, version_options|
             next if version_options[:lazy]
@@ -34,8 +34,8 @@ module FileColumn # :nodoc:
       # We do not want to require it on every call of this method
       # as this might be fairly expensive, so we just try if ::Magick
       # exists and require it if not.
-      begin
-        ::Magick
+      begin 
+        ::Magick 
       rescue NameError
         require 'RMagick'
       end
@@ -45,11 +45,8 @@ module FileColumn # :nodoc:
       else
         version_options = MagickExtension::process_options(version)
       end
-      
-      path = absolute_path(version_options[:name])
-      return nil unless path
-      
-      unless File.exists?(path)
+
+      unless File.exists?(absolute_path(version_options[:name]))
         begin
           img = ::Magick::Image::read(absolute_path).first
         rescue ::Magick::ImageMagickError
@@ -66,15 +63,15 @@ module FileColumn # :nodoc:
     end
 
     attr_reader :magick_errors
-
+    
     def has_magick_errors?
       @magick_errors and !@magick_errors.empty?
     end
 
     private
-
+    
     def needs_transform?
-      options[:magick] and just_uploaded? and
+      options[:magick] and just_uploaded? and 
         (options[:magick][:size] or options[:magick][:versions] or options[:magick][:transformation] or options[:magick][:attributes])
     end
 
@@ -90,7 +87,7 @@ module FileColumn # :nodoc:
         if img_options[:crop]
           dx, dy = img_options[:crop].split(':').map { |x| x.to_f }
           w, h = (img.rows * dx / dy), (img.columns * dy / dx)
-          img = img.crop(::Magick::CenterGravity, [img.columns, w].min,
+          img = img.crop(::Magick::CenterGravity, [img.columns, w].min, 
                          [img.rows, h].min, true)
         end
 
@@ -99,10 +96,15 @@ module FileColumn # :nodoc:
             i.resize(c, r)
           end
         end
+
+				if img_options[:letterbox]
+					w, h = img_options[:letterbox].split('x').map { |x| x.to_f }
+					img = img.crop((img.columns/2 - w/2), (img.rows/2 - h/2), w, h)
+				end
       ensure
         img.write(dest_path) do
           if img_options[:attributes]
-            img_options[:attributes].each_pair do |property, value|
+            img_options[:attributes].each_pair do |property, value| 
               self.send "#{property}=", value
             end
           end
@@ -151,7 +153,7 @@ module FileColumn # :nodoc:
   # These versions will be stored in separate sub-directories, named like the
   # symbol you used to identify the version. So in the previous example, the
   # image versions will be stored in "thumb", "screen" and "widescreen"
-  # directories, resp.
+  # directories, resp. 
   # A name different from the symbol can be set via the <tt>:name</tt> option.
   #
   # These versions can be accessed via FileColumnHelper's +url_for_image_column+
@@ -175,14 +177,14 @@ module FileColumn # :nodoc:
   # To change some of the image properties like compression level before they
   # are saved you can set the <tt>:attributes</tt> option.
   # For a list of available attributes go to http://www.simplesystems.org/RMagick/doc/info.html
-  #
+  # 
   #     file_column :image, :magick => { :attributes => { :quality => 30 } }
-  #
+  # 
   # == Custom transformations
   #
   # To perform custom transformations on uploaded images, you can pass a
   # callback to file_column:
-  #    file_column :image, :magick =>
+  #    file_column :image, :magick => 
   #       Proc.new { |image| image.quantize(256, Magick::GRAYColorspace) }
   #
   # The callback you give, receives one argument, which is an instance
@@ -217,14 +219,14 @@ module FileColumn # :nodoc:
       end
       state_method = "#{attr}_state".to_sym
       after_assign_method = "#{attr}_magick_after_assign".to_sym
-
+      
       klass.send(:define_method, after_assign_method) do
         self.send(state_method).transform_with_magick
       end
-
+      
       options[:after_upload] ||= []
       options[:after_upload] << after_assign_method
-
+      
       klass.validate do |record|
         state = record.send(state_method)
         if state.has_magick_errors?
@@ -235,7 +237,7 @@ module FileColumn # :nodoc:
       end
     end
 
-
+    
     def self.process_options(options,create_name=true)
       case options
       when String then options = {:size => options}

@@ -1,11 +1,10 @@
 require 'RMagick'
 
 class ImageUpload < ActiveRecord::Base
-  file_column :file, :magick => {:transform => Proc.new {|i|}}
+  file_column :file
 
   def before_validation_on_create
     if file
-      p file
       imgs = Magick::Image.read(file)
       if(imgs.length > 0)
         img = imgs.first
@@ -13,10 +12,6 @@ class ImageUpload < ActiveRecord::Base
         self.height = img.rows
       end
     end
-  end
-
-  def file_path
-    return "#{BASE_UPLOAD_PATH}/#{id}.#{ext}"
   end
 
   def size

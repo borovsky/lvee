@@ -15,28 +15,28 @@ module Admin
 
     USER_COLUMNS = [:city, :country, :avator]
 
-    active_scaffold :conference_registrations do
+    active_scaffold :conference_registrations do |cfg|
       cls = Admin::ConferenceRegistrationsController
-      self.columns = cls::COLUMNS
-      self.label = "Conference Registration"
-      self.actions.exclude :create, :delete, :nested
-      self.actions.swap :search, :live_search
-      self.actions.add :conference_registration_statistics
+      cfg.columns = cls::COLUMNS
+      cfg.label = "Conference Registration"
+      cfg.actions.exclude :create, :delete, :nested
+      cfg.search.live = true
+      cfg.actions.add :conference_registration_statistics
 
-      self.list.columns = cls::LIST_COLUMNS
+      cfg.list.columns = cls::LIST_COLUMNS
 
       cls::USER_COLUMNS.each do |c|
-        self.columns[c].search_sql = "users.#{c}"
-        self.columns[c].sort = true
-        self.columns[c].sort_by :sql => "users.#{c}"
+        cfg.columns[c].search_sql = "users.#{c}"
+        cfg.columns[c].sort = true
+        cfg.columns[c].sort_by :sql => "users.#{c}"
       end
 
-      self.list.sorting = {:user => 'ASC'}
-      self.list.per_page = 100
+      cfg.list.sorting = {:user => 'ASC'}
+      cfg.list.per_page = 100
 
-      self.update.columns = cls::STATIC_COLUMNS + cls::EDITABLE_COLUMNS
+      cfg.update.columns = cls::STATIC_COLUMNS + cls::EDITABLE_COLUMNS
       cls::STATIC_COLUMNS.each do |c|
-        self.columns[c].form_ui = :static if  self.update.columns[c]
+        cfg.columns[c].form_ui = :static if  self.update.columns[c]
       end
     end
 

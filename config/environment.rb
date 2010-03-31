@@ -72,8 +72,7 @@ Rails::Initializer.run do |config|
   config.gem "garb"
 
   config.gem "bencode"
-  config.gem "rspec", :version => "1.3.0", :lib => "spec"
-  config.gem "rspec-rails", :version => "1.3.2", :lib => 'spec/rails'
+
   config.gem "mocha", :version => "0.9.8"
 
   config.gem 'metaskills-acts_as_versioned', :version => "0.6.3", :lib => 'acts_as_versioned'

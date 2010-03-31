@@ -8,7 +8,7 @@ module ActiveScaffold::Config
 
     cattr_accessor :link
 
-    @@link = ActiveScaffold::DataStructures::ActionLink.new(:show_statistics, :label => :statistics, :type => :table)
+    @@link = ActiveScaffold::DataStructures::ActionLink.new(:show_statistics, :label => :statistics, :type => :collection)
 
     attr_accessor :link
   end

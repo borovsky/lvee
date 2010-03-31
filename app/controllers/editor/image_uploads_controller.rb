@@ -9,12 +9,13 @@ module Editor
     CREATE_COLUMNS = [:file, :description]
     LIST_COLUMNS = [:description, :file, :size]
 
-    active_scaffold :image_upload do
+    active_scaffold :image_upload do |config|
       cls = Editor::ImageUploadsController
-      self.file_column_fields = :file
-      self.columns = cls::COLUMNS
-      self.create.columns = cls::CREATE_COLUMNS
-      self.list.per_page = 100
+ 
+      config.file_column_fields
+      config.columns = cls::COLUMNS
+      config.create.columns = cls::CREATE_COLUMNS
+      config.list.per_page = 100
     end
   end
 end
