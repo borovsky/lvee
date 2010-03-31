@@ -397,7 +397,8 @@ module FileColumn # :nodoc:
     
     def relative_path_prefix
       raise RuntimeError.new("Trying to access file_column, but primary key got lost.") if @instance.id.to_s.empty?
-      File.join(*("%08d" % @instance.id).scan(/..../))
+      @instance.id.to_s
+#      File.join(*("%08d" % @instance.id).scan(/..../))
     end
   end
     
