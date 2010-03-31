@@ -60,7 +60,7 @@ Rails::Initializer.run do |config|
   # config.active_record.default_timezone = :utc
 
   # Gem Dependencies
-  config.gem "RedCloth", :version => '4.2.2',
+  config.gem "RedCloth", :version => '~> 4.2.2',
     :lib => 'redcloth'
   #config.gem "acts_as_versioned"
   config.gem "calendar_date_select", :version => "1.15"
@@ -69,7 +69,6 @@ Rails::Initializer.run do |config|
   config.gem "mocha"
   config.gem "ya2yaml"
 
-  config.gem "jnunemaker-happymapper", :lib => 'happymapper'
   config.gem "garb"
 
   config.gem "bencode"

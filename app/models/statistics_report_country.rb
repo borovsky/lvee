@@ -1,5 +1,6 @@
-class StatisticsReportCountry < StatisticsReport
+class StatisticsReportCountry
+  extend  Garb::Resource
+
   metrics :visits
   dimensions :country
-
 end

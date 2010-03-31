@@ -1,0 +1,130 @@
+--- !ruby/object:Gem::Specification 
+name: garb
+version: !ruby/object:Gem::Version 
+  version: 0.7.4
+platform: ruby
+authors: 
+- Tony Pitale
+autorequire: 
+bindir: bin
+cert_chain: []
+
+date: 2010-03-25 00:00:00 +02:00
+default_executable: 
+dependencies: 
+- !ruby/object:Gem::Dependency 
+  name: crack
+  type: :runtime
+  version_requirement: 
+  version_requirements: !ruby/object:Gem::Requirement 
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        version: 0.1.6
+    version: 
+- !ruby/object:Gem::Dependency 
+  name: activesupport
+  type: :runtime
+  version_requirement: 
+  version_requirements: !ruby/object:Gem::Requirement 
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        version: 2.2.0
+    version: 
+description: 
+email: tony.pitale@viget.com
+executables: []
+
+extensions: []
+
+extra_rdoc_files: []
+
+files: 
+- README.md
+- Rakefile
+- lib/garb/account.rb
+- lib/garb/authentication_request.rb
+- lib/garb/data_request.rb
+- lib/garb/filter_parameters.rb
+- lib/garb/profile.rb
+- lib/garb/profile_reports.rb
+- lib/garb/report.rb
+- lib/garb/report_parameter.rb
+- lib/garb/report_response.rb
+- lib/garb/reports/bounces.rb
+- lib/garb/reports/exits.rb
+- lib/garb/reports/pageviews.rb
+- lib/garb/reports/unique_pageviews.rb
+- lib/garb/reports/visits.rb
+- lib/garb/reports.rb
+- lib/garb/resource.rb
+- lib/garb/session.rb
+- lib/garb/version.rb
+- lib/garb.rb
+- lib/support.rb
+- test/fixtures/cacert.pem
+- test/fixtures/profile_feed.xml
+- test/fixtures/report_feed.xml
+- test/test_helper.rb
+- test/unit/garb/account_test.rb
+- test/unit/garb/authentication_request_test.rb
+- test/unit/garb/data_request_test.rb
+- test/unit/garb/filter_parameters_test.rb
+- test/unit/garb/oauth_session_test.rb
+- test/unit/garb/profile_reports_test.rb
+- test/unit/garb/profile_test.rb
+- test/unit/garb/report_parameter_test.rb
+- test/unit/garb/report_response_test.rb
+- test/unit/garb/report_test.rb
+- test/unit/garb/resource_test.rb
+- test/unit/garb/session_test.rb
+- test/unit/garb_test.rb
+- test/unit/symbol_operator_test.rb
+has_rdoc: true
+homepage: http://github.com/vigetlabs/garb
+licenses: []
+
+post_install_message: 
+rdoc_options: []
+
+require_paths: 
+- lib
+required_ruby_version: !ruby/object:Gem::Requirement 
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      version: "0"
+  version: 
+required_rubygems_version: !ruby/object:Gem::Requirement 
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      version: "0"
+  version: 
+requirements: []
+
+rubyforge_project: viget
+rubygems_version: 1.3.5
+signing_key: 
+specification_version: 3
+summary: Google Analytics API Ruby Wrapper
+test_files: 
+- test/fixtures/cacert.pem
+- test/fixtures/profile_feed.xml
+- test/fixtures/report_feed.xml
+- test/test_helper.rb
+- test/unit/garb/account_test.rb
+- test/unit/garb/authentication_request_test.rb
+- test/unit/garb/data_request_test.rb
+- test/unit/garb/filter_parameters_test.rb
+- test/unit/garb/oauth_session_test.rb
+- test/unit/garb/profile_reports_test.rb
+- test/unit/garb/profile_test.rb
+- test/unit/garb/report_parameter_test.rb
+- test/unit/garb/report_response_test.rb
+- test/unit/garb/report_test.rb
+- test/unit/garb/resource_test.rb
+- test/unit/garb/session_test.rb
+- test/unit/garb_test.rb
+- test/unit/symbol_operator_test.rb
