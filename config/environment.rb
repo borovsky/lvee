@@ -72,6 +72,7 @@ Rails::Initializer.run do |config|
   config.gem "garb"
 
   config.gem "bencode"
+  config.gem "crack"
 
   config.gem "mocha", :version => "0.9.8"
 
