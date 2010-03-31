@@ -3,11 +3,23 @@ require File.join(File.dirname(__FILE__), '../test_helper.rb')
 
 class ClassWithFinder
   include ActiveScaffold::Finder
+  def conditions_for_collection; end
+  def conditions_from_params; end
+  def conditions_from_constraints; end
+  def joins_for_collection; end
+  def custom_finder_options
+    {}
+  end
+  def beginning_of_chain
+    active_scaffold_config.model
+  end
 end
 
 class FinderTest < Test::Unit::TestCase
   def setup
     @klass = ClassWithFinder.new
+    @klass.stubs(:active_scaffold_config).returns(mock { stubs(:model).returns(ModelStub) })
+    @klass.stubs(:active_scaffold_session_storage).returns({})
   end
 
   def test_create_conditions_for_columns
@@ -21,31 +33,18 @@ class FinderTest < Test::Unit::TestCase
     ]
 
     expected_conditions = [
-			'(LOWER(model_stubs.a) LIKE ? OR LOWER(model_stubs.b) LIKE ?) AND (LOWER(model_stubs.a) LIKE ? OR LOWER(model_stubs.b) LIKE ?)',
+			'(LOWER("model_stubs"."a") LIKE ? OR LOWER("model_stubs"."b") LIKE ?) AND (LOWER("model_stubs"."a") LIKE ? OR LOWER("model_stubs"."b") LIKE ?)',
 		  '%foo%', '%foo%', '%bar%', '%bar%'
 		]
-    assert_equal expected_conditions, ActiveScaffold::Finder.create_conditions_for_columns(tokens, columns)
+    assert_equal expected_conditions, ClassWithFinder.create_conditions_for_columns(tokens, columns)
 
     expected_conditions = [
-      '(LOWER(model_stubs.a) LIKE ? OR LOWER(model_stubs.b) LIKE ?)',
+      '(LOWER("model_stubs"."a") LIKE ? OR LOWER("model_stubs"."b") LIKE ?)',
       '%foo%', '%foo%'
     ]
-    assert_equal expected_conditions, ActiveScaffold::Finder.create_conditions_for_columns('foo', columns)
+    assert_equal expected_conditions, ClassWithFinder.create_conditions_for_columns('foo', columns)
 
-    assert_equal nil, ActiveScaffold::Finder.create_conditions_for_columns('foo', [])
-  end
-
-  def test_build_order_clause
-    columns = ActiveScaffold::DataStructures::Columns.new(ModelStub, :a, :b, :c, :d)
-    sorting = ActiveScaffold::DataStructures::Sorting.new(columns)
-
-    assert @klass.send(:build_order_clause, nil).nil?
-    assert @klass.send(:build_order_clause, sorting).nil?
-
-    sorting << [:a, 'desc']
-    sorting << [:b, 'asc']
-
-    assert_equal 'model_stubs.a DESC, model_stubs.b ASC', @klass.send(:build_order_clause, sorting)
+    assert_equal nil, ClassWithFinder.create_conditions_for_columns('foo', [])
   end
 
   def test_method_sorting
@@ -66,5 +65,29 @@ class FinderTest < Test::Unit::TestCase
     column.sort_by :method => 'self'
     collection = [3, 1, 2]
     assert_equal collection.sort, @klass.send(:sort_collection_by_column, collection, column, 'asc')
+  end
+
+  def test_count_with_group
+    @klass.expects(:custom_finder_options).returns({:group => :a})
+    ModelStub.expects(:count).returns(ActiveSupport::OrderedHash['foo', 5])
+    ModelStub.expects(:find).with(:all, has_entries(:limit => 20, :offset => 0))
+    page = @klass.send :find_page, :per_page => 20, :pagination => true
+    page.items
+    
+    assert_kind_of Integer, page.pager.count
+    assert_equal 1, page.pager.count
+    assert_nothing_raised { page.pager.number_of_pages }
+  end
+
+  def test_disabled_pagination
+    ModelStub.expects(:count).returns(85)
+    ModelStub.expects(:find).with(:all, Not(has_entries(:limit => 20, :offset => 0)))
+    page = @klass.send :find_page, :per_page => 20, :pagination => false
+    page.items
+  end
+
+  def test_infinite_pagination
+    ModelStub.expects(:count).never
+    page = @klass.send :find_page, :pagination => :infinite
   end
 end

@@ -29,13 +29,17 @@ module ActiveScaffold::Actions
       @record = find_if_allowed(params[:id], :read)
     end
 
+    def nested_authorized?
+      true
+    end
+
     def include_habtm_actions
       if nested_habtm?
         # Production mode is ok with adding a link everytime the scaffold is nested - we ar not ok with that.
-        active_scaffold_config.action_links.add('new_existing', :label => :add_existing, :type => :table, :security_method => :add_existing_authorized?) unless active_scaffold_config.action_links['new_existing']
+        active_scaffold_config.action_links.add('new_existing', :label => :add_existing, :type => :collection, :security_method => :add_existing_authorized?) unless active_scaffold_config.action_links['new_existing']
         if active_scaffold_config.nested.shallow_delete
-          active_scaffold_config.action_links.add('destroy_existing', :label => :remove, :type => :record, :confirm => 'are_you_sure', :method => :delete, :position => false, :security_method => :delete_existing_authorized?) unless active_scaffold_config.action_links['destroy_existing']
-          active_scaffold_config.action_links.delete("destroy") if active_scaffold_config.action_links['destroy']
+          active_scaffold_config.action_links.add('destroy_existing', :label => :remove, :type => :member, :confirm => :are_you_sure_to_delete, :method => :delete, :position => false, :security_method => :delete_existing_authorized?) unless active_scaffold_config.action_links['destroy_existing']
+          active_scaffold_config.action_links.delete("delete") if active_scaffold_config.action_links['delete']
         end
       else
         # Production mode is caching this link into a non nested scaffold
@@ -43,7 +47,7 @@ module ActiveScaffold::Actions
         
         if active_scaffold_config.nested.shallow_delete
           active_scaffold_config.action_links.delete("destroy_existing") if active_scaffold_config.action_links['destroy_existing']
-          active_scaffold_config.action_links.add('destroy', :label => :delete, :type => :record, :confirm => 'are_you_sure', :method => :delete, :position => false, :security_method => :delete_authorized?) unless active_scaffold_config.action_links['destroy']
+          active_scaffold_config.action_links.add(ActiveScaffold::Config::Delete.link) unless active_scaffold_config.action_links['delete']
         end
         
       end
@@ -84,10 +88,9 @@ module ActiveScaffold::Actions::Nested
 
     def self.included(base)
       super
-      # This .verify method call is clashing with other non .add_existing actions. How do we do this correctly? Can we make it action specific.
-      # base.verify :method => :post,
-      #             :only => :add_existing,
-      #             :redirect_to => { :action => :index }
+      base.verify :method => :post,
+                  :only => :add_existing,
+                  :redirect_to => { :action => :index }
     end
 
     def new_existing
@@ -133,13 +136,13 @@ module ActiveScaffold::Actions::Nested
       end
     end
     def add_existing_respond_to_xml
-      render :xml => response_object.to_xml, :content_type => Mime::XML, :status => response_status
+      render :xml => response_object.to_xml(:only => active_scaffold_config.list.columns.names), :content_type => Mime::XML, :status => response_status
     end
     def add_existing_respond_to_json
-      render :text => response_object.to_json, :content_type => Mime::JSON, :status => response_status
+      render :text => response_object.to_json(:only => active_scaffold_config.list.columns.names), :content_type => Mime::JSON, :status => response_status
     end
     def add_existing_respond_to_yaml
-      render :text => response_object.to_yaml, :content_type => Mime::YAML, :status => response_status
+      render :text => Hash.from_xml(response_object.to_xml(:only => active_scaffold_config.list.columns.names)).to_yaml, :content_type => Mime::YAML, :status => response_status
     end
     def destroy_existing_respond_to_html
       flash[:info] = as_(:deleted_model, :model => @record.to_label)
@@ -151,17 +154,24 @@ module ActiveScaffold::Actions::Nested
     end
 
     def destroy_existing_respond_to_xml
-      render :xml => successful? ? "" : response_object.to_xml, :content_type => Mime::XML, :status => response_status
+      render :xml => successful? ? "" : response_object.to_xml(:only => active_scaffold_config.list.columns.names), :content_type => Mime::XML, :status => response_status
     end
 
     def destroy_existing_respond_to_json
-      render :text => successful? ? "" : response_object.to_json, :content_type => Mime::JSON, :status => response_status
+      render :text => successful? ? "" : response_object.to_json(:only => active_scaffold_config.list.columns.names), :content_type => Mime::JSON, :status => response_status
     end
 
     def destroy_existing_respond_to_yaml
-      render :text => successful? ? "" : response_object.to_yaml, :content_type => Mime::YAML, :status => response_status
+      render :text => successful? ? "" : Hash.from_xml(response_object.to_xml(:only => active_scaffold_config.list.columns.names)).to_yaml, :content_type => Mime::YAML, :status => response_status
     end
 
+    def add_existing_authorized?
+      true
+    end
+    def delete_existing_authorized?
+      true
+    end
+ 
     def after_create_save(record)
       if params[:association_macro] == :has_and_belongs_to_many
         params[:associated_id] = record

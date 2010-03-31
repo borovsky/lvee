@@ -1,5 +1,5 @@
 require File.join(File.dirname(__FILE__), '../test_helper.rb')
-require 'test/model_stub'
+require File.join(File.dirname(__FILE__), '../model_stub')
 
 class AssociationColumnTest < Test::Unit::TestCase
   def setup
@@ -18,8 +18,9 @@ class AssociationColumnTest < Test::Unit::TestCase
   end
 
   def test_searching
-    # right now, there's no intelligent searching on association columns
-    assert !@association_column.searchable?
+    # by default searching on association columns uses primary key
+    assert @association_column.searchable?
+    assert_equal '"model_stubs"."id"', @association_column.search_sql
   end
 
   def test_association

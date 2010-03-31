@@ -25,13 +25,16 @@ class ActionLinkTest < Test::Unit::TestCase
     assert_equal 'hello_world_authorized?', @link.security_method
     @link.label = 'HelloWorld'
     assert_equal 'hello_world_authorized?', @link.security_method
+
+    assert_equal false, @link.security_method_set?
     @link.security_method = 'blueberry_pie'
+    assert_equal true, @link.security_method_set?
     assert_equal 'blueberry_pie', @link.security_method
 
-    @link.type = :table
-    assert_equal :table, @link.type
-    @link.type = :record
-    assert_equal :record, @link.type
+    @link.type = :collection
+    assert_equal :collection, @link.type
+    @link.type = :member
+    assert_equal :member, @link.type
 
     assert_equal :get, @link.method
     @link.method = :put
@@ -41,10 +44,10 @@ class ActionLinkTest < Test::Unit::TestCase
   def test_position
     @link.position = true
 
-    @link.type = :table
+    @link.type = :collection
     assert_equal :top, @link.position
 
-    @link.type = :record
+    @link.type = :member
     assert_equal :replace, @link.position
 
     @link.position = :before
