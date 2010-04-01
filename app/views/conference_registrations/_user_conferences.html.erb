@@ -1,7 +1,7 @@
 <% user_id = params[:user_id] || @user.id -%>
 <% actual = ConferenceRegistration.find_actual_for_user(user_id) -%>
 <% now = Time.now -%>
-<% participated = actual.find_all {|r| r.conference.finish_date.to_time < now} -%>
+<% participated = actual.find_all {|r| r.conference.finish_date && r.conference.finish_date.to_time < now} -%>
 <% regs = actual - participated -%>
 <% available = Conference.available_conferences(actual.map {|c|  c.conference}) %>
 
@@ -12,8 +12,7 @@
         {:controller => "conference_registrations", :action => 'new', :user_id => user_id,
         :conference_id => conf.id}, :class => "big-button")  %>
   </p>
-<% end -%>
-</ul>
+  <% end -%>
 <% end -%>
 
 <% unless regs.empty? -%>
