@@ -1,6 +1,6 @@
 --- 
 en: 
-  active_scaffold:
+  active_scaffold: 
     are_you_sure: "Are you sure?"
   activerecord: 
     errors: 
@@ -412,7 +412,7 @@ en:
       sure: "Are you sure?"
     conference: 
       created: "Conference created successfully"
-      slogan: "The 5th International conference of developers and users of free / open source software - the only one in Belarus"
+      slogan: "The 6th International conference of developers and users of free / open source software"
       status: "Registration to conference {{status}}."
       updated: "Conference updated successfully"
     iefuck: 
