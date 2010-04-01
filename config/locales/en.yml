@@ -209,6 +209,7 @@ en:
       badges: Badges
       badges_title: "Badges for {{conference}}"
       days: "Participation days"
+      edit: " {{conference}} participant's data"
       floor: "Can you sleep on the floor?"
       food: "Preferred food"
       index: "Registration to conference"
