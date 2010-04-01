@@ -1,12 +1,13 @@
 # This file is copied to ~/spec when you run 'ruby script/generate rspec'
 # from the project root directory.
 ENV["RAILS_ENV"] ||= 'test'
+if RUBY_VERSION.to_f >= 1.9
+  require 'rubygems'
+  gem 'test-unit', '1.2.3'
+end
 require File.expand_path(File.join(File.dirname(__FILE__),'..','config','environment'))
-gem "rspec", :version => "1.3.0", :lib => "spec"
-gem "rspec-rails", :version => "1.3.2", :lib => 'spec/rails'
 require 'spec/autorun'
 require 'spec/rails'
-require 'i18n'
 
 # Uncomment the next line to use webrat's matchers
 #require 'webrat/integrations/rspec-rails'
