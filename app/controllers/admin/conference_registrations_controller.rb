@@ -40,9 +40,13 @@ module Admin
       end
     end
 
+    def live_search_authorized?
+      true
+    end
+
     protected
     def before_update_save(record)
-      @record.admin = true
+      record.admin = true
     end
   end
 end
