@@ -196,6 +196,10 @@ module ActiveScaffold
         password_field :record, column.name, options.merge(column.options)
       end
 
+      def active_scaffold_input_static(column, options)
+        h(@record.send(column.name))
+      end
+
       def active_scaffold_input_textarea(column, options)
         text_area(:record, column.name, options.merge(:cols => column.options[:cols], :rows => column.options[:rows], :size => column.options[:size]))
       end
