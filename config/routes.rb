@@ -20,6 +20,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.namespace :editor, :namespace => "", :path_prefix =>":lang", :name_prefix => "" do |editor|
     editor.resources :languages
+    editor.resources :metainfos, :active_scaffold => true, :collection => {:change => :put }
     editor.resources :image_uploads, :active_scaffold => true
   end
 

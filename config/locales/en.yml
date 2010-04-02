@@ -257,6 +257,8 @@ en:
       new: "New Language"
       published: "Language published?"
       upload: "Upload Language"
+    metainfo:
+      edit: "Edit MetaInfo"
     news: 
       abstract: Abstract
       add: "Add News"

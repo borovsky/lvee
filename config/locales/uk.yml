@@ -328,6 +328,8 @@ uk:
       new: "Нова мова"
       published: "Мова опублікована?"
       upload: "Закачати мову"
+    metainfo: 
+      edit: "Edit MetaInfo"
     news: 
       abstract: Резюме
       add: "Додати новини"

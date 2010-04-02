@@ -327,6 +327,8 @@ ru:
       new: "Новый язык"
       published: "Язык опубликован?"
       upload: "Закачать язык"
+    metainfo: 
+      edit: "Edit MetaInfo"
     news: 
       abstract: Резюме
       add: "Добавить новости"

@@ -260,6 +260,8 @@ be:
       new: "Новая мова"
       published: Апублікаваная?
       upload: "Заліць мову"
+    metainfo: 
+      edit: "Edit MetaInfo"
     news: 
       abstract: Резюме
       add: "Дадаць навіну"

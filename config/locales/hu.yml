@@ -327,6 +327,8 @@ hu:
       new: "Új nyelv"
       published: "A nyelv elérhető?"
       upload: "Nyelv feltöltése"
+    metainfo: 
+      edit: "Edit MetaInfo"
     news: 
       abstract: Összefoglaló
       add: "Hír hozzáadása"

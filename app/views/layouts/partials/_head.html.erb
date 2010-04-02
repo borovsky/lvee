@@ -2,8 +2,8 @@
 <head>
   <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
   <title><%= page_title %></title>
-  <meta name="keywords" content="<%= h @keywords %>" />
-  <meta name="description" content="<%= h @description %>" />
+  <meta name="keywords" content="<%= @metainfo.keywords %>" />
+  <meta name="description" content="<%= @metainfo.description %>" />
 
   <%= stylesheet_link_tag "style" %>
   <%= stylesheet_link_tag "print", :media => "print" %>

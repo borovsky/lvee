@@ -265,6 +265,8 @@ pl:
       new: "Nowy język"
       published: "Czy język jest opublikowany?"
       upload: "Prześlij język"
+    metainfo: 
+      edit: "Edit MetaInfo"
     news: 
       abstract: Streszczenie
       add: "Dodaj wiadomość"

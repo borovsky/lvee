@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
   include ExceptionNotifiable
 
   before_filter :language_select
+  before_filter :metainfo_load
 
   protect_from_forgery # :secret => 'dc50c44338f5eba496ede18e9ea29cb1'
 
@@ -51,6 +52,10 @@ class ApplicationController < ActionController::Base
     I18n.locale = lang
 
     session[:lang] = lang
+  end
+
+  def metainfo_load
+    @metainfo = Metainfo.for(session[:lang], request.path[3..-1])
   end
 
   def admin_required

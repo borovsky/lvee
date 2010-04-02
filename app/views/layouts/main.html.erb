@@ -3,6 +3,7 @@
   <%= render(:partial => 'layouts/partials/head') %>
   <body>
     <div class="all">
+      <%= render :partial => "/editor/metainfos/editor" if admin? %>
       <%= render(:partial => 'layouts/partials/top') %>
 
       <div class="content">
