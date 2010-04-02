@@ -400,6 +400,7 @@ pl:
       articles: "Edytor artykułów"
       image_uploader: "Uploader obrazów"
       language: "Edytor języków"
+      metainfo: "Metainfo editor"
       news: "Edytor wiadomości"
       rss: "Edytor RSS"
       title: Edytor

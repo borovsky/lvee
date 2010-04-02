@@ -395,6 +395,7 @@ be:
       articles: "Article editor"
       image_uploader: "Image uploader"
       language: "Language editor"
+      metainfo: "Metainfo editor"
       news: "News editor"
       rss: "Editor RSS"
       title: Editor
