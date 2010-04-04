@@ -5,9 +5,9 @@
 <% cache_with_timeout(nil, 2.hours) do %>
 <% fetch_statistics %>
 
-<h2><%= t('label.statistics.title.total_visitors', :count => @total_visitors ) %>
+<h2><%= t('label.statistics.title.total_visitors', :count => @total_visitors ) %></h2>
 
-<h2><%= t('label.statistics.title.country_statistic') %>
+<h2><%= t('label.statistics.title.country_statistic') %></h2>
 <table class="data">
   <tr>
     <th style="width: 50px">#</th>
@@ -19,10 +19,11 @@
     <td><%= i+1 %></td>
     <td><%= l.country %></td>
     <td><%= l.visits %></td>
+  </tr>
   <% end %>
 </table>
 
-<h2><%= t('label.statistics.title.browser_statistic') %>
+<h2><%= t('label.statistics.title.browser_statistic') %></h2>
 <table class="data">
   <tr>
     <th style="width: 50px">#</th>
@@ -34,10 +35,11 @@
     <td><%= i+1 %></td>
     <td><%= l.browser %></td>
     <td><%= l.visits %></td>
+  </tr>
   <% end %>
 </table>
 
-<h2><%= t('label.statistics.title.os_statistic') %>
+<h2><%= t('label.statistics.title.os_statistic') %></h2>
 <table class="data">
   <tr>
     <th style="width: 50px">#</th>
@@ -49,6 +51,7 @@
     <td><%= i+1 %></td>
     <td><%= l.operating_system %></td>
     <td><%= l.visits %></td>
+  </tr>
   <% end %>
 </table>
 <% end %>

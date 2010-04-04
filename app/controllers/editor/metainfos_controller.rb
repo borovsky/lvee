@@ -5,7 +5,6 @@ module Editor
     layout "admin"
 
     COLUMNS = [:language, :page, :keywords, :description]
-    LIST_COLUMNS = [:description, :file, :size]
 
     active_scaffold :metainfo do |config|
       cls = Editor::MetainfosController
@@ -18,19 +17,19 @@ module Editor
     end
 
     def change
-    m = Metainfo.new(params[:metainfo])
+      m = Metainfo.new(params[:metainfo])
 
-    if m2 = Metainfo.find_by_page_and_language(m.page, m.language)
-      m2.update_attributes!(params[:metainfo])
-    else
-      m.save!
+      if m2 = Metainfo.find_by_page_and_language(m.page, m.language)
+        m2.update_attributes!(params[:metainfo])
+      else
+        m.save!
+      end
+      unless(Metainfo.find_by_page_and_language(m.page, I18n.default_locale))
+        m_def = Metainfo.new(params[:metainfo])
+        m_def.language = I18n.default_locale
+        m_def.save!
+      end
     end
-    unless(Metainfo.find_by_page_and_language(m.page, I18n.default_locale))
-      m_def = Metainfo.new(params[:metainfo])
-      m_def.language = I18n.default_locale
-      m_def.save!
-    end
-  end
 
   end
 
