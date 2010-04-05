@@ -25,9 +25,10 @@
 
 *** TODO Torrent tracker
 *** TODO Photo gallery
-*** TODO Refactor diff design
+*** DONE Refactor diff design
 *** TODO [#C] курсы валют 
 *** TODO [#C] Payment status (per conference): shouldn't pay, should pay, payed (сумма)
+*** TODO PDF export for badges
     
 *** TODO [#C] Archive                                                  :ARCHIVE:
 
