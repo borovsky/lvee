@@ -300,8 +300,6 @@ module ActiveScaffold
         include CountryHelpers
 
         def to_country_select_tag(priority_countries, options, html_options)
-          html_options[:name] = html_options[:name] || options[:name]
-          html_options[:id] = html_options[:id] || options[:id]
           html_options = html_options.stringify_keys
           add_default_name_and_id(html_options)
           value = value(object)
@@ -329,14 +327,11 @@ module ActiveScaffold
     
     module FormColumnHelpers
       def active_scaffold_input_country(column, options)
-        priority = options[:priority] || ["United States"]
+        priority = ["United States"]
         select_options = {:prompt => as_(:_select_)}
         select_options.merge!(options)
-        opts = column.options.merge(options)
-        opts.delete(:prompt)
-        opts.delete(:priority)
-        
-        country_select(:record, column.name, priority, select_options, opts)
+        options.delete(:prompt)
+        country_select(:record, column.name, column.options[:priority] || priority, select_options, column.options.merge(options))
       end
 
       def active_scaffold_input_usa_state(column, options)
