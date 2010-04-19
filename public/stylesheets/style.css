@@ -508,4 +508,31 @@ li.sponsor li {
 	width: 426px;
 }
 
+#metainfo-link {
+    position: fixed;
+    left: 5px;
+    top:5px;
+    border: 1px solid black;
+    background: white;
+    padding: 10px 20px;
+    z-index: 100;
+}
+
+#metainfo-form {
+    position: absolute;
+    top:100px;
+    margin: -60px 0 0 300px;
+    width: 400px;
+    border: 1px solid black;
+    background: white;
+    padding: 10px 20px;
+    z-index: 100;
+}
+
+table.data {
+    border-spacing: 0px;
+    border-collapse:collapse;
+    font-size:11px;
+    width:99%
+}
 
