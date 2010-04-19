@@ -1,3 +1,10 @@
+<%
+  require "ap"
+  ap current_user
+%>
+
+
+
 <div id="top-panel" class="last">
   <div id="login-panel">
     <ul>
@@ -19,6 +26,7 @@
   </div>
 </div><!-- top-panel -->
 
-<div id="menu" class="last">
+
+<div id="menu" class="last<%= (['admin', 'editor'].include?(current_user[:role])) ? " admin" : " admin" %>">
   <%= render(:partial => 'layouts/partials/menu') %>
 </div><!-- menu -->

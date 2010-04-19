@@ -2,16 +2,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
   <%= render(:partial => 'layouts/partials/head') %>
   <body>
-    <div class="all">
+    <div id="wrapper" class="container">
       <%= render(:partial => 'layouts/partials/top') %>
 
-      <div class="content admin">
+      <div id="content" class="content admin">
         <%= flashes_if_any %>
         <%= yield %>
 
       </div><!-- content -->
-
-      <%= render :partial => "/layouts/partials/footer"%>
     </div> <!-- all -->
+
+    <div id="footer-box" class="footer">
+      <%= render :partial => "/layouts/partials/footer"%>
+    </div>
   </body>
 </html>

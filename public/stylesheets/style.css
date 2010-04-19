@@ -48,7 +48,6 @@ a {
 
 #login-panel ul li a {
 	color: #9fc200;
-	display: block;
 	font-size: 11px;
 	font-weight: bold;
 	text-decoration: none;
@@ -75,6 +74,8 @@ a {
 	display: block;
 	height: 16px;
 	float: right;
+	font-size: 10px;
+	font-weight: bold;
 	list-style-type: none;
 	padding: 10px 15px 10px 0;
 }
@@ -91,8 +92,6 @@ a {
 #languages ul li a {
 	color: #9fc200;
 	display: block;
-	font-size: 10px;
-	font-weight: bold;
 	text-decoration: none;
 	text-align: right;
 }
@@ -121,7 +120,7 @@ a {
 	width: 158px;
 }
 
-#menu ul.admin-menu li {
+#menu.admin ul li {
 	width: 118px;
 }
 
