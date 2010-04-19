@@ -20,6 +20,6 @@
 </div><!-- top-panel -->
 
 
-<div id="menu" class="last<%= (['admin', 'editor'].include?(current_user[:role])) ? " admin" : "" %>">
+<div id="menu" class="last<%= (['admin', 'editor'].include?(current_user.try(:role))) ? " admin" : "" %>">
   <%= render(:partial => 'layouts/partials/menu') %>
 </div><!-- menu -->
