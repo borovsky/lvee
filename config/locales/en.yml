@@ -416,7 +416,7 @@ en:
       sure: "Are you sure?"
     conference: 
       created: "Conference created successfully"
-      slogan: "The 6th International conference of developers and users of free / open source software"
+      slogan: "The 6th International conference of developers and users<br />of free / open source software"
       status: "Registration to conference {{status}}."
       updated: "Conference updated successfully"
     iefuck: 
@@ -478,11 +478,11 @@ en:
       format: 
         delimiter: ""
   sidebar: 
-    information_sponsor: "Information partners"
-    organizers: Organizers
-    sponsors: "Sponsors of 2009"
-    technical_partner: "Technical partners"
-    technical_sponsor: "Technical sponsor"
+    information_sponsor: "inf-partners-eng"
+    organizers: "organizers-eng"
+    sponsors: "sponsors2009-eng"
+    technical_partner: "tech_partner-eng"
+    technical_sponsor: "tech_sponsor-eng"
   support: 
     array: 
       last_word_connector: ", and "

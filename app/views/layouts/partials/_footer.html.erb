@@ -1,5 +1,10 @@
 <div class="footer">
-  <span class="copy"><%= t('message.license.text')%> <br /> <a href="http://creativecommons.org/licenses/by-sa/3.0/"><img src="/images/80x15.png" alt="licensed under Creative Commons" /></a></span>
+  <div id="footer-menu">
+    <%= render_footer_menu %>
+  </div>
 
-  <%= render_footer_menu %>
+  <div class="copy clear">
+    <a href="http://creativecommons.org/licenses/by-sa/3.0/"><img src="/images/80x15.png" alt="licensed under Creative Commons" /></a>
+    <p><%= t('message.license.text')%></p>
+  </div>
 </div><!-- footer -->

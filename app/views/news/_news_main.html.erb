@@ -1,10 +1,16 @@
-<h3><%= t "label.news.last_news"%></h3>
-<ul>
-  <% news = News.published.translated(I18n.locale, :limit => 4)%>
-  <% news.each do |n| -%>
-  <li>
-    <%= link_to(n.title, news_item_path(:id =>n.id)) %>
-  </li>
+  <% news = News.published.translated(I18n.locale, :limit => 3)%>
+
+  <% news.each_with_index do |n, index| -%>
+  <div class="news-column<%= (index == 0) ? ' first' : '' %>">
+    <p class="news-date"><%= n.published_at.strftime(I18n.t 'date.formats.default') %></p>
+    <h3><%= link_to(n.title, news_item_path(:id =>n.id)) %></h3>
+    <div><%= n.lead %></div>
+  </div>
   <% end %>
-</ul>
-<p class="gipLink"><%= link_to t('label.news.all_news'), :controller => '/news', :action => 'index'%></p>
+
+  <div class="clear">
+    <div class="border-news first"></div>
+    <div class="border-news"></div>
+    <div class="border-news"></div>
+  </div>
+  <p id="all-news"><a href="javascript:{}"><%= link_to t('label.news.all_news'), :controller => '/news', :action => 'index'%></a></p>

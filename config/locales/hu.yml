@@ -486,7 +486,7 @@ hu:
       sure: "Biztos benne?"
     conference: 
       created: "A konferencia sikeresen létrejött"
-      slogan: "Szabad szoftvert használók és fejlesztők 6 nemzetközi konferenciája"
+      slogan: "Szabad szoftvert használók és fejlesztők<br />6 nemzetközi konferenciája"
       status: "Állapota: {{status}}."
       updated: "A konferencia sikeresen frissítődött"
     iefuck: 
@@ -548,11 +548,11 @@ hu:
       format: 
         delimiter: ""
   sidebar: 
-    information_sponsor: "Információs partnerek"
-    organizers: Szervezők
-    sponsors: "2009-as szponzorok"
-    technical_partner: "Technical partners"
-    technical_sponsor: "Műszaki szponzorok"
+    information_sponsor: "inf-partners-hun"
+    organizers: "organizers-hun"
+    sponsors: "sponsors2009-hun"
+    technical_partner: "tech_partner-hun"
+    technical_sponsor: "tech_sponsor-hun"
   support: 
     array: 
       last_word_connector: " és "
