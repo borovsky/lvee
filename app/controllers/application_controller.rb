@@ -54,8 +54,12 @@ class ApplicationController < ActionController::Base
     session[:lang] = lang
   end
 
+  def page_path
+    request.path[3..-1]
+  end
+
   def metainfo_load
-    @metainfo = Metainfo.for(session[:lang], request.path[3..-1])
+    @metainfo = Metainfo.for(session[:lang], page_path)
   end
 
   def admin_required
