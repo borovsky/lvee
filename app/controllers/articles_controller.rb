@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
-  before_filter :editor_required, :except => [:show]
+  prepend_before_filter :editor_required, :except => [:show]
 
-  before_filter :load_article_by_category, :except => [:index, :create, :translate, :diff]
+  prepend_before_filter :load_article_by_category, :except => [:index, :create, :translate, :diff]
 
   include DiffHelper
 
@@ -126,6 +126,11 @@ class ArticlesController < ApplicationController
   def render_article(article)
     render_to_string :partial=> "/articles/diff_article", :locals => {:article => article}
   end
+
+  def page_path
+    params[:category].blank? ? "/articles/#{params[:id]}" : "/#{params[:category]}/#{params[:name]}"
+  end
+
 
   def load_article_by_category
     if(params[:id])
