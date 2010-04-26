@@ -132,7 +132,7 @@ class ArticlesController < ApplicationController
 
 
   def load_article_by_category
-    if(params[:id])
+    if(params[:id] and params[:id] != 'show')
       @article = Article.find_by_id(params[:id])
       if(@article)
         params[:category] = @article.category
