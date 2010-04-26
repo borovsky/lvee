@@ -20,6 +20,7 @@ MENU_ITEMS = [
       ['menu.user.profile', 'users/current'],
       ['menu.user.wiki', 'wiki_pages'],
       ['menu.user.conference_registration', 'conference_registrations/LVEE 2010'],
+      ['menu.user.volunteers', 'users/volunteers'],
     ]],
   ['menu.sponsors', 'sponsors'],
   ['menu.contacts.category', 'contacts', [
