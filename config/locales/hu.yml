@@ -548,11 +548,11 @@ hu:
       format: 
         delimiter: ""
   sidebar: 
-    information_sponsor: "inf-partners-hun"
-    organizers: "organizers-hun"
-    sponsors: "sponsors2009-hun"
-    technical_partner: "tech_partner-hun"
-    technical_sponsor: "tech_sponsor-hun"
+    information_sponsor: "Információs partnerek"
+    organizers: "Szervezők"
+    sponsors: "2009-as szponzorok"
+    technical_partner: "Technical partners"
+    technical_sponsor: "Műszaki szponzorok"
   support: 
     array: 
       last_word_connector: " és "

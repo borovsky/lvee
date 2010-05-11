@@ -482,12 +482,12 @@ be:
     precision: 
       format: 
         delimiter: ""
-  sidebar: 
-    information_sponsor: "inf-partners-bel"
-    organizers: "organizers-bel"
-    sponsors: "sponsors2009-bel"
-    technical_partner: "tech_partner-bel"
-    technical_sponsor: "tech_sponsor-bel"
+  sidebar:
+    information_sponsor: "Інфармацыйныя партнёры"
+    organizers: "Арганізатары"
+    sponsors: "Спонсары ў 2009 годзе"
+    technical_partner: "Тэхнічныя партнёры"
+    technical_sponsor: "Тэхнічны спонсар"
   support: 
     array: 
       last_word_connector: " і "

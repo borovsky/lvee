@@ -5,6 +5,10 @@
     <div id="wrapper" class="container">
       <%= render(:partial => 'layouts/partials/top') %>
 
+      <div id="splash"></div>
+      <div id="slogan"><%= t('message.conference.slogan')%></div>
+
+      <div id="admin-top"></div>
       <div id="content" class="content admin">
         <%= flashes_if_any %>
         <%= yield %>

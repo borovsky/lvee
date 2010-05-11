@@ -40,7 +40,6 @@ STATISTICS_TYPES = [
 TRANSPORT = %w(bus_minsk bus_grodno independent)
 
 SPONSOR_TYPES = [
-  ["organizer", "organizers"],
   ["sponsor", "sponsors"],
   ["technical", "technical_sponsor"],
   ["information", "information_sponsor"],
