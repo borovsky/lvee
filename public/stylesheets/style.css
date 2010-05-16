@@ -412,8 +412,10 @@ li.sponsor {
 
 li.sponsor a.sponsor-header {
 	color: #60656a;
+	display: block;
 	font-size: 20px;
 	font-weight: bold;
+	text-align: center;
 	text-decoration: none;
 }
 
@@ -547,7 +549,8 @@ table.data {
   width: 190px;
 }
 
-.js-kit-from-name {
+input.js-kit-from-name {
+  border: none;
   margin:-1px 0 0 75px;
   padding:4px;
   width:395px;
