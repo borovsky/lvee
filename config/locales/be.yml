@@ -419,7 +419,7 @@ be:
       sure: "Вы ўпэўненыя?"
     conference: 
       created: "Канферэнцыя створана паспяхова"
-      slogan: "Шостая міжнародная канферэнцыя распрацоўнікаў і карыстальнікаў свабодных праграмаў / праграмаў з адкрытым зыходным кодам"
+      slogan: "Шостая міжнародная канферэнцыя распрацоўнікаў і карыстальнікаў<br />свабодных праграмаў / праграмаў з адкрытым зыходным кодам"
       status: "Рэгістрацыя на канферэнцыю {{status}}."
       updated: "Канферэнцыя абноўлена паспяхова"
     iefuck: 
@@ -483,11 +483,11 @@ be:
       format: 
         delimiter: ""
   sidebar: 
-    information_sponsor: "Інфармацыйныя партнёры"
-    organizers: Арганізатары
-    sponsors: "Спонсары ў 2009 годзе"
-    technical_partner: "Тэхнічныя партнёры"
-    technical_sponsor: "Тэхнічны спонсар"
+    information_sponsor: "inf-partners-bel"
+    organizers: "organizers-bel"
+    sponsors: "sponsors2009-bel"
+    technical_partner: "tech_partner-bel"
+    technical_sponsor: "tech_sponsor-bel"
   support: 
     array: 
       last_word_connector: " і "

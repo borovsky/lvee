@@ -1,5 +1,5 @@
-<div class="header">
-  <div class="left">
+<div id="top-panel" class="last">
+  <div id="login-panel">
     <ul>
       <% if current_user %>
       <li class="first"><%= t('message.session.logged', :user_name =>
@@ -13,8 +13,13 @@
       <li><%= link_to t('label.user.register'), new_user_path %></li>
       <% end %>
     </ul>
-  </div><!-- left -->
-  <div class="right">
-    <%= render(:partial => 'layouts/partials/menu') %>
-  </div><!-- right -->
-</div><!-- header -->
+  </div><!-- login-panel -->
+  <div id="languages">
+    <%= render(:partial => 'layouts/partials/flags') %>
+  </div>
+</div><!-- top-panel -->
+
+
+<div id="menu" class="last<%= (['admin', 'editor'].include?(current_user.try(:role))) ? " admin" : "" %>">
+  <%= render(:partial => 'layouts/partials/menu') %>
+</div><!-- menu -->

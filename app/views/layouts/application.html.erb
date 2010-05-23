@@ -2,30 +2,40 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
   <%= render(:partial => 'layouts/partials/head') %>
   <body>
-    <div class="all">
+    <div id="wrapper" class="container">
       <%= render :partial => "/editor/metainfos/editor" if admin? %>
       <%= render(:partial => 'layouts/partials/top') %>
 
-      <div class="content">
-        <div class="common">
-          <div class="left">
-            <%= render(:partial => 'layouts/partials/flags') %>
-            <div class="slogan"><%= t('message.conference.slogan')%></div>
+      <div id="splash"></div>
+      <div id="slogan"><%= t('message.conference.slogan')%></div>
 
+      <div id="content">
+        <div id="article-box">
+          <div id="article-top"></div>
+          <div id="article-bg">
             <%= flashes_if_any %>
 
-            <%= yield %>
-          </div><!-- left -->
-          <div class="right">
-            <%= render :partial => "/layouts/partials/sidebar"%>
-          </div><!-- right -->
+            <div class="articles">
+              <%= yield %>
+            </div>
 
-          <div class="clear"></div>
-        </div> <!-- common layout -->
+            <div class="clear"></div>
+          </div>
+        </div>
+
+        <div id="sponsors-box">
+          <div id="sponsor-top"></div>
+          <%= render :partial => "/layouts/partials/sidebar"%>
+        </div>
+        <div class="clear"></div>
       </div><!-- content -->
 
-      <%= render :partial => "/layouts/partials/footer"%>
     </div> <!-- all -->
+
+    <div id="footer-box" class="footer">
+      <%= render :partial => "/layouts/partials/footer"%>
+    </div>
+
     <%= render :partial => "/layouts/partials/google_analytics" %>
   </body>
 </html>

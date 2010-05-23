@@ -5,8 +5,9 @@
   <meta name="keywords" content="<%= @metainfo.keywords %>" />
   <meta name="description" content="<%= @metainfo.description %>" />
 
+  <%= stylesheet_link_tag "blueprint/screen" %>
+  <%= stylesheet_link_tag "blueprint/print", :media => "print" %>
   <%= stylesheet_link_tag "style" %>
-  <%= stylesheet_link_tag "print", :media => "print" %>
   <%= javascript_include_tag "prototype", "menu" %>
   <%= javascript_include_tag "admin" if admin?%>
   <% if @active_scaffold %>

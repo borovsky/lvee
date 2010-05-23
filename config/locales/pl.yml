@@ -424,7 +424,7 @@ pl:
       sure: "Czy na pewno??"
     conference: 
       created: "Pomyślnie utworzono konferencję"
-      slogan: "Szósta Międzynarodowa konferencja twórców i użytkowników Free Software / Open Source (FS/OS) - jedyna na Białorusi"
+      slogan: "Szósta Międzynarodowa konferencja twórców i użytkowników<br />Free Software / Open Source (FS/OS)"
       status: "Rejestracja na konferencję: {{status}}."
       updated: "Pomyślnie zaktualizowano konferencję"
     iefuck: 
@@ -486,11 +486,11 @@ pl:
       format: 
         delimiter: ""
   sidebar: 
-    information_sponsor: "Partnerzy informacyjni"
-    organizers: Organizatorzy
-    sponsors: "Sponsorzy w roku 2009"
-    technical_partner: "Partnerzy techniczni"
-    technical_sponsor: "Sponsorzy techniczni"
+    information_sponsor: "inf-partners-pol"
+    organizers: "organizers-pol"
+    sponsors: "sponsors2009-pol"
+    technical_partner: "tech_partner-pol"
+    technical_sponsor: "tech_sponsor-pol"
   support: 
     array: 
       last_word_connector: ", i "

@@ -486,7 +486,7 @@ ru:
       sure: "Вы уверены?"
     conference: 
       created: "Конференция успешно создана"
-      slogan: "Шестая международная конференция разработчиков и пользователей свободного програмного обеспечения"
+      slogan: "Шестая международная конференция разработчиков<br />и пользователей свободного програмного обеспечения"
       status: "Регистрация на конференцию: {{status}}."
       updated: "Конференция успешно обновлена"
     iefuck: 
@@ -548,11 +548,11 @@ ru:
       format: 
         delimiter: ""
   sidebar: 
-    information_sponsor: "Информационные партнёры"
-    organizers: Организаторы
-    sponsors: "Спонсоры 2009"
-    technical_partner: "Технические партнёры"
-    technical_sponsor: "Технический спонсор"
+    information_sponsor: "inf-partners-rus"
+    organizers: "organizers-rus"
+    sponsors: "sponsors2009-rus"
+    technical_partner: "tech_partner-rus"
+    technical_sponsor: "tech_sponsor-rus"
   support: 
     array: 
       last_word_connector: " и "
