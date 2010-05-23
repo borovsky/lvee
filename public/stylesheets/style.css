@@ -8,7 +8,7 @@ body {
 
 a {
 	outline: none;
-} 
+}
 
 #wrapper {
 	width: 950px;
@@ -319,9 +319,6 @@ div.border-news.first {
 	text-decoration: none;
 }
 
-.articles {
-}
-
 .articles h1 {
 	color: #9cbe00;
 	font-size: 32px;
@@ -339,27 +336,26 @@ div.border-news.first {
 	padding-top: 20px;
 }
 
-.article {
+.articles {
 	min-height: 300px;
 	padding-bottom: 45px;
 }
 
-.article p {
+.articles p {
 	margin: 0;
 	padding: 8px 0;
 }
 
-.article a {
+.articles a {
 	color: #9fc200;
-	font-size: 13px;
 	text-decoration: underline;
 }
 
-.article a:hover {
+.articles a:hover {
 	text-decoration: none;
 }
 
-.article img {
+.articles img {
 	border: 6px solid #e3e3e4;
 }
 
@@ -533,6 +529,63 @@ table.data {
     border-spacing: 0px;
     border-collapse:collapse;
     font-size:11px;
+    margin-left: -25px;
     width:99%
 }
 
+#as_users-create--form input.text-input,
+#as_users-create--form textarea,
+#as_users-create--form select {
+  width: 160px;
+}
+
+#as_users-create--form span.description {
+  margin: 5px 0 0 5px;
+  width: 190px;
+}
+
+.js-kit-from-name {
+  margin:-1px 0 0 75px;
+  padding:4px;
+  width:395px;
+}
+
+a[href $='.pdf'],
+a[href $='.ps'] {
+	padding: 2px 0 2px 18px;
+	background-position: 0 0;
+	background: transparent url(/images/ftypes/document-pdf-text.png) no-repeat;
+}
+
+a[href $= '.odp'],
+a[href $= '.ppt'],
+a[href $= '.sxi'] {
+	padding: 2px 0 2px 18px;
+	background-position: 0 0;
+	background: transparent url(/images/ftypes/projection-screen-presentation.png) no-repeat;
+}
+
+a[href $= '.odt'],
+a[href $= '.doc'] {
+	padding: 2px 0 2px 18px;
+	background-position: 0 0;
+	background: transparent url(/images/ftypes/document-text-image.png) no-repeat;
+}
+
+a[href $= '.sxd'] {
+	padding: 2px 0 2px 18px;
+	background-position: 0 0;
+	background: transparent url(/images/ftypes/document-image.png) no-repeat;
+}
+
+a[href $= '.gz'],
+a[href $= '.bz2'] {
+	padding: 2px 0 2px 18px;
+	background-position: 0 0;
+	background: transparent url(/images/ftypes/document-zipper.png) no-repeat;
+}
+a[href $= '.avi'] {
+	padding: 2px 0 2px 18px;
+	background-position: 0 0;
+	background: transparent url(/images/ftypes/document-film.png) no-repeat;
+}

@@ -13,11 +13,11 @@
         <div id="article-box">
           <div id="article-top"></div>
           <div id="article-bg">
+            <%= flashes_if_any %>
+
             <div id="news-box">
               <%= render :partial => "/news/news_main"%>
             </div>
-
-            <%= flashes_if_any %>
 
             <div class="articles">
               <%= article_output('main', 'conference') %>
