@@ -550,12 +550,12 @@ uk:
     precision: 
       format: 
         delimiter: ""
-  sidebar: 
-    information_sponsor: "inf-partners-ukr"
-    organizers: "organizers-ukr"
-    sponsors: "sponsors2009-ukr"
-    technical_partner: "tech_partner-ukr"
-    technical_sponsor: "tech_sponsor-ukr"
+  sidebar:
+    information_sponsor: "Інформаційні партнери"
+    organizers: "Організатори"
+    sponsors: "Спонсори 2009"
+    technical_partner: "Технічний партнер"
+    technical_sponsor: "Технічний спонсор"
   support: 
     array: 
       last_word_connector: " і "

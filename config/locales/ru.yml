@@ -547,12 +547,12 @@ ru:
     precision: 
       format: 
         delimiter: ""
-  sidebar: 
-    information_sponsor: "inf-partners-rus"
-    organizers: "organizers-rus"
-    sponsors: "sponsors2009-rus"
-    technical_partner: "tech_partner-rus"
-    technical_sponsor: "tech_sponsor-rus"
+  sidebar:
+    information_sponsor: "Информационные партнёры"
+    organizers: "Организаторы"
+    sponsors: "Спонсоры 2009"
+    technical_partner: "Технические партнёры"
+    technical_sponsor: "Технический спонсор"
   support: 
     array: 
       last_word_connector: " и "

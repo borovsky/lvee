@@ -485,12 +485,12 @@ pl:
     precision: 
       format: 
         delimiter: ""
-  sidebar: 
-    information_sponsor: "inf-partners-pol"
-    organizers: "organizers-pol"
-    sponsors: "sponsors2009-pol"
-    technical_partner: "tech_partner-pol"
-    technical_sponsor: "tech_sponsor-pol"
+  sidebar:
+    information_sponsor: "Partnerzy informacyjni"
+    organizers: "Organizatorzy"
+    sponsors: "Sponsorzy w roku 2009"
+    technical_partner: "Partnerzy techniczni"
+    technical_sponsor: "Sponsorzy techniczni"
   support: 
     array: 
       last_word_connector: ", i "
