@@ -539,9 +539,12 @@ table.data {
 }
 
 #as_users-create--form input.text-input,
-#as_users-create--form textarea,
-#as_users-create--form select {
+#as_users-create--form textarea {
   width: 160px;
+}
+
+#as_users-create--form select {
+  width: 165px;
 }
 
 #as_users-create--form span.description {
@@ -610,7 +613,7 @@ a[href $= '.avi'] {
 }
 
 #content.admin {
-	background: #fff url(/images/bg-admin.png) repeat-y top left;
+  background: #fff url(/images/bg-admin.png) repeat-y top left;
   margin-top: 0;
   padding: 20px;
   width: 910px;
@@ -618,4 +621,16 @@ a[href $= '.avi'] {
 
 .admin table.data {
   margin: 0;
+}
+
+textarea#article_body {
+  width: 560px;
+}
+
+table#organizers td:last-child {
+  width:470px;
+}
+
+table#organizers td:first-child {
+  vertical-align:top;
 }

@@ -1,7 +1,7 @@
 
 /* active_scaffold */
 .active-scaffold input.text-input {
-    width: 270px;
+    width: 200px;
     display:block;
     clear:none;
     float:left;
@@ -9,7 +9,7 @@
 }
 
 .active-scaffold textarea {
-    width: 272px;
+    width: 202px;
     height: 150px;
     display:block;
     float:left;
@@ -20,16 +20,12 @@
 .active-scaffold .description {
     display:block;
     float:right;
-    width: 245px;
+    width: 150px;
     color: #000;
+    padding-top: 5px;
 }
 
 .active-scaffold li.form-element dt {
-    padding-right: 10px;
-    text-align:right;
-}
-
-.active-scaffold dt {
     padding-right: 10px;
     text-align:right;
 }
@@ -45,7 +41,7 @@
 
 .active-scaffold li.form-element div {
     list-style:none;
-    width: 276px;
+/*    width: 276px;*/
     float:left;
 }
 
@@ -61,7 +57,7 @@
 }
 
 .active-scaffold select {
-    width: 276px;
+    width: 205px;
     border: 1px solid #1492A3
 }
 

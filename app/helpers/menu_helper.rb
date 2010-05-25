@@ -4,17 +4,23 @@ module MenuHelper
   MAIN_MENU_FIRST_ITEM_CLASS = 'first'
   MAIN_MENU_LAST_ITEM_CLASS = 'last'
   MAIN_MENU_LAST_SUBITEM_CLASS = 'last-m'
+  MAIN_MENU_ACTIVE_ITEM_CLASS = 'active'
 
   def render_main_menu
-    items = menu_items.map {|i| render_main_menu_item(i)}.join("")
+    active_item = params['category']
+    active_item = 'main' if params['controller'] == 'main'
+    active_item = 'users/current' if ['users', 'sessions'].include?(params['controller'])
+
+    items = menu_items.map {|i| render_main_menu_item(i, active_item)}.join("")
     content_tag(:ul, items, :id => MAIN_MENU_ID)
   end
 
-  def render_main_menu_item(item)
+  def render_main_menu_item(item, active_item)
     classes = []
     classes << MAIN_MENU_SUBMENU_CLASS if item[2]
     classes << MAIN_MENU_FIRST_ITEM_CLASS if item == menu_items.first
     classes << MAIN_MENU_LAST_ITEM_CLASS if item == menu_items.last
+    classes << MAIN_MENU_ACTIVE_ITEM_CLASS if item[1] == active_item
     classes = classes.join(' ')
     submenu = render_main_submenu(item[2]) if item[2]
     link = link_to_menu_item(item[0], item[1])
