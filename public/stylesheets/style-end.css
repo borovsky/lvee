@@ -5,7 +5,6 @@
     display:block;
     clear:none;
     float:left;
-    border: 1px solid #1492A3
 }
 
 .active-scaffold textarea {
@@ -14,7 +13,6 @@
     display:block;
     float:left;
     clear:none;
-    border: 1px solid #1492A3
 }
 
 .active-scaffold .description {
@@ -41,7 +39,6 @@
 
 .active-scaffold li.form-element div {
     list-style:none;
-/*    width: 276px;*/
     float:left;
 }
 
@@ -53,12 +50,10 @@
     float: left;
     font: bold 14px arial;
     margin-bottom: 5px;
-
 }
 
 .active-scaffold select {
     width: 205px;
-    border: 1px solid #1492A3
 }
 
 .active-scaffold p.note {
@@ -68,7 +63,6 @@
 
 .active-scaffold .view {
     background:none;
-    border: 1px solid #1492A3
 }
 
 .active-scaffold label {
@@ -77,10 +71,6 @@
 
 .active-scaffold a:hover {
     background:none;
-}
-
-.active-scaffold h4, .active-scaffold h5 {
-    color:#1492A3;
 }
 
 .content .left .active-scaffold ul {
