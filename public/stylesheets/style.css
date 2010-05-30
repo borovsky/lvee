@@ -290,6 +290,15 @@ p.news-date {
 	padding-bottom: 15px;
 }
 
+.news-column div a {
+	color: #7f9f00;
+	font-size: 13px;
+	text-decoration: underline;
+}
+
+.news-column div a:hover {
+	text-decoration: none;
+}
 
 div.border-news {
 	border-bottom: 1px solid #e2e2e2;
@@ -348,7 +357,7 @@ div.border-news.first {
 }
 
 .articles a {
-	color: #9fc200;
+	color: #7f9f00;
 	text-decoration: underline;
 }
 
