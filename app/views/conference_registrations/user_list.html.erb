@@ -14,8 +14,8 @@
     <td><%= image_tag(image_path) if image_path %></td>
     <td><%= h reg.user.full_name %></td>
     <td><%= h reg.user.country %>, <%= h reg.user.city %></td>
-    <td><%= simple_format(reg.user.projects)%></td>
-    <td><%= simple_format(reg.proposition)%></td>
+    <td><%= simple_format(strip_urls(reg.user.projects))%></td>
+    <td><%= simple_format(strip_urls(reg.proposition))%></td>
   </tr>
   <% end -%>
 </table>
