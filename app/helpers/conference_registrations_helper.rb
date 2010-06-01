@@ -3,8 +3,8 @@ module ConferenceRegistrationsHelper
     out = []
 
     str.split(' ').each do |word|
-      if word =~ /(.*?:\/\/)(.*)?(\/.*)/
-        out << word.gsub(/(.*?:\/\/)(.*?)\/?(\/.*)/) { "<a class=\"participants_url\" href=\"#{word}\" title=\"#{word}\">#{$1}#{$2}</a>" } if word =~ /(.*?:\/\/)(.*)?(\/.*)/
+      if word =~ /(.*?:\/\/)(.*)?(\/.*)?/
+        out << word.gsub(/(.*?:\/\/)(.*)?(\/.*)?/) { "<a class=\"participants_url\" href=\"#{word}\" title=\"#{word}\">#{$1}#{$2}</a>" } if word =~ /(.*?:\/\/)(.*)?(\/.*)/
       else
         out << word
       end
