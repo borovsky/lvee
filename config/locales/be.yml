@@ -411,6 +411,7 @@ be:
       category: Удзельнiкi
       conference_registration: Спiс
       profile: Профіль
+      volunteers: Валанцёры
       wiki: Wiki
   message: 
     common: 
@@ -484,8 +485,8 @@ be:
         delimiter: ""
   sidebar:
     information_sponsor: "Інфармацыйныя партнёры"
-    organizers: "Арганізатары"
-    sponsors: "Спонсары ў 2009 годзе"
+    organizers: Арганізатары
+    sponsors: "Спонсары ў 2010 годзе"
     technical_partner: "Тэхнічныя партнёры"
     technical_sponsor: "Тэхнічны спонсар"
   support: 

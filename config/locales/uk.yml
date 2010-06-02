@@ -479,6 +479,7 @@ uk:
       category: Учасники
       conference_registration: "Перелік учасників конференції"
       profile: "Особистий профіль"
+      volunteers: Волонтери
       wiki: Wiki
   message: 
     common: 
@@ -552,8 +553,8 @@ uk:
         delimiter: ""
   sidebar:
     information_sponsor: "Інформаційні партнери"
-    organizers: "Організатори"
-    sponsors: "Спонсори 2009"
+    organizers: Організатори
+    sponsors: "Спонсори 2010"
     technical_partner: "Технічний партнер"
     technical_sponsor: "Технічний спонсор"
   support: 

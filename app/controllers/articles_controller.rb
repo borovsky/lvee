@@ -1,8 +1,6 @@
 class ArticlesController < ApplicationController
   prepend_before_filter :editor_required, :except => [:show]
 
-  prepend_before_filter :load_article_by_category, :except => [:index, :create, :translate, :diff]
-
   include DiffHelper
 
   # GET /articles
@@ -19,7 +17,6 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.xml
   def show
-    @article ||= Article.find(params[:id])
     @title = @article.title
 
     respond_to do |format|
@@ -128,12 +125,14 @@ class ArticlesController < ApplicationController
   end
 
   def page_path
+    return unless params[:action].to_s == 'show'
+    load_article_by_category
     params[:category].blank? ? "/articles/#{params[:id]}" : "/#{params[:category]}/#{params[:name]}"
   end
 
 
   def load_article_by_category
-    if(params[:id])
+    if(params[:id] and params[:id] != 'show')
       @article = Article.find_by_id(params[:id])
       if(@article)
         params[:category] = @article.category

@@ -416,6 +416,7 @@ pl:
       category: Uczestnicy
       conference_registration: "Uczestnicy konferencji"
       profile: Profil
+      volunteers: Wolontariuszy
       wiki: Wiki
   message: 
     common: 
@@ -487,8 +488,8 @@ pl:
         delimiter: ""
   sidebar:
     information_sponsor: "Partnerzy informacyjni"
-    organizers: "Organizatorzy"
-    sponsors: "Sponsorzy w roku 2009"
+    organizers: Organizatorzy
+    sponsors: "Sponsorzy w roku 2010"
     technical_partner: "Partnerzy techniczni"
     technical_sponsor: "Sponsorzy techniczni"
   support: 

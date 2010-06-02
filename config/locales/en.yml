@@ -409,6 +409,7 @@ en:
       conference_registration: List
       profile: "Personal profile"
       wiki: Wiki
+      volunteers: "Volunteers"
   message: 
     common: 
       access_denied: "Access denied"
@@ -479,8 +480,8 @@ en:
         delimiter: ""
   sidebar: 
     information_sponsor: "Information partners"
-    organizers: "Organizers"
-    sponsors: "Sponsors of 2009"
+    organizers: Organizers
+    sponsors: "Sponsors of 2010"
     technical_partner: "Technical partners"
     technical_sponsor: "Technical sponsor"
   support: 

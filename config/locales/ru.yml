@@ -478,6 +478,7 @@ ru:
       category: Участники
       conference_registration: Список
       profile: "Личный профиль"
+      volunteers: Волонтёры
       wiki: Wiki
   message: 
     common: 
@@ -549,8 +550,8 @@ ru:
         delimiter: ""
   sidebar:
     information_sponsor: "Информационные партнёры"
-    organizers: "Организаторы"
-    sponsors: "Спонсоры 2009"
+    organizers: Организаторы
+    sponsors: "Спонсоры 2010"
     technical_partner: "Технические партнёры"
     technical_sponsor: "Технический спонсор"
   support: 

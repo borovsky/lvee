@@ -478,6 +478,7 @@ hu:
       category: Participants
       conference_registration: "Participants of the Conference"
       profile: Profil
+      volunteers: Volunteers
       wiki: Wiki
   message: 
     common: 
@@ -549,8 +550,8 @@ hu:
         delimiter: ""
   sidebar: 
     information_sponsor: "Információs partnerek"
-    organizers: "Szervezők"
-    sponsors: "2009-as szponzorok"
+    organizers: Szervezők
+    sponsors: "2010-as szponzorok"
     technical_partner: "Technical partners"
     technical_sponsor: "Műszaki szponzorok"
   support: 

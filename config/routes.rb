@@ -46,6 +46,9 @@ ActionController::Routing::Routes.draw do |map|
       {:category => 'users', :name => "privacy"},
       :controller=> "articles", :action => "show")
 
+    ns.connect('users/volunteers', :requirements =>
+      {:category => 'users', :name => "volunteers"},
+      :controller=> "articles", :action => "show")
 
     ns.translate_news "news/:parent_id/translate/:locale",  :controller => "news", :action => "new"
     ns.resources(:news,
