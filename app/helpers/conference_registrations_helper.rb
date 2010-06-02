@@ -1,4 +1,22 @@
 module ConferenceRegistrationsHelper
+
+  URL_REGEXP = %r|(.*?://)([^/]+)(/.*)?| #/
+
+  def strip_urls str
+    out = []
+    return str if str.blank?
+
+    str.split(' ').each do |word|
+      if word =~ URL_REGEXP
+        out << word.gsub(URL_REGEXP) { "<a class=\"participants_url\" href=\"#{word}\" title=\"#{word}\">#{$1}#{$2}</a>" }
+      else
+        out << word
+      end
+    end
+
+    out.join(' ')
+  end
+
   def as_(param, opts={})
     t("label.conference_registration.#{param}", :default => t("label.common.#{param}"))
   end
