@@ -483,13 +483,8 @@ be:
     precision: 
       format: 
         delimiter: ""
-<<<<<<< HEAD
-  sidebar:
-    information_sponsor: "Інфармацыйныя партнёры"
-=======
   sidebar: 
     information_sponsor: "Інфармацыйныя партнэры"
->>>>>>> old-design
     organizers: Арганізатары
     sponsors: "Фундатары ў 2010 годзе"
     technical_partner: "Тэхнічныя партнэры"
