@@ -431,11 +431,13 @@ li.sponsor a.sponsor-header {
 li.sponsor ul {
 	border-bottom: 1px solid #e2e2e2;
 	list-style-type: none;
+	margin: 25px 0;
 	padding: 0;
 }
 
-li.sponsor li {
-	margin: 25px 0 25px 40px;
+li.sponsor li a {
+	display: block;
+	text-align: center;
 }
 
 #footer-box {
@@ -632,7 +634,7 @@ a[href $= '.avi'] {
   margin: 0;
 }
 
-textarea#article_body {
+textarea#article_body, textarea#wiki_page_body {
   width: 560px;
 }
 
