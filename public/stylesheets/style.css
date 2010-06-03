@@ -646,3 +646,5 @@ table#organizers td:last-child {
 table#organizers td:first-child {
   vertical-align:top;
 }
+
+table.participants th,td {padding:4px}
