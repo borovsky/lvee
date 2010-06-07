@@ -84,5 +84,8 @@ class ConferenceRegistration < ActiveRecord::Base
 
   def after_save
     populate_badges
+    if self.status_name_changed?
+      UserMailer.deliver_status_changed(self)
+    end
   end
 end

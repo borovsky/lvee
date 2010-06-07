@@ -27,6 +27,17 @@ class UserMailer < ActionMailer::Base
     @body[:ip] = ip
   end
 
+  def status_changed(conference_registration)
+    user = conference_registration.user
+    conference = conference_registration.conference
+    status = Status.find_by_name(conference_registration.status_name)
+
+    setup_email(user)
+    
+    @subject += ERB.new(status.subject).result(binding)
+    part :content_type => "text/plain", :body => ERB.new(status.mail).result(binding)
+  end
+
   protected
     def setup_email(user)
       @recipients  = "#{user.email}"
