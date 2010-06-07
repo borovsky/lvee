@@ -3,6 +3,7 @@ TSHIRT_SIZES = %w(M L XL XXL)
 
 NEW_STATUS = "new"
 APPROVED_STATUS = "approved"
+CANCELLED_STATUS = "cancelled"
 
 IMAGE_WEB_ROOT = 'images/uploaded'
 IMAGE_UPLOAD_ROOT = File.join(RAILS_ROOT, 'public', 'images', 'uploaded')

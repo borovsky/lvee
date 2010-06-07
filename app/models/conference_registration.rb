@@ -53,6 +53,13 @@ class ConferenceRegistration < ActiveRecord::Base
     end
   end
 
+  def self.participants(conference)
+    find(:all,
+      :conditions => ["conference_id = ? AND status_name <> ?", conference, CANCELLED_STATUS],
+      :include => [:user],
+      :order => "users.country ASC, users.city ASC, users.last_name ASC, users.first_name")
+  end
+
   protected
   def check_transport
     !admin && approved?
