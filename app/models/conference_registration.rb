@@ -28,6 +28,15 @@ class ConferenceRegistration < ActiveRecord::Base
     status_name == APPROVED_STATUS
   end
 
+  def cancelled?
+    status_name == CANCELLED_STATUS
+  end
+
+  def cancel!
+    self.status_name = CANCELLED_STATUS
+    save!
+  end
+
   def self.find_actual_for_user(user_id)
     ConferenceRegistration.find(:all,
       :conditions => ['user_id = :user_id', {:user_id => user_id}], :order => "conferences.start_date",

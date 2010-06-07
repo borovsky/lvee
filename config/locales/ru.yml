@@ -278,6 +278,7 @@ ru:
       approved_edit: "Подтвердить участие в  {{conference}}"
       badges: Беджи
       badges_title: "Беджи для {{conference}}"
+      cancel: "Cancel registration"
       days: "Дни участия"
       edit: "Анкета участника {{conference}}"
       floor: "Готовы ли вы спать на полу?"
@@ -548,7 +549,7 @@ ru:
     precision: 
       format: 
         delimiter: ""
-  sidebar:
+  sidebar: 
     information_sponsor: "Информационные партнёры"
     organizers: Организаторы
     sponsors: "Спонсоры 2010"

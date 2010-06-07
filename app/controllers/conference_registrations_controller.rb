@@ -55,6 +55,12 @@ class ConferenceRegistrationsController < ApplicationController
     end
   end
 
+  def cancel
+    @conference_registration = ConferenceRegistration.find(params[:id])
+    @conference_registration.cancel!
+    redirect_to user_path(:id => current_user.id)
+  end
+
   protected
   def current_user_only
     login_required

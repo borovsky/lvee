@@ -216,6 +216,7 @@ pl:
       approved_edit: "Confirm participation in {{conference}}"
       badges: Badges
       badges_title: "Badges for {{conference}}"
+      cancel: "Cancel registration"
       days: "Dni uczestnictwa"
       edit: " {{conference}} participant's data"
       floor: "Can you sleep on the floor?"
@@ -486,7 +487,7 @@ pl:
     precision: 
       format: 
         delimiter: ""
-  sidebar:
+  sidebar: 
     information_sponsor: "Partnerzy informacyjni"
     organizers: Organizatorzy
     sponsors: "Sponsorzy w roku 2010"

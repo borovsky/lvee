@@ -19,28 +19,36 @@
   <% regs.each  do |reg| -%>
     <% conf = reg.conference -%>
     <p>
-      <% type = (reg.approved? ? (reg.filled ? "edit" : "approved_edit") : "edit") %>
-      <% title = "label.conference_registration." + type %>
-      <%= link_to(t(title, :conference => conf.name), edit_user_conference_registration_path(:user_id => user_id, :id => reg.id),
-        :class => "big-button")%>
-      <% if reg.approved? and reg.filled -%>
-        <%= link_to(t("label.conference_registration.badges"), badges_user_conference_registration_path(:user_id => user_id, :id => reg.id),
-          :class => "small-button")%>
+      <% if reg.cancelled? -%>
+        <%= h conf.name %> (<%= format_date(conf.start_date) %> - <%= format_date(conf.finish_date) %>)
+        - <b>Cancelled</b>
+      <% else -%>
+        <% type = (reg.approved? ? (reg.filled ? "edit" : "approved_edit") : "edit") %>
+        <% title = "label.conference_registration." + type %>
+        <%= link_to(t(title, :conference => conf.name), edit_user_conference_registration_path(:user_id => user_id, :id => reg.id),
+          :class => "big-button")%>
+        <% if reg.approved? and reg.filled -%>
+          <%= link_to(t("label.conference_registration.badges"), badges_user_conference_registration_path(:user_id => user_id, :id => reg.id),
+            :class => "small-button")%>
+        <% end -%>
+        <%= link_to(t("label.conference_registration.cancel"), cancel_user_conference_registration_path(:user_id => user_id, :id => reg.id),
+          :confirm => t("message.common.sure"), :method => :delete) %>
       <% end -%>
     </p>
   <% end -%>
 <% end -%>
 
+
 <% unless participated.empty? -%>
-  <h2><%= t('label.conference.participated')%>:</h2>
-  <ul>
-    <% participated.each  do |reg| -%>
-      <% conf = reg.conference -%>
-      <li>
-        <%= h conf.name %>
-        (<%= format_date(conf.start_date) %> -
-        <%= format_date(conf.finish_date) %>)
-      </li>
-    <% end -%>
-  </ul>
+<h2><%= t('label.conference.participated')%>:</h2>
+<ul>
+  <% participated.each  do |reg| -%>
+    <% conf = reg.conference -%>
+    <li>
+      <%= h conf.name %>
+      (<%= format_date(conf.start_date) %> -
+      <%= format_date(conf.finish_date) %>)
+    </li>
+  <% end -%>
+</ul>
 <% end -%>
