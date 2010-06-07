@@ -10,10 +10,10 @@ describe Admin::InfoMailerController do
     @user2 = mock_user(:id => 2, :email => "test1", :full_name => "FullName2")
     @user3 = mock_user(:id => 3, :email => "test1", :full_name => "FullName3")
 
-    @admin = mock_user(:id => 42, :admin? => true, :editor? => true, :login => "test")
+    @admin = mock_user(:id => 42, :admin? => true, :editor? => true, :login => "test", :role => "admin")
     login_as @admin
   end
-  
+
   describe "index" do
     integrate_views
 

@@ -17,4 +17,4 @@
 <%= render(:partial => 'news/editor_actions', :locals => {:news => @news}) if editor? -%>
 <%= link_to t('label.news.back_to_list'), news_path %>
 <p />
-<div class="js-kit-comments" permalink="" uniq="<%= @metainfo.page %>"></div><script src="http://js-kit.com/for/lvee.org/comments.js"></script>
+<div class="js-kit-comments" permalink="" uniq="<%= @metainfo.try(:page) %>"></div><script src="http://js-kit.com/for/lvee.org/comments.js"></script>
