@@ -648,3 +648,39 @@ table#organizers td:first-child {
 }
 
 table.participants th,td {padding:4px}
+
+#badges .badge {
+    width: 570px;
+    height: 348px;
+    background: url(/images/badge2010.png) no-repeat bottom left;
+    margin-bottom: 20px;
+}
+
+#badges .badge input {
+    border: 1px solid #1492A3;
+    background:#FFFFCC;
+    position: relative;
+    text-align: center;
+}
+
+#badges .badge .tags {
+    left: 250px;
+    width: 280px;
+    top: 10px;
+    font-size: 20px;
+}
+
+#badges .badge .top {
+    left: 24px;
+    width: 525px;
+    top: 149px;
+    font-size: 30px;
+}
+
+#badges .badge .bottom {
+    left: 24px;
+    width: 525px;
+    top: 142px;
+    font-size: 30px;
+}
+
