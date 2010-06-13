@@ -34,6 +34,7 @@ class ConferenceStatisticsPresenter
     end
 
     def update_statistics(reg)
+      return if reg.cancelled?
       add_statistics :total_registrations
       add_statistics :total_men, reg.quantity
       if reg.approved?
