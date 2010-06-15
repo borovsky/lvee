@@ -29,7 +29,7 @@
           :class => "big-button")%>
         <% if reg.approved? and reg.filled -%>
           <%= link_to(t("label.conference_registration.badges"), badges_user_conference_registration_path(:user_id => user_id, :id => reg.id),
-            :class => "small-button")%>
+            :class => "big-button")%>
         <% end -%>
         <%= link_to(t("label.conference_registration.cancel"), cancel_user_conference_registration_path(:user_id => user_id, :id => reg.id),
           :confirm => t("message.common.sure"), :method => :delete) %>
