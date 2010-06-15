@@ -18,7 +18,7 @@ module Admin
       self.action_links.add(:registrations, :label => :registrations, :type => :member, :inline => false, :parameters => {})
       self.action_links.add(:csv, :label => :csv_export, :type => :member, :inline => false, :parameters => {:format =>"csv" })
       self.action_links.add(:badges_csv, :label => :badges_csv_export, :type => :member, :inline => false, :parameters => {:format =>"csv" })
-      self.action_links.add(:badges_pdf, :label => :badges_pdf_export, :type => :member, :inline => false, :parameters => {:format =>"csv" })
+      self.action_links.add(:badges_pdf, :label => :badges_pdf_export, :type => :member, :inline => false, :parameters => {:format =>"pdf" })
     end
 
     def csv
