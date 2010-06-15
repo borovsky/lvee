@@ -54,10 +54,10 @@ module Export
 
         pdf.Rect(sx, sy, width, height)
         pdf.Image("#{RAILS_ROOT}/media/shishky.png", sx+6, sy + 10, 90)
-        pdf.Image("#{RAILS_ROOT}/media/logo2010.png", sx + 110, sy + 50, 140)
+        pdf.Image("#{RAILS_ROOT}/media/logo2010.png", sx + 110, sy + 30, 140)
         pdf.add_text_wrap(sx + 100, sy + 10, width-110, b.tags, 12, 'C')
-        pdf.add_text_wrap(sx + 20, sy + height - 40, width-40, b.top, 15, 'C')
-        pdf.add_text_wrap(sx + 20, sy + height - 10, width-40, b.bottom, 12, 'C')
+        pdf.add_text_wrap(sx + 20, sy + height - 50, width-40, b.top, 15, 'C')
+        pdf.add_text_wrap(sx + 20, sy + height - 20, width-40, b.bottom, 12, 'C')
       end
 
       pdf.Output

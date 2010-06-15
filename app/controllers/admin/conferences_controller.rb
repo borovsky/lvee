@@ -63,7 +63,7 @@ module Admin
       conf = Conference.find(params[:id])
       badges = conf.badges
 
-      send_data(badges_export(badges), :type => 'application/pdf', :filename => "badges.pdf")
+      send_data(badges_export(badges), :type => 'application/pdf', :filename => "badges-#{conf.id}.pdf")
     end
 
     def registrations
