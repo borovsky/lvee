@@ -447,7 +447,7 @@ uk:
       title: Admin
       users: "Users admin"
     conference: 
-      about: "Про конференцію"
+      about: Конференція
       attribution: Атрибутика
       history: Історія
       linux: Linux
