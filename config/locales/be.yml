@@ -326,7 +326,7 @@ be:
       password: Пароль
       password_confirmation: "Паўтарыце пароль"
       password_restore: "Аднаўленне паролю"
-      password_restore_link: Аднавіць
+      password_restore_link: аднавіце
       photo: Фота
       projects: "Праекты FOSS"
       register: Зарэгістраваць
@@ -379,7 +379,7 @@ be:
       title: Адміністратар
       users: "Адміністратар карыстальнікаў"
     conference: 
-      about: "Пра канферэнцыю"
+      about: Канферэнцыя
       attribution: Атрыбутыка
       history: Гісторыя
       linux: GNU/Linux
