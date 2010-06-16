@@ -278,7 +278,7 @@ ru:
       approved_edit: "Подтвердить участие в  {{conference}}"
       badges: Беджи
       badges_title: "Беджи для {{conference}}"
-      cancel: "Cancel registration"
+      cancel_registration: "Отменить регистрацию"
       days: "Дни участия"
       edit: "Анкета участника {{conference}}"
       floor: "Готовы ли вы спать на полу?"

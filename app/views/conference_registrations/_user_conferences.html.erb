@@ -31,7 +31,7 @@
           <%= link_to(t("label.conference_registration.badges"), badges_user_conference_registration_path(:user_id => user_id, :id => reg.id),
             :class => "big-button")%>
         <% end -%>
-        <%= link_to(t("label.conference_registration.cancel"), cancel_user_conference_registration_path(:user_id => user_id, :id => reg.id),
+        <%= link_to(t("label.conference_registration.cancel_registration"), cancel_user_conference_registration_path(:user_id => user_id, :id => reg.id),
           :confirm => t("message.common.sure"), :method => :delete) %>
       <% end -%>
     </p>

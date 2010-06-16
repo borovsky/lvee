@@ -279,7 +279,7 @@ uk:
       approved_edit: "Confirm participation in {{conference}}"
       badges: Badges
       badges_title: "Badges for {{conference}}"
-      cancel: "Cancel registration"
+      cancel_registration: "Cancel registration"
       days: "Дні участі"
       edit: " {{conference}} participant's data"
       floor: "Can you sleep on the floor?"

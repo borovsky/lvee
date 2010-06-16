@@ -211,7 +211,7 @@ be:
       approved_edit: "Пацвердзьце свой удзел у {{conference}}"
       badges: Значкі
       badges_title: "Значкі на {{conference}}"
-      cancel: "Cancel registration"
+      cancel_registration: "Cancel registration"
       days: "Дні ўдзелу"
       edit: "Звесткі пра ўдзельніка {{conference}}"
       floor: "Ці вы можаце спаць на падлозе?"
