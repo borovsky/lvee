@@ -75,7 +75,7 @@ class ConferenceRegistration < ActiveRecord::Base
   end
 
   def validate
-    if status_name == APPROVED_STATUS
+    if status_name == APPROVED_STATUS && !admin
       self.errors.add("quantity",
         I18n.t("activerecord.errors.messages.less_than_or_equal_to",
           :count => self.quantity_was)) if self.quantity_was && (self.quantity.to_i > self.quantity_was)
