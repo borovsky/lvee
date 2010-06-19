@@ -222,7 +222,7 @@ class TCPDF
 		
 		#Initialization of properties
   	@barcode ||= false
-		@buffer ||= ''
+		@buffer ||= RUBY_VERSION < '1.9' ? "" : "".force_encoding("BINARY")
 		@diffs ||= []
 		@color_flag ||= false
   	@default_table_columns ||= 4
@@ -293,10 +293,10 @@ class TCPDF
 
 		#Scale factor
 		case unit.downcase
-			when 'pt': @k=1
-			when 'mm': @k=72/25.4
-			when 'cm': @k=72/2.54
-			when 'in': @k=72
+			when 'pt' then @k=1
+			when 'mm' then @k=72/25.4
+			when 'cm' then @k=72/2.54
+			when 'in' then @k=72
 			else Error("Incorrect unit: #{unit}")
 		end
 
@@ -305,55 +305,55 @@ class TCPDF
 			# Page formats (45 standard ISO paper formats and 4 american common formats).
 			# Paper cordinates are calculated in this way: (inches# 72) where (1 inch = 2.54 cm)
 			case (format.upcase)
-				when  '4A0': format = [4767.87,6740.79]
-				when  '2A0': format = [3370.39,4767.87]
-				when  'A0': format = [2383.94,3370.39]
-				when  'A1': format = [1683.78,2383.94]
-				when  'A2': format = [1190.55,1683.78]
-				when  'A3': format = [841.89,1190.55]
-				when  'A4': format = [595.28,841.89] #: default
-				when  'A5': format = [419.53,595.28]
-				when  'A6': format = [297.64,419.53]
-				when  'A7': format = [209.76,297.64]
-				when  'A8': format = [147.40,209.76]
-				when  'A9': format = [104.88,147.40]
-				when  'A10': format = [73.70,104.88]
-				when  'B0': format = [2834.65,4008.19]
-				when  'B1': format = [2004.09,2834.65]
-				when  'B2': format = [1417.32,2004.09]
-				when  'B3': format = [1000.63,1417.32]
-				when  'B4': format = [708.66,1000.63]
-				when  'B5': format = [498.90,708.66]
-				when  'B6': format = [354.33,498.90]
-				when  'B7': format = [249.45,354.33]
-				when  'B8': format = [175.75,249.45]
-				when  'B9': format = [124.72,175.75]
-				when  'B10': format = [87.87,124.72]
-				when  'C0': format = [2599.37,3676.54]
-				when  'C1': format = [1836.85,2599.37]
-				when  'C2': format = [1298.27,1836.85]
-				when  'C3': format = [918.43,1298.27]
-				when  'C4': format = [649.13,918.43]
-				when  'C5': format = [459.21,649.13]
-				when  'C6': format = [323.15,459.21]
-				when  'C7': format = [229.61,323.15]
-				when  'C8': format = [161.57,229.61]
-				when  'C9': format = [113.39,161.57]
-				when  'C10': format = [79.37,113.39]
-				when  'RA0': format = [2437.80,3458.27]
-				when  'RA1': format = [1729.13,2437.80]
-				when  'RA2': format = [1218.90,1729.13]
-				when  'RA3': format = [864.57,1218.90]
-				when  'RA4': format = [609.45,864.57]
-				when  'SRA0': format = [2551.18,3628.35]
-				when  'SRA1': format = [1814.17,2551.18]
-				when  'SRA2': format = [1275.59,1814.17]
-				when  'SRA3': format = [907.09,1275.59]
-				when  'SRA4': format = [637.80,907.09]
-				when  'LETTER': format = [612.00,792.00]
-				when  'LEGAL': format = [612.00,1008.00]
-				when  'EXECUTIVE': format = [521.86,756.00]
-				when  'FOLIO': format = [612.00,936.00]
+				when  '4A0' then format = [4767.87,6740.79]
+				when  '2A0' then format = [3370.39,4767.87]
+				when  'A0' then format = [2383.94,3370.39]
+				when  'A1' then format = [1683.78,2383.94]
+				when  'A2' then format = [1190.55,1683.78]
+				when  'A3' then format = [841.89,1190.55]
+				when  'A4' then format = [595.28,841.89] #: default
+				when  'A5' then format = [419.53,595.28]
+				when  'A6' then format = [297.64,419.53]
+				when  'A7' then format = [209.76,297.64]
+				when  'A8' then format = [147.40,209.76]
+				when  'A9' then format = [104.88,147.40]
+				when  'A10' then format = [73.70,104.88]
+				when  'B0' then format = [2834.65,4008.19]
+				when  'B1' then format = [2004.09,2834.65]
+				when  'B2' then format = [1417.32,2004.09]
+				when  'B3' then format = [1000.63,1417.32]
+				when  'B4' then format = [708.66,1000.63]
+				when  'B5' then format = [498.90,708.66]
+				when  'B6' then format = [354.33,498.90]
+				when  'B7' then format = [249.45,354.33]
+				when  'B8' then format = [175.75,249.45]
+				when  'B9' then format = [124.72,175.75]
+				when  'B10' then format = [87.87,124.72]
+				when  'C0' then format = [2599.37,3676.54]
+				when  'C1' then format = [1836.85,2599.37]
+				when  'C2' then format = [1298.27,1836.85]
+				when  'C3' then format = [918.43,1298.27]
+				when  'C4' then format = [649.13,918.43]
+				when  'C5' then format = [459.21,649.13]
+				when  'C6' then format = [323.15,459.21]
+				when  'C7' then format = [229.61,323.15]
+				when  'C8' then format = [161.57,229.61]
+				when  'C9' then format = [113.39,161.57]
+				when  'C10' then format = [79.37,113.39]
+				when  'RA0' then format = [2437.80,3458.27]
+				when  'RA1' then format = [1729.13,2437.80]
+				when  'RA2' then format = [1218.90,1729.13]
+				when  'RA3' then format = [864.57,1218.90]
+				when  'RA4' then format = [609.45,864.57]
+				when  'SRA0' then format = [2551.18,3628.35]
+				when  'SRA1' then format = [1814.17,2551.18]
+				when  'SRA2' then format = [1275.59,1814.17]
+				when  'SRA3' then format = [907.09,1275.59]
+				when  'SRA4' then format = [637.80,907.09]
+				when  'LETTER' then format = [612.00,792.00]
+				when  'LEGAL' then format = [612.00,1008.00]
+				when  'EXECUTIVE' then format = [521.86,756.00]
+				when  'FOLIO' then format = [612.00,936.00]
 				#else then Error("Unknown page format: #{format}"
 			end
 			@fw_pt = format[0]
@@ -2374,7 +2374,7 @@ class TCPDF
 			newobj();
 			@font_files[file]['n']=@n;
 			font='';
-			open(getfontpath(file),'rb') do |f|
+			open(getfontpath(file), (RUBY_VERSION >= '1.9') ? 'rb:binary': 'rb') do |f|
 				font = f.read();
 			end
 			compressed=(file[-2,2]=='.z');
@@ -2398,7 +2398,7 @@ class TCPDF
 				out('/Length2 ' + info['length2'].to_s + ' /Length3 0');
 			end
 			out('>>');
-			open(getfontpath(file),'rb') do |f|
+			open(getfontpath(file),(RUBY_VERSION >= '1.9') ? 'rb:binary': 'rb') do |f|
         putstream(font)
       end
 			out('endobj');
@@ -2716,7 +2716,7 @@ class TCPDF
 	#
 	def beginpage(orientation)
 		@page += 1;
-		@pages[@page]='';
+		@pages[@page]=RUBY_VERSION < '1.9' ? "" : "".force_encoding("BINARY");
 		@state=2;
 		@x=@l_margin;
 		@y=@t_margin;
@@ -2799,7 +2799,7 @@ class TCPDF
 		bpc=!a['bits'].nil? ? a['bits'] : 8;
 		#Read whole file
 		data='';
-	  open(file,'rb') do |f|
+	  open(file,(RUBY_VERSION >= '1.9') ? 'rb:binary': 'rb') do |f|
 			data<<f.read();
 		end
 		return {'w' => a[0],'h' => a[1],'cs' => colspace,'bpc' => bpc,'f'=>'DCTDecode','data' => data}
@@ -2810,7 +2810,7 @@ class TCPDF
 	# @access protected
 	#
 	def parsepng(file)
-		f=open(file,'rb');
+    f = open(file,(RUBY_VERSION >= '1.9') ? 'rb:binary': 'rb');
 		#Check signature
 		if (f.read(8)!=137.chr + 'PNG' + 13.chr + 10.chr + 26.chr + 10.chr)
 			Error('Not a PNG file: ' + file);
@@ -2822,11 +2822,11 @@ class TCPDF
 		end
 		w=freadint(f);
 		h=freadint(f);
-		bpc=f.read(1)[0];
+		bpc=f.readbyte;
 		if (bpc>8)
 			Error('16-bit depth not supported: ' + file);
 		end
-		ct=f.read(1)[0];
+		ct=f.readbyte;
 		if (ct==0)
 			colspace='DeviceGray';
 		elsif (ct==2)
@@ -2836,13 +2836,13 @@ class TCPDF
 		else
 			Error('Alpha channel not supported: ' + file);
 		end
-		if (f.read(1)[0] != 0)
+		if (f.readbyte != 0)
 			Error('Unknown compression method: ' + file);
 		end
-		if (f.read(1)[0]!=0)
+		if (f.readbyte!=0)
 			Error('Unknown filter method: ' + file);
 		end
-		if (f.read(1)[0]!=0)
+		if (f.readbyte!=0)
 			Error('Interlacing not supported: ' + file);
 		end
 		f.read(4);
@@ -3063,7 +3063,7 @@ class TCPDF
 			out('/Filter /FlateDecode');
 		end
 		out('>>');
-    open(ctgfile) do |f|
+    open(ctgfile, (RUBY_VERSION >= '1.9') ? 'rb:binary': 'rb') do |f|
       putstream(f.read())
     end
 		out('endobj');
