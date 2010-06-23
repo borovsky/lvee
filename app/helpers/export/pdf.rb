@@ -5,6 +5,9 @@ module Export
     def add_text_wrap(x, y, w, txt, fh, align)
       set_xy(x, y)
       set_font("FreeSans", "", fh)
+      if(get_string_width(txt) > w)
+        set_font("FreeSans", "", fh / 1.5)
+      end
       cell(w, 0, txt, 0, 0, align)
     end
 
