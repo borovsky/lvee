@@ -17,6 +17,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.xml
   def show
+    return render :status => 404, :text => "Not found" unless @article
     @title = @article.title
 
     respond_to do |format|
