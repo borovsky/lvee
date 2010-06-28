@@ -126,7 +126,7 @@ en:
   description: 
     conference_registration: 
       days: "Which days do you plan to participate?"
-      floor: "Would you like to accept following conditions: organization fee decreases; bed is not provided; food is provided? You can sleep in sleeping bag on the floor in the room with other participants?"
+      floor: "Would you like to accept following conditions: organization fee decreases twice; instead of sleeping in a house you are pitching a tent or joining to somebody else with free places in a tent camp"
       food: "Which type of food do you prefer (vegetarian, etc.)"
       index: "Registration to conference"
       meeting: "Would you like to be met ?"
@@ -211,7 +211,7 @@ en:
       cancel_registration: "Cancel registration!"
       days: "Participation days"
       edit: " {{conference}} participant's data"
-      floor: "Can you sleep on the floor?"
+      floor: "Can you sleep in a tent?"
       food: "Preferred food"
       index: "Registration to conference"
       meeting: "Meeting required?"
@@ -258,7 +258,7 @@ en:
       new: "New Language"
       published: "Language published?"
       upload: "Upload Language"
-    metainfo:
+    metainfo: 
       edit: "Edit MetaInfo"
     news: 
       abstract: Abstract
@@ -409,8 +409,8 @@ en:
       category: Participants
       conference_registration: List
       profile: "Personal profile"
+      volunteers: Volunteers
       wiki: Wiki
-      volunteers: "Volunteers"
   message: 
     common: 
       access_denied: "Access denied"

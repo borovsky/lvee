@@ -196,7 +196,7 @@ uk:
   description: 
     conference_registration: 
       days: "У які дні Ви плануєте бути присутнім?"
-      floor: "Do you accept the following conditions: organization fee decreases; bed is not provided; food is provided? You can sleep in sleeping bag on the floor in the room with other participants?"
+      floor: "Would you like to accept following conditions: organization fee decreases twice; instead of sleeping in a house you are pitching a tent or joining to somebody else with free places in a tent camp"
       food: "Ваші переваги щодо їжі?"
       index: "Реєстрація на конференцію"
       meeting: "Чи потрібно Вас зустрічати?"
@@ -282,7 +282,7 @@ uk:
       cancel_registration: "Cancel registration"
       days: "Дні участі"
       edit: " {{conference}} participant's data"
-      floor: "Can you sleep on the floor?"
+      floor: "Can you sleep in a tent?"
       food: "Переваги в харчуванні"
       index: "Реєстрації на конференції"
       meeting: "Чи потрібна зустріч?"

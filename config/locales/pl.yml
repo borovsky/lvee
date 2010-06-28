@@ -1,3 +1,4 @@
+--- 
 pl: 
   active_scaffold: 
     are_you_sure: "Are you sure?"
@@ -131,7 +132,7 @@ pl:
   description: 
     conference_registration: 
       days: "W które dni planujecie Państwo uczestniczyć?"
-      floor: "Do you accept the following conditions: organization fee decreases; bed is not provided; food is provided? You can sleep in sleeping bag on the floor in the room with other participants?"
+      floor: "Would you like to accept following conditions: organization fee decreases twice; instead of sleeping in a house you are pitching a tent or joining to somebody else with free places in a tent camp"
       food: "Jakie są Państwa upodobania w jedzeniu?"
       index: "Rejestracja na konferencje"
       meeting: "Czy potrzeba Państwo spotkać?"
@@ -218,7 +219,7 @@ pl:
       cancel_registration: "Cancel registration"
       days: "Dni uczestnictwa"
       edit: " {{conference}} participant's data"
-      floor: "Can you sleep on the floor?"
+      floor: "Can you sleep in a tent?"
       food: "Upodobania w jedzeniu"
       index: "Rejestracja na konferencję"
       meeting: "Czy potrzeba Państwo spotkać?"
