@@ -212,6 +212,7 @@ be:
       badges: Значкі
       badges_title: "Значкі на {{conference}}"
       cancel_registration: "Cancel registration"
+      comment: "Registration's Comment"
       days: "Дні ўдзелу"
       edit: "Звесткі пра ўдзельніка {{conference}}"
       floor: "Ці згодныя вы спаць у намёце?"
@@ -223,6 +224,7 @@ be:
       proposition_list: Выступленне
       quantity: "Колькасць удзельнікаў"
       residence: Жытло
+      status_name: "Registration's Status"
       title: "Рэгістрацыя на канферэнцыю {{conference}}"
       transport_from: "Транспарт з канферэнцыі"
       transport_from_list: 

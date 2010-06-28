@@ -280,6 +280,7 @@ uk:
       badges: Badges
       badges_title: "Badges for {{conference}}"
       cancel_registration: "Cancel registration"
+      comment: "Registration's Comment"
       days: "Дні участі"
       edit: " {{conference}} participant's data"
       floor: "Can you sleep in a tent?"
@@ -291,6 +292,7 @@ uk:
       proposition_list: Повідомлення
       quantity: "Кількість учасників"
       residence: Accommodation
+      status_name: "Registration's Status"
       title: "Реєстрація на конференцію {{conference}}"
       transport_from: "Transport from conference"
       transport_from_list: 

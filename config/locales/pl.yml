@@ -217,6 +217,7 @@ pl:
       badges: Badges
       badges_title: "Badges for {{conference}}"
       cancel_registration: "Cancel registration"
+      comment: "Registration's Comment"
       days: "Dni uczestnictwa"
       edit: " {{conference}} participant's data"
       floor: "Can you sleep in a tent?"
@@ -228,6 +229,7 @@ pl:
       proposition_list: Sprawozdanie
       quantity: "Ilość uczestników"
       residence: Accommodation
+      status_name: "Registration's Status"
       title: "Rejestracja na konferencję {{conference}}"
       transport_from: "Transport from conference"
       transport_from_list: 

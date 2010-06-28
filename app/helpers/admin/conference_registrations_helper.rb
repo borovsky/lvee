@@ -30,7 +30,7 @@ module Admin
     end
 
     def user_type_form_column(record, input_name)
-      select "record", "user_type", ['normal', 'organizer', 'sponsor', 'reporter']
+      select "record", "user_type", ['normal', 'organizer', 'sponsor', 'reporter', 'press']
     end
 
     def work_form_column(record, input_name)

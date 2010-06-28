@@ -1,3 +1,4 @@
+
 module Admin
   class ConferencesController < ApplicationController
     include ActiveScaffold
@@ -6,7 +7,7 @@ module Admin
     before_filter :admin_required, :scaffold_action
 
     USER_CSV_COLUMNS = [:login, :full_name, :email, :country, :city, :occupation, :projects]
-    REGISTRATION_CSV_COLUMNS = [:status_name, :comment, :proposition, :quantity, :days, :meeting, :phone, :residence, :floor, :transport_to, :transport_from, :food, :tshirt]
+    REGISTRATION_CSV_COLUMNS = [:user_type, :status_name, :comment, :proposition, :quantity, :days, :meeting, :phone, :residence, :floor, :transport_to, :transport_from, :food, :tshirt]
 
     layout "admin"
     active_scaffold :conferences do
@@ -31,7 +32,7 @@ module Admin
           csv << row
         end
       end
-      render :text => out, :content_type => "text/csv"
+      render :text => out, :content_type => :csv
     end
 
     def badges_pdf

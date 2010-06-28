@@ -279,6 +279,7 @@ hu:
       badges: Badges
       badges_title: "Badges for {{conference}}"
       cancel_registration: "Cancel registration"
+      comment: "Registration's Comment"
       days: "Részvételi napok"
       edit: " {{conference}} participant's data"
       floor: "Can you sleep in a tent?"
@@ -290,6 +291,7 @@ hu:
       proposition_list: Report
       quantity: "Résztvevők száma"
       residence: Accommodation
+      status_name: "Registration's Status"
       title: "Regisztrálás a {{conference}} konferenciára"
       transport_from: "Transport from conference"
       transport_from_list: 

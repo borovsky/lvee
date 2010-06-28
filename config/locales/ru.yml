@@ -279,6 +279,7 @@ ru:
       badges: Бэджи
       badges_title: "Бэджи для {{conference}}"
       cancel_registration: "Отменить регистрацию"
+      comment: "Registration's Comment"
       days: "Дни участия"
       edit: "Анкета участника {{conference}}"
       floor: "Готовы ли вы спать в палатке?"
@@ -290,6 +291,7 @@ ru:
       proposition_list: Доклад
       quantity: "Количество участников"
       residence: Расселение
+      status_name: "Registration's Status"
       title: "Регистрация на конференцию {{conference}}"
       transport_from: "Транспорт с конференции"
       transport_from_list: 

@@ -220,6 +220,8 @@ en:
       proposition_list: Report
       quantity: "Participants quantity"
       residence: Accommodation
+      status_name: "Registration's Status"
+      comment: "Registration's Comment"
       title: "Conference registration for {{conference}}"
       transport_from: "Transport from conference"
       transport_from_list: 
