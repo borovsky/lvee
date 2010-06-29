@@ -77,7 +77,7 @@ ActionController::Routing::Routes.draw do |map|
       m.connect('conference_registrations/new/:conference_id',
         :controller => 'conference_registrations', :action => 'new')
       m.resources(:conference_registrations, :controller => 'conference_registrations',
-        :active_scaffold => true, :member => {:badges => :any, :cancel => :delete})
+        :active_scaffold => true, :member => {:badges => :any, :cancel => :any})
     end
     ns.resource  :session
 

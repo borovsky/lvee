@@ -32,7 +32,7 @@
             :class => "big-button")%>
         <% end -%>
         <%= link_to(t("label.conference_registration.cancel_registration"), cancel_user_conference_registration_path(:user_id => user_id, :id => reg.id),
-          :confirm => t("message.common.sure"), :method => :delete) %>
+          :confirm => t("message.common.sure")) %>
       <% end -%>
     </p>
   <% end -%>
