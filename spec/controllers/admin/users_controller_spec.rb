@@ -47,6 +47,7 @@ describe Admin::UsersController do
 
     it "should render all if required" do
       login_as(@admin)
+      Status.create(:name => "approved", :subject => "", :mail => "")
       @conference = Conference.create!(:name => "LVEE 2009")
       @user = User.create!(User.valid_data)
       @reg = ConferenceRegistration.create!(:conference => @conference, :user => @user,
