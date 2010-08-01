@@ -1,11 +1,12 @@
+require 'acts_as_versioned'
+
 class Article < ActiveRecord::Base
   belongs_to :user
   acts_as_versioned
 
-  validates_presence_of :title, :body, :category, :name
+  validates :title, :body, :category, :name, :presence => true
 
-  validates_presence_of :locale
-  validates_uniqueness_of :locale, :scope => [:category, :name]
+  validates :locale, :presence => true, :uniqueness => {:scope => [:category, :name]}
 
   def self.translated(locale = nil, params={})
     locale ||= I18n.locale

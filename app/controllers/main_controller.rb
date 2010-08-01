@@ -7,7 +7,7 @@ class MainController < ApplicationController
 
   def select_lang
     lang = preferred_language(Language.published_names)
-    redirect_to :controller => "main", :action =>'index', :lang => lang
+    redirect_to main_page_path(lang)
   end
 
   def sitemap

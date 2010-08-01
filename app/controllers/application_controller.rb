@@ -1,21 +1,13 @@
-# Filters added to this controller apply to all controllers in the application.
-# Likewise, all the methods added will be available for all controllers.
+require 'authenticated_system'
 
 class ApplicationController < ActionController::Base
   include AuthenticatedSystem
-  include ApplicationHelper
-
   include ExceptionNotifiable
 
   before_filter :language_select
   before_filter :metainfo_load
 
   protect_from_forgery # :secret => 'dc50c44338f5eba496ede18e9ea29cb1'
-
-  ActiveScaffold.set_defaults do |config|
-    # disables dhtml history globally
-    self.dhtml_history = false
-  end
 
   def cache_result_for(key, timeout, &block)
     key = fragment_cache_key(key)

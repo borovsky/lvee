@@ -11,7 +11,7 @@ module MenuHelper
     active_item = 'main' if params['controller'] == 'main'
     active_item = 'users/current' if ['users', 'sessions'].include?(params['controller'])
 
-    items = menu_items.map {|i| render_main_menu_item(i, active_item)}.join("")
+    items = menu_items.map {|i| render_main_menu_item(i, active_item)}.join("").html_safe
     content_tag(:ul, items, :id => MAIN_MENU_ID)
   end
 
@@ -24,13 +24,13 @@ module MenuHelper
     classes = classes.join(' ')
     submenu = render_main_submenu(item[2]) if item[2]
     link = link_to_menu_item(item[0], item[1])
-    content = "#{submenu}#{link}"
+    content = "#{submenu}#{link}".html_safe
     content_tag(:li, content, :class => classes)
   end
 
   def render_main_submenu(submenu)
     items = submenu.map {|i| render_main_submenu_item(i, i == submenu.last)}
-    content_tag(:ul, items.join(''))
+    content_tag(:ul, items.join('').html_safe)
   end
 
   def render_main_submenu_item(item, last)
@@ -47,14 +47,14 @@ module MenuHelper
     MENU_ITEMS.dup.delete_if {|i| i[1] == 'main'}.map do |item|
       header = content_tag(:h4, link_to_menu_item(item[0], item[1]))
       submenu = render_footer_submenu(item[2]) if item[2]
-      content_tag(:div, header + submenu.to_s, :class => 'column')
-    end.join('')
+      content_tag(:div, (header + submenu.to_s).html_safe, :class => 'column')
+    end.join('').html_safe
   end
 
   def render_footer_submenu(submenu)
     items = submenu.map do |i|
       content_tag(:li, link_to_menu_item(*i))
-    end.join('')
+    end.join('').html_safe
     content_tag(:ul, items)
   end
 

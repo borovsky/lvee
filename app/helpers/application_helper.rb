@@ -1,4 +1,3 @@
-# Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
   include MenuHelper
 
@@ -53,7 +52,7 @@ module ApplicationHelper
         link_to_unless_current( img, to_params) +
         "</li>"
     end
-    html.join(' ')
+    html.join(' ').html_safe
   end
 
   def article_output(category, name)
@@ -79,7 +78,26 @@ module ApplicationHelper
 
   def params_to_lang(lang)
     {:controller => controller.controller_name, :lang => lang, :id => params[:id],
-        :user_id => params[:user_id], :conference_id => params[:conference_id],
-        :category => params[:category], :name => params[:name], :action => controller.action_name}
+      :user_id => params[:user_id], :conference_id => params[:conference_id],
+      :category => params[:category], :name => params[:name], :action => controller.action_name}
+  end
+
+  #FIXME: Move to separate helper
+  def textilize(text, *options)
+    options ||= [:hard_breaks]
+
+    if text.blank?
+      ""
+    else
+      textilized = ::RedCloth.new(text, options)
+      textilized.to_html.html_safe
+    end
+  end
+  
+  def textilize_without_paragraph(text)
+    textiled = textilize(text)
+    if textiled[0..2] == "<p>" then textiled = textiled[3..-1] end
+    if textiled[-4..-1] == "</p>" then textiled = textiled[0..-5] end
+    return textiled.html_safe
   end
 end

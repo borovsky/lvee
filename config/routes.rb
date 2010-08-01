@@ -1,29 +1,78 @@
 ActionController::Routing::Routes.draw do |map|
-  map.root :controller => "main", :action=>"select_lang"
+  root :to => 'main#select_lang'
 
+  match 'djs/ie_fuck.js' => 'djs_css#ie_fuck'
 
-  map.connect 'djs/ie_fuck.js', :controller => 'djs_css', :action => 'ie_fuck'
+  match "activate/:activation_code" => 'users#activate'
+  match 'sitemap.xml' => 'main#sitemap'
+  match 'sitemap-news.xml' => 'main#sitemap_news'
 
-  map.connect 'activate/:activation_code', :controller => 'users', :action => 'activate'
-  map.connect 'sitemap.xml', :controller => 'main', :action => 'sitemap'
-  map.connect 'sitemap-news.xml', :controller => 'main', :action => 'sitemap_news'
-  map.connect 'tracker', :controller => 'admin/tracker', :action => 'tracker'
+  scope "/:lang", :constraints => {:lang => /[a-z]{2}/} do
+    namespace :admin do
+      resources :users
+      resources :conference
+      resources :conference_registrations do
+        collection do
+          get :csv
+        end
+      end
+      resources :statuses
+      resources :sponsors
+      match "/users/:to_list/mail" => 'info_mailer#index', :as => "mail_user"
+    end
 
-  map.namespace :admin, :namespace => "", :path_prefix =>":lang", :name_prefix => "" do |admin|
-    admin.resources :users
-    admin.resources :conferences, :active_scaffold => true, :collection => {:csv => :get}
-    admin.resources :conference_registrations, :active_scaffold => true, :collection => {:show_statistics => :get}
-    admin.resources :statuses, :active_scaffold => true
-    admin.resources :sponsors, :active_scaffold => true
-    admin.mail_user 'users/:to_list/mail', :controller => "info_mailer", :action => "index"
+    namespace :editor do
+      resources :languages
+      resources :metainfos do
+        collection do
+          put :change
+        end
+      end
+      resources :image_uploads
+    end
+
+    match "/main" => 'main#index', :as => "main_page"
+    resource  :session
+    resources :users do
+      get :activate, :on => :member
+      collection do
+        get :current
+        match :restore
+      end
+
+      resources :conference_registrations do
+        member do
+          match :badges
+          match :cancel
+        end
+      end
+    end
+    
+    resources :news, :as => 'news_item' do
+      collection do
+        get :rss
+        put :preview
+        get :editor_rss
+      end
+      member do
+        get :publish
+        get :publish_now
+      end
+    end
+
+    resources :articles do
+      get :translate, :on => :member
+      put :preview, :on => :collection
+    end
+
+    match ':category(/:name)' => 'articles#show', :constraints =>
+        {:category => /(conference|contacts|sponsors|reports)/},
+        :defaults => {:name => "index"}
+
   end
+end
 
-  map.namespace :editor, :namespace => "", :path_prefix =>":lang", :name_prefix => "" do |editor|
-    editor.resources :languages
-    editor.resources :metainfos, :active_scaffold => true, :collection => {:change => :put }
-    editor.resources :image_uploads, :active_scaffold => true
-  end
-
+if false
 
   map.with_options :path_prefix =>":lang", :requirements => {:lang => /[a-z]{2}/} do |ns|
     ns.connect 'main', :controller => "main", :action => "index"
@@ -32,7 +81,7 @@ ActionController::Routing::Routes.draw do |map|
 
     ns.statistics_conference "statistics/conference/:id", :controller => "statistics", :action => "conference"
     ns.statistics "statistics/:length", :controller => "statistics", :action => "index",
-    :defaults => {:length => "full" }, :conditions => {:length => /(full|week|month)/}
+      :defaults => {:length => "full" }, :conditions => {:length => /(full|week|month)/}
 
     ns.diff_article('articles/:id/diff/:version', :controller => "articles", :action => "diff",
       :defaults => {:version => nil})
@@ -43,17 +92,17 @@ ActionController::Routing::Routes.draw do |map|
     ns.resources :wiki_pages, :collection => {:preview=>:put}
 
     ns.connect('users/privacy', :requirements =>
-      {:category => 'users', :name => "privacy"},
+        {:category => 'users', :name => "privacy"},
       :controller=> "articles", :action => "show")
 
     ns.connect('users/volunteers', :requirements =>
-      {:category => 'users', :name => "volunteers"},
+        {:category => 'users', :name => "volunteers"},
       :controller=> "articles", :action => "show")
 
     ns.translate_news "news/:parent_id/translate/:locale",  :controller => "news", :action => "new"
     ns.resources(:news,
       :singular => 'news_item',
-      :collection => {:rss => :get, :preview=>:post, :editor_rss=> :get, :preview => :put},
+      :collection => {:rss => :get, :preview=>:post, :editor_rss=> :get},
       :member => {:publish => :get, :publish_now => :get})
 
     ns.connect('about/:name',
@@ -61,7 +110,7 @@ ActionController::Routing::Routes.draw do |map|
       :defaults => {:name => "index"})
 
     ns.connect(':category/:name', :requirements =>
-      {:category => /(conference|contacts|sponsors|reports)/},
+        {:category => /(conference|contacts|sponsors|reports)/},
       :controller=> "articles", :action => "show",
       :defaults => {:name => "index"})
 

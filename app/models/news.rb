@@ -1,3 +1,5 @@
+require 'acts_as_versioned'
+
 class News < ActiveRecord::Base
 
   belongs_to :user
@@ -6,13 +8,11 @@ class News < ActiveRecord::Base
 
   acts_as_versioned
 
-  validates_presence_of :title, :lead, :body, :locale
+  validates :title, :lead, :body, :presence => true
 
-  # translation should be unique
-  validates_presence_of :locale
-  validates_uniqueness_of :locale, :scope => :parent_id, :if => Proc.new { |user| user.parent_id }
+  validates :locale, :presence => true, :uniqueness => {:scope => :parent_id}, :if => Proc.new { |user| user.parent_id }
 
-  named_scope :published, lambda { ||
+  scope :published, lambda { ||
     { :conditions => [
         "news.published_at IS NOT NULL AND news.published_at <= ?",
         Time.new ],
@@ -20,7 +20,7 @@ class News < ActiveRecord::Base
     }
   }
 
-  named_scope :sitemap, lambda { ||
+  scope :sitemap, lambda { ||
     { :conditions => [
         "news.published_at >= ?",
         3.days.ago ],
