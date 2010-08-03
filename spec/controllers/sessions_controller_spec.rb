@@ -5,7 +5,7 @@ require File.dirname(__FILE__) + '/../spec_helper'
 describe SessionsController do
 
   describe 'new' do
-    integrate_views
+    render_views
 
     it "should open by guest" do
       get :new

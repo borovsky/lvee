@@ -1,6 +1,5 @@
 module Editor
   class LanguagesController < ApplicationController
-    include ActiveScaffold
     include LanguageUpdateHelper
 
     before_filter :editor_required

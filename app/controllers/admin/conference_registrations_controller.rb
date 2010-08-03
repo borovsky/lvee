@@ -1,9 +1,7 @@
 module Admin
   class ConferenceRegistrationsController < ApplicationController
-    include ActiveScaffold
-
     layout "admin"
-    before_filter :admin_required, :scaffold_action
+    before_filter :admin_required
 
     EDITABLE_COLUMNS = [:user_type, :to_pay, :status_name, :comment]
     STATIC_COLUMNS = [:conference, :user, :avator, :phone,
@@ -15,6 +13,7 @@ module Admin
 
     USER_COLUMNS = [:city, :country, :avator]
 
+    
     active_scaffold :conference_registrations do |cfg|
       cls = Admin::ConferenceRegistrationsController
       cfg.columns = cls::COLUMNS

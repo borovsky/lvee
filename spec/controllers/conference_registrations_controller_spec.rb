@@ -1,7 +1,7 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe ConferenceRegistrationsController do
-  integrate_views
+  render_views
 
   #Delete this example and add some real ones
   it "should show new page" do

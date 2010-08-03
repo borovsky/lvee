@@ -1,10 +1,9 @@
-class Spec::Rails::Example::FunctionalExampleGroup
+module RSpec::Rails::RailsExampleGroup
   @@next_id = 1
  
   def next_id
     @@next_id += 1
   end
-  config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
   def model_stub(model_class, stubs={})
     attrs = model_class.column_names.inject(Hash.new) do|s, i|
@@ -26,7 +25,7 @@ class Spec::Rails::Example::FunctionalExampleGroup
   end
 end
 
-class Spec::Rails::Example::ControllerExampleGroup
+module RSpec::Rails::ControllerExampleGroup
   def login_as(user)
     controller.stubs(:current_user).returns(user)
   end
@@ -42,13 +41,15 @@ class Spec::Rails::Example::ControllerExampleGroup
   end
 end
 
-class Spec::Rails::Example::ViewExampleGroup
+module RSpec::Rails::ViewExampleGroup
   def login_as(user)
     template.stubs(:current_user).returns(user)
   end
 
-  before :each do
-    params[:lang] = 'en'
+  included do
+    before :each do
+      params[:lang] = 'en'
+    end
   end
 end
 
@@ -60,7 +61,7 @@ I18n.class_eval(<<-END
     end
 
   end
-END
+  END
 )
 
 module Kernel
@@ -77,10 +78,6 @@ module ActionView::Helpers::TranslationHelper
   def t(key, options = {})
     I18n.translate(key, options)
   end
-  # If you're not using ActiveRecord, or you'd prefer not to run each of your
-  # examples within a transaction, comment the following line or assign false
-  # instead of true.
-  config.use_transactional_fixtures = true
 end
 
 Array.class_eval do

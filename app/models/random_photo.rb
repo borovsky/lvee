@@ -1,5 +1,5 @@
 class RandomPhoto
-  RANDOM_IMAGES_DIR = File.join(RAILS_ROOT, 'public', RANDOM_PHOTOS_ROOT)
+  RANDOM_IMAGES_DIR = File.join(Rails.root, 'public', RANDOM_PHOTOS_ROOT)
 
   def self.get_image_url
     images = random_image_names

@@ -1,8 +1,6 @@
 module Editor
   class ImageUploadsController < ApplicationController
-    include ActiveScaffold
-
-    before_filter :editor_required, :scaffold_action
+    before_filter :editor_required
     layout "admin"
 
     COLUMNS = [:id, :file, :description, :size]

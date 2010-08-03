@@ -1,3 +1,5 @@
+require 'garb'
+
 class StatisticsReportBrowser
   extend  Garb::Resource
 

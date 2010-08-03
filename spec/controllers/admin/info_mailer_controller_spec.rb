@@ -15,7 +15,7 @@ describe Admin::InfoMailerController do
   end
 
   describe "index" do
-    integrate_views
+    render_views
 
     it "should render properly" do
       get :index
@@ -36,7 +36,7 @@ describe Admin::InfoMailerController do
   end
 
   describe "send_mail" do
-    integrate_views
+    render_views
 
     it "should render properly" do
       post :send_mail, :to => "test", :subject => "subjectTest", :body => "BodyTest"

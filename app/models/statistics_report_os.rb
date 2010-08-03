@@ -1,3 +1,5 @@
+require 'garb'
+
 class StatisticsReportOs
   extend  Garb::Resource
 

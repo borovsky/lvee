@@ -11,7 +11,7 @@ describe Admin::UsersController do
   end
 
   describe 'index' do
-    integrate_views
+    render_views
     it "should be accessible by right URL" do
       params_from(:get, '/ru/admin/users').should == {
         :controller => 'admin/users',

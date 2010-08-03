@@ -76,10 +76,6 @@ class ApplicationController < ActionController::Base
         :category => params[:category], :name => params[:name], :action => action_name}
   end
 
-  def scaffold_action
-    @active_scaffold = true
-  end
-
   #FIXME refactor
   def accepted_languages
     # no language accepted
@@ -117,5 +113,10 @@ class ApplicationController < ActionController::Base
       # take the highest quality among accepted (and thus supported) languages
       preferred_languages.last[0]
     end
+  end
+
+  #FIXME
+  def self.active_scaffold(*args)
+    
   end
 end

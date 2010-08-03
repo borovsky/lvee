@@ -1,7 +1,6 @@
 module Editor
   class MetainfosController < ApplicationController
-    include ActiveScaffold
-    before_filter :editor_required, :scaffold_action
+    before_filter :editor_required
     layout "admin"
 
     COLUMNS = [:language, :page, :keywords, :description]

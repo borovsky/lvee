@@ -1,3 +1,5 @@
+require 'garb'
+
 class StatisticsReportCountry
   extend  Garb::Resource
 

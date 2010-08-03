@@ -1,7 +1,6 @@
 class Admin::SponsorsController < ApplicationController
-  include ActiveScaffold
 
-  before_filter :admin_required, :scaffold_action
+  before_filter :admin_required
   layout "admin"
 
   active_scaffold :sponsors do
