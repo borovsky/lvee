@@ -48,6 +48,8 @@ ActionController::Routing::Routes.draw do |map|
       end
     end
     
+    get "news/:parent_id/translate/:locale" => "news#new", :as => "translate_news"
+
     resources :news, :as => 'news_item' do
       collection do
         get :rss
@@ -69,13 +71,15 @@ ActionController::Routing::Routes.draw do |map|
         {:category => /(conference|contacts|sponsors|reports)/},
         :defaults => {:name => "index"}
 
+    resources :wiki_pages do
+      put :preview, :on => :collection
+    end
   end
 end
 
 if false
 
   map.with_options :path_prefix =>":lang", :requirements => {:lang => /[a-z]{2}/} do |ns|
-    ns.connect 'main', :controller => "main", :action => "index"
     ns.editor_rss 'editor_rss', :controller => "main", :action => "editor_rss"
     ns.wiki_rss 'wiki_rss', :controller => "main", :action => "wiki_rss"
 
@@ -87,9 +91,6 @@ if false
       :defaults => {:version => nil})
     ns.diff_wiki_page('wiki_pages/:id/diff/:version',
       :controller => "wiki_pages", :action => "diff", :defaults => {:version => nil})
-    ns.resources :articles, :member => {:translate => :get}, :collection => {:preview=>:put}
-
-    ns.resources :wiki_pages, :collection => {:preview=>:put}
 
     ns.connect('users/privacy', :requirements =>
         {:category => 'users', :name => "privacy"},
@@ -98,12 +99,6 @@ if false
     ns.connect('users/volunteers', :requirements =>
         {:category => 'users', :name => "volunteers"},
       :controller=> "articles", :action => "show")
-
-    ns.translate_news "news/:parent_id/translate/:locale",  :controller => "news", :action => "new"
-    ns.resources(:news,
-      :singular => 'news_item',
-      :collection => {:rss => :get, :preview=>:post, :editor_rss=> :get},
-      :member => {:publish => :get, :publish_now => :get})
 
     ns.connect('about/:name',
       :controller=> "articles", :category => "conference", :action => "show",

@@ -4,7 +4,7 @@ require File.dirname(__FILE__) + '/../spec_helper'
 
 describe UsersController do
   def mock_user(stubs={})
-    model_stub(User, stubs)
+    stub_model(User, stubs)
   end
 
   before :all do
