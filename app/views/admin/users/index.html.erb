@@ -16,7 +16,7 @@
     <th>Role</th>
     <th>Actions</th>
   </tr>
-  <%= @users.each_with_index do |user, i| %>
+  <% @users.each_with_index do |user, i| %>
     <tr id="<%= dom_id(user) %>" class="<%= (i % 2 == 0) ? 'even' : 'odd' %>">
       <td><%= i+1 %></td>
       <td><%= check_box_tag "to_user[]", user.id, false, :class =>

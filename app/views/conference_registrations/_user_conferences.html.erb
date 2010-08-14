@@ -6,7 +6,7 @@
 <% available = Conference.available_conferences(actual.map {|c|  c.conference}) %>
 
 <% unless available.empty? -%>
-  <%= available.each  do |conf| -%>
+  <% available.each  do |conf| -%>
     <p>
       <%= link_to(t('label.conference.register', :conference => conf.name ),
         {:controller => "conference_registrations", :action => 'new', :user_id => user_id,
@@ -16,7 +16,7 @@
 <% end -%>
 
 <% unless regs.empty? -%>
-  <%= regs.each  do |reg| -%>
+  <% regs.each  do |reg| -%>
     <% conf = reg.conference -%>
     <p>
       <% if reg.cancelled? -%>
@@ -42,7 +42,7 @@
 <% unless participated.empty? -%>
   <h2><%= t('label.conference.participated')%>:</h2>
   <ul>
-    <%= participated.each  do |reg| -%>
+    <% participated.each  do |reg| -%>
       <% conf = reg.conference -%>
       <li>
         <%= h conf.name %>

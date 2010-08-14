@@ -1,6 +1,6 @@
 <% news = News.published.translated(I18n.locale, :limit => 3)%>
 
-<%= news.each_with_index do |n, index| -%>
+<% news.each_with_index do |n, index| -%>
   <div class="news-column<%= (index == 0) ? ' first' : '' %>">
     <p class="news-date"><%= n.published_at.strftime(I18n.t 'date.formats.default') %></p>
     <h3><%= link_to(n.title, news_item_path(:id =>n.id)) %></h3>

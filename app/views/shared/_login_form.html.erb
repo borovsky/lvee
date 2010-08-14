@@ -11,4 +11,4 @@
   <p><%= submit_tag t('label.session.loginButton') %></p>
 <% end -%>
 <% link = link_to t("label.user.password_restore_link"), restore_users_path -%>
-<p><%= t("message.user.password_restore", :link => link) %></p>
+<p><%= raw(t("message.user.password_restore", :link => link)) %></p>
