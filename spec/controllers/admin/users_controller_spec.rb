@@ -5,34 +5,31 @@ describe Admin::UsersController do
     stub_model(User, stubs)
   end
 
-  before :all do
-    @user = mock_user(:id => 100, :admin? => false, :editor? => false)
-    @admin = mock_user(:id => 1, :admin? => true, :editor? => true)
+  before do
+    @user = mock_user(:id => 100, :role => "")
+    @admin = mock_user(:id => 1, :role => "admin")
+    @editor = mock_user(:id => 2, :role => "editor")
   end
 
   describe 'index' do
     render_views
-    it "should be accessible by right URL" do
-      params_from(:get, '/ru/admin/users').should == {
-        :controller => 'admin/users',
-        :action => 'index',
-        :lang => 'ru'
-      }
-      params_from(:get, '/ru/admin/users.csv').should == {
-        :controller => 'admin/users',
-        :action => 'index',
-        :format => 'csv',
-        :lang => 'ru'
-      }
-    end
 
-    it "should be accessible only for admin" do
+    it "should be accessible for admin" do
       login_as(@admin)
       get :index
 
       assert_response :success
+    end
 
+    it "shouldn't be accessible for user" do
       login_as(@user)
+      get :index
+
+      assert_response 403
+    end
+
+    it "shouldn't be accessible for editor" do
+      login_as(@editor)
       get :index
 
       assert_response 403
@@ -40,7 +37,7 @@ describe Admin::UsersController do
 
     it "should render html if requested" do
       login_as @admin
-      User.stubs(:find).with(:all, :include => :conference_registrations).returns([])
+
       get :index, :format=>'html'
       assert_response :success
     end
@@ -63,14 +60,6 @@ describe Admin::UsersController do
   end
 
   describe "set_role" do
-    it "should be accessible by right URL" do
-      params_from(:post, '/ru/admin/users/set_role/42').should == {
-        :controller => 'admin/users',
-        :action => 'set_role',
-        :id=>'42',
-        :lang => 'ru'
-      }
-    end
     it "should forbid set role if user is not admin" do
       login_as(@user)
 
@@ -82,24 +71,16 @@ describe Admin::UsersController do
       login_as(@admin)
 
       user = mock()
-      user.expects(:role=).with('admin')
-      user.expects(:save!)
-      User.expects(:find).with('12').returns(user)
+      user.should_receive(:role=).with('admin')
+      user.should_receive(:save!)
+      User.should_receive(:find).with('12').and_return(user)
 
-      get :set_role, :id=> 12, :role => 'admin'
+      get :set_role, :id=> '12', :role => 'admin'
       assert_response :success
     end
   end
 
   describe "destroy" do
-    it "should be accessible by right URL" do
-      params_from(:delete, '/ru/admin/users/42').should == {
-        :controller => 'admin/users',
-        :action => 'destroy',
-        :id=>'42',
-        :lang=> 'ru'
-      }
-    end
     it "should forbid delete user if user is not admin" do
       login_as(@user)
 
@@ -111,11 +92,10 @@ describe Admin::UsersController do
       login_as(@admin)
 
       user = mock()
-      user.expects(:destroy).returns(true)
-      user.expects(:id).returns(12)
-      User.expects(:find).with('12').returns(user)
+      user.should_receive(:destroy).and_return(true)
+      User.should_receive(:find).with('12').and_return(user)
 
-      get :destroy, :id=> 12
+      get :destroy, :id=> '12'
       assert_response :success
     end
   end

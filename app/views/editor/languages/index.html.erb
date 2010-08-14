@@ -18,14 +18,14 @@
     <td><%= h language.code3 %></td>
     <td><%= h language.description %></td>
     <td><%= h language.published %></td>
-    <td><%= link_to t('label.common.upload'), editor_language_path(:id => language) %></td>
-    <td><%= link_to t('label.common.edit'), edit_editor_language_path(:id => language) %></td>
-    <td><%= link_to t('label.common.download'), :controller => "editor/languages", :id => language, :action => "download", :format => 'yml' %></td>
-    <td><%= link_to t('label.common.delete'), editor_language_path(:id => language), :confirm => t('message.common.sure'), :method => :delete %></td>
+    <td><%= link_to t('label.common.upload'), editor_language_path(:id => language, :lang => params[:lang]) %></td>
+    <td><%= link_to t('label.common.edit'), edit_editor_language_path(:id => language, :lang => params[:lang]) %></td>
+    <td><%= link_to t('label.common.download'), download_editor_language_path(:id => language, :format => 'yml', :lang => params[:lang]) %></td>
+    <td><%= link_to t('label.common.delete'), editor_language_path(:id => language, :lang => params[:lang]), :confirm => t('message.common.sure'), :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to t('label.language.new'), new_editor_language_path %>
+<%= link_to t('label.language.new'), new_editor_language_path(:lang => params[:lang]) %>

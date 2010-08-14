@@ -2,16 +2,17 @@
 
 <div id="preview_place"> </div>
 
-<% form_for(@article, :url => article_path(:id => @article.id)) do |f| %>
+<%= form_for(@article, :url => article_path(:id => @article.id, :lang => params[:lang])) do |f| %>
   <%= f.error_messages %>
 
-  <%= render :partial => "form" , :locals => {:f => f}%>
+  <%= render :partial => "/articles/form" , :locals => {:f => f}%>
 
   <p>
-    <%= submit_to_remote("preview_btn", t('label.common.preview'),
+    <%# FIXME %>
+    <%#= submit_to_remote("preview_btn", t('label.common.preview'),
         :url => {:action => "preview"}, :update => {:success => 'preview_place'}) %>
     <%= f.submit t('label.common.update') %>
   </p>
 <% end %>
 
-<%= link_to t('label.common.back'), articles_path %>
+<%= link_to t('label.common.back'), articles_path(:lang => params[:lang]) %>

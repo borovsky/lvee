@@ -3,8 +3,8 @@ class WikiPage < ActiveRecord::Base
   set_locking_column("version" )
   acts_as_versioned
 
-  validates_presence_of :name, :body, :user_id
-  validates_uniqueness_of :name
+  validates :body, :user_id, :presence => true
+  validates :name, :uniqueness => true, :presence => true
 
   def self.all
     find(:all, :order => "name")

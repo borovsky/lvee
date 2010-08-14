@@ -1,5 +1,5 @@
 class ConferenceRegistrationsController < ApplicationController
-  before_filter :current_user_only, :scaffold_action, :set_common_columns_info, :except => :user_list
+  before_filter :current_user_only, :set_common_columns_info, :except => :user_list
   before_filter :login_required, :only => :user_list
 
   EDITABLE_COLUMNS = [:days, :meeting, :phone, :floor, :residence, :transport_to, :transport_from, :food, :tshirt]
@@ -24,6 +24,10 @@ class ConferenceRegistrationsController < ApplicationController
     cls::STATIC_COLUMNS.each do |c|
       self.columns[c].form_ui = :static if self.update.columns[c]
     end
+  end
+
+  def new
+    render :text => "ok" #FIXME
   end
 
   def index
@@ -83,7 +87,7 @@ class ConferenceRegistrationsController < ApplicationController
     @record.user_id = params[:user_id]
     @record.conference_id = params[:conference_id]
     @record.quantity ||= 1
-    active_scaffold_config.create.label = t('label.conference_registration.title', :conference =>Conference.find(params[:conference_id]).name)
+    #active_scaffold_config.create.label = t('label.conference_registration.title', :conference =>Conference.find(params[:conference_id]).name)
 
   end
 
@@ -93,17 +97,17 @@ class ConferenceRegistrationsController < ApplicationController
     @record.days = (@record.days || "").split(',')
     @record.tshirt = (@record.tshirt || "").split(',')
 
-    active_scaffold_config.update.label = t('label.conference_registration.title', :conference =>Conference.find(@record.conference_id).name)
+    #active_scaffold_config.update.label = t('label.conference_registration.title', :conference =>Conference.find(@record.conference_id).name)
 
     if @record.status_name == APPROVED_STATUS
-      active_scaffold_config.update.columns = COLUMNS
+      #active_scaffold_config.update.columns = COLUMNS
       #STATIC_COLUMNS.each { |c| active_scaffold_config.columns[c].form_ui = :static}
     else
-      active_scaffold_config.update.columns = FIRST_STEP_COLUMNS
+      #active_scaffold_config.update.columns = FIRST_STEP_COLUMNS
     end
 
     #hack!
-    active_scaffold_config._load_action_columns
+    #active_scaffold_config._load_action_columns
   end
 
   def set_common_columns_info
@@ -114,9 +118,9 @@ class ConferenceRegistrationsController < ApplicationController
     end
 
     COLUMNS.each do |c|
-      active_scaffold_config.columns[c].label = t(LOCALIZATION_LABEL_PREFIX + c.to_s)
-      active_scaffold_config.columns[c].description = t(LOCALIZATION_DESCRIPTION_PREFIX + c.to_s)
-      active_scaffold_config.columns[c].form_ui = @@default_column_ui[c]
+      #active_scaffold_config.columns[c].label = t(LOCALIZATION_LABEL_PREFIX + c.to_s)
+      #active_scaffold_config.columns[c].description = t(LOCALIZATION_DESCRIPTION_PREFIX + c.to_s)
+      #active_scaffold_config.columns[c].form_ui = @@default_column_ui[c]
     end
   end
 

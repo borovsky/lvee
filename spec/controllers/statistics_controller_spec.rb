@@ -4,7 +4,7 @@ describe StatisticsController do
 
   describe "index" do
     it "should be successful" do
-      get 'index'
+      get 'access'
       response.should be_success
     end
   end

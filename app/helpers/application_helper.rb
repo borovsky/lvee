@@ -100,4 +100,8 @@ module ApplicationHelper
     if textiled[-4..-1] == "</p>" then textiled = textiled[0..-5] end
     return textiled.html_safe
   end
+
+  def logged_in?
+    controller.logged_in?
+  end
 end

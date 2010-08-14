@@ -1,3 +1,3 @@
 class MaillistSubscription < ActiveRecord::Base
-  validates_uniqueness_of   :email, :scope => :maillist
+  validates :email, :uniqueness => {:scope => :maillist}
 end

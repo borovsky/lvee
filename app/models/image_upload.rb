@@ -3,7 +3,9 @@ require 'RMagick'
 class ImageUpload < ActiveRecord::Base
   file_column :file
 
-  def before_validation_on_create
+  before_validation :method => :set_image_size
+
+  def set_image_size
     if file
       imgs = Magick::Image.read(file)
       if(imgs.length > 0)

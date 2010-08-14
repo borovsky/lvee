@@ -34,47 +34,46 @@ describe News do
   describe "publish" do
     it "should set published_at" do
       n = News.new
-      n.expects(:published_at=)
+      n.should_receive(:published_at=)
       n.publish
     end
 
     it "should set published_at to now plus 1 day" do
       n = News.new
       now = Time.new
-      Time.stubs(:now).returns(now)
-      n.expects(:published_at=).with(now + 1.day)
+      Time.stub!(:now).and_return(now)
+      n.should_receive(:published_at=).with(now + 1.day)
       n.publish
     end
 
     it "should save news" do
-      state = states('state').starts_as('not published')
-      n = News.new
-      n.expects(:published_at=).then(state.is('publish set'))
-      n.expects(:save).when(state.is('publish set'))
+      n = News.new(:title => "1", :lead => "l", :body => "b", :user_id => 1, :locale => "en")
       n.publish
+      
+      n2 = News.find(n.id)
+      n2.published_at.to_s.should == n.published_at.to_s
     end
   end
 
   describe "publish_now" do
     it "should set published_at" do
       n = News.new
-      n.expects(:published_at=)
+      n.should_receive(:published_at=)
       n.publish_now
     end
 
     it "should set published_at to now" do
       n = News.new
       now = Time.new
-      Time.stubs(:now).returns(now)
-      n.expects(:published_at=).with(now)
+      Time.stub!(:now).and_return(now)
+      n.should_receive(:published_at=).with(now)
       n.publish_now
     end
 
     it "should save news" do
-      state = states('state').starts_as('not published')
       n = News.new
-      n.expects(:published_at=).then(state.is('publish set'))
-      n.expects(:save).when(state.is('publish set'))
+      n.should_receive(:published_at=).ordered
+      n.should_receive(:save).ordered
       n.publish_now
     end
   end

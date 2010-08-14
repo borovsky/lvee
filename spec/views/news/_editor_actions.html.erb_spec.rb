@@ -2,106 +2,113 @@ require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 
 describe "/news/_editor_actions.html.erb" do
   before(:each) do
-    user = model_stub(User, :full_name=>'Vasily Pupkin')
+    user = stub_model(User, :full_name=>'Vasily Pupkin')
   end
 
   describe "should render editor actions for news" do
     describe "if news not translated" do
       before(:each) do
-        @news = model_stub(News, :translated? => false)
+        @news = stub_model(News, :translated? => false)
       end
 
       it "locale default" do
         locale = I18n.default_locale
-        @news.stubs(:locale).returns(locale)
-        I18n.stubs(:locale).returns(locale)
+        @news.stub!(:locale).and_return(locale)
+        I18n.stub!(:locale).and_return(locale)
+        view.stub!(:admin?).and_return(true)
 
-        render "/news/_editor_actions.html.erb", :locals => {:news => @news}
-        response.should have_tag("a[href=#{edit_news_item_path(:id => @news.id)}]", "Edit")
+        render :partial => "/news/editor_actions.html.erb", :locals => {:news => @news}
+        rendered.should have_selector("a", :href => edit_news_item_path(:id => @news.id, :lang => "en"), :content => "Edit")
       end
 
       it "locale default" do
-        locale = I18n.default_locale + "other"
-        @news.stubs(:locale).returns(locale)
-        I18n.stubs(:locale).returns(I18n.default_locale)
+        locale = I18n.default_locale.to_s + "other"
+        @news.stub!(:locale).and_return(locale)
+        I18n.stub!(:locale).and_return(I18n.default_locale)
+        view.stub!(:admin?).and_return(true)
 
-        render "/news/_editor_actions.html.erb", :locals => {:news => @news}
-        response.should have_tag("a[href=#{translate_news_path(:parent_id => @news.id, :locale =>I18n.default_locale )}]", "Translate")
+        render :partial => "/news/editor_actions.html.erb", :locals => {:news => @news}
+        rendered.should have_selector("a", :href => translate_news_path(:parent_id => @news.id, :locale => I18n.default_locale, :lang => "en" ), :content => "Translate")
       end
     end
 
     describe "if news translated" do
       before(:each) do
-        @news = model_stub(News, :translated? => true)
+        @news = stub_model(News, :translated? => true)
       end
 
       it "locale default" do
         locale = I18n.default_locale
-        @news.stubs(:locale).returns(locale)
-        I18n.stubs(:locale).returns(locale)
+        @news.stub!(:locale).and_return(locale)
+        I18n.stub!(:locale).and_return(locale)
+        view.stub!(:admin?).and_return(true)
 
-        render "/news/_editor_actions.html.erb", :locals => {:news => @news}
-        response.should have_tag("a[href=#{edit_news_item_path(:id => @news.id)}]", "Edit translation")
+        render :partial => "/news/editor_actions.html.erb", :locals => {:news => @news}
+        rendered.should have_selector("a", :href => edit_news_item_path(:id => @news.id, :lang => "en"), :content => "Edit translation")
       end
 
       it "locale default" do
-        locale = I18n.default_locale + "other"
-        @news.stubs(:locale).returns(locale)
-        I18n.stubs(:locale).returns(I18n.default_locale)
+        locale = I18n.default_locale.to_s + "other"
+        @news.stub!(:locale).and_return(locale)
+        I18n.stub!(:locale).and_return(I18n.default_locale)
+        view.stub!(:admin?).and_return(true)
 
-        render "/news/_editor_actions.html.erb", :locals => {:news => @news}
-        response.should have_tag("a[href=#{edit_news_item_path(:id => @news.id)}]", "Edit translation")
+        render :partial => "/news/editor_actions.html.erb", :locals => {:news => @news}
+        rendered.should have_selector("a", :href => edit_news_item_path(:id => @news.id, :lang => "en"), :content => "Edit translation")
       end
     end
   end
 
   describe "should render publish actions" do
     before(:each) do
-      @news = model_stub(News, :translated? => false)
+      @news = stub_model(News, :translated? => false)
       locale = I18n.default_locale
-      @news.stubs(:locale).returns(locale)
-      I18n.stubs(:locale).returns(locale)
+      @news.stub!(:locale).and_return(locale)
+      I18n.stub!(:locale).and_return(locale)
     end
 
     describe "should render when news will publish/was published" do
       it "if news published, renders when it was published" do
         date = mock
-        I18n.expects(:localize).with(date, :format => :short).returns("SomeDate")
-        @news.stubs(:published_at).returns(date)
-        @news.stubs(:published?).returns(true)
+        I18n.should_receive(:localize).with(date, :format => :short).and_return("SomeDate")
+        @news.stub!(:published_at).and_return(date)
+        @news.stub!(:published?).and_return(true)
+        view.stub!(:admin?).and_return(true)
 
-        render "/news/_editor_actions.html.erb", :locals => {:news => @news}
-        response.should have_text(/Published at SomeDate/)
+        render :partial => "/news/editor_actions.html.erb", :locals => {:news => @news}
+        rendered.should match(/Published at SomeDate/)
       end
 
       it "if news will be published soon, should render appropriate message" do
         date = mock
-        template.expects(:l).with(date, :format => :long).returns("SomeDateRange")
-        @news.stubs(:published_at).returns(date)
-        @news.stubs(:published?).returns(false)
+        view.should_receive(:l).with(date, :format => :long).and_return("SomeDateRange")
+        view.stub!(:admin?).and_return(true)
+        @news.stub!(:published_at).and_return(date)
+        @news.stub!(:published?).and_return(false)
 
-        render "/news/_editor_actions.html.erb", :locals => {:news => @news}
-        response.should have_text(/Will be published in SomeDateRange/)
+        render :partial => "/news/editor_actions.html.erb", :locals => {:news => @news}
+        rendered.should match(/Will be published in SomeDateRange/)
       end
     end
 
     it "should render 'publish' link when news not published" do
       date = mock
-      @news.stubs(:published_at).returns(nil)
+      @news.stub!(:published_at).and_return(nil)
+      view.stub!(:admin?).and_return(true)
 
-      render "/news/_editor_actions.html.erb", :locals => {:news => @news}
-      response.should have_tag("a[href=#{publish_news_item_path(:id => @news.id)}]", 'Publish')
+      render :partial => "/news/editor_actions.html.erb", :locals => {:news => @news}
+      rendered.should have_selector("a", :href => publish_news_item_path(:id => @news.id, :lang => "en"), :content => 'Publish')
     end
 
     describe "should render 'publish now' link for admin" do
       it "not published" do
-        template.stubs(:admin?).returns(true)
+        view.stub!(:admin?).and_return(true)
         date = mock
-        @news.stubs(:published_at).returns(nil)
-        @news.stubs(:published?).returns(false)
+        @news.stub!(:published_at).and_return(nil)
+        @news.stub!(:published?).and_return(false)
 
-        render "/news/_editor_actions.html.erb", :locals => {:news => @news}
-        response.should have_tag("a[href=#{publish_now_news_item_path(:id => @news.id)}]", 'Publish Now')
+        render :partial => "/news/editor_actions.html.erb", :locals => {:news => @news}
+        rendered.should have_selector("a", :href => publish_now_news_item_path(:id => @news.id, :lang => "en"), :content => 'Publish Now')
       end
     end
   end

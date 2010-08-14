@@ -1,16 +1,18 @@
 require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 
-describe "/news/show.html.erb" do
+describe "/user_mailer/activation.plain.erb" do
   before(:each) do
-    assigns[:user] = @user = model_stub(User,
+    @user = stub_model(User,
       :full_name => 'xyz',
       :login => 'login',
       :password => 'pass'
       )
-    assigns[:url] = @url = "http://lvee.org"
+    assign :user, @user
+    @url = "http://lvee.org"
+    assign :url, @url
   end
 
   it "should render" do
-    render "/user_mailer/signup_notification.html.erb"
+    render
   end
 end

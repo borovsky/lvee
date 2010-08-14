@@ -1,4 +1,4 @@
-ActionController::Routing::Routes.draw do |map|
+Rails.application.routes.draw do
   root :to => 'main#select_lang'
 
   match 'djs/ie_fuck.js' => 'djs_css#ie_fuck'
@@ -9,7 +9,12 @@ ActionController::Routing::Routes.draw do |map|
 
   scope "/:lang", :constraints => {:lang => /[a-z]{2}/} do
     namespace :admin do
-      resources :users
+      get "/users/:to_list/mail" => 'info_mailer#index', :as => "mail_user"
+      put "/users/mail" => 'info_mailer#send_mail'
+
+      resources :users do
+        put :set_role, :on => :member
+      end
       resources :conference
       resources :conference_registrations do
         collection do
@@ -18,11 +23,13 @@ ActionController::Routing::Routes.draw do |map|
       end
       resources :statuses
       resources :sponsors
-      match "/users/:to_list/mail" => 'info_mailer#index', :as => "mail_user"
     end
 
     namespace :editor do
-      resources :languages
+      resources :languages do
+        put :upload, :on => :member
+        get :download, :on => :member
+      end
       resources :metainfos do
         collection do
           put :change
@@ -33,6 +40,14 @@ ActionController::Routing::Routes.draw do |map|
 
     match "/main" => 'main#index', :as => "main_page"
     resource  :session
+
+    get "statistics/conference/:id" => 'statistics#conference', :as => "statistics_conference"
+    get "statistics(/:length)" => 'statistics#access', :defaults => {:length => "full"}, :constraints => {:length => /(full|week|month)/}, :as => "statistics"
+
+    match "conference_registrations/:id" => 'conference_registrations#user_list', :as => "conference_registration_list"
+    match "users/:id/upload_avator" => 'users#upload_avator', :as => "upload_user_avator"
+    match "users/list" => 'users#list'
+
     resources :users do
       get :activate, :on => :member
       collection do
@@ -62,75 +77,20 @@ ActionController::Routing::Routes.draw do |map|
       end
     end
 
+    match 'articles/:id/diff(/:version)' => 'articles#diff', :as => "diff_article"
+    match 'wiki_pages/:id/diff(/:version)' => 'wiki_pages#diff', :as => 'diff_wiki_page'
+    match 'wiki_rss' => 'main#wiki_rss', :as => 'wiki_rss'
+
     resources :articles do
       get :translate, :on => :member
       put :preview, :on => :collection
     end
 
-    match ':category(/:name)' => 'articles#show', :constraints =>
-        {:category => /(conference|contacts|sponsors|reports)/},
+    match ':category(/:name)' => 'articles#show', :constraints => {:category => /(conference|contacts|sponsors|reports)/},
         :defaults => {:name => "index"}
 
     resources :wiki_pages do
       put :preview, :on => :collection
-    end
+    end    
   end
-end
-
-if false
-
-  map.with_options :path_prefix =>":lang", :requirements => {:lang => /[a-z]{2}/} do |ns|
-    ns.editor_rss 'editor_rss', :controller => "main", :action => "editor_rss"
-    ns.wiki_rss 'wiki_rss', :controller => "main", :action => "wiki_rss"
-
-    ns.statistics_conference "statistics/conference/:id", :controller => "statistics", :action => "conference"
-    ns.statistics "statistics/:length", :controller => "statistics", :action => "index",
-      :defaults => {:length => "full" }, :conditions => {:length => /(full|week|month)/}
-
-    ns.diff_article('articles/:id/diff/:version', :controller => "articles", :action => "diff",
-      :defaults => {:version => nil})
-    ns.diff_wiki_page('wiki_pages/:id/diff/:version',
-      :controller => "wiki_pages", :action => "diff", :defaults => {:version => nil})
-
-    ns.connect('users/privacy', :requirements =>
-        {:category => 'users', :name => "privacy"},
-      :controller=> "articles", :action => "show")
-
-    ns.connect('users/volunteers', :requirements =>
-        {:category => 'users', :name => "volunteers"},
-      :controller=> "articles", :action => "show")
-
-    ns.connect('about/:name',
-      :controller=> "articles", :category => "conference", :action => "show",
-      :defaults => {:name => "index"})
-
-    ns.connect(':category/:name', :requirements =>
-        {:category => /(conference|contacts|sponsors|reports)/},
-      :controller=> "articles", :action => "show",
-      :defaults => {:name => "index"})
-
-
-    ns.upload_user_avator "users/:id/upload_avator", :controller=> "users", :action => "upload_avator"
-
-    ns.conference_registration_list("conference_registrations/:id",
-      :controller => 'conference_registrations', :action => 'user_list')
-
-    ns.connect "users/list", :controller => "users", :action => "list"
-    ns.resources :users, :member => { :activate => :get },
-      :collection => {:current => :get, :restore => :any} do |m|
-      m.connect('conference_registrations/new/:conference_id',
-        :controller => 'conference_registrations', :action => 'new')
-      m.resources(:conference_registrations, :controller => 'conference_registrations',
-        :active_scaffold => true, :member => {:badges => :any, :cancel => :any})
-    end
-    ns.resource  :session
-
-    ns.connect ':controller/:action/:id'
-    ns.connect ':controller/:action/:id.:format'
-  end
-
-  map.connect('participants', :controller=> "articles", :category => "conference",
-    :action => "show", :name => "index")
-
-  map.connect ':lang', :controller => "main", :action=>"index"
 end

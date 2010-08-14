@@ -2,55 +2,55 @@ require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 
 describe "/articles/_editor_actions.html.erb" do
   before(:each) do
-    user = model_stub(User, :full_name=>'Vasily Pupkin')
+    user = stub_model(User, :full_name=>'Vasily Pupkin')
   end
 
   describe "should render editor actions for article" do
     describe "if article not translated" do
       before(:each) do
-        @article = model_stub(Article, :translated? => false)
+        @article = stub_model(Article, :translated? => false)
       end
 
       it "locale default" do
         locale = I18n.default_locale
-        @article.stubs(:locale).returns(locale)
-        I18n.stubs(:locale).returns(locale)
+        @article.stub!(:locale).and_return(locale)
+        I18n.stub!(:locale).and_return(locale)
 
-        render "/articles/_editor_actions.html.erb", :locals => {:article => @article}
-        response.should have_tag("a[href=#{edit_article_path(:id => @article.id)}]", "Edit")
+        render :partial => "/articles/editor_actions.html.erb", :locals => {:article => @article}
+        rendered.should have_selector("a", :href => edit_article_path(:id => @article.id, :lang => "en"), :content => "Edit")
       end
 
       it "locale default" do
-        locale = I18n.default_locale + "other"
-        @article.stubs(:locale).returns(locale)
-        I18n.stubs(:locale).returns(I18n.default_locale)
+        locale = I18n.default_locale.to_s + "other"
+        @article.stub!(:locale).and_return(locale)
+        I18n.stub!(:locale).and_return(I18n.default_locale)
 
-        render "/articles/_editor_actions.html.erb", :locals => {:article => @article}
-        response.should have_tag("a[href=#{translate_article_path(:id => @article.id)}]", "Translate")
+        render :partial => "/articles/editor_actions.html.erb", :locals => {:article => @article}
+        rendered.should have_selector("a", :href => translate_article_path(:id => @article.id, :lang => "en"), :content => "Translate")
       end
     end
 
     describe "if article translated" do
       before(:each) do
-        @article = model_stub(Article, :translated? => true)
+        @article = stub_model(Article, :translated? => true)
       end
 
       it "locale default" do
         locale = I18n.default_locale
-        @article.stubs(:locale).returns(locale)
-        I18n.stubs(:locale).returns(locale)
+        @article.stub!(:locale).and_return(locale)
+        I18n.stub!(:locale).and_return(locale)
 
-        render "/articles/_editor_actions.html.erb", :locals => {:article => @article}
-        response.should have_tag("a[href=#{edit_article_path(:id => @article.id)}]", "Edit translation")
+        render :partial => "/articles/editor_actions.html.erb", :locals => {:article => @article}
+        rendered.should have_selector("a", :href => edit_article_path(:id => @article.id, :lang => "en"), :content => "Edit translation")
       end
 
       it "locale default" do
-        locale = I18n.default_locale + "other"
-        @article.stubs(:locale).returns(locale)
-        I18n.stubs(:locale).returns(I18n.default_locale)
+        locale = I18n.default_locale.to_s + "other"
+        @article.stub!(:locale).and_return(locale)
+        I18n.stub!(:locale).and_return(I18n.default_locale)
 
-        render "/articles/_editor_actions.html.erb", :locals => {:article => @article}
-        response.should have_tag("a[href=#{edit_article_path(:id => @article.id)}]", "Edit translation")
+        render :partial => "/articles/editor_actions.html.erb", :locals => {:article => @article}
+        rendered.should have_selector("a", :href => edit_article_path(:id => @article.id, :lang => "en"), :content => "Edit translation")
       end
     end
   end

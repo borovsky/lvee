@@ -57,6 +57,8 @@ class ApplicationController < ActionController::Base
   def admin_required
     login_required
     return if performed?
+    logger.error(current_user.role)
+    logger.error(current_user.admin?)
     render :text=>t('message.common.access_denied'), :status=>403  unless current_user.admin?
   end
 
@@ -113,6 +115,14 @@ class ApplicationController < ActionController::Base
       # take the highest quality among accepted (and thus supported) languages
       preferred_languages.last[0]
     end
+  end
+
+  def admin?
+    current_user.try(:admin?)
+  end
+
+  def editor?
+    current_user.try(:editor?)
   end
 
   #FIXME

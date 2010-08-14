@@ -1,16 +1,16 @@
 require File.expand_path(File.dirname(__FILE__) + '/../../../spec_helper')
 
-describe "/languages/edit.html.erb" do
+describe "/editor/languages/edit.html.erb" do
   before(:each) do
-    assigns[:language] = @language = model_stub(Language,
+    @language = stub_model(Language,
       :new_record? => false
     )
+    assign :language, @language
   end
 
   it "should render edit form" do
-    render "/editor/languages/edit.html.erb"
+    render
 
-    response.should have_tag("form[action=#{editor_language_path(:id => @language)}][method=post]") do
-    end
+    rendered.should have_selector("form[method=post]", :action => editor_language_path(:id => @language, :lang => "en"))
   end
 end

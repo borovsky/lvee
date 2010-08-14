@@ -1,7 +1,6 @@
 class Metainfo < ActiveRecord::Base
-  validates_presence_of :language
-  validates_presence_of :page
-  validates_uniqueness_of :page, :scope => :language
+  validates :language, :presence => true
+  validates :page, :presence => true, :uniqueness => {:scope => :language}
 
   def self.for(lang, page)
     metainfo = Metainfo.find_by_language_and_page(lang, page) ||

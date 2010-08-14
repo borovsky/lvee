@@ -7,7 +7,7 @@ describe ConferenceRegistration do
     it 'should return status by status name' do
       cr = ConferenceRegistration.new(:status_name => 'test')
       status = stub('status');
-      Status.expects(:find_by_name).returns(status)
+      Status.should_receive(:find_by_name).and_return(status)
       cr.status
     end
   end
@@ -16,8 +16,8 @@ describe ConferenceRegistration do
     it 'should set status name by status' do
       cr = ConferenceRegistration.new()
       status = mock()
-      status.expects(:name).returns('status')
-      cr.expects(:status_name=).with('status')
+      status.should_receive(:name).and_return('status')
+      cr.should_receive(:status_name=).with('status')
       cr.status=status
     end
   end

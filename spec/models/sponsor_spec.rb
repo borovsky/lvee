@@ -2,11 +2,11 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe Sponsor do
   before(:each) do
-    file = File.join(RAILS_ROOT, "public", "images", "logos", 'mlug.gif')
+    file = File.join(::Rails.root, "public", "images", "logos", 'mlug.gif')
     @valid_attributes = {
       :name => "value for name",
       :url => "value for url",
-      :image => ActionController::TestUploadedFile.new(file, nil, true),
+      :image => Rack::Utils::Multipart::UploadedFile.new(file, nil, true),
       :sponsor_type => "information"
     }
   end

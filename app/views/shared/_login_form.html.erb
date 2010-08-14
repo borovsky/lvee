@@ -1,14 +1,14 @@
-<% form_tag session_path, :class => "create" do -%>
-<p><label for="login"><%=t('label.session.login') %></label><br/>
-<%= text_field_tag 'login' %></p>
+<%= form_tag session_path, :class => "create" do -%>
+  <p><label for="login"><%=t('label.session.login') %></label><br/>
+    <%= text_field_tag 'login' %></p>
 
-<p><label for="password"><%= t('label.session.password') %></label><br/>
-<%= password_field_tag 'password' %></p>
+  <p><label for="password"><%= t('label.session.password') %></label><br/>
+    <%= password_field_tag 'password' %></p>
 
-<p><label for="remember_me"><%= t('label.session.rememberMe') %>:</label>
-<%= check_box_tag 'remember_me' %></p>
+  <p><label for="remember_me"><%= t('label.session.rememberMe') %>:</label>
+    <%= check_box_tag 'remember_me' %></p>
 
-<p><%= submit_tag t('label.session.loginButton') %></p>
+  <p><%= submit_tag t('label.session.loginButton') %></p>
 <% end -%>
 <% link = link_to t("label.user.password_restore_link"), restore_users_path -%>
 <p><%= t("message.user.password_restore", :link => link) %></p>

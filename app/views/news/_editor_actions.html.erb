@@ -1,12 +1,11 @@
 <p class="controls">
   <% if news.translated? %>
-    <%= link_to t('label.common.editTranslation'), edit_news_item_path(:id => news.id) %>
+    <%= link_to t('label.common.editTranslation'), edit_news_item_path(:id => news.id, :lang => params[:lang]) %>
   <% else %>
     <% if news.locale == I18n.locale %>
-      <%= link_to t('label.common.edit'), edit_news_item_path(:id => news.id) %>
+      <%= link_to t('label.common.edit'), edit_news_item_path(:id => news.id, :lang => params[:lang]) %>
     <% else %>
-      <%= link_to t('label.common.translate'), translate_news_path(:parent_id =>
-         news.id, :locale=>I18n.locale) %>
+      <%= link_to t('label.common.translate'), translate_news_path(:parent_id => news.id, :locale=>I18n.locale, :lang => params[:lang]) %>
     <% end %>
   <% end %> |
   <% if news.published_at -%>
@@ -14,16 +13,15 @@
       <%= t('label.news.published_at', :published => l(news.published_at, :format => :short))%>
     <% else -%>
       <%= t('label.news.will_be_published', :published =>
-    l(news.published_at, :format => :long))%>
+          l(news.published_at, :format => :long))%>
     <% end -%>
   <% else -%>
-    <%= link_to t('label.common.publish'), publish_news_item_path(:id => news.id) %>
+    <%= link_to t('label.common.publish'), publish_news_item_path(:id => news.id, :lang => params[:lang]) %>
   <% end -%> |
   <% if admin? && !news.published? -%>
-    <%= link_to t('label.common.publish_now'),
-    publish_now_news_item_path(:id => news.id), :confirm =>t("message.common.sure") %> |
+    <%= link_to t('label.common.publish_now'), publish_now_news_item_path(:id => news.id, :lang => params[:lang]), :confirm =>t("message.common.sure") %> |
   <% end -%>
 
-  <%= link_to t('label.common.delete'), news_item_path(:id => news.id),
-  :method => :delete, :confirm =>t("message.common.sure") %>
+  <%= link_to t('label.common.delete'), news_item_path(:id => news.id, :lang => params[:lang]),
+    :method => :delete, :confirm =>t("message.common.sure") %>
 </p>

@@ -1,4 +1,3 @@
-<%= render_statistics %>
 
 <p>
   <%= link_to_function "Mark All", "mark_all_users()" %> |
@@ -18,27 +17,24 @@
     <th>Actions</th>
   </tr>
   <% @users.each_with_index do |user, i| %>
-  <tr id="<%= dom_id(user) %>" class="<%= (i % 2 == 0) ? 'even' : 'odd' %>">
-    <td><%= i+1 %></td>
-    <td><%= check_box_tag "to_user[]", user.id, false, :class =>
-    "user_check", :id => "to_#{dom_id(user)}" %></td>
-    <td><%= h user.login %></td>
-    <td><%= link_to user.full_name, user_path(:id => user) %></td>
-    <td><%= user.active? %></td>
-    <td><%= h user.conference_registrations.map{|r| r.conference.name}.join(', ') %></td>
-    <td>
-      <% params = {:controller=>'admin/users', :action=>'set_role', :id => user.id} -%>
-      <% form_remote_tag(:html => {:id => 'form_'+dom_id(user)}, :url=>params) do -%>
-
-      <%= select_tag("role", options_for_select(ROLES, user.role), :id => "field_"+dom_id(user)) %>
-      <%= observe_field("field_"+dom_id(user), :function =>"$('form_"+dom_id(user)+"').onsubmit()") %>
-      <% end -%>
-    </td>
-    <td>
-      <%= link_to_remote t('label.common.delete'), :url => admin_user_path(:id => user), :method =>
-      :delete, :confirm => t('message.common.sure') %> |
-      <%= link_to('send email', admin_mail_user_path(:to_list => user)) %>
-    </td>
+    <tr id="<%= dom_id(user) %>" class="<%= (i % 2 == 0) ? 'even' : 'odd' %>">
+      <td><%= i+1 %></td>
+      <td><%= check_box_tag "to_user[]", user.id, false, :class =>
+          "user_check", :id => "to_#{dom_id(user)}" %></td>
+      <td><%= h user.login %></td>
+      <td><%= link_to user.full_name, user_path(:id => user.id, :lang => params[:lang]) %></td>
+      <td><%= user.active? %></td>
+      <td><%= h user.conference_registrations.map{|r| r.conference.name}.join(', ') %></td>
+      <td>
+        <%= form_tag(set_role_admin_user_path(:id => user.id, :lang => params[:lang]), :remote => true, :html => {:id => 'form_'+dom_id(user)}) do -%>
+          <%= select_tag("role", options_for_select(ROLES, user.role), :id => "field_"+dom_id(user)) %>
+          <%#= observe_field("field_"+dom_id(user), :function =>"$('form_"+dom_id(user)+"').onsubmit()") %>
+        <% end -%>
+      </td>
+      <td>
+        <%= link_to t('label.common.delete'), admin_user_path(:id => user.id, :lang => params[:lang]), :method => :delete, :confirm => t('message.common.sure'), :remote => true, :confirm => "Are you sure?" %> |
+        <%= link_to('send email', admin_mail_user_path(:to_list => user.id, :lang => params[:lang])) %>
+      </td>
     <% end %>
   </tr>
 </table>

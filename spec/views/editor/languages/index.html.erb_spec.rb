@@ -1,14 +1,14 @@
 require File.expand_path(File.dirname(__FILE__) + '/../../../spec_helper')
 
-describe "/languages/index.html.erb" do
+describe "/editor/languages/index.html.erb" do
   before(:each) do
-    assigns[:languages] = [
-      model_stub(Language),
-      model_stub(Language)
+    assign :languages, [
+      stub_model(Language),
+      stub_model(Language)
     ]
   end
 
   it "should render list of languages" do
-    render "/editor/languages/index.html.erb"
+    render
   end
 end

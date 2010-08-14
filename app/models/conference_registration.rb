@@ -4,15 +4,15 @@ class ConferenceRegistration < ActiveRecord::Base
 
   has_many :badges, :dependent => :delete_all
 
-  validates_presence_of :user_id
-  validates_presence_of :conference_id
-  validates_presence_of :transport_to, :if => :check_transport
-  validates_presence_of :transport_from, :if => :check_transport
-  validates_numericality_of :quantity, :only_integer => true, :greater_than => 0
-
-  validates_uniqueness_of :conference_id, :scope => :user_id
+  validates :user_id, :presence => true
+  validates :conference_id, :presence => true, :uniqueness => {:scope => :user_id}
+  validates :transport_to, :if => :check_transport, :presence => true
+  validates :transport_from, :if => :check_transport, :presence => true
+  validates :quantity, :numericality => {:only_integer => true, :greater_than => 0}, :presence => true
 
   attr_accessor :admin
+
+  after_save :method => :do_after_save
 
   def status
     @status ||= Status.find_by_name(@status_name)
@@ -74,7 +74,7 @@ class ConferenceRegistration < ActiveRecord::Base
     !admin && approved?
   end
 
-  def validate
+  validate do
     if status_name == APPROVED_STATUS && !admin
       self.errors.add("quantity",
         I18n.t("activerecord.errors.messages.less_than_or_equal_to",
@@ -82,7 +82,7 @@ class ConferenceRegistration < ActiveRecord::Base
     end
   end
 
-  def after_save
+  def do_after_save
     populate_badges
     if self.status_name_changed?
       UserMailer.deliver_status_changed(self)

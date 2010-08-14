@@ -3,9 +3,9 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 describe MainController do
   render_views
   before :all do
-    @user=stub(:id => 1, :editor? => false, :admin? => false, :login => "user", :full_name => "Vasily Pupkin", :role => nil)
-    @editor=stub(:id => 2, :editor? => true, :admin? => false, :login => "user", :full_name => "Vasily Pupkin", :role => "editor")
-    @admin=stub(:id => 2, :editor? => true, :admin? => true, :login => "user", :full_name => "Vasily Pupkin", :role => "admin")
+    @user = stub_model(User, :id => 1, :role => "", :login => "user", :full_name => "Vasily Pupkin")
+    @editor = stub_model(User, :id => 2, :role => "editor", :login => "user", :full_name => "Vasily Pupkin")
+    @admin = stub_model(User, :id => 2, :role => "admin", :login => "user", :full_name => "Vasily Pupkin")
   end
 
   describe "index should render" do

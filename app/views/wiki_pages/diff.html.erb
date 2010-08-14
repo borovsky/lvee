@@ -1,13 +1,12 @@
 <% if @prev -%>
-<h1><%= t("label.diff.change_wiki_title", :wiki_page => "#{@wiki_page.name}", :from => @prev.version, :to => @wiki_page.version)%></h1>
+  <h1><%= t("label.diff.change_wiki_title", :wiki_page => "#{@wiki_page.name}", :from => @prev.version, :to => @wiki_page.version)%></h1>
 <% else -%>
-<h1><%= t("label.diff.new_wiki_title", :wiki_page => "#{@wiki_page.name}")%></h1>
+  <h1><%= t("label.diff.new_wiki_title", :wiki_page => "#{@wiki_page.name}")%></h1>
 <% end -%>
 
 <div id="diff">
-<%= controller.display_diff(@prev, @wiki_page, :render_wiki_page)%>
+  <%= controller.display_diff(@prev, @wiki_page, :render_wiki_page)%>
 </div>
 <%= render :partial => "wiki_pages/versions"%>
-<%= link_to t('label.common.back'), wiki_page_path(:id =>
-@wiki_page.name)%> |
-<%= link_to t('label.common.back_to_list'), wiki_pages_path()%>
+<%= link_to t('label.common.back'), wiki_page_path(:id => @wiki_page.name, :lang => params[:lang])%> |
+<%= link_to t('label.common.back_to_list'), wiki_pages_path(:lang => params[:lang])%>

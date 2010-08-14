@@ -1,21 +1,17 @@
 require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 
 describe "/users/show.html.erb" do
-  include ActionView::Helpers::TextHelper
+  helper :users
 
   before(:each) do
-    assigns[:user] = model_stub(User,
-      :new_record? => true,
-      :errors => [],
+    @user = stub_model(User,
       :full_name => 'xyz',
-      :editor? => true,
-      :admin? => true,
-      :avator_temp => nil
-      )
+      :role => "admin")
+    assign :user, @user
   end
 
   it "should render new form" do
-    template.stubs(:current_user).returns(assigns[:user])
-    render "/users/show.html.erb"
+    view.stub!(:current_user).and_return(@user)
+    render
   end
 end

@@ -1,30 +1,35 @@
 class UserMailer < ActionMailer::Base
-  def signup_notification(user)
-    setup_email(user)
-    @subject += I18n.t('mail.subject.activation')
+  default :from => "info@lvee.org"
+  PREFIX = "[lvee] "
 
-    @body[:url]  = "http://lvee.org/activate/#{user.activation_code}"
+  def signup_notification(user)
+    @user = user
+
+    @url = "http://lvee.org/activate/#{user.activation_code}"
+    mail :to => user.email, :subject => PREFIX + I18n.t('mail.subject.activation')
   end
 
   def activation_restore(user)
-    setup_email(user)
-    @subject += I18n.t('mail.subject.activation_restore')
+    @user = user
+    @url = "http://lvee.org/activate/#{user.activation_code}"
 
-    @body[:url]  = "http://lvee.org/activate/#{user.activation_code}"
+    mail :to => user.email, :subject => PREFIX + I18n.t('mail.subject.activation_restore')
   end
 
 
   def activation(user)
-    setup_email(user)
-    @subject += I18n.t('mail.subject.activation_complete')
-    @body[:url]  = "http://lvee.org/"
+    @user = user
+    @url = "http://lvee.org/"
+
+    mail :to => user.email, :subject => PREFIX + I18n.t('mail.subject.activation_complete')
   end
 
   def password_restore(user, ip)
-    setup_email(user)
-    @subject += I18n.t('mail.subject.password_restore')
-    @body[:url]  = "http://lvee.org/"
-    @body[:ip] = ip
+    @user = user
+    @url = "http://lvee.org/"
+    @ip = ip
+
+    mail :to => user.email, :subject => PREFIX + I18n.t('mail.subject.password_restore')
   end
 
   def status_changed(conference_registration)
@@ -34,16 +39,8 @@ class UserMailer < ActionMailer::Base
 
     setup_email(user)
     
-    @subject += ERB.new(status.subject).result(binding)
-    part :content_type => "text/plain", :body => ERB.new(status.mail).result(binding)
-  end
-
-  protected
-    def setup_email(user)
-      @recipients  = "#{user.email}"
-      @from        = "info@lvee.org"
-      @subject     = "[lvee.org] "
-      @sent_on     = Time.now
-      @body[:user] = user
+    mail :to => user.email, :subject => PREFIX + ERB.new(status.subject).result(binding) do |format|
+      format.text{ render :text => ERB.new(status.mail).result(binding)}
     end
+  end
 end

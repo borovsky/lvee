@@ -1,6 +1,5 @@
 <%= render :partial => "/articles/article", :locals => {:article => @article}%>
 
-<%= render :partial => "/articles/editor_actions", :locals =>
-{:article => @article} if editor? %>
+<%= render :partial => "/articles/editor_actions", :locals => {:article => @article} if editor? %>
 <p />
 <div class="js-kit-comments" permalink="" uniq="<%= @metainfo.try(:page) %>"></div><script src="http://js-kit.com/for/lvee.org/comments.js"></script>

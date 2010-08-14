@@ -2,15 +2,18 @@ require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 
 describe "/articles/show.html.erb" do
   before(:each) do
-    assigns[:article] = @article = model_stub(Article,
+    @article = stub_model(Article,
       :title => "value for title",
       :body => "value for body"
     )
+    assigns[:article] = @article
   end
 
   it "should render attributes in <p>" do
-    render "/articles/show.html.erb"
-    response.should have_tag("h1", "value for title")
-    response.should have_text(/value\ for\ body/)
+    view.stub!(:editor?).and_return(true)
+    
+    render
+    rendered.should have_selector("h1", :content => "value for title")
+    rendered.should match(/value\ for\ body/)
   end
 end

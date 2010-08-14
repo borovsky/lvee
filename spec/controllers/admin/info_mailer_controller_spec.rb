@@ -2,7 +2,7 @@ require File.dirname(__FILE__) + '/../../spec_helper'
 
 describe Admin::InfoMailerController do
   def mock_user(stubs={})
-    stub(stubs)
+    stub_model(User, stubs)
   end
 
   before :each do
@@ -10,24 +10,25 @@ describe Admin::InfoMailerController do
     @user2 = mock_user(:id => 2, :email => "test1", :full_name => "FullName2")
     @user3 = mock_user(:id => 3, :email => "test1", :full_name => "FullName3")
 
-    @admin = mock_user(:id => 42, :admin? => true, :editor? => true, :login => "test", :role => "admin")
+    @admin = mock_user(:id => 42, :login => "test", :role => "admin")
     login_as @admin
+    ActionMailer::Base.deliveries = []
   end
 
   describe "index" do
     render_views
 
     it "should render properly" do
-      get :index
+      get :index, :to_list => "1,2,3,4"
 
       assert_response :success
     end
 
     it "should render properly with multibly TOs" do
-      User.expects(:find_by_id).with('1').returns(@user1)
-      User.expects(:find_by_id).with('2').returns(@user2)
-      User.expects(:find_by_id).with('3').returns(@user3)
-      User.expects(:find_by_id).with('4').returns(nil)
+      User.should_receive(:find_by_id).with('1').and_return(@user1)
+      User.should_receive(:find_by_id).with('2').and_return(@user2)
+      User.should_receive(:find_by_id).with('3').and_return(@user3)
+      User.should_receive(:find_by_id).with('4').and_return(nil)
 
       get :index, :to_list => '1,2,3,4'
       assert_response :success
@@ -52,10 +53,10 @@ describe Admin::InfoMailerController do
     end
 
     it "should render properly with multibly TOs" do
-      User.expects(:find_by_id).with('1').returns(@user1)
-      User.expects(:find_by_id).with('2').returns(@user2)
-      User.expects(:find_by_id).with('3').returns(@user3)
-      User.expects(:find_by_id).with('4').returns(nil)
+      User.should_receive(:find_by_id).with('1').and_return(@user1)
+      User.should_receive(:find_by_id).with('2').and_return(@user2)
+      User.should_receive(:find_by_id).with('3').and_return(@user3)
+      User.should_receive(:find_by_id).with('4').and_return(nil)
 
       get :send_mail, :to_list => '1,2,3,4', :subject => "subjectTest", :body => "BodyTest"
       assert_response :success
@@ -75,11 +76,11 @@ describe Admin::InfoMailerController do
     end
 
     it "should render properly with multibly TOs" do
-      User.expects(:find_by_id).with('1').returns(@user1)
-      User.expects(:find_by_id).with('2').returns(@user2)
-      User.expects(:find_by_id).with('3').returns(@user3)
+      User.should_receive(:find_by_id).with('1').and_return(@user1)
+      User.should_receive(:find_by_id).with('2').and_return(@user2)
+      User.should_receive(:find_by_id).with('3').and_return(@user3)
 
-      get :send_mail, :to_list => '1,2,3', :subject => "subjectTest", :body => "Test {{user}}"
+      put :send_mail, :to_list => '1,2,3', :subject => "subjectTest", :body => "Test {{user}}"
       assert_response :success
 
       emails = ActionMailer::Base.deliveries

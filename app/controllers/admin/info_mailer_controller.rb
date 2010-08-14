@@ -13,14 +13,13 @@ class Admin::InfoMailerController < ApplicationController
 
   def send_mail
     if @to_list_users.empty?
-      InfoMailer.deliver_info_mail(params[:to], params[:subject], params[:body], params[:attachment])
+      InfoMailer.info_mail(params[:to], params[:subject], params[:body], params[:attachment]).deliver
     else
       @to_list_users.each do |user|
         body = params[:body].gsub(/\{\{user\}\}/, user.full_name)
 
 
-        InfoMailer.deliver_info_mail(user.email, params[:subject], body,
-          params[:attachment])
+        InfoMailer.info_mail(user.email, params[:subject], body, params[:attachment]).deliver
       end
     end
 

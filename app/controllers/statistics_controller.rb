@@ -1,5 +1,5 @@
 class StatisticsController < ApplicationController
-  def index
+  def access
   end
 
   def conference

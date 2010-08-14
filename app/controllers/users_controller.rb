@@ -2,7 +2,7 @@
 
 class UsersController < ApplicationController
   before_filter :login_required, :only => [:current]
-  before_filter :scaffold_action, :set_common_columns_info, :only => [:edit, :update, :new, :create]
+  # before_filter :set_common_columns_info, :only => [:edit, :update, :new, :create]
   before_filter(:current_user_only, :unless => :admin?,
     :except => [:restore, :activate, :current,:new, :create])
 
@@ -43,6 +43,9 @@ class UsersController < ApplicationController
     redirect_to user_path(:id => current_user.id)
   end
 
+  def edit    
+  end
+
   def restore
     if params[:email]
       user = User.find_by_email(params[:email])
@@ -53,9 +56,9 @@ class UsersController < ApplicationController
           user.password = password
           user.password_confirmation = password
           user.save
-          UserMailer.deliver_password_restore(user, request.remote_ip)
+          UserMailer.password_restore(user, request.remote_ip).deliver
         else
-          UserMailer.deliver_activation_restore(user)
+          UserMailer.activation_restore(user).deliver
         end
         flash[:notice] = t('message.user.password_restore_note')
       else
@@ -103,7 +106,7 @@ class UsersController < ApplicationController
   end
 
   def after_create_save(record)
-    UserMailer.deliver_signup_notification(record)
+    UserMailer.signup_notification(record).deliver
     self.current_user = record
     redirect_to user_path(:id => current_user.id, :lang => params[:lang])
   end

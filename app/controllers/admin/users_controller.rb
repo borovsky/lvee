@@ -24,9 +24,11 @@ module Admin
 
     def destroy
       @user = User.find params[:id]
-      render(:update) do |page|
-        page[dom_id(@user)].visual_effect :fade
-      end if @user.destroy
+      if @user.destroy
+        render :text => "ok"
+      else
+        render :text => "error", :status => "500"
+      end
     end
   end
 end

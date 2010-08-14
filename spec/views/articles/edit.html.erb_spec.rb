@@ -3,7 +3,7 @@ require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 describe "/articles/edit.html.erb" do
 
   before(:each) do
-    assigns[:article] = @article = model_stub(Article,
+    @article = stub_model(Article,
       :new_record? => false,
       :title => "value for title",
       :body => "value for body",
@@ -11,16 +11,17 @@ describe "/articles/edit.html.erb" do
       :name => "value for subcategory",
       :locale => "value for locale"
     )
+    assign :article, @article
   end
 
   it "should render edit form" do
-    render "/articles/edit.html.erb"
+    render
 
-    response.should have_tag("form[action=#{article_path(:id => @article.id)}][method=post]") do
-      with_tag('input#article_title[name=?]', "article[title]")
-      with_tag('textarea#article_body[name=?]', "article[body]")
-      with_tag('input#article_category[name=?]', "article[category]")
-      with_tag('input#article_name[name=?]', "article[name]")
+    rendered.should have_selector("form[method=post]", :action => article_path(:id => @article.id, :lang => "en")) do |n|
+      n.should have_selector('input#article_title', :name => "article[title]")
+      n.should have_selector('textarea#article_body', :name => "article[body]")
+      n.should have_selector('input#article_category', :name => "article[category]")
+      n.should have_selector('input#article_name', :name => "article[name]")
     end
   end
 end

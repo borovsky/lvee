@@ -1,10 +1,10 @@
 <ul>
   <li><%= link_to_unless_current(t("label.statistics.title.full"),
-      statistics_path(:length => "full"))%></li>
+      statistics_path(:length => "full", :lang => params[:lang]))%></li>
   <li><%= link_to_unless_current(t("label.statistics.title.month"),
-      statistics_path(:length => "month"))%></li>
+      statistics_path(:length => "month", :lang => params[:lang]))%></li>
   <li><%= link_to_unless_current(t("label.statistics.title.week"),
-      statistics_path(:length => "week"))%></li>
+      statistics_path(:length => "week", :lang => params[:lang]))%></li>
   <li><%= link_to_unless_current(t("label.statistics.title.conference"),
-      statistics_conference_path(:id => "LVEE 2009"))%></li>
+      statistics_conference_path(:id => "LVEE 2009", :lang => params[:lang]))%></li>
 </ul>

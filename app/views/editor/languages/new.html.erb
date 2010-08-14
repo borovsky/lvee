@@ -1,6 +1,6 @@
 <h1><%= t('label.language.creating')%></h1>
 
-<% form_for(@language, :url => editor_languages_path) do |f| %>
+<%= form_for(@language, :url => editor_languages_path(:lang => params[:lang])) do |f| %>
   <%= f.error_messages %>
   <%= render :partial => "/editor/languages/form", :locals => {:f => f} %>
 
@@ -9,4 +9,4 @@
   </p>
 <% end %>
 
-<%= link_to t('label.common.back'), editor_languages_path %>
+<%= link_to t('label.common.back'), editor_languages_path(:lang => params[:lang]) %>

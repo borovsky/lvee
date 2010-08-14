@@ -2,8 +2,7 @@
   <div id="login-panel">
     <ul>
       <% if current_user %>
-      <li class="first"><%= t('message.session.logged', :user_name =>
-      link_to(current_user.login, user_path(:id=>current_user.id)))
+      <li class="first"><%= t('message.session.logged', :user_name => link_to(current_user.login, user_path(:id=>current_user.id)))
       %> </li>
       <li class="stick">|</li>
       <li><%= link_to t('label.session.logout'), session_path, :method => :delete %></li>

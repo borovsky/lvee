@@ -115,7 +115,7 @@ class NewsController < ApplicationController
     @news.destroy
 
     respond_to do |format|
-      format.html { redirect_to(news_url) }
+      format.html { redirect_to(news_item_url) }
       format.xml  { head :ok }
     end
   end

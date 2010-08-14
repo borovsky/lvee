@@ -8,19 +8,19 @@
     <th><%= t('label.article.title')%></th>
   </tr>
 
-<% for article in @articles %>
-  <tr>
-    <td><%=h article.category %></td>
-    <td><%=h article.name %></td>
-    <td><%=h article.locale %></td>
-    <td><%=h article.title %></td>
-    <td><%= link_to t('label.common.show'), article_path(:id => article.id) %></td>
-    <td><%= link_to t('label.common.edit'), edit_article_path(:id => article.id) %></td>
-    <td><%= link_to t('label.common.delete'), article_path(:id => article.id), :confirm => t('message.common.sure'), :method => :delete %></td>
-  </tr>
-<% end %>
+  <% for article in @articles %>
+    <tr>
+      <td><%=h article.category %></td>
+      <td><%=h article.name %></td>
+      <td><%=h article.locale %></td>
+      <td><%=h article.title %></td>
+      <td><%= link_to t('label.common.show'), article_path(:id => article.id, :lang => params[:lang]) %></td>
+      <td><%= link_to t('label.common.edit'), edit_article_path(:id => article.id, :lang => params[:lang]) %></td>
+      <td><%= link_to t('label.common.delete'), article_path(:id => article.id, :lang => params[:lang]), :confirm => t('message.common.sure'), :method => :delete %></td>
+    </tr>
+  <% end %>
 </table>
 
 <br />
 
-<%= link_to t('label.article.new'), new_article_path %>
+<%= link_to t('label.article.new'), new_article_path(:lang => params[:lang]) %>

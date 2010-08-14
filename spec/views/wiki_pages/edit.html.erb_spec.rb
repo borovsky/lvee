@@ -3,19 +3,20 @@ require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 describe "/wiki_pages/edit.html.erb" do
 
   before(:each) do
-    assigns[:wiki_page] = @wiki_page = model_stub(WikiPage,
+    @wiki_page = stub_model(WikiPage,
       :new_record? => false,
       :body => "value for body",
       :name => "value for name"
     )
+    assign :wiki_page, @wiki_page
   end
 
   it "should render edit form" do
-    render "/wiki_pages/edit.html.erb"
+    render
 
-    response.should have_tag("form[action=#{wiki_page_path(:id => @wiki_page.name)}][method=post]") do
-      with_tag('textarea#wiki_page_body[name=?]', "wiki_page[body]")
-      with_tag('input#wiki_page_name[name=?]', "wiki_page[name]")
+    rendered.should have_selector("form[method=post]", :action => wiki_page_path(:id => @wiki_page.name, :lang => "en")) do |n|
+      n.should have_selector('textarea#wiki_page_body', :name => "wiki_page[body]")
+      n.should have_selector('input#wiki_page_name', :name => "wiki_page[name]")
     end
   end
 end

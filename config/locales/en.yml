@@ -9,26 +9,26 @@ en:
         blank: "can't be blank"
         confirmation: "doesn't match confirmation"
         empty: "can't be empty"
-        equal_to: "must be equal to {{count}}"
+        equal_to: "must be equal to %{count}"
         even: "must be even"
         exclusion: "is reserved"
-        greater_than: "must be greater than {{count}}"
-        greater_than_or_equal_to: "must be greater than or equal to {{count}}"
+        greater_than: "must be greater than %{count}"
+        greater_than_or_equal_to: "must be greater than or equal to %{count}"
         inclusion: "is not included in the list"
         invalid: "is invalid"
-        less_than: "must be less than {{count}}"
-        less_than_or_equal_to: "must be less than or equal to {{count}}"
+        less_than: "must be less than %{count}"
+        less_than_or_equal_to: "must be less than or equal to %{count}"
         not_a_number: "is not a number"
         odd: "must be odd"
         taken: "has already been taken"
-        too_long: "is too long (maximum is {{count}} characters)"
-        too_short: "is too short (minimum is {{count}} characters)"
-        wrong_length: "is the wrong length (should be {{count}} characters)"
+        too_long: "is too long (maximum is %{count} characters)"
+        too_short: "is too short (minimum is %{count} characters)"
+        wrong_length: "is the wrong length (should be %{count} characters)"
       template: 
         body: "There were problems with the following fields:"
         header: 
-          one: "1 error prohibited this {{model}} from being saved"
-          other: "{{count}} errors prohibited this {{model}} from being saved"
+          one: "1 error prohibited this %{model} from being saved"
+          other: "%{count} errors prohibited this %{model} from being saved"
   date: 
     abbr_day_names: 
       - Sun
@@ -87,35 +87,35 @@ en:
     distance_in_words: 
       about_x_hours: 
         one: "about 1 hour"
-        other: "about {{count}} hours"
+        other: "about %{count} hours"
       about_x_months: 
         one: "about 1 month"
-        other: "about {{count}} months"
+        other: "about %{count} months"
       about_x_years: 
         one: "about 1 year"
-        other: "about {{count}} years"
+        other: "about %{count} years"
       half_a_minute: "half a minute"
       less_than_x_minutes: 
         one: "less than a minute"
-        other: "less than {{count}} minutes"
+        other: "less than %{count} minutes"
       less_than_x_seconds: 
         one: "less than 1 second"
-        other: "less than {{count}} seconds"
+        other: "less than %{count} seconds"
       over_x_years: 
         one: "over 1 year"
-        other: "over {{count}} years"
+        other: "over %{count} years"
       x_days: 
         one: "1 day"
-        other: "{{count}} days"
+        other: "%{count} days"
       x_minutes: 
         one: "1 minute"
-        other: "{{count}} minutes"
+        other: "%{count} minutes"
       x_months: 
         one: "1 month"
-        other: "{{count}} months"
+        other: "%{count} months"
       x_seconds: 
         one: "1 second"
-        other: "{{count}} seconds"
+        other: "%{count} seconds"
     prompts: 
       day: Day
       hour: Hour
@@ -134,7 +134,7 @@ en:
       proposition: "As free software is developed by the community with attracting a lot of volunteers, please tell us how you can contribute to our meeting. Let it be a report or a less formal speech within the limits of a workshop about implementation, usage or development of free software by you or your organization. If you are going to make a report or organize a workshop at the conference, please specify the topic of your report, as well as send its abstracts to \"d.kostiuk@lvee.org\":mailto:d.kostiuk@lvee.org ."
       quantity: "How many people will go with you to the conference (including you)"
       residence: "Whom of the registered participants you want to share room with?"
-      title: "Conference registration for {{conference}}"
+      title: "Conference registration for %{conference}"
       transport_from: "Which transport will you use to leave the conference"
       transport_to: "Which transport will you use to reach the conference"
       tshirt: "T-Shirt size"
@@ -196,21 +196,21 @@ en:
       name: Name
       new: "New conference"
       participated: "You have participated"
-      register: "Register to {{conference}}"
+      register: "Register to %{conference}"
       registration_closed: closed
       registration_opened: opened
       registration_opened?: "Registration opened?"
       registred: "You have registred"
-      show: "Conference {{name}} ({{start_date}} - {{finish_date}}"
+      show: "Conference %{name} (%{start_date} - %{finish_date}"
       start_date: "Start date"
       upcoming: "Upcoming conferences"
     conference_registration: 
-      approved_edit: "Confirm participation in {{conference}}"
+      approved_edit: "Confirm participation in %{conference}"
       badges: Badges
-      badges_title: "Badges for {{conference}}"
+      badges_title: "Badges for %{conference}"
       cancel_registration: "Cancel registration!"
       days: "Participation days"
-      edit: " {{conference}} participant's data"
+      edit: " %{conference} participant's data"
       floor: "Can you sleep in a tent?"
       food: "Preferred food"
       index: "Registration to conference"
@@ -222,7 +222,7 @@ en:
       residence: Accommodation
       status_name: "Registration's Status"
       comment: "Registration's Comment"
-      title: "Conference registration for {{conference}}"
+      title: "Conference registration for %{conference}"
       transport_from: "Transport from conference"
       transport_from_list: 
         bus_grodno: "Minibus to Grodno"
@@ -236,20 +236,20 @@ en:
       tshirt: "T-Shirt size"
       update_model: "Conference Registration"
     diff: 
-      change_article_title: "Diff for article {{article}} from version {{from}} to {{to}}"
-      change_wiki_title: "Diff for page '{{wiki_page}}' from version {{from}} to {{to}}"
+      change_article_title: "Diff for article %{article} from version %{from} to %{to}"
+      change_wiki_title: "Diff for page '%{wiki_page}' from version %{from} to %{to}"
       changed_at: "Changed at"
       editor: Editor
       from: From
-      new_article_title: "Article {{article}} has no previous versions"
-      new_wiki_title: "Page '{{wiki_page}}' has no previous versions"
+      new_article_title: "Article %{article} has no previous versions"
+      new_wiki_title: "Page '%{wiki_page}' has no previous versions"
       to: To
       version: Version
     editor_log: 
-      article_changed: "Article {{object}} was changed by {{user}}"
-      article_created: "Article {{object}} was created by {{user}}"
-      wiki_page_changed: "Wiki page {{object}} was changed by {{user}}"
-      wiki_page_created: "Wiki page {{object}} was created by {{user}}"
+      article_changed: "Article %{object} was changed by %{user}"
+      article_created: "Article %{object} was created by %{user}"
+      wiki_page_changed: "Wiki page %{object} was changed by %{user}"
+      wiki_page_created: "Wiki page %{object} was created by %{user}"
     language: 
       code3: "3-letter (ISO 639-2) language code id"
       creating: "Creating Language"
@@ -273,11 +273,11 @@ en:
       editing: "News Editing"
       last_news: "Last News"
       publish: "Publish News"
-      published_at: "Published at {{published}}"
+      published_at: "Published at %{published}"
       title: Title
       translating: "News Translation"
       unpublished: Unpublished
-      will_be_published: "Will be published in {{published}}"
+      will_be_published: "Will be published in %{published}"
     session: 
       login: Login
       loginButton: Login
@@ -286,7 +286,7 @@ en:
       rememberMe: "Remember me"
     statistics: 
       browser: Browser
-      conference: "Registration statistics for {{conference}}"
+      conference: "Registration statistics for %{conference}"
       country: Country
       operating_system: "Operating system"
       registration: 
@@ -305,7 +305,7 @@ en:
         full: "Statistics from 20th of April 2009"
         month: "Statistics for last month"
         os_statistic: "Visitor's Operating Systems Statistics"
-        total_visitors: "Total visitors: {{count}}"
+        total_visitors: "Total visitors: %{count}"
         week: "Statistics for last week"
       visits: Visits
     user: 
@@ -331,7 +331,7 @@ en:
       register: Register
       subscribed: "Subscribe to information maillist"
       subscribed_talks: "Subscribe to organization board talks mailllist"
-      title: "{{full_name}} ({{login}}), your profile is in your hands"
+      title: "%{full_name} (%{login}), your profile is in your hands"
       to_profile: "To your profile"
       update_model: "Edit your personal data"
     wiki_page: 
@@ -346,18 +346,18 @@ en:
     account: 
       activate: |-
           Please visit following URL for activation your account:
-          {{url}}
+          %{url}
       activated: "Your account was been activated"
       activation_restore: "You account should be activated before login"
       created: "Your account was been created"
       edit_data: |-
           You can login and edit your data:
-          {{url}}
+          %{url}
       information: |-
-          Login:    {{login}}
-          Password: {{password}}
+          Login:    %{login}
+          Password: %{password}
       restore: |-
-          Password restore was requested from {{ip}}. 
+          Password restore was requested from %{ip}.
           We reseted your password. Above you can find new login information.
     signature: |-
         -- 
@@ -367,7 +367,7 @@ en:
       activation_complete: "Your account for LVEE was activated"
       activation_restore: "Account activation for LVEE (repeat)"
       password_restore: "Password restore for LVEE"
-    title: "Hello, {{full_name}}"
+    title: "Hello, %{full_name}"
   menu: 
     admin: 
       conference_registrations: "Conference registrations admin"
@@ -421,12 +421,12 @@ en:
     conference: 
       created: "Conference created successfully"
       slogan: "The 6th International conference of developers and users<br />of free / open source software"
-      status: "Registration to conference {{status}}."
+      status: "Registration to conference %{status}."
       updated: "Conference updated successfully"
     iefuck: 
       link: "http://browsehappy.com"
       link_text: "Find out modern and secure browsers!"
-      message: "This version of Internet Explorer improperly shows contemporary websites and makes your computer unsafe. {{link}}"
+      message: "This version of Internet Explorer improperly shows contemporary websites and makes your computer unsafe. %{link}"
     language: 
       created: "Language created successfully"
       updated: "Language updated successfully"
@@ -437,20 +437,20 @@ en:
       updated: "News updated successfully"
     session: 
       failed: "Login or password incorrect. May be you didn't activate your account"
-      logged: "You logged in as {{user_name}}"
+      logged: "You logged in as %{user_name}"
       logged_out: "You logged out successfully"
     user: 
       accuracy_note: "Accurate and error-free registration form filling will help contacting with you alot"
       activated: "Registration completed"
       avator_updated: "Photo updated successfully"
       avator_upload: "You can upload you photo here. Please choose one with face, if possible."
-      describe: "User: {{full_name}} ({{country}}, {{city}})..."
+      describe: "User: %{full_name} (%{country}, %{city})..."
       incorrect_image: "Can not update your photo. Please check image file"
       login_change: "You can't change your login"
       not_found_by_email: "User not found by email. Please check email."
-      password_restore: "Forgot password? {{link}} it."
+      password_restore: "Forgot password? %{link} it."
       password_restore_note: "Mail with restore information sent."
-      privacy: "Privacy Policy: We {{link}} your account information to anyone, including your email address."
+      privacy: "Privacy Policy: We %{link} your account information to anyone, including your email address."
       privacy_link: "don't sell"
       registred: "Thank you for registration"
   number: 

@@ -1,6 +1,6 @@
 module RSpec::Rails::ControllerExampleGroup
   def login_as(user)
-    controller.stubs(:current_user).returns(user)
+    controller.stub!(:current_user).any_number_of_times.and_return(user)
   end
 
   %w(get post put delete head).each do |method|
@@ -16,7 +16,7 @@ end
 
 module RSpec::Rails::ViewExampleGroup
   def login_as(user)
-    template.stubs(:current_user).returns(user)
+    template.stub!(:current_user).and_return(user)
   end
 
   included do

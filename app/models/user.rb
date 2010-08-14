@@ -1,4 +1,6 @@
 require 'digest/sha1'
+require 'maillist_subscriber'
+
 class User < ActiveRecord::Base
   file_column(:avator,
     :magick => {
@@ -16,30 +18,25 @@ class User < ActiveRecord::Base
   # Virtual attribute for the unencrypted password
   attr_accessor :password
 
-  REQUIRED_FIELDS = [:login, :email, :first_name, :last_name, :country, :city, :occupation]
+  REQUIRED_FIELDS = [:city, :occupation]
 
-  validates_presence_of *REQUIRED_FIELDS
+  validates *REQUIRED_FIELDS, :presence => true
 
-  validates_presence_of     :password,                   :if => :password_required?
-  validates_presence_of     :password_confirmation,      :if => :password_required?
+  PASSWORD_VALIDATOR =  {:if => :password_required?, :presence => true, :length => {:within => 4..40}}
 
-  validates_length_of       :password, :within => 4..40, :if => :password_required?, :allow_blank => true
+  validates :login, :presence => true, :length => {:within => 3..40}, :uniqueness => true
 
+  validates :password, PASSWORD_VALIDATOR.merge(:confirmation => true)
+  validates :password_confirmation, PASSWORD_VALIDATOR
 
-  validates_confirmation_of :password,                   :if => :password_required?
+  validates :email, :presence => true, :format=>{:with => /^[a-zA-Z0-9\-\._]+\@[a-zA-Z0-9\-\.]+\.([a-zA-Z]{2,4}|[0-9]{1,4})$/ix}
 
-  validates_format_of :email, :with => /^[a-zA-Z0-9\-\._]+\@[a-zA-Z0-9\-\.]+\.([a-zA-Z]{2,4}|[0-9]{1,4})$/ix
+  validates :first_name, :presence => true, :length => {:within => 2..30}
+  validates :last_name, :presence => true, :length => {:within => 2..30}
 
-  validates_length_of       :login, :within => 3..40
-
-  validates_length_of       :first_name, :within => 2..30, :allow_blank => true
-  validates_length_of       :last_name, :within => 2..30,  :allow_blank => true
-
-  validates_uniqueness_of   :login
-  validates_presence_of     :email, :case_sensitive => false
-
-  before_save   :encrypt_password
-  before_create :make_activation_code
+  before_save   :method => :encrypt_password
+  before_create :method => :make_activation_code
+  after_save :method => :subscribe_to_lists
 
   # prevents a user from submitting a crafted form that bypasses activation
   # anything else you want your user to change should be added here.
@@ -58,7 +55,7 @@ class User < ActiveRecord::Base
     @activated = true
     self.activated_at = Time.now.utc
     self.activation_code = nil
-    save(false)
+    save(:validate => false)
   end
 
   def active?
@@ -102,13 +99,13 @@ class User < ActiveRecord::Base
   def remember_me_until(time)
     self.remember_token_expires_at = time
     self.remember_token            = encrypt("#{email}--#{remember_token_expires_at}-")
-    save(false)
+    save(:validate => false)
   end
 
   def forget_me
     self.remember_token_expires_at = nil
     self.remember_token            = nil
-    save(false)
+    save(:validate => false)
   end
 
   # Returns true if the user has just been activated.
@@ -142,7 +139,7 @@ class User < ActiveRecord::Base
     "#{full_name}"
   end
 
-  def after_save
+  def subscribe_to_lists
     if subscribed?
       MaillistSubscriber.subscribe(ALL_USER_MAILLIST, self.email) if active?
     else

@@ -2,18 +2,19 @@
 
 <div id="preview_place"> </div>
 
-<% form_for(@wiki_page, :url => wiki_page_path(:id => @wiki_page.name)) do |f| %>
+<%= form_for(@wiki_page, :url => wiki_page_path(:id => @wiki_page.name, :lang => params[:lang])) do |f| %>
   <%= f.error_messages %>
 
   <%= hidden_field "wiki_page", "version" %>
-  <%= render :partial => "form" , :locals => {:f => f}%>
+  <%= render :partial => "/wiki_pages/form" , :locals => {:f => f}%>
 
   <p>
-    <%= submit_to_remote("preview_btn", t('label.common.preview'),
+    <%# FIXME%>
+    <%#= submit_to_remote("preview_btn", t('label.common.preview'),
         :url => {:action => "preview"}, :update => {:success => 'preview_place'}) %>
     <%= f.submit t('label.common.update') %>
   </p>
 <% end %>
 
-<%= link_to t('label.common.show'), wiki_pages_path %> |
-<%= link_to t('label.common.back_to_list'), wiki_pages_path()%>
+<%= link_to t('label.common.show'), wiki_pages_path(:lang => params[:lang]) %> |
+<%= link_to t('label.common.back_to_list'), wiki_pages_path(:lang => params[:lang])%>

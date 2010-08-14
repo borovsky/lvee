@@ -1,4 +1,4 @@
-<%= render :partial => "wiki_page", :locals => {:wiki_page => @wiki_page}%>
+<%= render :partial => "/wiki_pages/wiki_page", :locals => {:wiki_page => @wiki_page}%>
 
 <%= render :partial => "/wiki_pages/editor_actions", :locals =>
 {:wiki_page => @wiki_page} if logged_in? %>

@@ -3,19 +3,20 @@ require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 describe Editor::LanguagesController do
 
   def mock_language(stubs={})
-    @mock_language ||= model_stub(Language, stubs)
+    @mock_language ||= stub_model(Language, stubs)
   end
 
-  before(:all) do
-    @editor = stub(:id => 1, :editor? => true)
+  before do
+    @editor = stub_model(User, :id => 1, :role => "editor")
   end
 
   describe "responding to GET index" do
 
     it "should expose all languages as @languages" do
       login_as(@editor)
-      Language.expects(:find).with(:all).returns([mock_language])
+      Language.should_receive(:find).with(:all).and_return([mock_language])
       get :index
+      assert_response :success
       assigns[:languages].should == [mock_language]
     end
 
@@ -24,9 +25,10 @@ describe Editor::LanguagesController do
       it "should render all languages as xml" do
         login_as(@editor)
         request.env["HTTP_ACCEPT"] = "application/xml"
-        Language.expects(:find).with(:all).returns(languages = mock("Array of Languages"))
-        languages.expects(:to_xml).returns("generated XML")
+        Language.should_receive(:find).with(:all).and_return(languages = mock("Array of Languages"))
+        languages.should_receive(:to_xml).and_return("generated XML")
         get :index
+        assert_response :success
         response.body.should == "generated XML"
       end
 
@@ -38,8 +40,9 @@ describe Editor::LanguagesController do
 
     it "should expose the requested language as @language" do
       login_as(@editor)
-      Language.expects(:find).with("37").returns(mock_language)
+      Language.should_receive(:find).with("37").and_return(mock_language)
       get :show, :id => "37"
+      assert_response :success
       assigns[:language].should equal(mock_language)
     end
 
@@ -48,9 +51,10 @@ describe Editor::LanguagesController do
       it "should render the requested language as xml" do
         login_as(@editor)
         request.env["HTTP_ACCEPT"] = "application/xml"
-        Language.expects(:find).with("37").returns(mock_language)
-        mock_language.expects(:to_xml).returns("generated XML")
+        Language.should_receive(:find).with("37").and_return(mock_language)
+        mock_language.should_receive(:to_xml).and_return("generated XML")
         get :show, :id => "37"
+        assert_response :success
         response.body.should == "generated XML"
       end
 
@@ -62,9 +66,11 @@ describe Editor::LanguagesController do
 
     it "should expose a new language as @language" do
       login_as(@editor)
-      Language.expects(:new).returns(mock_language)
+      @mock = mock_language
+      Language.should_receive(:new).and_return(@mock)
       get :new
-      assigns[:language].should equal(mock_language)
+      assert_response :success
+      assigns[:language].should equal(@mock)
     end
 
   end
@@ -73,8 +79,9 @@ describe Editor::LanguagesController do
 
     it "should expose the requested language as @language" do
       login_as(@editor)
-      Language.expects(:find).with("37").returns(mock_language)
+      Language.should_receive(:find).with("37").and_return(mock_language)
       get :edit, :id => "37"
+      assert_response :success
       assigns[:language].should equal(mock_language)
     end
 
@@ -86,34 +93,40 @@ describe Editor::LanguagesController do
 
       it "should expose a newly created language as @language" do
         login_as(@editor)
-        Language.expects(:new).with({'these' => 'params'}).returns(mock_language(:save => true, :name= => nil))
+        @mock = mock_language(:save => true, :name= => nil)
+        Language.should_receive(:new).with({'these' => 'params'}).and_return(@mock)
 
         post :create, :language => {:these => 'params'}
-        assigns(:language).should equal(mock_language)
+        assigns(:language).should equal(@mock)
+        assert_response :redirect
       end
 
       it "should redirect to the created language" do
         login_as(@editor)
-        Language.stubs(:new).returns(mock_language(:save => true, :name= => nil))
+        @mock = mock_language(:save => true, :name= => nil)
+        Language.stub!(:new).and_return(@mock)
         post :create, :language => {}
-        response.should redirect_to(editor_language_url(:id=>mock_language))
+        response.should redirect_to(editor_language_url(:id=>@mock))
       end
 
     end
 
     describe "with invalid params" do
-
       it "should expose a newly created but unsaved language as @language" do
         login_as(@editor)
-        Language.stubs(:new).with({'these' => 'params'}).returns(mock_language(:save => false, :name= => nil))
+        @mock = mock_language(:save => false, :name= => nil)
+        Language.stub!(:new).with({'these' => 'params'}).and_return(@mock)
         post :create, :language => {:these => 'params'}
-        assigns(:language).should equal(mock_language)
+        assert_response :success
+        assigns(:language).should equal(@mock)
       end
 
       it "should re-render the 'new' template" do
         login_as(@editor)
-        Language.stubs(:new).returns(mock_language(:save => false, :name= => nil))
+        @mock = mock_language(:save => false, :name= => nil)
+        Language.stub!(:new).and_return(@mock)
         post :create, :language => {}
+        assert_response :success
         response.should render_template('new')
       end
 
@@ -127,22 +140,24 @@ describe Editor::LanguagesController do
 
       it "should update the requested language" do
         login_as(@editor)
-        Language.expects(:find).with("37").returns(mock_language)
-        mock_language.expects(:update_attributes).with({'these' => 'params'})
-        mock_language.expects(:name=)
+        Language.should_receive(:find).with("37").and_return(mock_language)
+        mock_language.should_receive(:update_attributes).with({'these' => 'params'})
+        mock_language.should_receive(:name=)
+        assert_response :success
         put :update, :id => "37", :language => {:these => 'params'}
       end
 
       it "should expose the requested language as @language" do
         login_as(@editor)
-        Language.stubs(:find).returns(mock_language(:update_attributes => true, :name= => nil))
+        Language.stub!(:find).and_return(mock_language(:update_attributes => true, :name= => nil))
         put :update, :id => "1"
+        assert_response :redirect
         assigns(:language).should equal(mock_language)
       end
 
       it "should redirect to the language" do
         login_as(@editor)
-        Language.stubs(:find).returns(mock_language(:update_attributes => true, :name= => nil))
+        Language.stub!(:find).and_return(mock_language(:update_attributes => true, :name= => nil))
         put :update, :id => "1"
         response.should redirect_to(editor_language_url(:id=>mock_language))
       end
@@ -153,23 +168,26 @@ describe Editor::LanguagesController do
 
       it "should update the requested language" do
         login_as(@editor)
-        Language.expects(:find).with("37").returns(mock_language)
-        mock_language.expects(:update_attributes).with({'these' => 'params'})
-        mock_language.expects(:name=)
+        Language.should_receive(:find).with("37").and_return(mock_language)
+        mock_language.should_receive(:update_attributes).with({'these' => 'params'})
+        mock_language.should_receive(:name=)
         put :update, :id => "37", :language => {:these => 'params'}
+        assert_response :success
       end
 
       it "should expose the language as @language" do
         login_as(@editor)
-        Language.stubs(:find).returns(mock_language(:update_attributes => false, :name= => nil))
+        Language.stub!(:find).and_return(mock_language(:update_attributes => false, :name= => nil))
         put :update, :id => "1"
+        assert_response :success
         assigns(:language).should equal(mock_language)
       end
 
       it "should re-render the 'edit' template" do
         login_as(@editor)
-        Language.stubs(:find).returns(mock_language(:update_attributes => false, :name= => nil))
+        Language.stub!(:find).and_return(mock_language(:update_attributes => false, :name= => nil))
         put :update, :id => "1"
+        assert_response :success
         response.should render_template('edit')
       end
 
@@ -181,14 +199,15 @@ describe Editor::LanguagesController do
 
     it "should destroy the requested language" do
       login_as(@editor)
-      Language.expects(:find).with("37").returns(mock_language)
-      mock_language.expects(:destroy)
+      Language.should_receive(:find).with("37").and_return(mock_language)
+      mock_language.should_receive(:destroy)
       delete :destroy, :id => "37"
+      assert_response :redirect
     end
 
     it "should redirect to the languages list" do
       login_as(@editor)
-      Language.stubs(:find).returns(mock_language(:destroy => true))
+      Language.stub!(:find).and_return(mock_language(:destroy => true))
       delete :destroy, :id => "1"
       response.should redirect_to(editor_languages_url)
     end
@@ -199,12 +218,12 @@ describe Editor::LanguagesController do
     it "should load english language" do
       login_as(@editor)
       mock_en = mock
-      YAML.expects(:load_file).with("#{LOCALE_DIR}/en.yml").returns({"en" => mock_en})
-      File.expects(:exist?).with("#{LOCALE_DIR}/be.yml").returns(false)
-      mock_en.expects(:ya2yaml).returns("some yaml")
+      YAML.should_receive(:load_file).with("#{LOCALE_DIR}/en.yml").and_return({"en" => mock_en})
+      File.should_receive(:exist?).with("#{LOCALE_DIR}/be.yml").and_return(false)
+      mock_en.should_receive(:ya2yaml).and_return("some yaml")
 
       get :download, :id => "be", :format => "yml"
-
+      assert_response :success
       response.body.should == "some yaml"
     end
 
@@ -214,14 +233,15 @@ describe Editor::LanguagesController do
       mock_be = mock
       common_mock = mock
 
-      YAML.expects(:load_file).with("#{LOCALE_DIR}/en.yml").returns({"en" => mock_en})
-      File.expects(:exist?).with("#{LOCALE_DIR}/be.yml").returns(true)
-      YAML.expects(:load_file).with("#{LOCALE_DIR}/be.yml").returns({"be" => mock_be})
-      mock_en.expects(:deep_merge).with(mock_be).returns(common_mock)
+      YAML.should_receive(:load_file).with("#{LOCALE_DIR}/en.yml").and_return({"en" => mock_en})
+      File.should_receive(:exist?).with("#{LOCALE_DIR}/be.yml").and_return(true)
+      YAML.should_receive(:load_file).with("#{LOCALE_DIR}/be.yml").and_return({"be" => mock_be})
+      mock_en.should_receive(:deep_merge).with(mock_be).and_return(common_mock)
 
-      common_mock.expects(:ya2yaml).returns("some yaml")
+      common_mock.should_receive(:ya2yaml).and_return("some yaml")
 
       get :download, :id => "be", :format => "yml"
+      assert_response :success
       response.body.should == "some yaml"
     end
   end
@@ -236,18 +256,18 @@ describe Editor::LanguagesController do
       translation = mock
       
       lang = mock
-      Language.expects(:find).with('be').returns(lang)
+      Language.should_receive(:find).with('be').and_return(lang)
 
-      YAML.expects(:load_file).with("#{LOCALE_DIR}/en.yml").returns({"en" => mock_en})
-      mock_up.expects(:read).returns(trans)
+      YAML.should_receive(:load_file).with("#{LOCALE_DIR}/en.yml").and_return({"en" => mock_en})
+      mock_up.should_receive(:read).and_return(trans)
 
-      YAML.expects(:load).with(trans).returns(translation)
-      mock_en.expects(:deep_merge).with(translation).returns("merged")
+      YAML.should_receive(:load).with(trans).and_return(translation)
+      mock_en.should_receive(:deep_merge).with(translation).and_return("merged")
 
       mock_file = mock
-      mock_file.expects(:write).with({'be' => "merged"}.ya2yaml)
+      mock_file.should_receive(:write).with({'be' => "merged"}.ya2yaml)
 
-      File.expects(:open).with("#{LOCALE_DIR}/be.yml", "w").yields(mock_file)
+      File.should_receive(:open).with("#{LOCALE_DIR}/be.yml", "w").and_yield(mock_file)
 
       get :upload, :id => "be", :language => mock_up
 

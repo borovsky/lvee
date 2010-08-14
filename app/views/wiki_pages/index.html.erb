@@ -12,13 +12,13 @@
   <tr class="<%= (i % 2 == 0) ? 'even' : 'odd' %>">
     <td><%=h wiki_page.name %></td>
     <td><%=h wiki_page.user ? wiki_page.user.full_name : "Unknown" %></td>
-    <td><%= link_to t('label.common.show'), wiki_page_path(:id => wiki_page.name) %></td>
-    <td><%= link_to t('label.common.edit'), edit_wiki_page_path(:id => wiki_page.name) %></td>
+    <td><%= link_to t('label.common.show'), wiki_page_path(:id => wiki_page.name, :lang => params[:lang]) %></td>
+    <td><%= link_to t('label.common.edit'), edit_wiki_page_path(:id => wiki_page.name, :lang => params[:lang]) %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to t('label.wiki_page.new'), new_wiki_page_path %> |
-<%= link_to 'RSS', wiki_rss_path %>
+<%= link_to t('label.wiki_page.new'), new_wiki_page_path(:lang => params[:lang]) %> |
+<%= link_to 'RSS', wiki_rss_path(:lang => params[:lang]) %>
