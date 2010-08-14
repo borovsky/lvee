@@ -9,40 +9,40 @@ uk:
         blank: "не може бути порожнім"
         confirmation: "не співпадає з підтвердженням"
         empty: "не може бути порожнім"
-        equal_to: "може мати лише значення, рівне {{count}}"
+        equal_to: "може мати лише значення, рівне %{count}"
         even: "може мати лише непарне значення"
         exclusion: "має зарезервоване значення"
-        greater_than: "може мати значення більше {{count}}"
-        greater_than_or_equal_to: "може мати значення більше або рівне {{count}}"
+        greater_than: "може мати значення більше %{count}"
+        greater_than_or_equal_to: "може мати значення більше або рівне %{count}"
         inclusion: "має непередбачене значення"
         invalid: "має невірне значення"
-        less_than: "може мати значення менше ніж {{count}}"
-        less_than_or_equal_to: "може мати значення менше або рівне {{count}}"
+        less_than: "може мати значення менше ніж %{count}"
+        less_than_or_equal_to: "може мати значення менше або рівне %{count}"
         not_a_number: "не є числом"
         odd: "може мати лише парне значення"
         taken: "вже існує"
         too_long: 
-          few: "дуже великої довжини (не може бути більш ніж {{count}} символів)"
-          many: "дуже великої довжини (не може бути більш ніж {{count}} символів)"
-          one: "дуже великої довжини (не може бути більш ніж {{count}} символів)"
-          other: "дуже великої довжини (не може бути більш ніж {{count}} символів)"
+          few: "дуже великої довжини (не може бути більш ніж %{count} символів)"
+          many: "дуже великої довжини (не може бути більш ніж %{count} символів)"
+          one: "дуже великої довжини (не може бути більш ніж %{count} символів)"
+          other: "дуже великої довжини (не може бути більш ніж %{count} символів)"
         too_short: 
-          few: "недостатньої довжини (не може бути менше {{count}} символів)"
-          many: "недостатньої довжини (не може бути менше {{count}} символів)"
-          one: "недостатньої довжини (не може бути менше {{count}} символа)"
-          other: "недостатньої довжини (не може бути менше {{count}} символа)"
+          few: "недостатньої довжини (не може бути менше %{count} символів)"
+          many: "недостатньої довжини (не може бути менше %{count} символів)"
+          one: "недостатньої довжини (не може бути менше %{count} символа)"
+          other: "недостатньої довжини (не може бути менше %{count} символа)"
         wrong_length: 
-          few: "невірної довжини (може бути рівним {{count}} символ)"
-          many: "невірної довжини (може бути рівним {{count}} символів)"
-          one: "невірної довжини (може бути рівним {{count}} символ)"
-          other: "невірної довжини (може бути рівним {{count}} символу)"
+          few: "невірної довжини (може бути рівним %{count} символ)"
+          many: "невірної довжини (може бути рівним %{count} символів)"
+          one: "невірної довжини (може бути рівним %{count} символ)"
+          other: "невірної довжини (може бути рівним %{count} символу)"
       template: 
         body: "Проблеми виникли з наступними полями:"
         header: 
-          few: "{{model}}: збереження не вдалося з-за {{count}} помилок"
-          many: "{{model}}: збереження не вдалося з-за {{count}} помилок"
-          one: "{{model}}: збереження не вдалося з-за {{count}} помилки"
-          other: "{{model}}: збереження не вдалося з-за {{count}} помилки"
+          few: "%{model}: збереження не вдалося з-за %{count} помилок"
+          many: "%{model}: збереження не вдалося з-за %{count} помилок"
+          one: "%{model}: збереження не вдалося з-за %{count} помилки"
+          other: "%{model}: збереження не вдалося з-за %{count} помилки"
   date: 
     abbr_day_names: 
       - Нд
@@ -136,56 +136,56 @@ uk:
   datetime: 
     distance_in_words: 
       about_x_hours: 
-        few: "близько {{count}} годин"
-        many: "близько {{count}} годин"
-        one: "близько {{count}} години"
-        other: "близько {{count}} години"
+        few: "близько %{count} годин"
+        many: "близько %{count} годин"
+        one: "близько %{count} години"
+        other: "близько %{count} години"
       about_x_months: 
-        few: "близько {{count}} місяців"
-        many: "близько {{count}} місяців"
-        one: "близько {{count}} місяця"
-        other: "близько {{count}} місяця"
+        few: "близько %{count} місяців"
+        many: "близько %{count} місяців"
+        one: "близько %{count} місяця"
+        other: "близько %{count} місяця"
       about_x_years: 
-        few: "близько {{count}} років"
-        many: "близько {{count}} років"
-        one: "близько {{count}} року"
-        other: "близько {{count}} років"
+        few: "близько %{count} років"
+        many: "близько %{count} років"
+        one: "близько %{count} року"
+        other: "близько %{count} років"
       half_a_minute: "менше хвилини"
       less_than_x_minutes: 
-        few: "менше {{count}} хвилин"
-        many: "менше {{count}} хвилин"
-        one: "менше {{count}} хвилини"
-        other: "менше {{count}} хвилини"
+        few: "менше %{count} хвилин"
+        many: "менше %{count} хвилин"
+        one: "менше %{count} хвилини"
+        other: "менше %{count} хвилини"
       less_than_x_seconds: 
-        few: "менше {{count}} секунд"
-        many: "менше {{count}} секунд"
-        one: "менше {{count}} секунди"
-        other: "менше {{count}} секунди"
+        few: "менше %{count} секунд"
+        many: "менше %{count} секунд"
+        one: "менше %{count} секунди"
+        other: "менше %{count} секунди"
       over_x_years: 
-        few: "більше {{count}} років"
-        many: "більше {{count}} років"
+        few: "більше %{count} років"
+        many: "більше %{count} років"
         one: "більше року"
-        other: "більше {{count}} років"
+        other: "більше %{count} років"
       x_days: 
-        few: "{{count}} дня"
-        many: "{{count}} днів"
-        one: "{{count}} день"
-        other: "{{count}} дня"
+        few: "%{count} дня"
+        many: "%{count} днів"
+        one: "%{count} день"
+        other: "%{count} дня"
       x_minutes: 
-        few: "{{count}} хвилини"
-        many: "{{count}} хвилин"
-        one: "{{count}} хвилину"
-        other: "{{count}} хвилини"
+        few: "%{count} хвилини"
+        many: "%{count} хвилин"
+        one: "%{count} хвилину"
+        other: "%{count} хвилини"
       x_months: 
-        few: "{{count}} місяця"
-        many: "{{count}} місяців"
-        one: "{{count}} місяць"
-        other: "{{count}} місяця"
+        few: "%{count} місяця"
+        many: "%{count} місяців"
+        one: "%{count} місяць"
+        other: "%{count} місяця"
       x_seconds: 
-        few: "{{count}} секунди"
-        many: "{{count}} секунд"
-        one: "{{count}} секунда"
-        other: "{{count}} секунди"
+        few: "%{count} секунди"
+        many: "%{count} секунд"
+        one: "%{count} секунда"
+        other: "%{count} секунди"
     prompts: 
       day: День
       hour: Година
@@ -204,7 +204,7 @@ uk:
       proposition: "Оскільки вільне ПЗ створюється співтовариством із залученням великої кількості добровольців, розкажіть, будь ласка, що Ви могли б привнести в нашу зустріч. Нехай це буде доповідь або менш формальна розповідь в рамках круглого столу про впровадження, використання або розробку вільного ПЗ Вами або у Вашій організації. Якщо Ви збираєтесь зробити доповідь або організувати семінар на конференції, вкажіть тему доповіді, а також надішліть на \"d.kostiuk@lvee.org\":mailto:d.kostiuk@lvee.org тези виступу."
       quantity: "Скільки людей поїде з Вами на конференцію?"
       residence: "Who of the registered participants you want to share room with?"
-      title: "Реєстрація на конференцію {{conference}}"
+      title: "Реєстрація на конференцію %{conference}"
       transport_from: "Which transport will you use to leave the conference"
       transport_to: "Як Ви плануєте добиратися до місця проведення конференції?"
       tshirt: "Розмір футболки"
@@ -267,22 +267,22 @@ uk:
       name: Назва
       new: "Нова конференція"
       participated: "Ви брали участь"
-      register: "Реєструватися в {{conference}}"
+      register: "Реєструватися в %{conference}"
       registration_closed: закрита
       registration_opened: відкрита
       registration_opened?: "Реєстрація відкрита?"
       registred: "Ви були зареєстровані"
-      show: "Конференція {{name}} ({{start_date}} - {{finish_date}}"
+      show: "Конференція %{name} (%{start_date} - %{finish_date}"
       start_date: "Дата початку"
       upcoming: "Найближчі конференції"
     conference_registration: 
-      approved_edit: "Confirm participation in {{conference}}"
+      approved_edit: "Confirm participation in %{conference}"
       badges: Badges
-      badges_title: "Badges for {{conference}}"
+      badges_title: "Badges for %{conference}"
       cancel_registration: "Cancel registration"
       comment: "Registration's Comment"
       days: "Дні участі"
-      edit: " {{conference}} participant's data"
+      edit: " %{conference} participant's data"
       floor: "Can you sleep in a tent?"
       food: "Переваги в харчуванні"
       index: "Реєстрації на конференції"
@@ -293,7 +293,7 @@ uk:
       quantity: "Кількість учасників"
       residence: Accommodation
       status_name: "Registration's Status"
-      title: "Реєстрація на конференцію {{conference}}"
+      title: "Реєстрація на конференцію %{conference}"
       transport_from: "Transport from conference"
       transport_from_list: 
         bus_grodno: "Minibus to Grodno"
@@ -307,20 +307,20 @@ uk:
       tshirt: "Розмір футболки"
       update_model: "Conference Registration"
     diff: 
-      change_article_title: "Порівняння статті {{article}} з {{from}} до {{to}}"
-      change_wiki_title: "Порівняння сторінки '{{wiki_page}}' з {{from}} до {{to}}"
+      change_article_title: "Порівняння статті %{article} з %{from} до %{to}"
+      change_wiki_title: "Порівняння сторінки '%{wiki_page}' з %{from} до %{to}"
       changed_at: "Changed at"
       editor: Editor
       from: From
-      new_article_title: "Стаття {{article}} не має попередньої версії"
-      new_wiki_title: "Сторінка '{{wiki_page}}' не має попередньої версії"
+      new_article_title: "Стаття %{article} не має попередньої версії"
+      new_wiki_title: "Сторінка '%{wiki_page}' не має попередньої версії"
       to: To
       version: Версія
     editor_log: 
-      article_changed: "Стаття {{object}} була змінена {{user}}"
-      article_created: "Стаття {{object}} була створена {{user}}"
-      wiki_page_changed: "Wiki-сторінка {{object}} була змінена {{user}}"
-      wiki_page_created: "Wiki-сторінка {{object}} була створена {{user}}"
+      article_changed: "Стаття %{object} була змінена %{user}"
+      article_created: "Стаття %{object} була створена %{user}"
+      wiki_page_changed: "Wiki-сторінка %{object} була змінена %{user}"
+      wiki_page_created: "Wiki-сторінка %{object} була створена %{user}"
     language: 
       code3: "3-letter (ISO 639-2) language code id"
       creating: "Створення мови"
@@ -344,11 +344,11 @@ uk:
       editing: "Редагування новини"
       last_news: "Останні новини"
       publish: "Опублікувати новину"
-      published_at: "Опубліковано {{published}}"
+      published_at: "Опубліковано %{published}"
       title: Заголовок
       translating: "Переклад новини"
       unpublished: "Не опублікований"
-      will_be_published: "Буде опубліковано {{published}}"
+      will_be_published: "Буде опубліковано %{published}"
     session: 
       login: Логін
       loginButton: Увійти
@@ -357,7 +357,7 @@ uk:
       rememberMe: "Запам'ятати мене"
     statistics: 
       browser: Browser
-      conference: "Registration statistics for {{conference}}"
+      conference: "Registration statistics for %{conference}"
       country: Country
       operating_system: "Operating system"
       registration: 
@@ -376,7 +376,7 @@ uk:
         full: "Statistics from 20th of April 2009"
         month: "Statistics for last month"
         os_statistic: "Visitor's Operating Systems Statistics"
-        total_visitors: "Total visitors: {{count}}"
+        total_visitors: "Total visitors: %{count}"
         week: "Statistics for last week"
       visits: Visits
     user: 
@@ -402,7 +402,7 @@ uk:
       register: Реєструватися
       subscribed: "Subscribe to information maillist"
       subscribed_talks: "Subscribe to organization board talks mailllist"
-      title: "{{full_name}} ({{login}}), ваш профіль у ваших руках"
+      title: "%{full_name} (%{login}), ваш профіль у ваших руках"
       to_profile: "На ваш профіль"
       update_model: "Edit your personal data"
     wiki_page: 
@@ -417,18 +417,18 @@ uk:
     account: 
       activate: |-
           Будь ласка відкрийте наступну адресу для активації вашого аккаунта:
-          {{url}}
+          %{url}
       activated: "Ваш аккаунт був активований"
       activation_restore: "You account should be activated before login"
       created: "Ваш аккаунт був створений"
       edit_data: |-
           Ви можете зайти і відредагувати ваші дані:
-          {{url}}
+          %{url}
       information: |-
-          Ім'я користувача: {{login}}
-          Пароль:           {{password}}
+          Ім'я користувача: %{login}
+          Пароль:           %{password}
       restore: |-
-          Password restore was requested from {{ip}}. 
+          Password restore was requested from %{ip}.
           We reseted your password. Above you can find new login information.
     signature: |-
         -- 
@@ -438,7 +438,7 @@ uk:
       activation_complete: "Ваш аккаунт на LVEE.org активовано"
       activation_restore: "Account activation for LVEE (repeat)"
       password_restore: "Password restore for LVEE"
-    title: "Здрастуйте {{full_name}}"
+    title: "Здрастуйте %{full_name}"
   menu: 
     admin: 
       conference_registrations: "Conference registrations admin"
@@ -492,12 +492,12 @@ uk:
     conference: 
       created: "Конференція успішно створена"
       slogan: "Шоста міжнародна конференція розробників<br />і користувачів вільного програмного забезпечення"
-      status: "Реєстрація на конференцію: {{status}}."
+      status: "Реєстрація на конференцію: %{status}."
       updated: "Конференція успішно оновлена"
     iefuck: 
       link: "http://upgradebrowser.org/x"
       link_text: "Дізнатися більше про сучасні і безпечні браузери!"
-      message: "Ця версія Internet Explorer некоректно відображає сучасні сайти і робить комп'ютер небезпечним. {{link}}"
+      message: "Ця версія Internet Explorer некоректно відображає сучасні сайти і робить комп'ютер небезпечним. %{link}"
     language: 
       created: "Мова успішно створена"
       updated: "Мова успішно оновлена"
@@ -508,23 +508,23 @@ uk:
       updated: "Новина успішно оновлена"
     session: 
       failed: "Ім'я користувача або пароль невірні. Можливо, ви не провели активацію облікового запису."
-      logged: "Ви увійшли як {{user_name}}"
+      logged: "Ви увійшли як %{user_name}"
       logged_out: "Ви успішно вийшли"
     user: 
       accuracy_note: "Акуратне і правильне заповнення реєстраційної форми допоможе нам з вами зв'язатися"
       activated: "Реєстрація завершена"
       avator_updated: "Фото завантажено"
       avator_upload: "Будь ласка, завантажте Ваше фото"
-      describe: "Користувач: {{full_name}} ({{country}}, {{city}})..."
+      describe: "Користувач: %{full_name} (%{country}, %{city})..."
       incorrect_image: "Неможливо завантажити Ваше фото. Будь-ласка, перевірте файл"
       login_change: "Ви не можете змінити свій логін"
       not_found_by_email: "User not found by email. Please check email."
-      password_restore: "Forgot password? {{link}} it."
+      password_restore: "Forgot password? %{link} it."
       password_restore_note: "Mail with restore information sent."
-      privacy: "Політика конфіденційності: ми {{link}} нікому ніяку інформацію про ваш обліковий запис, включаючи вашу адресу електронної пошти."
+      privacy: "Політика конфіденційності: ми %{link} нікому ніяку інформацію про ваш обліковий запис, включаючи вашу адресу електронної пошти."
       privacy_link: "не продаємо"
       registred: "Дякуємо за реєстрацію."
-      upload_avator_link: "Завантажте своє фото {{link}}."
+      upload_avator_link: "Завантажте своє фото %{link}."
       upload_avator_link_text: тут
   number: 
     currency: 

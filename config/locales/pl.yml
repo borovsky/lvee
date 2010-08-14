@@ -9,26 +9,26 @@ pl:
         blank: "nie może być puste"
         confirmation: "nie zgadza się z potwierdzeniem"
         empty: "nie może być puste"
-        equal_to: "musi być równe {{count}}"
+        equal_to: "musi być równe %{count}"
         even: "musi być parzyste"
         exclusion: "znajduje się na liście zabronionych wartości"
-        greater_than: "musi być większe niż {{count}}"
-        greater_than_or_equal_to: "musi być większe lub równe {{count}}"
+        greater_than: "musi być większe niż %{count}"
+        greater_than_or_equal_to: "musi być większe lub równe %{count}"
         inclusion: "nie znajduje się na liście dopuszczalnych wartości"
         invalid: "jest nieprawidłowe"
-        less_than: "musie być mniejsze niż {{count}}"
-        less_than_or_equal_to: "musi być mniejsze lub równe {{count}}"
+        less_than: "musie być mniejsze niż %{count}"
+        less_than_or_equal_to: "musi być mniejsze lub równe %{count}"
         not_a_number: "nie jest liczbą"
         odd: "musi być nieparzyste"
         taken: "zostało już zajęte"
-        too_long: "jest za długie (maksymalnie {{count}} znaków)"
-        too_short: "jest za krótkie (minimalnie {{count}} znaków)"
-        wrong_length: "jest nieprawidłowej długości (powinna wynosić {{count}} znaków)"
+        too_long: "jest za długie (maksymalnie %{count} znaków)"
+        too_short: "jest za krótkie (minimalnie %{count} znaków)"
+        wrong_length: "jest nieprawidłowej długości (powinna wynosić %{count} znaków)"
       template: 
         body: "Błędy dotyczą następujących pól:"
         header: 
-          one: "{{model}} nie został zachowany z powodu jednego błędu"
-          other: "{{model}} nie został zachowany z powodu {{count}} błędów"
+          one: "%{model} nie został zachowany z powodu jednego błędu"
+          other: "%{model} nie został zachowany z powodu %{count} błędów"
   date: 
     abbr_day_names: 
       - nie
@@ -87,41 +87,41 @@ pl:
     distance_in_words: 
       about_x_hours: 
         one: "około godziny"
-        other: "około {{count}} godzin"
+        other: "około %{count} godzin"
       about_x_months: 
         one: "około miesiąca"
-        other: "około {{count}} miesięcy"
+        other: "około %{count} miesięcy"
       about_x_years: 
         one: "około roku"
-        other: "około {{count}} lat"
+        other: "około %{count} lat"
       half_a_minute: "pół minuty"
       less_than_x_minutes: 
-        few: "mniej niż {{count}} minuty"
+        few: "mniej niż %{count} minuty"
         one: "mniej niż minutę"
-        other: "mniej niż {{count}} minut"
+        other: "mniej niż %{count} minut"
       less_than_x_seconds: 
-        few: "mniej niż {{count}} sekundy"
+        few: "mniej niż %{count} sekundy"
         one: "mniej niż sekundę"
-        other: "mniej niż {{count}} sekund"
+        other: "mniej niż %{count} sekund"
       over_x_years: 
-        few: "ponad {{count}} lata"
+        few: "ponad %{count} lata"
         one: "ponad rok"
-        other: "ponad {{count}} lat"
+        other: "ponad %{count} lat"
       x_days: 
         one: "1 dzień"
-        other: "{{count}} dni"
+        other: "%{count} dni"
       x_minutes: 
-        few: "{{count}} minuty"
+        few: "%{count} minuty"
         one: minutę
-        other: "{{count}} minut"
+        other: "%{count} minut"
       x_months: 
-        few: "{{count}} miesiące"
+        few: "%{count} miesiące"
         one: "1 miesiąc"
-        other: "{{count}} miesięcy"
+        other: "%{count} miesięcy"
       x_seconds: 
-        few: "{{count}} sekundy"
+        few: "%{count} sekundy"
         one: sekundę
-        other: "{{count}} sekund"
+        other: "%{count} sekund"
     prompts: 
       day: Dzień
       hour: Godzin
@@ -140,7 +140,7 @@ pl:
       proposition: "Ponieważ wolne oprogramowanie jest rozwijane przez społeczeństwo z przyciągnięciem wielu ochotników, prosimy opowiedzieć co Państwo możecie wnieść do naszego spotkania. Niech to będzie sprawozdanie albo mniej formalne wygłoszenie w ramach warsztatu na temat wdrażania, wykorzystania lub rozwoju wolnego oprogramowania przez Państwo lub Państwa organizację. Jeżeli zamierzacie Państwo sporządzić sprawozdanie lub zorganizować warsztat prosimy określić temat raportu i wysłać jego streszczenia na adres elektroniczny \"d.kostiuk@lvee.org\":mailto:d.kostiuk@lvee.org ."
       quantity: "Ilu ludzi pojedzie z Państwem na konferencje?"
       residence: "Who of the registered participants you want to share room with?"
-      title: "Rejestracja na konferencję {{conference}}"
+      title: "Rejestracja na konferencję %{conference}"
       transport_from: "Which transport will you use to leave the conference"
       transport_to: "Jakim transportem zamierzacie Państwo dostać się na konferencję?"
       tshirt: "Rozmiar koszulek"
@@ -204,22 +204,22 @@ pl:
       name: Nazwa
       new: "Nowa konferencja"
       participated: "Brałeś udział"
-      register: "Register to {{conference}}"
+      register: "Register to %{conference}"
       registration_closed: zamknięta
       registration_opened: otwarta
       registration_opened?: "Rejestracja otwarta?"
       registred: "Zarejestrowałeś się"
-      show: "Konferencja {{name}} ({{start_date}} - {{finish_date}}"
+      show: "Konferencja %{name} (%{start_date} - %{finish_date}"
       start_date: "Data rozpoczęcia"
       upcoming: "Najbliższe konferencje"
     conference_registration: 
-      approved_edit: "Confirm participation in {{conference}}"
+      approved_edit: "Confirm participation in %{conference}"
       badges: Badges
-      badges_title: "Badges for {{conference}}"
+      badges_title: "Badges for %{conference}"
       cancel_registration: "Cancel registration"
       comment: "Registration's Comment"
       days: "Dni uczestnictwa"
-      edit: " {{conference}} participant's data"
+      edit: " %{conference} participant's data"
       floor: "Can you sleep in a tent?"
       food: "Upodobania w jedzeniu"
       index: "Rejestracja na konferencję"
@@ -230,7 +230,7 @@ pl:
       quantity: "Ilość uczestników"
       residence: Accommodation
       status_name: "Registration's Status"
-      title: "Rejestracja na konferencję {{conference}}"
+      title: "Rejestracja na konferencję %{conference}"
       transport_from: "Transport from conference"
       transport_from_list: 
         bus_grodno: "Minibus to Grodno"
@@ -244,20 +244,20 @@ pl:
       tshirt: "Rozmiar koszulek"
       update_model: "Conference Registration"
     diff: 
-      change_article_title: "Diff for article {{article}} from version {{from}} to {{to}}"
-      change_wiki_title: "Diff for page '{{wiki_page}}' from version {{from}} to {{to}}"
+      change_article_title: "Diff for article %{article} from version %{from} to %{to}"
+      change_wiki_title: "Diff for page '%{wiki_page}' from version %{from} to %{to}"
       changed_at: "Changed at"
       editor: Editor
       from: From
-      new_article_title: "Article {{article}} has no previous versions"
-      new_wiki_title: "Page '{{wiki_page}}' has no previous versions"
+      new_article_title: "Article %{article} has no previous versions"
+      new_wiki_title: "Page '%{wiki_page}' has no previous versions"
       to: To
       version: Version
     editor_log: 
-      article_changed: "Article {{object}} was changed by {{user}}"
-      article_created: "Article {{object}} was created by {{user}}"
-      wiki_page_changed: "Wiki page {{object}} was changed by {{user}}"
-      wiki_page_created: "Wiki page {{object}} was created by {{user}}"
+      article_changed: "Article %{object} was changed by %{user}"
+      article_created: "Article %{object} was created by %{user}"
+      wiki_page_changed: "Wiki page %{object} was changed by %{user}"
+      wiki_page_created: "Wiki page %{object} was created by %{user}"
     language: 
       code3: "3-literowy (ISO 639-2) kod języka"
       creating: "Utwórz język"
@@ -281,11 +281,11 @@ pl:
       editing: "Edytuj wiadomość"
       last_news: "Ostatnie wiadomości"
       publish: "Publikuj wiadomość"
-      published_at: "Opublikowane {{published}}"
+      published_at: "Opublikowane %{published}"
       title: Tytuł
       translating: "Tłumacz wiadomość"
       unpublished: "Nie opublikowano"
-      will_be_published: "Będzie opublikowane {{published}}"
+      will_be_published: "Będzie opublikowane %{published}"
     session: 
       login: Login
       loginButton: Zaloguj
@@ -294,7 +294,7 @@ pl:
       rememberMe: "Zapamiętać mnie"
     statistics: 
       browser: Przeglądarka
-      conference: "Statystyka rejestracji na {{conference}}"
+      conference: "Statystyka rejestracji na %{conference}"
       country: Kraj
       operating_system: "System operacyjny"
       registration: 
@@ -313,7 +313,7 @@ pl:
         full: "Statystyka z 20 kwietnia 2009"
         month: "Statystyka z ostatniego miesiąca"
         os_statistic: "Statystyka używanych systemów operacyjnych"
-        total_visitors: "Łączna suma odwiedzin: {{count}}"
+        total_visitors: "Łączna suma odwiedzin: %{count}"
         week: "Statystyka z ostatniego tygodnia"
       visits: Odwiedziny
     user: 
@@ -339,7 +339,7 @@ pl:
       register: "Zarejestruj się"
       subscribed: "Subscribe to information maillist"
       subscribed_talks: "Subscribe to organization board talks mailllist"
-      title: "{{full_name}} ({{login}}), Twój profil w Twoich rękach"
+      title: "%{full_name} (%{login}), Twój profil w Twoich rękach"
       to_profile: "Do profilu"
       update_model: "Edit your personal data"
     wiki_page: 
@@ -354,18 +354,18 @@ pl:
     account: 
       activate: |-
           Odwiedź następujący adres URL do aktywacji konta
-          {{url}}
+          %{url}
       activated: "Twoje konto zostało aktywowane"
       activation_restore: "Konto musi zostać aktywowane przed logowaniem"
       created: "Twoje konto zostało utworzone"
       edit_data: |-
           Możesz się zalogować się i edytować swoje dane:
-          {{url}}
+          %{url}
       information: |-
-          Login:    {{login}}
-          Hasło: {{password}}
+          Login:    %{login}
+          Hasło: %{password}
       restore: |-
-          Przywrócenie hasła zażądane od adresu {{ip}}.
+          Przywrócenie hasła zażądane od adresu %{ip}.
           Hasło zostało zresetowane. Powyżej znajdziesz nowe informacje logowania.
     signature: |-
         -- 
@@ -375,7 +375,7 @@ pl:
       activation_complete: "Twoje konto LVEE zostało aktywowane"
       activation_restore: "Aktywacją konta LVEE (powtórzyć)"
       password_restore: "Przywracanie hasła LVEE"
-    title: "Witaj, {{full_name}}"
+    title: "Witaj, %{full_name}"
   menu: 
     admin: 
       conference_registrations: "Administrator rejestracji na konferencję"
@@ -429,12 +429,12 @@ pl:
     conference: 
       created: "Pomyślnie utworzono konferencję"
       slogan: "Szósta Międzynarodowa konferencja twórców i użytkowników<br />Free Software / Open Source (FS/OS)"
-      status: "Rejestracja na konferencję: {{status}}."
+      status: "Rejestracja na konferencję: %{status}."
       updated: "Pomyślnie zaktualizowano konferencję"
     iefuck: 
       link: "http://upgradebrowser.org/x"
       link_text: "Dowiedzieć się więcej o współczesnych i bezpiecznych przeglądarkach!"
-      message: "Ta wersja programu Internet Explorer niepoprawnie pokazuje współczesne strony internetowe i czyni komputer niebezpiecznym. {{link}}"
+      message: "Ta wersja programu Internet Explorer niepoprawnie pokazuje współczesne strony internetowe i czyni komputer niebezpiecznym. %{link}"
     language: 
       created: "Pomyślnie utworzono język"
       updated: "Pomyślnie zaktualizowano język"
@@ -445,20 +445,20 @@ pl:
       updated: "Pomyślnie zaktualizowano wiadomość"
     session: 
       failed: "Login lub hasło są nieprawidłowe. Może nie uaktywniłeś konto."
-      logged: "Jesteś zalogowany jako {{user_name}}"
+      logged: "Jesteś zalogowany jako %{user_name}"
       logged_out: "Jesteś wylogowany"
     user: 
       accuracy_note: "Dokładne i wolne od błędów wypełnienie formularzu rejestracyjnego bardzo pomoże w kontakcie z Tobą"
       activated: "Ukończono rejestrację"
       avator_updated: "Pomyślnie zaktualizowano zdjęcie"
       avator_upload: "Prosimy przesłać zdjęcie. Z twarzy (jeśli to możliwe)"
-      describe: "Użytkownik: {{full_name}} ({{country}}, {{city}})..."
+      describe: "Użytkownik: %{full_name} (%{country}, %{city})..."
       incorrect_image: "Nie można zaktualizować zdjęcia. Proszę sprawdzić plik obrazu"
       login_change: "Nie można zmienić swój login"
       not_found_by_email: "Nie znaleziono użytkownika według adresu e-mail. Proszę sprawdzić e-mail."
-      password_restore: "Zapomniałeś hasło? {{link}} hasło."
+      password_restore: "Zapomniałeś hasło? %{link} hasło."
       password_restore_note: "Poczta z informacją o przywróceniu hasła została wysłana."
-      privacy: "Polityka prywatności: My {{link}} informację o koncie, w tym adres mailowy, osobom trzecim"
+      privacy: "Polityka prywatności: My %{link} informację o koncie, w tym adres mailowy, osobom trzecim"
       privacy_link: "nie sprzedajemy"
       registred: "Dziękujemy za rejestrację"
   number: 

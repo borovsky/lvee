@@ -9,40 +9,40 @@ ru:
         blank: "не может быть пустым"
         confirmation: "не совпадает с подтверждением"
         empty: "не может быть пустым"
-        equal_to: "может иметь лишь значение, равное {{count}}"
+        equal_to: "может иметь лишь значение, равное %{count}"
         even: "может иметь лишь нечетное значение"
         exclusion: "имеет зарезервированное значение"
-        greater_than: "может иметь значение большее {{count}}"
-        greater_than_or_equal_to: "может иметь значение большее или равное {{count}}"
+        greater_than: "может иметь значение большее %{count}"
+        greater_than_or_equal_to: "может иметь значение большее или равное %{count}"
         inclusion: "имеет непредусмотренное значение"
         invalid: "имеет неверное значение"
-        less_than: "может иметь значение меньшее чем {{count}}"
-        less_than_or_equal_to: "может иметь значение меньшее или равное {{count}}"
+        less_than: "может иметь значение меньшее чем %{count}"
+        less_than_or_equal_to: "может иметь значение меньшее или равное %{count}"
         not_a_number: "не является числом"
         odd: "может иметь лишь четное значение"
         taken: "уже существует"
         too_long: 
-          few: "слишком большой длины (не может быть больше чем {{count}} символа)"
-          many: "слишком большой длины (не может быть больше чем {{count}} символов)"
-          one: "слишком большой длины (не может быть больше чем {{count}} символ)"
-          other: "слишком большой длины (не может быть больше чем {{count}} символа)"
+          few: "слишком большой длины (не может быть больше чем %{count} символа)"
+          many: "слишком большой длины (не может быть больше чем %{count} символов)"
+          one: "слишком большой длины (не может быть больше чем %{count} символ)"
+          other: "слишком большой длины (не может быть больше чем %{count} символа)"
         too_short: 
-          few: "недостаточной длины (не может быть меньше {{count}} символов)"
-          many: "недостаточной длины (не может быть меньше {{count}} символов)"
-          one: "недостаточной длины (не может быть меньше {{count}} символа)"
-          other: "недостаточной длины (не может быть меньше {{count}} символа)"
+          few: "недостаточной длины (не может быть меньше %{count} символов)"
+          many: "недостаточной длины (не может быть меньше %{count} символов)"
+          one: "недостаточной длины (не может быть меньше %{count} символа)"
+          other: "недостаточной длины (не может быть меньше %{count} символа)"
         wrong_length: 
-          few: "неверной длины (может быть длиной ровно {{count}} символа)"
-          many: "неверной длины (может быть длиной ровно {{count}} символов)"
-          one: "неверной длины (может быть длиной ровно {{count}} символ)"
-          other: "неверной длины (может быть длиной ровно {{count}} символа)"
+          few: "неверной длины (может быть длиной ровно %{count} символа)"
+          many: "неверной длины (может быть длиной ровно %{count} символов)"
+          one: "неверной длины (может быть длиной ровно %{count} символ)"
+          other: "неверной длины (может быть длиной ровно %{count} символа)"
       template: 
         body: "Проблемы возникли со следующими полями:"
         header: 
-          few: "{{model}}: сохранение не удалось из-за {{count}} ошибок"
-          many: "{{model}}: сохранение не удалось из-за {{count}} ошибок"
-          one: "{{model}}: сохранение не удалось из-за {{count}} ошибки"
-          other: "{{model}}: сохранение не удалось из-за {{count}} ошибки"
+          few: "%{model}: сохранение не удалось из-за %{count} ошибок"
+          many: "%{model}: сохранение не удалось из-за %{count} ошибок"
+          one: "%{model}: сохранение не удалось из-за %{count} ошибки"
+          other: "%{model}: сохранение не удалось из-за %{count} ошибки"
   date: 
     abbr_day_names: 
       - Вс
@@ -136,56 +136,56 @@ ru:
   datetime: 
     distance_in_words: 
       about_x_hours: 
-        few: "около {{count}} часов"
-        many: "около {{count}} часов"
-        one: "около {{count}} часа"
-        other: "около {{count}} часа"
+        few: "около %{count} часов"
+        many: "около %{count} часов"
+        one: "около %{count} часа"
+        other: "около %{count} часа"
       about_x_months: 
-        few: "около {{count}} месяцев"
-        many: "около {{count}} месяцев"
-        one: "около {{count}} месяца"
-        other: "около {{count}} месяца"
+        few: "около %{count} месяцев"
+        many: "около %{count} месяцев"
+        one: "около %{count} месяца"
+        other: "около %{count} месяца"
       about_x_years: 
-        few: "около {{count}} лет"
-        many: "около {{count}} лет"
-        one: "около {{count}} года"
-        other: "около {{count}} лет"
+        few: "около %{count} лет"
+        many: "около %{count} лет"
+        one: "около %{count} года"
+        other: "около %{count} лет"
       half_a_minute: "меньше минуты"
       less_than_x_minutes: 
-        few: "меньше {{count}} минут"
-        many: "меньше {{count}} минут"
-        one: "меньше {{count}} минуты"
-        other: "меньше {{count}} минуты"
+        few: "меньше %{count} минут"
+        many: "меньше %{count} минут"
+        one: "меньше %{count} минуты"
+        other: "меньше %{count} минуты"
       less_than_x_seconds: 
-        few: "меньше {{count}} секунд"
-        many: "меньше {{count}} секунд"
-        one: "меньше {{count}} секунды"
-        other: "меньше {{count}} секунды"
+        few: "меньше %{count} секунд"
+        many: "меньше %{count} секунд"
+        one: "меньше %{count} секунды"
+        other: "меньше %{count} секунды"
       over_x_years: 
-        few: "больше {{count}} лет"
-        many: "больше {{count}} лет"
-        one: "больше {{count}} года"
-        other: "больше {{count}} лет"
+        few: "больше %{count} лет"
+        many: "больше %{count} лет"
+        one: "больше %{count} года"
+        other: "больше %{count} лет"
       x_days: 
-        few: "{{count}} дня"
-        many: "{{count}} дней"
-        one: "{{count}} день"
-        other: "{{count}} дня"
+        few: "%{count} дня"
+        many: "%{count} дней"
+        one: "%{count} день"
+        other: "%{count} дня"
       x_minutes: 
-        few: "{{count}} минуты"
-        many: "{{count}} минут"
-        one: "{{count}} минуту"
-        other: "{{count}} минуты"
+        few: "%{count} минуты"
+        many: "%{count} минут"
+        one: "%{count} минуту"
+        other: "%{count} минуты"
       x_months: 
-        few: "{{count}} месяца"
-        many: "{{count}} месяцев"
-        one: "{{count}} месяц"
-        other: "{{count}} месяца"
+        few: "%{count} месяца"
+        many: "%{count} месяцев"
+        one: "%{count} месяц"
+        other: "%{count} месяца"
       x_seconds: 
-        few: "{{count}} секунды"
-        many: "{{count}} секунд"
-        one: "{{count}} секунда"
-        other: "{{count}} секунды"
+        few: "%{count} секунды"
+        many: "%{count} секунд"
+        one: "%{count} секунда"
+        other: "%{count} секунды"
     prompts: 
       day: День
       hour: Часов
@@ -204,7 +204,7 @@ ru:
       proposition: "Так как свободное ПО создаётся сообществом с привлечением множества добровольцев, расскажите, пожалуйста, что Вы могли бы привнести в нашу встречу. Пусть это будет доклад или менее формальный рассказ в рамках круглого стола (workshop) о внедрении, использовании или разработке свободного ПО вами или в вашей организации. Если вы собираетесь сделать доклад или организовать семинар на конференции, укажите тему предлагаемого вами доклада, а также вышлите на \"d.kostiuk@lvee.org\":mailto:d.kostiuk@lvee.org тезисы выступления."
       quantity: "Сколько людей поедет с вами на конференцию (включая вас)?"
       residence: "С кем из участников вас поселить в комнате?"
-      title: "Регистрация на конференцию {{conference}}"
+      title: "Регистрация на конференцию %{conference}"
       transport_from: "Как вы планируете добираться с конференции?"
       transport_to: "Как вы планируете добираться до конференции?"
       tshirt: "Размер футболки"
@@ -266,22 +266,22 @@ ru:
       name: Название
       new: "Новая конференция"
       participated: "Вы принимали участие"
-      register: "Зарегистрироваться на {{conference}}"
+      register: "Зарегистрироваться на %{conference}"
       registration_closed: закрыта
       registration_opened: открыта
       registration_opened?: "Регистрация открыта?"
       registred: "Вы были зарегистрированы"
-      show: "Конференция {{name}} ({{start_date}} - {{finish_date}}"
+      show: "Конференция %{name} (%{start_date} - %{finish_date}"
       start_date: "Дата начала"
       upcoming: "Ближайшие конференции"
     conference_registration: 
-      approved_edit: "Подтвердить участие в  {{conference}}"
+      approved_edit: "Подтвердить участие в  %{conference}"
       badges: Бэджи
-      badges_title: "Бэджи для {{conference}}"
+      badges_title: "Бэджи для %{conference}"
       cancel_registration: "Отменить регистрацию"
       comment: "Registration's Comment"
       days: "Дни участия"
-      edit: "Анкета участника {{conference}}"
+      edit: "Анкета участника %{conference}"
       floor: "Готовы ли вы спать в палатке?"
       food: "Предпочтения в диете"
       index: "Регистрации на конференции"
@@ -292,7 +292,7 @@ ru:
       quantity: "Количество участников"
       residence: Расселение
       status_name: "Registration's Status"
-      title: "Регистрация на конференцию {{conference}}"
+      title: "Регистрация на конференцию %{conference}"
       transport_from: "Транспорт с конференции"
       transport_from_list: 
         bus_grodno: "Маршрутка в Гродно"
@@ -306,20 +306,20 @@ ru:
       tshirt: "Размер футболки"
       update_model: "Conference Registration"
     diff: 
-      change_article_title: "Изменения статьи {{article}} от версии {{from}} до {{to}}"
-      change_wiki_title: "Изменения страницы '{{wiki_page}}' from version {{from}} to {{to}}"
+      change_article_title: "Изменения статьи %{article} от версии %{from} до %{to}"
+      change_wiki_title: "Изменения страницы '%{wiki_page}' from version %{from} to %{to}"
       changed_at: Изменено
       editor: Редактор
       from: От
-      new_article_title: "Статья {{article}} не имеет предыдущих версий"
-      new_wiki_title: "Страница '{{wiki_page}}' не имеет предыдущих версий"
+      new_article_title: "Статья %{article} не имеет предыдущих версий"
+      new_wiki_title: "Страница '%{wiki_page}' не имеет предыдущих версий"
       to: До
       version: Версия
     editor_log: 
-      article_changed: "Статья {{object}} была изменена {{user}}"
-      article_created: "Статья {{object}} была создана {{user}}"
-      wiki_page_changed: "Страница Wiki '{{object}}' была изменена {{user}}"
-      wiki_page_created: "Страница Wiki '{{object}}' была создана {{user}}"
+      article_changed: "Статья %{object} была изменена %{user}"
+      article_created: "Статья %{object} была создана %{user}"
+      wiki_page_changed: "Страница Wiki '%{object}' была изменена %{user}"
+      wiki_page_created: "Страница Wiki '%{object}' была создана %{user}"
     language: 
       code3: "3-буквенный (ISO 639-2) код языка"
       creating: "Создание языка"
@@ -343,11 +343,11 @@ ru:
       editing: "Редактирование новости"
       last_news: "Последние новости"
       publish: "Опубликовать новость"
-      published_at: "Опубликовано {{published}}"
+      published_at: "Опубликовано %{published}"
       title: Заголовок
       translating: "Перевод новости"
       unpublished: "Не опубликованно"
-      will_be_published: "Будет опубликовано {{published}}"
+      will_be_published: "Будет опубликовано %{published}"
     session: 
       login: Логин
       loginButton: Войти
@@ -356,7 +356,7 @@ ru:
       rememberMe: "Запомнить меня"
     statistics: 
       browser: Браузер
-      conference: "Registration statistics for {{conference}}"
+      conference: "Registration statistics for %{conference}"
       country: Страна
       operating_system: "Операционная система"
       registration: 
@@ -375,7 +375,7 @@ ru:
         full: "Статистика с 20 апреля 2009"
         month: "Статистика за последний месяц"
         os_statistic: "Статистика используемых операционных систем"
-        total_visitors: "Всего посетителей: {{count}}"
+        total_visitors: "Всего посетителей: %{count}"
         week: "Статистика за последнюю неделю"
       visits: Посещения
     user: 
@@ -401,7 +401,7 @@ ru:
       register: Зарегистрироваться
       subscribed: "Подписаться на информационную рассылку"
       subscribed_talks: "Подписаться на внутреннюю рассылку оргкомитета"
-      title: "{{full_name}} ({{login}}), ваш профиль в ваших руках"
+      title: "%{full_name} (%{login}), ваш профиль в ваших руках"
       to_profile: "На ваш профиль"
       update_model: "Edit your personal data"
     wiki_page: 
@@ -416,18 +416,18 @@ ru:
     account: 
       activate: |-
           Пожалуйста, откройте следующий адрес для активации вашего аккаунта:
-          {{url}}
+          %{url}
       activated: "Ваш аккаунт был активирован"
       activation_restore: "Вы должны активировать аккаунт перед входом на сайт"
       created: "Ваш аккаунт был создан"
       edit_data: |-
           Вы можете зайти и отредактировать ваши данные:
-          {{url}}
+          %{url}
       information: |-
-          Имя пользователя: {{login}}
-          Пароль:           {{password}}
+          Имя пользователя: %{login}
+          Пароль:           %{password}
       restore: |-
-          Восстановление пароля было запрошено с {{ip}}. 
+          Восстановление пароля было запрошено с %{ip}.
           Мы сбросили ваш пароль. Ниже приведена новая контактная информация.
     signature: |-
         -- 
@@ -437,7 +437,7 @@ ru:
       activation_complete: "Ваш аккаунт на LVEE.org активирован"
       activation_restore: "Активация аккаунта на LVEE (повтор)"
       password_restore: "Восстановление пароля для LVEE"
-    title: "Здравствуйте, {{full_name}}"
+    title: "Здравствуйте, %{full_name}"
   menu: 
     admin: 
       conference_registrations: "Регистрации на конференцию"
@@ -491,12 +491,12 @@ ru:
     conference: 
       created: "Конференция успешно создана"
       slogan: "Шестая международная конференция разработчиков<br />и пользователей свободного программного обеспечения"
-      status: "Регистрация на конференцию: {{status}}."
+      status: "Регистрация на конференцию: %{status}."
       updated: "Конференция успешно обновлена"
     iefuck: 
       link: "http://upgradebrowser.org/x"
       link_text: "Узнать больше о современных и безопасных браузерах!"
-      message: "Эта версия Internet Explorer некорректно отображает современные сайты и делает компьютер небезопасным. {{link}}"
+      message: "Эта версия Internet Explorer некорректно отображает современные сайты и делает компьютер небезопасным. %{link}"
     language: 
       created: "Язык успешно создан"
       updated: "Язык успешно обновлён"
@@ -507,20 +507,20 @@ ru:
       updated: "Новость успешно обновлена"
     session: 
       failed: "Имя пользователя или пароль неверны. Возможно, вы не произвели активацию учетной записи."
-      logged: "Вы вошли как {{user_name}}"
+      logged: "Вы вошли как %{user_name}"
       logged_out: "Вы успешно вышли"
     user: 
       accuracy_note: "Аккуратное и правильное заполнение регистрационной формы поможет нам с вами связаться"
       activated: "Регистрация завершена"
       avator_updated: "Фото успешно обновлено."
       avator_upload: "Вы можете загрузить здесь ваше фото. По возможности, с лицом."
-      describe: "Пользователь: {{full_name}} ({{country}}, {{city}})..."
+      describe: "Пользователь: %{full_name} (%{country}, %{city})..."
       incorrect_image: "Не удается обновить фото. Возможно, вы указали неправильный файл."
       login_change: "Вы не можете изменить свой логин"
       not_found_by_email: "User not found by email. Please check email."
-      password_restore: "Забыли пароль? {{link}} пароль."
+      password_restore: "Забыли пароль? %{link} пароль."
       password_restore_note: "Mail with restore information sent."
-      privacy: "Политика конфиденциальности: мы {{link}} никому никакую информацию о вашей учетной записи, включая ваш адрес электронной почты."
+      privacy: "Политика конфиденциальности: мы %{link} никому никакую информацию о вашей учетной записи, включая ваш адрес электронной почты."
       privacy_link: "не продаем"
       registred: "Спасибо за регистрацию."
   number: 
