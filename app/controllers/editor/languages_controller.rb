@@ -6,7 +6,7 @@ module Editor
     # GET /languages
     # GET /languages.xml
     def index
-      @languages = Language.find(:all)
+      @languages = Language.all
 
       respond_to do |format|
         format.html # index.html.erb

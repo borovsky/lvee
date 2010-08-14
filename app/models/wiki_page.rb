@@ -7,11 +7,11 @@ class WikiPage < ActiveRecord::Base
   validates :name, :uniqueness => true, :presence => true
 
   def self.all
-    find(:all, :order => "name")
+    order("name")
   end
 
   def self.find_version(id, version)
-    Version.find(:first, :conditions=>{:wiki_page_id => id, :version => version})
+    Version.where(:wiki_page_id => id, :version => version).first
   end
 
   def find_version(version)

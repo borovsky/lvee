@@ -16,7 +16,7 @@
     <th>Role</th>
     <th>Actions</th>
   </tr>
-  <% @users.each_with_index do |user, i| %>
+  <%= @users.each_with_index do |user, i| %>
     <tr id="<%= dom_id(user) %>" class="<%= (i % 2 == 0) ? 'even' : 'odd' %>">
       <td><%= i+1 %></td>
       <td><%= check_box_tag "to_user[]", user.id, false, :class =>
@@ -28,7 +28,7 @@
       <td>
         <%= form_tag(set_role_admin_user_path(:id => user.id, :lang => params[:lang]), :remote => true, :html => {:id => 'form_'+dom_id(user)}) do -%>
           <%= select_tag("role", options_for_select(ROLES, user.role), :id => "field_"+dom_id(user)) %>
-          <%#= observe_field("field_"+dom_id(user), :function =>"$('form_"+dom_id(user)+"').onsubmit()") %>
+        <%#= observe_field("field_"+dom_id(user), :function =>"$('form_"+dom_id(user)+"').onsubmit()") %>
         <% end -%>
       </td>
       <td>

@@ -4,13 +4,6 @@ class Sponsor < ActiveRecord::Base
   validates :name, :sponsor_type, :url, :image, :presence => true
 
   def self.list
-    list = {}
-
-    Sponsor.find(:all, :order => "id").each do |s|
-      list[s.sponsor_type] ||= []
-      list[s.sponsor_type] << s
-    end
-
-    list
+    Sponsor.order("id").all.group_by(&:sponsor_type)
   end
 end

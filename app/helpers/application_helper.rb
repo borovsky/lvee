@@ -4,7 +4,7 @@ module ApplicationHelper
   protected
 
   def render_statistics
-    @users ||= User.find(:all, :include => :conference_registrations)
+    @users ||= User.includes(:conference_registrations)
     @conferences ||= Conference.all
 
     @statistics ||= ConferenceStatisticsPresenter.new(@users, @conferences)

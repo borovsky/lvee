@@ -12,7 +12,14 @@ class ConferenceRegistration < ActiveRecord::Base
 
   attr_accessor :admin
 
-  after_save :method => :do_after_save
+  after_save :method => :send_email_if_status_changed
+  after_save :method => :populate_badges
+
+  scope :actual_for_user, lambda{|user| where("conference_registrations.user_id = ?", user).order("conferences.start_date").includes(:conference, :user)}
+  scope :participants, lambda{|conference|
+    where("conference_id = ? AND status_name <> ?", conference, CANCELLED_STATUS).includes(:user).
+      order("users.country ASC, users.city ASC, users.last_name ASC, users.first_name")
+  }
 
   def status
     @status ||= Status.find_by_name(@status_name)
@@ -37,12 +44,6 @@ class ConferenceRegistration < ActiveRecord::Base
     save!
   end
 
-  def self.find_actual_for_user(user_id)
-    ConferenceRegistration.find(:all,
-      :conditions => ['user_id = :user_id', {:user_id => user_id}], :order => "conferences.start_date",
-      :include => [:conference, :user])
-  end
-
   def filled
     ((self.quantity || 0) > 0) and
       !self.days.blank? and
@@ -62,13 +63,6 @@ class ConferenceRegistration < ActiveRecord::Base
     end
   end
 
-  def self.participants(conference)
-    find(:all,
-      :conditions => ["conference_id = ? AND status_name <> ?", conference, CANCELLED_STATUS],
-      :include => [:user],
-      :order => "users.country ASC, users.city ASC, users.last_name ASC, users.first_name")
-  end
-
   protected
   def check_transport
     !admin && approved?
@@ -82,10 +76,9 @@ class ConferenceRegistration < ActiveRecord::Base
     end
   end
 
-  def do_after_save
-    populate_badges
+  def send_email_if_status_changed
     if self.status_name_changed?
-      UserMailer.deliver_status_changed(self)
+      UserMailer.status_changed(self).deliver
     end
   end
 end

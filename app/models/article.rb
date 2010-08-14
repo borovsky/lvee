@@ -12,8 +12,7 @@ class Article < ActiveRecord::Base
     locale ||= I18n.locale
     articles = []
     with_scope :find => params do
-      articles = find(:all, :conditions => ["locale = ?", I18n.default_locale],
-        :order => "category, name")
+      articles = where("locale = ?", I18n.default_locale).order("category, name")
     end
     return articles if locale == I18n.default_locale
     articles.map { |a| a.translation(locale) }
@@ -53,7 +52,7 @@ class Article < ActiveRecord::Base
   end
 
   def self.find_version(id, version)
-    Version.find(:first, :conditions=>{:article_id => id, :version => version})
+    Version.where(:article_id => id, :version => version).first
   end
 
   def find_version(version)

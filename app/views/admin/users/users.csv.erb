@@ -1,4 +1,4 @@
 <%= @exportable.collect(&:to_s).to_csv -%>
-<% @users.each do |user| -%>
+<%= @users.each do |user| -%>
   <%= @exportable.collect { |column| user.send(column.to_sym) }.to_csv -%>
 <% end -%>

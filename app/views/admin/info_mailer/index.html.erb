@@ -6,7 +6,7 @@
     <% else -%>
       <%= hidden_field_tag "to_list", @to_list.join(",") %>
     <ul>
-      <% @to_list_users.each do |u| %>
+      <%= @to_list_users.each do |u| %>
         <li><%= h u.full_name %> &lt;<%= h u.email %>&gt;</li>
       <% end -%>
     </ul>

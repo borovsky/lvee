@@ -1,13 +1,13 @@
 <% sponsors = Sponsor.list %>
 <ul class="sponsors">
-  <% SPONSOR_TYPES.each do |type| -%>
-  <li class="sponsor">
-  <%= link_to(t("sidebar.#{type[1]}"), { :controller => "articles",
-    :category => 'contacts', :name => 'index', :action => 'show'},
-    :class => 'sponsor-header') %>
-    <ul>
-      <%= render :partial => "layouts/partials/sponsor", :collection => sponsors[type[0]] %>
-    </ul>
-  </li>
+  <%= SPONSOR_TYPES.each do |type| -%>
+    <li class="sponsor">
+      <%= link_to(t("sidebar.#{type[1]}"), { :controller => "articles",
+          :category => 'contacts', :name => 'index', :action => 'show'},
+        :class => 'sponsor-header') %>
+      <ul>
+        <%= render :partial => "layouts/partials/sponsor", :collection => sponsors[type[0]] %>
+      </ul>
+    </li>
   <% end -%>
 </ul>

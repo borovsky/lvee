@@ -14,7 +14,7 @@ describe Editor::LanguagesController do
 
     it "should expose all languages as @languages" do
       login_as(@editor)
-      Language.should_receive(:find).with(:all).and_return([mock_language])
+      Language.should_receive(:all).and_return([mock_language])
       get :index
       assert_response :success
       assigns[:languages].should == [mock_language]
@@ -25,7 +25,7 @@ describe Editor::LanguagesController do
       it "should render all languages as xml" do
         login_as(@editor)
         request.env["HTTP_ACCEPT"] = "application/xml"
-        Language.should_receive(:find).with(:all).and_return(languages = mock("Array of Languages"))
+        Language.should_receive(:all).and_return(languages = mock("Array of Languages"))
         languages.should_receive(:to_xml).and_return("generated XML")
         get :index
         assert_response :success

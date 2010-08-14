@@ -1,12 +1,12 @@
 <% user_id = params[:user_id] || @user.id -%>
-<% actual = ConferenceRegistration.find_actual_for_user(user_id) -%>
+<% actual = ConferenceRegistration.actual_for_user(user_id) -%>
 <% now = Time.now -%>
 <% participated = actual.find_all {|r| r.conference.finish_date && r.conference.finish_date.to_time < now} -%>
 <% regs = actual - participated -%>
 <% available = Conference.available_conferences(actual.map {|c|  c.conference}) %>
 
 <% unless available.empty? -%>
-  <% available.each  do |conf| -%>
+  <%= available.each  do |conf| -%>
     <p>
       <%= link_to(t('label.conference.register', :conference => conf.name ),
         {:controller => "conference_registrations", :action => 'new', :user_id => user_id,
@@ -16,7 +16,7 @@
 <% end -%>
 
 <% unless regs.empty? -%>
-  <% regs.each  do |reg| -%>
+  <%= regs.each  do |reg| -%>
     <% conf = reg.conference -%>
     <p>
       <% if reg.cancelled? -%>
@@ -40,15 +40,15 @@
 
 
 <% unless participated.empty? -%>
-<h2><%= t('label.conference.participated')%>:</h2>
-<ul>
-  <% participated.each  do |reg| -%>
-    <% conf = reg.conference -%>
-    <li>
-      <%= h conf.name %>
-      (<%= format_date(conf.start_date) %> -
-      <%= format_date(conf.finish_date) %>)
-    </li>
-  <% end -%>
-</ul>
+  <h2><%= t('label.conference.participated')%>:</h2>
+  <ul>
+    <%= participated.each  do |reg| -%>
+      <% conf = reg.conference -%>
+      <li>
+        <%= h conf.name %>
+        (<%= format_date(conf.start_date) %> -
+        <%= format_date(conf.finish_date) %>)
+      </li>
+    <% end -%>
+  </ul>
 <% end -%>
