@@ -601,6 +601,9 @@ a[href $= '.bz2'] {
 	background-position: 0 0;
 	background: transparent url(/images/ftypes/document-zipper.png) no-repeat;
 }
+
+a[href $= '.ogv'],
+a[href $= '.mp4'],
 a[href $= '.avi'] {
 	border: none;
 	padding: 2px 0 2px 18px;
