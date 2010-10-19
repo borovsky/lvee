@@ -412,7 +412,12 @@ pl:
       about: Sprawozdania
       abstract: "Streszczenie wytyczne"
       category: Sprawozdania
-      materials: "Materiały przeszłych konferencji"
+      materials_2005: "Materiały LVEE 2005"
+      materials_2006: "Materiały LVEE 2006"
+      materials_2007: "Materiały LVEE 2007"
+      materials_2008: "Materiały LVEE 2008"
+      materials_2009: "Materiały LVEE 2009"
+      materials_2010: "Materiały LVEE 2010"
       program: "Program konferencji"
     sponsors: Sponsorzy
     user: 

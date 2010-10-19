@@ -474,7 +474,12 @@ hu:
       about: "Az előadásokról"
       abstract: "Vázlatírási szabályok"
       category: Előadások
-      materials: "Múltbéli konferenciák anyagai"
+      materials_2005: "LVEE 2005 anyagai"
+      materials_2006: "LVEE 2006 anyagai"
+      materials_2007: "LVEE 2007 anyagai"
+      materials_2008: "LVEE 2008 anyagai"
+      materials_2009: "LVEE 2009 anyagai"
+      materials_2010: "LVEE 2010 anyagai"
       program: Program
     sponsors: Szponzorok
     user: 

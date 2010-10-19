@@ -404,7 +404,12 @@ en:
       about: "On presentations"
       abstract: "Abstract guidelines"
       category: Presentations
-      materials: "Past conferences materials"
+      materials_2005: "LVEE 2005 materials"
+      materials_2006: "LVEE 2006 materials"
+      materials_2007: "LVEE 2007 materials"
+      materials_2008: "LVEE 2008 materials"
+      materials_2009: "LVEE 2009 materials"
+      materials_2010: "LVEE 2010 materials"
       program: Program
     sponsors: Sponsors
     user: 

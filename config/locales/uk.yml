@@ -475,7 +475,12 @@ uk:
       about: "Про доповіді"
       abstract: "Правила оформлення тез"
       category: Доповіді
-      materials: "Матеріали минулих конференцій"
+      materials_2005: "Матеріали LVEE 2005"
+      materials_2006: "Матеріали LVEE 2006"
+      materials_2007: "Матеріали LVEE 2007"
+      materials_2008: "Матеріали LVEE 2008"
+      materials_2009: "Матеріали LVEE 2009"
+      materials_2010: "Матеріали LVEE 2010"
       program: "Програма конференції"
     sponsors: Спонсори
     user: 

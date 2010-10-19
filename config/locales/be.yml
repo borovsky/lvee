@@ -407,7 +407,12 @@ be:
       about: "Пра выступленні"
       abstract: "Афармленне тэзісаў"
       category: Выступленні
-      materials: "Матэрыялы мінулых канферэнцый"
+      materials_2005: "Матэрыялы LVEE 2005"
+      materials_2006: "Матэрыялы LVEE 2006"
+      materials_2007: "Матэрыялы LVEE 2007"
+      materials_2008: "Матэрыялы LVEE 2008"
+      materials_2009: "Матэрыялы LVEE 2009"
+      materials_2010: "Матэрыялы LVEE 2010"
       program: Праграма
     sponsors: Фундатары
     user: 
