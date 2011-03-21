@@ -1,0 +1,6 @@
+<% form_tag :controller => :users, :action => :new do %>
+  <p><label for="login"><%= t('label.user.login')%></label> <strong class="required">*</strong><br/>
+  <%= text_field_tag :login %></p>
+
+  <p><%= submit_tag t('label.user.create') %></p>
+<% end -%>

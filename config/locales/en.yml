@@ -368,6 +368,26 @@ en:
       activation_restore: "Account activation for LVEE (repeat)"
       password_restore: "Password restore for LVEE"
     title: "Hello, {{full_name}}"
+  admin:
+    friends:
+      form:
+        hostname: "Hostname"
+        public_key: "Public key"
+      index:
+        create: "New"
+        friendlist: "Friendlist"
+        hostname: "Hostname"
+        status: "Status"
+      friend:
+        edit: "Edit"
+        delete: "Delete"
+        status:
+          bad_public_key: "Bad public key"
+          precondition_failed: "Hostname does not configured"
+          not_responding: "Hostname does not responded"
+          ok: "Ok"
+      public_key:
+        generate_key_pair: "Run rake task friendlist:generate_keys first"
   menu: 
     admin: 
       conference_registrations: "Conference registrations admin"
@@ -377,6 +397,7 @@ en:
       statuses: "Statuses admin"
       title: Admin
       users: "Users admin"
+      friendlist: "Friends"
     conference: 
       about: About
       attribution: Attribution

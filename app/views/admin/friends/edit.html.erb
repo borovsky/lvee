@@ -1,0 +1,5 @@
+<%= form_for(@friend, :url => admin_friend_path(:id => @friend.id, :lang => params[:lang]), :method => :put) do |f| %>
+  <%= render :partial => 'form', :locals => { :f => f } %>
+
+  <%= f.submit t('label.common.update') %>
+<% end %>

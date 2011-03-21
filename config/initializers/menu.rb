@@ -54,5 +54,6 @@ ADMIN_MENU = [
       ['menu.admin.conference_registrations', 'admin/conference_registrations'],
       ['menu.admin.sponsors', 'admin/sponsors'],
       ['menu.admin.info_mailer', 'admin/info_mailer'],
+      ['menu.admin.friendlist', 'admin/friends']
     ]]
 ]

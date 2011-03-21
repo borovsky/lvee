@@ -1,45 +1,28 @@
 # Controller for work with users: create(signup), update, delete, activate
 
 class UsersController < ApplicationController
-  include ActiveScaffold
+  before_filter :login_required, :only => [:show, :index, :edit, :update, :current]
 
-  before_filter :login_required, :only => [:current]
-  before_filter :scaffold_action, :set_common_columns_info, :only => [:edit, :update, :new, :create]
-  before_filter(:current_user_only, :unless => :admin?,
-    :except => [:restore, :activate, :current,:new, :create])
-
-
-  USER_EDITABLE_COLUMNS = [:password, :password_confirmation, :email, :first_name, :last_name, :country, :city,
-    :occupation, :projects, :subscribed, :subscribed_talks]
-  ONLY_CREATE_COLUMNS = [:login]
-  COLUMNS = ONLY_CREATE_COLUMNS + USER_EDITABLE_COLUMNS
-  PRIORITY_COUNTRIES = ['Belarus', 'Ukraine', 'Russia']
-
-  LOCALIZATION_LABEL_PREFIX = "label.user."
-  LOCALIZATION_DESCRIPTION_PREFIX = "description.user."
-
-  active_scaffold :users do
-    cls = UsersController
-    self.actions = [:create, :update]
-    self.columns = cls::COLUMNS
-    self.create.columns = cls::COLUMNS
-    self.update.columns = cls::USER_EDITABLE_COLUMNS
-
-    self.columns[:subscribed].form_ui = :checkbox
-    self.columns[:subscribed_talks].form_ui = :checkbox
-    self.columns[:password].form_ui = :password
-    self.columns[:password_confirmation].form_ui = :password
-    self.columns[:country].form_ui = :country
-    self.columns[:country].options[:priority] = cls::PRIORITY_COUNTRIES
-    User::REQUIRED_FIELDS.each{|i| self.columns[i].required = true }
+  def signup
   end
 
-  def list
-    redirect_to  user_path(:id => current_user.id)
+  # render new.rhtml
+  def new
+    @user_friends = Friend.check_by_login params[:login] if params[:login]
+    @user = User.new @user_friends.values.first if @user_friends.values.length > 0
   end
 
-  def index
-    redirect_to  user_path(:id => current_user.id)
+  def create
+    cookies.delete :auth_token
+    @user = User.new(params[:user])
+    if @user.save
+      UserMailer.deliver_signup_notification(@user)
+      self.current_user = @user
+      flash[:notice] = t('message.user.registred')
+      redirect_to user_path(:id => current_user.id, :lang => params[:lang])
+    else
+      render :action => 'new'
+    end
   end
 
   def current
@@ -139,5 +122,27 @@ class UsersController < ApplicationController
       f = !f
     end
     r
+  end
+
+  def edit
+    @user = User.find params[:id]
+    unless @user.editable_by? current_user
+      return render(:text =>t('message.common.access_denied'), :status=> 403)
+    end
+  end
+
+  def update
+    @user = User.find params[:id]
+
+    unless @user.editable_by?(current_user)
+      return render(:text =>t('message.common.access_denied'), :status=> 403)
+    end
+
+    flash[:notice] = t('message.user.login_change') if params[:user].delete(:login)
+    if(@user.update_attributes(params[:user]))
+      redirect_to user_path(:id=>@user)
+    else
+      render :action => "users/edit"
+    end
   end
 end

@@ -1,0 +1,11 @@
+<%= error_messages_for :user %>
+
+<h3><%= t('label.user.title', :full_name => @user.full_name, :login =>@user.login) %></h3>
+<% form_for(@user, :url => user_path(:id => @user), :html =>{:multipart => true}) do |f| %>
+  <p><label for="login"><%= t 'label.user.login'%></label> <strong class="required">*</strong><br/>
+  <%= f.text_field :login %></p>
+
+  <%= render :partial =>"form", :locals => {:f => f}%>
+
+  <p><%= submit_tag t('label.common.save') %></p>
+<% end %>

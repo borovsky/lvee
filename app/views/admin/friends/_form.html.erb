@@ -1,0 +1,11 @@
+<%= f.error_messages %>
+
+<div>
+  <%= f.label :hostname, t('.hostname') %>
+  <%= f.text_field :hostname %>
+</div>
+
+<div>
+  <%= f.label :public_key, t('.public_key') %><br />
+  <%= f.text_area :public_key, :cols => 80 %>
+</div>

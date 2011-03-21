@@ -8,6 +8,8 @@ ActionController::Routing::Routes.draw do |map|
   map.connect 'sitemap.xml', :controller => 'main', :action => 'sitemap'
   map.connect 'sitemap-news.xml', :controller => 'main', :action => 'sitemap_news'
   map.connect 'tracker', :controller => 'admin/tracker', :action => 'tracker'
+  map.connect 'friends/status.:format', :controller => 'friends', :action => 'status'
+  map.connect 'friends/user_data.:format', :controller => 'friends', :action => 'user_data'
 
   map.namespace :admin, :namespace => "", :path_prefix =>":lang", :name_prefix => "" do |admin|
     admin.resources :users
@@ -15,6 +17,7 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :conference_registrations, :active_scaffold => true, :collection => {:show_statistics => :get}
     admin.resources :statuses, :active_scaffold => true
     admin.resources :sponsors, :active_scaffold => true
+    admin.resources :friends
     admin.mail_user 'users/:to_list/mail', :controller => "info_mailer", :action => "index"
   end
 
@@ -72,6 +75,7 @@ ActionController::Routing::Routes.draw do |map|
       :controller => 'conference_registrations', :action => 'user_list')
 
     ns.connect "users/list", :controller => "users", :action => "list"
+    ns.connect "users/signup", :controller => "users", :action => "signup"
     ns.resources :users, :member => { :activate => :get },
       :collection => {:current => :get, :restore => :any} do |m|
       m.connect('conference_registrations/new/:conference_id',
