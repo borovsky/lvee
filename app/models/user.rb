@@ -15,6 +15,9 @@ class User < ActiveRecord::Base
 
   # Virtual attribute for the unencrypted password
   attr_accessor :password
+  
+  # Virtual attribute for disable mail sending
+  attr_accessor :no_mail
 
   REQUIRED_FIELDS = [:login, :email, :first_name, :last_name, :country, :city, :occupation]
 
@@ -152,6 +155,22 @@ class User < ActiveRecord::Base
       MaillistSubscriber.subscribe(TALKS_MAILLIST, self.email) if active?
     else
       MaillistSubscriber.unsubscribe(TALKS_MAILLIST, self.email)
+    end
+  end
+
+  def self.create_imported(base)
+    u = User.new
+    base.each_pair do |k, v|
+      unless %w(site id age profession avator role).include? k
+        u.send((k + "=").to_sym, v)
+      end
+    end
+    u.no_mail = true
+    u.save
+    if(u.save)
+      "User #{u.email} has been created"
+    else
+      "Error saving user #{u.login} (#{u.email}): <ul><li>" + u.errors.full_messages.join("</li><li>") + "</li></ul>"
     end
   end
 

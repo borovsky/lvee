@@ -14,6 +14,8 @@ class ConferenceRegistration < ActiveRecord::Base
 
   attr_accessor :admin
 
+  attr_accessor :import
+
   def status
     @status ||= Status.find_by_name(@status_name)
     @status
@@ -69,9 +71,21 @@ class ConferenceRegistration < ActiveRecord::Base
       :order => "users.country ASC, users.city ASC, users.last_name ASC, users.first_name")
   end
 
+  def self.create_imported(conference, user)
+    cr = ConferenceRegistration.new(:user => user, :conference => conference, :quantity => 1)
+
+    cr.import = true
+    if(cr.save)
+      "Created registration for #{user.login} (#{user.email}) to conference #{conference.name}"
+    else
+      "Error saving conference registration for #{user.login} (#{user.email}): <ul><li>" + cr.errors.full_messages.join("</li><li>") + "</li></ul>"
+    end
+    
+  end
+
   protected
   def check_transport
-    !admin && approved?
+    !admin && approved? && !import
   end
 
   def validate
