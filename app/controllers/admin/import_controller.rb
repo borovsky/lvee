@@ -15,8 +15,14 @@ class Admin::ImportController < ApplicationController
         u['email'] == u2.email
       end
       if f
-        unless(f.login == u['login'])
-          @log << "User #{u['login']} with email #{u['email']} already registred as #{f.login}"
+        if(f.login == u['login'])
+          if(!f.active? && u['activated_at'] && !u['activation_code'])
+            f.no_mail = true
+            f.activate
+            @log << "User #{u['login']} (#{u['email']}) have been activated"
+          end
+        else
+          @log << "User #{u['login']} (#{u['email']}) already registred as #{f.login}"
         end
       else
         logger.error("Creating")

@@ -166,9 +166,12 @@ class User < ActiveRecord::Base
       end
     end
     u.no_mail = true
-    u.save
     if(u.save)
-      "User #{u.email} has been created"
+      if base['activated_at']
+        u.no_mail = true
+        u.activate
+      end
+      "User #{u.login} (#{u.email}) has been created"
     else
       "Error saving user #{u.login} (#{u.email}): <ul><li>" + u.errors.full_messages.join("</li><li>") + "</li></ul>"
     end
