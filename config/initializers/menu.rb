@@ -52,6 +52,7 @@ ADMIN_MENU = [
       ['menu.admin.conferences', 'admin/conferences'],
       ['menu.admin.statuses', 'admin/statuses'],
       ['menu.admin.conference_registrations', 'admin/conference_registrations'],
+      ['menu.admin.current_conference_registration', 'admin/conferences/registrations/current'],
       ['menu.admin.sponsors', 'admin/sponsors'],
       ['menu.admin.info_mailer', 'admin/info_mailer'],
     ]]

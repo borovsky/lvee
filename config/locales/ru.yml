@@ -442,6 +442,7 @@ ru:
     admin: 
       conference_registrations: "Регистрации на конференцию"
       conferences: "Редактор конференций"
+      current_conference_registration: "Current conference registration"
       info_mailer: "Рассылка писем с  info@lvee.org"
       sponsors: "Редактор спонсоров"
       statuses: "Редактор статусов"

@@ -380,6 +380,7 @@ pl:
     admin: 
       conference_registrations: "Administrator rejestracji na konferencję"
       conferences: "Administrator konferencji"
+      current_conference_registration: "Current conference registration"
       info_mailer: "Rozsyłanie listy mailingowej z info@lvee.org"
       sponsors: "Administrator sponsorów"
       statuses: "Administrator statusów"

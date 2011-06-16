@@ -443,6 +443,7 @@ uk:
     admin: 
       conference_registrations: "Conference registrations admin"
       conferences: "Conferences admin"
+      current_conference_registration: "Current conference registration"
       info_mailer: "Mailer from info@lvee.org"
       sponsors: "Sponsors admin"
       statuses: "Statuses admin"

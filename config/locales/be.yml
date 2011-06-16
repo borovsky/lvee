@@ -375,6 +375,7 @@ be:
     admin: 
       conference_registrations: "Адміністратар рэгістрацый на канферэнцыю"
       conferences: "Адміністратар канферэнцыі"
+      current_conference_registration: "Current conference registration"
       info_mailer: "Пошта з info@lvee.org"
       sponsors: "Адміністратар фундатарства"
       statuses: "Адміністратар статусаў"
