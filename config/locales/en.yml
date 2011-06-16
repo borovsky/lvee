@@ -209,6 +209,7 @@ en:
       badges: Badges
       badges_title: "Badges for {{conference}}"
       cancel_registration: "Cancel registration!"
+      comment: "Registration's Comment"
       days: "Participation days"
       edit: " {{conference}} participant's data"
       floor: "Can you sleep in a tent?"
@@ -221,7 +222,6 @@ en:
       quantity: "Participants quantity"
       residence: Accommodation
       status_name: "Registration's Status"
-      comment: "Registration's Comment"
       title: "Conference registration for {{conference}}"
       transport_from: "Transport from conference"
       transport_from_list: 
@@ -425,7 +425,7 @@ en:
       sure: "Are you sure?"
     conference: 
       created: "Conference created successfully"
-      slogan: "The 6th International conference of developers and users<br />of free / open source software"
+      slogan: "The 7th International conference of developers and users<br />of free / open source software"
       status: "Registration to conference {{status}}."
       updated: "Conference updated successfully"
     iefuck: 
@@ -489,7 +489,7 @@ en:
   sidebar: 
     information_sponsor: "Information partners"
     organizers: Organizers
-    sponsors: "Sponsors of 2010"
+    sponsors: Sponsors
     technical_partner: "Technical partners"
     technical_sponsor: "Technical sponsor"
   support: 

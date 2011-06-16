@@ -433,7 +433,7 @@ pl:
       sure: "Czy na pewno??"
     conference: 
       created: "Pomyślnie utworzono konferencję"
-      slogan: "Szósta Międzynarodowa konferencja twórców i użytkowników<br />Free Software / Open Source (FS/OS)"
+      slogan: "Siódma Międzynarodowa konferencja twórców i użytkowników<br />Free Software / Open Source (FS/OS)"
       status: "Rejestracja na konferencję: {{status}}."
       updated: "Pomyślnie zaktualizowano konferencję"
     iefuck: 
@@ -497,7 +497,7 @@ pl:
   sidebar: 
     information_sponsor: "Partnerzy informacyjni"
     organizers: Organizatorzy
-    sponsors: "Sponsorzy w roku 2010"
+    sponsors: Sponsorzy
     technical_partner: "Partnerzy techniczni"
     technical_sponsor: "Sponsorzy techniczni"
   support: 

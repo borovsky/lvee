@@ -496,7 +496,7 @@ uk:
       sure: "Ви впевнені?"
     conference: 
       created: "Конференція успішно створена"
-      slogan: "Шоста міжнародна конференція розробників<br />і користувачів вільного програмного забезпечення"
+      slogan: "Сьома міжнародна конференція розробників<br />і користувачів вільного програмного забезпечення"
       status: "Реєстрація на конференцію: {{status}}."
       updated: "Конференція успішно оновлена"
     iefuck: 
@@ -562,9 +562,9 @@ uk:
   sidebar: 
     information_sponsor: "Інформаційні партнери"
     organizers: Організатори
-    sponsors: "Спонсори 2010"
-    technical_partner: "Технічний партнер"
-    technical_sponsor: "Технічний спонсор"
+    sponsors: Спонсори
+    technical_partner: "Технічнi партнери"
+    technical_sponsor: "Технічнi спонсори"
   support: 
     array: 
       last_word_connector: " і "
