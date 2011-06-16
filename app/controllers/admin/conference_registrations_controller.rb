@@ -6,7 +6,7 @@ module Admin
     before_filter :admin_required, :scaffold_action
 
     EDITABLE_COLUMNS = [:user_type, :to_pay, :status_name, :comment]
-    STATIC_COLUMNS = [:conference, :user, :avator, :phone,
+    STATIC_COLUMNS = [:conference, :registred_user, :avator, :phone,
       :proposition, :projects, :work,
       :days, :food, :residence, :floor,
       :quantity, :meeting, :transport_to, :transport_from, :tshirt]

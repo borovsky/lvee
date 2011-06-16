@@ -39,6 +39,10 @@ class ConferenceRegistration < ActiveRecord::Base
     save!
   end
 
+  def registred_user
+    "#{user.full_name} (aka #{user.login})"
+  end
+
   def self.find_actual_for_user(user_id)
     ConferenceRegistration.find(:all,
       :conditions => ['user_id = :user_id', {:user_id => user_id}], :order => "conferences.start_date",
