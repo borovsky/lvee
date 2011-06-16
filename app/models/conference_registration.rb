@@ -39,8 +39,8 @@ class ConferenceRegistration < ActiveRecord::Base
     save!
   end
 
-  def registred_user
-    "#{user.full_name} (aka #{user.login})"
+  def login
+    user.login
   end
 
   def self.find_actual_for_user(user_id)
