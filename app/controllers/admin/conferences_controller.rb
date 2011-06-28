@@ -7,14 +7,14 @@ module Admin
     before_filter :admin_required, :scaffold_action
 
     USER_CSV_COLUMNS = [:login, :full_name, :email, :country, :city, :occupation, :projects]
-    REGISTRATION_CSV_COLUMNS = [:user_type, :status_name, :comment, :proposition, :quantity, :days, :meeting, :phone, :residence, :floor, :transport_to, :transport_from, :food, :tshirt]
+    REGISTRATION_CSV_COLUMNS = [:user_type, :status_name, :comment, :proposition, :quantity, :days, :meeting, :phone, :residence, :floor, :transport_to, :transport_from, :food, :tshirt, :created_at]
 
     layout "admin"
     active_scaffold :conferences do
       self.columns = [:name, :start_date, :finish_date, :registration_opened]
       self.columns[:registration_opened].form_ui = :checkbox
       self.action_links.add(:registrations, :label => :registrations, :type => :member, :inline => false, :parameters => {})
-      self.action_links.add(:csv, :label => :csv_export, :type => :member, :inline => false, :parameters => {:format =>"csv" })
+      self.action_inks.add(:csv, :label => :csv_export, :type => :member, :inline => false, :parameters => {:format =>"csv" })
       self.action_links.add(:badges_pdf, :label => :badges_pdf_export, :type => :member, :inline => false)
     end
 

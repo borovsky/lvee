@@ -280,6 +280,7 @@ ru:
       badges_title: "Бэджи для {{conference}}"
       cancel_registration: "Отменить регистрацию"
       comment: "Registration's Comment"
+      created_at: "Conference Registration Date"
       days: "Дни участия"
       edit: "Анкета участника {{conference}}"
       floor: "Готовы ли вы спать в палатке?"
@@ -305,6 +306,7 @@ ru:
         independent: Самостоятельно
       tshirt: "Размер футболки"
       update_model: "Conference Registration"
+      updated_at: "Last Modified"
     diff: 
       change_article_title: "Изменения статьи {{article}} от версии {{from}} до {{to}}"
       change_wiki_title: "Изменения страницы '{{wiki_page}}' from version {{from}} to {{to}}"
@@ -383,6 +385,7 @@ ru:
       city: Город
       country: Страна
       create: Зарегистрироваться
+      created_at: "Registration Date"
       edit: "Редактировать личные данные"
       email: "Адрес e-mail"
       first_name: Имя
@@ -404,6 +407,7 @@ ru:
       title: "{{full_name}} ({{login}}), ваш профиль в ваших руках"
       to_profile: "На ваш профиль"
       update_model: "Edit your personal data"
+      updated_at: "Last Updated"
     wiki_page: 
       body: Тело
       creating: "Создание Wiki страницы"

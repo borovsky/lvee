@@ -281,6 +281,7 @@ uk:
       badges_title: "Badges for {{conference}}"
       cancel_registration: "Cancel registration"
       comment: "Registration's Comment"
+      created_at: "Conference Registration Date"
       days: "Дні участі"
       edit: " {{conference}} participant's data"
       floor: "Can you sleep in a tent?"
@@ -306,6 +307,7 @@ uk:
         independent: Independent
       tshirt: "Розмір футболки"
       update_model: "Conference Registration"
+      updated_at: "Last Modified"
     diff: 
       change_article_title: "Порівняння статті {{article}} з {{from}} до {{to}}"
       change_wiki_title: "Порівняння сторінки '{{wiki_page}}' з {{from}} до {{to}}"
@@ -384,6 +386,7 @@ uk:
       city: Місто
       country: Країна
       create: Реєструватися
+      created_at: "Registration Date"
       edit: "Редагувати профіль"
       email: "Адреса електронної пошти"
       first_name: Ім'я
@@ -405,6 +408,7 @@ uk:
       title: "{{full_name}} ({{login}}), ваш профіль у ваших руках"
       to_profile: "На ваш профіль"
       update_model: "Edit your personal data"
+      updated_at: "Last Updated"
     wiki_page: 
       body: Зміст
       creating: "Створити Wiki-сторінку"

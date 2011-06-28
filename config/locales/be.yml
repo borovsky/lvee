@@ -213,6 +213,7 @@ be:
       badges_title: "Значкі на {{conference}}"
       cancel_registration: "Cancel registration"
       comment: "Registration's Comment"
+      created_at: "Conference Registration Date"
       days: "Дні ўдзелу"
       edit: "Звесткі пра ўдзельніка {{conference}}"
       floor: "Ці згодныя вы спаць у намёце?"
@@ -238,6 +239,7 @@ be:
         independent: Самастойна
       tshirt: "Памер футболкі"
       update_model: "Рэгістрацыя на канферэнцыю"
+      updated_at: "Last Modified"
     diff: 
       change_article_title: "Змены ў артыкуле {{article}} з адмены {{from}} да {{to}}"
       change_wiki_title: "Змены на старонцы '{{wiki_page}}' з адмены {{from}} да {{to}}"
@@ -316,6 +318,7 @@ be:
       city: Горад
       country: Краіна
       create: Зарэгістраваць
+      created_at: "Registration Date"
       edit: "Змяніць профільныя звесткі"
       email: "Электронная пошта"
       first_name: Імя
@@ -337,6 +340,7 @@ be:
       title: "{{full_name}} ({{login}}), за яго адказваць вам"
       to_profile: "Да вашага профілю"
       update_model: "Змена асабістых звестак"
+      updated_at: "Last Updated"
     wiki_page: 
       body: Цела
       creating: "Стварыць Wiki-старонку"

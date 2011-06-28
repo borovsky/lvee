@@ -210,6 +210,7 @@ en:
       badges_title: "Badges for {{conference}}"
       cancel_registration: "Cancel registration!"
       comment: "Registration's Comment"
+      created_at: "Conference Registration Date"
       days: "Participation days"
       edit: " {{conference}} participant's data"
       floor: "Can you sleep in a tent?"
@@ -235,6 +236,7 @@ en:
         independent: Independent
       tshirt: "T-Shirt size"
       update_model: "Conference Registration"
+      updated_at: "Last Modified"
     diff: 
       change_article_title: "Diff for article {{article}} from version {{from}} to {{to}}"
       change_wiki_title: "Diff for page '{{wiki_page}}' from version {{from}} to {{to}}"
@@ -313,6 +315,7 @@ en:
       city: Location
       country: Country
       create: Register
+      created_at: "Registration Date"
       edit: "Edit personal data"
       email: E-mail
       first_name: "First Name"
@@ -334,6 +337,7 @@ en:
       title: "{{full_name}} ({{login}}), your profile is in your hands"
       to_profile: "To your profile"
       update_model: "Edit your personal data"
+      updated_at: "Last Updated"
     wiki_page: 
       body: Body
       creating: "Creating Wiki Page"

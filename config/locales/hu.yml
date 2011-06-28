@@ -280,6 +280,7 @@ hu:
       badges_title: "Badges for {{conference}}"
       cancel_registration: "Cancel registration"
       comment: "Registration's Comment"
+      created_at: "Conference Registration Date"
       days: "Részvételi napok"
       edit: " {{conference}} participant's data"
       floor: "Can you sleep in a tent?"
@@ -305,6 +306,7 @@ hu:
         independent: Independent
       tshirt: Pólóméret
       update_model: "Conference Registration"
+      updated_at: "Last Modified"
     diff: 
       change_article_title: "Diff for article {{article}} from version {{from}} to {{to}}"
       change_wiki_title: "Diff for page '{{wiki_page}}' from version {{from}} to {{to}}"
@@ -383,6 +385,7 @@ hu:
       city: Város
       country: Ország
       create: Regisztrálás
+      created_at: "Registration Date"
       edit: "Profil szerkesztése"
       email: "Email cím"
       first_name: Keresztnév
@@ -404,6 +407,7 @@ hu:
       title: "{{full_name}} ({{login}}), profilbabrálás"
       to_profile: "A profiljához"
       update_model: "Edit your personal data"
+      updated_at: "Last Updated"
     wiki_page: 
       body: Body
       creating: "Creating Wiki Page"
