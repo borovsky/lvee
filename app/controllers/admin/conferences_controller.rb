@@ -14,7 +14,7 @@ module Admin
       self.columns = [:name, :start_date, :finish_date, :registration_opened]
       self.columns[:registration_opened].form_ui = :checkbox
       self.action_links.add(:registrations, :label => :registrations, :type => :member, :inline => false, :parameters => {})
-      self.action_inks.add(:csv, :label => :csv_export, :type => :member, :inline => false, :parameters => {:format =>"csv" })
+      self.action_links.add(:csv, :label => :csv_export, :type => :member, :inline => false, :parameters => {:format =>"csv" })
       self.action_links.add(:badges_pdf, :label => :badges_pdf_export, :type => :member, :inline => false)
     end
 
