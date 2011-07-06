@@ -14,6 +14,7 @@ MENU_ITEMS = [
       ['menu.reports.about', 'reports'],
       ['menu.reports.program', 'reports/program'],
       ['menu.reports.abstract', 'reports/abstract'],
+      ['menu.reports.materials_2011', 'reports/materials_lvee_2011'],
       ['menu.reports.materials_2010', 'reports/materials_lvee_2010'],
       ['menu.reports.materials_2009', 'reports/materials_lvee_2009'],
       ['menu.reports.materials_2008', 'reports/materials_lvee_2008'],
