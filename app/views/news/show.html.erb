@@ -13,6 +13,7 @@
   <%=h @news.user.full_name %>
 </p>
 
+<g:plusone size="medium"></g:plusone>
 
 <%= render(:partial => 'news/editor_actions', :locals => {:news => @news}) if editor? -%>
 <%= link_to t('label.news.back_to_list'), news_path %>

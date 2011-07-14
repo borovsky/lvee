@@ -19,6 +19,7 @@ class ArticlesController < ApplicationController
   def show
     return render :status => 404, :text => "Not found" unless @article
     @title = @article.title
+    @canonical_url = article_url(@article) unless @article.locale == params[:lang]
 
     respond_to do |format|
       format.html # show.html.erb
