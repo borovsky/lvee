@@ -40,7 +40,7 @@ class News < ActiveRecord::Base
 
   def self.translation_for(news, locale)
     with_exclusive_scope do
-      find_by_parent_id_and_locale(news.id, locale)
+      find_by_parent_id_and_locale(news.parent_id || news.id, locale)
     end
   end
 
