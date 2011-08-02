@@ -2,12 +2,12 @@ require 'digest/sha1'
 require 'maillist_subscriber'
 
 class User < ActiveRecord::Base
-  file_column(:avator,
-    :magick => {
-      :size => AVATAR_SIZE,
-      :versions => {
-        :list => LIST_AVATAR_SIZE
-      }})
+  # file_column(:avator,
+  #   :magick => {
+  #     :size => AVATAR_SIZE,
+  #     :versions => {
+  #       :list => LIST_AVATAR_SIZE
+  #     }})
 
   has_many :conference_registrations, :dependent => :delete_all
 

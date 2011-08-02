@@ -1,7 +1,7 @@
 require 'RMagick'
 
 class ImageUpload < ActiveRecord::Base
-  file_column :file
+  # file_column :file
 
   before_validation :method => :set_image_size
 
