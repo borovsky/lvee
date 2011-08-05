@@ -2,7 +2,6 @@ require 'authenticated_system'
 
 class ApplicationController < ActionController::Base
   include AuthenticatedSystem
-  include ExceptionNotifiable
 
   before_filter :language_select
   before_filter :metainfo_load
@@ -127,6 +126,6 @@ class ApplicationController < ActionController::Base
 
   #FIXME
   def self.active_scaffold(*args)
-    
+
   end
 end

@@ -21,6 +21,8 @@ gem 'verification', :git => 'git://github.com/beastaugh/verification.git'
 gem 'render_component_vho', :git => 'git://github.com/nodeta/render_component.git'  #'git://github.com/vhochstein/render_component.git'
 gem 'active_scaffold_vho', :git => 'git://github.com/tonyday/active_scaffold.git' #'git://github.com/vhochstein/active_scaffold.git'
 
+gem 'exception_notification_rails3', :require => 'exception_notifier'
+
 group :test do
   gem "rspec-rails", ">= 2.6.1"
   gem "rspec-spies", ">= 2.0.0"

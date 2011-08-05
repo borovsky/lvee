@@ -46,5 +46,10 @@ module Lvee
     config.action_controller.cache_store = :file_store, File.join(Rails.root, "cache")
 
     config.action_view.javascript_expansions[:defaults] = %w(jquery-1.4.2.min rails application)
+
+    config.middleware.use ExceptionNotifier,
+      :email_prefix => "[LVEE-ERROR] ",
+      :sender_address => "Error reported <app.error@lvee.org>",
+      :exception_recipients => %w(alex.borovsky@gmail.com)
   end
 end
