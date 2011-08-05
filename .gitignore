@@ -16,3 +16,4 @@ config/initializers/google_parameters.rb
 cache
 test/tmp
 nbproject
+public/uploads

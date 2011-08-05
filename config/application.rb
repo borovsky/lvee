@@ -41,8 +41,10 @@ module Lvee
     config.filter_parameters += [:password]
 
     # Enable the asset pipeline
-    config.assets.enabled = true
+    config.assets.enabled = false
 
     config.action_controller.cache_store = :file_store, File.join(Rails.root, "cache")
+
+    config.action_view.javascript_expansions[:defaults] = %w(jquery-1.4.2.min rails application)
   end
 end

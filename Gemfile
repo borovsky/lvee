@@ -2,9 +2,9 @@
 # This preamble is the current preamble for Rails 3 apps; edit as needed.
 source 'http://rubygems.org'
 
-gem 'rails', '~>3.1.0.rc'
+gem 'rails', '~>3.1.0.rc5'
 
-gem 'acts_as_versioned', :git => "git://github.com/xspond/acts_as_versioned.git", :branch => "rails3"
+gem 'acts_as_versioned', :git => "git://github.com/xspond/acts_as_versioned.git"
 
 gem 'RedCloth', '~> 4.2.7', :require => 'redcloth'
 gem 'ya2yaml'
@@ -15,9 +15,11 @@ gem 'mysql2'
 
 gem 'rmagick'
 gem 'carrierwave', '0.5.6'
-gem 'carrierwave-rails3', '0.4.5'
 
-#gem 'file-column', '~> 0.3.3'
+gem 'jquery-rails_vho', :git => 'git://github.com/vhochstein/jquery-rails.git'
+gem 'verification', :git => 'git://github.com/beastaugh/verification.git'
+gem 'render_component_vho', :git => 'git://github.com/nodeta/render_component.git'  #'git://github.com/vhochstein/render_component.git'
+gem 'active_scaffold_vho', :git => 'git://github.com/tonyday/active_scaffold.git' #'git://github.com/vhochstein/active_scaffold.git'
 
 group :test do
   gem "rspec-rails", ">= 2.6.1"

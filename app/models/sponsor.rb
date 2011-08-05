@@ -1,5 +1,5 @@
 class Sponsor < ActiveRecord::Base
-  #file_column :image
+  mount_uploader :image, SponsorUploader
 
   validates :name, :sponsor_type, :url, :image, :presence => true
 

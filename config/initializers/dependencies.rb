@@ -1,4 +1,4 @@
 require 'redcloth'
 require 'ya2yaml'
-#require 'file_column'
+require 'carrierwave/orm/activerecord'
 

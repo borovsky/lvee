@@ -1,1 +1,1 @@
-<li><%= link_to(image_tag(url_for_file_column(sponsor, 'image')), sponsor.url, { :target => '_blank' }) %></li>
+<li><%= link_to(image_tag(sponsor.image.url, :alt => sponsor.name), sponsor.url, { :target => '_blank' }) %></li>

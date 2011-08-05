@@ -12,8 +12,8 @@ ALL_USER_MAILLIST = "maillist"
 TALKS_MAILLIST = "talks"
 ADMIN_MAILLIST = "orgmaillist"
 
-AVATAR_SIZE = "200x150"
-LIST_AVATAR_SIZE = "100x75"
+AVATAR_SIZE = [200, 150]
+LIST_AVATAR_SIZE = [100, 75]
 
 RANDOM_PHOTOS_ROOT = 'images/random_photos'
 
