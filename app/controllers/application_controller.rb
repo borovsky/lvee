@@ -123,9 +123,4 @@ class ApplicationController < ActionController::Base
   def editor?
     current_user.try(:editor?)
   end
-
-  #FIXME
-  def self.active_scaffold(*args)
-
-  end
 end

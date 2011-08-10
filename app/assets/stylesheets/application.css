@@ -2,6 +2,7 @@
 *= require blueprint/screen
 *= require active_scaffold
 *= require_self
+*= require jquery-ui
 */
 
 

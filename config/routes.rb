@@ -15,7 +15,14 @@ Rails.application.routes.draw do
       resources :users do
         put :set_role, :on => :member
       end
-      resources :conference
+      resources :conferences do
+        as_routes
+        member do
+          get :registrations
+          get :csv
+          get :badges_pdf
+        end
+      end
       resources :conference_registrations do
         collection do
           get :csv
@@ -62,7 +69,7 @@ Rails.application.routes.draw do
         end
       end
     end
-    
+
     get "news/:parent_id/translate/:locale" => "news#new", :as => "translate_news"
 
     resources :news, :as => 'news_item' do
@@ -91,6 +98,6 @@ Rails.application.routes.draw do
 
     resources :wiki_pages do
       put :preview, :on => :collection
-    end    
+    end
   end
 end

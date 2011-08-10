@@ -9,12 +9,13 @@ module Admin
     REGISTRATION_CSV_COLUMNS = [:user_type, :status_name, :comment, :proposition, :quantity, :days, :meeting, :phone, :residence, :floor, :transport_to, :transport_from, :food, :tshirt]
 
     layout "admin"
-    active_scaffold :conferences do
-      self.columns = [:name, :start_date, :finish_date, :registration_opened]
-      self.columns[:registration_opened].form_ui = :checkbox
-      self.action_links.add(:registrations, :label => :registrations, :type => :member, :inline => false, :parameters => {})
-      self.action_links.add(:csv, :label => :csv_export, :type => :member, :inline => false, :parameters => {:format =>"csv" })
-      self.action_links.add(:badges_pdf, :label => :badges_pdf_export, :type => :member, :inline => false)
+
+    active_scaffold :conferences do |conf|
+      conf.columns = [:name, :start_date, :finish_date, :registration_opened]
+      conf.columns[:registration_opened].form_ui = :checkbox
+      conf.action_links.add(:registrations, :label => :registrations, :type => :member, :inline => false, :parameters => {})
+      conf.action_links.add(:csv, :label => :csv_export, :type => :member, :inline => false, :parameters => {:format =>"csv" })
+      conf.action_links.add(:badges_pdf, :label => :badges_pdf_export, :type => :member, :inline => false)
     end
 
     def csv
