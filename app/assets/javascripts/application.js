@@ -1,3 +1,8 @@
+//= require jquery
+//= require jquery_ujs
+//= require active_scaffold
+//= require_self
+
 (function() {
     var timeout         = 500;
     var closetimer		= 0;

@@ -41,7 +41,7 @@ module Lvee
     config.filter_parameters += [:password]
 
     # Enable the asset pipeline
-    config.assets.enabled = false
+    config.assets.enabled = true
 
     config.action_controller.cache_store = :file_store, File.join(Rails.root, "cache")
 
