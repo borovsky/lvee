@@ -242,6 +242,7 @@ ru:
       back: Назад
       back_to_list: "Назад к списку"
       cancel: Отменить
+      close: Close
       count: Количество
       create: Создать
       delete: Удалить
@@ -252,6 +253,7 @@ ru:
       publish: Опубликовать
       publish_now: "Опубликовать сейчас"
       save: Сохранить
+      search: Search
       show: Показать
       translate: Перевести
       unknown_user: Неизвестно

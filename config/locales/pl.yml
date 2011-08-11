@@ -180,6 +180,7 @@ pl:
       back: Wstecz
       back_to_list: "Back to list"
       cancel: Anuluj
+      close: Close
       count: Ilość
       create: Utwórz
       delete: Skasuj
@@ -190,6 +191,7 @@ pl:
       publish: Publikuj
       publish_now: "Publikuj teraz"
       save: Zachowaj
+      search: Search
       show: Pokaż
       translate: Tłumacz
       unknown_user: Unknown

@@ -242,6 +242,7 @@ hu:
       back: Vissza
       back_to_list: "Back to list"
       cancel: Mégse
+      close: Close
       count: Count
       create: Létrehozni
       delete: Törölni
@@ -252,6 +253,7 @@ hu:
       publish: Közzétenni
       publish_now: "Most közzétenni"
       save: Elmenteni
+      search: Search
       show: Megmutatni
       translate: Lefordítani
       unknown_user: Unknown

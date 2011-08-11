@@ -172,6 +172,7 @@ en:
       back: Back
       back_to_list: "Back to list"
       cancel: Cancel
+      close: Close
       count: Count
       create: Create
       delete: Delete
@@ -182,6 +183,7 @@ en:
       publish: Publish
       publish_now: "Publish Now"
       save: Save
+      search: Search
       show: Show
       translate: Translate
       unknown_user: Unknown

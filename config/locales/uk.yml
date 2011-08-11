@@ -243,6 +243,7 @@ uk:
       back: Назад
       back_to_list: "Повернутись до списку"
       cancel: Відмінити
+      close: Close
       count: Count
       create: Створити
       delete: Видалити
@@ -253,6 +254,7 @@ uk:
       publish: Опублікувати
       publish_now: "Опублікувати зараз"
       save: Зберегти
+      search: Search
       show: Показати
       translate: Перекласти
       unknown_user: Unknown

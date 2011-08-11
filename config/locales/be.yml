@@ -175,6 +175,7 @@ be:
       back: Назад
       back_to_list: "Назад да спісу"
       cancel: Скасаваць
+      close: Close
       count: Колькасць
       create: Стварыць
       delete: Сцерці
@@ -185,6 +186,7 @@ be:
       publish: Апублікаваць
       publish_now: "Апублікаваць зараз"
       save: Запісаць
+      search: Search
       show: Паказаць
       translate: Перакласці
       unknown_user: Невядомы
