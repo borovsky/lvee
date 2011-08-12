@@ -9,4 +9,8 @@ class Conference < ActiveRecord::Base
   def to_s
     name
   end
+
+  def loaded?
+    true
+  end
 end

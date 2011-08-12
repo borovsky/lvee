@@ -17,3 +17,4 @@ cache
 test/tmp
 nbproject
 public/uploads
+public/assets

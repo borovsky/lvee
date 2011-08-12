@@ -39,6 +39,10 @@ module ApplicationHelper
     end
   end
 
+  def active_scaffold_input_static(column, html_options)
+    @record.send(column.name) if @record
+  end
+
   # FIXME
   def format_date(time)
     time ? localize(time, :format => :long) : t("date.none")

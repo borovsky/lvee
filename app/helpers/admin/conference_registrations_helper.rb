@@ -1,27 +1,27 @@
 module Admin
   module ConferenceRegistrationsHelper
 
-    def city_column(record)
+    def city_column(column, record)
       h(record.user.city)
     end
 
-    def country_column(record)
+    def country_column(column, record)
       h(record.user.country)
     end
 
-    def avator_column(record)
-      image_tag(url_for_file_column(record.user, "avator")) if record.user.avator
+    def avator_column(column, record)
+      image_tag(record.user.avator.url) if record.user.avator && record.user.avator.url
     end
 
-    def projects_column(record)
+    def projects_column(column, record)
       simple_format record.user.projects
     end
 
-    def work_column(record)
+    def work_column(column, record)
       h(record.user.occupation)
     end
 
-    def filled_column(record)
+    def filled_column(column, record)
       record.filled
     end
 
@@ -34,17 +34,20 @@ module Admin
     end
 
     def work_form_column(record, input_name)
+      return nil unless record.user
       text = h(record.user.occupation)
       content_tag(:span, text, :class => "static-value")
     end
 
     def projects_form_column(record, input_name)
+      return nil unless record.user
       text = simple_format(record.user.projects)
       content_tag(:span, text, :class => "static-value")
     end
 
     def avator_form_column(record, input_name)
-      text = image_tag(url_for_file_column(@record.user, "avator")) if @record.user.avator
+      return nil unless record.user
+      text = image_tag(record.user.avator.url) if record.user.avator.url
       content_tag(:span, text, :class => "static-value")
     end
 

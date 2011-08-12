@@ -147,6 +147,10 @@ class User < ActiveRecord::Base
     end
   end
 
+  def loaded?
+    true
+  end
+
   protected
   # before filter
   def encrypt_password

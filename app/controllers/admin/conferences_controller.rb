@@ -13,9 +13,9 @@ module Admin
     active_scaffold :conferences do |conf|
       conf.columns = [:name, :start_date, :finish_date, :registration_opened]
       conf.columns[:registration_opened].form_ui = :checkbox
-      conf.action_links.add(:registrations, :label => :registrations, :type => :member, :inline => false, :parameters => {})
-      conf.action_links.add(:csv, :label => :csv_export, :type => :member, :inline => false, :parameters => {:format =>"csv" })
-      conf.action_links.add(:badges_pdf, :label => :badges_pdf_export, :type => :member, :inline => false)
+      conf.action_links.add(:registrations, :label => :registrations, :type => :member, :page => true, :parameters => {})
+      conf.action_links.add(:csv, :label => :csv_export, :type => :member, :page => true, :parameters => {:format =>"csv" })
+      conf.action_links.add(:badges_pdf, :label => :badges_pdf_export, :type => :member, :page => true)
     end
 
     def csv

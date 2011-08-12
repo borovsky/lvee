@@ -4,7 +4,7 @@ module Admin
     before_filter :admin_required
 
     EDITABLE_COLUMNS = [:user_type, :to_pay, :status_name, :comment]
-    STATIC_COLUMNS = [:conference, :user, :avator, :phone,
+    STATIC_COLUMNS = [:user, :avator, :phone,
       :proposition, :projects, :work,
       :days, :food, :residence, :floor,
       :quantity, :meeting, :transport_to, :transport_from, :tshirt]
@@ -18,9 +18,10 @@ module Admin
       cls = Admin::ConferenceRegistrationsController
       cfg.columns = cls::COLUMNS
       cfg.label = "Conference Registration"
+      cfg.actions.swap :search, :field_search
+	    cfg.field_search.human_conditions = true
       cfg.actions.exclude :create, :delete, :nested
-      cfg.search.live = true
-      cfg.actions.add :conference_registration_statistics
+      cfg.action_links.add(:conference_registration_statistics, :label => :conference_registration_statistics, :type => :collection, :parameters => {})
 
       cfg.list.columns = cls::LIST_COLUMNS
 
@@ -37,10 +38,6 @@ module Admin
       cls::STATIC_COLUMNS.each do |c|
         cfg.columns[c].form_ui = :static if  self.update.columns[c]
       end
-    end
-
-    def live_search_authorized?
-      true
     end
 
     protected
