@@ -27,7 +27,7 @@ Rails.application.routes.draw do
         as_routes
         collection do
           get :csv
-          get :conference_registration_statistics
+          get :show_statistics
         end
       end
       resources :statuses

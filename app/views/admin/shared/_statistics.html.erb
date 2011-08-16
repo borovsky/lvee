@@ -3,14 +3,14 @@
 <table class="data">
   <tr>
     <th>Type</th>
-    <%= @conferences.each do |c| %>
+    <% @conferences.each do |c| %>
       <th><%= h c.name %></th>
     <% end %>
   </tr>
-  <%= STATISTICS_TYPES.each_with_index do |type, i| %>
+  <% STATISTICS_TYPES.each_with_index do |type, i| %>
     <tr  class="<%= (i % 2 == 0) ? 'even' : 'odd' %>">
       <td><%= t("label.statistics.registration.#{type}") %></td>
-      <%= @conferences.each do |c| %>
+      <% @conferences.each do |c| %>
         <td><%= (@statistics.list[c.name].statistics[type] or 0) %></td>
       <% end %>
     </tr>
@@ -22,14 +22,14 @@
 <table class="data">
   <tr>
     <th>Type</th>
-    <%= @conferences.each do |c| %>
+    <% @conferences.each do |c| %>
       <th><%= h c.name %></th>
     <% end %>
   </tr>
-  <%= TRANSPORT.each_with_index do |type, i| %>
+  <% TRANSPORT.each_with_index do |type, i| %>
     <tr  class="<%= (i % 2 == 0) ? 'even' : 'odd' %>">
       <td><%= t("label.conference_registration.transport_to_list.#{type}") %></td>
-      <%= @conferences.each do |c| %>
+      <% @conferences.each do |c| %>
         <td><%= @statistics.list[c.name].statistics["transport_to_#{type}".to_sym] || 0 %></td>
       <% end %>
     </tr>
@@ -41,14 +41,14 @@
 <table class="data">
   <tr>
     <th>Type</th>
-    <%= @conferences.each do |c| %>
+    <% @conferences.each do |c| %>
       <th><%= h c.name %></th>
     <% end %>
   </tr>
-  <%= TRANSPORT.each_with_index do |type, i| %>
+  <% TRANSPORT.each_with_index do |type, i| %>
     <tr  class="<%= (i % 2 == 0) ? 'even' : 'odd' %>">
       <td><%= t("label.conference_registration.transport_from_list.#{type}") %></td>
-      <%= @conferences.each do |c| %>
+      <% @conferences.each do |c| %>
         <td><%= @statistics.list[c.name].statistics["transport_from_#{type}".to_sym] || 0 %></td>
       <% end %>
     </tr>
@@ -65,14 +65,14 @@
 <table class="data">
   <tr>
     <th>Type</th>
-    <%= @conferences.each do |c| %>
+    <% @conferences.each do |c| %>
       <th><%= h c.name %></th>
     <% end %>
   </tr>
-  <%= selectable_days.each_with_index do |day, i| %>
+  <% selectable_days.each_with_index do |day, i| %>
     <tr  class="<%= (i % 2 == 0) ? 'even' : 'odd' %>">
       <td><%= day[0] %></td>
-      <%= @conferences.each do |c| %>
+      <% @conferences.each do |c| %>
         <td><%= @statistics.list[c.name].statistics["days_#{day[1].downcase}".to_sym] || 0 %></td>
       <% end %>
     </tr>
