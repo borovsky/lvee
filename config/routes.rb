@@ -30,7 +30,9 @@ Rails.application.routes.draw do
           get :show_statistics
         end
       end
-      resources :statuses
+      resources :statuses do
+        as_routes
+      end
       resources :sponsors
     end
 
