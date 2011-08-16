@@ -3,7 +3,6 @@ module Admin
     before_filter :admin_required
 
     layout "admin"
-    before_filter
 
     active_scaffold :statuses do
       self.columns = [:name, :subject, :mail]

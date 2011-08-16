@@ -40,8 +40,9 @@ Rails.application.routes.draw do
 
     namespace :editor do
       resources :languages do
-        put :upload, :on => :member
-        get :download, :on => :member
+        as_routes
+        get :upload_form, :on => :member
+        post :upload, :on => :member
       end
       resources :metainfos do
         collection do
