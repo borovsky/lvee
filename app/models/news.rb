@@ -12,28 +12,20 @@ class News < ActiveRecord::Base
 
   validates :locale, :presence => true, :uniqueness => {:scope => :parent_id}, :if => Proc.new { |user| user.parent_id }
 
-  scope :published, lambda { ||
+  scope :published, lambda {||
     { :conditions => [
         "news.published_at IS NOT NULL AND news.published_at <= ?",
-        Time.new ],
-      :order => 'created_at DESC'
+        Time.new ]
     }
   }
 
-  scope :sitemap, lambda { ||
-    { :conditions => [
-        "news.published_at >= ?",
-        3.days.ago ],
-      :order => 'created_at DESC'
-    }
-  }
+  scope :sitemap, {  }
+
+  default_scope({ :order => "created_at DESC" })
 
   def self.translated(locale = nil, params={})
     locale ||= I18n.locale
-    news = []
-    with_scope :find => params do
-      news = find_all_by_parent_id(nil)
-    end
+    news = find_all_by_parent_id(nil)
     return news if locale == I18n.default_locale
     news.map { |n| n.translation(locale) }
   end
