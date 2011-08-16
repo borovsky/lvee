@@ -33,7 +33,9 @@ Rails.application.routes.draw do
       resources :statuses do
         as_routes
       end
-      resources :sponsors
+      resources :sponsors do
+        as_routes
+      end
     end
 
     namespace :editor do
