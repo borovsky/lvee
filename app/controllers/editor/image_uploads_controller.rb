@@ -10,7 +10,6 @@ module Editor
     active_scaffold :image_upload do |config|
       cls = Editor::ImageUploadsController
  
-      config.file_column_fields
       config.columns = cls::COLUMNS
       config.create.columns = cls::CREATE_COLUMNS
       config.list.per_page = 100

@@ -49,7 +49,9 @@ Rails.application.routes.draw do
           put :change
         end
       end
-      resources :image_uploads
+      resources :image_uploads do
+        as_routes
+      end
     end
 
     match "/main" => 'main#index', :as => "main_page"

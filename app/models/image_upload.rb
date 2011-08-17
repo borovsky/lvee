@@ -1,7 +1,5 @@
-require 'RMagick'
-
 class ImageUpload < ActiveRecord::Base
-  mount_uploader :image, ImageUploader
+  mount_uploader :file, ImageUploader
 
   before_validation :method => :set_image_size
 

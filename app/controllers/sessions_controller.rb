@@ -11,8 +11,8 @@ class SessionsController < ApplicationController
         current_user.remember_me unless current_user.remember_token?
         cookies.permanent["auth_token"] = { :value => self.current_user.remember_token, :expires => self.current_user.remember_token_expires_at }
       end
-      redirect_back_or_default(user_path(:id => current_user.id))
       flash[:notice] = t('message.session.logged', :user_name => h(params[:login]))
+      redirect_back_or_default(user_path(:id => current_user.id))
     else
       flash[:error] = t('message.session.failed')
       render :action => 'new'
