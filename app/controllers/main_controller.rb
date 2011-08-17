@@ -2,7 +2,7 @@ class MainController < ApplicationController
   SITEMAP_CATEGORIES = %w(conference reports sponsors contacts)
 
   def index
-    @news = News.published.limit(5)
+    @news = News.published
   end
 
   def select_lang

@@ -28,7 +28,7 @@ module ApplicationHelper
       html << content_tag(:p, message, :class => key) if(message)
     end
     flash.discard
-    html
+    html.html_safe
   end
 
   def page_title

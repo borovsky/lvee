@@ -1,4 +1,4 @@
-<% news = News.published.translated(I18n.locale, :limit => 3)%>
+<% news = @news.limit(3).translated(I18n.locale)%>
 
 <% news.each_with_index do |n, index| -%>
   <div class="news-column<%= (index == 0) ? ' first' : '' %>">
