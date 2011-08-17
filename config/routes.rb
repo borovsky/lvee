@@ -45,6 +45,7 @@ Rails.application.routes.draw do
         post :upload, :on => :member
       end
       resources :metainfos do
+        as_routes
         collection do
           put :change
         end
