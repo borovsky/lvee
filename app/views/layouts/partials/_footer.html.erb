@@ -7,4 +7,13 @@
     <a href="http://creativecommons.org/licenses/by-sa/3.0/"><img src="/images/80x15.png" alt="licensed under Creative Commons" /></a>
     <p><%= t('message.license.text')%></p>
   </div>
+
+<script type="text/javascript">
+  (function() {
+    window.___gcfg = {lang: '<%= session[:lang] %>'};
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
 </div><!-- footer -->

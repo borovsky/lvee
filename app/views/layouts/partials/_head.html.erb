@@ -10,9 +10,6 @@
   <%= stylesheet_link_tag "style" %>
   <%= javascript_include_tag "prototype", "menu" %>
   <%= javascript_include_tag "admin" if admin?%>
-  <script type="text/javascript" src="https://apis.google.com/js/plusone.js">
-    {lang: '<%= session[:lang] %>'}
-  </script>
   <% if @canonical_url %>
     <link rel="canonical" href="<%= @canonical_url %>" />
   <% end %>
