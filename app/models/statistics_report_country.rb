@@ -1,7 +1,7 @@
 require 'garb'
 
 class StatisticsReportCountry
-  extend  Garb::Resource
+  extend  Garb::Model
 
   metrics :visits
   dimensions :country

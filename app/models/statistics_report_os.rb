@@ -1,7 +1,7 @@
 require 'garb'
 
 class StatisticsReportOs
-  extend  Garb::Resource
+  extend  Garb::Model
 
   metrics :visits
   dimensions :operatingSystem

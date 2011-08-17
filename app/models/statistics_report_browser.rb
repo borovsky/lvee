@@ -1,7 +1,7 @@
 require 'garb'
 
 class StatisticsReportBrowser
-  extend  Garb::Resource
+  extend  Garb::Model
 
   metrics :visits
   dimensions :browser

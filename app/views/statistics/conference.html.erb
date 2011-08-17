@@ -9,7 +9,7 @@
     <th><%= t('label.user.country') %></th>
     <th><%= t('label.common.count') %></th>
   </tr>
-  <%= @countries.each_with_index do |stat, i| -%>
+  <% @countries.each_with_index do |stat, i| -%>
   <tr class="<%= i % 2 == 1 ? 'odd' : 'even'%>">
     <td><%= stat.first%></td>
     <td><%= stat.second %></td>
