@@ -23,14 +23,6 @@ GIT
       verification
 
 GIT
-  remote: git://github.com/vhochstein/jquery-rails.git
-  revision: 51615ca6e217118bbc69595efcd3e2ce49712101
-  specs:
-    jquery-rails_vho (0.0.2)
-      railties (~> 3.0)
-      thor (~> 0.14)
-
-GIT
   remote: git://github.com/xspond/acts_as_versioned.git
   revision: af618b56aff16b4db6904e61950fbab501928495
   specs:
@@ -92,6 +84,9 @@ GEM
       crack (>= 0.1.6)
     hike (1.2.0)
     i18n (0.6.0)
+    jquery-rails (1.0.13)
+      railties (~> 3.0)
+      thor (~> 0.14)
     mail (2.3.0)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -174,7 +169,7 @@ DEPENDENCIES
   coffee-rails
   exception_notification_rails3
   garb
-  jquery-rails_vho!
+  jquery-rails
   mysql2
   rails (~> 3.1.0.rc5)
   render_component_vho!
