@@ -66,6 +66,7 @@ Rails.application.routes.draw do
     match "users/list" => 'users#list'
 
     resources :users do
+      as_routes
       get :activate, :on => :member
       collection do
         get :current
@@ -73,6 +74,7 @@ Rails.application.routes.draw do
       end
 
       resources :conference_registrations do
+        as_routes
         member do
           match :badges
           match :cancel

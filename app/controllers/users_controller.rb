@@ -15,19 +15,19 @@ class UsersController < ApplicationController
   LOCALIZATION_LABEL_PREFIX = "label.user."
   LOCALIZATION_DESCRIPTION_PREFIX = "description.user."
 
-  active_scaffold :users do
+  active_scaffold :users do |cfg|
     cls = UsersController
-    self.actions = [:create, :update]
-    self.columns = cls::COLUMNS
-    self.create.columns = cls::COLUMNS
-    self.update.columns = cls::USER_EDITABLE_COLUMNS
+    cfg.actions = [:create, :update]
+    cfg.columns = cls::COLUMNS
+    cfg.create.columns = cls::COLUMNS
+    cfg.update.columns = cls::USER_EDITABLE_COLUMNS
 
-    self.columns[:subscribed].form_ui = :checkbox
-    self.columns[:subscribed_talks].form_ui = :checkbox
-    self.columns[:password].form_ui = :password
-    self.columns[:password_confirmation].form_ui = :password
-    self.columns[:country].form_ui = :country
-    self.columns[:country].options[:priority] = cls::PRIORITY_COUNTRIES
+    cfg.columns[:subscribed].form_ui = :checkbox
+    cfg.columns[:subscribed_talks].form_ui = :checkbox
+    cfg.columns[:password].form_ui = :password
+    cfg.columns[:password_confirmation].form_ui = :password
+    cfg.columns[:country].form_ui = :country
+    cfg.columns[:country].options[:priority] = cls::PRIORITY_COUNTRIES
     User::REQUIRED_FIELDS.each{|i| self.columns[i].required = true }
   end
 
@@ -41,9 +41,6 @@ class UsersController < ApplicationController
 
   def current
     redirect_to user_path(:id => current_user.id)
-  end
-
-  def edit    
   end
 
   def restore

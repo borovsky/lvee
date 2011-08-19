@@ -6,7 +6,7 @@ module Editor
 
     active_scaffold :languages do |cfg|
       cfg.columns = [:name, :code3, :description, :published]
-      cfg.actions.exclude :create, :show, :search
+      cfg.actions.exclude :show, :search
       cfg.action_links.add(:show, :label => :download, :type => :member, :page => true, :parameters => {:format => :yml})
       cfg.action_links.add(:upload_form, :label => :upload, :type => :member, :parameters => {})
     end

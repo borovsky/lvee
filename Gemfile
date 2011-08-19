@@ -14,7 +14,7 @@ gem 'mysql2'
 gem 'rmagick'
 gem 'carrierwave', '0.5.6'
 
-gem 'jquery-rails'
+gem 'jquery-rails_vho', :git => 'https://github.com/vhochstein/jquery-rails.git'
 gem 'verification', :git => 'git://github.com/beastaugh/verification.git'
 gem 'render_component_vho', :git => 'git://github.com/nodeta/render_component.git'  #'git://github.com/vhochstein/render_component.git'
 gem 'active_scaffold_vho', :git => 'git://github.com/tonyday/active_scaffold.git' #'git://github.com/vhochstein/active_scaffold.git'
@@ -29,6 +29,7 @@ group :test do
   gem "rspec-expectations", ">= 2.6.0"
   gem "rspec-mocks", ">= 2.6.0"
   gem "test-unit"
+  gem 'webrat'
 end
 
 group :assets do

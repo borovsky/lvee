@@ -1,6 +1,8 @@
 require 'authenticated_system'
 
 class ApplicationController < ActionController::Base
+  clear_helpers
+  
   include AuthenticatedSystem
 
   before_filter :language_select
@@ -56,8 +58,6 @@ class ApplicationController < ActionController::Base
   def admin_required
     login_required
     return if performed?
-    logger.error(current_user.role)
-    logger.error(current_user.admin?)
     render :text=>t('message.common.access_denied'), :status=>403  unless current_user.admin?
   end
 

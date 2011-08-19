@@ -26,10 +26,6 @@ class ConferenceRegistrationsController < ApplicationController
     end
   end
 
-  def new
-    render :text => "ok" #FIXME
-  end
-
   def index
     redirect_to user_path(:id => current_user.id)
   end
