@@ -6,9 +6,8 @@ module RSpec::Rails::ControllerExampleGroup
   %w(get post put delete head).each do |method|
     class_eval <<-EOV, __FILE__, __LINE__
       def #{method}(action, params = {}, session = nil, flash = nil)
-        @request.env['REQUEST_METHOD'] = '#{method.upcase}' if defined?(@request)
         params = {:lang=>'en'}.merge(params)
-        process(action, params, session, flash)
+        super(action, params, session, flash)
       end
     EOV
   end

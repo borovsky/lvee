@@ -12,6 +12,6 @@ describe "/news/new.html.erb" do
     view.stub!(:current_user=>stub_model(User, :site_editor? => true))
     render
 
-    rendered.should have_selector("form[method=post]", :action => news_items_path(:lang => "en"))
+    rendered.should have_selector("form[method=post]", :action => news_item_index_path(:lang => "en"))
   end
 end

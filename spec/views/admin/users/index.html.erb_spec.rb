@@ -4,17 +4,16 @@ describe "/admin/users/index.html.erb" do
   helper :application
 
   before(:each) do
-    conf = stub(:name =>"LVEE 2009")
+    conf = Conference.new(:name =>"LVEE 2009")
+    conf.save(:validate => false)
+    user1 = User.new(:name => "x", :surname => "y")
+    user1.save(:validate => false)
+    user1.conference_registrations << ConferenceRegistration.new(:conference => conf)
+    user2 = User.new(:name => "a", :surname => "b")
+    user2.save(:validate => false)
+    user2.conference_registrations << ConferenceRegistration.new(:conference => conf)
 
-    assign :users, [
-      stub_model(User, :full_name => "x y",
-        :conference_registrations =>
-        [stub(:conference => conf)],
-        :active? => true),
-      stub_model(User, :full_name => "a b",
-        :conference_registrations =>
-        [stub(:conference => conf)],
-        :active? => false)]
+    assign :users, [user1, user2]
     assign :conferences, [conf]
     assign :statistics, stub(
       :list => {"LVEE 2009" =>

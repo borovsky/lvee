@@ -89,9 +89,8 @@ describe UsersController do
       @user.stub!(:full_name).and_return("Test")
 
       User.stub!(:find).with('100').and_return(@user)
-      controller.stub!(:edit).and_return(true)
 
-      get :edit, :id => '100'
+      get :edit, :id => '100', :lang => 'en'
       assert_response :success
     end
 

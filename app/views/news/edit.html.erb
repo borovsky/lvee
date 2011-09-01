@@ -16,4 +16,4 @@
 <% end %>
 
 <%= link_to t('label.common.show'), news_item_path(:id => @news, :lang => params[:lang]) %> |
-<%= link_to t('label.news.back_to_list'), news_items_path(:lang => params[:lang]) %>
+<%= link_to t('label.news.back_to_list'), news_item_index_path(:lang => params[:lang]) %>

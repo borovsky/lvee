@@ -7,7 +7,7 @@ describe "/news/show.html.erb" do
     @news = stub_model(News,
       :title => 'xyz',
       :created_at => Time.new,
-      :user => stub(:full_name => "Test User")
+      :user => stub_model(User, :full_name => "Test User")
       )
     assign :news, @news
   end

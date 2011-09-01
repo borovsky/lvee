@@ -1,4 +1,5 @@
 require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
+require 'stringio'
 
 describe Editor::LanguagesController do
 
@@ -83,7 +84,6 @@ describe Editor::LanguagesController do
       login_as(@editor)
 
       mock_en = mock
-      mock_up = mock
       trans = mock
       translation = mock
       
@@ -91,6 +91,7 @@ describe Editor::LanguagesController do
       Language.should_receive(:find).with('be').and_return(lang)
 
       YAML.should_receive(:load_file).with("#{LOCALE_DIR}/en.yml").and_return({"en" => mock_en})
+      mock_up = Rack::Test::UploadedFile.new(File.join(Rails.root, "config/locales", "en.yml"), "text/yaml")
       mock_up.should_receive(:read).and_return(trans)
 
       YAML.should_receive(:load).with(trans).and_return(translation)
@@ -101,9 +102,9 @@ describe Editor::LanguagesController do
 
       File.should_receive(:open).with("#{LOCALE_DIR}/be.yml", "w").and_yield(mock_file)
 
-      get :upload, :id => "be", :language => mock_up
+      post :upload, :id => "be", :language => mock_up
 
-      response.should redirect_to(editor_languages_url(:id => 'be'))
+      response.should redirect_to(editor_languages_url())
     end
   end
 end

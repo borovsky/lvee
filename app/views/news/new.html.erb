@@ -4,7 +4,7 @@
 
 <div id="preview_place"> </div>
 
-<%= form_for(@news, :url => news_items_path(:lang => params[:lang]) ) do |f| %>
+<%= form_for(@news, :url => news_item_index_path(:lang => params[:lang]) ) do |f| %>
 <%= render :partial => "/news/form", :locals => {:f => f} %>
   <p>
     <%# FIXME %>
@@ -14,4 +14,4 @@
   </p>
 <% end %>
 
-<%= link_to t('label.news.back_to_list'), news_items_path(:lang => params[:lang]) %>
+<%= link_to t('label.news.back_to_list'), news_item_index_path(:lang => params[:lang]) %>

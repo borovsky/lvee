@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '~>3.1.0.rc5'
+gem 'rails', '~>3.1.0'
 
 gem 'acts_as_versioned', :git => "git://github.com/xspond/acts_as_versioned.git"
 
@@ -16,8 +16,8 @@ gem 'carrierwave', '0.5.6'
 
 gem 'jquery-rails_vho', :git => 'https://github.com/vhochstein/jquery-rails.git'
 gem 'verification', :git => 'git://github.com/beastaugh/verification.git'
-gem 'render_component_vho', :git => 'git://github.com/nodeta/render_component.git'  #'git://github.com/vhochstein/render_component.git'
-gem 'active_scaffold_vho', :git => 'git://github.com/tonyday/active_scaffold.git' #'git://github.com/vhochstein/active_scaffold.git'
+gem 'render_component_vho', :git => 'git://github.com/vhochstein/render_component.git'
+gem 'active_scaffold_vho', :git => 'git://github.com/vhochstein/active_scaffold.git'
 
 gem 'exception_notification_rails3', :require => 'exception_notifier'
 
