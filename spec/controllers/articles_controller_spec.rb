@@ -3,7 +3,7 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 describe ArticlesController do
 
   def mock_article(stubs={})
-    @mock_article ||= stub_model(Article, stubs)
+    @mock_article ||= stub_model(Article, {:locale => "by", :category => "conference", :name => "name"}.merge(stubs))
   end
 
   before :each do

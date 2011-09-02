@@ -22,7 +22,7 @@ class NewsController < ApplicationController
   def show
     @news = News.find(params[:id]).translation
     @title = @news.title
-    @canonical_url = news_url(:id => @news.parent_id || @news.id) unless @news.locale == params[:lang]
+    @canonical_url = news_item_index_url(:id => @news.parent_id || @news.id) unless @news.locale == params[:lang]
 
     respond_to do |format|
       format.html # show.html.erb
