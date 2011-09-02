@@ -6,7 +6,7 @@ module Admin
     before_filter :admin_required
 
     USER_CSV_COLUMNS = [:login, :full_name, :email, :country, :city, :occupation, :projects]
-    REGISTRATION_CSV_COLUMNS = [:user_type, :status_name, :comment, :proposition, :quantity, :days, :meeting, :phone, :residence, :floor, :transport_to, :transport_from, :food, :tshirt]
+    REGISTRATION_CSV_COLUMNS = [:user_type, :status_name, :comment, :proposition, :quantity, :days, :meeting, :phone, :residence, :floor, :transport_to, :transport_from, :food, :tshirt, :created_at]
 
     layout "admin"
 
@@ -43,6 +43,9 @@ module Admin
     end
 
     def registrations
+      if params[:id] == 'current'
+        params[:id] = Conference.all(:order => "finish_date DESC").first.id
+      end
       redirect_to admin_conference_registrations_path(:conference_id => params[:id])
     end
 

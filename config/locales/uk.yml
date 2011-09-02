@@ -283,6 +283,7 @@ uk:
       badges_title: "Badges for %{conference}"
       cancel_registration: "Cancel registration"
       comment: "Registration's Comment"
+      created_at: "Conference Registration Date"
       days: "Дні участі"
       edit: " %{conference} participant's data"
       floor: "Can you sleep in a tent?"
@@ -308,6 +309,7 @@ uk:
         independent: Independent
       tshirt: "Розмір футболки"
       update_model: "Conference Registration"
+      updated_at: "Last Modified"
     diff: 
       change_article_title: "Порівняння статті %{article} з %{from} до %{to}"
       change_wiki_title: "Порівняння сторінки '%{wiki_page}' з %{from} до %{to}"
@@ -386,6 +388,7 @@ uk:
       city: Місто
       country: Країна
       create: Реєструватися
+      created_at: "Registration Date"
       edit: "Редагувати профіль"
       email: "Адреса електронної пошти"
       first_name: Ім'я
@@ -407,6 +410,7 @@ uk:
       title: "%{full_name} (%{login}), ваш профіль у ваших руках"
       to_profile: "На ваш профіль"
       update_model: "Edit your personal data"
+      updated_at: "Last Updated"
     wiki_page: 
       body: Зміст
       creating: "Створити Wiki-сторінку"
@@ -445,6 +449,7 @@ uk:
     admin: 
       conference_registrations: "Conference registrations admin"
       conferences: "Conferences admin"
+      current_conference_registration: "Current conference registration"
       info_mailer: "Mailer from info@lvee.org"
       sponsors: "Sponsors admin"
       statuses: "Statuses admin"
@@ -477,7 +482,13 @@ uk:
       about: "Про доповіді"
       abstract: "Правила оформлення тез"
       category: Доповіді
-      materials: "Матеріали минулих конференцій"
+      materials_2005: "Матеріали LVEE 2005"
+      materials_2006: "Матеріали LVEE 2006"
+      materials_2007: "Матеріали LVEE 2007"
+      materials_2008: "Матеріали LVEE 2008"
+      materials_2009: "Матеріали LVEE 2009"
+      materials_2010: "Матеріали LVEE 2010"
+      materials_2011: "Матеріали LVEE 2011"
       program: "Програма конференції"
     sponsors: Спонсори
     user: 
@@ -493,7 +504,7 @@ uk:
       sure: "Ви впевнені?"
     conference: 
       created: "Конференція успішно створена"
-      slogan: "Шоста міжнародна конференція розробників<br />і користувачів вільного програмного забезпечення"
+      slogan: "Сьома міжнародна конференція розробників<br />і користувачів вільного програмного забезпечення"
       status: "Реєстрація на конференцію: %{status}."
       updated: "Конференція успішно оновлена"
     iefuck: 
@@ -559,9 +570,9 @@ uk:
   sidebar: 
     information_sponsor: "Інформаційні партнери"
     organizers: Організатори
-    sponsors: "Спонсори 2010"
-    technical_partner: "Технічний партнер"
-    technical_sponsor: "Технічний спонсор"
+    sponsors: Спонсори
+    technical_partner: "Технічнi партнери"
+    technical_sponsor: "Технічнi спонсори"
   support: 
     array: 
       last_word_connector: " і "

@@ -220,6 +220,7 @@ pl:
       badges_title: "Badges for %{conference}"
       cancel_registration: "Cancel registration"
       comment: "Registration's Comment"
+      created_at: "Conference Registration Date"
       days: "Dni uczestnictwa"
       edit: " %{conference} participant's data"
       floor: "Can you sleep in a tent?"
@@ -245,6 +246,7 @@ pl:
         independent: Independent
       tshirt: "Rozmiar koszulek"
       update_model: "Conference Registration"
+      updated_at: "Last Modified"
     diff: 
       change_article_title: "Diff for article %{article} from version %{from} to %{to}"
       change_wiki_title: "Diff for page '%{wiki_page}' from version %{from} to %{to}"
@@ -323,6 +325,7 @@ pl:
       city: Miasto
       country: Kraj
       create: "Zarejestruj się"
+      created_at: "Registration Date"
       edit: "Edytuj profil"
       email: "Adres elektroniczny"
       first_name: Imię
@@ -344,6 +347,7 @@ pl:
       title: "%{full_name} (%{login}), Twój profil w Twoich rękach"
       to_profile: "Do profilu"
       update_model: "Edit your personal data"
+      updated_at: "Last Updated"
     wiki_page: 
       body: Body
       creating: "Creating Wiki Page"
@@ -382,6 +386,7 @@ pl:
     admin: 
       conference_registrations: "Administrator rejestracji na konferencję"
       conferences: "Administrator konferencji"
+      current_conference_registration: "Current conference registration"
       info_mailer: "Rozsyłanie listy mailingowej z info@lvee.org"
       sponsors: "Administrator sponsorów"
       statuses: "Administrator statusów"
@@ -414,7 +419,13 @@ pl:
       about: Sprawozdania
       abstract: "Streszczenie wytyczne"
       category: Sprawozdania
-      materials: "Materiały przeszłych konferencji"
+      materials_2005: "Materiały LVEE 2005"
+      materials_2006: "Materiały LVEE 2006"
+      materials_2007: "Materiały LVEE 2007"
+      materials_2008: "Materiały LVEE 2008"
+      materials_2009: "Materiały LVEE 2009"
+      materials_2010: "Materiały LVEE 2010"
+      materials_2011: "Materiały LVEE 2011"
       program: "Program konferencji"
     sponsors: Sponsorzy
     user: 
@@ -430,7 +441,7 @@ pl:
       sure: "Czy na pewno??"
     conference: 
       created: "Pomyślnie utworzono konferencję"
-      slogan: "Szósta Międzynarodowa konferencja twórców i użytkowników<br />Free Software / Open Source (FS/OS)"
+      slogan: "Siódma Międzynarodowa konferencja twórców i użytkowników<br />Free Software / Open Source (FS/OS)"
       status: "Rejestracja na konferencję: %{status}."
       updated: "Pomyślnie zaktualizowano konferencję"
     iefuck: 
@@ -494,7 +505,7 @@ pl:
   sidebar: 
     information_sponsor: "Partnerzy informacyjni"
     organizers: Organizatorzy
-    sponsors: "Sponsorzy w roku 2010"
+    sponsors: Sponsorzy
     technical_partner: "Partnerzy techniczni"
     technical_sponsor: "Sponsorzy techniczni"
   support: 

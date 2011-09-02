@@ -403,19 +403,19 @@ div.border-news.first {
 }
 
 
-#sponsors-box {
+#friends-box {
 	float: right;
 	margin-left: 30px;
 	width: 280px;
 }
 
-#sponsor-top {
-	background: #fff url(../images/bg-sponsor-top.png) no-repeat;
+#friend-top {
+	background: #fff url(../images/bg-friend-top.png) no-repeat;
 	height: 11px;
 	width: 280px;
 }
 
-.sponsors {
+.friends {
 	list-style-type: none;
 	margin: 0;
 	min-height: 300px;
@@ -423,11 +423,11 @@ div.border-news.first {
 	width: 230px;
 }
 
-li.sponsor {
+li.friend {
 	margin-bottom: 25px;
 }
 
-li.sponsor a.sponsor-header {
+li.friend a.friend-header {
 	color: #60656a;
 	display: block;
 	font-size: 20px;
@@ -436,14 +436,14 @@ li.sponsor a.sponsor-header {
 	text-decoration: none;
 }
 
-li.sponsor ul {
+li.friend ul {
 	border-bottom: 1px solid #e2e2e2;
 	list-style-type: none;
 	margin: 25px 0;
 	padding: 0;
 }
 
-li.sponsor li a {
+li.friend li a {
 	display: block;
 	margin: 20px 0;
 	text-align: center;
@@ -618,6 +618,9 @@ a[href $= '.bz2'] {
 	background-position: 0 0;
 	background: transparent url(/images/ftypes/document-zipper.png) no-repeat;
 }
+
+a[href $= '.ogv'],
+a[href $= '.mp4'],
 a[href $= '.avi'] {
 	border: none;
 	padding: 2px 0 2px 18px;
@@ -660,7 +663,7 @@ table.participants th,td {padding:4px}
 #badges .badge {
     width: 570px;
     height: 348px;
-    background: url(/images/badge2010.png) no-repeat bottom left;
+    background: url(/images/badge2011.png) no-repeat bottom left;
     margin-bottom: 20px;
 }
 

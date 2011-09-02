@@ -1,10 +1,10 @@
 <% sponsors = Sponsor.list %>
-<ul class="sponsors">
+<ul class="friends">
   <% SPONSOR_TYPES.each do |type| -%>
-    <li class="sponsor">
+    <li class="friend">
       <%= link_to(t("sidebar.#{type[1]}"), { :controller => "/articles",
           :category => 'contacts', :name => 'index', :action => 'show'},
-        :class => 'sponsor-header') %>
+        :class => 'friend-header') %>
       <ul>
         <%= render :partial => "layouts/partials/sponsor", :collection => sponsors[type[0]] %>
       </ul>

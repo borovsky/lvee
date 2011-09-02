@@ -20,6 +20,7 @@ class ConferenceRegistration < ActiveRecord::Base
     where("conference_id = ? AND status_name <> ?", conference, CANCELLED_STATUS).includes(:user).
       order("users.country ASC, users.city ASC, users.last_name ASC, users.first_name")
   }
+  attr_accessor :import
 
   def status
     @status ||= Status.find_by_name(@status_name)
@@ -44,6 +45,15 @@ class ConferenceRegistration < ActiveRecord::Base
     save!
   end
 
+  def login
+    user.login
+  end
+
+  def self.find_actual_for_user(user_id)
+    ConferenceRegistration.find_all_by_user_id(user_id, :order => "conferences.start_date",
+      :include => [:conference, :user])
+  end
+
   def filled
     ((self.quantity || 0) > 0) and
       !self.days.blank? and
@@ -63,9 +73,28 @@ class ConferenceRegistration < ActiveRecord::Base
     end
   end
 
+  def self.participants(conference)
+    find(:all,
+      :conditions => ["conference_id = ? AND status_name <> ?", conference, CANCELLED_STATUS],
+      :include => [:user],
+      :order => "users.country ASC, users.city ASC, users.last_name ASC, users.first_name")
+  end
+
+  def self.create_imported(conference, user)
+    cr = ConferenceRegistration.new(:user => user, :conference => conference, :quantity => 1)
+
+    cr.import = true
+    if(cr.save)
+      "Created registration for #{user.login} (#{user.email}) to conference #{conference.name}"
+    else
+      "Error saving conference registration for #{user.login} (#{user.email}): <ul><li>" + cr.errors.full_messages.join("</li><li>") + "</li></ul>"
+    end
+    
+  end
+
   protected
   def check_transport
-    !admin && approved?
+    !admin && approved? && !import
   end
 
   validate do

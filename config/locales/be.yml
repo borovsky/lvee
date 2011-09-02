@@ -215,6 +215,7 @@ be:
       badges_title: "Значкі на %{conference}"
       cancel_registration: "Cancel registration"
       comment: "Registration's Comment"
+      created_at: "Conference Registration Date"
       days: "Дні ўдзелу"
       edit: "Звесткі пра ўдзельніка %{conference}"
       floor: "Ці згодныя вы спаць у намёце?"
@@ -240,6 +241,7 @@ be:
         independent: Самастойна
       tshirt: "Памер футболкі"
       update_model: "Рэгістрацыя на канферэнцыю"
+      updated_at: "Last Modified"
     diff: 
       change_article_title: "Змены ў артыкуле %{article} з адмены %{from} да %{to}"
       change_wiki_title: "Змены на старонцы '%{wiki_page}' з адмены %{from} да %{to}"
@@ -318,6 +320,7 @@ be:
       city: Горад
       country: Краіна
       create: Зарэгістраваць
+      created_at: "Registration Date"
       edit: "Змяніць профільныя звесткі"
       email: "Электронная пошта"
       first_name: Імя
@@ -339,6 +342,7 @@ be:
       title: "%{full_name} (%{login}), за яго адказваць вам"
       to_profile: "Да вашага профілю"
       update_model: "Змена асабістых звестак"
+      updated_at: "Last Updated"
     wiki_page: 
       body: Цела
       creating: "Стварыць Wiki-старонку"
@@ -377,6 +381,7 @@ be:
     admin: 
       conference_registrations: "Адміністратар рэгістрацый на канферэнцыю"
       conferences: "Адміністратар канферэнцыі"
+      current_conference_registration: "Current conference registration"
       info_mailer: "Пошта з info@lvee.org"
       sponsors: "Адміністратар фундатарства"
       statuses: "Адміністратар статусаў"
@@ -409,7 +414,13 @@ be:
       about: "Пра выступленні"
       abstract: "Афармленне тэзісаў"
       category: Выступленні
-      materials: "Матэрыялы мінулых канферэнцый"
+      materials_2005: "Матэрыялы LVEE 2005"
+      materials_2006: "Матэрыялы LVEE 2006"
+      materials_2007: "Матэрыялы LVEE 2007"
+      materials_2008: "Матэрыялы LVEE 2008"
+      materials_2009: "Матэрыялы LVEE 2009"
+      materials_2010: "Матэрыялы LVEE 2010"
+      materials_2011: "Матэрыялы LVEE 2011"
       program: Праграма
     sponsors: Фундатары
     user: 
@@ -425,7 +436,7 @@ be:
       sure: "Вы ўпэўнены?"
     conference: 
       created: "Канферэнцыя паспяхова створаная"
-      slogan: "Шостая міжнародная канферэнцыя распрацоўнікаў<br />і карыстальнікаў свабодных праграм"
+      slogan: "Сёмая міжнародная канферэнцыя распрацоўнікаў<br />і карыстальнікаў свабодных праграм"
       status: "Рэгістрацыя на канферэнцыю %{status}."
       updated: "Канферэнцыя паспяхова актуалізаваная"
     iefuck: 
@@ -491,9 +502,9 @@ be:
   sidebar: 
     information_sponsor: "Інфармацыйныя партнэры"
     organizers: Арганізатары
-    sponsors: "Фундатары 2010"
+    sponsors: Фундатары
     technical_partner: "Тэхнічныя партнэры"
-    technical_sponsor: "Тэхнічны фундатар"
+    technical_sponsor: "Тэхнічныя фундатары"
   support: 
     array: 
       last_word_connector: " і "

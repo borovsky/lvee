@@ -282,6 +282,7 @@ hu:
       badges_title: "Badges for %{conference}"
       cancel_registration: "Cancel registration"
       comment: "Registration's Comment"
+      created_at: "Conference Registration Date"
       days: "Részvételi napok"
       edit: " %{conference} participant's data"
       floor: "Can you sleep in a tent?"
@@ -307,6 +308,7 @@ hu:
         independent: Independent
       tshirt: Pólóméret
       update_model: "Conference Registration"
+      updated_at: "Last Modified"
     diff: 
       change_article_title: "Diff for article %{article} from version %{from} to %{to}"
       change_wiki_title: "Diff for page '%{wiki_page}' from version %{from} to %{to}"
@@ -385,6 +387,7 @@ hu:
       city: Város
       country: Ország
       create: Regisztrálás
+      created_at: "Registration Date"
       edit: "Profil szerkesztése"
       email: "Email cím"
       first_name: Keresztnév
@@ -406,6 +409,7 @@ hu:
       title: "%{full_name} (%{login}), profilbabrálás"
       to_profile: "A profiljához"
       update_model: "Edit your personal data"
+      updated_at: "Last Updated"
     wiki_page: 
       body: Body
       creating: "Creating Wiki Page"
@@ -444,6 +448,7 @@ hu:
     admin: 
       conference_registrations: "Conference registrations admin"
       conferences: "Conferences admin"
+      current_conference_registration: "Current conference registration"
       info_mailer: "Mailer from info@lvee.org"
       sponsors: "Sponsors admin"
       statuses: "Statuses admin"
@@ -476,7 +481,13 @@ hu:
       about: "Az előadásokról"
       abstract: "Vázlatírási szabályok"
       category: Előadások
-      materials: "Múltbéli konferenciák anyagai"
+      materials_2005: "LVEE 2005 anyagai"
+      materials_2006: "LVEE 2006 anyagai"
+      materials_2007: "LVEE 2007 anyagai"
+      materials_2008: "LVEE 2008 anyagai"
+      materials_2009: "LVEE 2009 anyagai"
+      materials_2010: "LVEE 2010 anyagai"
+      materials_2011: "LVEE 2011 anyagai"
       program: Program
     sponsors: Szponzorok
     user: 
@@ -492,7 +503,7 @@ hu:
       sure: "Biztos benne?"
     conference: 
       created: "A konferencia sikeresen létrejött"
-      slogan: "Szabad szoftvert használók és fejlesztők<br />6 nemzetközi konferenciája"
+      slogan: "Szabad szoftvert használók és fejlesztők<br />7 nemzetközi konferenciája"
       status: "Állapota: %{status}."
       updated: "A konferencia sikeresen frissítődött"
     iefuck: 
@@ -556,7 +567,7 @@ hu:
   sidebar: 
     information_sponsor: "Információs partnerek"
     organizers: Szervezők
-    sponsors: "2010-as szponzorok"
+    sponsors: Szponzorok
     technical_partner: "Technical partners"
     technical_sponsor: "Műszaki szponzorok"
   support: 

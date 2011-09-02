@@ -5,10 +5,9 @@
   <meta name="keywords" content="<%= @metainfo.keywords %>" />
   <meta name="description" content="<%= @metainfo.description %>" />
 
-
   <%= stylesheet_link_tag "application", :debug => Rails.env.development? %>
   <%= stylesheet_link_tag "print", :media => "print" %>
-  <% if admin? %>
+  <% if admin? || editor? %>
     <%= javascript_include_tag "admin", :debug => Rails.env.development? %>
     <script type="text/javascript">
       $.datepicker.setDefaults($.datepicker.regional['<%= I18n.locale%>']);
@@ -17,6 +16,9 @@
     <%= javascript_include_tag "application", :debug => Rails.env.development? %>
   <% end %>
 
+  <% if @canonical_url %>
+    <link rel="canonical" href="<%= @canonical_url %>" />
+  <% end %>
   <%= auto_discovery_link_tag(:rss, rss_news_item_index_path) %>
 
   <%= csrf_meta_tag %>

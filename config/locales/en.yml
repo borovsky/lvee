@@ -212,6 +212,8 @@ en:
       badges: Badges
       badges_title: "Badges for %{conference}"
       cancel_registration: "Cancel registration!"
+      comment: "Registration's Comment"
+      created_at: "Conference Registration Date"
       days: "Participation days"
       edit: " %{conference} participant's data"
       floor: "Can you sleep in a tent?"
@@ -238,6 +240,7 @@ en:
         independent: Independent
       tshirt: "T-Shirt size"
       update_model: "Conference Registration"
+      updated_at: "Last Modified"
     diff: 
       change_article_title: "Diff for article %{article} from version %{from} to %{to}"
       change_wiki_title: "Diff for page '%{wiki_page}' from version %{from} to %{to}"
@@ -316,6 +319,7 @@ en:
       city: Location
       country: Country
       create: Register
+      created_at: "Registration Date"
       edit: "Edit personal data"
       email: E-mail
       first_name: "First Name"
@@ -337,6 +341,7 @@ en:
       title: "%{full_name} (%{login}), your profile is in your hands"
       to_profile: "To your profile"
       update_model: "Edit your personal data"
+      updated_at: "Last Updated"
     wiki_page: 
       body: Body
       creating: "Creating Wiki Page"
@@ -375,6 +380,7 @@ en:
     admin: 
       conference_registrations: "Conference registrations admin"
       conferences: "Conferences admin"
+      current_conference_registration: "Current conference registration"
       info_mailer: "Mailer from info@lvee.org"
       sponsors: "Sponsors admin"
       statuses: "Statuses admin"
@@ -407,7 +413,13 @@ en:
       about: "On presentations"
       abstract: "Abstract guidelines"
       category: Presentations
-      materials: "Past conferences materials"
+      materials_2005: "LVEE 2005 materials"
+      materials_2006: "LVEE 2006 materials"
+      materials_2007: "LVEE 2007 materials"
+      materials_2008: "LVEE 2008 materials"
+      materials_2009: "LVEE 2009 materials"
+      materials_2010: "LVEE 2010 materials"
+      materials_2011: "LVEE 2011 materials"
       program: Program
     sponsors: Sponsors
     user: 
@@ -423,7 +435,7 @@ en:
       sure: "Are you sure?"
     conference: 
       created: "Conference created successfully"
-      slogan: "The 6th International conference of developers and users<br />of free / open source software"
+      slogan: "The 7th International conference of developers and users<br />of free / open source software"
       status: "Registration to conference %{status}."
       updated: "Conference updated successfully"
     iefuck: 
@@ -487,7 +499,7 @@ en:
   sidebar: 
     information_sponsor: "Information partners"
     organizers: Organizers
-    sponsors: "Sponsors of 2010"
+    sponsors: Sponsors
     technical_partner: "Technical partners"
     technical_sponsor: "Technical sponsor"
   support: 
