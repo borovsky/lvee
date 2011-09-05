@@ -12,7 +12,8 @@ class ApplicationController < ActionController::Base
 
   def cache_result_for(key, timeout, &block)
     key = fragment_cache_key(key)
-    fragment = read_fragment(key)
+    f = read_fragment(key)
+    fragment = f ? Marshal::load(f) : nil
 
     if(fragment.kind_of?(Array) and
         fragment.length == 2 and
@@ -20,7 +21,7 @@ class ApplicationController < ActionController::Base
       return fragment.second
     end
     result = yield
-    write_fragment(key, [Time.new, result])
+    write_fragment(key, Marshal::dump([Time.new, result]))
     result
   end
 
