@@ -1,34 +1,30 @@
-set :application, "lvee"
-set :repository,  "git://github.com/partizan/lvee.git"
-#set :repository,  "ssh://gitoz@87.230.33.156:2401/var/git/lvee.git"
-set :host, '87.230.33.156'
+$:.unshift(File.expand_path('./lib', ENV['rvm_path'])) 
+require "rvm/capistrano"   
+ 
+require "bundler/capistrano"
 
+# Application
+set :application, "lvee"
+
+# SCM
+set :repository,  "git://github.com/partizan/lvee.git"
 set :scm, :git
+set :branch, "master"
+set :scm_verbose, true
+
 set :deploy_via, :remote_cache
 
-set :user, 'antono'
-set :runner, 'www-data'
+# Where to deploy
+set :host, 'lvee.org'
+set :deploy_to, "/home/partizan/apps/lvee"
+
+server "lvee", :app, :web, :db, :primary => true
+set :user, 'partizan'
+
+
+
+# Server env
+set :using_rvm, true
+set :rvm_type, :user
+set :rvm_ruby_string, 'ruby-1.9.2-p290@global'
 set :use_sudo, false
-
-ssh_options[:paranoid] = false
-ssh_options[:port] = '2401'
-
-
-role :app, host
-role :web, host
-role :db,  host, :primary => true
-
-set :mongrel_conf, "#{deploy_to}/current/config/mongrel_cluster.yml"
-
-
-# TODO gem install mongrel_cluster
-namespace :deploy do
-  task :restart do
-    restart_mongrel_cluster
-  end
-end
-
-task :update_config, :roles => [:app] do
-  run "cp -Rf #{shared_path}/config/* #{release_path}/config"
-end
-after "deploy:update_code", :update_config
