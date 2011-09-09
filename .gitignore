@@ -2,6 +2,7 @@ db/*.sqlite3
 *~
 log/*.log
 *.swp
+config/database.yml
 tags
 coverage
 semantic.cache
