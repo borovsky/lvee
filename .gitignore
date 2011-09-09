@@ -3,12 +3,8 @@ db/*.sqlite3
 log/*.log
 *.swp
 tags
-config/database.yml
 coverage
 semantic.cache
-public/image_upload
-public/sponsor
-public/user
 db/development.sqlite3.save
 db/development_structure.sql
 db/schema.rb
