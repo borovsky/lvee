@@ -1,5 +1,6 @@
 $:.unshift(File.expand_path('./lib', ENV['rvm_path'])) 
 require "rvm/capistrano"   
+
 require "bundler/capistrano"
 
 # Application
@@ -25,5 +26,6 @@ set :user, 'partizan'
 # Server env
 set :using_rvm, true
 set :rvm_type, :user
-set :rvm_ruby_string, 'ruby-1.9.2-p290@global'
+set :rvm_ruby_string, 'ruby-1.9.2-p290'
+
 set :use_sudo, false
