@@ -1,6 +1,6 @@
 rails_root = '/home/partizan/apps/lvee/current'
 rails_env  = 'development'
-pid_file   = '/home/deployer/apps/lvee/shared/pids/unicorn.pid'
+pid_file   = '/home/partizan/apps/lvee/shared/pids/unicorn.pid'
 socket_file= '3000'
 log_file   = "#{rails_root}/log/unicorn.log"
 username   = 'partizan'
