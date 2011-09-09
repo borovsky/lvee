@@ -10,7 +10,7 @@ after "deploy:setup" do
   run "mkdir -p #{deploy_to}/shared/pids && mkdir -p #{deploy_to}/shared/config && mkdir -p #{deploy_to}/shared/var"
 end
 
-after 'deploy:update_code', :roles => :app do
+before 'deploy:assets:precompile', :roles => :app do
   run "rm -f #{current_release}/config/database.yml"
   run "ln -s #{deploy_to}/shared/config/database.yml #{current_release}/config/database.yml"
   run "ln -s #{deploy_to}/shared/config/initializers/google_parameters.rb #{current_release}/config/google_parameters.rb"

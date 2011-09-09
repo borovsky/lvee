@@ -8,19 +8,19 @@ GIT
 
 GIT
   remote: git://github.com/vhochstein/active_scaffold.git
-  revision: 760de342ad8692aa97be8d0eb1494615ab0bef3d
+  revision: 9fb8ae29952a50ddf9cbc3b259565032fed03890
   specs:
     active_scaffold_vho (3.1.0)
-      rails (~> 3.1.0.rc1)
+      rails (~> 3.1.0)
       render_component_vho
       verification
 
 GIT
   remote: git://github.com/vhochstein/render_component.git
-  revision: 1fa47e62ea2f3b562858241251ed3d9c55b3a34f
+  revision: effe82719ab5e5a4e3200ae7798a90c1ceecdd2e
   specs:
-    render_component_vho (3.1.0.rc1)
-      railties (~> 3.1.0.rc1)
+    render_component_vho (3.1.0)
+      railties (~> 3.1.0)
 
 GIT
   remote: git://github.com/xspond/acts_as_versioned.git
@@ -30,7 +30,7 @@ GIT
 
 GIT
   remote: https://github.com/vhochstein/jquery-rails.git
-  revision: 51615ca6e217118bbc69595efcd3e2ce49712101
+  revision: f262d8f63f9f30f177a6255ae8f866f29d7cc7a2
   specs:
     jquery-rails_vho (0.0.2)
       railties (~> 3.0)
@@ -92,6 +92,7 @@ GEM
       crack (>= 0.1.6)
     hike (1.2.1)
     i18n (0.6.0)
+    kgio (2.6.0)
     libv8 (3.3.10.2)
     mail (2.3.0)
       i18n (>= 0.4.0)
@@ -126,6 +127,7 @@ GEM
       rake (>= 0.8.7)
       rdoc (~> 3.4)
       thor (~> 0.14.6)
+    raindrops (0.7.0)
     rake (0.9.2)
     rdoc (3.9.4)
     rmagick (2.13.1)
@@ -162,9 +164,13 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.29)
-    uglifier (1.0.2)
+    uglifier (1.0.3)
       execjs (>= 0.3.0)
       multi_json (>= 1.0.2)
+    unicorn (4.1.1)
+      kgio (~> 2.4)
+      rack
+      raindrops (~> 0.6)
     webrat (0.7.3)
       nokogiri (>= 1.2.0)
       rack (>= 1.0)
@@ -197,6 +203,7 @@ DEPENDENCIES
   test-unit
   therubyracer
   uglifier
+  unicorn
   verification!
   webrat
   ya2yaml
