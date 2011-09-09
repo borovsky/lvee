@@ -21,11 +21,12 @@ set :deploy_to, "/home/partizan/apps/lvee"
 server "lvee", :app, :web, :db, :primary => true
 set :user, 'partizan'
 
-
-
 # Server env
 set :using_rvm, true
 set :rvm_type, :user
 set :rvm_ruby_string, 'ruby-1.9.2-p290'
 
 set :use_sudo, false
+
+set :unicorn_conf, "#{deploy_to}/current/config/unicorn.rb"
+set :unicorn_pid, "#{deploy_to}/shared/pids/unicorn.pid"

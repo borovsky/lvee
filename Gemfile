@@ -38,3 +38,7 @@ group :assets do
   gem 'uglifier'
   gem 'therubyracer'
 end
+
+group :development do
+  gem "capistrano"
+end
