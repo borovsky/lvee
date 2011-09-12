@@ -2,6 +2,8 @@ require 'authenticated_system'
 
 class ApplicationController < ActionController::Base
   clear_helpers
+
+  rescue_from ::AbstractController::ActionNotFound, ::ActiveRecord::RecordNotFound, :with => :not_found_error_handler
   
   include AuthenticatedSystem
 
@@ -9,6 +11,7 @@ class ApplicationController < ActionController::Base
   before_filter :metainfo_load
 
   protect_from_forgery # :secret => 'dc50c44338f5eba496ede18e9ea29cb1'
+
 
   def cache_result_for(key, timeout, &block)
     key = fragment_cache_key(key)
@@ -24,7 +27,6 @@ class ApplicationController < ActionController::Base
     write_fragment(key, Marshal::dump([Time.new, result]))
     result
   end
-
   protected
   def language_select
     lang = params[:lang] || session[:lang]
@@ -123,5 +125,20 @@ class ApplicationController < ActionController::Base
 
   def editor?
     current_user.try(:editor?)
+  end
+
+  protected
+  
+  def not_found_error_handler(*exception)
+    m = request.path.match(/^(\/\w{2}\/)(.*)$/)
+    path = m[2]
+    p path
+    red = NotFoundRedirect.find_by_path path
+    if red
+      to = m[1] + red.target
+      redirect_to to
+    else
+      render :file => "#{Rails.root}/public/404.html", :status => 404, :layout => false
+    end
   end
 end

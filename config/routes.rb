@@ -36,6 +36,9 @@ Rails.application.routes.draw do
       resources :sponsors do
         as_routes
       end
+      resources :not_found_redirects do 
+        as_routes 
+      end
     end
 
     namespace :editor do
@@ -112,4 +115,5 @@ Rails.application.routes.draw do
       put :preview, :on => :collection
     end
   end
+  match '*a', :to => 'errors#routing'
 end
