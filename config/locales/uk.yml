@@ -20,6 +20,7 @@ uk:
         less_than_or_equal_to: "може мати значення менше або рівне %{count}"
         not_a_number: "не є числом"
         odd: "може мати лише парне значення"
+        record_invalid: "record is invalid"
         taken: "вже існує"
         too_long: 
           few: "дуже великої довжини (не може бути більш ніж %{count} символів)"
@@ -451,6 +452,7 @@ uk:
       conferences: "Conferences admin"
       current_conference_registration: "Current conference registration"
       info_mailer: "Mailer from info@lvee.org"
+      not_found_redirects: "Moved pages redirects"
       sponsors: "Sponsors admin"
       statuses: "Statuses admin"
       title: Admin

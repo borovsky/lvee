@@ -56,5 +56,6 @@ ADMIN_MENU = [
       ['menu.admin.current_conference_registration', 'admin/conferences/registrations/current'],
       ['menu.admin.sponsors', 'admin/sponsors'],
       ['menu.admin.info_mailer', 'admin/info_mailer'],
+      ['menu.admin.not_found_redirects', 'admin/not_found_redirects'],
     ]]
 ]

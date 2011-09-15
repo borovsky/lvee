@@ -20,6 +20,7 @@ be:
         less_than_or_equal_to: "мусіць быць не большым за %{count}"
         not_a_number: "не ёсць лічбай"
         odd: "мусіць быць няцотным"
+        record_invalid: "record is invalid"
         taken: "ужо занята"
         too_long: "задоўгае (мусіць быць не большым за %{count} знакаў)"
         too_short: "закароткае (мусіць быць не меншым за %{count} знакаў)"
@@ -383,6 +384,7 @@ be:
       conferences: "Адміністратар канферэнцыі"
       current_conference_registration: "Current conference registration"
       info_mailer: "Пошта з info@lvee.org"
+      not_found_redirects: "Moved pages redirects"
       sponsors: "Адміністратар фундатарства"
       statuses: "Адміністратар статусаў"
       title: Адміністратар

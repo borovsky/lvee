@@ -19,8 +19,8 @@ class ApplicationController < ActionController::Base
     fragment = f ? Marshal::load(f) : nil
 
     if(fragment.kind_of?(Array) and
-        fragment.length == 2 and
-        fragment.first > timeout.ago)
+          fragment.length == 2 and
+          fragment.first > timeout.ago)
       return fragment.second
     end
     result = yield
@@ -76,8 +76,8 @@ class ApplicationController < ActionController::Base
 
   def params_to_lang(lang)
     {:controller => controller_name, :lang => lang, :id => params[:id],
-        :user_id => params[:user_id], :conference_id => params[:conference_id],
-        :category => params[:category], :name => params[:name], :action => action_name}
+      :user_id => params[:user_id], :conference_id => params[:conference_id],
+      :category => params[:category], :name => params[:name], :action => action_name}
   end
 
   #FIXME refactor
@@ -107,7 +107,7 @@ class ApplicationController < ActionController::Base
   def preferred_language(supported_languages=[], default_language=I18n.default_locale)
     # only keep supported languages
     preferred_languages = accepted_languages.select {|l|
-     (supported_languages || []).include?(l[0]) }
+      (supported_languages || []).include?(l[0]) }
 
     if preferred_languages.empty?
       # the browser does accept any supported languages
@@ -131,13 +131,17 @@ class ApplicationController < ActionController::Base
   
   def not_found_error_handler(*exception)
     m = request.path.match(/^(\/\w{2}\/)(.*)$/)
-    path = m[2]
-    p path
-    red = NotFoundRedirect.find_by_path path
-    if red
-      to = m[1] + red.target
-      redirect_to to
-    else
+    if m
+      path = m[2]
+      p path
+      red = NotFoundRedirect.find_by_path path
+      if red
+        to = m[1] + red.target
+        redirect_to to
+      else
+        render :file => "#{Rails.root}/public/404.html", :status => 404, :layout => false
+      end
+    else 
       render :file => "#{Rails.root}/public/404.html", :status => 404, :layout => false
     end
   end

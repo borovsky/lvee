@@ -20,6 +20,7 @@ hu:
         less_than_or_equal_to: "csak kisebb vagy egyenlő lehet, mint %{count}"
         not_a_number: "nem szám"
         odd: "csak páros lehet"
+        record_invalid: "record is invalid"
         taken: "már foglalt"
         too_long: 
           few: "túl hosszú (nem lehet hosszabb, mint %{count} leütés)"
@@ -450,6 +451,7 @@ hu:
       conferences: "Conferences admin"
       current_conference_registration: "Current conference registration"
       info_mailer: "Mailer from info@lvee.org"
+      not_found_redirects: "Moved pages redirects"
       sponsors: "Sponsors admin"
       statuses: "Statuses admin"
       title: Admin

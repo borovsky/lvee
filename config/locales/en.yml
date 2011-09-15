@@ -382,6 +382,7 @@ en:
       conferences: "Conferences admin"
       current_conference_registration: "Current conference registration"
       info_mailer: "Mailer from info@lvee.org"
+      not_found_redirects: "Moved pages redirects"
       sponsors: "Sponsors admin"
       statuses: "Statuses admin"
       title: Admin

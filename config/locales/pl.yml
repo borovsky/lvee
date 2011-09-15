@@ -20,6 +20,7 @@ pl:
         less_than_or_equal_to: "musi być mniejsze lub równe %{count}"
         not_a_number: "nie jest liczbą"
         odd: "musi być nieparzyste"
+        record_invalid: "record is invalid"
         taken: "zostało już zajęte"
         too_long: "jest za długie (maksymalnie %{count} znaków)"
         too_short: "jest za krótkie (minimalnie %{count} znaków)"
@@ -388,6 +389,7 @@ pl:
       conferences: "Administrator konferencji"
       current_conference_registration: "Current conference registration"
       info_mailer: "Rozsyłanie listy mailingowej z info@lvee.org"
+      not_found_redirects: "Moved pages redirects"
       sponsors: "Administrator sponsorów"
       statuses: "Administrator statusów"
       title: Administrator
