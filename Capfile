@@ -15,6 +15,8 @@ before 'deploy:assets:precompile', :roles => :app do
   run "ln -s #{deploy_to}/shared/config/database.yml #{current_release}/config/database.yml"
   run "ln -s #{deploy_to}/shared/config/google_parameters.rb #{current_release}/config/initializers/google_parameters.rb"
   run "ln -s #{deploy_to}/shared/uploads #{current_release}/public/uploads"
+  run "ln -s #{deploy_to}/shared/uploads/image_upload #{current_release}/public/image_upload"
+  run "ln -s #{deploy_to}/shared/media #{current_release}/public/media"
 end
  
 namespace :deploy do
