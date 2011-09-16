@@ -23,8 +23,9 @@ GIT
       railties (~> 3.1.0)
 
 GIT
-  remote: git://github.com/xspond/acts_as_versioned.git
-  revision: af618b56aff16b4db6904e61950fbab501928495
+  remote: git://github.com/wiseleyb/acts_as_versioned.git
+  revision: 5137c8e2ce3868a8e4e882fbdf6d0f4b9883b937
+  branch: rails3
   specs:
     acts_as_versioned (0.5.2)
 
