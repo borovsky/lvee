@@ -11,11 +11,11 @@ describe MainController do
     end
 
     it "should generate params for #sitemap" do
-      {:get => "/be/sitemap.xml"}.should route_to(:controller => "main", :action => "sitemap", :format => "xml", :lang=>"be")
+      {:get => "/sitemap.xml"}.should route_to(:controller => "main", :action => "sitemap")
     end
 
     it "should generate params for #sitemap_news" do
-      {:get => "/be/sitemap_news.xml"}.should route_to(:controller => "main", :action => "sitemap_news", :format => "xml", :lang=>"be")
+      {:get => "/sitemap-news.xml"}.should route_to(:controller => "main", :action => "sitemap_news")
     end
   end
 end

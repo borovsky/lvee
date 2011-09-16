@@ -9,7 +9,7 @@
 
   <p>
     <%= f.submit t('label.common.preview'), "data-remote-preview" => true,
-      "data-update" => 'preview_place', "data-url" => preview_articles_url, "data-method" => "PUT" %>
+      "data-update" => 'preview_place', "data-url" => preview_articles_url(:lang => params[:lang]), "data-method" => "PUT" %>
     <%= f.submit t('label.common.update') %>
   </p>
 <% end %>

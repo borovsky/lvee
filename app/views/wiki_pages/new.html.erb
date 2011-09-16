@@ -8,7 +8,7 @@
 
   <p>
     <%= f.submit t('label.common.preview'), "data-remote-preview" => true,
-      "data-update" => 'preview_place', "data-url" => preview_wiki_pages_url, "data-method" => "PUT" %>
+      "data-update" => 'preview_place', "data-url" => preview_wiki_pages_url(:lang => params[:lang]), "data-method" => "PUT" %>
     <%= f.submit t('label.common.create') %>
   </p>
 <% end %>
