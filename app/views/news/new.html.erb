@@ -5,11 +5,10 @@
 <div id="preview_place"> </div>
 
 <%= form_for(@news, :url => news_item_index_path(:lang => params[:lang]) ) do |f| %>
-<%= render :partial => "/news/form", :locals => {:f => f} %>
+  <%= render :partial => "/news/form", :locals => {:f => f} %>
   <p>
-    <%# FIXME %>
-  <%#= submit_to_remote("preview_btn", t('label.common.preview'),
-       :url => {:action => "preview"}, :update => {:success => 'preview_place'}) %>
+    <%= f.submit t('label.common.preview'), "data-remote-preview" => true,
+      "data-update" => 'preview_place', "data-url" => preview_news_item_index_url, "data-method" => "PUT" %>
     <%= f.submit t('label.common.save') %>
   </p>
 <% end %>

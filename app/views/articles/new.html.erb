@@ -9,9 +9,8 @@
   <%= f.hidden_field :locale %>
 
   <p>
-    <%# FIXME %>
-    <%#= submit_to_remote("preview_btn", t('label.common.preview'),
-         :url => {:action => "preview"}, :update => {:success => 'preview_place'}) %>
+    <%= f.submit t('label.common.preview'), "data-remote-preview" => true,
+      "data-update" => 'preview_place', "data-url" => preview_articles_url, "data-method" => "PUT" %>
     <%= f.submit t('label.common.create') %>
   </p>
 <% end %>

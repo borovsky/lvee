@@ -35,3 +35,23 @@
 
     document.onclick = jsddm_close;
 })();
+$(function(){
+   $("input[data-remote-preview]").click(function(){
+       var btn = $(this);
+       var url = btn.data("url");
+       var dataType = btn.data("type") || ($.ajaxSetting && $.ajaxSettings.dataType);
+       var method = btn.data("method");
+       var update = $("#" + btn.data("update"));
+       var data = btn.parents("form").serializeArray();
+       $.ajax({
+            url: url,
+            dataType: dataType,
+            data: data,
+            type: method || "GET",
+            success: function(data, status, xhr) {
+                update.html(data);
+            }
+        });
+        return false;
+   });
+});
