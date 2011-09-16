@@ -322,10 +322,10 @@ uk:
       to: To
       version: Версія
     editor_log: 
-      article_changed: "Стаття %{object} була змінена %{user}"
-      article_created: "Стаття %{object} була створена %{user}"
-      wiki_page_changed: "Wiki-сторінка %{object} була змінена %{user}"
-      wiki_page_created: "Wiki-сторінка %{object} була створена %{user}"
+      article_changed: "Стаття %{obj} була змінена %{user}"
+      article_created: "Стаття %{obj} була створена %{user}"
+      wiki_page_changed: "Wiki-сторінка %{obj} була змінена %{user}"
+      wiki_page_created: "Wiki-сторінка %{obj} була створена %{user}"
     language: 
       code3: "3-letter (ISO 639-2) language code id"
       creating: "Створення мови"

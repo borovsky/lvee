@@ -321,10 +321,10 @@ ru:
       to: До
       version: Версия
     editor_log: 
-      article_changed: "Статья %{object} была изменена %{user}"
-      article_created: "Статья %{object} была создана %{user}"
-      wiki_page_changed: "Страница Wiki '%{object}' была изменена %{user}"
-      wiki_page_created: "Страница Wiki '%{object}' была создана %{user}"
+      article_changed: "Статья %{obj} была изменена %{user}"
+      article_created: "Статья %{obj} была создана %{user}"
+      wiki_page_changed: "Страница Wiki '%{obj}' была изменена %{user}"
+      wiki_page_created: "Страница Wiki '%{obj}' была создана %{user}"
     language: 
       code3: "3-буквенный (ISO 639-2) код языка"
       creating: "Создание языка"

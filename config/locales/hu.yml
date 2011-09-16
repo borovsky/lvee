@@ -321,10 +321,10 @@ hu:
       to: To
       version: Version
     editor_log: 
-      article_changed: "Article %{object} was changed by %{user}"
-      article_created: "Article %{object} was created by %{user}"
-      wiki_page_changed: "Wiki page %{object} was changed by %{user}"
-      wiki_page_created: "Wiki page %{object} was created by %{user}"
+      article_changed: "Article %{obj} was changed by %{user}"
+      article_created: "Article %{obj} was created by %{user}"
+      wiki_page_changed: "Wiki page %{obj} was changed by %{user}"
+      wiki_page_created: "Wiki page %{obj} was created by %{user}"
     language: 
       code3: "3-letter (ISO 639-2) language code id"
       creating: "Nyelv létrehozása"

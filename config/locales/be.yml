@@ -254,10 +254,10 @@ be:
       to: Да
       version: Адмена
     editor_log: 
-      article_changed: "Артыкул %{object} змяніў карыстальнік %{user}"
-      article_created: "Артыкул %{object} стварыў карыстальнік %{user}"
-      wiki_page_changed: "Старонку %{object} змяніў карыстальнік %{user}"
-      wiki_page_created: "Старонку %{object} стварыў карыстальнік %{user}"
+      article_changed: "Артыкул %{obj} змяніў карыстальнік %{user}"
+      article_created: "Артыкул %{obj} стварыў карыстальнік %{user}"
+      wiki_page_changed: "Старонку %{obj} змяніў карыстальнік %{user}"
+      wiki_page_created: "Старонку %{obj} стварыў карыстальнік %{user}"
     language: 
       code3: "Трохлітарны код мовы (ISO 639-2)"
       creating: "Стварэнне моўнага модулю"
