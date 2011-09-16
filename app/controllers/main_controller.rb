@@ -14,22 +14,22 @@ class MainController < ApplicationController
     @languages = Language.published_names
     @articles = Article.find_all_by_locale_and_category(I18n.default_locale, SITEMAP_CATEGORIES)
     @news = News.published.sitemap.translated(I18n.default_locale)
-    render :template => "main/sitemap.rxml", :layout => false
+    render :layout => false
   end
 
   def sitemap_news
     @languages = Language.published_names
     @news = News.published.sitemap.translated(I18n.default_locale)
-    render :template => "main/sitemap_news.rxml", :layout => false
+    render :layout => false
   end
 
   def editor_rss
     @changes = EditorLog.last_private
-    render :action => 'editor_rss', :layout => false
+    render :layout => false
   end
 
   def wiki_rss
     @changes = EditorLog.last_public
-    render :action => 'wiki_rss', :layout => false
+    render :layout => false
   end
 end

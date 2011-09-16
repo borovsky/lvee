@@ -27,6 +27,29 @@ describe MainController do
       login_as @editor
       get :index
     end
+  end
 
+  describe "editor_rss" do
+    it "it should render" do
+      get :editor_rss
+    end
+  end
+
+  describe "wiki_rss" do
+    it "it should render" do
+      get :wiki_rss
+    end
+  end
+
+  describe "sitemap" do
+    it "it should render" do
+      get :sitemap
+    end
+  end
+
+  describe "sitemap_news" do
+    it "it should render" do
+      get :sitemap_news
+    end
   end
 end

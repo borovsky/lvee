@@ -91,7 +91,6 @@ Rails.application.routes.draw do
       collection do
         get :rss
         put :preview
-        get :editor_rss
       end
       member do
         get :publish
@@ -102,6 +101,7 @@ Rails.application.routes.draw do
     match 'articles/:id/diff(/:version)' => 'articles#diff', :as => "diff_article"
     match 'wiki_pages/:id/diff(/:version)' => 'wiki_pages#diff', :as => 'diff_wiki_page'
     match 'wiki_rss' => 'main#wiki_rss', :as => 'wiki_rss'
+    match 'main/editor_rss' => 'main#editor_rss', :as => 'editor_rss'
 
     resources :articles do
       get :translate, :on => :member
