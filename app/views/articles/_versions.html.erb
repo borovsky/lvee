@@ -1,4 +1,4 @@
-<% versions = @article.kind_of?(Article) ? @article.versions :  @article.article.versions -%>
+<% versions = @article.kind_of?(Article) ? @article.versions :  @article.original.versions -%>
 
 <%= form_tag(diff_article_path(:version => nil)) do %>
   <table class="data">
@@ -9,7 +9,7 @@
       <th><%= t("label.diff.changed_at") %></th>
       <th><%= t("label.diff.editor") %></th>
     </tr>
-    <%= versions.each_with_index do |v, i| -%>
+    <% versions.each_with_index do |v, i| -%>
       <tr class="<%= (i % 2 == 0) ? 'even' : 'odd' %>">
         <td><%= v.version %></td>
         <td><%= radio_button_tag("prev_version", v.version,

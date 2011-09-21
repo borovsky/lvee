@@ -708,3 +708,6 @@ a.big-button {
     text-align:center;
 	  font-weight: bold;
 }
+
+ins {background-color: #cfc;}
+del {background-color: #fcc;}
