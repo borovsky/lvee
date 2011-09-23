@@ -13,16 +13,15 @@ class ConferenceRegistrationsController < ApplicationController
   FIRST_STEP_COLUMNS = [:proposition, :quantity]
 
   @@default_column_ui ||= {}
-  active_scaffold :conference_registrations do
+  active_scaffold :conference_registrations do |conf|
     cls = ConferenceRegistrationsController
-    self.label = "Conference Registration"
-    self.actions = [:create, :update, :show]
-    self.columns = cls::COLUMNS
-    self.create.columns = cls::FIRST_STEP_COLUMNS + cls::HIDDEN_COLUMNS
+    conf.actions = [:create, :update, :show]
+    conf.columns = cls::COLUMNS
+    conf.create.columns = cls::FIRST_STEP_COLUMNS + cls::HIDDEN_COLUMNS
 
-    self.update.columns = cls::STATIC_COLUMNS + cls::EDITABLE_COLUMNS
+    conf.update.columns = cls::STATIC_COLUMNS + cls::EDITABLE_COLUMNS
     cls::STATIC_COLUMNS.each do |c|
-      self.columns[c].form_ui = :static if self.update.columns[c]
+      conf.columns[c].form_ui = :static if self.update.columns[c]
     end
   end
 
@@ -83,8 +82,8 @@ class ConferenceRegistrationsController < ApplicationController
     @record.user_id = params[:user_id]
     @record.conference_id = params[:conference_id]
     @record.quantity ||= 1
-    #active_scaffold_config.create.label = t('label.conference_registration.title', :conference =>Conference.find(params[:conference_id]).name)
-
+    active_scaffold_config.create.label = t('label.conference_registration.title', :conference =>Conference.find(params[:conference_id]).name)
+    active_scaffold_config.columns[:proposition].form_ui = :textarea
   end
 
   def do_edit
@@ -93,13 +92,14 @@ class ConferenceRegistrationsController < ApplicationController
     @record.days = (@record.days || "").split(',')
     @record.tshirt = (@record.tshirt || "").split(',')
 
-    #active_scaffold_config.update.label = t('label.conference_registration.title', :conference =>Conference.find(@record.conference_id).name)
+    active_scaffold_config.update.label = t('label.conference_registration.title', :conference =>Conference.find(@record.conference_id).name)
 
+    active_scaffold_config.columns[:proposition].form_ui = :textarea
     if @record.status_name == APPROVED_STATUS
-      #active_scaffold_config.update.columns = COLUMNS
-      #STATIC_COLUMNS.each { |c| active_scaffold_config.columns[c].form_ui = :static}
+      active_scaffold_config.update.columns = COLUMNS
+      STATIC_COLUMNS.each { |c| active_scaffold_config.columns[c].form_ui = :static}
     else
-      #active_scaffold_config.update.columns = FIRST_STEP_COLUMNS
+      active_scaffold_config.update.columns = FIRST_STEP_COLUMNS
     end
 
     #hack!
@@ -114,9 +114,9 @@ class ConferenceRegistrationsController < ApplicationController
     end
 
     COLUMNS.each do |c|
-      #active_scaffold_config.columns[c].label = t(LOCALIZATION_LABEL_PREFIX + c.to_s)
-      #active_scaffold_config.columns[c].description = t(LOCALIZATION_DESCRIPTION_PREFIX + c.to_s)
-      #active_scaffold_config.columns[c].form_ui = @@default_column_ui[c]
+      active_scaffold_config.columns[c].label = t(LOCALIZATION_LABEL_PREFIX + c.to_s)
+      active_scaffold_config.columns[c].description = textilize(t(LOCALIZATION_DESCRIPTION_PREFIX + c.to_s)).html_safe
+      active_scaffold_config.columns[c].form_ui = @@default_column_ui[c]
     end
   end
 
