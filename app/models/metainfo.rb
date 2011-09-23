@@ -1,3 +1,4 @@
+require 'digest/sha1'
 class Metainfo < ActiveRecord::Base
   validates :language, :presence => true
   validates :page, :presence => true, :uniqueness => {:scope => :language}
@@ -11,4 +12,7 @@ class Metainfo < ActiveRecord::Base
     metainfo
   end
 
+  def page_hex
+    Digest::SHA1.hexdigest(self.page)
+  end
 end
