@@ -21,7 +21,7 @@
 <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'lveeconf';
-    var disqus_identifier = '<%= @metainfo.try(:page_hex) %>';
+    var disqus_identifier = '<%= @canonical_path %>';
     <% if Rails.env == 'development' -%>
       disqus_developer = true;
     <% end -%>

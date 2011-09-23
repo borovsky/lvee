@@ -19,7 +19,10 @@ class ArticlesController < ApplicationController
   def show
     return render :status => 404, :text => "Not found" unless @article
     @title = @article.title
-    @canonical_url = url_for(:lang=> @article.locale, :category => @article.category, :name => @article.name, :controller => "/articles", :action => 'show', :only_path => false) unless @article.locale == params[:lang]
+    path = {:lang => I18n.default_locale, :category => @article.category,
+      :name => @article.name, :controller => "/articles", :action => 'show'}
+    @canonical_url = url_for(path.merge(:only_path => false))
+    @canonical_path = url_for(path.merge(:only_path => true))
 
     respond_to do |format|
       format.html # show.html.erb
