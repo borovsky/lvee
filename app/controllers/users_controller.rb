@@ -2,7 +2,7 @@
 
 class UsersController < ApplicationController
   before_filter :login_required, :only => [:current]
-  # before_filter :set_common_columns_info, :only => [:edit, :update, :new, :create]
+  before_filter :set_common_columns_info, :only => [:edit, :update, :new, :create]
   before_filter(:current_user_only, :unless => :admin?,
     :except => [:restore, :activate, :current,:new, :create])
 
@@ -113,6 +113,10 @@ class UsersController < ApplicationController
     redirect_to user_path(:id=>record)
   end
 
+  def return_to_main
+    super unless performed?
+  end
+
   def set_common_columns_info
     config = active_scaffold_config
     [:password, :password_confirmation].each do |i|
@@ -121,7 +125,7 @@ class UsersController < ApplicationController
     config.label = t('label.user.register')
     COLUMNS.each do |c|
       config.columns[c].label = t(LOCALIZATION_LABEL_PREFIX + c.to_s)
-      config.columns[c].description = t(LOCALIZATION_DESCRIPTION_PREFIX + c.to_s)
+      config.columns[c].description = textilize(t(LOCALIZATION_DESCRIPTION_PREFIX + c.to_s)).html_safe
     end
     config.create.label = t('label.user.register')
     config.update.label = t('label.user.title', :full_name => current_user.full_name, :login => current_user.login) if current_user
