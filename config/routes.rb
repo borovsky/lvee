@@ -109,7 +109,7 @@ Rails.application.routes.draw do
     end
 
     match ':category(/:name)' => 'articles#show', :constraints => {:category => /(conference|contacts|sponsors|reports)/},
-        :defaults => {:name => "index"}
+        :defaults => {:name => "index"}, :as => :article_by_name
 
     resources :wiki_pages do
       put :preview, :on => :collection
