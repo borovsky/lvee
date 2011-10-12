@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   # acts_as_authorizable
 
   # Virtual attribute for the unencrypted password
-  attr_accessor :password
+  attr_reader :password
   
   # Virtual attribute for disable mail sending
   attr_accessor :no_mail
@@ -32,7 +32,6 @@ class User < ActiveRecord::Base
   validates :first_name, :presence => true, :length => {:within => 2..30}
   validates :last_name, :presence => true, :length => {:within => 2..30}
 
-  before_save   :method => :encrypt_password
   before_create :method => :make_activation_code
   after_save :method => :subscribe_to_lists
 
@@ -173,14 +172,14 @@ class User < ActiveRecord::Base
     end
   end
 
-  protected
-  # before filter
-  def encrypt_password
-    return if password.blank?
+  def password=(new_password)
+    return if new_password.blank?
+    @password = new_password
     self.salt = Digest::SHA1.hexdigest("--#{Time.now.to_s}--#{login}--") if new_record?
-    self.crypted_password = encrypt(password)
+    self.crypted_password = encrypt(new_password)
   end
 
+  protected
   def password_required?
     crypted_password.blank? || !password.blank?
   end
