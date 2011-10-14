@@ -112,9 +112,9 @@ class ArticlesController < ApplicationController
   end
 
   def diff
-    version = params[:version]
     @article = Article.find(params[:id])
 
+    version = params[:version]
     if(version)
       @article = @article.find_version(version)
     else

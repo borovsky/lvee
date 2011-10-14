@@ -1,0 +1,19 @@
+%h1 Listing thesises
+
+%table{:class => "data"}
+  %tr
+    %th= t("label.thesis.user")
+    %th= t("label.thesis.title")
+    %th= t("label.thesis.updated_at")
+    %th
+
+  - @thesises.each_with_index do |thesis, i|
+    %tr{:class => "#{(i % 2 == 0) ? 'even' : 'odd'}" }
+      %td
+        - u = thesis.conference_registration.user
+        = u.full_name
+        = "(#{u.login})" if admin?
+      %td= thesis.title
+      %td= format_date(thesis.updated_at)
+      %td= link_to 'Show', thesis
+

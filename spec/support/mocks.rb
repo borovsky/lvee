@@ -15,7 +15,7 @@ end
 
 module RSpec::Rails::ViewExampleGroup
   def login_as(user)
-    template.stub!(:current_user).and_return(user)
+    view.stub!(:current_user).and_return(user)
   end
 
   included do
@@ -55,3 +55,11 @@ end
 Array.class_eval do
   alias_method(:count, :length)
 end unless [].respond_to?(:count)
+
+class ActionView::TestCase
+  class TestController
+    def default_url_options
+      {:lang => 'by'}
+    end
+  end
+end

@@ -1,0 +1,18 @@
+- versions = @current_version.respond_to?(:versions) ? @current_version.versions :  @current_version.original.versions
+- path = diff_user_thesises_path(:version => nil, :id=> @current_version.conference_registration_id, :lang => params[:lang])
+= form_tag(path) do
+  %table.data
+    %tr
+      %th= t("label.diff.version")
+      %th= t("label.diff.from")
+      %th= t("label.diff.to")
+      %th= t("label.diff.changed_at")
+      %th= t("label.diff.reason")
+    - versions.each_with_index do |v, i|
+      %tr{:class => %w(even odd)[i % 2]}
+        %td= v.version
+        %td= radio_button_tag("prev_version", v.version, @previous_version && (@previous_version.version == v.version))
+        %td= radio_button_tag("version", v.version, @current_version.version == v.version)
+        %td= format_date(v.updated_at)
+        %td= v.change_summary
+  = submit_tag t('label.common.view_changes')

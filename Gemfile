@@ -19,6 +19,9 @@ gem 'verification', :git => 'git://github.com/beastaugh/verification.git'
 gem 'render_component_vho', :git => 'git://github.com/vhochstein/render_component.git'
 gem 'active_scaffold_vho', :git => 'git://github.com/vhochstein/active_scaffold.git'
 
+gem "haml"
+gem "haml-rails"
+
 gem 'exception_notification_rails3', :require => 'exception_notifier'
 
 group :test do

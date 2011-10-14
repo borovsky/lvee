@@ -11,7 +11,6 @@ Rails.application.routes.draw do
     namespace :admin do
       get "/users/:to_list/mail" => 'info_mailer#index', :as => "mail_user"
       put "/users/mail" => 'info_mailer#send_mail'
-
       resources :users do
         put :set_role, :on => :member
       end
@@ -83,6 +82,16 @@ Rails.application.routes.draw do
           match :cancel
         end
       end
+    end
+
+    match "users/:user_id/conference_registrations/:id/thesises" => 'thesises#show', :as => :user_thesises
+    match "users/:user_id/conference_registrations/:id/edit_thesises" => 'thesises#edit', :as => :edit_user_thesises
+    match "users/:user_id/conference_registrations/:id/diff_thesises" => 'thesises#diff', :as => :diff_user_thesises
+    
+    resources :thesises, :except => [:destroy, :new] do
+      put :preview, :on => :collection
+      post :add_comment, :on => :member
+      match :diff, :on => :member
     end
 
     get "news/:parent_id/translate/:locale" => "news#new", :as => "translate_news"

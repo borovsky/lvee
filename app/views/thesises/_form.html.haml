@@ -1,0 +1,19 @@
+#preview_place
+= form_for @thesis do |f|
+  = f.error_messages
+  = f.hidden_field :conference_registration_id if @thesis.new_record?
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.text_area :body, :rows => 20, :cols => 80
+  .field
+    = f.label :change_summary
+    = f.text_field :change_summary
+  .field
+    = f.label :ready_for_review
+    = f.check_box :ready_for_review
+  .actions
+    = f.submit t('label.common.preview'), :data => {"remote-preview" => true, |
+      :update => 'preview_place', :url => preview_thesises_url(:lang => params[:lang]), :method => "PUT"}
+    = f.submit t('label.common.save')

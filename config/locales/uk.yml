@@ -223,6 +223,9 @@ uk:
       projects: "Проекти Free Software / Open Source (FS/OS), в яких Ви приймали та/або берете участь, Ваша роль в них"
       subscribed: "This option allows to receive news and other useful information from the Conference organizers."
       subscribed_talks: "By choosing this You are going to take part in working discussions on the Conference preparing and carrying on. Being a volunteer project, LVEE is often subject to shortage of performers, and therefore we recomend to activate this option and to actively participate in work of the organization board."
+  errors: 
+    template: 
+      header: "During saving following errors where found:"
   label: 
     article: 
       body: "Змістовна частина"
@@ -257,6 +260,7 @@ uk:
       save: Зберегти
       search: Search
       show: Показати
+      time_ago: "%{time} ago"
       translate: Перекласти
       unknown_user: Unknown
       update: Обновити
@@ -297,6 +301,7 @@ uk:
       quantity: "Кількість учасників"
       residence: Accommodation
       status_name: "Registration's Status"
+      thesises: Thesises
       title: "Реєстрація на конференцію %{conference}"
       transport_from: "Transport from conference"
       transport_from_list: 
@@ -313,11 +318,13 @@ uk:
       updated_at: "Last Modified"
     diff: 
       change_article_title: "Порівняння статті %{article} з %{from} до %{to}"
+      change_thesis_title: "Diff for thesises from %{author} from version %{from} to %{to}"
       change_wiki_title: "Порівняння сторінки '%{wiki_page}' з %{from} до %{to}"
       changed_at: "Changed at"
       editor: Editor
       from: From
       new_article_title: "Стаття %{article} не має попередньої версії"
+      new_thesis_title: "Thesises from %{author} has no previous versions"
       new_wiki_title: "Сторінка '%{wiki_page}' не має попередньої версії"
       to: To
       version: Версія
@@ -384,6 +391,11 @@ uk:
         total_visitors: "Total visitors: %{count}"
         week: "Statistics for last week"
       visits: Visits
+    thesis: 
+      ready_for_review: "Ready for review"
+      title: Title
+      updated_at: "Last Modified"
+      user: User
     user: 
       avator: "Ваше фото"
       city: Місто

@@ -1,0 +1,39 @@
+#comments {
+    list-style: none outside none;
+    padding:0px;
+    marging: 0px;
+    li.comment {
+        margin-top: 5px;
+        padding: 0;
+    }
+    .user_comment {
+        .author {
+            float: left;
+            display: inline;
+        }
+        .body {
+            background: url(../images/bg-comment-user.png) no-repeat scroll 0 0 transparent;
+            float: left;
+            display: inline;
+        }
+    }
+    .reviewer_comment {
+        .author {
+            float: right;
+        }
+        .body {
+            background: url(../images/bg-comment-revewer.png) no-repeat scroll 0 0 transparent;
+            float: right;
+        }
+    }
+    .author {
+        width: 100px;
+        text-align: center;
+        .name {font-weight: bold;}
+    }
+    .body {
+        padding-left: 10px;
+        width: 440px;
+    }
+    .end {clear:both;}
+}

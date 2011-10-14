@@ -8,12 +8,11 @@ GIT
 
 GIT
   remote: git://github.com/vhochstein/active_scaffold.git
-  revision: 9fb8ae29952a50ddf9cbc3b259565032fed03890
+  revision: 17768e18f9a292193c318b241946a575391ddd3c
   specs:
     active_scaffold_vho (3.1.0)
       rails (~> 3.1.0)
       render_component_vho
-      verification
 
 GIT
   remote: git://github.com/vhochstein/render_component.git
@@ -71,26 +70,32 @@ GEM
     activesupport (3.1.0)
       multi_json (~> 1.0)
     arel (2.2.1)
-    bcrypt-ruby (3.0.0)
+    bcrypt-ruby (3.0.1)
     builder (3.0.0)
     carrierwave (0.5.6)
       activesupport (~> 3.0)
-    coffee-rails (3.1.0)
+    coffee-rails (3.1.1)
       coffee-script (>= 2.2.0)
-      railties (~> 3.1.0.rc1)
+      railties (~> 3.1.0)
     coffee-script (2.2.0)
       coffee-script-source
       execjs
     coffee-script-source (1.1.2)
-    crack (0.1.8)
+    crack (0.3.1)
     diff-lcs (1.1.3)
     erubis (2.7.0)
     exception_notification_rails3 (1.2.0)
-    execjs (1.2.4)
+    execjs (1.2.8)
       multi_json (~> 1.0)
     garb (0.9.1)
       activesupport (>= 2.2.0)
       crack (>= 0.1.6)
+    haml (3.1.3)
+    haml-rails (0.3.4)
+      actionpack (~> 3.0)
+      activesupport (~> 3.0)
+      haml (~> 3.0)
+      railties (~> 3.0)
     hike (1.2.1)
     i18n (0.6.0)
     kgio (2.6.0)
@@ -104,7 +109,7 @@ GEM
     mysql2 (0.3.7)
     nokogiri (1.5.0)
     polyglot (0.3.2)
-    rack (1.3.2)
+    rack (1.3.3)
     rack-cache (1.0.3)
       rack (>= 0.4)
     rack-mount (0.8.3)
@@ -148,15 +153,17 @@ GEM
     rspec-spies (2.0.0)
       rspec (~> 2.0)
     sass (3.1.7)
-    sass-rails (3.1.0)
+    sass-rails (3.1.2)
       actionpack (~> 3.1.0)
       railties (~> 3.1.0)
       sass (>= 3.1.4)
+      sprockets (~> 2.0.0)
+      tilt (~> 1.3.2)
     sprockets (2.0.0)
       hike (~> 1.2)
       rack (~> 1.0)
       tilt (!= 1.3.0, ~> 1.1)
-    test-unit (2.3.2)
+    test-unit (2.4.0)
     therubyracer (0.9.4)
       libv8 (~> 3.3.10)
     thor (0.14.6)
@@ -189,6 +196,8 @@ DEPENDENCIES
   coffee-rails
   exception_notification_rails3
   garb
+  haml
+  haml-rails
   jquery-rails_vho!
   mysql2
   rails (~> 3.1.0)

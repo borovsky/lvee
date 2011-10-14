@@ -155,6 +155,9 @@ be:
       projects: "Праекты свабоднага і адкрытага праграмавання (FOSS), у якіх вы бралі ці бераце ўдзел, і ваша роля ў іх"
       subscribed: "Гэтая опцыя дазваляе атрымоўваць навіны ды іншыя карысныя звесткі ад арганізатараў канферэнцыі."
       subscribed_talks: "Адзначыўшы гэты пункт, вы згаджаецеся браць чынны ўдзел у арганізацыйных дыскусіях на канферэнцыі, дапамагаючы падрыхтоўваць і падтрымоўваць яе бег. LVEE ёсць валантэрскім праектам, а таму часта адчувае нястачу людзей, гатовых займацца такімі справамі, а таму мы вітаем адзначэнне гэтага пункту і чынны ўдзел у працы арганізацыйнага камітэта."
+  errors: 
+    template: 
+      header: "During saving following errors where found:"
   label: 
     article: 
       body: Цела
@@ -189,6 +192,7 @@ be:
       save: Запісаць
       search: Search
       show: Паказаць
+      time_ago: "%{time} ago"
       translate: Перакласці
       unknown_user: Невядомы
       update: Замацаваць
@@ -229,6 +233,7 @@ be:
       quantity: "Колькасць удзельнікаў"
       residence: Жытло
       status_name: "Registration's Status"
+      thesises: Thesises
       title: "Рэгістрацыя на канферэнцыю %{conference}"
       transport_from: "Транспарт з канферэнцыі"
       transport_from_list: 
@@ -245,11 +250,13 @@ be:
       updated_at: "Last Modified"
     diff: 
       change_article_title: "Змены ў артыкуле %{article} з адмены %{from} да %{to}"
+      change_thesis_title: "Diff for thesises from %{author} from version %{from} to %{to}"
       change_wiki_title: "Змены на старонцы '%{wiki_page}' з адмены %{from} да %{to}"
       changed_at: Зменена
       editor: Рэдактар
       from: Ад
       new_article_title: "Артыкул %{article} не мае папярэдніх адмен"
+      new_thesis_title: "Thesises from %{author} has no previous versions"
       new_wiki_title: "Старонка '%{wiki_page}' не мае папярэдніх адмен"
       to: Да
       version: Адмена
@@ -316,6 +323,11 @@ be:
         total_visitors: "Агулам наведнікаў: %{count}"
         week: "Статыстыка з мінулага тыдня"
       visits: Наведванні
+    thesis: 
+      ready_for_review: "Ready for review"
+      title: Title
+      updated_at: "Last Modified"
+      user: User
     user: 
       avator: "Ваш фотаздымак"
       city: Горад

@@ -1,7 +1,7 @@
 --- 
 ru: 
   active_scaffold: 
-    are_you_sure: "Are you sure?"
+    are_you_sure: "Вы уверены?"
   activerecord: 
     errors: 
       messages: 
@@ -222,6 +222,9 @@ ru:
       projects: "Проекты Free Software / Open Source (FS/OS), в которых вы принимали и/или принимаете участие, ваша роль в них"
       subscribed: "Позволяет получать новости и другие информационные сообщения от организаторов конференции."
       subscribed_talks: "Выбрав этот пункт, вы становитесь участником обсуждений, связанных с подготовкой и проведением конференции. Поскольку для LVEE, как для любого волонтерского проекта, характерна нехватка исполнителей - рекомендуем активировать этот пункт и активно участвовать в работе оргкомитета."
+  errors: 
+    template: 
+      header: "При сохранении следующие ошибки были найдены:"
   label: 
     article: 
       body: Тело
@@ -256,6 +259,7 @@ ru:
       save: Сохранить
       search: Search
       show: Показать
+      time_ago: "%{time} назад"
       translate: Перевести
       unknown_user: Неизвестно
       update: Обновить
@@ -296,6 +300,7 @@ ru:
       quantity: "Количество участников"
       residence: Расселение
       status_name: "Registration's Status"
+      thesises: Тезисы
       title: "Регистрация на конференцию %{conference}"
       transport_from: "Транспорт с конференции"
       transport_from_list: 
@@ -312,11 +317,13 @@ ru:
       updated_at: "Last Modified"
     diff: 
       change_article_title: "Изменения статьи %{article} от версии %{from} до %{to}"
+      change_thesis_title: "Изменение тезисов от %{author} от версии %{from} до %{to}"
       change_wiki_title: "Изменения страницы '%{wiki_page}' from version %{from} to %{to}"
       changed_at: Изменено
       editor: Редактор
       from: От
       new_article_title: "Статья %{article} не имеет предыдущих версий"
+      new_thesis_title: "Тезисы от %{author} не имеют предыдущей версии"
       new_wiki_title: "Страница '%{wiki_page}' не имеет предыдущих версий"
       to: До
       version: Версия
@@ -383,6 +390,11 @@ ru:
         total_visitors: "Всего посетителей: %{count}"
         week: "Статистика за последнюю неделю"
       visits: Посещения
+    thesis: 
+      ready_for_review: "Готовы к рассмотрению"
+      title: Заголовок
+      updated_at: "Последнее изменение"
+      user: Пользователь
     user: 
       avator: "Новое фото:"
       city: Город

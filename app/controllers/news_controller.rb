@@ -23,8 +23,8 @@ class NewsController < ApplicationController
     @news = News.find(params[:id]).translation
     @title = @news.title
     @canonical = @news.parent_id ? News.find(@news.parent_id) : @news
-    @canonical_url = news_item_url(:id => @canonical.id, :lang => @canonical.locale)
-    @canonical_path = news_item_path(:id => @canonical.id, :lang => @canonical.locale)
+    @canonical_url = news_item_url(:id => @canonical.id, :lang => @canonical.locale || 'en')
+    @canonical_path = news_item_path(:id => @canonical.id, :lang => @canonical.locale || 'en')
 
     respond_to do |format|
       format.html # show.html.erb
