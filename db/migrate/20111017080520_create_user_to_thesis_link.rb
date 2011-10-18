@@ -9,11 +9,7 @@ class CreateUserToThesisLink < ActiveRecord::Migration
       cr = ConferenceRegistration.find(t.conference_registration_id)
       t.users << cr.user
       t.conference_id = cr.conference_id
-      without_locking do
-        without_revision do
-          t.save(:validate => false)
-        end
-      end
+      t.save(:validate => false)
     end
     remove_column :thesises, :conference_registration_id
   end
