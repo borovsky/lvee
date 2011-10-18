@@ -1,22 +1,15 @@
 = render "/thesises/show"
 
-- if params[:user_id]
-  = link_to "Edit", edit_user_thesises_path(current_user.id, @thesis.conference_registration_id)
-  \|
-  = link_to "Diff", diff_user_thesises_path(current_user.id, @thesis.conference_registration_id)
-  \|
-  = link_to 'Back', user_path(current_user.id)
-- else
-  = link_to "Edit", edit_thesis_path(@thesis.id)
-  \|
-  = link_to "Diff", diff_thesis_path(@thesis.id)
-  \|
-  = link_to 'Back', thesises_path
+= link_to "Edit", edit_thesis_path(@thesis.id)
+\|
+= link_to "Diff", diff_thesis_path(@thesis.id)
+\|
+= link_to 'Back', thesises_path
 
 %h2.comments Comments
 %ol#comments
   - @comments.each_with_index do |comment, i|
-    %li{:class => ["#{comment.user_id == @thesis.conference_registration.user_id ? 'user_comment' : 'reviewer_comment'}", "comment"] }
+    %li{:class => ["#{@thesis.user_ids.include?(comment.user_id)  ? 'user_comment' : 'reviewer_comment'}", "comment"] }
       .author
         - image_path = comment.user.avator.url ? comment.user.avator.list.url : nil
         .pic= image_tag(image_path) if image_path

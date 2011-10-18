@@ -3,7 +3,6 @@ class ConferenceRegistration < ActiveRecord::Base
   belongs_to :conference
 
   has_many :badges, :dependent => :delete_all
-  has_one :thesis
 
   validates :user_id, :presence => true
   validates :conference_id, :presence => true, :uniqueness => {:scope => :user_id}

@@ -3,14 +3,18 @@ require 'spec_helper'
 describe ThesisesController do
 
   def valid_attributes
-    {:title => "test", :body => "test", :change_summary => "123", 
-      :conference_registration_id => @conference_registration.id, :author_id => @user.id}
+    {title: "test", authors: "a", abstract: "ab",
+      body: "test", change_summary: "123",
+      conference_id: @conference.id, author_id: @user.id, user_ids: [@user.id]}
   end
 
   before do
-    @user = stub_model(User, :first_name => "Test1", :last_name => "Test2")
+    @user = User.new(:first_name => "Test1", :last_name => "Test2")
+    @user.save(:validate => false)
     login_as @user
-    @conference_registration = ConferenceRegistration.new(:user => @user)
+    @conference = Conference.new(:name => "test")
+    @conference.save!(:validate => false)
+    @conference_registration = ConferenceRegistration.new(:user_id => @user.id, :conference_id => @conference.id)
     @conference_registration.save!(:validate => false)
   end
 
@@ -54,8 +58,7 @@ describe ThesisesController do
 
       it "redirects to the created thesis" do
         post :create, :thesis => valid_attributes
-        response.should redirect_to(user_thesises_path(:id => Thesis.last.conference_registration_id,
-            :user_id => Thesis.last.conference_registration.user_id))
+        response.should redirect_to(Thesis.last)
       end
     end
 
@@ -102,7 +105,7 @@ describe ThesisesController do
       it "redirects to the thesis" do
         thesis = Thesis.create!(valid_attributes, :without_protection => true)
         put :update, :id => thesis.id, :thesis => valid_attributes
-        response.should redirect_to(user_thesises_path(:user_id => @user.id, :id => @conference_registration.id))
+        response.should redirect_to(Thesis.last)
       end
     end
 
@@ -117,6 +120,7 @@ describe ThesisesController do
 
       it "re-renders the 'edit' template" do
         thesis = Thesis.create!(valid_attributes, :without_protection => true)
+        thesis.users << @user
         # Trigger the behavior that occurs when invalid params are submitted
         Thesis.any_instance.stub(:save).and_return(false)
         put :update, :id => thesis.id.to_s, :thesis => {}

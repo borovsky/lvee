@@ -1,10 +1,26 @@
 #preview_place
 = form_for @thesis do |f|
   = f.error_messages
-  = f.hidden_field :conference_registration_id if @thesis.new_record?
+  -  if @thesis.new_record?
+    - if @actual_conferences.length == 1
+      = f.hidden_field :conference_id
+    - else
+      .field
+        = f.label :conference_id
+        = f.select :conference_id, @actual_conferences.map {|c| [c.name, c.id]}
+  - else
+    .field
+      = f.label :conference_id
+      = text_field_tag :conference, @thesis.conference.name, :disabled => true
   .field
     = f.label :title
     = f.text_field :title
+  .field
+    = f.label :authors
+    = f.text_field :authors
+  .field
+    = f.label :abstract
+    = f.text_area :abstract, :rows => 5, :cols => 40
   .field
     = f.text_area :body, :rows => 20, :cols => 80
   .field

@@ -11,8 +11,10 @@ describe "thesises/new.html.haml" do
     render
 
     assert_select "form", :action => thesises_path, :method => "post" do
-      assert_select "input#thesis_conference_registration_id", :name => "thesis[conference_registration_id]"
+      assert_select "input#thesis_conference_id", :name => "thesis[conference_registration_id]"
       assert_select "input#thesis_title", :name => "thesis[title]"
+      assert_select "input#thesis_authors", :name => "thesis[authors]"
+      assert_select "textarea#thesis_abstract", :name => "thesis[abstract]"
       assert_select "textarea#thesis_body", :name => "thesis[body]"
     end
   end

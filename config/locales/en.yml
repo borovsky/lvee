@@ -321,11 +321,16 @@ en:
         total_visitors: "Total visitors: %{count}"
         week: "Statistics for last week"
       visits: Visits
-    thesis:
-      user: User
-      title: Title
+    thesises:
+      for_review: "For review"
+      list: "Thesises for review"
+      list_selection: "List thesises:"
+      list_user: "Your thesises"
       ready_for_review: "Ready for review"
+      title: Title
       updated_at: "Last Modified"
+      user: User
+      yourself: "Yourself"
     user: 
       avator: "New photo:"
       city: Location

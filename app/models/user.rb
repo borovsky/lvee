@@ -5,10 +5,7 @@ class User < ActiveRecord::Base
   mount_uploader :avator, UserUploader
 
   has_many :conference_registrations, :dependent => :delete_all
-
-  # Authorization plugin
-  # acts_as_authorized_user
-  # acts_as_authorizable
+  has_and_belongs_to_many :thesises, :join_table => "users_thesises", :uniq => true
 
   # Virtual attribute for the unencrypted password
   attr_reader :password
@@ -120,6 +117,10 @@ class User < ActiveRecord::Base
 
   def editor?
     ['admin', 'editor'].include?(self.role)
+  end
+
+  def reviewer?
+    ['admin', 'editor', 'reviewer'].include?(self.role)
   end
 
   def self.valid_data

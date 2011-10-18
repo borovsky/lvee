@@ -65,11 +65,15 @@ module ApplicationHelper
   end
 
   def editor?
-    current_user && current_user.editor?
+    current_user.try(:editor?)
   end
 
   def admin?
-    current_user && current_user.admin?
+    current_user.try(:admin?)
+  end
+
+  def reviewer?
+    current_user.try(:reviewer?)
   end
 
   def article_link(title, category, name)

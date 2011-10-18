@@ -1,19 +1,40 @@
-%h1 Listing thesises
+
+- if reviewer?
+  %h1= t("label.thesises.list")
+  %p
+    = t("label.thesises.list_selection")
+    = link_to_if @limit, t('label.thesises.for_review'), thesises_path
+    \|
+    = link_to_unless @limit, t('label.thesises.yourself'), thesises_path(:only => 'user')
+- else
+  %h1= t("label.thesises.list_user")
 
 %table{:class => "data"}
   %tr
-    %th= t("label.thesis.user")
-    %th= t("label.thesis.title")
-    %th= t("label.thesis.updated_at")
+    - unless @limit
+      %th= t("label.thesises.user")
+    %th= t("label.thesises.title")
+    %th= t("label.thesises.updated_at")
     %th
 
   - @thesises.each_with_index do |thesis, i|
     %tr{:class => "#{(i % 2 == 0) ? 'even' : 'odd'}" }
-      %td
-        - u = thesis.conference_registration.user
-        = u.full_name
-        = "(#{u.login})" if admin?
+      - unless @limit
+        %td
+          - users = thesis.users
+          - if users.size == 1
+            - u = thesis.users.first
+            = u.full_name
+            = "(#{u.login})" if admin?
+          - else
+            %ul
+              - users.each do |u|
+                %li
+                  = u.full_name
+                  = "(#{u.login})" if admin?
       %td= thesis.title
       %td= format_date(thesis.updated_at)
       %td= link_to 'Show', thesis
 
+- if @active_conferences
+  = link_to new_thesis_path

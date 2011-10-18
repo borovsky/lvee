@@ -127,6 +127,10 @@ class ApplicationController < ActionController::Base
     current_user.try(:editor?)
   end
 
+  def reviewer?
+    current_user.try(:reviewer?)
+  end
+
   protected
   
   def not_found_error_handler(*exception)

@@ -37,3 +37,29 @@
     }
     .end {clear:both;}
 }
+
+
+textarea#thesis_abstract {
+    height: 100px;
+}
+
+.authors {text-align: center}
+.abstract {font-style: italic}
+
+textarea#thesis_abstract {
+    height: 100px;
+}
+
+.field {
+  width: 570px;
+  clear: both;
+  textarea, input, label {
+    margin: 5px;
+    display:block;
+  }
+  label {
+    width: 130px;
+    text-align:right;
+    float:left;
+  }
+}

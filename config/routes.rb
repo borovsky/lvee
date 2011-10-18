@@ -84,11 +84,7 @@ Rails.application.routes.draw do
       end
     end
 
-    match "users/:user_id/conference_registrations/:id/thesises" => 'thesises#show', :as => :user_thesises
-    match "users/:user_id/conference_registrations/:id/edit_thesises" => 'thesises#edit', :as => :edit_user_thesises
-    match "users/:user_id/conference_registrations/:id/diff_thesises" => 'thesises#diff', :as => :diff_user_thesises
-    
-    resources :thesises, :except => [:destroy, :new] do
+    resources :thesises, :except => [:destroy] do
       put :preview, :on => :collection
       post :add_comment, :on => :member
       match :diff, :on => :member
