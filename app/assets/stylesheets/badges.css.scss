@@ -1,0 +1,33 @@
+#badges .badge {
+    width: 570px;
+    height: 348px;
+    background: url(/images/badge2011.png) no-repeat bottom left;
+    margin-bottom: 20px;
+    input {
+        border: 1px solid #1492A3;
+        background:#FFFFCC;
+        position: relative;
+        text-align: center;
+    }
+
+    .tags {
+        left: 250px;
+        width: 280px;
+        top: 10px;
+        font-size: 20px;
+    }
+
+    .top {
+        left: 24px;
+        width: 525px;
+        top: 149px;
+        font-size: 30px;
+    }
+
+    .bottom {
+        left: 24px;
+        width: 525px;
+        top: 142px;
+        font-size: 30px;
+    }
+}

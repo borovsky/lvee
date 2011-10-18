@@ -1,0 +1,48 @@
+a[href $='.pdf'],
+a[href $='.ps'] {
+    border: none;
+    padding: 2px 0 2px 18px;
+    background-position: 0 0;
+    background: transparent url(/images/ftypes/document-pdf-text.png) no-repeat;
+}
+
+a[href $= '.odp'],
+a[href $= '.ppt'],
+a[href $= '.sxi'] {
+    border: none;
+    padding: 2px 0 2px 18px;
+    background-position: 0 0;
+    background: transparent url(/images/ftypes/projection-screen-presentation.png) no-repeat;
+}
+
+a[href $= '.odt'],
+a[href $= '.doc'] {
+    border: none;
+    padding: 2px 0 2px 18px;
+    background-position: 0 0;
+    background: transparent url(/images/ftypes/document-text-image.png) no-repeat;
+}
+
+a[href $= '.sxd'] {
+    border: none;
+    padding: 2px 0 2px 18px;
+    background-position: 0 0;
+    background: transparent url(/images/ftypes/document-image.png) no-repeat;
+}
+
+a[href $= '.gz'],
+a[href $= '.bz2'] {
+    border: none;
+    padding: 2px 0 2px 18px;
+    background-position: 0 0;
+    background: transparent url(/images/ftypes/document-zipper.png) no-repeat;
+}
+
+a[href $= '.ogv'],
+a[href $= '.mp4'],
+a[href $= '.avi'] {
+    border: none;
+    padding: 2px 0 2px 18px;
+    background-position: 0 0;
+    background: transparent url(/images/ftypes/document-film.png) no-repeat;
+}
