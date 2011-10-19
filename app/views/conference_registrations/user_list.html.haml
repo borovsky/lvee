@@ -1,0 +1,18 @@
+%h1=  @conference.name
+
+%table.data.participants
+  %thead
+    %tr
+      %th= t('label.user.photo')
+      %th= t('label.user.full_name')
+      %th= t('label.user.from')
+      %th= t('label.user.projects')
+      %th= t('label.conference_registration.proposition_list')
+  - @registrations.each_with_index do |reg, i|
+    %tr{:class =>"#{i % 2 == 1 ? 'odd' : 'even'}"}
+      - image_path = reg.user.avator.url ? reg.user.avator.list.url : nil
+      %td= image_tag(image_path, :alt => reg.user.full_name) if image_path
+      %td= reg.user.full_name
+      %td= "#{reg.user.country}, #{reg.user.city}"
+      %td= simple_format(strip_urls(reg.user.projects))
+      %td= simple_format(strip_urls(reg.proposition))
