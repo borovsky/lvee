@@ -1,0 +1,14 @@
+%h1= t('label.statistics.conference', :conference => @conference.name)
+
+= render "statistics/menu"
+
+%h2
+%table.data
+  %thead
+    %tr
+      %th= t('label.user.country')
+      %th= t('label.common.count')
+  - @countries.each_with_index do |stat, i|
+    %tr{:class=>"#{i % 2 == 1 ? 'odd' : 'even'}"}
+      %td= stat.first
+      %td= stat.second

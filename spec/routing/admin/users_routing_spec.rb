@@ -20,7 +20,7 @@ describe Admin::UsersController do
     end
 
     it "should generate params for #set_role" do
-      {:put => '/ru/admin/users/42/set_role'}.should route_to(
+      {:post => '/ru/admin/users/42/set_role'}.should route_to(
         :controller => 'admin/users',
         :action => 'set_role',
         :id=>'42',

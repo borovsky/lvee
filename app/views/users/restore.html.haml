@@ -1,0 +1,8 @@
+%h1= t('label.user.password_restore')
+
+= form_tag(restore_users_path) do
+  %p
+    = label_tag "email", t('label.user.email')
+    %br/
+    = text_field_tag 'email'
+  %p= submit_tag t('label.user.password_restore')

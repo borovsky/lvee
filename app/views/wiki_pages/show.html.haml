@@ -1,0 +1,3 @@
+= render "/wiki_pages/wiki_page", :wiki_page => @wiki_page
+
+= render("/wiki_pages/editor_actions", :wiki_page => @wiki_page) if logged_in?

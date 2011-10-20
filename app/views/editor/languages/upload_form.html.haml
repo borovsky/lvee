@@ -1,0 +1,6 @@
+%h4= "#{@language.description} language upload"
+= form_for(:language, :url => upload_editor_language_path(@language), :html => { :multipart => true }) do |form|
+  = label_tag "language", t('label.language.upload')
+  = file_field_tag("language" )
+  %br/
+  = submit_tag(t('label.common.upload'))

@@ -1,0 +1,24 @@
+%head
+  %meta(http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8")
+  %title= page_title
+  %meta{:name=>"keywords", :content=>@metainfo.keywords}
+  %meta{:name=>"description", :content=> @metainfo.description}
+
+  = stylesheet_link_tag "application", :debug => Rails.env.development?
+  = stylesheet_link_tag "print", :media => "print"
+  - if editor? || admin?
+    = javascript_include_tag "admin", :debug => Rails.env.development? 
+    :javascript
+      $.datepicker.setDefaults($.datepicker.regional['#{I18n.locale}']);
+  - else
+    = javascript_include_tag "application", :debug => Rails.env.development?
+
+  - if @canonical_url
+    %link(rel="canonical" href=@canonical_url)
+  = auto_discovery_link_tag(:rss, rss_news_item_index_path)
+  = csrf_meta_tag
+  = render "/layouts/partials/google_analytics"
+
+  <!--[if lte IE 6]>
+  <script type="text/javascript" src="/djs/ie_fuck.js"></script>
+  <![endif]-->

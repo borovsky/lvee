@@ -1,0 +1,18 @@
+%h1= t('label.wiki_page.listing')
+
+%table.data
+  %thead
+    %tr>
+      %th= t('label.wiki_page.name')
+      %th= t('label.wiki_page.user')
+      %th
+      %th
+  - @wiki_pages.each_with_index do |wiki_page, i|
+    %tr{:class=>"#{(i % 2 == 0) ? 'even' : 'odd'}"}
+      %td= wiki_page.name
+      %td= wiki_page.user ? wiki_page.user.full_name : "Unknown"
+      %td= link_to t('label.common.show'), wiki_page_path(:id => wiki_page.name || wiki_page.id)
+      %td= link_to t('label.common.edit'), edit_wiki_page_path(:id => wiki_page.name || wiki_page.id)
+= link_to t('label.wiki_page.new'), new_wiki_page_path
+|
+= link_to 'RSS', wiki_rss_path

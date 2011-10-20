@@ -1,0 +1,60 @@
+%h3= t('label.statistics.registration.registration_title')
+
+%table.data
+  %thead
+    %tr
+      %th Type
+      - @conferences.each do |c|
+        %th= c.name
+  - STATISTICS_TYPES.each_with_index do |type, i|
+    %tr{:class=> %w(even odd)[i % 2]}
+      %td= t("label.statistics.registration.#{type}")
+      - @conferences.each do |c|
+        %td= @statistics.list[c.name].statistics[type] || 0
+
+%h3= t('label.statistics.registration.transport_to_title')
+
+%table.data
+  %thead
+    %tr
+      %th Type
+      - @conferences.each do |c|
+        %th= c.name
+  - TRANSPORT.each_with_index do |type, i|
+    %tr{:class=> %w(even odd)[i % 2]}
+      %td= t("label.conference_registration.transport_to_list.#{type}")
+      - @conferences.each do |c|
+        %td= @statistics.list[c.name].statistics["transport_to_#{type}".to_sym] || 0
+
+%h3= t('label.statistics.registration.transport_from_title')
+
+%table.data
+  %thead
+    %tr
+      %th Type
+      - @conferences.each do |c|
+        %th= c.name
+  - TRANSPORT.each_with_index do |type, i|
+    %tr{:class=> %w(even odd)[i % 2]}
+      %td= t("label.conference_registration.transport_from_list.#{type}")
+      - @conferences.each do |c|
+        %td= @statistics.list[c.name].statistics["transport_from_#{type}".to_sym] || 0
+
+%h3= t('label.statistics.registration.days_title')
+
+- translated_days = I18n.translate(:'date.day_names')
+- def_days = I18n.translate(:'date.day_names', :locale => I18n.default_locale)
+- days = translated_days.zip(def_days)
+- selectable_days = days[4..-1] + [days[0]]
+
+%table.data
+  %thead
+    %tr
+      %th Type
+      - @conferences.each do |c|
+        %th= c.name
+  - selectable_days.each_with_index do |day, i|
+    %tr{:class=> %w(even odd)[i % 2]}
+      %td= day[0]
+      - @conferences.each do |c|
+        %td= @statistics.list[c.name].statistics["days_#{day[1].downcase}".to_sym] || 0

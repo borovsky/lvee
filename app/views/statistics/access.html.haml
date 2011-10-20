@@ -1,0 +1,47 @@
+%h1= t("label.statistics.title.#{params[:length]}")
+
+= render "/statistics/menu"
+
+- cache_with_timeout(nil, 2.hours) do
+  - fetch_statistics
+
+  %h2= t('label.statistics.title.total_visitors', :count => @total_visitors )
+
+  %h2= t('label.statistics.title.country_statistic')
+  %table.data
+    %thead
+      %tr
+        %th{:style=>"width: 50px"}
+        %th= t("label.statistics.country")
+        %th{:style=>"width: 200px"}= t("label.statistics.visits")
+    - @report_country.each_with_index do |l, i|
+      %tr{:class=>"#{(i % 2 == 0) ? 'even' : 'odd'}"}
+        %td= i+1
+        %td= l.country
+        %td= l.visits
+
+  %h2= t('label.statistics.title.browser_statistic')
+  %table.data
+    %thead
+      %tr
+        %th{:style=>"width: 50px"}
+        %th= t("label.statistics.browser")
+        %th{:style=>"width: 200px"}= t("label.statistics.visits")
+    - @report_browser.each_with_index do |l, i|
+      %tr{:class=>"#{(i % 2 == 0) ? 'even' : 'odd'}"}
+        %td= i+1
+        %td= l.browser
+        %td= l.visits
+
+  %h2= t('label.statistics.title.os_statistic')
+  %table.data
+    %thead
+      %tr
+        %th{:style=>"width: 50px"}
+        %th= t("label.statistics.operating_system")
+        %th{:style=>"width: 200px"}= t("label.statistics.visits")
+    - @report_os.each_with_index do |l, i|
+      %tr{:class=>"#{(i % 2 == 0) ? 'even' : 'odd'}"}
+        %td= i+1
+        %td= l.operating_system
+        %td= l.visits

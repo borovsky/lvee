@@ -1,0 +1,25 @@
+!!!
+%html{:xmlns=>"http://www.w3.org/1999/xhtml", "xml:lang"=>I18n.locale}
+  = render 'layouts/partials/head'
+  %body
+    #wrapper.container
+      = render "/editor/metainfos/editor" if admin?
+      = render 'layouts/partials/top'
+
+      #splash
+      #slogan= raw t('message.conference.slogan')
+
+      #content
+        #article-box
+          #article-top
+          #article-bg
+            = flashes_if_any
+            .articles= yield
+            .clear
+
+        #friends-box
+          #friend-top
+          = render "/layouts/partials/sidebar"
+        .clear
+
+    #footer-box.footer= render "/layouts/partials/footer"

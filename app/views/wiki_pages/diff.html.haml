@@ -1,0 +1,11 @@
+- if @prev
+  %h1= t("label.diff.change_wiki_title", :wiki_page => @wiki_page.name, :from => @prev.version, :to => @wiki_page.version)
+- else
+  %h1= t("label.diff.new_wiki_title", :wiki_page => @wiki_page.name)
+
+#diff
+  = controller.display_diff(@prev, @wiki_page, :render_wiki_page)
+= render "wiki_pages/versions"
+= link_to t('label.common.back'), wiki_page_path(@wiki_page.name)
+|
+= link_to t('label.common.back_to_list'), wiki_pages_path

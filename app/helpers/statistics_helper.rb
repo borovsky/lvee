@@ -19,8 +19,6 @@ module StatisticsHelper
         sort(:visits.desc)
       end
 
-      GC.start
-
       @total_visitors = @report_os.inject(0) {|sum, i| sum + i.visits.to_i }
     end
   end

@@ -1,0 +1,22 @@
+- versions = @article.kind_of?(Article) ? @article.versions :  @article.original.versions
+
+= form_tag(diff_article_path(:version => nil)) do
+  %table.data
+    %thead
+      %tr
+        %th= t("label.diff.version")
+        %th= t("label.diff.from")
+        %th= t("label.diff.to")
+        %th= t("label.diff.changed_at")
+        %th= t("label.diff.editor")
+    - versions.each_with_index do |v, i|
+      %tr{:class=>%w('even odd')[i%2]}
+        %td= v.version
+        %td= radio_button_tag("prev_version", v.version, @prev && (@prev.version == v.version))
+        %td= radio_button_tag("version", v.version, @article.version == v.version)
+        %td= format_date(v.updated_at)
+        - user = User.find_by_id(v.user_id)
+        %td
+          = user ? user.full_name : t("label.common.unknown_user")
+          = "(#{user.login})" if(user && admin?)
+  = submit_tag t('label.common.view_changes')

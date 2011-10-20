@@ -8,6 +8,6 @@
     :author => author.full_name)
 
 #diff= controller.display_diff(@previous_version, @current_version, :render_article)
-= render :partial => "thesises/versions"
+= render "thesises/versions"
 = link_to("Back", params[:user_id] ? user_thesises_path(:lang=> params[:lang], |
   :user_id => params[:user_id], :id => params[:id]) : diff_thesis_path(:lang => params[:lang], :id => params[:id]))

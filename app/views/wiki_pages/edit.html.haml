@@ -1,0 +1,18 @@
+%h1= t('label.wiki_page.editing')
+
+#preview_place
+
+= form_for(@wiki_page, :url => wiki_page_path(@wiki_page.name)) do |f|
+  = f.error_messages
+  = f.hidden_field :version
+
+  = render("/wiki_pages/form", :f => f)
+  %p
+    = f.submit t('label.common.preview'), "data-remote-preview" => true, |
+      "data-update" => 'preview_place', |
+      "data-url" => preview_wiki_pages_url, "data-method" => "PUT"
+    = f.submit t('label.common.update')
+
+= link_to t('label.common.show'), wiki_page_path(@wiki_page.name)
+|
+= link_to t('label.common.back_to_list'), wiki_pages_path

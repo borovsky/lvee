@@ -1,0 +1,34 @@
+!!!
+%html{:xmlns=>"http://www.w3.org/1999/xhtml", "xml:lang"=>I18n.locale}
+  = render 'layouts/partials/head'
+  %body
+    #wrapper.all.container
+      = render "/editor/metainfos/editor" if admin?
+      = render 'layouts/partials/top'
+
+      #splash
+      #slogan= raw(t('message.conference.slogan'))
+
+      #content
+        #article-box
+          #article-top
+          #article-bg
+            = flashes_if_any
+            #news-box= render "/news/news_main"
+
+            .articles
+              = article_output('main', 'conference')
+              <g:plusone size="medium"></g:plusone>
+
+            - unless current_user
+              .button-join
+                = link_to t('label.user.join_us'), new_user_path
+                %p
+                  %img{:alt=>"tux", :src=>"/images/tux.png"}
+            .clear
+
+        #friends-box
+          #friend-top= render "/layouts/partials/sidebar"
+        .clear
+
+    #footer-box.footer= render "/layouts/partials/footer"

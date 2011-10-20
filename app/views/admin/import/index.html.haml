@@ -1,0 +1,16 @@
+%h1 Users import
+
+%p For add missed users please paste here json
+
+= form_tag :action => "users" do
+  = text_area_tag "users"
+  = submit_tag "Import"
+
+%h1 Conference registration import
+
+%p For import conference registrations, post here list of emails (one per line)
+= form_tag :action => "conference_registrations" do
+  = select_tag "conference", options_for_select(Conference.all.map{|c| [c.name, c.id]})
+  %br/
+  = text_area_tag "users"
+  = submit_tag "Import"

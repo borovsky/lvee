@@ -1,7 +1,0 @@
-<h4><%= @language.description%> language upload</h4>
-<%= form_for(:language,
-             :url => upload_editor_language_path(:id => @language.id, :lang => params[:lang]),
-             :html => { :multipart => true }) do |form| %>
-  <%= t('label.language.upload')%>: <%= file_field_tag("language" ) %><br/>
-  <%= submit_tag(t('label.common.upload')) %>
-<% end %>

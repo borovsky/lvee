@@ -1,0 +1,11 @@
+%h1= t("label.conference_registration.badges_title", :conference => @conference.name)
+
+= form_tag badges_user_conference_registration_path do 
+  #badges
+    - @badges.each do |badge|
+      .badge
+        = text_field_tag "badges[][tags]", badge.tags, :class=> "tags"
+        = text_field_tag "badges[][top]", badge.top, :class=> "top"
+        = text_field_tag "badges[][bottom]", badge.bottom, :class=> "bottom"
+
+  = submit_tag t('label.common.save')

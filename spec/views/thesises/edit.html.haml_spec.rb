@@ -5,7 +5,7 @@ describe "thesises/edit.html.haml" do
     @user = stub_model(User, :first_name => "Test1", :last_name => "Test2")
 
     @thesis = assign(:thesis, stub_model(Thesis,
-      :conference_registration_id => 1,
+      :conference => stub_model(Conference, :name => "test"),
       :title => "MyString",
       :body => "MyText"
     ))

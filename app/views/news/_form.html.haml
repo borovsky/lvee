@@ -1,0 +1,15 @@
+%p
+  = f.label :title, t('label.news.title')
+  %br/
+  = f.text_field :title
+
+%p
+  = f.label :lead, t('label.news.abstract')
+  %br/
+  = f.text_area :lead, :rows => 4
+
+%p
+  = f.label :body, t('label.news.body')
+  %br/
+  = f.text_area :body, :cols => 80, :rows => 20
+%p Please input news abstract and body in <a href="http://www.textism.com/tools/textile/">Textile</a> format

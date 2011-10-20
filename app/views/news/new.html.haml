@@ -1,0 +1,17 @@
+%h1= @news.parent_id ? t('label.news.translating') : t('label.news.creating')
+
+= error_messages_for :news
+
+#preview_place
+
+= form_for(@news, :url => news_item_index_path()) do |f|
+  = f.hidden_field :parent_id
+  = f.hidden_field :locale
+  = render "/news/form", :f => f
+  %p
+    = f.submit t('label.common.preview'), "data-remote-preview" => true, |
+      "data-update" => 'preview_place', |
+      "data-url" => preview_news_item_index_url, "data-method" => "PUT"
+    = f.submit t('label.common.save')
+
+= link_to t('label.news.back_to_list'), news_item_index_path

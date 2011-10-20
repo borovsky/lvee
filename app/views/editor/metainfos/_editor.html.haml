@@ -1,0 +1,16 @@
+#metainfo-link
+  %a(href="#" onclick="$('#metainfo-form').toggle(); return false")= t('label.metainfo.edit')
+  #metainfo-form(style="display:none")
+    = form_for @metainfo, :url => change_editor_metainfos_path, :remote => true do |f|
+      = f.hidden_field :page
+      = f.hidden_field :language
+      %p
+        = f.label :keywords
+        %br/
+        = f.text_field :keywords
+      %p
+        = f.label :description
+        %br/
+        = f.text_area :description
+      = submit_tag t('label.common.save')
+      %a(href="#" onclick="$('#metainfo-form').toggle(); return false")= t('label.common.cancel')

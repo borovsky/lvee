@@ -1,0 +1,18 @@
+= form_tag session_path, :class => "create" do
+  %p
+    = label_tag "login", "#{t('label.session.login')}:"
+    %br/
+    = text_field_tag 'login'
+
+  %p
+    = label_tag "password", "#{t('label.session.password')}:"
+    %br/
+    = password_field_tag 'password'
+
+  %p
+    = label_tag "remember_me", "#{t('label.session.rememberMe')}:"
+    = check_box_tag 'remember_me'
+
+  %p= submit_tag t('label.session.loginButton')
+- link = link_to t("label.user.password_restore_link"), restore_users_path
+%p= raw(t("message.user.password_restore", :link => link))

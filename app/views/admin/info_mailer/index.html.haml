@@ -1,0 +1,22 @@
+%h1 Mailer
+= form_tag({:action => "send_mail"}, :multipart => true) do
+  %p
+    = label_tag "to", "To:"
+    - if @to_list.empty?
+      = text_field_tag "to", @to
+    - else
+      = hidden_field_tag "to_list", @to_list.join(",")
+    %ul
+      - @to_list_users.each do |u|
+        %li #{u.full_name} &lt; #{u.email}&gt;
+  %p
+    = label_tag "subject", "Subject:"
+    = text_field_tag "subject", params[:subject]
+
+  %p
+    = label_tag "body", "Body:"
+    = text_area_tag "body", params[:body], :cols => 80, :rows => 20
+  %p
+    =label_tag "attachment", "Attachment:"
+    = file_field_tag "attachment"
+  = submit_tag "Send"

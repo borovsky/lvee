@@ -1,7 +1,0 @@
-<h1><%= h article.title%></h1>
-
-<%= textilize(article.body) %>
-
-<%= render :partial => "/articles/editor_actions", :locals =>
-{:article => article} if editor? %>
-

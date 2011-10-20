@@ -1,0 +1,20 @@
+%p
+  #{f.label :locale, t('label.article.locale')}:
+  = @article.locale
+%p
+  = f.label :category, t('label.article.category')
+  %br/
+  = f.text_field :category
+%p
+  = f.label :name, t('label.article.name')
+  %br/
+  = f.text_field :name
+%p
+  = f.label :title, t('label.article.title')
+  %br/
+  = f.text_field :title
+%p
+  = f.label :body, t('label.article.body')
+  %br/
+  = f.text_area :body, :cols => 80, :rows => 20
+%p Please input article body in <a href="http://www.textism.com/tools/textile/">Textile</a> format

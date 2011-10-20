@@ -7,6 +7,10 @@ class Conference < ActiveRecord::Base
     Conference.find_all_by_registration_opened(true) - already_subscribed
   end
 
+  def self.finished
+    where("finish_date < ?", Time.now)
+  end
+
   def to_s
     name
   end

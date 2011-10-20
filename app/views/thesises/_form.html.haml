@@ -4,6 +4,8 @@
   -  if @thesis.new_record?
     - if @actual_conferences.length == 1
       = f.hidden_field :conference_id
+      = f.label :conference_id
+      = text_field_tag :conference, @actual_conferences.first.name, :disabled => true
     - else
       .field
         = f.label :conference_id

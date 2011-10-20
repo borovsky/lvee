@@ -1,0 +1,16 @@
+!!!
+%html{:xmlns=>"http://www.w3.org/1999/xhtml", "xml:lang"=>I18n.locale}
+  = render 'layouts/partials/head'
+  %body
+    #wrapper.container
+      = render 'layouts/partials/top'
+      #splash
+      #slogan= raw t('message.conference.slogan')
+
+      #admin-top
+      #content.content.admin
+        = flashes_if_any
+        = yield
+
+
+    #footer-box.footer= render "/layouts/partials/footer"

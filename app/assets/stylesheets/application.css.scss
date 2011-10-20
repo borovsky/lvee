@@ -555,11 +555,15 @@ li.friend li a {
 }
 
 table.data {
-    border-spacing: 0px;
-    border-collapse:collapse;
-    font-size:11px;
-    margin-left: -25px;
-    width:99%
+   border-spacing: 0px;
+   border-collapse:collapse;
+   font-size:11px;
+   margin-left: -25px;
+   width:99%;
+   a {
+      color: #7f9f00;
+      text-decoration: underline;
+   }
 }
 
 .active-scaffold .form dd {
@@ -597,7 +601,7 @@ table.data {
     margin: 0;
 }
 
-textarea#article_body, textarea#wiki_page_body, textarea#thesis_body {
+textarea#article_body, textarea#wiki_page_body, textarea#thesis_body, textarea#news_body{
     width: 560px;
 }
 

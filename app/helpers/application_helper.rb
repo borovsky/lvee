@@ -9,7 +9,7 @@ module ApplicationHelper
 
     @statistics ||= ConferenceStatisticsPresenter.new(@users, @conferences)
 
-    render :partial => "/admin/shared/statistics"
+    render "/admin/shared/statistics"
   end
 
   def cache_with_timeout(key, timeout, &block)
@@ -61,7 +61,7 @@ module ApplicationHelper
 
   def article_output(category, name)
     a = Article.load_by_name_or_create(category, name)
-    render :partial => "/articles/inline", :locals=> {:article => a}
+    render "/articles/inline", :article => a
   end
 
   def editor?

@@ -1,0 +1,14 @@
+%p.controls
+  = link_to t('label.common.view_changes'), diff_article_path(article) 
+  |
+  - if article.translated?
+    = link_to t('label.common.editTranslation'), edit_article_path(article)
+  - else
+    - if article.locale == I18n.locale
+      = link_to t('label.common.edit'), edit_article_path(article)
+    - else
+      = link_to t('label.common.translate'), translate_article_path(article)
+  |
+
+  = link_to t('label.common.delete'), article, :method => :delete, :confirm =>t("message.common.sure")
+</p>

@@ -1,0 +1,11 @@
+%h1= t('label.news.last_news')
+
+- for news in @news
+  %h2= link_to(h(news.title), news_item_path(news))
+  = textilize(news.lead)
+  = news.user.full_name
+  = render('news/editor_actions', :news => news) if editor?
+  %hr
+
+- if editor?
+  = link_to t('label.news.add'), new_news_item_path

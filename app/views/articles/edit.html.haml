@@ -1,0 +1,14 @@
+%h1= t('label.article.editing')
+
+#preview_place
+
+= form_for(@article) do |f|
+  = f.error_messages
+  = render "/articles/form", :f => f
+
+  %p
+    = f.submit t('label.common.preview'), "data-remote-preview" => true, |
+      "data-update" => 'preview_place', "data-url" => preview_articles_url, "data-method" => "PUT"
+    = f.submit t('label.common.update')
+
+= link_to t('label.common.back'), articles_path

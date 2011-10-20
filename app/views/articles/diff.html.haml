@@ -1,0 +1,8 @@
+- if @prev
+  %h1= t("label.diff.change_article_title", :article => "#{@article.category}/#{@article.name}", :from => @prev.version, :to => @article.version)
+- else
+  %h1= t("label.diff.new_article_title", :article => "#{@article.category}/#{@article.name}")
+
+#diff
+  = controller.display_diff(@prev, @article, :render_article)
+= render "articles/versions"

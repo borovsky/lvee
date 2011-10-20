@@ -1,0 +1,10 @@
+%p
+  = f.label :name, t('label.wiki_page.name')
+  %br/
+  = f.text_field :name
+%p
+  = f.label :body, t('label.wiki_page.body')
+  %br/
+  = f.text_area :body, :cols => 80, :rows => 20
+
+%p Please input page body in <a href="http://www.textism.com/tools/textile/">Textile</a> format

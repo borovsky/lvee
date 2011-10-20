@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
-  prepend_before_filter :editor_required, :except => [:show]
+  prepend_before_filter :editor_required, :except => :show
+  layout :choose_layout
 
   include DiffHelper
 
@@ -19,8 +20,16 @@ class ArticlesController < ApplicationController
   def show
     return render :status => 404, :text => "Not found" unless @article
     @title = @article.title
-    @canonical_url = article_by_name_url(:category => @article.category, :name => @article.name, :lang => I18n.default_locale)
-    @canonical_path = article_by_name_path(:category => @article.category, :name => @article.name, :lang => I18n.default_locale)
+    to = {:lang => I18n.default_locale}
+    if @article.category =~ /(conference|contacts|sponsors|reports)/
+      to.merge!(:category => @article.category, :name => @article.name)
+      @canonical_url = article_by_name_url(to)
+      @canonical_path = article_by_name_path(to)
+    else
+      to.merge!(:id => @article.id)
+      @canonical_url = article_url(to)
+      @canonical_path = article_path(to)
+    end
 
     respond_to do |format|
       format.html # show.html.erb
@@ -147,5 +156,9 @@ class ArticlesController < ApplicationController
     else
       @article = Article.load_by_name(params[:category], params[:name])
     end
+  end
+
+  def choose_layout
+    params[:action] == :show ? 'application' : 'admin'
   end
 end

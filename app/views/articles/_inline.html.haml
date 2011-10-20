@@ -1,0 +1,6 @@
+%h1= article.title
+
+= textilize(article.body)
+
+= render "/articles/editor_actions", :article => article if editor?
+

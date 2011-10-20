@@ -1,0 +1,17 @@
+%h1= t('label.news.editing')
+
+= error_messages_for :news
+
+#preview_place
+
+= form_for(@news, :url => news_item_path(:id => @news)) do |f|
+  = render "/news/form", :f => f
+  %p
+    = f.submit t('label.common.preview'), "data-remote-preview" => true, |
+      "data-update" => 'preview_place', |
+      "data-url" => preview_news_item_index_url, "data-method" => "PUT"
+    = f.submit t('label.common.save')
+
+= link_to t('label.common.show'), news_item_path(:id => @news)
+|
+= link_to t('label.news.back_to_list'), news_item_index_path

@@ -1,0 +1,27 @@
+%h1=h @news.title
+
+%p.news_date=format_date(@news.created_at)
+%p.abstract= textilize_without_paragraph(@news.lead)
+.texttext= textilize(@news.body)
+%p.author
+  %b= "#{t('label.news.author')}:"
+  =h @news.user.full_name
+:plain
+  <g:plusone size="medium"></g:plusone>
+
+= render('news/editor_actions', :news => @news) if editor?
+= link_to t('label.news.back_to_list'), news_item_index_path(:lang => params[:lang])
+
+#disqus_thread
+:javascript
+  var disqus_shortname = 'lveeconf';
+  var disqus_identifier = '#{@canonical_path}';
+  #{'var disqus_developer = true;' if Rails.env == 'development'}
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>

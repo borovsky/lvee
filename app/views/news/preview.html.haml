@@ -1,0 +1,8 @@
+#preview
+  %h1#preview_title= t('label.common.preview')
+  #preview_body
+    %h1= @news.title
+    %p.abstract= textilize_without_paragraph(@news.lead)
+
+    .text
+      =textilize(@news.body)

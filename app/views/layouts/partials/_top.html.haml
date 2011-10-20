@@ -1,0 +1,16 @@
+#top-panel.last
+  #login-panel
+    %ul
+      - if current_user
+        %li.first= raw t('message.session.logged', :user_name => link_to(current_user.login, user_path(current_user)))
+        %li.stick |
+        %li= link_to t('label.session.logout'), session_path, :method => :delete
+      -else
+        %li.first= link_to t('label.session.loginButton'), new_session_path
+        %li.stick |
+        %li= link_to t('label.user.register'), new_user_path
+  #languages
+    = render 'layouts/partials/flags'
+
+#menu{:class=>["last", (editor? && "admin")]}= render 'layouts/partials/menu'
+

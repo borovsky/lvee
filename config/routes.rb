@@ -10,9 +10,10 @@ Rails.application.routes.draw do
   scope "/:lang", :constraints => {:lang => /[a-z]{2}/} do
     namespace :admin do
       get "/users/:to_list/mail" => 'info_mailer#index', :as => "mail_user"
-      put "/users/mail" => 'info_mailer#send_mail'
+      put "/users/mail" => 'info_mailer#index'
+      put "/users/send_mail" => 'info_mailer#send_mail', :as => "send_email"
       resources :users do
-        put :set_role, :on => :member
+        post :set_role, :on => :member
       end
       resources :conferences do
         as_routes
@@ -38,6 +39,7 @@ Rails.application.routes.draw do
       resources :not_found_redirects do 
         as_routes 
       end
+      match "/import(/:action)", :controller => "import"
     end
 
     namespace :editor do
@@ -61,7 +63,8 @@ Rails.application.routes.draw do
     resource  :session
 
     get "statistics/conference/:id" => 'statistics#conference', :as => "statistics_conference"
-    get "statistics(/:length)" => 'statistics#access', :defaults => {:length => "full"}, :constraints => {:length => /(full|week|month)/}, :as => "statistics"
+    get "statistics(/:length)" => 'statistics#access', :defaults =>{:length => "full"}, 
+      :constraints => {:length => /(full|week|month)/ }, :as => "statistics"
 
     match "conference_registrations/:id" => 'conference_registrations#user_list', :as => "conference_registration_list"
     match "users/:id/upload_avator" => 'users#upload_avator', :as => "upload_user_avator"

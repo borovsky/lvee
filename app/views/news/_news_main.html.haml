@@ -1,0 +1,13 @@
+- news = @news.limit(3).translated(I18n.locale)
+
+- news.each_with_index do |n, index|
+  %div{:class=> ["news-column", (index == 0) && :first]}
+    %p.news-date= n.published_at.strftime(I18n.t 'date.formats.default')
+    %h3= link_to(n.title, news_item_path(:id =>n.id))
+    .body= textilize_without_paragraph(n.lead)
+
+.clear
+  .border-news.first
+  .border-news
+  .border-news
+%p#all-news= link_to t('label.news.all_news'), :controller => '/news', :action => 'index'

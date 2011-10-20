@@ -1,0 +1,15 @@
+%h1= t('label.wiki_page.creating')
+
+#preview_place
+
+= form_for(@wiki_page) do |f|
+  = f.error_messages
+  = render "/wiki_pages/form" , :f => f
+
+  %p
+    = f.submit t('label.common.preview'), "data-remote-preview" => true, |
+      "data-update" => 'preview_place', |
+      "data-url" => preview_wiki_pages_url, "data-method" => "PUT"
+    = f.submit t('label.common.create')
+
+= link_to t('label.common.back'), wiki_pages_path

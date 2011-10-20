@@ -1,0 +1,28 @@
+%p
+  = link_to_function "Send mail to checked", "send_mail_to_checked_users()"
+
+%table.data#users
+  %thead
+    %tr
+      %th Id
+      %th= check_box_tag("all", '1', false, :id => 'check_all')
+      %th= t('label.user.login')
+      %th= t('label.user.full_name')
+      %th Active?
+      %th Conferences
+      %th Role
+      %th Actions
+  - @users.each_with_index do |user, i|
+    %tr{:id=> user, :class=> %w(even odd)[i % 2]}
+      %td= i+1
+      %td= check_box_tag "to_user[]", user.id, false, :class => "user_check", :id => "to_#{user.id}"
+      %td= user.login
+      %td= link_to user.full_name, user_path(user.id)
+      %td= user.active?
+      %td= user.conference_registrations.map{|r| r.conference.name}.join(', ')
+      %td
+        = select_tag("role", options_for_select(ROLES, user.role), :id => "role_#{user.id}", :class => "change_role_select")
+      %td
+        = link_to t('label.common.delete'), admin_user_path(user), :method => :delete, :confirm => t('message.common.sure'), :remote => true 
+        |
+        = link_to('Send Email', admin_mail_user_path(:to_list => user))
