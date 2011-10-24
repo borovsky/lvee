@@ -16,8 +16,9 @@ describe "abstracts/new.html.haml" do
       assert_select "select#abstract_conference_id", :name => "abstract[conference_registration_id]"
       assert_select "input#abstract_title", :name => "abstract[title]"
       assert_select "input#abstract_authors", :name => "abstract[authors]"
-      assert_select "textarea#abstract_abstract", :name => "abstract[abstract]"
+      assert_select "textarea#abstract_summary", :name => "abstract[summary]"
       assert_select "textarea#abstract_body", :name => "abstract[body]"
+      assert_select "input#abstract_license", :name => "abstract[license]"
     end
   end
 
@@ -30,8 +31,9 @@ describe "abstracts/new.html.haml" do
       assert_select "input#abstract_conference_id", :name => "abstract[conference_registration_id]"
       assert_select "input#abstract_title", :name => "abstract[title]"
       assert_select "input#abstract_authors", :name => "abstract[authors]"
-      assert_select "textarea#abstract_abstract", :name => "abstract[abstract]"
+      assert_select "textarea#abstract_summary", :name => "abstract[summary]"
       assert_select "textarea#abstract_body", :name => "abstract[body]"
+      assert_select "input#abstract_license", :name => "abstract[license]"
     end
   end
 end

@@ -1,21 +1,22 @@
 
 - if reviewer?
-  %h1= t("label.abstracts.list")
+  %h1= t("label.abstract.list")
   %p
-    = t("label.abstracts.list_selection")
-    = link_to_if @limit, t('label.abstracts.for_review'), abstracts_path
+    = t("label.abstract.list_selection")
+    = link_to_if @limit, t('label.abstract.for_review'), abstracts_path
     \|
-    = link_to_unless @limit, t('label.abstracts.yourself'), abstracts_path(:only => 'user')
+    = link_to_unless @limit, t('label.abstract.yourself'), abstracts_path(:only => 'user')
 - else
-  %h1= t("label.abstracts.list_user")
+  %h1= t("label.abstract.list_user")
 
 %table{:class => "data"}
-  %tr
-    - unless @limit
-      %th= t("label.abstracts.user")
-    %th= t("label.abstracts.title")
-    %th= t("label.abstracts.updated_at")
-    %th
+  %thead
+    %tr
+      - unless @limit
+        %th= t("label.abstract.user")
+      %th= t("label.abstract.title")
+      %th= t("label.abstract.updated_at")
+      %th
 
   - @abstracts.each_with_index do |abstract, i|
     %tr{:class => "#{(i % 2 == 0) ? 'even' : 'odd'}" }
@@ -34,7 +35,7 @@
                   = "(#{u.login})" if admin?
       %td= abstract.title
       %td= format_date(abstract.updated_at)
-      %td= link_to 'Show', abstract
+      %td= link_to t("label.common.show"), abstract
 
-- if @active_conferences
-  = link_to new_abstract_path
+- unless @actual_conferences.empty?
+  = link_to t("label.common.new"), new_abstract_path

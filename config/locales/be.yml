@@ -159,12 +159,18 @@ be:
     template: 
       header: "During saving following errors where found:"
   label: 
-    abstracts: 
+    abstract: 
+      authors: Authors
+      body: Body
+      change_summary: "Change summary"
+      conference: Conference
       for_review: "For review"
+      license: License
       list: "Abstracts for review"
       list_selection: "List abstracts:"
       list_user: "Your abstracts"
       ready_for_review: "Ready for review"
+      summary: Summary
       title: Title
       updated_at: "Last Modified"
       user: User

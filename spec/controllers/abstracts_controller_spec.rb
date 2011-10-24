@@ -3,7 +3,7 @@ require 'spec_helper'
 describe AbstractsController do
 
   def valid_attributes
-    {title: "test", authors: "a", abstract: "ab",
+    {title: "test", authors: "a", summary: "ab", :license => "lic",
       body: "test", change_summary: "123",
       conference_id: @conference.id, author_id: @user.id, user_ids: [@user.id]}
   end

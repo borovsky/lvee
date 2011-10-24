@@ -19,8 +19,9 @@ describe "abstracts/edit.html.haml" do
     assert_select "form", :action => abstract_path(@abstract), :method => "post" do
       assert_select "input#abstract_title", :name => "abstract[title]"
       assert_select "input#abstract_authors", :name => "abstract[authors]"
-      assert_select "textarea#abstract_abstract", :name => "abstract[abstract]"
+      assert_select "textarea#abstract_summary", :name => "abstract[summary]"
       assert_select "textarea#abstract_body", :name => "abstract[body]"
+      assert_select "input#abstract_license", :name => "abstract[license]"
       assert_select "input#abstract_ready_for_review", :name => "abstract[ready_for_review]", :type => "checkbox"
     end
   end

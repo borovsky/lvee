@@ -226,12 +226,18 @@ ru:
     template: 
       header: "При сохранении следующие ошибки были найдены:"
   label: 
-    abstracts: 
+    abstract: 
+      authors: Authors
+      body: Body
+      change_summary: "Change summary"
+      conference: Conference
       for_review: "Готовы к рассмотрению"
+      license: License
       list: "Тезисы к рассмотрению"
       list_selection: "Список тезисов"
       list_user: "Выши тезисы"
       ready_for_review: "Готовы к рассмотрению"
+      summary: Summary
       title: Заголовок
       updated_at: "Последнее изменение"
       user: Пользователь

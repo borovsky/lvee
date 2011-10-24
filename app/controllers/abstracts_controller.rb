@@ -6,7 +6,7 @@ class AbstractsController < ApplicationController
   # GET /abstracts
   # GET /abstracts.json
   def index
-    @actual_conferences = Conference.where("start_date < ?", Time.now).order("start_date")
+    @actual_conferences = Conference.where("start_date > ?", Time.now).order("start_date")
     if current_user.reviewer? && !(params[:only] == 'user')
       @abstracts = Abstract.for_review.where(:conference_id => @actual_conferences.map(&:id))
       @limit = false
@@ -23,7 +23,8 @@ class AbstractsController < ApplicationController
 
   def new
     @actual_conferences = Conference.where("start_date > ?", Time.now).order("start_date")
-    @abstract = Abstract.new(:authors => "#{current_user.full_name}, #{current_user.city}, #{current_user.country}")
+    @abstract = Abstract.new(:authors => "#{current_user.full_name}, #{current_user.city}, #{current_user.country}",
+                             :license => DEFAULT_LICENSE)
     @abstract.conference_id = @actual_conferences.first.id if @actual_conferences.length == 1
   end
 

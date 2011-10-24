@@ -7,7 +7,7 @@ class Abstract < ActiveRecord::Base
   set_locking_column("version")
   attr_protected :conference_registration_id
 
-  validates :title, :abstract, :authors, :body, :conference_id, :change_summary, :author_id, :presence => true
+  validates :title, :summary, :authors, :body, :license, :conference_id, :change_summary, :author_id, :presence => true
 
   has_many :comments, :class_name => "AbstractComment"
 

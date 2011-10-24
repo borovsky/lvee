@@ -17,7 +17,8 @@ describe "abstracts/index.html.haml" do
         :title => "Title",
         :body => "MyText"
       )
-    ])
+                       ])
+    assign(:actual_conferences, ["conf1"])
   end
 
   it "renders a list of abstracts" do
