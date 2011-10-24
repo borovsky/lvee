@@ -1,6 +1,6 @@
-class ThesisComment < ActiveRecord::Base
+class AbstractComment < ActiveRecord::Base
   belongs_to :user
-  belongs_to :thesis
+  belongs_to :abstract
 
   validates :user_id, :thesis_id, :body, :presence => true
 end

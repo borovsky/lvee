@@ -1,0 +1,40 @@
+
+- if reviewer?
+  %h1= t("label.abstracts.list")
+  %p
+    = t("label.abstracts.list_selection")
+    = link_to_if @limit, t('label.abstracts.for_review'), abstracts_path
+    \|
+    = link_to_unless @limit, t('label.abstracts.yourself'), abstracts_path(:only => 'user')
+- else
+  %h1= t("label.abstracts.list_user")
+
+%table{:class => "data"}
+  %tr
+    - unless @limit
+      %th= t("label.abstracts.user")
+    %th= t("label.abstracts.title")
+    %th= t("label.abstracts.updated_at")
+    %th
+
+  - @abstracts.each_with_index do |abstract, i|
+    %tr{:class => "#{(i % 2 == 0) ? 'even' : 'odd'}" }
+      - unless @limit
+        %td
+          - users = abstract.users
+          - if users.size == 1
+            - u = abstract.users.first
+            = u.full_name
+            = "(#{u.login})" if admin?
+          - else
+            %ul
+              - users.each do |u|
+                %li
+                  = u.full_name
+                  = "(#{u.login})" if admin?
+      %td= abstract.title
+      %td= format_date(abstract.updated_at)
+      %td= link_to 'Show', abstract
+
+- if @active_conferences
+  = link_to new_abstract_path

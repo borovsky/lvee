@@ -20,7 +20,7 @@
 
 
 - if @user.id == current_user.id
-  = link_to(t('label.conference_registration.thesises'), thesises_path, :class => "big-button")
+  = link_to(t('label.conference_registration.abstracts'), abstracts_path, :class => "big-button")
   = render 'conference_registrations/user_conferences'
   %hr/
   = link_to(t('label.user.edit'), edit_user_path(:id => @user, :lang => params[:lang]))

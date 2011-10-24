@@ -1,7 +1,7 @@
 #preview_place
-= form_for @thesis do |f|
+= form_for @abstract do |f|
   = f.error_messages
-  -  if @thesis.new_record?
+  -  if @abstract.new_record?
     - if @actual_conferences.length == 1
       = f.hidden_field :conference_id
       = f.label :conference_id
@@ -13,7 +13,7 @@
   - else
     .field
       = f.label :conference_id
-      = text_field_tag :conference, @thesis.conference.name, :disabled => true
+      = text_field_tag :conference, @abstract.conference.name, :disabled => true
   .field
     = f.label :title
     = f.text_field :title
@@ -33,5 +33,5 @@
     = f.check_box :ready_for_review
   .actions
     = f.submit t('label.common.preview'), :data => {"remote-preview" => true, |
-      :update => 'preview_place', :url => preview_thesises_url(:lang => params[:lang]), :method => "PUT"}
+      :update => 'preview_place', :url => preview_abstracts_url(:lang => params[:lang]), :method => "PUT"}
     = f.submit t('label.common.save')

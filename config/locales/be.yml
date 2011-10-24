@@ -159,6 +159,16 @@ be:
     template: 
       header: "During saving following errors where found:"
   label: 
+    abstracts: 
+      for_review: "For review"
+      list: "Abstracts for review"
+      list_selection: "List abstracts:"
+      list_user: "Your abstracts"
+      ready_for_review: "Ready for review"
+      title: Title
+      updated_at: "Last Modified"
+      user: User
+      yourself: Yourself
     article: 
       body: Цела
       category: Катэгорыя
@@ -215,6 +225,7 @@ be:
       start_date: "Дата пачатку"
       upcoming: "Наступныя канферэнцыі"
     conference_registration: 
+      abstracts: Abstracts
       approved_edit: "Пацвердзьце свой удзел у %{conference}"
       badges: Значкі
       badges_title: "Значкі на %{conference}"
@@ -233,7 +244,6 @@ be:
       quantity: "Колькасць удзельнікаў"
       residence: Жытло
       status_name: "Registration's Status"
-      thesises: Thesises
       title: "Рэгістрацыя на канферэнцыю %{conference}"
       transport_from: "Транспарт з канферэнцыі"
       transport_from_list: 
@@ -249,14 +259,14 @@ be:
       update_model: "Рэгістрацыя на канферэнцыю"
       updated_at: "Last Modified"
     diff: 
+      change_abstract_title: "Diff for abstracts from %{author} from version %{from} to %{to}"
       change_article_title: "Змены ў артыкуле %{article} з адмены %{from} да %{to}"
-      change_thesis_title: "Diff for thesises from %{author} from version %{from} to %{to}"
       change_wiki_title: "Змены на старонцы '%{wiki_page}' з адмены %{from} да %{to}"
       changed_at: Зменена
       editor: Рэдактар
       from: Ад
+      new_abstract_title: "Abstracts from %{author} has no previous versions"
       new_article_title: "Артыкул %{article} не мае папярэдніх адмен"
-      new_thesis_title: "Thesises from %{author} has no previous versions"
       new_wiki_title: "Старонка '%{wiki_page}' не мае папярэдніх адмен"
       to: Да
       version: Адмена
@@ -323,11 +333,6 @@ be:
         total_visitors: "Агулам наведнікаў: %{count}"
         week: "Статыстыка з мінулага тыдня"
       visits: Наведванні
-    thesis: 
-      ready_for_review: "Ready for review"
-      title: Title
-      updated_at: "Last Modified"
-      user: User
     user: 
       avator: "Ваш фотаздымак"
       city: Горад

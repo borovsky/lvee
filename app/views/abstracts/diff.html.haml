@@ -1,13 +1,13 @@
 - author = ConferenceRegistration.find(@current_version.conference_registration_id).user
 - if @previous_version
-  %h1= t("label.diff.change_thesis_title", 
+  %h1= t("label.diff.change_abstract_title", 
     :author => author.full_name,
     :from => @previous_version.version, :to => @current_version.version)
 - else
-  %h1= t("label.diff.new_thesis_title", 
+  %h1= t("label.diff.new_abstract_title", 
     :author => author.full_name)
 
 #diff= controller.display_diff(@previous_version, @current_version, :render_article)
-= render "thesises/versions"
-= link_to("Back", params[:user_id] ? user_thesises_path(:lang=> params[:lang], |
-  :user_id => params[:user_id], :id => params[:id]) : diff_thesis_path(:lang => params[:lang], :id => params[:id]))
+= render "abstracts/versions"
+= link_to("Back", params[:user_id] ? user_abstracts_path(:lang=> params[:lang], |
+  :user_id => params[:user_id], :id => params[:id]) : diff_abstract_path(:lang => params[:lang], :id => params[:id]))

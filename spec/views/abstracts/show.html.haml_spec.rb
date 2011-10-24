@@ -1,15 +1,15 @@
 require 'spec_helper'
 
-describe "thesises/show.html.haml" do
+describe "abstracts/show.html.haml" do
   before(:each) do
-    @thesis = assign(:thesis, stub_model(Thesis,
+    @abstract = assign(:abstract, stub_model(Abstract,
       :conference_registration_id => 1,
       :title => "Title",
       :body => "MyText"
     ))
     @comments = assign(:comments, [
       ])
-    @new_comment = assign(:new_comment, ThesisComment.new)
+    @new_comment = assign(:new_comment, AbstractComment.new)
   end
 
   it "renders attributes in <p>" do

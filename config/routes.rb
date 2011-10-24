@@ -87,7 +87,7 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :thesises, :except => [:destroy] do
+    resources :abstracts, :except => [:destroy] do
       put :preview, :on => :collection
       post :add_comment, :on => :member
       match :diff, :on => :member

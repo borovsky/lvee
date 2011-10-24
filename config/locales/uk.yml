@@ -227,6 +227,16 @@ uk:
     template: 
       header: "During saving following errors where found:"
   label: 
+    abstracts: 
+      for_review: "For review"
+      list: "Abstracts for review"
+      list_selection: "List abstracts:"
+      list_user: "Your abstracts"
+      ready_for_review: "Ready for review"
+      title: Title
+      updated_at: "Last Modified"
+      user: User
+      yourself: Yourself
     article: 
       body: "Змістовна частина"
       category: Категорія
@@ -283,6 +293,7 @@ uk:
       start_date: "Дата початку"
       upcoming: "Найближчі конференції"
     conference_registration: 
+      abstracts: Abstracts
       approved_edit: "Confirm participation in %{conference}"
       badges: Badges
       badges_title: "Badges for %{conference}"
@@ -301,7 +312,6 @@ uk:
       quantity: "Кількість учасників"
       residence: Accommodation
       status_name: "Registration's Status"
-      thesises: Thesises
       title: "Реєстрація на конференцію %{conference}"
       transport_from: "Transport from conference"
       transport_from_list: 
@@ -317,14 +327,15 @@ uk:
       update_model: "Conference Registration"
       updated_at: "Last Modified"
     diff: 
+      change_abstract_title: "Diff for abstracts from %{author} from version %{from} to %{to}"
       change_article_title: "Порівняння статті %{article} з %{from} до %{to}"
-      change_thesis_title: "Diff for thesises from %{author} from version %{from} to %{to}"
       change_wiki_title: "Порівняння сторінки '%{wiki_page}' з %{from} до %{to}"
       changed_at: "Changed at"
       editor: Editor
       from: From
+      new_abstrac_title: "Abstracts from %{author} has no previous versions"
+      new_abstract_title: "Abstracts from %{author} has no previous versions"
       new_article_title: "Стаття %{article} не має попередньої версії"
-      new_thesis_title: "Thesises from %{author} has no previous versions"
       new_wiki_title: "Сторінка '%{wiki_page}' не має попередньої версії"
       to: To
       version: Версія
@@ -391,11 +402,6 @@ uk:
         total_visitors: "Total visitors: %{count}"
         week: "Statistics for last week"
       visits: Visits
-    thesis: 
-      ready_for_review: "Ready for review"
-      title: Title
-      updated_at: "Last Modified"
-      user: User
     user: 
       avator: "Ваше фото"
       city: Місто

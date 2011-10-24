@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   mount_uploader :avator, UserUploader
 
   has_many :conference_registrations, :dependent => :delete_all
-  has_and_belongs_to_many :thesises, :join_table => "users_thesises", :uniq => true
+  has_and_belongs_to_many :abstracts, :join_table => "users_abstracts", :uniq => true
 
   # Virtual attribute for the unencrypted password
   attr_reader :password
