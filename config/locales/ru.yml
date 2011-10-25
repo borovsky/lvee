@@ -198,8 +198,8 @@ ru:
     abstract: 
       body: |-
           рекомендуемые языки: беларуский, русский или английский;
-           рекомендуемый размер: не более 6000 символов
-          Вы можете использовать "textile":http://www.textism.com/tools/textile/ разметку или простой текст
+          рекомендуемый размер: не более 6000 символов
+          Вы можете использовать разметку "textile":http://www.textism.com/tools/textile/ или простой текст
       license: "(Выбрать лицензию можно, посетив "creativecommons.org":http://creativecommons.org/choose/)"
     conference_registration: 
       days: "В какие дни вы планируете присутствовать?"
