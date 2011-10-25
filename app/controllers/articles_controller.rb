@@ -159,6 +159,6 @@ class ArticlesController < ApplicationController
   end
 
   def choose_layout
-    params[:action] == :show ? 'application' : 'admin'
+    params[:action] == "show" ? 'application' : 'admin'
   end
 end
