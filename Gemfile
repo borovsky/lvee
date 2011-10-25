@@ -2,7 +2,9 @@ source 'http://rubygems.org'
 
 gem 'rails', '~>3.1.0'
 
-gem 'acts_as_versioned', :git => "git://github.com/wiseleyb/acts_as_versioned.git", :branch => 'rails3'
+gem('acts_as_versioned',
+    :git => "git://github.com/wiseleyb/acts_as_versioned.git",
+    :branch => 'rails3')
 
 gem 'RedCloth', '~> 4.2.7', :require => 'redcloth'
 gem 'ya2yaml'

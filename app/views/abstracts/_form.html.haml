@@ -1,31 +1,22 @@
 #preview_place
-= form_for @abstract, :builder => BigFormBuilder do |f|
+= form_for(@abstract, builder: BigFormBuilder, html: {class: "abstracts"}) do |f|
   = f.error_messages
   -  if @abstract.new_record?
     - if @actual_conferences.length == 1
       = f.hidden_field :conference_id
       = text_field_tag :conference, @actual_conferences.first.name, :disabled => true
     - else
-      .field
-        = f.select :conference_id, @actual_conferences.map {|c| [c.name, c.id]}
+      = f.select :conference_id, @actual_conferences.map {|c| [c.name, c.id]}
   - else
-    .field
-      = text_field_tag :conference, @abstract.conference.name, :disabled => true
-  .field
-    = f.text_field :title
-  .field
-    = f.text_field :authors
-  .field
-    = f.text_area :summary, :rows => 5, :cols => 40
-  .field
-    = f.text_area :body, :rows => 20, :cols => 80
-  .field
-    = f.text_field :license
-  .field
-    = f.text_field :change_summary
-  .field
-    = f.check_box :ready_for_review
+    = text_field_tag :conference, @abstract.conference.name, :disabled => true
+  = f.text_field :title
+  = f.text_field :authors
+  = f.text_area :summary, :rows => 5, :cols => 40
+  = f.text_area :body, :rows => 20, :cols => 80
+  = f.text_field :license
+  = f.text_field :change_summary
+  = f.check_box :ready_for_review
   .actions
     = f.submit t('label.common.preview'), :data => {"remote-preview" => true, |
-      :update => 'preview_place', :url => preview_abstracts_url(:lang => params[:lang]), :method => "PUT"}
+      :update => 'preview_place', :url => preview_abstracts_url, :method => "PUT"}
     = f.submit t('label.common.save')

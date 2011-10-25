@@ -46,17 +46,34 @@ textarea#abstract_summary {
 .authors {text-align: center}
 .summary {font-style: italic}
 
-
 .field {
-  width: 570px;
-  clear: both;
-  textarea, input, label {
-    margin: 5px;
-    display:block;
-  }
-  label {
-    width: 130px;
-    text-align:right;
-    float:left;
-  }
+   width: 570px;
+   clear: both;
+   margin-bottom: 1em;
+}
+
+form.abstracts {
+   .field {
+      input,textarea {
+         clear: both;
+         width: 560px;
+      }
+      label: {
+         padding-right: 1em;
+         display: inline-block;
+      }
+      textarea {
+         clear: both;
+         width: 560px
+      }
+      input.checkbox{
+         clear: none;
+      }
+   }
+   .actions {
+      padding-top: 2em;
+   }
+   .description {
+      padding: 0;
+   }
 }

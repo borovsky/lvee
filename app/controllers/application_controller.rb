@@ -3,8 +3,9 @@ require 'authenticated_system'
 class ApplicationController < ActionController::Base
   clear_helpers
 
-  rescue_from ::AbstractController::ActionNotFound, ::ActiveRecord::RecordNotFound, :with => :not_found_error_handler
-  
+  rescue_from ::AbstractController::ActionNotFound,
+  ::ActiveRecord::RecordNotFound, :with => :not_found_error_handler
+
   include AuthenticatedSystem
 
   before_filter :language_select
@@ -132,7 +133,7 @@ class ApplicationController < ActionController::Base
   end
 
   protected
-  
+
   def not_found_error_handler(*exception)
     m = request.path.match(/^(\/\w{2}\/)(.*)$/)
     if m
@@ -145,7 +146,7 @@ class ApplicationController < ActionController::Base
       else
         render :file => "#{Rails.root}/public/404.html", :status => 404, :layout => false
       end
-    else 
+    else
       render :file => "#{Rails.root}/public/404.html", :status => 404, :layout => false
     end
   end

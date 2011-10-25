@@ -14,13 +14,15 @@ describe AbstractsController do
     login_as @user
     @conference = Conference.new(:name => "test")
     @conference.save!(:validate => false)
-    @conference_registration = ConferenceRegistration.new(:user_id => @user.id, :conference_id => @conference.id)
+    @conference_registration = ConferenceRegistration.new(user_id: @user.id,
+                                                          conference_id: @conference.id)
     @conference_registration.save!(:validate => false)
   end
 
   describe "GET index" do
     it "assigns all abstracts as @abstracts" do
-      abstract = Abstract.create!(valid_attributes.merge(:ready_for_review => true), :without_protection => true)
+      abstract = Abstract.create!(valid_attributes.merge(:ready_for_review => true),
+                                  :without_protection => true)
       get :index
       assigns(:abstracts).should eq([abstract])
     end
@@ -83,16 +85,17 @@ describe AbstractsController do
     describe "with valid params" do
       before do
         @reg = stub_model(ConferenceRegistration, :user_id => @user.id)
-        Abstract.any_instance.stub!(:conference_registration).and_return(@reg)
+        Abstract.any_instance.stub(:conference_registration).and_return(@reg)
       end
-      
+
       it "updates the requested abstract" do
         abstract = Abstract.create!(valid_attributes, :without_protection => true)
         # Assuming there are no other abstracts in the database, this
         # specifies that the Abstract created on the previous line
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
-        Abstract.any_instance.should_receive(:update_attributes).with({'these' => 'params', "author" => @user})
+        Abstract.any_instance.should_receive(:update_attributes).with({'these' => 'params',
+                                                                        "author" => @user})
         put :update, :id => abstract.id, :abstract => {'these' => 'params'}
       end
 

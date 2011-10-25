@@ -43,7 +43,6 @@ module ApplicationHelper
     @record.send(column.name) if @record
   end
 
-  # FIXME
   def format_date(time)
     time ? localize(time, :format => :long) : t("date.none")
   end
@@ -76,10 +75,6 @@ module ApplicationHelper
     current_user.try(:reviewer?)
   end
 
-  def article_link(title, category, name)
-    link_to(title, :category => category, :name => name, :controller => "/articles", :action => 'show')
-  end
-
   def w3c_date(date)
     date.utc.strftime("%Y-%m-%dT%H:%M:%S+00:00")
   end
@@ -101,7 +96,7 @@ module ApplicationHelper
       textilized.to_html.html_safe
     end
   end
-  
+
   def textilize_without_paragraph(text)
     textiled = textilize(text)
     if textiled[0..2] == "<p>" then textiled = textiled[3..-1] end

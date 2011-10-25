@@ -127,6 +127,12 @@ be:
       second: секундаў
       year: гадоў
   description: 
+    abstract: 
+      body: |-
+          recommended languages are Belarussian, Russian or English;
+          recommended size is approximately 6000 symbols or less
+          You can use "textile":http://www.textism.com/tools/textile/ mark-up or plain text.
+      license: "(Licenses are explained at \"creativecommons.org\":http://creativecommons.org)"
     conference_registration: 
       days: "У якія дні вы плануеце ўзяць удзел у канферэнцыі?"
       floor: "Ці гатовыя вы да наступных умоваў: арганізацыйны ўнёсак змяншаецца ўдвая; замест спальнага месца ў дамку даецца магчымасць паставіць намёт на палянцы або далучыцца да каго-небудзь з насельнікаў намётавага лагера з вольнымі месцамі."
@@ -164,11 +170,14 @@ be:
       body: Body
       change_summary: "Change summary"
       conference: Conference
+      create_new: "Create new abstracts"
+      edit: "Abstracts editing"
       for_review: "For review"
       license: License
       list: "Abstracts for review"
       list_selection: "List abstracts:"
       list_user: "Your abstracts"
+      new: "Abstracts creating"
       ready_for_review: "Ready for review"
       summary: Summary
       title: Title

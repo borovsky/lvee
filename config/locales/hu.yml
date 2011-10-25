@@ -195,6 +195,12 @@ hu:
       second: Másodperc
       year: Év
   description: 
+    abstract: 
+      body: |-
+          recommended languages are Belarussian, Russian or English;
+          recommended size is approximately 6000 symbols or less
+          You can use "textile":http://www.textism.com/tools/textile/ mark-up or plain text.
+      license: "(Licenses are explained at \"creativecommons.org\":http://creativecommons.org)"
     conference_registration: 
       days: "Mely napokon kíván részt venni?"
       floor: "Would you like to accept following conditions: organization fee decreases twice; instead of sleeping in a house you are pitching a tent or joining to somebody else with free places in a tent camp"
@@ -231,11 +237,14 @@ hu:
       body: Body
       change_summary: "Change summary"
       conference: Conference
+      create_new: "Create new abstracts"
+      edit: "Abstracts editing"
       for_review: "For review"
       license: License
       list: "Abstracts for review"
       list_selection: "List abstracts:"
       list_user: "Your abstracts"
+      new: "Abstracts creating"
       ready_for_review: "Ready for review"
       summary: Summary
       title: Title
