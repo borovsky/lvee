@@ -24,6 +24,7 @@ class AbstractsController < ApplicationController
   def new
     @actual_conferences = Conference.where("start_date > ?", Time.now).order("start_date")
     @abstract = Abstract.new(:authors => "#{current_user.full_name}, #{current_user.city}, #{current_user.country}",
+                             :change_summary => t("label.abstracts.initial_version"),
                              :license => DEFAULT_LICENSE)
     @abstract.conference_id = @actual_conferences.first.id if @actual_conferences.length == 1
   end
@@ -44,7 +45,7 @@ class AbstractsController < ApplicationController
     @abstract = Abstract.find(params[:id])
     @comment = @abstract.comments.build({:user_id => current_user.id}.merge(params[:abstract_comment]))
     @comment.save!
-    
+
     redirect_to abstract_path(@abstract), notice: 'Comment added.'
   end
 
@@ -62,7 +63,7 @@ class AbstractsController < ApplicationController
     @abstract.conference_id = params[:abstract][:conference_id]
     @abstract.author = current_user
     @abstract.users << current_user
-    
+
     respond_to do |format|
       if @abstract.save
         format.html do

@@ -126,7 +126,10 @@ en:
       year: Year
   description:
     abstract:
-      body: "recommended languages are Belarussian, Russian or English;\nrecommended size is approximately 6000 symbols or less\nYou can use \"textile\":http://www.textism.com/tools/textile/ mark-up or plain text."
+      body: |-
+        recommended languages are Belarussian, Russian or English;
+        recommended size is approximately 6000 symbols or less
+        You can use \"textile\":http://www.textism.com/tools/textile/ mark-up or plain text.
       license: "(Licenses are explained at \"creativecommons.org\":http://creativecommons.org/choose)"
     conference_registration:
       days: "Which days do you plan to participate?"
@@ -167,6 +170,7 @@ en:
       create_new: "Create new abstracts"
       edit: "Abstracts editing"
       for_review: "For review"
+      initial_version: "Initial version"
       license: "License"
       list: "Abstracts for review"
       list_selection: "List abstracts:"

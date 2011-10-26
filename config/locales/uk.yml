@@ -241,6 +241,7 @@ uk:
       create_new: "Create new abstracts"
       edit: "Abstracts editing"
       for_review: "For review"
+      initial_version: "Initial version"
       license: License
       list: "Abstracts for review"
       list_selection: "List abstracts:"
