@@ -1,0 +1,8 @@
+<tr>
+  <td><%= friend[:hostname] %></td>
+  <td><%= status friend[:status] %></td>
+  <td>
+    <%= link_to t('.edit'), edit_admin_friend_path(:id => friend[:id], :lang => params[:lang]) %>
+    <%= link_to t('.delete'), admin_friend_path(:id => friend[:id], :lang => params[:lang]), :method => :delete %>
+  </td>
+</tr>

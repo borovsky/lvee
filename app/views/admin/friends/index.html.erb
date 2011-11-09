@@ -1,0 +1,20 @@
+<h2><%= t('.friendlist') %></h2>
+
+<%= link_to t('.create'), new_admin_friend_path %>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= t('.hostname') %></th>
+      <th><%= t('.status') %></th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= render :partial => 'friend', :collection => @friends %>
+  </tbody>
+</table>
+
+<%= render :partial => 'public_key', :locals => { :key => @public_key } %>
+

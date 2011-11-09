@@ -10,7 +10,7 @@
       <% else %>
       <li class="first"><%= link_to t('label.session.loginButton'), new_session_path %></li>
       <li class="stick">|</li>
-      <li><%= link_to t('label.user.register'), new_user_path %></li>
+      <li><%= link_to t('label.user.register'), :controller => :users, :action => :signup %></li>
       <% end %>
     </ul>
   </div><!-- login-panel -->
