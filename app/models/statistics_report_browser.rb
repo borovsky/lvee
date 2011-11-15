@@ -1,5 +1,3 @@
-require 'garb'
-
 class StatisticsReportBrowser
   extend  Garb::Model
 

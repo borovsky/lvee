@@ -1,5 +1,3 @@
-require 'authenticated_system'
-
 class ApplicationController < ActionController::Base
   clear_helpers
 

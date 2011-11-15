@@ -1,5 +1,3 @@
-require 'xhtmldiff'
-
 module DiffHelper
   def display_diff(base_article, article, render_method, mode=:site)
     if(base_article)

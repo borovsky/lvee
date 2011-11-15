@@ -2,12 +2,14 @@ class Abstract < ActiveRecord::Base
   belongs_to :conference, :inverse_of => :abstracts
   belongs_to :author, :class_name => "User"
   has_and_belongs_to_many :users, :join_table => "users_abstracts", :uniq => true
-  
+  has_many :files, :class_name => "AbstractFile"
+
   acts_as_versioned
   set_locking_column("version")
   attr_protected :conference_registration_id
 
-  validates :title, :summary, :authors, :body, :license, :conference_id, :change_summary, :author_id, :presence => true
+  validates :title, :summary, :authors, :body, :license,
+            :conference_id, :change_summary, :author_id, :presence => true
 
   has_many :comments, :class_name => "AbstractComment"
 

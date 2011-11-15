@@ -1,6 +1,3 @@
-require 'digest/sha1'
-require 'maillist_subscriber'
-
 class User < ActiveRecord::Base
   mount_uploader :avator, UserUploader
 
@@ -9,7 +6,7 @@ class User < ActiveRecord::Base
 
   # Virtual attribute for the unencrypted password
   attr_reader :password
-  
+
   # Virtual attribute for disable mail sending
   attr_accessor :no_mail
 

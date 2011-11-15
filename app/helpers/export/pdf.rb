@@ -1,5 +1,3 @@
-require 'iconv'
-
 module Export
   class MFPDF < TCPDF
     def add_text_wrap(x, y, w, txt, fh, align)

@@ -1,5 +1,3 @@
-require 'acts_as_versioned'
-
 class News < ActiveRecord::Base
 
   belongs_to :user

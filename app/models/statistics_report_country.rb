@@ -1,5 +1,3 @@
-require 'garb'
-
 class StatisticsReportCountry
   extend  Garb::Model
 

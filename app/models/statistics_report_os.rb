@@ -1,5 +1,3 @@
-require 'garb'
-
 class StatisticsReportOs
   extend  Garb::Model
 

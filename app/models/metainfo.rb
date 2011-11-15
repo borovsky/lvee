@@ -1,4 +1,3 @@
-require 'digest/sha1'
 class Metainfo < ActiveRecord::Base
   validates :language, :presence => true
   validates :page, :presence => true, :uniqueness => {:scope => :language}

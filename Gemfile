@@ -26,7 +26,7 @@ gem "haml-rails"
 
 gem 'exception_notification_rails3', :require => 'exception_notifier'
 
-group :test do
+group :test, :development do
   gem "rspec", ">= 2.6.0"
   gem "rspec-rails", ">= 2.6.1"
   gem "rspec-spies", ">= 2.0.0"
@@ -35,6 +35,8 @@ group :test do
   gem "rspec-mocks", ">= 2.6.0"
   gem "test-unit"
   gem 'webrat'
+  gem 'spork', '~> 0.9.0.rc'
+  gem 'watchr'
 end
 
 group :assets do
