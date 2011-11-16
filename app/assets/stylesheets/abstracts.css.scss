@@ -52,7 +52,7 @@ textarea#abstract_summary {
    margin-bottom: 1em;
 }
 
-form.abstracts {
+form.abstracts, form.abstracts-add {
    .field {
       input,textarea {
          clear: both;
@@ -69,11 +69,17 @@ form.abstracts {
       input.checkbox{
          clear: none;
       }
+      input.no-size {
+         width: auto;
+         clear: none;
+      }
    }
+
    .actions {
-      padding-top: 2em;
+      padding: 1em 0;
    }
    .description {
       padding: 0;
    }
 }
+

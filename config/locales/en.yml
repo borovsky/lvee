@@ -129,7 +129,7 @@ en:
       body: |-
         recommended languages are Belarussian, Russian or English;
         recommended size is approximately 6000 symbols or less
-        You can use \"textile\":http://www.textism.com/tools/textile/ mark-up or plain text.
+        You can use "textile":http://www.textism.com/tools/textile/ mark-up or plain text.
       license: "(Licenses are explained at \"creativecommons.org\":http://creativecommons.org/choose)"
     conference_registration:
       days: "Which days do you plan to participate?"
@@ -163,6 +163,7 @@ en:
       header: "During saving following errors where found:"
   label:
     abstract:
+      additional_files: "Images or other files can be uploaded here, if needed"
       authors: "Authors"
       body: "Abstracts main body"
       change_summary: "Changes in this version can be described as"
@@ -463,6 +464,10 @@ en:
       volunteers: Volunteers
       wiki: Wiki
   message:
+    abstract:
+      file_upload_success: "File uploaded successfuly"
+      file_upload_fail: "File can't be uploaded"
+      file_delete_success: "File deleted successfuly"
     common:
       access_denied: "Access denied"
       required_fields: "(fields marked with bold are obligatory to fill in)"

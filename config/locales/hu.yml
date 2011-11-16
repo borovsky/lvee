@@ -233,6 +233,7 @@ hu:
       header: "During saving following errors where found:"
   label: 
     abstract: 
+      additional_files: "Images or other files can be uploaded here, if needed"
       authors: Authors
       body: Body
       change_summary: "Change summary"
@@ -532,6 +533,10 @@ hu:
       volunteers: Volunteers
       wiki: Wiki
   message: 
+    abstract: 
+      file_delete_success: "File deleted successfuly"
+      file_upload_fail: "File can't be uploaded"
+      file_upload_success: "File uploaded successfuly"
     common: 
       access_denied: "Hozzáférés megtagadva"
       required_fields: "(a vastagbetűs mezők kitöltése kötelező)"

@@ -1,0 +1,11 @@
+- if flash[:file_notice]
+  %p.notice= flash[:file_notice]
+- if flash[:file_warning]
+  %p.error= flash[:file_error]
+%ul
+  - files.each do |f|
+    %li
+      = link_to f.file_identifier, f.file.url
+      = link_to "[x]", delete_file_abstract_path(id: f.abstract, file_id: f), |
+        method: :delete, confirm: t('message.common.sure'), remote: true, |
+        'data-replace' => "upload_result", 'data-type' => 'html'

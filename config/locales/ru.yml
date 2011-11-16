@@ -233,6 +233,7 @@ ru:
       header: "При сохранении следующие ошибки были найдены:"
   label: 
     abstract: 
+      additional_files: "Images or other files can be uploaded here, if needed"
       authors: Авторы
       body: "Основной текст тезисов"
       change_summary: "Изменения в этой версии можно описать как"
@@ -532,6 +533,10 @@ ru:
       volunteers: Волонтёры
       wiki: Wiki
   message: 
+    abstract: 
+      file_delete_success: "File deleted successfuly"
+      file_upload_fail: "File can't be uploaded"
+      file_upload_success: "File uploaded successfuly"
     common: 
       access_denied: "Доступ запрещён"
       required_fields: "(названия полей, обязательных для заполнения, выделены жирным шрифтом)"

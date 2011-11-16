@@ -113,6 +113,25 @@ class AbstractsController < ApplicationController
     render :action => "preview", :layout => false
   end
 
+  def upload_file
+    @abstract = Abstract.find(params[:id])
+    if @abstract.files.create(:file => params[:additional])
+      flash.now[:file_notice] = t("message.abstract.file_upload_success")
+    else
+      flash.now[:file_error] = t("message.abstract.file_upload_failed")
+    end
+    render partial: "/abstracts/uploaded_files", locals: {files: @abstract.files}, layout:false
+  end
+
+  def delete_file
+    @abstract = Abstract.find(params[:id])
+    @file = @abstract.files.find(params[:file_id])
+    @file.destroy
+    flash.now[:file_notice] = t("message.abstract.file_delete_success")
+
+    render partial: "/abstracts/uploaded_files", locals: {files: @abstract.files}, layout:false
+  end
+
   protected
   def render_article(article)
     render_to_string :partial=> "/articles/diff_article", :locals => {:article => article}

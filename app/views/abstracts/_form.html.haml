@@ -1,13 +1,16 @@
 #preview_place
+
 = form_for(@abstract, builder: BigFormBuilder, html: {class: "abstracts"}) do |f|
   = f.error_messages
   -  if @abstract.new_record?
     - if @actual_conferences.length == 1
       = f.hidden_field :conference_id
+      = label_tag :conference,  I18n.t("label.abstract.conference") + ":"
       = text_field_tag :conference, @actual_conferences.first.name, :disabled => true
     - else
       = f.select :conference_id, @actual_conferences.map {|c| [c.name, c.id]}
   - else
+    = label_tag :conference,  I18n.t("label.abstract.conference") + ":"
     = text_field_tag :conference, @abstract.conference.name, :disabled => true
   = f.text_field :title
   = f.text_field :authors
@@ -16,7 +19,11 @@
   = f.text_field :license
   = f.text_field :change_summary
   = f.check_box :ready_for_review
+
   .actions
     = f.submit t('label.common.preview'), :data => {"remote-preview" => true, |
       :update => 'preview_place', :url => preview_abstracts_url, :method => "PUT"}
     = f.submit t('label.common.save')
+
+- unless @abstract.new_record?
+  = render "/abstracts/additional_fields", :abstract => @abstract

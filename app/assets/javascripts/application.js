@@ -1,5 +1,6 @@
 //= require jquery
 //= require jquery_ujs
+//= require jquery.iframe-post-form
 //= require_self
 
 (function() {
@@ -36,22 +37,38 @@
     document.onclick = jsddm_close;
 })();
 $(function(){
-   $("input[data-remote-preview]").click(function(){
-       var btn = $(this);
-       var url = btn.data("url");
-       var dataType = btn.data("type") || ($.ajaxSetting && $.ajaxSettings.dataType);
-       var method = btn.data("method");
-       var update = $("#" + btn.data("update"));
-       var data = btn.parents("form").serializeArray();
-       $.ajax({
-            url: url,
-            dataType: dataType,
-            data: data,
-            type: method || "GET",
-            success: function(data, status, xhr) {
-                update.html(data);
-            }
-        });
-        return false;
+  $("input[data-remote-preview]").click(function(){
+    var btn = $(this);
+    var url = btn.data("url");
+    var dataType = btn.data("type") || ($.ajaxSetting && $.ajaxSettings.dataType);
+    var method = btn.data("method");
+    var update = $("#" + btn.data("update"));
+    var data = btn.parents("form").serializeArray();
+    $.ajax({
+      url: url,
+      dataType: dataType,
+      data: data,
+      type: method || "GET",
+      success: function(data, status, xhr) {
+        update.html(data);
+      }
+    });
+    return false;
+  });
+
+  $("form[data-remote-upload]").each(function(){
+    var form = $(this);
+    var update = $("#" + form.data("update"));
+    form.iframePostForm({
+      complete: function(resp){
+        update.html(resp);
+        form.trigger("ajax:complete");
+      }
+    });
+    return false;
    });
+  $("a[data-replace]").live('ajax:success', function(event, data, status){
+    var target = $(this).data('replace');
+    $('#' + target).html(data);
+  });
 });

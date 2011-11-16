@@ -1,0 +1,14 @@
+= form_tag upload_file_abstract_path(abstract), class: "abstracts-add", |
+  multipart: true, "data-remote-upload" => true, |
+  "data-update" => 'upload_result', :id => "upload_additional_file" do
+  .additional-field
+    = label_tag I18n.t("label.abstract.additional_files") + ":"
+    = file_field_tag :additional, :id => "additional_file"
+    = submit_tag t('label.common.upload')
+#upload_result
+  = render "/abstracts/uploaded_files", :files => abstract.files
+
+:javascript
+  $('#upload_additional_file').live("ajax:complete", function(){
+    this.reset();
+  });

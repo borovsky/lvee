@@ -89,8 +89,12 @@ Rails.application.routes.draw do
 
     resources :abstracts, :except => [:destroy] do
       put :preview, :on => :collection
-      post :add_comment, :on => :member
-      match :diff, :on => :member
+      member do
+        post :add_comment
+        match :diff
+        post :upload_file
+        delete "delete_file/:file_id" => :delete_file, :as => "delete_file"
+      end
     end
 
     get "news/:parent_id/translate/:locale" => "news#new", :as => "translate_news"
