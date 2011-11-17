@@ -178,6 +178,7 @@ pl:
       conference: Conference
       create_new: "Create new abstracts"
       edit: "Abstracts editing"
+      editors: "Participants who are able to edit the text"
       for_review: "For review"
       initial_version: "Initial version"
       license: License
@@ -208,6 +209,7 @@ pl:
       top: Top
     common: 
       _select_: Wybierz
+      add_more: "Add more"
       back: Wstecz
       back_to_list: "Back to list"
       cancel: Anuluj
@@ -223,6 +225,7 @@ pl:
       publish_now: "Publikuj teraz"
       save: Zachowaj
       search: Search
+      select_user: "Select user"
       show: Pokaż
       time_ago: "%{time} ago"
       translate: Tłumacz

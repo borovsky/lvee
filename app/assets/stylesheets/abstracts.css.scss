@@ -83,3 +83,38 @@ form.abstracts, form.abstracts-add {
    }
 }
 
+#user_dialog {
+   #user_list_outer {
+      overflow-y: scroll;
+      height: 400px;
+   }
+   ol {
+      list-style:none;
+      width: 100%;
+      padding: 0;
+      li {
+         width: 250px;
+         height: 80px;
+         border: 1px solid gray;
+         float:left;
+         margin: 5px 0 0 5px;
+         padding: 5px;
+         img {
+            float: left;
+            margin: 3px;
+         }
+         span.user-name {
+            font-weight: bold;
+            clear: right;
+            display: block;
+         }
+      }
+      li.ui-selected {
+         background-color: #fffcbb;
+      }
+   }
+   .field {
+      border-bottom: 1px solid gray;
+      margin: 0;
+   }
+}

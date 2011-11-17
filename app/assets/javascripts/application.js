@@ -7,6 +7,7 @@
 //= require jquery.ui.dialog
 //= require jquery.ui.selectable
 //= require jquery.iframe-post-form
+//= require user_select
 //= require_self
 
 (function() {
@@ -78,3 +79,5 @@ $(function(){
     $('#' + target).html(data);
   });
 });
+
+

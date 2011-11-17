@@ -132,6 +132,16 @@ class AbstractsController < ApplicationController
     render partial: "/abstracts/uploaded_files", locals: {files: @abstract.files}, layout:false
   end
 
+  def add_users
+    @abstract = Abstract.find(params[:id])
+    uids = params[:users].split(',')
+    uids.each do |uid|
+      user = User.find uid
+      @abstract.users << user
+    end
+    render partial: "/abstracts/editors", locals: {users: @abstract.users}, layout:false
+  end
+
   protected
   def render_article(article)
     render_to_string :partial=> "/articles/diff_article", :locals => {:article => article}

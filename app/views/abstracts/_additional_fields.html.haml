@@ -8,7 +8,31 @@
 #upload_result
   = render "/abstracts/uploaded_files", :files => abstract.files
 
+= label_tag "editors", t('label.abstracts.editors') + ":"
+#editors
+  = render "/abstracts/editors", :users => abstract.users
+= link_to t("label.common.add_more"), "#", :id => "add_more_users"
+
 :javascript
-  $('#upload_additional_file').live("ajax:complete", function(){
-    this.reset();
+  $(function(){
+    $('#upload_additional_file').live("ajax:complete", function(){
+      this.reset();
+    });
+    $.user_select.init({
+      add_editor_label: '#{t('label.abstract.add_editors')}',
+      close_dialog_label: '#{t('label.common.cancel')}',
+      user_selection_path: '#{for_selection_users_path}',
+      add_editors: function(selection) {
+        var sel_str = selection.join(",");
+        $.post('#{add_users_abstract_path(abstract)}', {users: sel_str})
+        .success(function(data) {
+          $("#editors").html(data);
+          $("#user_dialog").dialog("close");
+        }, "html");
+      }
+    });
+    $('#add_more_users').click(function(){
+      $.user_select.show();
+      return false;
+    });
   });

@@ -173,6 +173,7 @@ be:
       conference: Conference
       create_new: "Create new abstracts"
       edit: "Abstracts editing"
+      editors: "Participants who are able to edit the text"
       for_review: "For review"
       initial_version: "Initial version"
       license: License
@@ -203,6 +204,7 @@ be:
       top: Загаловак
     common: 
       _select_: Вылучыць
+      add_more: "Add more"
       back: Назад
       back_to_list: "Назад да спісу"
       cancel: Скасаваць
@@ -218,6 +220,7 @@ be:
       publish_now: "Апублікаваць зараз"
       save: Запісаць
       search: Search
+      select_user: "Select user"
       show: Паказаць
       time_ago: "%{time} ago"
       translate: Перакласці

@@ -241,6 +241,7 @@ uk:
       conference: Conference
       create_new: "Create new abstracts"
       edit: "Abstracts editing"
+      editors: "Participants who are able to edit the text"
       for_review: "For review"
       initial_version: "Initial version"
       license: License
@@ -271,6 +272,7 @@ uk:
       top: Top
     common: 
       _select_: Виберіть
+      add_more: "Add more"
       back: Назад
       back_to_list: "Повернутись до списку"
       cancel: Відмінити
@@ -286,6 +288,7 @@ uk:
       publish_now: "Опублікувати зараз"
       save: Зберегти
       search: Search
+      select_user: "Select user"
       show: Показати
       time_ago: "%{time} ago"
       translate: Перекласти

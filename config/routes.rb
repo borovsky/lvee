@@ -36,8 +36,8 @@ Rails.application.routes.draw do
       resources :sponsors do
         as_routes
       end
-      resources :not_found_redirects do 
-        as_routes 
+      resources :not_found_redirects do
+        as_routes
       end
       match "/import(/:action)", :controller => "import"
     end
@@ -76,6 +76,7 @@ Rails.application.routes.draw do
       collection do
         get :current
         match :restore
+        get "for_selection"
       end
 
       resources :conference_registrations do
@@ -91,9 +92,11 @@ Rails.application.routes.draw do
       put :preview, :on => :collection
       member do
         post :add_comment
+        post :add_users
         match :diff
         post :upload_file
         delete "delete_file/:file_id" => :delete_file, :as => "delete_file"
+        post :add_participants
       end
     end
 

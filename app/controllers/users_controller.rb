@@ -95,6 +95,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def for_selection
+    @users = User.order("last_name, first_name").all
+    render layout: false
+  end
+
   protected
   def current_user_only
     login_required

@@ -1,0 +1,7 @@
+%ul.editors
+  - users.each do |user|
+    %li
+      - image_path = user.avator.url ? user.avator.list.url : nil
+      = image_tag(image_path, :alt => user.full_name) if image_path
+      %span.name= user.full_name
+

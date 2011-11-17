@@ -1,0 +1,15 @@
+#user_dialog{:title => t('label.common.select_user'), :style => "display: none"}
+  .field
+    = label_tag "find_user", t("label.user.find_user") + ":"
+    = text_field_tag "find_user", ""
+  #user_list_outer
+    %ol#user_list
+      - @users.each do |user|
+        %li#user{:id => user.id}
+          - image_path = user.avator.url ? user.avator.list.url : nil
+          = image_tag(image_path, :alt => user.full_name) if image_path
+          %span.user-name= user.full_name
+          %span.from= "#{user.country}, #{user.city}"
+  .field
+    = label_tag "selected", t("label.user.selected_users") + ":"
+    = text_field_tag "selected_users", "", disabled: true

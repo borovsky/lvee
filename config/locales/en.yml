@@ -170,6 +170,7 @@ en:
       conference: Conference
       create_new: "Create new abstracts"
       edit: "Abstracts editing"
+      editors: "Participants who are able to edit the text"
       for_review: "For review"
       initial_version: "Initial version"
       license: "License"
@@ -200,6 +201,7 @@ en:
       top: Top
     common:
       _select_: Select
+      add_more: "Add more"
       back: Back
       back_to_list: "Back to list"
       cancel: Cancel
@@ -221,6 +223,7 @@ en:
       unknown_user: Unknown
       update: Update
       upload: Upload
+      select_user: "Select user"
       view_changes: "View changes"
     conference:
       available: "You can participate following conferences"
