@@ -1,1 +1,1 @@
-ROLES = %w{none editor admin}
+ROLES = %w{none editor admin reviewer}
