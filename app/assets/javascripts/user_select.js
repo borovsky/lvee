@@ -24,7 +24,7 @@
       $('#editors').after(data);
       $("#user_dialog").dialog({
         modal: true,
-        minWidth: 590,
+        minWidth: 610,
         buttons: [
           {
             text: user_select.options.close_dialog_label,
