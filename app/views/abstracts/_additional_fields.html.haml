@@ -11,8 +11,8 @@
 = label_tag "editors", t('label.abstract.editors') + ":"
 #editors
   = render "/abstracts/editors", :users => abstract.users
-= link_to t("label.common.add_more"), "#", :id => "add_more_users"
-%br/
+%p= link_to t("label.common.add_more"), "#", :id => "add_more_users"
+
 :javascript
   $(function(){
     $('#upload_additional_file').live("ajax:complete", function(){

@@ -47,7 +47,7 @@
           $('#user_list .ui-selected').each(function() {
             selected.push($(this).children('.user-name').text());
           });
-          $('#selected_users').val(selected.join(', '));
+          $('#selected_users').html(selected.join(', '));
         }
       });
     },

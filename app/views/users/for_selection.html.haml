@@ -12,4 +12,4 @@
           %span.from= "#{user.country}, #{user.city}"
   .field
     = label_tag "selected", t("label.user.selected_users") + ":"
-    = text_field_tag "selected_users", "", disabled: true
+    %span#selected_users

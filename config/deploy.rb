@@ -24,7 +24,7 @@ set :user, 'partizan'
 # Server env
 set :using_rvm, true
 set :rvm_type, :user
-set :rvm_ruby_string, 'ruby-1.9.2-p290'
+set :rvm_ruby_string, 'ruby-1.9.3-p0'
 
 set :use_sudo, false
 
