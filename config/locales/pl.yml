@@ -171,6 +171,7 @@ pl:
       header: "During saving following errors where found:"
   label: 
     abstract: 
+      add_editors: "Add more editors"
       additional_files: "Images or other files can be uploaded here, if needed"
       authors: Authors
       body: Body

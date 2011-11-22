@@ -8,11 +8,11 @@
 #upload_result
   = render "/abstracts/uploaded_files", :files => abstract.files
 
-= label_tag "editors", t('label.abstracts.editors') + ":"
+= label_tag "editors", t('label.abstract.editors') + ":"
 #editors
   = render "/abstracts/editors", :users => abstract.users
 = link_to t("label.common.add_more"), "#", :id => "add_more_users"
-
+%br/
 :javascript
   $(function(){
     $('#upload_additional_file').live("ajax:complete", function(){
