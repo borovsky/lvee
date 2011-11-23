@@ -1,6 +1,20 @@
 module ApplicationHelper
   include MenuHelper
 
+  def my_encode_ascii content
+    array_utf8 = content.unpack('U*')
+    array_enc = []
+    array_utf8.each do |num|
+      if num <= 0x7F
+        array_enc << num
+      else
+        # Numeric entity (&#nnnn;); shard by  Stefan Scholl
+        array_enc.concat "&\##{num};".unpack('C*')
+      end
+      end
+    array_enc.pack('C*')
+  end
+
   protected
 
   def render_statistics
