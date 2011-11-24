@@ -99,6 +99,19 @@ module ApplicationHelper
       :category => params[:category], :name => params[:name], :action => controller.action_name}
   end
 
+  def textilize_with_latex(text, *options)
+    t2 = text.gsub(/[^\\]\$\$([^$]+)\$\$/m) do |m|
+      f = $1.strip
+      p f
+      "!#{LATEX_WS_BASE}\\displaystyle%20#{URI.escape(f)}!"
+    end
+    t2 = t2.gsub(/[^\\]\$([^$]+)\$/m) do |m|
+      f = $1.strip
+      "!#{LATEX_WS_BASE}\\textstyle%20#{URI.escape(f)}!"
+    end
+    content_tag(:div, textilize(t2), class: 'textile')
+  end
+
   #FIXME: Move to separate helper
   def textilize(text, *options)
     options ||= [:hard_breaks]

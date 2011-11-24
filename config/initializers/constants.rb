@@ -47,3 +47,5 @@ SPONSOR_TYPES = [
 ]
 
 DEFAULT_LICENSE = "Creative Commons Attribution-ShareAlike 3.0"
+
+LATEX_WS_BASE = 'http://www.codecogs.com/png.latex?'
