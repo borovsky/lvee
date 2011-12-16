@@ -42,7 +42,7 @@ class News < ActiveRecord::Base
   end
 
   def translated?
-    !(self.locale == I18n.default_locale)
+    !(self.locale.to_s == I18n.default_locale.to_s)
   end
 
   def publish

@@ -29,7 +29,7 @@ class Article < ActiveRecord::Base
   end
 
   def translated?
-    !(self.locale == I18n.default_locale)
+    !(self.locale.to_s == I18n.default_locale.to_s)
   end
 
   def self.load_by_name(category, name)
