@@ -2,7 +2,7 @@
   - if news.translated?
     = link_to t('label.common.editTranslation'), edit_news_item_path(news)
   - else
-    - if news.locale == I18n.locale
+    - if news.locale.to_s == I18n.locale.to_s
       = link_to t('label.common.edit'), edit_news_item_path(news)
     - else
       = link_to t('label.common.translate'), translate_news_path(:parent_id => news.id, :locale=>I18n.locale)

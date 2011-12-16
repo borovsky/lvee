@@ -4,7 +4,7 @@
   - if article.translated?
     = link_to t('label.common.editTranslation'), edit_article_path(article)
   - else
-    - if article.locale == I18n.locale
+    - if article.locale.to_s == I18n.locale.to_s
       = link_to t('label.common.edit'), edit_article_path(article)
     - else
       = link_to t('label.common.translate'), translate_article_path(article)
