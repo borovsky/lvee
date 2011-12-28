@@ -1,7 +1,7 @@
 rails_root = '/home/partizan/apps/lvee/current'
 rails_env  = 'development'
 pid_file   = '/home/partizan/apps/lvee/shared/pids/unicorn.pid'
-socket_file= '127.0.0.1:4000'
+socket_file= '127.0.0.1:5000'
 log_file   = "#{rails_root}/log/unicorn.log"
 username   = 'partizan'
 group	   = 'partizan'
