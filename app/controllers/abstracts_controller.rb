@@ -24,7 +24,7 @@ class AbstractsController < ApplicationController
   def new
     @actual_conferences = Conference.where("start_date > ?", Time.now).order("start_date")
     @abstract = Abstract.new(:authors => "#{current_user.full_name}, #{current_user.city}, #{current_user.country}",
-                             :change_summary => t("label.abstracts.initial_version"),
+                             :change_summary => t("label.abstract.initial_version"),
                              :license => DEFAULT_LICENSE)
     @abstract.conference_id = @actual_conferences.first.id if @actual_conferences.length == 1
   end
