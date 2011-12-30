@@ -84,6 +84,7 @@ class ConferenceRegistrationsController < ApplicationController
     @record.quantity ||= 1
     active_scaffold_config.create.label = t('label.conference_registration.title', :conference =>Conference.find(params[:conference_id]).name)
     active_scaffold_config.columns[:proposition].form_ui = :textarea
+    active_scaffold_config.columns[:conference_id].form_ui = :hidden
   end
 
   def do_edit
