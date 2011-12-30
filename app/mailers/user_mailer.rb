@@ -38,7 +38,7 @@ class UserMailer < ActionMailer::Base
     status = Status.find_by_name(conference_registration.status_name)
 
     setup_email(user)
-    
+
     mail :to => user.email, :subject => PREFIX + ERB.new(status.subject).result(binding) do |format|
       format.text{ render :text => ERB.new(status.mail).result(binding)}
     end
