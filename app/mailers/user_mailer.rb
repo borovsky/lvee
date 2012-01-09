@@ -4,7 +4,6 @@ class UserMailer < ActionMailer::Base
 
   def signup_notification(user)
     @user = user
-
     @url = "http://lvee.org/activate/#{user.activation_code}"
     mail :to => user.email, :subject => PREFIX + I18n.t('mail.subject.activation')
   end
