@@ -5,13 +5,13 @@ class UserMailer < ActionMailer::Base
   def signup_notification(user)
     @user = user
 
-    @url = "http://lvee.org/activate/#{user.activation_code}"
+    @url = "http://winter.lvee.org/activate/#{user.activation_code}"
     mail :to => user.email, :subject => PREFIX + I18n.t('mail.subject.activation')
   end
 
   def activation_restore(user)
     @user = user
-    @url = "http://lvee.org/activate/#{user.activation_code}"
+    @url = "http://winter.lvee.org/activate/#{user.activation_code}"
 
     mail :to => user.email, :subject => PREFIX + I18n.t('mail.subject.activation_restore')
   end
@@ -19,14 +19,14 @@ class UserMailer < ActionMailer::Base
 
   def activation(user)
     @user = user
-    @url = "http://lvee.org/"
+    @url = "http://winter.lvee.org/"
 
     mail :to => user.email, :subject => PREFIX + I18n.t('mail.subject.activation_complete')
   end
 
   def password_restore(user, ip)
     @user = user
-    @url = "http://lvee.org/"
+    @url = "http://winter.lvee.org/"
     @ip = ip
 
     mail :to => user.email, :subject => PREFIX + I18n.t('mail.subject.password_restore')
