@@ -108,7 +108,6 @@ class UsersController < ApplicationController
   end
 
   def after_create_save(record)
-    UserMailer.signup_notification(record).deliver
     self.current_user = record
     redirect_to user_path(:id => current_user.id, :lang => params[:lang])
   end

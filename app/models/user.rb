@@ -26,7 +26,6 @@ class User < ActiveRecord::Base
   validates :first_name, :presence => true, :length => {:within => 2..30}
   validates :last_name, :presence => true, :length => {:within => 2..30}
 
-  before_create :method => :make_activation_code
   after_save :method => :subscribe_to_lists
 
   # prevents a user from submitting a crafted form that bypasses activation
@@ -134,19 +133,6 @@ class User < ActiveRecord::Base
     "#{full_name}"
   end
 
-  def subscribe_to_lists
-    if subscribed?
-      MaillistSubscriber.subscribe(ALL_USER_MAILLIST, self.email) if active?
-    else
-      MaillistSubscriber.unsubscribe(ALL_USER_MAILLIST, self.email)
-    end
-    if subscribed_talks?
-      MaillistSubscriber.subscribe(TALKS_MAILLIST, self.email) if active?
-    else
-      MaillistSubscriber.unsubscribe(TALKS_MAILLIST, self.email)
-    end
-  end
-
   def loaded?
     true
   end
@@ -180,9 +166,5 @@ class User < ActiveRecord::Base
   protected
   def password_required?
     crypted_password.blank? || !password.blank?
-  end
-
-  def make_activation_code
-    self.activation_code = Digest::SHA1.hexdigest( Time.now.to_s.split(//).sort_by {rand}.join )
   end
 end
