@@ -19,7 +19,7 @@ class UserMailer < ActionMailer::Base
 
   def activation(user)
     @user = user
-    @url = "http://winter.lvee.org/"
+    @url = "http://winter.lvee.org/#{user.activation_code}"
 
     mail :to => user.email, :subject => PREFIX + I18n.t('mail.subject.activation_complete')
   end
