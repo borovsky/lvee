@@ -1,6 +1,6 @@
 class AbstractsController < ApplicationController
-  before_filter :login_required, :only => [:index, :create]
-  before_filter :check_security, :except => [:index, :create]
+  before_filter :login_required, :only => [:index, :create, :new]
+  before_filter :check_security, :only => [:index, :create, :new]
   include DiffHelper
 
   # GET /abstracts
