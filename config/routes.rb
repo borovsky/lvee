@@ -40,6 +40,7 @@ Rails.application.routes.draw do
         as_routes
       end
       match "/import(/:action)", :controller => "import"
+      match '/conferences/registrations/:id' => "conferences#registrations"
     end
 
     namespace :editor do
