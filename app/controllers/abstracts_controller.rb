@@ -11,7 +11,7 @@ class AbstractsController < ApplicationController
       @abstracts = Abstract.for_review.where(:conference_id => @actual_conferences.map(&:id))
       @limit = false
     else
-      @abstracts = Abstract.joins(:users).where("users_abstracts.user_id", current_user.id)
+      @abstracts = Abstract.joins(:users).where("users_abstracts.user_id = ?", [current_user.id])
       @limit = true
     end
 
