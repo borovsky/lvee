@@ -44,6 +44,7 @@ EDITOR_MENU = [
       ['menu.editor.articles', 'articles'],
       ['menu.editor.rss', 'main/editor_rss'],
       ['menu.editor.metainfo', 'editor/metainfos'],
+      ['menu.editor.abstracts', 'abstracts'],
     ]]
 ]
 

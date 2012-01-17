@@ -70,6 +70,7 @@ Rails.application.routes.draw do
     match "conference_registrations/:id" => 'conference_registrations#user_list', :as => "conference_registration_list"
     match "users/:id/upload_avator" => 'users#upload_avator', :as => "upload_user_avator"
     match "users/list" => 'users#list'
+    match "users/volunteers" => 'articles#show', :defaults => {:category => 'users', :name => "volunteers"}
 
     resources :users do
       as_routes
