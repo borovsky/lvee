@@ -448,6 +448,7 @@ pl:
       official: "Official Contacts"
       organizers: "Organization Board"
     editor: 
+      abstracts: "Abstracts for review"
       articles: "Edytor artykułów"
       image_uploader: "Uploader obrazów"
       language: "Edytor języków"

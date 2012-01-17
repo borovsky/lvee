@@ -509,6 +509,7 @@ hu:
       official: Кapcsolattartás
       organizers: "Szervező bizottság"
     editor: 
+      abstracts: "Abstracts for review"
       articles: "Article editor"
       image_uploader: "Image uploader"
       language: "Language editor"
