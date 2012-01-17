@@ -440,6 +440,7 @@ en:
       organizers: "Organization Board"
     editor: 
       articles: "Article editor"
+      abstracts: "Abstracts"
       image_uploader: "Image uploader"
       language: "Language editor"
       metainfo: "Metainfo editor"
