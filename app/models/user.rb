@@ -26,8 +26,6 @@ class User < ActiveRecord::Base
   validates :first_name, :presence => true, :length => {:within => 2..30}
   validates :last_name, :presence => true, :length => {:within => 2..30}
 
-  after_save :method => :subscribe_to_lists
-
   # prevents a user from submitting a crafted form that bypasses activation
   # anything else you want your user to change should be added here.
   attr_accessible :login, :first_name, :last_name, :country, :city, :projects, :occupation, :email, :password, :password_confirmation, :subscribed, :avator, :avator_temp
