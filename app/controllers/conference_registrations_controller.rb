@@ -2,7 +2,7 @@ class ConferenceRegistrationsController < ApplicationController
   before_filter :current_user_only, :set_common_columns_info, :except => :user_list
   before_filter :login_required, :only => :user_list
 
-  EDITABLE_COLUMNS = [:days, :meeting, :phone, :floor, :residence, :transport_to, :transport_from, :food, :tshirt]
+  EDITABLE_COLUMNS = [:days, :meeting, :phone, :residence, :transport_to, :transport_from, :food, :tshirt]
   STATIC_COLUMNS = [:proposition, :quantity]
   HIDDEN_COLUMNS = [:conference_id]
   COLUMNS = STATIC_COLUMNS + EDITABLE_COLUMNS

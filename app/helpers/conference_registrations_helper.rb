@@ -36,13 +36,13 @@ module ConferenceRegistrationsHelper
     translated_days = I18n.translate(:'date.day_names')
     end_days = I18n.translate(:'date.day_names', :locale => I18n.default_locale)
     days = translated_days.zip(end_days)
-    selectable_days = days[4..-1] + [days[0]]
+    selectable_days = days[5..-1] + [days[0]]
     selected_days = @record.days
 
     days_list = selectable_days.map do |day|
       content_tag(:li,  check_box_tag("record[days][]", day[1], selected_days.include?(day[1]))+  h(day[0]))
     end
-    content_tag(:div, content_tag(:ul, days_list.join("\n")) +
+    content_tag(:div, content_tag(:ul, days_list.join("\n").html_safe) +
       hidden_field_tag("record[days][]", ""))
   end
 
@@ -52,7 +52,7 @@ module ConferenceRegistrationsHelper
     @record.quantity.times do|i|
       s << select_tag("record[tshirt][]", options_for_select(TSHIRT_SIZES, selected_sizes[i]))
     end
-    content_tag(:div, s)
+    content_tag(:div, s.html_safe)
   end
 
   def transport_from_form_column(record, input_name)
