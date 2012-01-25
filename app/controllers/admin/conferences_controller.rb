@@ -19,7 +19,7 @@ module Admin
     end
 
     def csv
-      out = FasterCSV.generate do |csv|
+      out = CSV.generate do |csv|
         header = USER_CSV_COLUMNS.map {|c| t("label.user.#{c}") }
         header += REGISTRATION_CSV_COLUMNS.map {|c| t("label.conference_registration.#{c}") }
         csv << header
