@@ -1,3 +1,4 @@
+require 'csv'
 
 module Admin
   class ConferencesController < ApplicationController
