@@ -55,8 +55,8 @@ module Export
         sy = start_pos_y + height * ((idx / BADGES_PER_ROW) % BADGES_PER_COLUMN)
 
         pdf.rect(sx, sy, width, height)
-        pdf.image("#{Rails.root}/media/shishky.png", sx+6, sy + 10, 90)
-        pdf.image("#{Rails.root}/media/logo2011.png", sx + 110, sy + 30, 140)
+        pdf.image("#{Rails.root}/media/lvee2012-Winter-shishki2.png", sx+6, sy + 10, 90)
+        pdf.image("#{Rails.root}/media/lvee2012-Winter2.png", sx + 110, sy + 30, 140)
         pdf.add_text_wrap(sx + 100, sy + 10, width-110, b.tags, 12, 'C')
         pdf.add_text_wrap(sx + 20, sy + height - 50, width-40, b.top, 15, 'C')
         pdf.add_text_wrap(sx + 20, sy + height - 20, width-40, b.bottom, 12, 'C')
