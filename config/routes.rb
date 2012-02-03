@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       get "/users/:to_list/mail" => 'info_mailer#index', :as => "mail_user"
       put "/users/mail" => 'info_mailer#index'
       put "/users/send_mail" => 'info_mailer#send_mail', :as => "send_email"
+      post "/users/send_mail" => 'info_mailer#send_mail', :as => "send_email"
       resources :users do
         post :set_role, :on => :member
       end
