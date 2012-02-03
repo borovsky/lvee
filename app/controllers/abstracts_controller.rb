@@ -148,10 +148,13 @@ class AbstractsController < ApplicationController
   end
 
   def check_security
+    login_required
+    return if performed?
+
     return if(reviewer?)
     return if performed?
     t = Abstract.find(params[:id])
-    unless(t.user_ids.include? current_user.try(:id))
+    unless(t.user_ids.include? current_user.id)
       render :text=>t('message.common.access_denied'), :status=>403  unless current_user.admin?
     end
   end
