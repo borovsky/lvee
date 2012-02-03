@@ -151,7 +151,7 @@ class AbstractsController < ApplicationController
     return if(reviewer?)
     return if performed?
     t = Abstract.find(params[:id])
-    unless(t.user_ids.include? current_user_id)
+    unless(t.user_ids.include? current_user.try(:id))
       render :text=>t('message.common.access_denied'), :status=>403  unless current_user.admin?
     end
   end
