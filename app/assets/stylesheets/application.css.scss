@@ -377,6 +377,11 @@ div.border-news.first {
     text-decoration: none;
 }
 
+.articles code {
+    display: block;
+    overflow: auto;
+}
+
 .button-join {
     float: right;
     padding: 20px 0 0 0;
