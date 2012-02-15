@@ -146,7 +146,7 @@ be:
       title: "Рэгістрацыя на канферэнцыю %{conference}"
       transport_from: "Якім транспартам вы збіраецеся выязджаць з канферэнцыі?"
       transport_to: "Якім транспартам вы плануеце прыязджаць на канферэнцыю?"
-      tshirt: "Ваш памер футболкі"
+      tshirt: "Ваш памер блузы"
     user: 
       avator: "Ваш фотаздымак. Найлепш, каб ён выяўляў ваш твар."
       city: Горад
@@ -276,7 +276,7 @@ be:
         bus_grodno: "Маршрутка з Горадні"
         bus_minsk: "Маршрутка з Менску"
         independent: Самастойна
-      tshirt: "Памер футболкі"
+      tshirt: "Памер блузы"
       update_model: "Рэгістрацыя на канферэнцыю"
       updated_at: "Last Modified"
     diff: 
@@ -432,7 +432,7 @@ be:
       attribution: Атрыбутыка
       history: Гісторыя
       linux: GNU/Linux
-      payment: Сплата
+      payment: Аплата
       place: "Месца канферэнцыі"
       press: Друк
       statistics: Статыстыка

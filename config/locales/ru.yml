@@ -214,7 +214,7 @@ ru:
       title: "Регистрация на конференцию %{conference}"
       transport_from: "Как вы планируете добираться с конференции?"
       transport_to: "Как вы планируете добираться до конференции?"
-      tshirt: "Размер футболки"
+      tshirt: "Размер толстовки"
     user: 
       city: ""
       country: "Откуда вы?"
@@ -343,7 +343,7 @@ ru:
         bus_grodno: "Маршрутка из Гродно"
         bus_minsk: "Маршрутка из Минска"
         independent: Самостоятельно
-      tshirt: "Размер футболки"
+      tshirt: "Размер толстовки"
       update_model: "Conference Registration"
       updated_at: "Last Modified"
     diff: 
