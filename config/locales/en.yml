@@ -1,10 +1,10 @@
----
-en:
-  active_scaffold:
+--- 
+en: 
+  active_scaffold: 
     are_you_sure: "Are you sure?"
-  activerecord:
-    errors:
-      messages:
+  activerecord: 
+    errors: 
+      messages: 
         accepted: "must be accepted"
         blank: "can't be blank"
         confirmation: "doesn't match confirmation"
@@ -20,18 +20,18 @@ en:
         less_than_or_equal_to: "must be less than or equal to %{count}"
         not_a_number: "is not a number"
         odd: "must be odd"
+        record_invalid: "record is invalid"
         taken: "has already been taken"
         too_long: "is too long (maximum is %{count} characters)"
         too_short: "is too short (minimum is %{count} characters)"
         wrong_length: "is the wrong length (should be %{count} characters)"
-        record_invalid: "record is invalid"
-      template:
+      template: 
         body: "There were problems with the following fields:"
-        header:
+        header: 
           one: "1 error prohibited this %{model} from being saved"
           other: "%{count} errors prohibited this %{model} from being saved"
-  date:
-    abbr_day_names:
+  date: 
+    abbr_day_names: 
       - Sun
       - Mon
       - Tue
@@ -39,7 +39,7 @@ en:
       - Thu
       - Fri
       - Sat
-    abbr_month_names:
+    abbr_month_names: 
       - ~
       - Jan
       - Feb
@@ -53,7 +53,7 @@ en:
       - Oct
       - Nov
       - Dec
-    day_names:
+    day_names: 
       - Sunday
       - Monday
       - Tuesday
@@ -61,11 +61,11 @@ en:
       - Thursday
       - Friday
       - Saturday
-    formats:
+    formats: 
       default: "%Y-%m-%d"
       long: "%B %d, %Y"
       short: "%b %d"
-    month_names:
+    month_names: 
       - ~
       - January
       - February
@@ -80,58 +80,58 @@ en:
       - November
       - December
     none: None
-    order:
+    order: 
       - !ruby/symbol year
       - !ruby/symbol month
       - !ruby/symbol day
-  datetime:
-    distance_in_words:
-      about_x_hours:
+  datetime: 
+    distance_in_words: 
+      about_x_hours: 
         one: "about 1 hour"
         other: "about %{count} hours"
-      about_x_months:
+      about_x_months: 
         one: "about 1 month"
         other: "about %{count} months"
-      about_x_years:
+      about_x_years: 
         one: "about 1 year"
         other: "about %{count} years"
       half_a_minute: "half a minute"
-      less_than_x_minutes:
+      less_than_x_minutes: 
         one: "less than a minute"
         other: "less than %{count} minutes"
-      less_than_x_seconds:
+      less_than_x_seconds: 
         one: "less than 1 second"
         other: "less than %{count} seconds"
-      over_x_years:
+      over_x_years: 
         one: "over 1 year"
         other: "over %{count} years"
-      x_days:
+      x_days: 
         one: "1 day"
         other: "%{count} days"
-      x_minutes:
+      x_minutes: 
         one: "1 minute"
         other: "%{count} minutes"
-      x_months:
+      x_months: 
         one: "1 month"
         other: "%{count} months"
-      x_seconds:
+      x_seconds: 
         one: "1 second"
         other: "%{count} seconds"
-    prompts:
+    prompts: 
       day: Day
       hour: Hour
       minute: Minute
       month: Month
       second: Seconds
       year: Year
-  description:
-    abstract:
+  description: 
+    abstract: 
       body: |-
-        recommended languages are Belarussian, Russian or English;
-        recommended size is approximately 6000 symbols or less
-        You can use "textile":http://www.textism.com/tools/textile/ mark-up or plain text.
+          recommended languages are Belarussian, Russian or English;
+          recommended size is approximately 6000 symbols or less
+          You can use "textile":http://www.textism.com/tools/textile/ mark-up or plain text.
       license: "(Licenses are explained at \"creativecommons.org\":http://creativecommons.org/choose)"
-    conference_registration:
+    conference_registration: 
       days: "Which days do you plan to participate?"
       floor: "Would you like to accept following conditions: organization fee decreases twice; instead of sleeping in a house you are pitching a tent or joining to somebody else with free places in a tent camp"
       food: "Which type of food do you prefer (vegetarian, etc.)"
@@ -145,7 +145,7 @@ en:
       transport_from: "Which transport will you use to leave the conference"
       transport_to: "Which transport will you use to reach the conference"
       tshirt: "T-Shirt size"
-    user:
+    user: 
       city: ""
       country: "Where are you from"
       email: "Your e-mail"
@@ -158,14 +158,14 @@ en:
       projects: "Free / Open Source Software (FOSS) projects where you have taken or are taking part in and your role in them"
       subscribed: "This option allows to receive news and other useful information from the Conference organizers."
       subscribed_talks: "By choosing this You are going to take part in working discussions on the Conference preparing and carrying on. Being a volunteer project, LVEE is often subject to shortage of performers, and therefore we recomend to activate this option and to actively participate in work of the organization board."
-  errors:
-    template:
+  errors: 
+    template: 
       header: "During saving following errors where found:"
-  label:
-    abstract:
+  label: 
+    abstract: 
       add_editors: "Add more editors"
       additional_files: "Images or other files can be uploaded here, if needed"
-      authors: "Authors"
+      authors: Authors
       body: "Abstracts main body"
       change_summary: "Changes in this version can be described as"
       conference: Conference
@@ -174,7 +174,7 @@ en:
       editors: "Participants who are able to edit the text"
       for_review: "For review"
       initial_version: "Initial version"
-      license: "License"
+      license: License
       list: "Abstracts for review"
       list_selection: "List abstracts:"
       list_user: "Your abstracts"
@@ -184,8 +184,8 @@ en:
       title: Title
       updated_at: "Last Modified"
       user: User
-      yourself: "Yourself"
-    article:
+      yourself: Yourself
+    article: 
       body: Body
       category: Category
       creating: "Creating Article"
@@ -196,11 +196,11 @@ en:
       name: Name
       new: "New Article"
       title: Title
-    badge:
+    badge: 
       bottom: Bottom
       tags: Tags
       top: Top
-    common:
+    common: 
       _select_: Select
       add_more: "Add more"
       back: Back
@@ -218,15 +218,15 @@ en:
       publish_now: "Publish Now"
       save: Save
       search: Search
+      select_user: "Select user"
       show: Show
       time_ago: "%{time} ago"
       translate: Translate
       unknown_user: Unknown
       update: Update
       upload: Upload
-      select_user: "Select user"
       view_changes: "View changes"
-    conference:
+    conference: 
       available: "You can participate following conferences"
       creating: "Creating conference"
       finish_date: "Finish date"
@@ -242,7 +242,8 @@ en:
       show: "Conference %{name} (%{start_date} - %{finish_date}"
       start_date: "Start date"
       upcoming: "Upcoming conferences"
-    conference_registration:
+    conference_registration: 
+      abstracts: Abstracts
       approved_edit: "Confirm participation in %{conference}"
       badges: Badges
       badges_title: "Badges for %{conference}"
@@ -261,40 +262,38 @@ en:
       quantity: "Participants quantity"
       residence: Accommodation
       status_name: "Registration's Status"
-      comment: "Registration's Comment"
       title: "Conference registration for %{conference}"
-      abstracts: "Abstracts"
       transport_from: "Transport from conference"
-      transport_from_list:
+      transport_from_list: 
         bus_grodno: "Minibus to Grodno"
         bus_minsk: "Minibus to Minsk"
         independent: Independent
       transport_to: "Transport to conference"
-      transport_to_list:
+      transport_to_list: 
         bus_grodno: "Minibus from Grodno"
         bus_minsk: "Minibus from Minsk"
         independent: Independent
       tshirt: "T-Shirt size"
       update_model: "Conference Registration"
       updated_at: "Last Modified"
-    diff:
-      change_article_title: "Diff for article %{article} from version %{from} to %{to}"
+    diff: 
       change_abstract_title: "Diff for abstracts from %{author} from version %{from} to %{to}"
+      change_article_title: "Diff for article %{article} from version %{from} to %{to}"
       change_wiki_title: "Diff for page '%{wiki_page}' from version %{from} to %{to}"
       changed_at: "Changed at"
       editor: Editor
       from: From
-      new_article_title: "Article %{article} has no previous versions"
       new_abstract_title: "Abstracts from %{author} has no previous versions"
+      new_article_title: "Article %{article} has no previous versions"
       new_wiki_title: "Page '%{wiki_page}' has no previous versions"
       to: To
       version: Version
-    editor_log:
+    editor_log: 
       article_changed: "Article %{obj} was changed by %{user}"
       article_created: "Article %{obj} was created by %{user}"
       wiki_page_changed: "Wiki page %{obj} was changed by %{user}"
       wiki_page_created: "Wiki page %{obj} was created by %{user}"
-    language:
+    language: 
       code3: "3-letter (ISO 639-2) language code id"
       creating: "Creating Language"
       editing: "Editing Language"
@@ -304,9 +303,9 @@ en:
       new: "New Language"
       published: "Language published?"
       upload: "Upload Language"
-    metainfo:
+    metainfo: 
       edit: "Edit MetaInfo"
-    news:
+    news: 
       abstract: Abstract
       add: "Add News"
       all_news: "All News"
@@ -322,18 +321,18 @@ en:
       translating: "News Translation"
       unpublished: Unpublished
       will_be_published: "Will be published in %{published}"
-    session:
+    session: 
       login: Login
       loginButton: Login
       logout: Logout
       password: Password
       rememberMe: "Remember me"
-    statistics:
+    statistics: 
       browser: Browser
       conference: "Registration statistics for %{conference}"
       country: Country
       operating_system: "Operating system"
-      registration:
+      registration: 
         approved_men: "Approved men"
         approved_registrations: "Approved registration"
         days_title: "Participance days statistics"
@@ -342,7 +341,7 @@ en:
         total_registrations: "Total registration"
         transport_from_title: "Transport from conference statistics"
         transport_to_title: "Transport to conference statistics"
-      title:
+      title: 
         browser_statistic: "Visitor's Browser Statistics"
         conference: "Conference registration statistics"
         country_statistic: "Visitor's Country Statistic"
@@ -352,7 +351,7 @@ en:
         total_visitors: "Total visitors: %{count}"
         week: "Statistics for last week"
       visits: Visits
-    user:
+    user: 
       avator: "New photo:"
       city: Location
       country: Country
@@ -380,7 +379,7 @@ en:
       to_profile: "To your profile"
       update_model: "Edit your personal data"
       updated_at: "Last Updated"
-    wiki_page:
+    wiki_page: 
       body: Body
       creating: "Creating Wiki Page"
       editing: "Editing Wiki Page"
@@ -388,8 +387,8 @@ en:
       name: Name
       new: "New Wiki Page"
       user: "Last Editor"
-  mail:
-    account:
+  mail: 
+    account: 
       activate: |-
           Please visit following URL for activation your account:
           %{url}
@@ -408,14 +407,14 @@ en:
     signature: |-
         --
         LVEE conference site's robot
-    subject:
+    subject: 
       activation: "Account activation for LVEE"
       activation_complete: "Your account for LVEE was activated"
       activation_restore: "Account activation for LVEE (repeat)"
       password_restore: "Password restore for LVEE"
     title: "Hello, %{full_name}"
-  menu:
-    admin:
+  menu: 
+    admin: 
       conference_registrations: "Conference registrations admin"
       conferences: "Conferences admin"
       current_conference_registration: "Current conference registration"
@@ -425,7 +424,7 @@ en:
       statuses: "Statuses admin"
       title: Admin
       users: "Users admin"
-    conference:
+    conference: 
       about: About
       attribution: Attribution
       history: History
@@ -434,12 +433,12 @@ en:
       place: "Place of the conference"
       press: "In the press"
       statistics: Statistics
-    contacts:
+    contacts: 
       category: Contacts
       lug: LUG
       official: "Official Contacts"
       organizers: "Organization Board"
-    editor:
+    editor: 
       articles: "Article editor"
       image_uploader: "Image uploader"
       language: "Language editor"
@@ -448,7 +447,7 @@ en:
       rss: "Editor RSS"
       title: Editor
     main: Main
-    reports:
+    reports: 
       about: "On presentations"
       abstract: "Abstract guidelines"
       category: Presentations
@@ -461,43 +460,43 @@ en:
       materials_2011: "LVEE 2011 materials"
       program: Program
     sponsors: Sponsors
-    user:
+    user: 
       category: Participants
       conference_registration: List
       profile: "Personal profile"
       volunteers: Volunteers
       wiki: Wiki
-  message:
-    abstract:
-      file_upload_success: "File uploaded successfuly"
-      file_upload_fail: "File can't be uploaded"
+  message: 
+    abstract: 
       file_delete_success: "File deleted successfuly"
-    common:
+      file_upload_fail: "File can't be uploaded"
+      file_upload_success: "File uploaded successfuly"
+    common: 
       access_denied: "Access denied"
       required_fields: "(fields marked with bold are obligatory to fill in)"
       sure: "Are you sure?"
-    conference:
+    conference: 
       created: "Conference created successfully"
-      slogan: "The 7th International conference of developers and users<br />of free / open source software"
+      slogan: "The 8th International conference of developers and users<br />of free / open source software"
       status: "Registration to conference %{status}."
       updated: "Conference updated successfully"
-    iefuck:
+    iefuck: 
       link: "http://browsehappy.com"
       link_text: "Find out modern and secure browsers!"
       message: "This version of Internet Explorer improperly shows contemporary websites and makes your computer unsafe. %{link}"
-    language:
+    language: 
       created: "Language created successfully"
       updated: "Language updated successfully"
-    license:
+    license: 
       text: "All content besides materials of presentations and other specially mentioned documents is licensed under Creative Commons Attribution Share-Alike license"
-    news:
+    news: 
       created: "News created successfully"
       updated: "News updated successfully"
-    session:
+    session: 
       failed: "Login or password incorrect. May be you didn't activate your account"
       logged: "You logged in as %{user_name}"
       logged_out: "You logged out successfully"
-    user:
+    user: 
       accuracy_note: "Accurate and error-free registration form filling will help contacting with you alot"
       activated: "Registration completed"
       avator_updated: "Photo updated successfully"
@@ -511,48 +510,48 @@ en:
       privacy: "Privacy Policy: We %{link} your account information to anyone, including your email address."
       privacy_link: "don't sell"
       registred: "Thank you for registration"
-  number:
-    currency:
-      format:
+  number: 
+    currency: 
+      format: 
         delimiter: ","
         format: "%u%n"
         precision: 2
         separator: "."
         unit: $
-    format:
+    format: 
       delimiter: ","
       precision: 3
       separator: "."
-    human:
-      format:
+    human: 
+      format: 
         delimiter: ""
         precision: 1
-      storage_units:
+      storage_units: 
         - Bytes
         - KB
         - MB
         - GB
         - TB
-    percentage:
-      format:
+    percentage: 
+      format: 
         delimiter: ""
-    precision:
-      format:
+    precision: 
+      format: 
         delimiter: ""
-  sidebar:
+  sidebar: 
     information_sponsor: "Information partners"
     organizers: Organizers
     sponsors: Sponsors
     technical_partner: "Technical partners"
     technical_sponsor: "Technical sponsor"
-  support:
-    array:
+  support: 
+    array: 
       last_word_connector: ", and "
       two_words_connector: " and "
       words_connector: ", "
-  time:
+  time: 
     am: am
-    formats:
+    formats: 
       default: "%a, %d %b %Y %H:%M:%S %z"
       long: "%B %d, %Y %H:%M"
       short: "%d %b %H:%M"

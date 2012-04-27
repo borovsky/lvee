@@ -486,7 +486,7 @@ pl:
       sure: "Czy na pewno??"
     conference: 
       created: "Pomyślnie utworzono konferencję"
-      slogan: "Siódma Międzynarodowa konferencja twórców i użytkowników<br />Free Software / Open Source (FS/OS)"
+      slogan: "Ósma Międzynarodowa konferencja twórców i użytkowników<br />Free Software / Open Source (FS/OS)"
       status: "Rejestracja na konferencję: %{status}."
       updated: "Pomyślnie zaktualizowano konferencję"
     iefuck: 

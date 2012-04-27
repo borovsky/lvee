@@ -547,7 +547,7 @@ hu:
       sure: "Biztos benne?"
     conference: 
       created: "A konferencia sikeresen létrejött"
-      slogan: "Szabad szoftvert használók és fejlesztők<br />7 nemzetközi konferenciája"
+      slogan: "Szabad szoftvert használók és fejlesztők<br />8 nemzetközi konferenciája"
       status: "Állapota: %{status}."
       updated: "A konferencia sikeresen frissítődött"
     iefuck: 
