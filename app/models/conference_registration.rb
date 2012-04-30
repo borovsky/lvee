@@ -74,7 +74,6 @@ class ConferenceRegistration < ActiveRecord::Base
     else
       "Error saving conference registration for #{user.login} (#{user.email}): <ul><li>" + cr.errors.full_messages.join("</li><li>") + "</li></ul>"
     end
-    
   end
 
   protected
