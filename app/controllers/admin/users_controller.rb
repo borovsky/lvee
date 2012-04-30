@@ -12,6 +12,9 @@ module Admin
           @exportable =  [:id, :login, :email, :first_name, :last_name, :country, :city, :occupation, :projects, :activated_at]
           render :template => 'users/users'
         end
+        format.js do
+          render json: @users
+        end
       end
     end
 
