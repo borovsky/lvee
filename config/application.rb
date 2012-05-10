@@ -24,7 +24,7 @@ module Lvee
 
 
     # Activate observers that should always be running.
-    config.active_record.observers = :user_observer, :article_observer, :wiki_page_observer
+    config.active_record.observers = :user_observer, :article_observer, :wiki_page_observer, :conference_registration_observer
 
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.

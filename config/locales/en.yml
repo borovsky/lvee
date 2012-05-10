@@ -138,7 +138,7 @@ en:
       index: "Registration to conference"
       meeting: "Would you like to be met ?"
       phone: "Phone that we can use to contact with you (with country code please)"
-      proposition: "As free software is developed by the community with attracting a lot of volunteers, please tell us how you can contribute to our meeting. Let it be a report or a less formal speech within the limits of a workshop about implementation, usage or development of free software by you or your organization. If you are going to make a report or organize a workshop at the conference, please specify the topic of your report, as well as send its abstracts to \"d.kostiuk@lvee.org\":mailto:d.kostiuk@lvee.org ."
+      proposition: "As free software is developed by the community with attracting a lot of volunteers, please tell us how you can contribute to our meeting. Let it be a report or a less formal speech within the limits of a workshop about implementation, usage or development of free software by you or your organization. If you are going to make a report or organize a workshop at the conference, please specify the topic of your report, as well as submit its abstracts."
       quantity: "How many people will go with you to the conference (including you)"
       residence: "Whom of the registered participants you want to share room with?"
       title: "Conference registration for %{conference}"
@@ -439,8 +439,8 @@ en:
       official: "Official Contacts"
       organizers: "Organization Board"
     editor: 
+      abstracts: "Abstracts for review"
       articles: "Article editor"
-      abstracts: "Abstracts"
       image_uploader: "Image uploader"
       language: "Language editor"
       metainfo: "Metainfo editor"
@@ -459,6 +459,7 @@ en:
       materials_2009: "LVEE 2009 materials"
       materials_2010: "LVEE 2010 materials"
       materials_2011: "LVEE 2011 materials"
+      materials_winter_2012: "LVEE Winter 2012 materials"
       program: Program
     sponsors: Sponsors
     user: 

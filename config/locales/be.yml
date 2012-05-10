@@ -129,10 +129,10 @@ be:
   description: 
     abstract: 
       body: |-
-          recommended languages are Belarussian, Russian or English;
-          recommended size is approximately 6000 symbols or less
-          You can use "textile":http://www.textism.com/tools/textile/ mark-up or plain text.
-      license: "(Licenses are explained at \"creativecommons.org\":http://creativecommons.org/choose)"
+          Рэкамендуемыя мовы: беларуская, руская або англійская;
+          рэкамендуемы памер: не больш за 6000 знакаў;
+          Вы можаце выкарыстоўваць разметку "textile":http://www.textism.com/tools/textile/ або просты тэкст.
+      license: "(Выбраць ліцэнзію можна, наведаўшы \"creativecommons.org\":http://creativecommons.org/choose)"
     conference_registration: 
       days: "У якія дні вы плануеце ўзяць удзел у канферэнцыі?"
       floor: "Ці гатовыя вы да наступных умоваў: арганізацыйны ўнёсак змяншаецца ўдвая; замест спальнага месца ў дамку даецца магчымасць паставіць намёт на палянцы або далучыцца да каго-небудзь з насельнікаў намётавага лагера з вольнымі месцамі."
@@ -140,7 +140,7 @@ be:
       index: "Рэгістрацыя на канферэнцыю"
       meeting: "Ці трэба вас сустракаць?"
       phone: "Нумар тэлефону, праз які з вамі можна скантактавацца ў часе канферэнцыі (улучна з кодам краіны)"
-      proposition: "Вядома, што свабодныя праграмы распрацоўвае грамада з узделам шматлікіх добраахвотнікаў. Таму, калі ласка, распавядзіце, які ўнёсак вы можаце зрабіць у нашу канферэнцыю. Хай гэта будзе выступленне або менш фармальнае паведамленне за круглым сталом (workshop) пра тое, як вы або ваша фірма ўкараняеце, выкарыстоўваеце ці распрацоўваеце свабодныя праграмы. Калі вы хочаце выступіць або зарганізаваць семінар на канферэнцыі, падайце тэму вашага выступлення. Тэзісы дашліце на адрас: \"d.kostiuk@lvee.org\":mailto:d.kostiuk@lvee.org."
+      proposition: "Вядома, што свабодныя праграмы распрацоўвае грамада з узделам шматлікіх добраахвотнікаў. Таму, калі ласка, распавядзіце, які ўнёсак вы можаце зрабіць у нашу канферэнцыю. Хай гэта будзе выступленне або менш фармальнае паведамленне за круглым сталом (workshop) пра тое, як вы або ваша фірма ўкараняеце, выкарыстоўваеце ці распрацоўваеце свабодныя праграмы. Калі вы хочаце выступіць або зарганізаваць семінар на канферэнцыі, падайце тэму вашага выступлення i дашлiце тэзісы."
       quantity: "Колькі людзей едзе на канферэнцыю, разам з вамі (улічваючы вас)?"
       residence: "З кім з зарэгістраваных удзельнікаў вы хочаце жыць у адным пакоі?"
       title: "Рэгістрацыя на канферэнцыю %{conference}"
@@ -167,27 +167,27 @@ be:
   label: 
     abstract: 
       add_editors: "Add more editors"
-      additional_files: "Images or other files can be uploaded here, if needed"
-      authors: Authors
-      body: Body
-      change_summary: "Change summary"
-      conference: Conference
-      create_new: "Create new abstracts"
-      edit: "Abstracts editing"
-      editors: "Participants who are able to edit the text"
-      for_review: "For review"
+      additional_files: "Малюнкі і іншыя файлы могуць быць загружаны тут, у выпадку неабходнасці"
+      authors: Аўтары
+      body: "Асноўны тэкст тэзісаў"
+      change_summary: "Змены ў гэтай версіі можна апісаць як"
+      conference: Канферэнцыя
+      create_new: "Стварыць новыя тэзісы"
+      edit: "Рэдагаванне тэзісаў"
+      editors: "Карыстачы, якія могуць рэдагаваць тэкст"
+      for_review: "Гатовыя да разгляду"
       initial_version: "Initial version"
-      license: License
-      list: "Abstracts for review"
-      list_selection: "List abstracts:"
-      list_user: "Your abstracts"
-      new: "Abstracts creating"
-      ready_for_review: "Ready for review"
-      summary: Summary
-      title: Title
-      updated_at: "Last Modified"
-      user: User
-      yourself: Yourself
+      license: "Тэкст ліцэнзаваны пад"
+      list: "Тэзісы да разгляду"
+      list_selection: "Спіс тэзісаў:"
+      list_user: "Вашыя тэзісы"
+      new: "Стварэнне тэзісаў"
+      ready_for_review: "Гэтыя тэзісы гатовыя да разгляду"
+      summary: "Анатацыя (па-англійску, рэкамендаваны памер - да 500 знакаў)"
+      title: Загаловак
+      updated_at: "Апошняя змена"
+      user: Карыстальнік
+      yourself: Вы
     article: 
       body: Цела
       category: Катэгорыя
@@ -246,7 +246,7 @@ be:
       start_date: "Дата пачатку"
       upcoming: "Наступныя канферэнцыі"
     conference_registration: 
-      abstracts: Abstracts
+      abstracts: Тэзісы
       approved_edit: "Пацвердзьце свой удзел у %{conference}"
       badges: Значкі
       badges_title: "Значкі на %{conference}"
@@ -276,7 +276,7 @@ be:
         bus_grodno: "Маршрутка з Горадні"
         bus_minsk: "Маршрутка з Менску"
         independent: Самастойна
-      tshirt: "Памер футболкі"
+      tshirt: "Памер блузы"
       update_model: "Рэгістрацыя на канферэнцыю"
       updated_at: "Last Modified"
     diff: 
@@ -432,7 +432,7 @@ be:
       attribution: Атрыбутыка
       history: Гісторыя
       linux: GNU/Linux
-      payment: Сплата
+      payment: Аплата
       place: "Месца канферэнцыі"
       press: Друк
       statistics: Статыстыка
@@ -442,6 +442,7 @@ be:
       official: "Кантактная інфармацыя"
       organizers: "Арганізацыйны камітэт"
     editor: 
+      abstracts: "Abstracts for review"
       articles: "Рэдактар артыкулаў"
       image_uploader: "Зацягванне выяваў"
       language: "Рэдактар моўных модуляў"
@@ -461,6 +462,7 @@ be:
       materials_2009: "Матэрыялы LVEE 2009"
       materials_2010: "Матэрыялы LVEE 2010"
       materials_2011: "Матэрыялы LVEE 2011"
+      materials_winter_2012: "LVEE Winter 2012 materials"
       program: Праграма
     sponsors: Фундатары
     user: 

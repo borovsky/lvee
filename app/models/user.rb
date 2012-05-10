@@ -21,12 +21,10 @@ class User < ActiveRecord::Base
   validates :password, PASSWORD_VALIDATOR.merge(:confirmation => true)
   validates :password_confirmation, PASSWORD_VALIDATOR
 
-  validates :email, :presence => true, :format=>{:with => /^[a-zA-Z0-9\-\._]+\@[a-zA-Z0-9\-\.]+\.([a-zA-Z]{2,4}|[0-9]{1,4})$/ix}
+  validates :email, :presence => true, :format=>{:with => /^[a-zA-Z0-9\-\._]+\@[a-zA-Z0-9\-\.]+\.([a-zA-Z]{2,4}|[0-9]{1,4})$/ix}, :uniqueness => true
 
   validates :first_name, :presence => true, :length => {:within => 2..30}
   validates :last_name, :presence => true, :length => {:within => 2..30}
-
-  after_save :method => :subscribe_to_lists
 
   # prevents a user from submitting a crafted form that bypasses activation
   # anything else you want your user to change should be added here.

@@ -1,11 +1,12 @@
 - versions = @current_version.respond_to?(:versions) ? @current_version.versions :  @current_version.original.versions
-- path = diff_user_abstracts_path(:version => nil, :id=> @current_version.conference_registration_id, :lang => params[:lang])
+- path = diff_abstract_path(:version => nil, :id=> @current_version.conference_registration_id, :lang => params[:lang])
 = form_tag(path) do
   %table.data
     %tr
       %th= t("label.diff.version")
       %th= t("label.diff.from")
       %th= t("label.diff.to")
+      %th= t("label.diff.author")
       %th= t("label.diff.changed_at")
       %th= t("label.diff.reason")
     - versions.each_with_index do |v, i|
@@ -13,6 +14,7 @@
         %td= v.version
         %td= radio_button_tag("prev_version", v.version, @previous_version && (@previous_version.version == v.version))
         %td= radio_button_tag("version", v.version, @current_version.version == v.version)
+        %td= User.find_by_id(v.author_id).try(:full_name) || "Unknown"
         %td= format_date(v.updated_at)
         %td= v.change_summary
   = submit_tag t('label.common.view_changes')

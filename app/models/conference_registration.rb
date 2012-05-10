@@ -12,9 +12,6 @@ class ConferenceRegistration < ActiveRecord::Base
 
   attr_accessor :admin
 
-  after_save :method => :send_email_if_status_changed
-  after_save :method => :populate_badges
-
   scope :actual_for_user, lambda{|user| where("conference_registrations.user_id = ?", user).order("conferences.start_date").includes(:conference, :user)}
   scope :participants, lambda{|conference|
     where("conference_id = ? AND status_name <> ?", conference, CANCELLED_STATUS).includes(:user).
@@ -61,18 +58,6 @@ class ConferenceRegistration < ActiveRecord::Base
       !self.transport_from.blank?
   end
 
-  def populate_badges
-    if quantity
-      while badges.length < quantity
-        self.badges.create(:top => self.user.full_name, :bottom => self.user.from)
-      end
-
-      while badges.length > quantity
-        self.badges.delete(self.badges.last)
-      end
-    end
-  end
-
   def self.participants(conference)
     find(:all,
       :conditions => ["conference_id = ? AND status_name <> ?", conference, CANCELLED_STATUS],
@@ -104,9 +89,4 @@ class ConferenceRegistration < ActiveRecord::Base
     end
   end
 
-  def send_email_if_status_changed
-    if self.status_name_changed?
-      UserMailer.status_changed(self).deliver
-    end
-  end
 end
