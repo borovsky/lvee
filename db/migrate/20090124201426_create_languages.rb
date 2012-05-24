@@ -12,10 +12,10 @@ class CreateLanguages < ActiveRecord::Migration
 END
 )
 
-    Language.create!(:name => 'ru', :description => 'Russian')
-    Language.create!(:name => 'en', :description => 'English')
-    Language.create!(:name => 'be', :description => 'Belarussian')
-    Language.create!(:name => 'uk', :description => 'Ukrainian')
+    Language.new(:name => 'ru', :description => 'Russian').save(validate: false)
+    Language.new(:name => 'en', :description => 'English').save(validate: false)
+    Language.new(:name => 'be', :description => 'Belarussian').save(validate: false)
+    Language.new(:name => 'uk', :description => 'Ukrainian').save(validate: false)
   end
 
   def self.down

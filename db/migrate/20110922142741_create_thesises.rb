@@ -1,3 +1,6 @@
+  class Thesis < ActiveRecord::Base
+    acts_as_versioned
+  end
 class CreateThesises < ActiveRecord::Migration
   def up
     create_table :thesises do |t|

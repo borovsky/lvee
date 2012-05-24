@@ -1,4 +1,7 @@
+class Thesis < ActiveRecord::Base
+end
 class CreateUserToThesisLink < ActiveRecord::Migration
+  
   def up
     create_table :users_thesises, :id => false do |t|
       t.integer :user_id

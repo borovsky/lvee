@@ -1,11 +1,11 @@
-require "action_controller/test_process"
+#require "action_controller/test_process"
 
 class CreateSponsors < ActiveRecord::Migration
   def self.add_sponsor(name, logo, url, type)
-    file = File.join(RAILS_ROOT, "public", "images", "logos", logo)
+    file = File.join(Rails.root, "public", "images", "logos", logo)
 
     Sponsor.create!(:name => name,
-      :image => ActionController::TestUploadedFile.new(file, nil, true),
+      :image => Rack::Test::UploadedFile.new(file, nil, true),
       :url => url,
       :sponsor_type => type)
   end
