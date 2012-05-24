@@ -7,6 +7,12 @@ GIT
       activesupport (>= 3.0.0, < 3.2.0)
 
 GIT
+  remote: git://github.com/partizan/rmagick.git
+  revision: 6f0cdb77ad8e365c7eb8c3e9f10079d079ae2ac0
+  specs:
+    rmagick (0.0.0)
+
+GIT
   remote: git://github.com/vhochstein/active_scaffold.git
   revision: 87d0ef321cfa48f9a4ea364b6a544450822e35d1
   specs:
@@ -136,7 +142,6 @@ GEM
     rake (0.9.2.2)
     rdoc (3.11)
       json (~> 1.4)
-    rmagick (2.13.1)
     rspec (2.8.0)
       rspec-core (~> 2.8.0)
       rspec-expectations (~> 2.8.0)
@@ -201,7 +206,7 @@ DEPENDENCIES
   mysql2
   rails (~> 3.1.0)
   render_component_vho!
-  rmagick
+  rmagick!
   rspec-rails (>= 2.8)
   sass-rails
   spork (~> 0.9.0.rc)

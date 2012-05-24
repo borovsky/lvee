@@ -1,4 +1,4 @@
-$:.unshift(File.expand_path('./lib', ENV['rvm_path'])) 
+#$:.unshift(File.expand_path('./lib', ENV['rvm_path'])) 
 require "rvm/capistrano"   
 
 require "bundler/capistrano"
@@ -18,7 +18,7 @@ set :deploy_via, :remote_cache
 set :host, 'lvee.org'
 set :deploy_to, "/home/partizan/apps/lvee"
 
-server "lvee", :app, :web, :db, :primary => true
+server "lvee.org", :app, :web, :db, :primary => true
 set :user, 'partizan'
 
 # Server env
