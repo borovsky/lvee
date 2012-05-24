@@ -139,7 +139,7 @@ pl:
       license: "(Licenses are explained at \"creativecommons.org\":http://creativecommons.org/choose)"
     conference_registration: 
       days: "W które dni planujecie Państwo uczestniczyć?"
-      floor: "Would you like to accept following conditions: organization fee decreases twice; instead of sleeping in a house you are pitching a tent or joining to somebody else with free places in a tent camp"
+      floor: "Zwiedzanie starego miasta Grodna odbędzie się za dodatkową opłatą na pokrycie kosztów transportu i usług przewodnika. Planowany czas wycieczki - czwartek wieczorem."
       food: "Jakie są Państwa upodobania w jedzeniu?"
       index: "Rejestracja na konferencje"
       meeting: "Czy potrzeba Państwo spotkać?"
@@ -260,7 +260,7 @@ pl:
       created_at: "Conference Registration Date"
       days: "Dni uczestnictwa"
       edit: " %{conference} participant's data"
-      floor: "Can you sleep in a tent?"
+      floor: "Chcesz wziąć udział w wycieczce po Grodnie?"
       food: "Upodobania w jedzeniu"
       index: "Rejestracja na konferencję"
       meeting: "Czy potrzeba Państwo spotkać?"

@@ -203,7 +203,7 @@ hu:
       license: "(Licenses are explained at \"creativecommons.org\":http://creativecommons.org/choose)"
     conference_registration: 
       days: "Mely napokon kíván részt venni?"
-      floor: "Would you like to accept following conditions: organization fee decreases twice; instead of sleeping in a house you are pitching a tent or joining to somebody else with free places in a tent camp"
+      floor: "Excursion in older part of the Grodno city will be payed separately, with fee covering transportation and guide expenses. Planned time of excursion is Thursday evening."
       food: "Étkezéssel kapcsolatos kívánságok?"
       index: "Konferencia regisztráció"
       meeting: "Igényli-e, hogy fogadják?"
@@ -322,7 +322,7 @@ hu:
       created_at: "Conference Registration Date"
       days: "Részvételi napok"
       edit: " %{conference} participant's data"
-      floor: "Can you sleep in a tent?"
+      floor: "Would you like to take part in Grodno sight-seeing tour?"
       food: "Étkezéssel kapcsolatos kívánságok"
       index: Konferenciaregisztrációk
       meeting: "Fogadás szükséges?"

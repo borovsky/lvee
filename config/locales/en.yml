@@ -133,7 +133,7 @@ en:
       license: "(Licenses are explained at \"creativecommons.org\":http://creativecommons.org/choose)"
     conference_registration: 
       days: "Which days do you plan to participate?"
-      floor: "Would you like to accept following conditions: organization fee decreases twice; instead of sleeping in a house you are pitching a tent or joining to somebody else with free places in a tent camp"
+      floor: "Excursion in older part of the Grodno city will be payed separately, with fee covering transportation and guide expenses. Planned time of excursion is Thursday evening."
       food: "Which type of food do you prefer (vegetarian, etc.)"
       index: "Registration to conference"
       meeting: "Would you like to be met ?"
@@ -252,7 +252,7 @@ en:
       created_at: "Conference Registration Date"
       days: "Participation days"
       edit: " %{conference} participant's data"
-      floor: "Can you sleep in a tent?"
+      floor: "Would you like to take part in Grodno sight-seeing tour?"
       food: "Preferred food"
       index: "Registration to conference"
       meeting: "Meeting required?"

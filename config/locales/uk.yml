@@ -203,7 +203,7 @@ uk:
       license: "(Licenses are explained at \"creativecommons.org\":http://creativecommons.org/choose)"
     conference_registration: 
       days: "У які дні Ви плануєте бути присутнім?"
-      floor: "Would you like to accept following conditions: organization fee decreases twice; instead of sleeping in a house you are pitching a tent or joining to somebody else with free places in a tent camp"
+      floor: "Екскурсія по старій частині м. Гродно буде проводитися за додаткову оплату, що покриває витрати на транспорт та послуги гіда."
       food: "Ваші переваги щодо їжі?"
       index: "Реєстрація на конференцію"
       meeting: "Чи потрібно Вас зустрічати?"
@@ -323,7 +323,7 @@ uk:
       created_at: "Conference Registration Date"
       days: "Дні участі"
       edit: " %{conference} participant's data"
-      floor: "Can you sleep in a tent?"
+      floor: "Чи Ви маєте бажання взяти участь в екскурсії по Гродно?"
       food: "Переваги в харчуванні"
       index: "Реєстрації на конференції"
       meeting: "Чи потрібна зустріч?"
