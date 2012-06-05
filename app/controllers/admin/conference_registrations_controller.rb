@@ -3,11 +3,11 @@ module Admin
     layout "admin"
     before_filter :admin_required
 
-    EDITABLE_COLUMNS = [:user_type, :to_pay, :status_name, :comment]
+    EDITABLE_COLUMNS = [:quantity, :user_type, :to_pay, :status_name, :comment]
     STATIC_COLUMNS = [:conference, :login, :avator, :phone,
       :proposition, :projects, :work,
       :days, :food, :residence, :floor,
-      :quantity, :meeting, :transport_to, :transport_from, :tshirt]
+      :meeting, :transport_to, :transport_from, :tshirt]
     LIST_COLUMNS = [:id, :conference, :filled, :user, :city, :country, :quantity, :status_name, :user_type]
     COLUMNS = (LIST_COLUMNS + STATIC_COLUMNS + EDITABLE_COLUMNS).uniq
 
