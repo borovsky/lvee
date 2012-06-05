@@ -39,7 +39,7 @@ class ConferenceRegistration < ActiveRecord::Base
 
   def cancel!
     self.status_name = CANCELLED_STATUS
-    save!
+    save!(validate: false)
   end
 
   def login
