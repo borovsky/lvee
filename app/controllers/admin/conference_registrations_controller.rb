@@ -14,7 +14,7 @@ module Admin
     USER_COLUMNS = [:city, :country, :avator]
 
     
-    active_scaffold :conference_registrations do |cfg|
+    active_scaffold :conference_registration do |cfg|
       cls = Admin::ConferenceRegistrationsController
       cfg.columns = cls::COLUMNS
       cfg.label = "Conference Registration"

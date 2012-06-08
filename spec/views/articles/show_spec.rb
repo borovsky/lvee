@@ -1,18 +1,19 @@
-require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
+#require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
+require 'spec_helper'
 
-describe "/articles/show.html" do
+describe "articles/show" do
   before(:each) do
     @article = stub_model(Article,
       :title => "value for title",
       :body => "value for body"
     )
-    assigns[:article] = @article
+    assign(:article, @article)
   end
 
   it "should render attributes in <p>" do
     view.stub!(:editor?).and_return(true)
     
-    render
+    render(feature_description)
     rendered.should have_selector("h1", :content => "value for title")
     rendered.should match(/value\ for\ body/)
   end

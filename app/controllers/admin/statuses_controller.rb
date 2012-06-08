@@ -4,7 +4,7 @@ module Admin
 
     layout "admin"
 
-    active_scaffold :statuses do
+    active_scaffold :status do
       self.columns = [:name, :subject, :mail]
       self.list.columns = [:name, :subject]
     end

@@ -1,6 +1,6 @@
 class WikiPage < ActiveRecord::Base
   belongs_to :user
-  set_locking_column("version" )
+  locking_column = :version
   acts_as_versioned
 
   validates :body, :user_id, :presence => true

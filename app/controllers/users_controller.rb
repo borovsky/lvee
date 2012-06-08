@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   LOCALIZATION_LABEL_PREFIX = "label.user."
   LOCALIZATION_DESCRIPTION_PREFIX = "description.user."
 
-  active_scaffold :users do |cfg|
+  active_scaffold :user do |cfg|
     cls = UsersController
     cfg.actions = [:create, :update]
     cfg.columns = cls::COLUMNS

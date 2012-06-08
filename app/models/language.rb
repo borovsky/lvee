@@ -1,5 +1,5 @@
 class Language < ActiveRecord::Base
-  set_primary_key :name
+  primary_key =  :name
   validates :name, :length => {:is => 2, :allow_blank => false}, :uniqueness => true
   validates :code3, :length => {:is => 3, :allow_blank => false}
 

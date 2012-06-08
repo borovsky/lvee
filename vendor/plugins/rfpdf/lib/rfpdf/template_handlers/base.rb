@@ -1,6 +1,6 @@
 module RFPDF
   module TemplateHandlers
-    class Base < ::ActionView::TemplateHandlers::ERB
+    class Base < ::ActionView::Template::Handlers::ERB
       
       def compile(template)
         src = "_rfpdf_compile_setup;" + super

@@ -5,7 +5,7 @@ class Abstract < ActiveRecord::Base
   has_many :files, :class_name => "AbstractFile"
 
   acts_as_versioned
-  set_locking_column("version")
+  locking_column = :version
   attr_protected :conference_registration_id
 
   validates :title, :summary, :authors, :body, :license,

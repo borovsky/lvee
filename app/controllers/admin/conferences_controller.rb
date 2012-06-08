@@ -11,7 +11,7 @@ module Admin
 
     layout "admin"
 
-    active_scaffold :conferences do |conf|
+    active_scaffold :conference do |conf|
       conf.columns = [:name, :start_date, :finish_date, :registration_opened]
       conf.columns[:registration_opened].form_ui = :checkbox
       conf.action_links.add(:registrations, :label => :registrations, :type => :member, :page => true, :parameters => {})

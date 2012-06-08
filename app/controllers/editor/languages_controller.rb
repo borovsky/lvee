@@ -4,7 +4,7 @@ module Editor
 
     before_filter :editor_required
 
-    active_scaffold :languages do |cfg|
+    active_scaffold :language do |cfg|
       cfg.columns = [:name, :code3, :description, :published]
       cfg.actions.exclude :show, :search
       cfg.action_links.add(:show, :label => :download, :type => :member, :page => true, :parameters => {:format => :yml})

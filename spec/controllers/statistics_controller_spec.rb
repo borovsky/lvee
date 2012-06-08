@@ -12,9 +12,9 @@ describe StatisticsController do
   describe "conference" do
     before :each do
       @conference = Conference.create!(:name => "LVEE 2009")
-      @user1 = User.create!(User.valid_data.merge(:login => "test1"))
-      @user2 = User.create!(User.valid_data.merge(:login => "test2"))
-      @user3 = User.create!(User.valid_data.merge(:login => "test3", :country => "Russia"))
+      @user1 = User.create!(User.valid_data.merge(login: "test1", email: "test1@a.com"))
+      @user2 = User.create!(User.valid_data.merge(login: "test2", email: "test2@a.com"))
+      @user3 = User.create!(User.valid_data.merge(login: "test3", email: "test3@a.com", country: "Russia"))
       @reg1 = ConferenceRegistration.create!(:user => @user1, :conference => @conference, :quantity => 1)
       @reg2 = ConferenceRegistration.create!(:user => @user2, :conference => @conference, :quantity => 3)
       @reg3 = ConferenceRegistration.create!(:user => @user3, :conference => @conference, :quantity => 2)

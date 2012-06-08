@@ -13,7 +13,7 @@ class ConferenceRegistrationsController < ApplicationController
   FIRST_STEP_COLUMNS = [:proposition, :quantity]
 
   @@default_column_ui ||= {}
-  active_scaffold :conference_registrations do |conf|
+  active_scaffold :conference_registration do |conf|
     cls = ConferenceRegistrationsController
     conf.actions = [:create, :update, :show]
     conf.columns = cls::COLUMNS
