@@ -1,4 +1,3 @@
-#require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 require 'spec_helper'
 
 describe "articles/show" do
@@ -13,7 +12,7 @@ describe "articles/show" do
   it "should render attributes in <p>" do
     view.stub!(:editor?).and_return(true)
     
-    render(feature_description)
+    render
     rendered.should have_selector("h1", :content => "value for title")
     rendered.should match(/value\ for\ body/)
   end

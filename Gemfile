@@ -20,12 +20,12 @@ gem 'active_scaffold', :git => 'git://github.com/activescaffold/active_scaffold.
 
 gem "haml"
 gem "haml-rails"
+gem 'dynamic_form'
 
 gem 'exception_notification_rails3', :require => 'exception_notifier'
 
-group :test do
-  gem "rspec-rails", ">= 2.10"
-  gem "test-unit"
+group :test, :development do
+  gem "rspec-rails"
   gem 'webrat'
   gem 'spork', '~> 0.9.2'
   gem 'watchr'

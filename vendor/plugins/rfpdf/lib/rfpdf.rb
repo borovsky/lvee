@@ -20,21 +20,23 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-require 'action_controller'
-require 'action_view'
+#require 'action_controller'
+#require 'action_view'
 
-require 'rfpdf/action_controller'
-require 'rfpdf/action_view'
+#require 'rfpdf/action_controller'
+#require 'rfpdf/action_view'
 
-require 'rfpdf/template_handler/compile_support'
+#require 'rfpdf/template_handler/compile_support'
 
-require 'rfpdf/template_handlers/base'
-
-
-class ActionController::Base
-  include RFPDF::ActionController
+#require 'rfpdf/template_handlers/base'
+module RFPDF
 end
+require 'tcpdf'
 
-class ActionView::Base
-  include RFPDF::ActionView
-end
+#class ActionController::Base
+#  include RFPDF::ActionController
+#end
+
+#class ActionView::Base
+#  include RFPDF::ActionView
+#end

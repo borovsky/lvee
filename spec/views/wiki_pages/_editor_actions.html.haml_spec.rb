@@ -1,6 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 
-describe "/wiki_pages/_editor_actions" do
+describe "wiki_pages/_editor_actions" do
   describe "should render editor actions for wiki_page" do
     before(:each) do
       @wiki_page = stub_model(WikiPage, :name => "name")

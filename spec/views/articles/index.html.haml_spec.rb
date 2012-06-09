@@ -1,6 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 
-describe "/articles/index.html" do
+describe "articles/index.html.haml" do
 
   before(:each) do
     assign :articles, [

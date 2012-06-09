@@ -1,6 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 
-describe "/articles/_editor_actions.html" do
+describe "articles/_editor_actions.html" do
   before(:each) do
     user = stub_model(User, :full_name=>'Vasily Pupkin')
   end
@@ -49,7 +49,7 @@ describe "/articles/_editor_actions.html" do
         @article.stub!(:locale).and_return(locale)
         I18n.stub!(:locale).and_return(I18n.default_locale)
 
-        render "/articles/editor_actions.html.erb", :article => @article
+        render partial: "articles/editor_actions", locals: {article: @article}
         rendered.should have_selector("a", :href => edit_article_path(@article), :content => "Edit translation")
       end
     end

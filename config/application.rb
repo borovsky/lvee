@@ -2,10 +2,12 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
-# If you have a Gemfile, require the default gems, the ones in the
-# current environment and also include :assets gems if in development
-# or test environments.
-Bundler.require *Rails.groups(:assets) if defined?(Bundler)
+if defined?(Bundler)
+  # If you precompile assets before deploying to production, use this line
+  Bundler.require(*Rails.groups(:assets => %w(development test)))
+  # If you want your assets lazily compiled in production, use this line
+  # Bundler.require(:default, :assets, Rails.env)
+end
 
 module Lvee
   class Application < Rails::Application
@@ -19,9 +21,6 @@ module Lvee
     # Only load the plugins named here, in the order given (default is alphabetical).
     # :all can be used as a placeholder for all plugins not explicitly named.
     # config.plugins = [ :exception_notification, :ssl_requirement, :all ]
-
-    config.active_record.schema_format = :sql
-
 
     # Activate observers that should always be running.
     config.active_record.observers = :user_observer, :article_observer, :wiki_page_observer, :conference_registration_observer
@@ -40,16 +39,27 @@ module Lvee
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
 
+    # Enable escaping HTML in JSON.
+    config.active_support.escape_html_entities_in_json = true
+
+    # Use SQL instead of Active Record's schema dumper when creating the database.
+    # This is necessary if your schema can't be completely dumped by the schema dumper,
+    # like if you have constraints or database-specific column types
+    config.active_record.schema_format = :sql
+
+    # Enforce whitelist mode for mass assignment.
+    # This will create an empty whitelist of attributes available for mass-assignment for all models
+    # in your app. As such, your models will need to explicitly whitelist or blacklist accessible
+    # parameters by using an attr_accessible or attr_protected declaration.
+    config.active_record.whitelist_attributes = true
+
     # Enable the asset pipeline
     config.assets.enabled = true
 
-    config.action_controller.cache_store = :file_store, File.join(Rails.root, "cache")
+    # Version of your assets, change this if you want to expire all your assets
+    config.assets.version = '1.0'
 
     config.action_view.javascript_expansions[:defaults] = %w(jquery-1.4.2.min rails application)
-
-    config.middleware.use ExceptionNotifier,
-      :email_prefix => "[LVEE-ERROR] ",
-      :sender_address => "Error reported <app.error@lvee.org>",
-      :exception_recipients => %w(alex.borovsky@gmail.com)
+    config.action_controller.cache_store = :file_store, File.join(Rails.root, "cache")
   end
 end

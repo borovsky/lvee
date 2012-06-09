@@ -1,17 +1,17 @@
 require File.expand_path(File.dirname(__FILE__) + '/../../../spec_helper')
 
-describe "/admin/users/index.html.erb" do
+describe "admin/users/index.html.haml" do
   helper :application
 
   before(:each) do
     conf = Conference.new(:name =>"LVEE 2009")
     conf.save(:validate => false)
-    user1 = User.new(:name => "x", :surname => "y")
+    user1 = User.new(:first_name => "x", :first_name => "y")
     user1.save(:validate => false)
-    user1.conference_registrations << ConferenceRegistration.new(:conference => conf)
-    user2 = User.new(:name => "a", :surname => "b")
+    user1.conference_registrations << ConferenceRegistration.new(:conference_id => conf.id)
+    user2 = User.new(:first_name => "a", :last_name => "b")
     user2.save(:validate => false)
-    user2.conference_registrations << ConferenceRegistration.new(:conference => conf)
+    user2.conference_registrations << ConferenceRegistration.new(:conference_id => conf.id)
 
     assign :users, [user1, user2]
     assign :conferences, [conf]

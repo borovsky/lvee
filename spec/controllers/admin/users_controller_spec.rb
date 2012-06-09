@@ -47,12 +47,12 @@ describe Admin::UsersController do
       Status.create(:name => "approved", :subject => "", :mail => "")
       @conference = Conference.create!(:name => "LVEE 2009")
       @user = User.create!(User.valid_data)
-      @reg = ConferenceRegistration.create!(:conference => @conference, :user => @user,
-        :status_name => "approved",
-        :transport_from => "bus_minsk",
-        :transport_to => "bus_minsk",
-        :quantity => 1
-        )
+      @reg = ConferenceRegistration.create!({:conference_id => @conference.id, :user_id => @user.id,
+                                              :status_name => "approved",
+                                              :transport_from => "bus_minsk",
+                                              :transport_to => "bus_minsk",
+                                              :quantity => 1
+                                            }, without_protection: true)
 
       get :index, :format=>'html'
       assert_response :success

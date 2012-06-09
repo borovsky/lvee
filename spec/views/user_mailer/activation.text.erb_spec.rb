@@ -1,9 +1,11 @@
 require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 
-describe "/user_mailer/signup_notification.plain.erb" do
+describe "user_mailer/activation.text.erb" do
   before(:each) do
     @user = stub_model(User,
-      :full_name => 'xyz'
+      :full_name => 'xyz',
+      :login => 'login',
+      :password => 'pass'
       )
     assign :user, @user
     @url = "http://lvee.org"

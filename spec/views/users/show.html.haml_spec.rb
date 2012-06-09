@@ -1,6 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 
-describe "/users/show.html" do
+describe "users/show.html.haml" do
   helper :users
 
   before(:each) do
@@ -10,7 +10,7 @@ describe "/users/show.html" do
     assign :user, @user
   end
 
-  it "should render new form" do
+  it "should render" do
     view.stub!(:current_user).and_return(@user)
     render
   end

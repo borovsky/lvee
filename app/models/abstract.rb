@@ -5,13 +5,15 @@ class Abstract < ActiveRecord::Base
   has_many :files, :class_name => "AbstractFile"
 
   acts_as_versioned
-  locking_column = :version
+  self.locking_column = :version
   attr_protected :conference_registration_id
 
   validates :title, :summary, :authors, :body, :license,
             :conference_id, :change_summary, :author_id, :presence => true
 
   has_many :comments, :class_name => "AbstractComment"
+
+  attr_accessible :title, :summary, :body, :license, :change_summary, :authors, :author
 
   scope :for_review, where(:ready_for_review => true)
 

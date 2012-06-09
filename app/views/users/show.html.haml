@@ -4,7 +4,7 @@
   #avator= image_tag(@user.avator.url)
 #uploadAvator
   %p= t("message.user.avator_upload")
-  = form_tag(upload_user_avator_path(:id => @user, :lang => params[:lang]), :multipart => true) do
+  = form_tag(upload_user_avator_path(:id => @user), :multipart => true) do
     =label_tag "user_avator", t("label.user.avator")
     = file_field "user", :avator
     = submit_tag t("label.common.upload")
@@ -23,4 +23,4 @@
   = link_to(t('label.conference_registration.abstracts'), abstracts_path, :class => "big-button")
   = render 'conference_registrations/user_conferences'
   %hr/
-  = link_to(t('label.user.edit'), edit_user_path(:id => @user, :lang => params[:lang]))
+  = link_to(t('label.user.edit'), edit_user_path(:id => @user))

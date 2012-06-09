@@ -47,7 +47,8 @@ describe News do
     end
 
     it "should save news" do
-      n = News.new(:title => "1", :lead => "l", :body => "b", :user_id => 1, :locale => "en")
+      n = News.new({:title => "1", :lead => "l", :body => "b", :user_id => 1, :locale => "en"}, 
+                   without_protection: true)
       n.publish
       
       n2 = News.find(n.id)

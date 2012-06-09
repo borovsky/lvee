@@ -59,10 +59,14 @@ class AbstractsController < ApplicationController
   # POST /abstracts
   # POST /abstracts.json
   def create
-    @abstract = Abstract.new(params[:abstract])
-    @abstract.conference_id = params[:abstract][:conference_id]
+    p params
+    abstract = params[:abstract] || {}
+    conference = Conference.find abstract.delete(:conference_id)
+    @abstract = Abstract.new(abstract)
+    @abstract.conference_id = 
     @abstract.author = current_user
     @abstract.users << current_user
+    
 
     respond_to do |format|
       if @abstract.save
@@ -71,6 +75,7 @@ class AbstractsController < ApplicationController
         end
         format.json { render json: @abstract, status: :created, location: @abstract }
       else
+        p @abstract
         format.html do
           @actual_conferences = Conference.where("start_date > ?", Time.now).order("start_date")
           render action: "new"

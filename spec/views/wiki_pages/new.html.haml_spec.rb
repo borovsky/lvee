@@ -1,6 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 
-describe "/wiki_pages/new" do
+describe "wiki_pages/new" do
 
   before(:each) do
     @page = WikiPage.new(:body => "value for body", :name => "value for subcategory")

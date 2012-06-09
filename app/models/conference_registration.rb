@@ -19,6 +19,8 @@ class ConferenceRegistration < ActiveRecord::Base
   }
   attr_accessor :import
 
+  attr_accessible :user_id, :conference_id, :transport_from, :transport_to, :quantity
+
   def status
     @status ||= Status.find_by_name(@status_name)
     @status

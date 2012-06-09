@@ -17,12 +17,6 @@ module RSpec::Rails::ViewExampleGroup
   def login_as(user)
     view.stub!(:current_user).and_return(user)
   end
-
-  included do
-    before :each do
-      params[:lang] = 'en'
-    end
-  end
 end
 
 I18n.class_eval(<<-END
@@ -31,7 +25,6 @@ I18n.class_eval(<<-END
       locale = options.delete(:locale) || I18n.locale
       backend.translate(locale, key, options)
     end
-
   end
   END
 )
@@ -51,10 +44,6 @@ module ActionView::Helpers::TranslationHelper
     I18n.translate(key, options)
   end
 end
-
-Array.class_eval do
-  alias_method(:count, :length)
-end unless [].respond_to?(:count)
 
 class ActionView::TestCase
   class TestController

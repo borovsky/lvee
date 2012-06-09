@@ -5,7 +5,8 @@ require File.dirname(__FILE__) + '/../spec_helper'
 describe ConferenceRegistration do
   describe 'status' do
     it 'should return status by status name' do
-      cr = ConferenceRegistration.new(:status_name => 'test')
+      cr = ConferenceRegistration.new({:status_name => 'test'},
+                                      without_protection: true)
       status = stub('status');
       Status.should_receive(:find_by_name).and_return(status)
       cr.status
