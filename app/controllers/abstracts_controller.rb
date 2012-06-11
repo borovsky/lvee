@@ -59,7 +59,6 @@ class AbstractsController < ApplicationController
   # POST /abstracts
   # POST /abstracts.json
   def create
-    p params
     abstract = params[:abstract] || {}
     conference = Conference.find abstract.delete(:conference_id)
     @abstract = Abstract.new(abstract)
