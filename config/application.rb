@@ -61,5 +61,12 @@ module Lvee
 
     config.action_view.javascript_expansions[:defaults] = %w(jquery-1.4.2.min rails application)
     config.action_controller.cache_store = :file_store, File.join(Rails.root, "cache")
+
+    config.generators do |g|
+      g.orm             :active_record
+      g.template_engine :haml
+      g.test_framework  :rspec, :fixture => false
+      g.stylesheets     false
+    end
   end
 end

@@ -3,9 +3,9 @@ source 'http://rubygems.org'
 gem 'rails', '~>3.2'
 
 gem('acts_as_versioned',
-    :git => "git://github.com/technoweenie/acts_as_versioned.git")
+    git: "git://github.com/technoweenie/acts_as_versioned.git")
 
-gem 'RedCloth', '~> 4.2.7', :require => 'redcloth'
+gem 'RedCloth', '~> 4.2.7', require: 'redcloth'
 gem 'ya2yaml'
 
 gem 'garb'
@@ -15,14 +15,14 @@ gem 'mysql2'
 gem 'rmagick', git: 'git://github.com/partizan/rmagick.git'
 gem 'carrierwave', '0.5.6'
 
-gem 'jquery-rails_vho', :git => 'https://github.com/vhochstein/jquery-rails.git'
-gem 'active_scaffold', :git => 'git://github.com/activescaffold/active_scaffold.git'
+gem 'jquery-rails_vho', git: 'https://github.com/vhochstein/jquery-rails.git'
+gem 'active_scaffold', git: 'git://github.com/activescaffold/active_scaffold.git'
 
 gem "haml"
 gem "haml-rails"
 gem 'dynamic_form'
 
-gem 'exception_notification_rails3', :require => 'exception_notifier'
+gem 'exception_notification_rails3', require: 'exception_notifier'
 
 group :test, :development do
   gem "rspec-rails"
