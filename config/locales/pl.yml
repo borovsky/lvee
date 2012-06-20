@@ -499,6 +499,7 @@ pl:
       created: "Pomyślnie utworzono język"
       updated: "Pomyślnie zaktualizowano język"
     license: 
+      engine: "The website itself is built on the %{link} and licensed under GPL v.2 license"
       text: "Wszystkie materiały oprócz treści sprawozdań oraz innych wymienionych dokumentów są na licencji Creative Commons Attribution Share-Alike"
     news: 
       created: "Pomyślnie utworzono wiadomość"

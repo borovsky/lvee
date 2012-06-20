@@ -560,6 +560,7 @@ hu:
       created: "A nyelv sikeresen létrejött"
       updated: "A nyelv siekresen frissítődött"
     license: 
+      engine: "The website itself is built on the %{link} and licensed under GPL v.2 license"
       text: "All content besides materials of reports and other specially mentioned documents is licensed under Creative Commons Attribution Share-Alike license"
     news: 
       created: "A hír sikeresen létrejött"

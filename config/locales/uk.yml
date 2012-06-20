@@ -562,6 +562,7 @@ uk:
       created: "Мова успішно створена"
       updated: "Мова успішно оновлена"
     license: 
+      engine: "The website itself is built on the %{link} and licensed under GPL v.2 license"
       text: "All content besides materials of reports and other specially mentioned documents is licensed under Creative Commons Attribution Share-Alike license"
     news: 
       created: "Новина успішно створена"

@@ -560,6 +560,7 @@ ru:
       created: "Язык успешно создан"
       updated: "Язык успешно обновлён"
     license: 
+      engine: "The website itself is built on the %{link} and licensed under GPL v.2 license"
       text: "Весь контент, за исключением материалов докладов и других специально оговоренных случаев, находится под лицензией Creative Commons Attribution Share-Alike"
     news: 
       created: "Новость успешно создана"
