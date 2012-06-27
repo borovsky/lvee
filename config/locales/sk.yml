@@ -1,5 +1,5 @@
 --- 
-en: 
+sk: 
   active_scaffold: 
     are_you_sure: "Are you sure?"
   activerecord: 
@@ -147,8 +147,8 @@ en:
       tshirt: "T-Shirt size"
     user: 
       city: ""
-      country: "Where are you from"
-      email: "Your e-mail"
+      country: "Odkiaľ ste"
+      email: "Váša e-mailová adresa"
       first_name: ""
       last_name: "Conference rules are requiring real names"
       login: "At least 3 symbols. Also can be used as nickname"
@@ -157,7 +157,7 @@ en:
       password_confirmation: "Same as password"
       projects: "Free / Open Source Software (FOSS) projects where you have taken or are taking part in and your role in them"
       subscribed: "This option allows to receive news and other useful information from the Conference organizers."
-      subscribed_talks: "By choosing this you are going to take part in working discussions on the Conference preparing and carrying on. Being a volunteer project, LVEE is often subject to shortage of performers, and therefore we recomend to activate this option and to actively participate in work of the organization board."
+      subscribed_talks: "By choosing this You are going to take part in working discussions on the Conference preparing and carrying on. Being a volunteer project, LVEE is often subject to shortage of performers, and therefore we recomend to activate this option and to actively participate in work of the organization board."
   errors: 
     template: 
       header: "During saving following errors where found:"
@@ -203,15 +203,15 @@ en:
     common: 
       _select_: Select
       add_more: "Add more"
-      back: Back
+      back: Späť
       back_to_list: "Back to list"
-      cancel: Cancel
+      cancel: Zrušiť
       close: Close
       count: Count
       create: Create
       delete: Delete
-      download: Download
-      edit: Edit
+      download: Sťahnuť
+      edit: Upraviť
       editTranslation: "Edit translation"
       preview: Preview
       publish: Publish
@@ -223,7 +223,7 @@ en:
       time_ago: "%{time} ago"
       translate: Translate
       unknown_user: Unknown
-      update: Update
+      update: Aktualizovať
       upload: Upload
       view_changes: "View changes"
     conference: 
@@ -308,7 +308,7 @@ en:
     news: 
       abstract: Abstract
       add: "Add News"
-      all_news: "All News"
+      all_news: "Všetké noviny"
       author: Author
       back_to_list: "Back to news list"
       body: "News Body"
@@ -322,10 +322,10 @@ en:
       unpublished: Unpublished
       will_be_published: "Will be published in %{published}"
     session: 
-      login: "User name"
-      loginButton: "Log in"
-      logout: Logout
-      password: Password
+      login: "Používateľské meno"
+      loginButton: "Prihlásiť sa"
+      logout: "Odhlásiť sa"
+      password: Heslo
       rememberMe: "Remember me"
     statistics: 
       browser: Browser
@@ -333,11 +333,11 @@ en:
       country: Country
       operating_system: "Operating system"
       registration: 
-        approved_men: "Approved participants"
+        approved_men: "Approved men"
         approved_registrations: "Approved registration"
         days_title: "Participance days statistics"
         registration_title: "Registration statistics"
-        total_men: "Total participants"
+        total_men: "Total men"
         total_registrations: "Total registration"
         transport_from_title: "Transport from conference statistics"
         transport_to_title: "Transport to conference statistics"
@@ -345,39 +345,39 @@ en:
         browser_statistic: "Visitor's Browser Statistics"
         conference: "Conference registration statistics"
         country_statistic: "Visitor's Country Statistic"
-        full: "Statistics since 20th of April 2009"
+        full: "Statistics from 20th of April 2009"
         month: "Statistics for last month"
         os_statistic: "Visitor's Operating Systems Statistics"
         total_visitors: "Total visitors: %{count}"
         week: "Statistics for last week"
       visits: Visits
     user: 
-      avator: "New photo:"
-      city: Location
-      country: Country
+      avator: "Nové foto:"
+      city: Miesto
+      country: Štat
       create: Register
       created_at: "Registration Date"
-      edit: "Edit personal data"
+      edit: "Úprava profilu"
       email: E-mail
-      first_name: "First Name"
-      from: From
-      full_name: Name
+      first_name: Meno
+      from: Odkiaľ
+      full_name: Meno
       join_us: "Join us today"
-      last_name: "Last Name"
-      login: Login
-      occupation: Occupation
-      password: Password
-      password_confirmation: "Password Confirmation"
+      last_name: Priezvisko
+      login: "Používateľské meno"
+      occupation: Zamestnanie
+      password: Heslo
+      password_confirmation: "Potvrdenie hesla"
       password_restore: "Password Restore"
       password_restore_link: Restore
-      photo: Photo
-      projects: "FOSS projects"
+      photo: Foto
+      projects: "FOSS projekty"
       register: Register
       subscribed: "Subscribe to information maillist"
       subscribed_talks: "Subscribe to organization board talks mailllist"
       title: "%{full_name} (%{login}), your profile is in your hands"
       to_profile: "To your profile"
-      update_model: "Edit your personal data"
+      update_model: "Úprava profilu"
       updated_at: "Last Updated"
     wiki_page: 
       body: Body
@@ -425,20 +425,20 @@ en:
       title: Admin
       users: "Users admin"
     conference: 
-      about: About
+      about: "O konferencii"
       attributes: Attributes
-      attribution: Attributes
-      history: History
+      attribution: Atribúty
+      history: História
       linux: GNU/Linux
-      payment: Payment
-      place: "Place of the conference"
-      press: "In the press"
-      statistics: Statistics
+      payment: Platba
+      place: "Miesto konferencii"
+      press: "V novinach"
+      statistics: Štatistika
     contacts: 
-      category: Contacts
+      category: Kontakt
       lug: LUG
-      official: "Official Contacts"
-      organizers: "Organization Board"
+      official: "Oficiálne kontakty"
+      organizers: Organizátori
     editor: 
       abstracts: "Abstracts for review"
       articles: "Article editor"
@@ -448,27 +448,27 @@ en:
       news: "News editor"
       rss: "Editor RSS"
       title: Editor
-    main: Main
+    main: Domov
     reports: 
       about: "On presentations"
       abstract: "Abstract guidelines"
-      category: Presentations
-      materials_2005: "LVEE 2005 materials"
-      materials_2006: "LVEE 2006 materials"
-      materials_2007: "LVEE 2007 materials"
-      materials_2008: "LVEE 2008 materials"
-      materials_2009: "LVEE 2009 materials"
-      materials_2010: "LVEE 2010 materials"
-      materials_2011: "LVEE 2011 materials"
-      materials_2012: "LVEE 2012 materials"
-      materials_winter_2012: "LVEE Winter 2012 materials"
-      program: Program
-    sponsors: Sponsors
+      category: Prezentácie
+      materials_2005: "Materiály z LVEE 2005"
+      materials_2006: "Materiály z LVEE 2006"
+      materials_2007: "Materiály z LVEE 2007"
+      materials_2008: "Materiály z LVEE 2008"
+      materials_2009: "Materiály z LVEE 2009"
+      materials_2010: "Materiály z LVEE 2010"
+      materials_2011: "Materiály z LVEE 2011"
+      materials_2012: "Materiály z LVEE 2012"
+      materials_winter_2012: "Materiály z LVEE Winter 2012"
+      program: "Predbežný program"
+    sponsors: Sponzori
     user: 
-      category: Participants
+      category: Účastníci
       conference_registration: List
-      profile: "Personal profile"
-      volunteers: Volunteers
+      profile: Profil
+      volunteers: Dobrovoľníci
       wiki: Wiki
   message: 
     abstract: 
@@ -481,7 +481,7 @@ en:
       sure: "Are you sure?"
     conference: 
       created: "Conference created successfully"
-      slogan: "The 8th International conference of developers and users<br />of free / open source software"
+      slogan: "8. medzinárodná konferencia vývojárov a používateľov<br />voľného a otvoreného softvéru"
       status: "Registration to conference %{status}."
       updated: "Conference updated successfully"
     iefuck: 
@@ -492,15 +492,14 @@ en:
       created: "Language created successfully"
       updated: "Language updated successfully"
     license: 
-      engine: "The website itself is built on the %{link} and licensed under GPL v.2 license"
       text: "All content besides materials of presentations and other specially mentioned documents is licensed under Creative Commons Attribution Share-Alike license"
     news: 
       created: "News created successfully"
       updated: "News updated successfully"
     session: 
-      failed: "User name or password incorrect. Probably, you didn't activate your account"
-      logged: "Logged in as %{user_name}"
-      logged_out: "You have logged out successfully"
+      failed: "Login or password incorrect. May be you didn't activate your account"
+      logged: "Prihlásený %{user_name}"
+      logged_out: "You logged out successfully"
     user: 
       accuracy_note: "Accurate and error-free registration form filling will help contacting with you alot"
       activated: "Registration completed"
@@ -544,15 +543,15 @@ en:
       format: 
         delimiter: ""
   sidebar: 
-    information_sponsor: "Information partners"
-    organizers: Organizers
-    sponsors: Sponsors
-    technical_partner: "Technical partners"
-    technical_sponsor: "Technical sponsor"
+    information_sponsor: "Informáčne partneri"
+    organizers: Organizátori
+    sponsors: Sponzori
+    technical_partner: "Technické partneri"
+    technical_sponsor: "Technický sponzor"
   support: 
     array: 
-      last_word_connector: ", and "
-      two_words_connector: " and "
+      last_word_connector: ", a "
+      two_words_connector: " a "
       words_connector: ", "
   time: 
     am: am
