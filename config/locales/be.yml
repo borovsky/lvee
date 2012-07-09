@@ -429,6 +429,7 @@ be:
       users: "Адміністратар карыстальнікаў"
     conference: 
       about: Канферэнцыя
+      attributes: Attributes
       attribution: Атрыбутыка
       history: Гісторыя
       linux: GNU/Linux
@@ -462,6 +463,7 @@ be:
       materials_2009: "Матэрыялы LVEE 2009"
       materials_2010: "Матэрыялы LVEE 2010"
       materials_2011: "Матэрыялы LVEE 2011"
+      materials_2012: "LVEE 2012 materials"
       materials_winter_2012: "LVEE Winter 2012 materials"
       program: Праграма
     sponsors: Фундатары
