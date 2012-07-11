@@ -42,8 +42,7 @@ class ApplicationController < ActionController::Base
     end
 
     #FIXME
-    I18n.load_path = Dir.glob(LOCALE_DIR+ "*.yml")
-    I18n.reload!
+    I18n.reload! if(Translation.changed?)
     I18n.locale = lang
 
     session[:lang] = lang

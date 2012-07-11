@@ -34,4 +34,7 @@ Lvee::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  config.i18n.backend = I18nDatabaseBackend.new
+  Rails.backtrace_cleaner.remove_silencers!
 end
