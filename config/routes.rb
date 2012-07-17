@@ -59,6 +59,8 @@ Rails.application.routes.draw do
       resources :image_uploads do
         as_routes
       end
+
+      resources :translations
     end
 
     match "/main" => 'main#index', :as => "main_page"

@@ -351,6 +351,14 @@ en:
         total_visitors: "Total visitors: %{count}"
         week: "Statistics for last week"
       visits: Visits
+    translations:
+      edit: "Editing translation"
+      key: Key
+      original: "Original translation"
+      state:
+        outdated: Outdated
+        untranslated: Untranslated
+      translation: Translation
     user: 
       avator: "New photo:"
       city: Location

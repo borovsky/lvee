@@ -24,9 +24,7 @@ class I18nDatabaseBackend < I18n::Backend::KeyValue
 
     def reload!
       if Translation.table_exists?
-        ts = {}
-        Translation.all.each{|t| ts[t.full_key] = t.value}
-        @translations = ts
+        @translations = Translation.as_hash(:value, :full_key)
       end
     end
   end
