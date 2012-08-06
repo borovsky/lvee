@@ -2,10 +2,12 @@ require 'spec_helper'
 
 describe "editor/translations/index" do
   before(:each) do
-    assign(:editor_translations, [
-      stub_model(Editor::Translation),
-      stub_model(Editor::Translation)
-    ])
+    assign(:original_translations,
+           [
+            stub_model(Translation, key: "label.common.new"),
+            stub_model(Translation, key: "label.common.back"),
+           ])
+    assign(:translations, {})
   end
 
   it "renders a list of editor/translations" do

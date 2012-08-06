@@ -37,11 +37,14 @@ end
 
 module ActionView::Helpers::TranslationHelper
   def translate(key, options = {})
-    I18n.translate(key, options)
+    r = catch(:exception){I18n.translate(key, options)}
+    return r unless r.kind_of? I18n::MissingTranslation
+    p r
+    raise ArgumentError.new("Translation not found: #{r.key}")
   end
 
   def t(key, options = {})
-    I18n.translate(key, options)
+    translate(key, options)
   end
 end
 

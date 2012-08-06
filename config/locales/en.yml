@@ -248,6 +248,7 @@ en:
       badges: Badges
       badges_title: "Badges for %{conference}"
       cancel_registration: "Cancel registration!"
+      cancelled: "Cancalled"
       comment: "Registration's Comment"
       created_at: "Conference Registration Date"
       days: "Participation days"
@@ -352,9 +353,11 @@ en:
         week: "Statistics for last week"
       visits: Visits
     translations:
+      index: "Translation list"
+      original_translation: "Original translation"
+      new: "New"
       edit: "Editing translation"
       key: Key
-      original: "Original translation"
       state:
         outdated: Outdated
         untranslated: Untranslated

@@ -21,10 +21,10 @@ require 'spec_helper'
 describe Editor::TranslationsController do
 
   # This should return the minimal set of attributes required to create a valid
-  # Editor::Translation. As you add validations to Editor::Translation, be sure to
+  # Editor::Translation. As you add validations to Translation, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    {}
+    {key: "label.common.new", value: "test", language_id: "be", pluralization_index: 1}
   end
 
   # This should return the minimal set of values that should be in the session
@@ -35,68 +35,77 @@ describe Editor::TranslationsController do
   end
 
   describe "GET index" do
-    it "assigns all editor_translations as @editor_translations" do
-      translation = Editor::Translation.create! valid_attributes
-      get :index, {}, valid_session
-      assigns(:editor_translations).should eq([translation])
-    end
-  end
+    it "assigns all transltaions as @transltaions" do
+      translation = Translation.create! valid_attributes, without_protection: true
+      translation_o = Translation.create!(valid_attributes.merge(language_id: "en"),
+                                        without_protection: true)
+      get :index, {lang: "be"}, valid_session
 
-  describe "GET show" do
-    it "assigns the requested editor_translation as @editor_translation" do
-      translation = Editor::Translation.create! valid_attributes
-      get :show, {:id => translation.to_param}, valid_session
-      assigns(:editor_translation).should eq(translation)
+      response.should be_success
+
+      assigns(:translations).should eq({'label.common.new' => translation})
+      assigns(:original_translations).should eq([translation_o])
     end
   end
 
   describe "GET new" do
-    it "assigns a new editor_translation as @editor_translation" do
+    it "assigns a new transltaion as @transltaion" do
       get :new, {}, valid_session
-      assigns(:editor_translation).should be_a_new(Editor::Translation)
+      assigns(:translation).should be_a_new(Translation)
     end
   end
 
   describe "GET edit" do
-    it "assigns the requested editor_translation as @editor_translation" do
-      translation = Editor::Translation.create! valid_attributes
-      get :edit, {:id => translation.to_param}, valid_session
-      assigns(:editor_translation).should eq(translation)
+    it "assigns the requested transltaion as @transltaion" do
+      translation = Translation.create! valid_attributes.merge(language_id: "en"), without_protection: true
+      get :edit, {id: translation.to_param}, valid_session
+      assigns(:translation).should eq(translation)
+    end
+
+    it "creates new translation if language doesn't match" do
+      translation = Translation.create! valid_attributes, without_protection: true
+      get :edit, {id: translation.to_param}, valid_session
+      t = assigns(:translation)
+      t.should be_a_new(Translation)
+      t.language_id.to_s.should == 'en'
+      t.key.should == translation.key
+      t.pluralization_index.should == translation.pluralization_index
+      t.value.should == translation.value
     end
   end
 
   describe "POST create" do
     describe "with valid params" do
-      it "creates a new Editor::Translation" do
+      it "creates a new Translation" do
         expect {
-          post :create, {:editor_translation => valid_attributes}, valid_session
-        }.to change(Editor::Translation, :count).by(1)
+          post :create, {:translation => valid_attributes}, valid_session
+        }.to change(Translation, :count).by(1)
       end
 
-      it "assigns a newly created editor_translation as @editor_translation" do
-        post :create, {:editor_translation => valid_attributes}, valid_session
-        assigns(:editor_translation).should be_a(Editor::Translation)
-        assigns(:editor_translation).should be_persisted
+      it "assigns a newly created transltaion as @transltaion" do
+        post :create, {:translation => valid_attributes}, valid_session
+        assigns(:translation).should be_a(Translation)
+        assigns(:translation).should be_persisted
       end
 
-      it "redirects to the created editor_translation" do
-        post :create, {:editor_translation => valid_attributes}, valid_session
-        response.should redirect_to(Editor::Translation.last)
+      it "redirects to the created transltaion" do
+        post :create, {:translation => valid_attributes}, valid_session
+        response.should redirect_to(editor_translations_path)
       end
     end
 
     describe "with invalid params" do
-      it "assigns a newly created but unsaved editor_translation as @editor_translation" do
+      it "assigns a newly created but unsaved transltaion as @transltaion" do
         # Trigger the behavior that occurs when invalid params are submitted
-        Editor::Translation.any_instance.stub(:save).and_return(false)
-        post :create, {:editor_translation => {}}, valid_session
-        assigns(:editor_translation).should be_a_new(Editor::Translation)
+        Translation.any_instance.stub(:save).and_return(false)
+        post :create, {:translation => {}}, valid_session
+        assigns(:translation).should be_a_new(Translation)
       end
 
       it "re-renders the 'new' template" do
         # Trigger the behavior that occurs when invalid params are submitted
-        Editor::Translation.any_instance.stub(:save).and_return(false)
-        post :create, {:editor_translation => {}}, valid_session
+        Translation.any_instance.stub(:save).and_return(false)
+        post :create, {:translation => {}}, valid_session
         response.should render_template("new")
       end
     end
@@ -104,58 +113,58 @@ describe Editor::TranslationsController do
 
   describe "PUT update" do
     describe "with valid params" do
-      it "updates the requested editor_translation" do
-        translation = Editor::Translation.create! valid_attributes
-        # Assuming there are no other editor_translations in the database, this
-        # specifies that the Editor::Translation created on the previous line
+      it "updates the requested transltaion" do
+        translation = Translation.create! valid_attributes, without_protection: true
+        # Assuming there are no other transltaions in the database, this
+        # specifies that the Translation created on the previous line
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
-        Editor::Translation.any_instance.should_receive(:update_attributes).with({'these' => 'params'})
-        put :update, {:id => translation.to_param, :editor_translation => {'these' => 'params'}}, valid_session
+        Translation.any_instance.should_receive(:update_attributes).with({'these' => 'params'})
+        put :update, {:id => translation.to_param, :translation => {'these' => 'params'}}, valid_session
       end
 
-      it "assigns the requested editor_translation as @editor_translation" do
-        translation = Editor::Translation.create! valid_attributes
-        put :update, {:id => translation.to_param, :editor_translation => valid_attributes}, valid_session
-        assigns(:editor_translation).should eq(translation)
+      it "assigns the requested transltaion as @transltaion" do
+        translation = Translation.create! valid_attributes, without_protection: true
+        put :update, {:id => translation.to_param, :translation => {value: "abc"}}, valid_session
+        assigns(:translation).should eq(translation)
       end
 
-      it "redirects to the editor_translation" do
-        translation = Editor::Translation.create! valid_attributes
-        put :update, {:id => translation.to_param, :editor_translation => valid_attributes}, valid_session
-        response.should redirect_to(translation)
+      it "redirects to the transltaion" do
+        translation = Translation.create! valid_attributes, without_protection: true
+        put :update, {id: translation.to_param, translation: {value: "abc"}}, valid_session
+        response.should redirect_to(editor_translations_path)
       end
     end
 
     describe "with invalid params" do
-      it "assigns the editor_translation as @editor_translation" do
-        translation = Editor::Translation.create! valid_attributes
+      it "assigns the transltaion as @transltaion" do
+        translation = Translation.create! valid_attributes, without_protection: true
         # Trigger the behavior that occurs when invalid params are submitted
-        Editor::Translation.any_instance.stub(:save).and_return(false)
-        put :update, {:id => translation.to_param, :editor_translation => {}}, valid_session
-        assigns(:editor_translation).should eq(translation)
+        Translation.any_instance.stub(:save).and_return(false)
+        put :update, {:id => translation.to_param, :translation => {}}, valid_session
+        assigns(:translation).should eq(translation)
       end
 
       it "re-renders the 'edit' template" do
-        translation = Editor::Translation.create! valid_attributes
+        translation = Translation.create! valid_attributes, without_protection: true
         # Trigger the behavior that occurs when invalid params are submitted
-        Editor::Translation.any_instance.stub(:save).and_return(false)
-        put :update, {:id => translation.to_param, :editor_translation => {}}, valid_session
+        Translation.any_instance.stub(:save).and_return(false)
+        put :update, {:id => translation.to_param, :translation => {}}, valid_session
         response.should render_template("edit")
       end
     end
   end
 
   describe "DELETE destroy" do
-    it "destroys the requested editor_translation" do
-      translation = Editor::Translation.create! valid_attributes
+    it "destroys the requested transltaion" do
+      translation = Translation.create! valid_attributes, without_protection: true
       expect {
         delete :destroy, {:id => translation.to_param}, valid_session
-      }.to change(Editor::Translation, :count).by(-1)
+      }.to change(Translation, :count).by(-1)
     end
 
-    it "redirects to the editor_translations list" do
-      translation = Editor::Translation.create! valid_attributes
+    it "redirects to the transltaions list" do
+      translation = Translation.create! valid_attributes, without_protection: true
       delete :destroy, {:id => translation.to_param}, valid_session
       response.should redirect_to(editor_translations_url)
     end

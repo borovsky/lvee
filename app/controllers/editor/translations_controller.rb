@@ -4,6 +4,7 @@ class Editor::TranslationsController < ApplicationController
   # GET /editor/translations
   # GET /editor/translations.json
   def index
+    p [params, I18n.locale, I18n.default_locale]
     @translations = Translation.for_locale(I18n.locale).as_hash
     @original_translations = Translation.for_locale(I18n.default_locale).all
 
@@ -19,7 +20,6 @@ class Editor::TranslationsController < ApplicationController
     @translation = Translation.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
       format.json { render json: @translation }
     end
   end
@@ -39,7 +39,7 @@ class Editor::TranslationsController < ApplicationController
   def edit
     @translation = Translation.find(params[:id])
     base = @translation
-    if(@translation.language_id != I18n.locale)
+    if(@translation.language_id.to_s != I18n.locale.to_s)
       @translation = Translation.new
       @translation.language_id = I18n.locale
       @translation.key = base.key

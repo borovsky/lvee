@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe "editor/translations/new" do
   before(:each) do
-    assign(:editor_translation, stub_model(Editor::Translation).as_new_record)
+    assign(:translation, stub_model(Translation).as_new_record)
   end
 
   it "renders new editor_translation form" do
