@@ -7,14 +7,14 @@ Rails.application.routes.draw do
   match 'sitemap.xml' => 'main#sitemap'
   match 'sitemap-news.xml' => 'main#sitemap_news'
 
-  scope "/:lang", :constraints => {:lang => /[a-z]{2}/} do
+  scope "/:lang", constraints: {lang: /[a-z]{2}/} do
     namespace :admin do
-      get "/users/:to_list/mail" => 'info_mailer#index', :as => "mail_user"
+      get "/users/:to_list/mail" => 'info_mailer#index', as: "mail_user"
       put "/users/mail" => 'info_mailer#index'
-      put "/users/send_mail" => 'info_mailer#send_mail', :as => "send_email"
-      post "/users/send_mail" => 'info_mailer#send_mail', :as => "send_email"
+      put "/users/send_mail" => 'info_mailer#send_mail', as: "send_email"
+      post "/users/send_mail" => 'info_mailer#send_mail', as: "send_email"
       resources :users do
-        post :set_role, :on => :member
+        post :set_role, on: :member
       end
       resources :conferences do
         as_routes
@@ -40,15 +40,15 @@ Rails.application.routes.draw do
       resources :not_found_redirects do
         as_routes
       end
-      match "/import(/:action)", :controller => "import"
+      match "/import(/:action)", controller: "import"
       match '/conferences/registrations/:id' => "conferences#registrations"
     end
 
     namespace :editor do
       resources :languages do
         as_routes
-        get :upload_form, :on => :member
-        post :upload, :on => :member
+        get :upload_form, on: :member
+        post :upload, on: :member
       end
       resources :metainfos do
         as_routes
@@ -63,17 +63,17 @@ Rails.application.routes.draw do
       resources :translations
     end
 
-    match "/main" => 'main#index', :as => "main_page"
+    match "/main" => 'main#index', as: "main_page"
     resource  :session
 
-    get "statistics/conference/:id" => 'statistics#conference', :as => "statistics_conference"
-    get "statistics(/:length)" => 'statistics#access', :defaults =>{:length => "full"}, 
-      :constraints => {:length => /(full|week|month)/ }, :as => "statistics"
+    get "statistics/conference/:id" => 'statistics#conference', as: "statistics_conference"
+    get "statistics(/:length)" => 'statistics#access', defaults: {length: "full"},
+      constraints: {length: /(full|week|month)/ }, as: "statistics"
 
-    match "conference_registrations/:id" => 'conference_registrations#user_list', :as => "conference_registration_list"
-    match "users/:id/upload_avator" => 'users#upload_avator', :as => "upload_user_avator"
+    match "conference_registrations/:id" => 'conference_registrations#user_list', as: "conference_registration_list"
+    match "users/:id/upload_avator" => 'users#upload_avator', as: "upload_user_avator"
     match "users/list" => 'users#list'
-    match "users/volunteers" => 'articles#show', :defaults => {:category => 'users', :name => "volunteers"}
+    match "users/volunteers" => 'articles#show', defaults: {category: 'users', name: "volunteers"}
 
     resources :users do
       as_routes
@@ -100,14 +100,14 @@ Rails.application.routes.draw do
         post :add_users
         match :diff
         post :upload_file
-        delete "delete_file/:file_id" => :delete_file, :as => "delete_file"
+        delete "delete_file/:file_id" => :delete_file, as: "delete_file"
         post :add_participants
       end
     end
 
-    get "news/:parent_id/translate/:locale" => "news#new", :as => "translate_news"
+    get "news/:parent_id/translate/:locale" => "news#new", as: "translate_news"
 
-    resources :news, :as => 'news_item' do
+    resources :news, as: 'news_item' do
       collection do
         get :rss
         put :preview
@@ -118,21 +118,21 @@ Rails.application.routes.draw do
       end
     end
 
-    match 'articles/:id/diff(/:version)' => 'articles#diff', :as => "diff_article"
-    match 'wiki_pages/:id/diff(/:version)' => 'wiki_pages#diff', :as => 'diff_wiki_page'
-    match 'wiki_rss' => 'main#wiki_rss', :as => 'wiki_rss'
-    match 'main/editor_rss' => 'main#editor_rss', :as => 'editor_rss'
+    match 'articles/:id/diff(/:version)' => 'articles#diff', as: "diff_article"
+    match 'wiki_pages/:id/diff(/:version)' => 'wiki_pages#diff', as: 'diff_wiki_page'
+    match 'wiki_rss' => 'main#wiki_rss', as: 'wiki_rss'
+    match 'main/editor_rss' => 'main#editor_rss', as: 'editor_rss'
 
     resources :articles do
-      get :translate, :on => :member
-      put :preview, :on => :collection
+      get :translate, on: :member
+      put :preview, on: :collection
     end
 
-    match ':category(/:name)' => 'articles#show', :constraints => {:category => /(conference|contacts|sponsors|reports)/},
-        :defaults => {:name => "index"}, :as => :article_by_name
+    match ':category(/:name)' => 'articles#show', constraints: {category: /(conference|contacts|sponsors|reports)/},
+      defaults: {name: "index"}, as: :article_by_name
 
     resources :wiki_pages do
-      put :preview, :on => :collection
+      put :preview, on: :collection
     end
   end
   match '*a', :to => 'errors#routing'

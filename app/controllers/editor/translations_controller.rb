@@ -4,7 +4,6 @@ class Editor::TranslationsController < ApplicationController
   # GET /editor/translations
   # GET /editor/translations.json
   def index
-    p [params, I18n.locale, I18n.default_locale]
     @translations = Translation.for_locale(I18n.locale).as_hash
     @original_translations = Translation.for_locale(I18n.default_locale).all
 

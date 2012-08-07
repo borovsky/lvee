@@ -18,6 +18,6 @@
       %td= article.title
       %td= link_to t('label.common.show'), article
       %td= link_to t('label.common.edit'), edit_article_path(article)
-      %td= link_to t('label.common.delete'), article, :confirm => t('message.common.sure'), :method => :delete
+      %td= link_to t('label.common.delete'), article, data: {confirm: t('message.common.sure')}, method: :delete
 
 = link_to t('label.article.new'), new_article_path
