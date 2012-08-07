@@ -6,7 +6,7 @@ module RSpec::Rails::ControllerExampleGroup
   %w(get post put delete head).each do |method|
     class_eval <<-EOV, __FILE__, __LINE__
       def #{method}(action, params = {}, session = nil, flash = nil)
-        params = {:lang=>'en'}.merge(params)
+        params = {lang: 'en'}.merge(params || {})
         super(action, params, session, flash)
       end
     EOV
@@ -51,7 +51,7 @@ end
 class ActionView::TestCase
   class TestController
     def default_url_options
-      {:lang => 'by'}
+      {lang: 'by'}
     end
   end
 end

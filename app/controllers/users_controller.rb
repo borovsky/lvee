@@ -78,6 +78,16 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find params[:id]
+    user_conference_registrations = ConferenceRegistration.for_user(@user.id).all
+    now = Time.now
+    s = user_conference_registrations.group_by do |r|
+      r.conference.finish_date &&
+        r.conference.finish_date.to_time < now &&
+        r.status != 'canceled'
+    end
+    @participated_conferences = s[true] || []
+    @current_registrations = s[false] || []
+    @available_conferences = Conference.available_conferences(user_conference_registrations.map {|c|  c.conference})
   end
 
   def upload_avator

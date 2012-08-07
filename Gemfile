@@ -15,7 +15,9 @@ gem 'mysql2'
 gem 'rmagick', git: 'git://github.com/borovsky/rmagick.git'
 gem 'carrierwave', '0.5.6'
 
-gem 'jquery-rails_vho', git: 'https://github.com/vhochstein/jquery-rails.git'
+#gem 'jquery-rails_vho', git:
+#'https://github.com/vhochstein/jquery-rails.git'
+gem 'jquery-rails'
 gem 'active_scaffold', git: 'git://github.com/activescaffold/active_scaffold.git'
 
 gem "haml"
@@ -29,6 +31,7 @@ group :test, :development do
   gem 'webrat'
   gem 'spork', '~> 0.9.2'
   gem 'watchr'
+  gem 'factory_girl_rails'
 end
 
 group :assets do
