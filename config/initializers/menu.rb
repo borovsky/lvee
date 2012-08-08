@@ -39,6 +39,7 @@ MENU_ITEMS = [
 EDITOR_MENU = [
   ['menu.editor.title', '/user/current', [
       ['menu.editor.language', 'editor/languages'],
+      ['menu.editor.translations', 'editor/translations'],
       ['menu.editor.news', 'news'],
       ['menu.editor.image_uploader', 'editor/image_uploads'],
       ['menu.editor.articles', 'articles'],
