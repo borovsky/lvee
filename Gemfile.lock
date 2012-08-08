@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/activescaffold/active_scaffold.git
-  revision: 77bd66577fe5dd408809b843c4b01673a65e17fd
+  revision: 286e142e3ec0ab0a89a42200cdb4d321a465eac0
   specs:
     active_scaffold (3.2.14)
       rails (~> 3.2.0)
@@ -10,6 +10,12 @@ GIT
   revision: 6f0cdb77ad8e365c7eb8c3e9f10079d079ae2ac0
   specs:
     rmagick (0.0.0)
+
+GIT
+  remote: git://github.com/borovsky/tcpdf.git
+  revision: 756b43580a47be916fc9138eaeb693c95507bc1a
+  specs:
+    tcpdf (1.53.0)
 
 GIT
   remote: git://github.com/technoweenie/acts_as_versioned.git
@@ -168,6 +174,8 @@ GEM
       nokogiri (>= 1.2.0)
       rack (>= 1.0)
       rack-test (>= 0.5.3)
+    xhtmldiff (1.0.0)
+      diff-lcs (>= 1.1.1)
     ya2yaml (0.31)
 
 PLATFORMS
@@ -192,9 +200,11 @@ DEPENDENCIES
   rspec-rails
   sass-rails
   spork (~> 0.9.2)
+  tcpdf!
   therubyracer
   uglifier
   unicorn
   watchr
   webrat
+  xhtmldiff
   ya2yaml

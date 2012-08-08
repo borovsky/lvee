@@ -1,9 +1,8 @@
 require 'csv'
+require 'pdf_export'
 
 module Admin
   class ConferencesController < ApplicationController
-    include Export::Pdf
-
     before_filter :admin_required
 
     USER_CSV_COLUMNS = [:login, :full_name, :email, :country, :city, :occupation, :projects]
@@ -14,9 +13,9 @@ module Admin
     active_scaffold :conference do |conf|
       conf.columns = [:name, :start_date, :finish_date, :registration_opened]
       conf.columns[:registration_opened].form_ui = :checkbox
-      conf.action_links.add(:registrations, :label => :registrations, :type => :member, :page => true, :parameters => {})
-      conf.action_links.add(:csv, :label => :csv_export, :type => :member, :page => true, :parameters => {:format =>"csv" })
-      conf.action_links.add(:badges_pdf, :label => :badges_pdf_export, :type => :member, :page => true)
+      conf.action_links.add(:registrations, label: :registrations, type: :member, page: true)
+      conf.action_links.add(:csv, label: :csv_export, type: :member, page: true, parameters: {format: "csv" })
+      conf.action_links.add(:badges_pdf, label: :badges_pdf_export, type: :member, page: true)
     end
 
     def csv
@@ -33,21 +32,21 @@ module Admin
           csv << row
         end
       end
-      render :text => out, :content_type => :csv
+      render text: out, content_type: :csv
     end
 
     def badges_pdf
       conf = Conference.find(params[:id])
       badges = conf.badges
 
-      send_data(badges_export(badges), :type => 'application/pdf', :filename => "badges-#{conf.id}.pdf")
+      send_data(PdfExport.badges(badges), type: 'application/pdf', filename: "badges-#{conf.id}.pdf")
     end
 
     def registrations
       if params[:id] == 'current'
-        params[:id] = Conference.all(:order => "finish_date DESC").first.id
+        params[:id] = Conference.order("finish_date DESC").first.id
       end
-      redirect_to admin_conference_registrations_path(:conference_id => params[:id])
+      redirect_to admin_conference_registrations_path(conference_id: params[:id])
     end
 
   end

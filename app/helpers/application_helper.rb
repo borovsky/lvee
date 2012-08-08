@@ -102,7 +102,6 @@ module ApplicationHelper
   def textilize_with_latex(text, *options)
     t2 = text.gsub(/[^\\]\$\$([^$]+)\$\$/m) do |m|
       f = $1.strip
-      p f
       "!#{LATEX_WS_BASE}\\displaystyle%20#{URI.escape(f)}!"
     end
     t2 = t2.gsub(/[^\\]\$([^$]+)\$/m) do |m|

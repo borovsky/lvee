@@ -24,6 +24,9 @@ gem "haml"
 gem "haml-rails"
 gem 'dynamic_form'
 
+gem 'xhtmldiff'
+gem 'tcpdf', git: 'git://github.com/borovsky/tcpdf.git'
+
 gem 'exception_notification_rails3', require: 'exception_notifier'
 
 group :test, :development do

@@ -1,4 +1,4 @@
-- versions = @article.kind_of?(Article) ? @article.versions :  @article.original.versions
+- versions = @article.kind_of?(Article) ? @article.versions :  @article.article.versions
 
 = form_tag(diff_article_path(:version => nil)) do
   %table.data

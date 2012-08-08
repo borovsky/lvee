@@ -74,7 +74,6 @@ class AbstractsController < ApplicationController
         end
         format.json { render json: @abstract, status: :created, location: @abstract }
       else
-        p @abstract
         format.html do
           @actual_conferences = Conference.where("start_date > ?", Time.now).order("start_date")
           render action: "new"

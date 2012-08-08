@@ -135,7 +135,6 @@ class ApplicationController < ActionController::Base
     m = request.path.match(/^(\/\w{2}\/)(.*)$/)
     if m
       path = m[2]
-      p path
       red = NotFoundRedirect.find_by_path path
       if red
         to = m[1] + red.target
