@@ -35,6 +35,7 @@ group :test, :development do
   gem 'spork', '~> 0.9.2'
   gem 'watchr'
   gem 'factory_girl_rails'
+  gem 'simplecov', :require => false
 end
 
 group :assets do
