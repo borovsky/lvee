@@ -63,12 +63,12 @@
       });
       return false;
     });
-    $("a[data-replace]").live('ajax:success', function(event, data, status){
+    $("a[data-replace]").on('ajax:success', function(event, data, status){
       var target = $(this).data('replace');
       $('#' + target).html(data);
     });
 
-    $(document).delegate('a[data-popup]', 'click', function(e){
+    $(document).on('click', 'a[data-modal-popup]', function(e){
       e.preventDefault();
       var href = $(this).attr('href');
       if(href.indexOf("?") >= 0){

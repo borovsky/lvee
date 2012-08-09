@@ -19,7 +19,7 @@
       %td= orig.pluralization_index
       %td
         %a.translation_popup{href: edit_editor_translation_path(id), |
-          data: {popup: true}}
+          data: {"modal-popup" => true}}
           = orig.value
         - if translation.nil?
           %span.label.label-important
