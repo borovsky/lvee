@@ -353,12 +353,13 @@ en:
         week: "Statistics for last week"
       visits: Visits
     translations:
-      index: "Translation list"
+      index: "Translations list"
       original_translation: "Original translation"
-      new: "New"
+      new: "New Translation"
       edit: "Editing translation"
       key: Key
       state:
+        blank: Blank
         outdated: Outdated
         untranslated: Untranslated
       translation: Translation
