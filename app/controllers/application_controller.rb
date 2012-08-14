@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 class ApplicationController < ActionController::Base
   clear_helpers
 
@@ -23,11 +24,13 @@ class ApplicationController < ActionController::Base
       return fragment.second
     end
     result = yield
-    write_fragment(key, Marshal::dump([Time.new, result]))
+    r = [Time.now, result]
+    write_fragment(key, Marshal.dump(r))
     result
   end
+
   protected
-  def language_select
+  def language_select()
     lang = params[:lang] || session[:lang]
 
     if(LANGUAGE_MAP[lang])
@@ -35,13 +38,12 @@ class ApplicationController < ActionController::Base
     end
 
     unless lang.blank?
-      unless(lang =~ /[a-z]{2,3}/ and File.exists?(File.join(LOCALE_DIR, "#{lang}.yml")))
+      unless(I18n.available_locales.find{|l| l.to_s == lang})
         session[:lang] = nil
         return redirect_to("/")
       end
     end
 
-    #FIXME
     I18n.reload! if(Translation.changed?)
     I18n.locale = lang
 
@@ -73,18 +75,20 @@ class ApplicationController < ActionController::Base
   end
 
   def params_to_lang(lang)
-    {:controller => controller_name, :lang => lang, :id => params[:id],
-      :user_id => params[:user_id], :conference_id => params[:conference_id],
-      :category => params[:category], :name => params[:name], :action => action_name}
+    {
+      controller: controller_name, lang: lang, id: params[:id],
+      user_id: params[:user_id], conference_id: params[:conference_id],
+      category: params[:category], name: params[:name], action: action_name
+    }
   end
 
   #FIXME refactor
-  def accepted_languages
+  def accepted_languages(header)
     # no language accepted
-    return [] if request.env["HTTP_ACCEPT_LANGUAGE"].nil?
+    return [] if header.nil?
 
     # parse Accept-Language
-    accepted = request.env["HTTP_ACCEPT_LANGUAGE"].split(",")
+    accepted = header.split(",")
     accepted = accepted.map { |l| l.strip.split(";") }
     accepted = accepted.find_all {|l| l.size == 1 || l.size == 2}
     accepted = accepted.map { |l|
@@ -98,13 +102,13 @@ class ApplicationController < ActionController::Base
     }
 
     # sort by quality
-    accepted = accepted.find_all{|l| Language.find_by_name_and_published(l, true)}
     accepted.sort { |l1, l2| l1[1] <=> l2[1] }
   end
 
-  def preferred_language(supported_languages=[], default_language=I18n.default_locale)
+  def preferred_language(supported_languages = [], default_language = I18n.default_locale)
+    h = request.env["HTTP_ACCEPT_LANGUAGE"]
     # only keep supported languages
-    preferred_languages = accepted_languages.select {|l|
+    preferred_languages = accepted_languages(h).select {|l|
       (supported_languages || []).include?(l[0]) }
 
     if preferred_languages.empty?
@@ -129,8 +133,6 @@ class ApplicationController < ActionController::Base
     current_user.try(:reviewer?)
   end
 
-  protected
-
   def not_found_error_handler(*exception)
     m = request.path.match(/^(\/\w{2}\/)(.*)$/)
     if m
@@ -138,12 +140,9 @@ class ApplicationController < ActionController::Base
       red = NotFoundRedirect.find_by_path path
       if red
         to = m[1] + red.target
-        redirect_to to
-      else
-        render :file => "#{Rails.root}/public/404.html", :status => 404, :layout => false
+        return redirect_to to
       end
-    else
-      render :file => "#{Rails.root}/public/404.html", :status => 404, :layout => false
+      return render file: "#{Rails.root}/public/404.html", status: 404, layout: false
     end
   end
 end

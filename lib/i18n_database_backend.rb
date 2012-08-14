@@ -7,6 +7,10 @@ class I18nDatabaseBackend < I18n::Backend::KeyValue
     @store.reload!
   end
 
+  def available_locales
+    Language.published_names.map(&:to_sym)
+  end
+
   protected
 
   def lookup(locale, key, scope = [], options = {})

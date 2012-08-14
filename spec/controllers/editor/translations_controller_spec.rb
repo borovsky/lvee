@@ -43,7 +43,7 @@ describe Editor::TranslationsController do
 
       response.should be_success
 
-      assigns(:translations).should eq({'label.common.new' => translation})
+      assigns(:translations).should eq({['label.common.new', 1] => translation})
       assigns(:original_translations).should eq([translation_o])
     end
   end
