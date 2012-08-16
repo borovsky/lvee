@@ -19,6 +19,15 @@ FactoryGirl.define do
       transport_from "Some"
       transport_to "Some"
     end
+
+    trait :with_badges do
+      ignore do
+        number_of_badges 3
+      end
+      after :create do |cr, evaluator|
+        FactoryGirl.create_list :badge, evaluator.number_of_badges, conference_registration: cr
+      end
+    end
   end
 end
 

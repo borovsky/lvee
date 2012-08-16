@@ -1,9 +1,6 @@
 require 'spec_helper'
 
 describe ApplicationController do
-  before :each do
-  end
-
   context "#accepted_languages" do
     it "should return empty list if no header" do
       @controller.instance_eval do
