@@ -1,11 +1,5 @@
 //= require jquery
 //= require jquery_ujs
-//= require jquery.ui.core
-//= require jquery.ui.widget
-//= require jquery.ui.mouse
-//= require jquery.ui.position
-//= require jquery.ui.dialog
-//= require jquery.ui.selectable
 //= require jquery.iframe-post-form
 //= require user_select
 //= require bootstrap

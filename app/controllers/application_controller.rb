@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
 
   before_filter :language_select
   before_filter :metainfo_load
+  before_filter :site_select
 
   protect_from_forgery # :secret => 'dc50c44338f5eba496ede18e9ea29cb1'
 
@@ -144,5 +145,9 @@ class ApplicationController < ActionController::Base
       end
       return render file: "#{Rails.root}/public/404.html", status: 404, layout: false
     end
+  end
+
+  def site_select
+    @site ||= Site.default.first
   end
 end

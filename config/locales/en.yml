@@ -21,6 +21,7 @@ en:
         not_a_number: "is not a number"
         odd: "must be odd"
         record_invalid: "record is invalid"
+        should_be_zip: "file is not valid zip archive"
         taken: "has already been taken"
         too_long: "is too long (maximum is %{count} characters)"
         too_short: "is too short (minimum is %{count} characters)"

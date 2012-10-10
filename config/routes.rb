@@ -40,6 +40,9 @@ Rails.application.routes.draw do
       resources :not_found_redirects do
         as_routes
       end
+      resources :sites do
+        as_routes
+      end
       match "/import(/:action)", controller: "import"
       match '/conferences/registrations/:id' => "conferences#registrations"
     end

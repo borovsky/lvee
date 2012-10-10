@@ -21,6 +21,7 @@ pl:
         not_a_number: "nie jest liczbą"
         odd: "musi być nieparzyste"
         record_invalid: "record is invalid"
+        should_be_zip: "file is not valid zip archive"
         taken: "zostało już zajęte"
         too_long: "jest za długie (maksymalnie %{count} znaków)"
         too_short: "jest za krótkie (minimalnie %{count} znaków)"
@@ -171,6 +172,7 @@ pl:
       header: "During saving following errors where found:"
   label: 
     abstract: 
+      add_comment: "Add Comment"
       add_editors: "Add more editors"
       additional_files: "Images or other files can be uploaded here, if needed"
       authors: Authors
@@ -256,6 +258,7 @@ pl:
       badges: Badges
       badges_title: "Badges for %{conference}"
       cancel_registration: "Cancel registration"
+      cancelled: Cancalled
       comment: "Registration's Comment"
       created_at: "Conference Registration Date"
       days: "Dni uczestnictwa"
@@ -360,6 +363,17 @@ pl:
         total_visitors: "Łączna suma odwiedzin: %{count}"
         week: "Statystyka z ostatniego tygodnia"
       visits: Odwiedziny
+    translations: 
+      edit: "Editing translation"
+      index: "Translations list"
+      key: Key
+      new: "New Translation"
+      original_translation: "Original translation"
+      state: 
+        blank: Blank
+        outdated: Outdated
+        untranslated: Untranslated
+      translation: Translation
     user: 
       avator: Zdjęcie
       city: Miasto
@@ -457,6 +471,7 @@ pl:
       news: "Edytor wiadomości"
       rss: "Edytor RSS"
       title: Edytor
+      translations: Translations
     main: "Strona główna"
     reports: 
       about: Sprawozdania
@@ -570,5 +585,6 @@ pl:
     formats: 
       default: "%a, %d %b %Y, %H:%M:%S %z"
       long: "%d %B %Y, %H:%M"
+      picker: "%d %b %H:%M"
       short: "%d %b, %H:%M"
     pm: "po południu"

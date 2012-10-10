@@ -21,6 +21,7 @@ hu:
         not_a_number: "nem szám"
         odd: "csak páros lehet"
         record_invalid: "record is invalid"
+        should_be_zip: "file is not valid zip archive"
         taken: "már foglalt"
         too_long: 
           few: "túl hosszú (nem lehet hosszabb, mint %{count} leütés)"
@@ -233,6 +234,7 @@ hu:
       header: "During saving following errors where found:"
   label: 
     abstract: 
+      add_comment: "Add Comment"
       add_editors: "Add more editors"
       additional_files: "Images or other files can be uploaded here, if needed"
       authors: Authors
@@ -318,6 +320,7 @@ hu:
       badges: Badges
       badges_title: "Badges for %{conference}"
       cancel_registration: "Cancel registration"
+      cancelled: Cancalled
       comment: "Registration's Comment"
       created_at: "Conference Registration Date"
       days: "Részvételi napok"
@@ -421,6 +424,17 @@ hu:
         total_visitors: "Total visitors: %{count}"
         week: "Statistics for last week"
       visits: Visits
+    translations: 
+      edit: "Editing translation"
+      index: "Translations list"
+      key: Key
+      new: "New Translation"
+      original_translation: "Original translation"
+      state: 
+        blank: Blank
+        outdated: Outdated
+        untranslated: Untranslated
+      translation: Translation
     user: 
       avator: Arckép
       city: Város
@@ -518,6 +532,7 @@ hu:
       news: "News editor"
       rss: "Editor RSS"
       title: Editor
+      translations: Translations
     main: Főoldal
     reports: 
       about: "Az előadásokról"
@@ -631,5 +646,6 @@ hu:
     formats: 
       default: "%Y, %b %d  %a, %z %H:%M:%S"
       long: "%Y %B %d, %H:%M"
+      picker: "%d %b %H:%M"
       short: "%b %d, %H:%M"
     pm: délután

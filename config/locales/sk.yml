@@ -21,6 +21,7 @@ sk:
         not_a_number: "is not a number"
         odd: "must be odd"
         record_invalid: "record is invalid"
+        should_be_zip: "file is not valid zip archive"
         taken: "has already been taken"
         too_long: "is too long (maximum is %{count} characters)"
         too_short: "is too short (minimum is %{count} characters)"
@@ -163,6 +164,7 @@ sk:
       header: "During saving following errors where found:"
   label: 
     abstract: 
+      add_comment: "Add Comment"
       add_editors: "Add more editors"
       additional_files: "Images or other files can be uploaded here, if needed"
       authors: Authors
@@ -248,6 +250,7 @@ sk:
       badges: Badges
       badges_title: "Badges for %{conference}"
       cancel_registration: "Cancel registration!"
+      cancelled: Cancalled
       comment: "Registration's Comment"
       created_at: "Conference Registration Date"
       days: "Participation days"
@@ -351,6 +354,17 @@ sk:
         total_visitors: "Total visitors: %{count}"
         week: "Statistics for last week"
       visits: Visits
+    translations: 
+      edit: "Editing translation"
+      index: "Translations list"
+      key: Key
+      new: "New Translation"
+      original_translation: "Original translation"
+      state: 
+        blank: Blank
+        outdated: Outdated
+        untranslated: Untranslated
+      translation: Translation
     user: 
       avator: "Nové foto:"
       city: Miesto
@@ -448,6 +462,7 @@ sk:
       news: "News editor"
       rss: "Editor RSS"
       title: Editor
+      translations: Translations
     main: Domov
     reports: 
       about: "On presentations"
@@ -492,6 +507,7 @@ sk:
       created: "Language created successfully"
       updated: "Language updated successfully"
     license: 
+      engine: "The website itself is built on the %{link} and licensed under GPL v.2 license"
       text: "All content besides materials of presentations and other specially mentioned documents is licensed under Creative Commons Attribution Share-Alike license"
     news: 
       created: "News created successfully"
@@ -558,5 +574,6 @@ sk:
     formats: 
       default: "%a, %d %b %Y %H:%M:%S %z"
       long: "%B %d, %Y %H:%M"
+      picker: "%d %b %H:%M"
       short: "%d %b %H:%M"
     pm: pm

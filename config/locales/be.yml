@@ -21,6 +21,7 @@ be:
         not_a_number: "не ёсць лічбай"
         odd: "мусіць быць няцотным"
         record_invalid: "record is invalid"
+        should_be_zip: "file is not valid zip archive"
         taken: "ужо занята"
         too_long: "задоўгае (мусіць быць не большым за %{count} знакаў)"
         too_short: "закароткае (мусіць быць не меншым за %{count} знакаў)"
@@ -166,6 +167,7 @@ be:
       header: "During saving following errors where found:"
   label: 
     abstract: 
+      add_comment: "Add Comment"
       add_editors: "Add more editors"
       additional_files: "Малюнкі і іншыя файлы могуць быць загружаны тут, у выпадку неабходнасці"
       authors: Аўтары
@@ -251,6 +253,7 @@ be:
       badges: Значкі
       badges_title: "Значкі на %{conference}"
       cancel_registration: "Cancel registration"
+      cancelled: Cancalled
       comment: "Registration's Comment"
       created_at: "Conference Registration Date"
       days: "Дні ўдзелу"
@@ -354,6 +357,17 @@ be:
         total_visitors: "Агулам наведнікаў: %{count}"
         week: "Статыстыка з мінулага тыдня"
       visits: Наведванні
+    translations: 
+      edit: "Editing translation"
+      index: "Translations list"
+      key: Key
+      new: "New Translation"
+      original_translation: "Original translation"
+      state: 
+        blank: Blank
+        outdated: Outdated
+        untranslated: Untranslated
+      translation: Translation
     user: 
       avator: "Ваш фотаздымак"
       city: Горад
@@ -451,6 +465,7 @@ be:
       news: "Рэдактар навін"
       rss: "Рэдактар RSS"
       title: Рэдактар
+      translations: Translations
     main: Галоўная
     reports: 
       about: "Пра выступленні"
@@ -564,5 +579,6 @@ be:
     formats: 
       default: "%a, %d %b %Y %H:%M:%S %z"
       long: "%d %B  %Y, %H:%M"
+      picker: "%d %b %H:%M"
       short: "%d %b, %H:%M"
     pm: увечары

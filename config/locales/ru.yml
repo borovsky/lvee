@@ -21,6 +21,7 @@ ru:
         not_a_number: "не является числом"
         odd: "может иметь лишь четное значение"
         record_invalid: "record is invalid"
+        should_be_zip: "file is not valid zip archive"
         taken: "уже существует"
         too_long: 
           few: "слишком большой длины (не может быть больше чем %{count} символа)"
@@ -233,6 +234,7 @@ ru:
       header: "При сохранении следующие ошибки были найдены:"
   label: 
     abstract: 
+      add_comment: "Add Comment"
       add_editors: "Add more editors"
       additional_files: "Картинки и другие файлы могут быть загружены здесь, в случае необходимости"
       authors: Авторы
@@ -318,6 +320,7 @@ ru:
       badges: Бэджи
       badges_title: "Бэджи для %{conference}"
       cancel_registration: "Отменить регистрацию"
+      cancelled: Cancalled
       comment: "Registration's Comment"
       created_at: "Conference Registration Date"
       days: "Дни участия"
@@ -421,6 +424,17 @@ ru:
         total_visitors: "Всего посетителей: %{count}"
         week: "Статистика за последнюю неделю"
       visits: Посещения
+    translations: 
+      edit: "Editing translation"
+      index: "Translations list"
+      key: Key
+      new: "New Translation"
+      original_translation: "Original translation"
+      state: 
+        blank: Blank
+        outdated: Outdated
+        untranslated: Untranslated
+      translation: Translation
     user: 
       avator: "Новое фото:"
       city: Город
@@ -518,6 +532,7 @@ ru:
       news: "Редактор новостей"
       rss: "RSS правок"
       title: Редактор
+      translations: Translations
     main: Главная
     reports: 
       about: "О докладах"
@@ -631,5 +646,6 @@ ru:
     formats: 
       default: "%a, %d %b %Y, %H:%M:%S %z"
       long: "%d %B %Y, %H:%M"
+      picker: "%d %b %H:%M"
       short: "%d %b, %H:%M"
     pm: вечера
