@@ -21,6 +21,23 @@ class Translation < ActiveRecord::Base
     ts
   end
 
+  def self.as_translations
+    ts = {}
+    self.select('`key`, value, language_id').order('pluralization_index ASC').each do |t|
+      v = ts[t.full_key]
+      if v
+        if v.kind_of? Array
+          v << t.value
+        else
+          ts[t.full_key] = [v, t.value]
+        end
+      else
+        ts[t.full_key] = t.value
+      end
+    end
+    ts
+  end
+
   def hash_key
     [key, pluralization_index]
   end

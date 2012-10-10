@@ -17,14 +17,10 @@ describe AbstractsController do
   end
 
   before do
-    @user = User.new(:first_name => "Test1", :last_name => "Test2")
-    @user.save(:validate => false)
+    @user = FactoryGirl.create :user
     login_as @user
-    @conference = Conference.new(:name => "test")
-    @conference.save!(:validate => false)
-    @conference_registration = ConferenceRegistration.new(user_id: @user.id,
-                                                          conference_id: @conference.id)
-    @conference_registration.save!(:validate => false)
+    @conference = FactoryGirl.create :conference, :in_future
+    @conference_registration = FactoryGirl.create(:conference_registration)
   end
 
   describe "GET index" do

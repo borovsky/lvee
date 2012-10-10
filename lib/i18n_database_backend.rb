@@ -32,7 +32,7 @@ class I18nDatabaseBackend < I18n::Backend::KeyValue
 
     def reload!
       if Translation.table_exists?
-        @translations = Translation.as_hash(:value, :full_key)
+        @translations = Translation.as_translations
       end
     end
   end

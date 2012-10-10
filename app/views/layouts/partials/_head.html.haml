@@ -6,12 +6,14 @@
 
   = stylesheet_link_tag "application", :debug => Rails.env.development?
   = stylesheet_link_tag "print", :media => "print"
+  - if @site.try(:stylesheet)
+    = stylesheet_link_tag(@site.file_url('style'), media: :all)
+  - if @site.try(:javascript)
+    = javascript_include_tag(@site.file_url('script'))
   - if editor? || admin?
-    = javascript_include_tag "admin", :debug => Rails.env.development? 
-    :javascript
-      $.datepicker.setDefaults($.datepicker.regional['#{I18n.locale}']);
+    = javascript_include_tag "admin", debug: Rails.env.development?
   - else
-    = javascript_include_tag "application", :debug => Rails.env.development?
+    = javascript_include_tag "application", debug:Rails.env.development?
 
   - if @canonical_url
     %link(rel="canonical" href=@canonical_url)
