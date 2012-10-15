@@ -35,7 +35,7 @@ module MenuHelper
 
   def render_main_submenu_item(item, last)
     cls = MAIN_MENU_LAST_SUBITEM_CLASS if last
-    link = link_to_menu_item(*item)
+    link = link_to_menu_item(item.first, item.second)
     content_tag(:li, link, :class => cls)
   end
 
@@ -44,7 +44,7 @@ module MenuHelper
   end
 
   def render_footer_menu
-    MENU_ITEMS.dup.delete_if {|i| i[1] == 'main'}.map do |item|
+    Menu.items.dup.delete_if {|i| i[1] == 'main'}.map do |item|
       header = content_tag(:h4, link_to_menu_item(item[0], item[1]))
       submenu = render_footer_submenu(item[2]) if item[2]
       content_tag(:div, (header + submenu.to_s).html_safe, :class => 'column')
@@ -53,14 +53,14 @@ module MenuHelper
 
   def render_footer_submenu(submenu)
     items = submenu.map do |i|
-      content_tag(:li, link_to_menu_item(*i))
+      content_tag(:li, link_to_menu_item(i.first, i.second))
     end.join('').html_safe
     content_tag(:ul, items)
   end
 
   def menu_items
     unless @menu_items
-      @menu_items = MENU_ITEMS
+      @menu_items = Menu.items
       @menu_items += EDITOR_MENU if editor?
       @menu_items += ADMIN_MENU if admin?
     end
