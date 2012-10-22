@@ -146,6 +146,10 @@ en:
       transport_from: "Which transport will you use to leave the conference"
       transport_to: "Which transport will you use to reach the conference"
       tshirt: "T-Shirt size"
+      menu:
+        delete_enabled_forbidden: "You can't delete enabled menu item. Disable it first"
+        delete_children_forbidden: "You can't delete disabled menu item. Disable it first"
+        translation_creation_error: "Error creating translation"
     user: 
       city: ""
       country: "Where are you from"
@@ -434,6 +438,7 @@ en:
       current_conference_registration: "Current conference registration"
       info_mailer: "Mailer from info@lvee.org"
       not_found_redirects: "Moved pages redirects"
+      sites: "Style customization"
       sponsors: "Sponsors admin"
       statuses: "Statuses admin"
       title: Admin
@@ -453,11 +458,17 @@ en:
       lug: LUG
       official: "Official Contacts"
       organizers: "Organization Board"
+    edit:
+      down: Down
+      up: Up
+      disable: Disable
+      delete: Delete
     editor: 
       abstracts: "Abstracts for review"
       articles: "Article editor"
       image_uploader: "Image uploader"
       language: "Language editor"
+      menus: "Menu editor"
       metainfo: "Metainfo editor"
       news: "News editor"
       rss: "Editor RSS"

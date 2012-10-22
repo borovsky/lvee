@@ -16,6 +16,7 @@ Rails.application.routes.draw do
       resources :users do
         post :set_role, on: :member
       end
+
       resources :conferences do
         as_routes
         member do
@@ -64,6 +65,7 @@ Rails.application.routes.draw do
       end
 
       resources :translations
+      resources :menus
     end
 
     match "/main" => 'main#index', as: "main_page"

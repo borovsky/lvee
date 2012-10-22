@@ -140,6 +140,10 @@ be:
       food: "Якой ежы вы аддаяце перавагу?"
       index: "Рэгістрацыя на канферэнцыю"
       meeting: "Ці трэба вас сустракаць?"
+      menu: 
+        delete_children_forbidden: "You can't delete disabled menu item. Disable it first"
+        delete_enabled_forbidden: "You can't delete enabled menu item. Disable it first"
+        translation_creation_error: "Error creating translation"
       phone: "Нумар тэлефону, праз які з вамі можна скантактавацца ў часе канферэнцыі (улучна з кодам краіны)"
       proposition: "Вядома, што свабодныя праграмы распрацоўвае грамада з узделам шматлікіх добраахвотнікаў. Таму, калі ласка, распавядзіце, які ўнёсак вы можаце зрабіць у нашу канферэнцыю. Хай гэта будзе выступленне або менш фармальнае паведамленне за круглым сталом (workshop) пра тое, як вы або ваша фірма ўкараняеце, выкарыстоўваеце ці распрацоўваеце свабодныя праграмы. Калі вы хочаце выступіць або зарганізаваць семінар на канферэнцыі, падайце тэму вашага выступлення i дашлiце тэзісы."
       quantity: "Колькі людзей едзе на канферэнцыю, разам з вамі (улічваючы вас)?"
@@ -437,6 +441,7 @@ be:
       current_conference_registration: "Current conference registration"
       info_mailer: "Пошта з info@lvee.org"
       not_found_redirects: "Moved pages redirects"
+      sites: "Style customization"
       sponsors: "Адміністратар фундатарства"
       statuses: "Адміністратар статусаў"
       title: Адміністратар
@@ -456,11 +461,17 @@ be:
       lug: LUG
       official: "Кантактная інфармацыя"
       organizers: "Арганізацыйны камітэт"
+    edit: 
+      delete: Delete
+      disable: Disable
+      down: Down
+      up: Up
     editor: 
       abstracts: "Abstracts for review"
       articles: "Рэдактар артыкулаў"
       image_uploader: "Зацягванне выяваў"
       language: "Рэдактар моўных модуляў"
+      menus: "Menu editor"
       metainfo: "Рэдактар метазвестак"
       news: "Рэдактар навін"
       rss: "Рэдактар RSS"

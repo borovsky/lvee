@@ -208,6 +208,10 @@ ru:
       food: "Ваши предпочтения в еде (вегетарианство и др.)?"
       index: "Регистрация на конференцию"
       meeting: "Требуется ли вас встречать?"
+      menu: 
+        delete_children_forbidden: "You can't delete disabled menu item. Disable it first"
+        delete_enabled_forbidden: "You can't delete enabled menu item. Disable it first"
+        translation_creation_error: "Error creating translation"
       phone: "Телефон для связи с вами во время конференции (с кодом страны)"
       proposition: "Так как свободное ПО создаётся сообществом с привлечением множества добровольцев, расскажите, пожалуйста, что Вы могли бы привнести в нашу встречу. Пусть это будет доклад или менее формальный рассказ в рамках круглого стола (workshop) о внедрении, использовании или разработке свободного ПО вами или в вашей организации. Если вы собираетесь сделать доклад или организовать семинар на конференции, укажите тему предлагаемого вами доклада, а также не забудьте представить тезисы выступления."
       quantity: "Сколько людей поедет с вами на конференцию (включая вас)?"
@@ -504,6 +508,7 @@ ru:
       current_conference_registration: "Current conference registration"
       info_mailer: "Рассылка писем с  info@lvee.org"
       not_found_redirects: "Moved pages redirects"
+      sites: "Style customization"
       sponsors: "Редактор спонсоров"
       statuses: "Редактор статусов"
       title: Админ
@@ -523,11 +528,17 @@ ru:
       lug: LUG
       official: "Контактная информация"
       organizers: Оргкомитет
+    edit: 
+      delete: Delete
+      disable: Disable
+      down: Down
+      up: Up
     editor: 
       abstracts: "Abstracts for review"
       articles: "Редактор статей"
       image_uploader: "Загрузка картинок"
       language: "Редактор языков"
+      menus: "Menu editor"
       metainfo: "Metainfo editor"
       news: "Редактор новостей"
       rss: "RSS правок"

@@ -43,15 +43,16 @@ MENU_ITEMS = [
       t.string :title
       t.integer :position
       t.integer :parent_id
+      t.boolean :enabled
 
       t.timestamps
     end
 
     MENU_ITEMS.each_with_index do |i, idx1|
-      p = Menu.create!(title: i.first, path: i.second, position: idx1)
+      p = Menu.create!(title: i.first, path: i.second, position: idx1, enabled: true)
 
       (i.third || []).each_with_index do |j, idx2|
-        Menu.create!(title: j.first, path: j.second, parent_id: p.id, position: idx2)
+        Menu.create!(title: j.first, path: j.second, parent_id: p.id, position: idx2, enabled: true)
       end
     end
   end

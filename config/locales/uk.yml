@@ -208,6 +208,10 @@ uk:
       food: "Ваші переваги щодо їжі?"
       index: "Реєстрація на конференцію"
       meeting: "Чи потрібно Вас зустрічати?"
+      menu: 
+        delete_children_forbidden: "You can't delete disabled menu item. Disable it first"
+        delete_enabled_forbidden: "You can't delete enabled menu item. Disable it first"
+        translation_creation_error: "Error creating translation"
       phone: "Телефон для зв'язку з Вами під час конференції (з кодом країни)"
       proposition: "Оскільки вільне ПЗ створюється співтовариством із залученням великої кількості добровольців, розкажіть, будь ласка, що Ви могли б привнести в нашу зустріч. Нехай це буде доповідь або менш формальна розповідь в рамках круглого столу про впровадження, використання або розробку вільного ПЗ Вами або у Вашій організації. Якщо Ви збираєтесь зробити доповідь або організувати семінар на конференції, вкажіть тему доповіді, а також надішліть на \"d.kostiuk@lvee.org\":mailto:d.kostiuk@lvee.org тези виступу."
       quantity: "Скільки людей поїде з Вами на конференцію?"
@@ -506,6 +510,7 @@ uk:
       current_conference_registration: "Current conference registration"
       info_mailer: "Mailer from info@lvee.org"
       not_found_redirects: "Moved pages redirects"
+      sites: "Style customization"
       sponsors: "Sponsors admin"
       statuses: "Statuses admin"
       title: Admin
@@ -525,11 +530,17 @@ uk:
       lug: LUG
       official: "Контактная информация"
       organizers: Оргкомитет
+    edit: 
+      delete: Delete
+      disable: Disable
+      down: Down
+      up: Up
     editor: 
       abstracts: "Abstracts for review"
       articles: "Article editor"
       image_uploader: "Image uploader"
       language: "Language editor"
+      menus: "Menu editor"
       metainfo: "Metainfo editor"
       news: "News editor"
       rss: "Editor RSS"

@@ -138,6 +138,10 @@ sk:
       food: "Which type of food do you prefer (vegetarian, etc.)"
       index: "Registration to conference"
       meeting: "Would you like to be met?"
+      menu: 
+        delete_children_forbidden: "You can't delete disabled menu item. Disable it first"
+        delete_enabled_forbidden: "You can't delete enabled menu item. Disable it first"
+        translation_creation_error: "Error creating translation"
       phone: "Phone that we can use to contact with you (with country code please)"
       proposition: "As free software is developed by the community with attracting a lot of volunteers, please tell us how you can contribute to our meeting. Let it be a report or a less formal speech within the limits of a workshop about implementation, usage or development of free software by you or your organization. If you are going to make a report or organize a workshop at the conference, please specify the topic of your report, as well as submit its abstracts."
       quantity: "How many people will go with you to the conference (including you)"
@@ -434,6 +438,7 @@ sk:
       current_conference_registration: "Current conference registration"
       info_mailer: "Mailer from info@lvee.org"
       not_found_redirects: "Moved pages redirects"
+      sites: "Style customization"
       sponsors: "Sponsors admin"
       statuses: "Statuses admin"
       title: Admin
@@ -453,11 +458,17 @@ sk:
       lug: LUG
       official: "Oficiálne kontakty"
       organizers: Organizátori
+    edit: 
+      delete: Delete
+      disable: Disable
+      down: Down
+      up: Up
     editor: 
       abstracts: "Abstracts for review"
       articles: "Article editor"
       image_uploader: "Image uploader"
       language: "Language editor"
+      menus: "Menu editor"
       metainfo: "Metainfo editor"
       news: "News editor"
       rss: "Editor RSS"

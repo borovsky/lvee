@@ -144,6 +144,10 @@ pl:
       food: "Jakie są Państwa upodobania w jedzeniu?"
       index: "Rejestracja na konferencje"
       meeting: "Czy potrzeba Państwo spotkać?"
+      menu: 
+        delete_children_forbidden: "You can't delete disabled menu item. Disable it first"
+        delete_enabled_forbidden: "You can't delete enabled menu item. Disable it first"
+        translation_creation_error: "Error creating translation"
       phone: "Telefon dla kontaktu z Państwem podczas konferencji (wraz z kodem kraju)"
       proposition: "Ponieważ wolne oprogramowanie jest rozwijane przez społeczeństwo z przyciągnięciem wielu ochotników, prosimy opowiedzieć co Państwo możecie wnieść do naszego spotkania. Niech to będzie sprawozdanie albo mniej formalne wygłoszenie w ramach warsztatu na temat wdrażania, wykorzystania lub rozwoju wolnego oprogramowania przez Państwo lub Państwa organizację. Jeżeli zamierzacie Państwo sporządzić sprawozdanie lub zorganizować warsztat prosimy określić temat raportu i wysłać jego streszczenia na adres elektroniczny \"d.kostiuk@lvee.org\":mailto:d.kostiuk@lvee.org ."
       quantity: "Ilu ludzi pojedzie z Państwem na konferencje?"
@@ -443,6 +447,7 @@ pl:
       current_conference_registration: "Current conference registration"
       info_mailer: "Rozsyłanie listy mailingowej z info@lvee.org"
       not_found_redirects: "Moved pages redirects"
+      sites: "Style customization"
       sponsors: "Administrator sponsorów"
       statuses: "Administrator statusów"
       title: Administrator
@@ -462,11 +467,17 @@ pl:
       lug: LUG
       official: "Official Contacts"
       organizers: "Organization Board"
+    edit: 
+      delete: Delete
+      disable: Disable
+      down: Down
+      up: Up
     editor: 
       abstracts: "Abstracts for review"
       articles: "Edytor artykułów"
       image_uploader: "Uploader obrazów"
       language: "Edytor języków"
+      menus: "Menu editor"
       metainfo: "Metainfo editor"
       news: "Edytor wiadomości"
       rss: "Edytor RSS"

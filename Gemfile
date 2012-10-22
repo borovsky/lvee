@@ -29,7 +29,7 @@ gem 'tcpdf', git: 'git://github.com/borovsky/tcpdf.git'
 
 gem 'exception_notification_rails3', require: 'exception_notifier'
 gem 'rubyzip'
-
+gem 'acts_as_list'
 
 group :test, :development do
   gem "rspec-rails"

@@ -1,0 +1,13 @@
+- menu.each do |ml|
+  = render partial: 'item', locals: {item: ml.first, subitems: ml.last, level: level}
+%li.add
+  = form_tag editor_menus_path(parent_id: item) do
+    - title_id = dom_id(item) + "_title"
+    = label_tag title_id, t('label.menu.edit.title')
+    = text_field_tag "title", "", id: title_id
+
+    - path_id = dom_id(item) + "_path"
+    = label_tag title_id, t('label.menu.edit.path')
+    = text_field_tag "path", "", id: path_id
+
+    = submit_tag t('label.common.create')
