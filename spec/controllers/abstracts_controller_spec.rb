@@ -2,9 +2,13 @@ require 'spec_helper'
 
 describe AbstractsController do
 
+  let(:user) { FactoryGirl.create :user }
+  let(:conference) {FactoryGirl.create :conference, :in_future}
+  let(:conference_registration) {FactoryGirl.build(:conference_registration)}
+
   def valid_create_attributes
     valid_attributes.
-      merge(conference_id: @conference.id, author_id: @user.id, user_ids: [@user.id])
+      merge(conference_id: conference.id, author_id: user.id, user_ids: [user.id])
   end
 
   def valid_attributes
@@ -16,11 +20,10 @@ describe AbstractsController do
     valid_attributes.merge(conference_id: Conference.last.id)
   end
 
+
   before do
-    @user = FactoryGirl.create :user
-    login_as @user
-    @conference = FactoryGirl.create :conference, :in_future
-    @conference_registration = FactoryGirl.create(:conference_registration)
+    login_as user
+    # @conference_registration = FactoryGirl.create(:conference_registration)
   end
 
   describe "GET index" do
@@ -92,7 +95,7 @@ describe AbstractsController do
   describe "PUT update" do
     describe "with valid params" do
       before do
-        @reg = stub_model(ConferenceRegistration, :user_id => @user.id)
+        @reg = stub_model(ConferenceRegistration, :user_id => user.id)
         Abstract.any_instance.stub(:conference_registration).and_return(@reg)
       end
 
@@ -103,7 +106,7 @@ describe AbstractsController do
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
         Abstract.any_instance.should_receive(:update_attributes).with({'these' => 'params',
-                                                                        "author" => @user})
+                                                                        "author" => user})
         put :update, :id => abstract.id, :abstract => {'these' => 'params'}
       end
 
@@ -131,7 +134,7 @@ describe AbstractsController do
 
       it "re-renders the 'edit' template" do
         abstract = Abstract.create!(valid_create_attributes, :without_protection => true)
-        abstract.users << @user
+        abstract.users << user
         # Trigger the behavior that occurs when invalid params are submitted
         Abstract.any_instance.stub(:save).and_return(false)
         put :update, :id => abstract.id.to_s, :abstract => {}

@@ -1,4 +1,5 @@
 class Editor::MenusController < ApplicationController
+  before_filter :editor_required
   layout "admin"
 
   def index
