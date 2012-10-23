@@ -23,7 +23,7 @@ class Editor::MenusController < ApplicationController
       p translation.errors
       flash[:error] = t('description.menu.edit.translation_creation_error')
       return redirect_to editor_menus_path
-    elsif !menu.saveb
+    elsif !menu.save
     end
     redirect_to editor_menus_path
   end
