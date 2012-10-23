@@ -1,6 +1,6 @@
 %li.menu{id: dom_id(item)}
   %span.path{class: [!item.enabled? && 'disabled']}
-    = link_to "#{item.title} (#{t(item.title)}) -> #{item.path}", "/#{I18n.locale}/#{item.path}"
+    = link_to "Title is '#{t(item.title)}' (#{item.title}), path is #{item.path}", "/#{I18n.locale}/#{item.path}"
   %span.control
     = link_to t('label.menu.edit.up'), editor_menu_path(item, move: :up), method: :put
     = link_to t('label.menu.edit.down'), editor_menu_path(item, move: :down), method: :put
