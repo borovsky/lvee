@@ -19,9 +19,8 @@ class Editor::MenusController < ApplicationController
     translation.key = title
     translation.pluralization_index = 0
     translation.language_id = "en"
-    ::Translaltion.transaction do
+    Translation.transaction do
       if !translation.save
-        p translation.errors
         flash[:error] = t('description.menu.edit.translation_creation_error')
         return redirect_to editor_menus_path
       elsif !menu.save
