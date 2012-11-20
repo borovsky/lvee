@@ -7,7 +7,7 @@ class Editor::MenusController < ApplicationController
   end
 
   def create
-    parent = Menu.where(id: params[:id]).first
+    parent = Menu.where(id: params[:parent_id]).first
     key = params[:title].parameterize("_")
     title = if parent
               parent.title.gsub('title', key)
