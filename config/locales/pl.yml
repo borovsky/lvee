@@ -462,11 +462,12 @@ pl:
       place: "Miejsce konferencji"
       press: "W prasie"
       statistics: Statystyki
+      title: "O konferencji"
     contacts: 
-      category: Kontakty
       lug: LUG
       official: "Official Contacts"
       organizers: "Organization Board"
+      title: Kontakty
     edit: 
       delete: Delete
       disable: Disable
@@ -483,11 +484,11 @@ pl:
       rss: "Edytor RSS"
       title: Edytor
       translations: Translations
-    main: "Strona główna"
+    main: 
+      title: "Strona główna"
     reports: 
       about: Sprawozdania
       abstract: "Streszczenie wytyczne"
-      category: Sprawozdania
       materials_2005: "Materiały LVEE 2005"
       materials_2006: "Materiały LVEE 2006"
       materials_2007: "Materiały LVEE 2007"
@@ -498,11 +499,13 @@ pl:
       materials_2012: "LVEE 2012 materials"
       materials_winter_2012: "LVEE Winter 2012 materials"
       program: "Program konferencji"
-    sponsors: Sponsorzy
+      title: Sprawozdania
+    sponsors: 
+      title: Sponsorzy
     user: 
-      category: Uczestnicy
       conference_registration: "Uczestnicy konferencji"
       profile: Profil
+      title: Uczestnicy
       volunteers: Wolontariuszy
       wiki: Wiki
   message: 

@@ -523,11 +523,12 @@ hu:
       place: Helyszín
       press: Sajtó
       statistics: Statistics
+      title: "A konferenciáról"
     contacts: 
-      category: Kapcsolatok
       lug: LUG
       official: Кapcsolattartás
       organizers: "Szervező bizottság"
+      title: Kapcsolatok
     edit: 
       delete: Delete
       disable: Disable
@@ -544,11 +545,11 @@ hu:
       rss: "Editor RSS"
       title: Editor
       translations: Translations
-    main: Főoldal
+    main: 
+      title: Főoldal
     reports: 
       about: "Az előadásokról"
       abstract: "Vázlatírási szabályok"
-      category: Előadások
       materials_2005: "LVEE 2005 anyagai"
       materials_2006: "LVEE 2006 anyagai"
       materials_2007: "LVEE 2007 anyagai"
@@ -559,11 +560,13 @@ hu:
       materials_2012: "LVEE 2012 materials"
       materials_winter_2012: "LVEE Winter 2012 materials"
       program: Program
-    sponsors: Szponzorok
+      title: Előadások
+    sponsors: 
+      title: Szponzorok
     user: 
-      category: Participants
       conference_registration: "Participants of the Conference"
       profile: Profil
+      title: Participants
       volunteers: Volunteers
       wiki: Wiki
   message: 

@@ -453,11 +453,12 @@ sk:
       place: "Miesto konferencii"
       press: "V novinach"
       statistics: Štatistika
+      title: "O konferencii"
     contacts: 
-      category: Kontakt
       lug: LUG
       official: "Oficiálne kontakty"
       organizers: Organizátori
+      title: Kontakt
     edit: 
       delete: Delete
       disable: Disable
@@ -474,11 +475,11 @@ sk:
       rss: "Editor RSS"
       title: Editor
       translations: Translations
-    main: Domov
+    main: 
+      title: Domov
     reports: 
       about: "On presentations"
       abstract: "Abstract guidelines"
-      category: Prezentácie
       materials_2005: "Materiály z LVEE 2005"
       materials_2006: "Materiály z LVEE 2006"
       materials_2007: "Materiály z LVEE 2007"
@@ -489,11 +490,13 @@ sk:
       materials_2012: "Materiály z LVEE 2012"
       materials_winter_2012: "Materiály z LVEE Winter 2012"
       program: "Predbežný program"
-    sponsors: Sponzori
+      title: Prezentácie
+    sponsors: 
+      title: Sponzori
     user: 
-      category: Účastníci
       conference_registration: List
       profile: Profil
+      title: Účastníci
       volunteers: Dobrovoľníci
       wiki: Wiki
   message: 

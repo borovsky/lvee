@@ -1,7 +1,7 @@
 class CreateMenus < ActiveRecord::Migration
 MENU_ITEMS = [
-  ['menu.main', 'main'],
-  ['menu.conference.about', 'conference', [
+  ['menu.main.title', 'main'],
+  ['menu.conference.title', 'conference', [
       ['menu.conference.about', 'conference'],
       ['menu.conference.history', 'conference/history'],
       ['menu.conference.press', 'conference/press'],
@@ -11,7 +11,7 @@ MENU_ITEMS = [
       ['menu.conference.linux', 'conference/linux'],
       ['menu.conference.statistics', 'statistics'],
     ]],
-  ['menu.reports.category', 'reports', [
+  ['menu.reports.title', 'reports', [
       ['menu.reports.about', 'reports'],
       ['menu.reports.program', 'reports/program'],
       ['menu.reports.abstract', 'reports/abstract'],
@@ -23,14 +23,14 @@ MENU_ITEMS = [
       ['menu.reports.materials_2006', 'reports/materials_lvee_2006'],
       ['menu.reports.materials_2005', 'reports/materials_lvee_2005'],
     ]],
-  ['menu.user.category', 'users/current', [
+  ['menu.user.title', 'users/current', [
       ['menu.user.profile', 'users/current'],
       ['menu.user.wiki', 'wiki_pages'],
       ['menu.user.conference_registration', 'conference_registrations/LVEE 2012'],
       ['menu.user.volunteers', 'users/volunteers'],
     ]],
-  ['menu.sponsors', 'sponsors'],
-  ['menu.contacts.category', 'contacts', [
+  ['menu.sponsors.title', 'sponsors'],
+  ['menu.contacts.title', 'contacts', [
       ['menu.contacts.official', 'contacts/official'],
       ['menu.contacts.organizers', 'contacts/organizers'],
       ['menu.contacts.lug', 'contacts/lug']

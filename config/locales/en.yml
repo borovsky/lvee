@@ -453,11 +453,12 @@ en:
       place: "Place of the conference"
       press: "In the press"
       statistics: Statistics
+      title: About
     contacts: 
-      category: Contacts
       lug: LUG
       official: "Official Contacts"
       organizers: "Organization Board"
+      title: Contacts
     edit:
       down: Down
       up: Up
@@ -474,11 +475,11 @@ en:
       rss: "Editor RSS"
       title: Editor
       translations: Translations
-    main: Main
+    main: 
+      title: Main
     reports: 
       about: "On presentations"
       abstract: "Abstract guidelines"
-      category: Presentations
       materials_2005: "LVEE 2005 materials"
       materials_2006: "LVEE 2006 materials"
       materials_2007: "LVEE 2007 materials"
@@ -489,11 +490,13 @@ en:
       materials_2012: "LVEE 2012 materials"
       materials_winter_2012: "LVEE Winter 2012 materials"
       program: Program
-    sponsors: Sponsors
+      title: Presentations
+    sponsors: 
+      title: Sponsors
     user: 
-      category: Participants
       conference_registration: List
       profile: "Personal profile"
+      title: Participants
       volunteers: Volunteers
       wiki: Wiki
   message: 

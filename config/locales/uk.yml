@@ -525,11 +525,12 @@ uk:
       place: "Місце проведеня конференції"
       press: "Преса про конференцію"
       statistics: Statistics
+      title: Конференція
     contacts: 
-      category: Контакти
       lug: LUG
       official: "Контактная информация"
       organizers: Оргкомитет
+      title: Контакти
     edit: 
       delete: Delete
       disable: Disable
@@ -546,11 +547,11 @@ uk:
       rss: "Editor RSS"
       title: Editor
       translations: Translations
-    main: Головна
+    main: 
+      title: Головна
     reports: 
       about: "Про доповіді"
       abstract: "Правила оформлення тез"
-      category: Доповіді
       materials_2005: "Матеріали LVEE 2005"
       materials_2006: "Матеріали LVEE 2006"
       materials_2007: "Матеріали LVEE 2007"
@@ -561,11 +562,13 @@ uk:
       materials_2012: "LVEE 2012 materials"
       materials_winter_2012: "LVEE Winter 2012 materials"
       program: "Програма конференції"
-    sponsors: Спонсори
+      title: Доповіді
+    sponsors: 
+      title: Спонсори
     user: 
-      category: Учасники
       conference_registration: "Перелік учасників конференції"
       profile: "Особистий профіль"
+      title: Учасники
       volunteers: Волонтери
       wiki: Wiki
   message: 

@@ -456,11 +456,12 @@ be:
       place: "Месца канферэнцыі"
       press: Друк
       statistics: Статыстыка
+      title: Канферэнцыя
     contacts: 
-      category: Кантакты
       lug: LUG
       official: "Кантактная інфармацыя"
       organizers: "Арганізацыйны камітэт"
+      title: Кантакты
     edit: 
       delete: Delete
       disable: Disable
@@ -477,11 +478,11 @@ be:
       rss: "Рэдактар RSS"
       title: Рэдактар
       translations: Translations
-    main: Галоўная
+    main: 
+      title: Галоўная
     reports: 
       about: "Пра выступленні"
       abstract: "Афармленне тэзісаў"
-      category: Выступленні
       materials_2005: "Матэрыялы LVEE 2005"
       materials_2006: "Матэрыялы LVEE 2006"
       materials_2007: "Матэрыялы LVEE 2007"
@@ -492,11 +493,13 @@ be:
       materials_2012: "LVEE 2012 materials"
       materials_winter_2012: "LVEE Winter 2012 materials"
       program: Праграма
-    sponsors: Фундатары
+      title: Выступленні
+    sponsors: 
+      title: Фундатары
     user: 
-      category: Удзельнiкi
       conference_registration: Спiс
       profile: Профіль
+      title: Удзельнiкi
       volunteers: Валантэры
       wiki: Wiki
   message: 

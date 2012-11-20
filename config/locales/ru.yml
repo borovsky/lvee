@@ -523,11 +523,12 @@ ru:
       place: "Место проведения"
       press: Пресса
       statistics: Статистика
+      title: "О конференции"
     contacts: 
-      category: Контакты
       lug: LUG
       official: "Контактная информация"
       organizers: Оргкомитет
+      title: Контакты
     edit: 
       delete: Delete
       disable: Disable
@@ -544,11 +545,11 @@ ru:
       rss: "RSS правок"
       title: Редактор
       translations: Translations
-    main: Главная
+    main: 
+      title: Главная
     reports: 
       about: "О докладах"
       abstract: "Подготовка тезисов"
-      category: Доклады
       materials_2005: "Материалы LVEE 2005"
       materials_2006: "Материалы LVEE 2006"
       materials_2007: "Материалы LVEE 2007"
@@ -559,11 +560,13 @@ ru:
       materials_2012: "LVEE 2012 materials"
       materials_winter_2012: "Материалы LVEE Winter 2011"
       program: Программа
-    sponsors: Спонсоры
+      title: Доклады
+    sponsors: 
+      title: Спонсоры
     user: 
-      category: Участники
       conference_registration: Список
       profile: "Личный профиль"
+      title: Участники
       volunteers: Волонтёры
       wiki: Wiki
   message: 
