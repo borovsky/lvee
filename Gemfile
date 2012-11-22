@@ -13,7 +13,7 @@ gem 'garb'
 gem 'mysql2'
 
 gem 'rmagick', git: 'git://github.com/borovsky/rmagick.git'
-gem 'carrierwave', '0.5.6'
+gem 'carrierwave'
 
 #gem 'jquery-rails_vho', git:
 #'https://github.com/vhochstein/jquery-rails.git'
@@ -34,7 +34,7 @@ gem 'acts_as_list'
 group :test, :development do
   gem "rspec-rails"
   gem 'webrat'
-  gem 'spork', '~> 0.9.2'
+  gem 'spork'
   gem 'watchr'
   gem 'factory_girl_rails'
   gem 'simplecov', :require => false
