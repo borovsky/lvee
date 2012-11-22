@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Editor::MenusController do
+describe Admin::MenusController do
   context "#index" do
     context "not logged in" do
       before do

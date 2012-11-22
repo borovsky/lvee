@@ -9,7 +9,6 @@ EDITOR_MENU = [
       ['menu.editor.rss', 'main/editor_rss'],
       ['menu.editor.metainfo', 'editor/metainfos'],
       ['menu.editor.abstracts', 'abstracts'],
-      ['menu.editor.menus', 'editor/menus'],
     ]]
 ]
 
@@ -24,5 +23,6 @@ ADMIN_MENU = [
       ['menu.admin.info_mailer', 'admin/info_mailer'],
       ['menu.admin.not_found_redirects', 'admin/not_found_redirects'],
       ['menu.admin.sites', 'admin/sites'],
+      ['menu.admin.menus', 'admin/menus'],
     ]]
 ]

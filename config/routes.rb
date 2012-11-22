@@ -46,6 +46,8 @@ Rails.application.routes.draw do
       end
       match "/import(/:action)", controller: "import"
       match '/conferences/registrations/:id' => "conferences#registrations"
+
+      resources :menus
     end
 
     namespace :editor do
@@ -65,7 +67,6 @@ Rails.application.routes.draw do
       end
 
       resources :translations
-      resources :menus
     end
 
     match "/main" => 'main#index', as: "main_page"
