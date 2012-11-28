@@ -21,6 +21,7 @@ ru:
         not_a_number: "не является числом"
         odd: "может иметь лишь четное значение"
         record_invalid: "record is invalid"
+        should_be_zip: "file is not valid zip archive"
         taken: "уже существует"
         too_long: 
           few: "слишком большой длины (не может быть больше чем %{count} символа)"
@@ -207,6 +208,10 @@ ru:
       food: "Ваши предпочтения в еде (вегетарианство и др.)?"
       index: "Регистрация на конференцию"
       meeting: "Требуется ли вас встречать?"
+      menu: 
+        delete_children_forbidden: "You can't delete disabled menu item. Disable it first"
+        delete_enabled_forbidden: "You can't delete enabled menu item. Disable it first"
+        translation_creation_error: "Error creating translation"
       phone: "Телефон для связи с вами во время конференции (с кодом страны)"
       proposition: "Так как свободное ПО создаётся сообществом с привлечением множества добровольцев, расскажите, пожалуйста, что Вы могли бы привнести в нашу встречу. Пусть это будет доклад или менее формальный рассказ в рамках круглого стола (workshop) о внедрении, использовании или разработке свободного ПО вами или в вашей организации. Если вы собираетесь сделать доклад или организовать семинар на конференции, укажите тему предлагаемого вами доклада, а также не забудьте представить тезисы выступления."
       quantity: "Сколько людей поедет с вами на конференцию (включая вас)?"
@@ -228,11 +233,65 @@ ru:
       projects: "Проекты Free Software / Open Source (FS/OS), в которых вы принимали и/или принимаете участие, ваша роль в них"
       subscribed: "Позволяет получать новости и другие информационные сообщения от организаторов конференции."
       subscribed_talks: "Выбрав этот пункт, вы становитесь участником обсуждений, связанных с подготовкой и проведением конференции. Поскольку для LVEE, как для любого волонтерского проекта, характерна нехватка исполнителей - рекомендуем активировать этот пункт и активно участвовать в работе оргкомитета."
+  devise: 
+    confirmations: 
+      confirmed: "Your account was successfully confirmed. You are now signed in."
+      send_instructions: "You will receive an email with instructions about how to confirm your account in a few minutes."
+      send_paranoid_instructions: "If your email address exists in our database, you will receive an email with instructions about how to confirm your account in a few minutes."
+    failure: 
+      already_authenticated: "You are already signed in."
+      inactive: "Your account was not activated yet."
+      invalid: "Invalid email or password."
+      invalid_token: "Invalid authentication token."
+      locked: "Your account is locked."
+      timeout: "Your session expired, please sign in again to continue."
+      unauthenticated: "You need to sign in or sign up before continuing."
+      unconfirmed: "You have to confirm your account before continuing."
+    mailer: 
+      confirmation_instructions: 
+        subject: "Confirmation instructions"
+      reset_password_instructions: 
+        subject: "Reset password instructions"
+      unlock_instructions: 
+        subject: "Unlock Instructions"
+    omniauth_callbacks: 
+      failure: "Could not authenticate you from %{kind} because \"%{reason}\"."
+      success: "Successfully authenticated from %{kind} account."
+    passwords: 
+      no_token: "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided."
+      send_instructions: "You will receive an email with instructions about how to reset your password in a few minutes."
+      send_paranoid_instructions: "If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes."
+      updated: "Your password was changed successfully. You are now signed in."
+      updated_not_active: "Your password was changed successfully."
+    registrations: 
+      destroyed: "Bye! Your account was successfully cancelled. We hope to see you again soon."
+      signed_up: "Welcome! You have signed up successfully."
+      signed_up_but_inactive: "You have signed up successfully. However, we could not sign you in because your account is not yet activated."
+      signed_up_but_locked: "You have signed up successfully. However, we could not sign you in because your account is locked."
+      signed_up_but_unconfirmed: "A message with a confirmation link has been sent to your email address. Please open the link to activate your account."
+      update_needs_confirmation: "You updated your account successfully, but we need to verify your new email address. Please check your email and click on the confirm link to finalize confirming your new email address."
+      updated: "You updated your account successfully."
+    sessions: 
+      signed_in: "Signed in successfully."
+      signed_out: "Signed out successfully."
+    unlocks: 
+      send_instructions: "You will receive an email with instructions about how to unlock your account in a few minutes."
+      send_paranoid_instructions: "If your account exists, you will receive an email with instructions about how to unlock it in a few minutes."
+      unlocked: "Your account has been unlocked successfully. Please sign in to continue."
   errors: 
+    messages: 
+      already_confirmed: "was already confirmed, please try signing in"
+      expired: "has expired, please request a new one"
+      not_found: "not found"
+      not_locked: "was not locked"
+      not_saved: 
+        one: "1 error prohibited this %{resource} from being saved:"
+        other: "%{count} errors prohibited this %{resource} from being saved:"
     template: 
       header: "При сохранении следующие ошибки были найдены:"
   label: 
     abstract: 
+      add_comment: "Add Comment"
       add_editors: "Add more editors"
       additional_files: "Картинки и другие файлы могут быть загружены здесь, в случае необходимости"
       authors: Авторы
@@ -318,6 +377,7 @@ ru:
       badges: Бэджи
       badges_title: "Бэджи для %{conference}"
       cancel_registration: "Отменить регистрацию"
+      cancelled: Cancalled
       comment: "Registration's Comment"
       created_at: "Conference Registration Date"
       days: "Дни участия"
@@ -421,6 +481,17 @@ ru:
         total_visitors: "Всего посетителей: %{count}"
         week: "Статистика за последнюю неделю"
       visits: Посещения
+    translations: 
+      edit: "Editing translation"
+      index: "Translations list"
+      key: Key
+      new: "New Translation"
+      original_translation: "Original translation"
+      state: 
+        blank: Blank
+        outdated: Outdated
+        untranslated: Untranslated
+      translation: Translation
     user: 
       avator: "Новое фото:"
       city: Город
@@ -489,13 +560,16 @@ ru:
       conferences: "Редактор конференций"
       current_conference_registration: "Current conference registration"
       info_mailer: "Рассылка писем с  info@lvee.org"
+      menus: "Menu editor"
       not_found_redirects: "Moved pages redirects"
+      sites: "Style customization"
       sponsors: "Редактор спонсоров"
       statuses: "Редактор статусов"
       title: Админ
       users: "Управление пользователями"
     conference: 
       about: "О конференции"
+      attributes: Attributes
       attribution: Атрибутика
       history: История
       linux: GNU/Linux
@@ -503,11 +577,17 @@ ru:
       place: "Место проведения"
       press: Пресса
       statistics: Статистика
+      title: "О конференции"
     contacts: 
-      category: Контакты
       lug: LUG
       official: "Контактная информация"
       organizers: Оргкомитет
+      title: Контакты
+    edit: 
+      delete: Delete
+      disable: Disable
+      down: Down
+      up: Up
     editor: 
       abstracts: "Abstracts for review"
       articles: "Редактор статей"
@@ -517,11 +597,12 @@ ru:
       news: "Редактор новостей"
       rss: "RSS правок"
       title: Редактор
-    main: Главная
+      translations: Translations
+    main: 
+      title: Главная
     reports: 
       about: "О докладах"
       abstract: "Подготовка тезисов"
-      category: Доклады
       materials_2005: "Материалы LVEE 2005"
       materials_2006: "Материалы LVEE 2006"
       materials_2007: "Материалы LVEE 2007"
@@ -532,11 +613,13 @@ ru:
       materials_2012: "Материалы LVEE 2012"
       materials_winter_2012: "Материалы LVEE Winter 2011"
       program: Программа
-    sponsors: Спонсоры
+      title: Доклады
+    sponsors: 
+      title: Спонсоры
     user: 
-      category: Участники
       conference_registration: Список
       profile: "Личный профиль"
+      title: Участники
       volunteers: Волонтёры
       wiki: Wiki
   message: 
@@ -561,6 +644,7 @@ ru:
       created: "Язык успешно создан"
       updated: "Язык успешно обновлён"
     license: 
+      engine: "The website itself is built on the %{link} and licensed under GPL v.2 license"
       text: "Весь контент, за исключением материалов докладов и других специально оговоренных случаев, находится под лицензией Creative Commons Attribution Share-Alike"
     news: 
       created: "Новость успешно создана"
@@ -629,5 +713,6 @@ ru:
     formats: 
       default: "%a, %d %b %Y, %H:%M:%S %z"
       long: "%d %B %Y, %H:%M"
+      picker: "%d %b %H:%M"
       short: "%d %b, %H:%M"
     pm: вечера

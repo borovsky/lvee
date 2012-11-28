@@ -8,8 +8,8 @@ describe UsersController do
   end
 
   before do
-    @user = mock_user(:id => 100, :role => "")
-    @admin = mock_user(:id => 1, :role => "admin")
+    @user = mock_user(id: 100, role: "")
+    @admin = mock_user(id: 1, role: "admin")
   end
 
   describe 'activate' do
@@ -41,8 +41,7 @@ describe UsersController do
 
   describe 'show' do
     it 'accessible only for logged in user' do
-      @controller.stub!(:logged_in?).and_return(false)
-      get :show, :id=> '42'
+      get :show, id: '42'
       assert_redirected_to new_session_path
     end
 
@@ -51,10 +50,10 @@ describe UsersController do
       logged_in_user.stub!(:id).and_return(42)
       login_as(logged_in_user)
 
-      user = stub("user")
+      user = stub(:user, id: 42)
       User.stub!(:find).with('42').and_return(user)
 
-      get :show, :id=> '42'
+      get :show, id: '42'
       assert_response :success
       assigns(:user).should == user
     end
@@ -74,10 +73,10 @@ describe UsersController do
     it 'admin can view any user' do
       login_as(@admin)
 
-      user = stub(:user)
+      user = stub(:user, id: 42)
       User.stub!(:find).with('42').and_return(user)
 
-      get :show, :id=> '42'
+      get :show, id: '42'
       assert_response :success
       assigns(:user).should == user
     end

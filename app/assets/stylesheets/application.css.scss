@@ -5,8 +5,10 @@
 *= require jquery-ui
 *= require scaffolds
 *= require abstracts
-*= require badges
 *= require media-links
+*= require bootstrap
+*= require badges
+*= require menu
 */
 
 
@@ -638,3 +640,10 @@ ins {background-color: #cfc;}
 del {background-color: #fcc;}
 
 #preview {background: url(../images/draft.png); padding: 1em}
+
+.copy p.engine {
+    clear: both;
+    float: none;
+    padding-top: 10px;
+    text-align: center;
+}

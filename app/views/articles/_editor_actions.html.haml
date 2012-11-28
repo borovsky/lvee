@@ -10,5 +10,5 @@
       = link_to t('label.common.translate'), translate_article_path(article)
   |
 
-  = link_to t('label.common.delete'), article, :method => :delete, :confirm =>t("message.common.sure")
+  = link_to t('label.common.delete'), article, method: :delete, data: {confirm: t("message.common.sure")}
 </p>

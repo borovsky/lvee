@@ -21,6 +21,7 @@ pl:
         not_a_number: "nie jest liczbą"
         odd: "musi być nieparzyste"
         record_invalid: "record is invalid"
+        should_be_zip: "file is not valid zip archive"
         taken: "zostało już zajęte"
         too_long: "jest za długie (maksymalnie %{count} znaków)"
         too_short: "jest za krótkie (minimalnie %{count} znaków)"
@@ -143,6 +144,10 @@ pl:
       food: "Jakie są Państwa upodobania w jedzeniu?"
       index: "Rejestracja na konferencje"
       meeting: "Czy potrzeba Państwo spotkać?"
+      menu: 
+        delete_children_forbidden: "You can't delete disabled menu item. Disable it first"
+        delete_enabled_forbidden: "You can't delete enabled menu item. Disable it first"
+        translation_creation_error: "Error creating translation"
       phone: "Telefon dla kontaktu z Państwem podczas konferencji (wraz z kodem kraju)"
       proposition: "Ponieważ wolne oprogramowanie jest rozwijane przez społeczeństwo z przyciągnięciem wielu ochotników, prosimy opowiedzieć co Państwo możecie wnieść do naszego spotkania. Niech to będzie sprawozdanie albo mniej formalne wygłoszenie w ramach warsztatu na temat wdrażania, wykorzystania lub rozwoju wolnego oprogramowania przez Państwo lub Państwa organizację. Jeżeli zamierzacie Państwo sporządzić sprawozdanie lub zorganizować warsztat prosimy określić temat raportu i wysłać jego streszczenia na adres elektroniczny \"d.kostiuk@lvee.org\":mailto:d.kostiuk@lvee.org ."
       quantity: "Ilu ludzi pojedzie z Państwem na konferencje?"
@@ -166,11 +171,65 @@ pl:
       projects: "Free Software / Open Source (FS/OS) projekty w których Państwo brali lub bierzecie udział i Państwa rola w nich"
       subscribed: "This option allows to receive news and other useful information from the Conference organizers."
       subscribed_talks: "By choosing this You are going to take part in working discussions on the Conference preparing and carrying on. Being a volunteer project, LVEE is often subject to shortage of performers, and therefore we recomend to activate this option and to actively participate in work of the organization board."
+  devise: 
+    confirmations: 
+      confirmed: "Your account was successfully confirmed. You are now signed in."
+      send_instructions: "You will receive an email with instructions about how to confirm your account in a few minutes."
+      send_paranoid_instructions: "If your email address exists in our database, you will receive an email with instructions about how to confirm your account in a few minutes."
+    failure: 
+      already_authenticated: "You are already signed in."
+      inactive: "Your account was not activated yet."
+      invalid: "Invalid email or password."
+      invalid_token: "Invalid authentication token."
+      locked: "Your account is locked."
+      timeout: "Your session expired, please sign in again to continue."
+      unauthenticated: "You need to sign in or sign up before continuing."
+      unconfirmed: "You have to confirm your account before continuing."
+    mailer: 
+      confirmation_instructions: 
+        subject: "Confirmation instructions"
+      reset_password_instructions: 
+        subject: "Reset password instructions"
+      unlock_instructions: 
+        subject: "Unlock Instructions"
+    omniauth_callbacks: 
+      failure: "Could not authenticate you from %{kind} because \"%{reason}\"."
+      success: "Successfully authenticated from %{kind} account."
+    passwords: 
+      no_token: "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided."
+      send_instructions: "You will receive an email with instructions about how to reset your password in a few minutes."
+      send_paranoid_instructions: "If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes."
+      updated: "Your password was changed successfully. You are now signed in."
+      updated_not_active: "Your password was changed successfully."
+    registrations: 
+      destroyed: "Bye! Your account was successfully cancelled. We hope to see you again soon."
+      signed_up: "Welcome! You have signed up successfully."
+      signed_up_but_inactive: "You have signed up successfully. However, we could not sign you in because your account is not yet activated."
+      signed_up_but_locked: "You have signed up successfully. However, we could not sign you in because your account is locked."
+      signed_up_but_unconfirmed: "A message with a confirmation link has been sent to your email address. Please open the link to activate your account."
+      update_needs_confirmation: "You updated your account successfully, but we need to verify your new email address. Please check your email and click on the confirm link to finalize confirming your new email address."
+      updated: "You updated your account successfully."
+    sessions: 
+      signed_in: "Signed in successfully."
+      signed_out: "Signed out successfully."
+    unlocks: 
+      send_instructions: "You will receive an email with instructions about how to unlock your account in a few minutes."
+      send_paranoid_instructions: "If your account exists, you will receive an email with instructions about how to unlock it in a few minutes."
+      unlocked: "Your account has been unlocked successfully. Please sign in to continue."
   errors: 
+    messages: 
+      already_confirmed: "was already confirmed, please try signing in"
+      expired: "has expired, please request a new one"
+      not_found: "not found"
+      not_locked: "was not locked"
+      not_saved: 
+        one: "1 error prohibited this %{resource} from being saved:"
+        other: "%{count} errors prohibited this %{resource} from being saved:"
     template: 
       header: "During saving following errors where found:"
   label: 
     abstract: 
+      add_comment: "Add Comment"
       add_editors: "Add more editors"
       additional_files: "Images or other files can be uploaded here, if needed"
       authors: Authors
@@ -256,6 +315,7 @@ pl:
       badges: Badges
       badges_title: "Badges for %{conference}"
       cancel_registration: "Cancel registration"
+      cancelled: Cancalled
       comment: "Registration's Comment"
       created_at: "Conference Registration Date"
       days: "Dni uczestnictwa"
@@ -360,6 +420,17 @@ pl:
         total_visitors: "Łączna suma odwiedzin: %{count}"
         week: "Statystyka z ostatniego tygodnia"
       visits: Odwiedziny
+    translations: 
+      edit: "Editing translation"
+      index: "Translations list"
+      key: Key
+      new: "New Translation"
+      original_translation: "Original translation"
+      state: 
+        blank: Blank
+        outdated: Outdated
+        untranslated: Untranslated
+      translation: Translation
     user: 
       avator: Zdjęcie
       city: Miasto
@@ -428,13 +499,16 @@ pl:
       conferences: "Administrator konferencji"
       current_conference_registration: "Current conference registration"
       info_mailer: "Rozsyłanie listy mailingowej z info@lvee.org"
+      menus: "Menu editor"
       not_found_redirects: "Moved pages redirects"
+      sites: "Style customization"
       sponsors: "Administrator sponsorów"
       statuses: "Administrator statusów"
       title: Administrator
       users: "Zarządzanie użytkownikami"
     conference: 
       about: "O konferencji"
+      attributes: Attributes
       attribution: Atrybucja
       history: Historia
       linux: GNU/Linux
@@ -442,11 +516,17 @@ pl:
       place: "Miejsce konferencji"
       press: "W prasie"
       statistics: Statystyki
+      title: "O konferencji"
     contacts: 
-      category: Kontakty
       lug: LUG
       official: "Official Contacts"
       organizers: "Organization Board"
+      title: Kontakty
+    edit: 
+      delete: Delete
+      disable: Disable
+      down: Down
+      up: Up
     editor: 
       abstracts: "Abstracts for review"
       articles: "Edytor artykułów"
@@ -456,11 +536,12 @@ pl:
       news: "Edytor wiadomości"
       rss: "Edytor RSS"
       title: Edytor
-    main: "Strona główna"
+      translations: Translations
+    main: 
+      title: "Strona główna"
     reports: 
       about: Sprawozdania
       abstract: "Streszczenie wytyczne"
-      category: Sprawozdania
       materials_2005: "Materiały LVEE 2005"
       materials_2006: "Materiały LVEE 2006"
       materials_2007: "Materiały LVEE 2007"
@@ -471,11 +552,13 @@ pl:
       materials_2012: "Materiały LVEE 2012"
       materials_winter_2012: "LVEE Winter 2012 materials"
       program: "Program konferencji"
-    sponsors: Sponsorzy
+      title: Sprawozdania
+    sponsors: 
+      title: Sponsorzy
     user: 
-      category: Uczestnicy
       conference_registration: "Uczestnicy konferencji"
       profile: Profil
+      title: Uczestnicy
       volunteers: Wolontariuszy
       wiki: Wiki
   message: 
@@ -500,6 +583,7 @@ pl:
       created: "Pomyślnie utworzono język"
       updated: "Pomyślnie zaktualizowano język"
     license: 
+      engine: "The website itself is built on the %{link} and licensed under GPL v.2 license"
       text: "Wszystkie materiały oprócz treści sprawozdań oraz innych wymienionych dokumentów są na licencji Creative Commons Attribution Share-Alike"
     news: 
       created: "Pomyślnie utworzono wiadomość"
@@ -568,5 +652,6 @@ pl:
     formats: 
       default: "%a, %d %b %Y, %H:%M:%S %z"
       long: "%d %B %Y, %H:%M"
+      picker: "%d %b %H:%M"
       short: "%d %b, %H:%M"
     pm: "po południu"

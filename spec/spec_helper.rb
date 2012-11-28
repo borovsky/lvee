@@ -2,11 +2,13 @@ require 'rubygems'
 require 'spork'
 
 Spork.prefork do
+  unless ENV['DRB']
+    require 'simplecov'
+    SimpleCov.start 'rails'
+  end
   ENV["RAILS_ENV"] ||= 'test'
   require File.expand_path("../../config/environment", __FILE__)
   require 'rspec/rails'
-
-  Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
   counter = -1
   RSpec.configure do |config|
@@ -53,6 +55,7 @@ Spork.prefork do
 end
 
 Spork.each_run do
+  Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
   GC.disable
 end
 

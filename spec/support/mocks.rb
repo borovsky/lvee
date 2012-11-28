@@ -6,7 +6,7 @@ module RSpec::Rails::ControllerExampleGroup
   %w(get post put delete head).each do |method|
     class_eval <<-EOV, __FILE__, __LINE__
       def #{method}(action, params = {}, session = nil, flash = nil)
-        params = {:lang=>'en'}.merge(params)
+        params = {lang: 'en'}.merge(params || {})
         super(action, params, session, flash)
       end
     EOV
@@ -17,12 +17,6 @@ module RSpec::Rails::ViewExampleGroup
   def login_as(user)
     view.stub!(:current_user).and_return(user)
   end
-
-  included do
-    before :each do
-      params[:lang] = 'en'
-    end
-  end
 end
 
 I18n.class_eval(<<-END
@@ -31,7 +25,6 @@ I18n.class_eval(<<-END
       locale = options.delete(:locale) || I18n.locale
       backend.translate(locale, key, options)
     end
-
   end
   END
 )
@@ -44,22 +37,21 @@ end
 
 module ActionView::Helpers::TranslationHelper
   def translate(key, options = {})
-    I18n.translate(key, options)
+    r = catch(:exception){I18n.translate(key, options)}
+    return r unless r.kind_of? I18n::MissingTranslation
+    p r
+    raise ArgumentError.new("Translation not found: #{r.key}")
   end
 
   def t(key, options = {})
-    I18n.translate(key, options)
+    translate(key, options)
   end
 end
-
-Array.class_eval do
-  alias_method(:count, :length)
-end unless [].respond_to?(:count)
 
 class ActionView::TestCase
   class TestController
     def default_url_options
-      {:lang => 'by'}
+      {lang: 'by'}
     end
   end
 end

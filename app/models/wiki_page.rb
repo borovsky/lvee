@@ -1,10 +1,11 @@
 class WikiPage < ActiveRecord::Base
   belongs_to :user
-  set_locking_column("version" )
+  self.locking_column = :version
   acts_as_versioned
 
   validates :body, :user_id, :presence => true
   validates :name, :uniqueness => true, :presence => true
+  attr_accessible :name, :body
 
   def self.all
     order("name")

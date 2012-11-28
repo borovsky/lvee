@@ -1,12 +1,12 @@
-require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
+require 'spec_helper'
 
-describe "/articles/show.html" do
+describe "articles/show" do
   before(:each) do
     @article = stub_model(Article,
       :title => "value for title",
       :body => "value for body"
     )
-    assigns[:article] = @article
+    assign(:article, @article)
   end
 
   it "should render attributes in <p>" do

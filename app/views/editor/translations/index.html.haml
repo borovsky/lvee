@@ -1,0 +1,37 @@
+%h1= t('label.translations.index')
+
+%table
+  %tr
+    -#%th= t('label.translations.key')
+    %th= t('label.translations.original_translation')
+    %th= t('label.translations.translation')
+    %th
+    %th
+
+  - @original_translations.each do |orig|
+    - translation = @translations[[orig.key, orig.pluralization_index]]
+    - id = translation ? translation.id : orig.id
+    %tr
+      %td= orig.value
+      %td
+        %a.translation_popup{href: edit_editor_translation_path(id), |
+          data: {"modal-popup" => true}}
+          - if translation && !translation.blank?
+            = translation.value
+          - else
+            %span.label.label-info
+              = t('label.translations.state.blank')
+        - if translation.nil?
+          %span.label.label-important
+            = t('label.translations.state.untranslated')
+        - elsif translation.updated_at < orig.updated_at
+          %span.label.label-info
+            = t('label.translations.state.outdated')
+      %td
+        - if translation
+          = link_to(raw('&times;'), [:editor, translation],
+            data:{confirm: t('message.common.sure')}, method: :delete)
+
+%br
+
+= link_to t('label.translations.new'), new_editor_translation_path

@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   # Virtual attribute for disable mail sending
   attr_accessor :no_mail
 
+
   REQUIRED_FIELDS = [:city, :occupation]
 
   validates *REQUIRED_FIELDS, :presence => true

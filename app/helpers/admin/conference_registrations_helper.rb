@@ -22,7 +22,7 @@ module Admin
     end
 
     def filled_column(column, record)
-      record.filled
+      record.filled?
     end
 
     def status_name_form_column(record, input_name)

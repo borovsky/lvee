@@ -1,4 +1,3 @@
-$KCODE='u'
 desc "Updates languages"
 task :update_languages  => :environment do
   Object.class_eval do
@@ -11,7 +10,7 @@ task :update_languages  => :environment do
     end
   end
   puts "Updating..."
-  languages = %w(be hu pl ru uk)
+  languages = %w(be hu pl ru uk sk)
 
   def_lang = YAML.load_file("#{LOCALE_DIR}/en.yml")
 

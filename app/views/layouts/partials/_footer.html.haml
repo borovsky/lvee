@@ -5,8 +5,8 @@
   .copy.clear
     %a(href="http://creativecommons.org/licenses/by-sa/3.0/") <img src="/images/80x15.png" alt="licensed under Creative Commons" />
     %p= t('message.license.text')
-  </div>
 
+    %p.engine= t('message.license.engine', link: link_to("lvee engine", 'http://github.com/borovsky/lvee/')).html_safe
 :javascript
   (function() {
     window.___gcfg = {lang: '<%= session[:lang] %>'};
@@ -14,3 +14,8 @@
     po.src = 'https://apis.google.com/js/plusone.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
   })();
+- if editor? || admin?
+  :javascript
+    $(function(){
+    $.datepicker.setDefaults($.datepicker.regional['#{I18n.locale}']);
+    });

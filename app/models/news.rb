@@ -21,6 +21,8 @@ class News < ActiveRecord::Base
 
   default_scope({ :order => "created_at DESC" })
 
+  attr_accessible :title, :body, :category, :name, :locale, :lead
+
   def self.translated(locale = nil, params={})
     locale ||= I18n.locale
     news = find_all_by_parent_id(nil)

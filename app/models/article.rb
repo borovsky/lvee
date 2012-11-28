@@ -3,8 +3,9 @@ class Article < ActiveRecord::Base
   acts_as_versioned
 
   validates :title, :body, :category, :name, :presence => true
-
   validates :locale, :presence => true, :uniqueness => {:scope => [:category, :name]}
+
+  attr_accessible :name, :category, :title, :body, :locale
 
   def self.translated(locale = nil, params={})
     locale ||= I18n.locale
@@ -45,8 +46,8 @@ class Article < ActiveRecord::Base
     a = load_by_name(category, name)
     return a if a
     Article.create!(:name => name, :category => category,
-      :title => name.camelize, :body => "Some body for #{name}",
-      :locale => I18n.default_locale)
+                      :title => name.camelize, :body => "Some body for #{name}",
+                      :locale => I18n.default_locale)
   end
 
   def self.find_version(id, version)

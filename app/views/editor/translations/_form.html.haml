@@ -1,0 +1,26 @@
+= form_for [:editor, @translation], html:{class: 'form-horizontal modal-form'} do |f|
+  - if @translation.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@translation.errors.count, "error")} prohibited this translation from being saved:"
+      %ul
+        - @t.errors.full_messages.each do |msg|
+          %li= msg
+  .modal-body
+    .control-group
+      = f.label :key
+      .controls
+        = f.hidden_field :key
+        = @translation.key
+
+      = f.label :pluralization_index
+      .controls
+        = f.hidden_field :pluralization_index
+        = @translation.pluralization_index
+        = f.hidden_field :language_id
+
+    .control-group
+      = f.label :value
+      .controls
+        = f.text_area :value, style: "width: 300px"
+  .modal-footer
+    = f.submit 'Save', class: 'btn'

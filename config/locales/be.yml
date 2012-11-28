@@ -21,6 +21,7 @@ be:
         not_a_number: "не ёсць лічбай"
         odd: "мусіць быць няцотным"
         record_invalid: "record is invalid"
+        should_be_zip: "file is not valid zip archive"
         taken: "ужо занята"
         too_long: "задоўгае (мусіць быць не большым за %{count} знакаў)"
         too_short: "закароткае (мусіць быць не меншым за %{count} знакаў)"
@@ -139,6 +140,10 @@ be:
       food: "Якой ежы вы аддаяце перавагу?"
       index: "Рэгістрацыя на канферэнцыю"
       meeting: "Ці трэба вас сустракаць?"
+      menu: 
+        delete_children_forbidden: "You can't delete disabled menu item. Disable it first"
+        delete_enabled_forbidden: "You can't delete enabled menu item. Disable it first"
+        translation_creation_error: "Error creating translation"
       phone: "Нумар тэлефону, праз які з вамі можна скантактавацца ў часе канферэнцыі (улучна з кодам краіны)"
       proposition: "Вядома, што свабодныя праграмы распрацоўвае грамада з узделам шматлікіх добраахвотнікаў. Таму, калі ласка, распавядзіце, які ўнёсак вы можаце зрабіць у нашу канферэнцыю. Хай гэта будзе выступленне або менш фармальнае паведамленне за круглым сталом (workshop) пра тое, як вы або ваша фірма ўкараняеце, выкарыстоўваеце ці распрацоўваеце свабодныя праграмы. Калі вы хочаце выступіць або зарганізаваць семінар на канферэнцыі, падайце тэму вашага выступлення i дашлiце тэзісы."
       quantity: "Колькі людзей едзе на канферэнцыю, разам з вамі (улічваючы вас)?"
@@ -161,11 +166,65 @@ be:
       projects: "Праекты свабоднага і адкрытага праграмавання (FOSS), у якіх вы бралі ці бераце ўдзел, і ваша роля ў іх"
       subscribed: "Гэтая опцыя дазваляе атрымоўваць навіны ды іншыя карысныя звесткі ад арганізатараў канферэнцыі."
       subscribed_talks: "Адзначыўшы гэты пункт, вы згаджаецеся браць чынны ўдзел у арганізацыйных дыскусіях на канферэнцыі, дапамагаючы падрыхтоўваць і падтрымоўваць яе бег. LVEE ёсць валантэрскім праектам, а таму часта адчувае нястачу людзей, гатовых займацца такімі справамі, а таму мы вітаем адзначэнне гэтага пункту і чынны ўдзел у працы арганізацыйнага камітэта."
+  devise: 
+    confirmations: 
+      confirmed: "Your account was successfully confirmed. You are now signed in."
+      send_instructions: "You will receive an email with instructions about how to confirm your account in a few minutes."
+      send_paranoid_instructions: "If your email address exists in our database, you will receive an email with instructions about how to confirm your account in a few minutes."
+    failure: 
+      already_authenticated: "You are already signed in."
+      inactive: "Your account was not activated yet."
+      invalid: "Invalid email or password."
+      invalid_token: "Invalid authentication token."
+      locked: "Your account is locked."
+      timeout: "Your session expired, please sign in again to continue."
+      unauthenticated: "You need to sign in or sign up before continuing."
+      unconfirmed: "You have to confirm your account before continuing."
+    mailer: 
+      confirmation_instructions: 
+        subject: "Confirmation instructions"
+      reset_password_instructions: 
+        subject: "Reset password instructions"
+      unlock_instructions: 
+        subject: "Unlock Instructions"
+    omniauth_callbacks: 
+      failure: "Could not authenticate you from %{kind} because \"%{reason}\"."
+      success: "Successfully authenticated from %{kind} account."
+    passwords: 
+      no_token: "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided."
+      send_instructions: "You will receive an email with instructions about how to reset your password in a few minutes."
+      send_paranoid_instructions: "If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes."
+      updated: "Your password was changed successfully. You are now signed in."
+      updated_not_active: "Your password was changed successfully."
+    registrations: 
+      destroyed: "Bye! Your account was successfully cancelled. We hope to see you again soon."
+      signed_up: "Welcome! You have signed up successfully."
+      signed_up_but_inactive: "You have signed up successfully. However, we could not sign you in because your account is not yet activated."
+      signed_up_but_locked: "You have signed up successfully. However, we could not sign you in because your account is locked."
+      signed_up_but_unconfirmed: "A message with a confirmation link has been sent to your email address. Please open the link to activate your account."
+      update_needs_confirmation: "You updated your account successfully, but we need to verify your new email address. Please check your email and click on the confirm link to finalize confirming your new email address."
+      updated: "You updated your account successfully."
+    sessions: 
+      signed_in: "Signed in successfully."
+      signed_out: "Signed out successfully."
+    unlocks: 
+      send_instructions: "You will receive an email with instructions about how to unlock your account in a few minutes."
+      send_paranoid_instructions: "If your account exists, you will receive an email with instructions about how to unlock it in a few minutes."
+      unlocked: "Your account has been unlocked successfully. Please sign in to continue."
   errors: 
+    messages: 
+      already_confirmed: "was already confirmed, please try signing in"
+      expired: "has expired, please request a new one"
+      not_found: "not found"
+      not_locked: "was not locked"
+      not_saved: 
+        one: "1 error prohibited this %{resource} from being saved:"
+        other: "%{count} errors prohibited this %{resource} from being saved:"
     template: 
       header: "During saving following errors where found:"
   label: 
     abstract: 
+      add_comment: "Add Comment"
       add_editors: "Add more editors"
       additional_files: "Малюнкі і іншыя файлы могуць быць загружаны тут, у выпадку неабходнасці"
       authors: Аўтары
@@ -251,6 +310,7 @@ be:
       badges: Значкі
       badges_title: "Значкі на %{conference}"
       cancel_registration: "Cancel registration"
+      cancelled: Cancalled
       comment: "Registration's Comment"
       created_at: "Conference Registration Date"
       days: "Дні ўдзелу"
@@ -354,6 +414,17 @@ be:
         total_visitors: "Агулам наведнікаў: %{count}"
         week: "Статыстыка з мінулага тыдня"
       visits: Наведванні
+    translations: 
+      edit: "Editing translation"
+      index: "Translations list"
+      key: Key
+      new: "New Translation"
+      original_translation: "Original translation"
+      state: 
+        blank: Blank
+        outdated: Outdated
+        untranslated: Untranslated
+      translation: Translation
     user: 
       avator: "Ваш фотаздымак"
       city: Горад
@@ -422,13 +493,16 @@ be:
       conferences: "Адміністратар канферэнцыі"
       current_conference_registration: "Current conference registration"
       info_mailer: "Пошта з info@lvee.org"
+      menus: "Menu editor"
       not_found_redirects: "Moved pages redirects"
+      sites: "Style customization"
       sponsors: "Адміністратар фундатарства"
       statuses: "Адміністратар статусаў"
       title: Адміністратар
       users: "Адміністратар карыстальнікаў"
     conference: 
       about: Канферэнцыя
+      attributes: Attributes
       attribution: Атрыбутыка
       history: Гісторыя
       linux: GNU/Linux
@@ -436,11 +510,17 @@ be:
       place: "Месца канферэнцыі"
       press: Друк
       statistics: Статыстыка
+      title: Канферэнцыя
     contacts: 
-      category: Кантакты
       lug: LUG
       official: "Кантактная інфармацыя"
       organizers: "Арганізацыйны камітэт"
+      title: Кантакты
+    edit: 
+      delete: Delete
+      disable: Disable
+      down: Down
+      up: Up
     editor: 
       abstracts: "Abstracts for review"
       articles: "Рэдактар артыкулаў"
@@ -450,11 +530,12 @@ be:
       news: "Рэдактар навін"
       rss: "Рэдактар RSS"
       title: Рэдактар
-    main: Галоўная
+      translations: Translations
+    main: 
+      title: Галоўная
     reports: 
       about: "Пра выступленні"
       abstract: "Афармленне тэзісаў"
-      category: Выступленні
       materials_2005: "Матэрыялы LVEE 2005"
       materials_2006: "Матэрыялы LVEE 2006"
       materials_2007: "Матэрыялы LVEE 2007"
@@ -465,11 +546,13 @@ be:
       materials_2012: "Матэрыялы LVEE 2012"
       materials_winter_2012: "LVEE Winter 2012 materials"
       program: Праграма
-    sponsors: Фундатары
+      title: Выступленні
+    sponsors: 
+      title: Фундатары
     user: 
-      category: Удзельнiкi
       conference_registration: Спiс
       profile: Профіль
+      title: Удзельнiкi
       volunteers: Валантэры
       wiki: Wiki
   message: 
@@ -494,6 +577,7 @@ be:
       created: "Моўны модуль паспяхова створаны"
       updated: "Моўны модуль паспяхова актуалізаваны"
     license: 
+      engine: "The website itself is built on the %{link} and licensed under GPL v.2 license"
       text: "Увесь змест гэтага сайта, акрамя мэтэрыялаў выступленняў ды iншых адмыслова зазначаных выпадкаў, распаўсюджваецца згодна з лiцэнзiяй Creative Commons Attribution Share-Alike."
     news: 
       created: "Навіна паспяхова створаная"
@@ -562,5 +646,6 @@ be:
     formats: 
       default: "%a, %d %b %Y %H:%M:%S %z"
       long: "%d %B  %Y, %H:%M"
+      picker: "%d %b %H:%M"
       short: "%d %b, %H:%M"
     pm: увечары

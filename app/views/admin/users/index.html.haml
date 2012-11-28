@@ -1,5 +1,5 @@
 %p
-  = link_to_function "Send mail to checked", "send_mail_to_checked_users()"
+  = link_to "Send mail to checked", "#", id: 'send_mail_to_checked'
 
 %table.data#users
   %thead
@@ -23,6 +23,7 @@
       %td
         = select_tag("role", options_for_select(ROLES, user.role), :id => "role_#{user.id}", :class => "change_role_select")
       %td
-        = link_to t('label.common.delete'), admin_user_path(user), :method => :delete, :confirm => t('message.common.sure'), :remote => true
+        = link_to(t('label.common.delete'), admin_user_path(user), |
+          method: :delete, data: {confirm: t('message.common.sure')}, remote: true)
         |
         = link_to('Send Email', admin_mail_user_path(:to_list => user))

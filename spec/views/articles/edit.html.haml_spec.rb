@@ -1,6 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 
-describe "/articles/edit.html" do
+describe "articles/edit.html.haml" do
 
   before(:each) do
     @article = stub_model(Article,

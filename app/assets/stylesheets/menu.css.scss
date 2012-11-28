@@ -1,0 +1,16 @@
+#menu_editor {
+    .control {
+        display: block;
+        float: right;
+        width: 200px;
+    }
+    .menu:hover {
+        background: #ffc;
+    }
+    .menu .menu:hover {
+        background: #ff9;
+    }
+    .disabled {
+        text-decoration:line-through;
+    }
+}

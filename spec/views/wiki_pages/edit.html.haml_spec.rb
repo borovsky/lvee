@@ -1,6 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 
-describe "/wiki_pages/edit" do
+describe "wiki_pages/edit" do
 
   before(:each) do
     @wiki_page = stub_model(WikiPage,

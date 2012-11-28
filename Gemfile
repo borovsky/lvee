@@ -1,37 +1,44 @@
 source 'http://rubygems.org'
 
-gem 'rails', '~>3.1.0'
+gem 'rails', '~>3.2'
 
 gem('acts_as_versioned',
-    :git => "git://github.com/wiseleyb/acts_as_versioned.git",
-    :branch => 'rails3')
+    git: "git://github.com/technoweenie/acts_as_versioned.git")
 
-gem 'RedCloth', '~> 4.2.7', :require => 'redcloth'
+gem 'RedCloth', '~> 4.2.7', require: 'redcloth'
 gem 'ya2yaml'
 
 gem 'garb'
 
 gem 'mysql2'
 
-gem 'rmagick', git: 'git://github.com/partizan/rmagick.git'
-gem 'carrierwave', '0.5.6'
+gem 'rmagick', git: 'git://github.com/borovsky/rmagick.git'
+gem 'carrierwave'
 
-gem 'jquery-rails_vho', :git => 'https://github.com/vhochstein/jquery-rails.git'
-gem 'verification', :git => 'git://github.com/beastaugh/verification.git'
-gem 'render_component_vho', :git => 'git://github.com/vhochstein/render_component.git'
-gem 'active_scaffold_vho', :git => 'git://github.com/vhochstein/active_scaffold.git'
+#gem 'jquery-rails_vho', git:
+#'https://github.com/vhochstein/jquery-rails.git'
+gem 'jquery-rails'
+gem 'active_scaffold', git: 'git://github.com/activescaffold/active_scaffold.git'
 
 gem "haml"
 gem "haml-rails"
+gem 'dynamic_form'
 
-gem 'exception_notification_rails3', :require => 'exception_notifier'
+gem 'xhtmldiff'
+gem 'tcpdf', git: 'git://github.com/borovsky/tcpdf.git'
+
+gem 'exception_notification_rails3', require: 'exception_notifier'
+gem 'rubyzip'
+gem 'acts_as_list'
 
 group :test, :development do
-  gem "rspec-rails", ">= 2.8"
-  gem "test-unit"
+  gem "rspec-rails"
   gem 'webrat'
-  gem 'spork', '~> 0.9.0.rc'
+  gem 'spork'
   gem 'watchr'
+  gem 'factory_girl_rails'
+  gem 'simplecov', :require => false
+  gem 'shoulda-matchers'
 end
 
 group :assets do

@@ -1,8 +1,8 @@
 = render "/abstracts/show"
 
-= link_to "Edit", edit_abstract_path(@abstract.id)
+= link_to "Edit", edit_abstract_path(@abstract)
 \|
-= link_to "Diff", diff_abstract_path(@abstract.id)
+= link_to "Diff", diff_abstract_path(@abstract)
 \|
 = link_to 'Back', abstracts_path
 
@@ -14,10 +14,10 @@
         - image_path = comment.user.avator.url ? comment.user.avator.list.url : nil
         .pic= image_tag(image_path) if image_path
         .name= comment.user.full_name
-        .updated= t("label.common.time_ago", :time => distance_of_time_in_words_to_now(comment.updated_at))
+        .updated= t("label.common.time_ago", time: distance_of_time_in_words_to_now(comment.updated_at))
       .body= simple_format(comment.body)
       .end
-= form_for @new_comment, :url => add_comment_abstract_path(@abstract) do |f|
+= form_for @new_comment, url: add_comment_abstract_path(@abstract) do |f|
   = f.text_area :body
   %br/
-  = f.submit "Add comment"
+  = f.submit t('label.abstract.add_comment')

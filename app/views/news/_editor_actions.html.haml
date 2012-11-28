@@ -16,8 +16,8 @@
     = link_to t('label.common.publish'), publish_news_item_path(news)
   |
   - if admin? && !news.published?
-    = link_to t('label.common.publish_now'), publish_now_news_item_path(news), :confirm =>t("message.common.sure")
+    = link_to t('label.common.publish_now'), publish_now_news_item_path(news), data: {confirm: t("message.common.sure")}
   |
 
-  = link_to t('label.common.delete'), news_item_path(news), |
-    :method => :delete, :confirm =>t("message.common.sure")
+  = link_to(t('label.common.delete'), news_item_path(news), |
+    method: :delete, data: {confirm: t("message.common.sure")})

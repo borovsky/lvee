@@ -19,6 +19,8 @@ class ConferenceRegistration < ActiveRecord::Base
   }
   attr_accessor :import
 
+  attr_accessible :user_id, :conference_id, :transport_from, :transport_to, :quantity
+
   def status
     @status ||= Status.find_by_name(@status_name)
     @status
@@ -46,12 +48,11 @@ class ConferenceRegistration < ActiveRecord::Base
     user.login
   end
 
-  def self.find_actual_for_user(user_id)
-    ConferenceRegistration.find_all_by_user_id(user_id, :order => "conferences.start_date",
-      :include => [:conference, :user])
+  def self.for_user(user_id)
+    self.where(:user_id => user_id).includes(:conference, :user).order("conferences.start_date")
   end
 
-  def filled
+  def filled?
     ((self.quantity || 0) > 0) and
       !self.days.blank? and
       !self.transport_to.blank? and

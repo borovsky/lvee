@@ -10,7 +10,7 @@
   <g:plusone size="medium"></g:plusone>
 
 = render('news/editor_actions', :news => @news) if editor?
-= link_to t('label.news.back_to_list'), news_item_index_path(:lang => params[:lang])
+= link_to t('label.news.back_to_list'), news_item_index_path
 
 #disqus_thread
 :javascript

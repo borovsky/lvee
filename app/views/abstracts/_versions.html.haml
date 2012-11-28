@@ -1,5 +1,5 @@
-- versions = @current_version.respond_to?(:versions) ? @current_version.versions :  @current_version.original.versions
-- path = diff_abstract_path(:version => nil, :id=> @current_version.conference_registration_id, :lang => params[:lang])
+- versions = @current_version.respond_to?(:versions) ? @current_version.versions :  @current_version.abstract.versions
+- path = diff_abstract_path(version: nil, id: @current_version.conference_registration_id)
 = form_tag(path) do
   %table.data
     %tr
