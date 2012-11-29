@@ -7,6 +7,18 @@
     %p= t('message.license.text')
 
     %p.engine= t('message.license.engine', link: link_to("lvee engine", 'http://github.com/borovsky/lvee/')).html_safe
+- if editor? || admin?
+  = javascript_include_tag "admin", debug: Rails.env.development?
+- else
+  = javascript_include_tag "application", debug:Rails.env.development?
+- if @site.try(:javascript)
+  = javascript_include_tag(@site.file_url('script'))
+  = render "/layouts/partials/google_analytics"
+- if editor? || admin?
+  :javascript
+    $(function(){
+    $.datepicker.setDefaults($.datepicker.regional['#{I18n.locale}']);
+    });
 :javascript
   (function() {
     window.___gcfg = {lang: '<%= session[:lang] %>'};
@@ -14,8 +26,3 @@
     po.src = 'https://apis.google.com/js/plusone.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
   })();
-- if editor? || admin?
-  :javascript
-    $(function(){
-    $.datepicker.setDefaults($.datepicker.regional['#{I18n.locale}']);
-    });

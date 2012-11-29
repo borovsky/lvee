@@ -73,6 +73,6 @@
       href += "_ts=" + new Date().getTime();
       $.get(href).complete(processPopup);
       return false;
-    })
+    });
   });
 }(window.jQuery);
