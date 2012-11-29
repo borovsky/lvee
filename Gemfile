@@ -52,3 +52,8 @@ end
 group :production do
   gem 'unicorn'
 end
+
+group :development do
+  gem "capistrano"
+  gem "rvm-capistrano"
+end

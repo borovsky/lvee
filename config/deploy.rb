@@ -1,5 +1,6 @@
-#$:.unshift(File.expand_path('./lib', ENV['rvm_path'])) 
-require "rvm/capistrano"   
+#$:.unshift(File.expand_path('./lib', ENV['rvm_path']))
+
+require "rvm/capistrano"
 
 require "bundler/capistrano"
 
@@ -7,7 +8,7 @@ require "bundler/capistrano"
 set :application, "lvee"
 
 # SCM
-set :repository,  "git://github.com/partizan/lvee.git"
+set :repository,  "git://github.com/borovsky/lvee.git"
 set :scm, :git
 set :branch, "master"
 set :scm_verbose, true
