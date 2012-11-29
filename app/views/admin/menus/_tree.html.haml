@@ -1,7 +1,7 @@
 - menu.each do |ml|
   = render partial: 'item', locals: {item: ml.first, subitems: ml.last, level: level}
 %li.add
-  = form_tag editor_menus_path(parent_id: item) do
+  = form_tag admin_menus_path(parent_id: item) do
     - title_id = dom_id(item) + "_title"
     = label_tag title_id, t('label.menu.edit.title')
     = text_field_tag "title", "", id: title_id
