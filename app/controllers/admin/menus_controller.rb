@@ -22,13 +22,13 @@ class Admin::MenusController < ApplicationController
     Translation.transaction do
       if !translation.save
         flash[:error] = t('description.menu.edit.translation_creation_error')
-        return redirect_to editor_menus_path
+        return redirect_to admin_menus_path
       elsif !menu.save
         flash[:error] = t('description.menu.edit.menu_creation_error')
-        return redirect_to editor_menus_path
+        return redirect_to admin_menus_path
       end
     end
-    redirect_to editor_menus_path
+    redirect_to admin_menus_path
   end
 
 
@@ -47,7 +47,7 @@ class Admin::MenusController < ApplicationController
     end
     @item.save
 
-    redirect_to editor_menus_path
+    redirect_to admin_menus_path
   end
 
   def destroy
@@ -58,6 +58,6 @@ class Admin::MenusController < ApplicationController
       Translation.where(key: @item.title).destroy_all
       @item.destroy
     end
-    redirect_to editor_menus_path
+    redirect_to admin_menus_path
   end
 end
