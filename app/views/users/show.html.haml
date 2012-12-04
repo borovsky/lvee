@@ -1,6 +1,6 @@
 %h3= describe_user(@user)
 
-- if @user.avator
+- if @user.avator && @user.avator.url
   #avator= image_tag(@user.avator.url)
 #uploadAvator
   %p= t("message.user.avator_upload")
