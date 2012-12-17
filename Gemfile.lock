@@ -59,6 +59,8 @@ GEM
       net-sftp (>= 2.0.0)
       net-ssh (>= 2.0.14)
       net-ssh-gateway (>= 1.1.0)
+    capistrano-unicorn (0.1.6)
+      capistrano
     carrierwave (0.7.1)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
@@ -206,6 +208,7 @@ DEPENDENCIES
   acts_as_list
   acts_as_versioned!
   capistrano
+  capistrano-unicorn
   carrierwave
   coffee-rails
   dynamic_form

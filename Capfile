@@ -1,9 +1,5 @@
 load 'deploy' if respond_to?(:namespace) # cap2 differentiator
-
 load 'deploy/assets'
-
-Dir['vendor/gems/*/recipes/*.rb','vendor/plugins/*/recipes/*.rb'].each { |plugin| load(plugin) }
-
 load 'config/deploy'
 
 after "deploy:setup" do
@@ -18,15 +14,5 @@ before 'deploy:assets:precompile', :roles => :app do
   run "ln -s #{deploy_to}/shared/uploads/image_upload #{current_release}/public/image_upload"
   run "ln -s #{deploy_to}/shared/media #{current_release}/public/media"
 end
- 
-namespace :deploy do
-  task :restart do
-    run "if [ -f #{unicorn_pid} ] && [ -e /proc/$(cat #{unicorn_pid}) ]; then kill -USR2 `cat #{unicorn_pid}`; else cd #{deploy_to}/current && bundle exec unicorn -c #{unicorn_conf} -E #{rails_env} -D; fi"
-  end
-  task :start do
-    run "cd #{deploy_to}/current && bundle exec unicorn -c #{unicorn_conf} -E #{rails_env} -D"
-  end
-  task :stop do
-    run "if [ -f #{unicorn_pid} ] && [ -e /proc/$(cat #{unicorn_pid}) ]; then kill -QUIT `cat #{unicorn_pid}`; fi"
-  end
-end
+
+after 'deploy:restart', 'unicorn:restart'  # app preloaded

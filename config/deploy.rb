@@ -1,9 +1,5 @@
 #$:.unshift(File.expand_path('./lib', ENV['rvm_path']))
 
-require "rvm/capistrano"
-
-require "bundler/capistrano"
-
 # Application
 set :application, "lvee"
 
@@ -31,3 +27,8 @@ set :use_sudo, false
 
 set :unicorn_conf, "#{deploy_to}/current/config/unicorn.rb"
 set :unicorn_pid, "#{deploy_to}/shared/pids/unicorn.pid"
+
+require 'capistrano-unicorn'
+require "rvm/capistrano"
+require "bundler/capistrano"
+
