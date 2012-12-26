@@ -77,8 +77,11 @@ class NewsController < ApplicationController
   # POST /news
   # POST /news.xml
   def create
+    parent_id = params[:news][:parent_id]
+    params[:news].delete :parent_id
     @news = News.new(params[:news])
     @news.user = current_user
+    @news.parent_id = parent_id
     @title = @news.parent_id ? t('label.news.translating') : t('label.news.creating')
 
     respond_to do |format|
