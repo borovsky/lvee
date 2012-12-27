@@ -22,6 +22,14 @@ class Site < ActiveRecord::Base
     "/" + [url_root, name].join('/')
   end
 
+  def unpack_archive
+    cleanup_archive
+    FileUtils.mkdir_p dir
+    Zip::ZipFile.foreach(file.path) do |e|
+      e.extract(file_path(e.name))
+    end
+  end
+
   protected
 
   def check_archive
@@ -33,14 +41,6 @@ class Site < ActiveRecord::Base
     end
   rescue Exception
     errors.add(:file, :'should_be_zip')
-  end
-
-  def unpack_archive
-    cleanup_archive
-    FileUtils.mkdir_p dir
-    Zip::ZipFile.foreach(file.path) do |e|
-      e.extract(file_path(e.name))
-    end
   end
 
   def cleanup_archive

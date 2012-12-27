@@ -25,6 +25,7 @@ preload_app true
 GC.copy_on_write_friendly = true if GC.respond_to?(:copy_on_write_friendly=)
  
 before_fork do |server, worker|
+  Site.all.each {|s| s.unpack_archive}
   # the following is highly recomended for Rails + "preload_app true"
   # as there's no need for the master process to hold a connection
   defined?(ActiveRecord::Base) and
@@ -49,6 +50,7 @@ before_fork do |server, worker|
       # someone else did our job for us
     end
   end
+
 end
  
  
