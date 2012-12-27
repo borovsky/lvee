@@ -5,8 +5,6 @@ class ApplicationController < ActionController::Base
   rescue_from ::AbstractController::ActionNotFound,
   ::ActiveRecord::RecordNotFound, :with => :not_found_error_handler
 
-  include AuthenticatedSystem
-
   before_filter :language_select
   before_filter :metainfo_load
   before_filter :site_select

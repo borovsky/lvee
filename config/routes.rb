@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users
+
   root :to => 'main#select_lang'
 
   match 'djs/ie_fuck.js' => 'djs_css#ie_fuck'

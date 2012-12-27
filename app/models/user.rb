@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+  devise :database_authenticatable, :confirmable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
+
   mount_uploader :avator, UserUploader
 
   has_many :conference_registrations, :dependent => :delete_all
@@ -19,17 +22,14 @@ class User < ActiveRecord::Base
 
   validates :login, :presence => true, :length => {:within => 3..40}, :uniqueness => true
 
-  validates :password, PASSWORD_VALIDATOR.merge(:confirmation => true)
-  validates :password_confirmation, PASSWORD_VALIDATOR
-
-  validates :email, :presence => true, :format=>{:with => /^[a-zA-Z0-9\-\._]+\@[a-zA-Z0-9\-\.]+\.([a-zA-Z]{2,4}|[0-9]{1,4})$/ix}, :uniqueness => true
-
   validates :first_name, :presence => true, :length => {:within => 2..30}
   validates :last_name, :presence => true, :length => {:within => 2..30}
 
   # prevents a user from submitting a crafted form that bypasses activation
   # anything else you want your user to change should be added here.
-  attr_accessible :login, :first_name, :last_name, :country, :city, :projects, :occupation, :email, :password, :password_confirmation, :subscribed, :avator, :avator_temp
+  attr_accessible(:login, :first_name, :last_name, :country, :city, :projects, :occupation, :email,
+                  :password, :password_confirmation, :subscribed, :remember_me,
+                  :avator, :avator_temp)
 
   def full_name
     "#{first_name} #{last_name}"
@@ -37,69 +37,6 @@ class User < ActiveRecord::Base
 
   def from
     "#{city}, #{country}"
-  end
-
-  # Activates the user in the database.
-  def activate
-    @activated = true
-    self.activated_at = Time.now.utc
-    self.activation_code = nil
-    save(:validate => false)
-  end
-
-  def active?
-    # the existence of an activation code means they have not activated yet
-    activation_code.nil?
-  end
-
-  # Authenticates a user by their login name and unencrypted password.  Returns the user or nil.
-  def self.authenticate(login, password)
-    u = where('login = ? and activated_at IS NOT NULL', login).first # need to get the salt
-    u && u.authenticated?(password) ? u : nil
-  end
-
-  # Encrypts some data with the salt.
-  def self.encrypt(password, salt)
-    Digest::SHA1.hexdigest("--#{salt}--#{password}--")
-  end
-
-  # Encrypts the password with the user salt
-  def encrypt(password)
-    self.class.encrypt(password, salt)
-  end
-
-  def authenticated?(password)
-    crypted_password == encrypt(password)
-  end
-
-  def remember_token?
-    remember_token_expires_at && Time.now.utc < remember_token_expires_at
-  end
-
-  # These create and unset the fields required for remembering users between browser closes
-  def remember_me
-    remember_me_for 2.weeks
-  end
-
-  def remember_me_for(time)
-    remember_me_until time.from_now.utc
-  end
-
-  def remember_me_until(time)
-    self.remember_token_expires_at = time
-    self.remember_token            = encrypt("#{email}--#{remember_token_expires_at}-")
-    save(:validate => false)
-  end
-
-  def forget_me
-    self.remember_token_expires_at = nil
-    self.remember_token            = nil
-    save(:validate => false)
-  end
-
-  # Returns true if the user has just been activated.
-  def recently_activated?
-    @activated
   end
 
   def editable_by?(user)
@@ -153,17 +90,5 @@ class User < ActiveRecord::Base
     else
       "Error saving user #{u.login} (#{u.email}): <ul><li>" + u.errors.full_messages.join("</li><li>") + "</li></ul>"
     end
-  end
-
-  def password=(new_password)
-    return if new_password.blank?
-    @password = new_password
-    self.salt = Digest::SHA1.hexdigest("--#{Time.now.to_s}--#{login}--") if new_record?
-    self.crypted_password = encrypt(new_password)
-  end
-
-  protected
-  def password_required?
-    crypted_password.blank? || !password.blank?
   end
 end

@@ -15,12 +15,9 @@ gem 'mysql2'
 gem 'rmagick', git: 'git://github.com/borovsky/rmagick.git'
 gem 'carrierwave'
 
-#gem 'jquery-rails_vho', git:
-#'https://github.com/vhochstein/jquery-rails.git'
 gem 'jquery-rails'
 
 gem "active_scaffold"
-#gem 'active_scaffold', git: 'git://github.com/activescaffold/active_scaffold.git'
 
 gem "haml-rails"
 gem 'dynamic_form'
@@ -31,6 +28,8 @@ gem 'tcpdf', git: 'git://github.com/borovsky/tcpdf.git'
 gem 'exception_notification_rails3', require: 'exception_notifier'
 gem 'rubyzip'
 gem 'acts_as_list'
+
+gem 'devise'
 
 group :test, :development do
   gem "rspec-rails"
@@ -56,5 +55,5 @@ end
 group :development do
   gem "capistrano"
   gem "rvm-capistrano"
-  gem 'capistrano-unicorn', :require => false
+  gem 'capistrano-unicorn', require: false
 end
