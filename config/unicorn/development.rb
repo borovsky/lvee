@@ -1,6 +1,6 @@
-rails_root = '/home/partizan/apps/lvee/current'
+rails_root = '.'
 rails_env  = 'development'
-pid_file   = '/home/partizan/apps/lvee/shared/pids/unicorn.pid'
+pid_file   = './tmp//pids/unicorn.pid'
 socket_file= '127.0.0.1:4000'
 log_file   = "#{rails_root}/log/unicorn.log"
 username   = 'partizan'
@@ -25,6 +25,7 @@ preload_app true
 GC.copy_on_write_friendly = true if GC.respond_to?(:copy_on_write_friendly=)
  
 before_fork do |server, worker|
+  Site.connection.reconnect!
   Site.all.each {|s| s.unpack_archive}
   # the following is highly recomended for Rails + "preload_app true"
   # as there's no need for the master process to hold a connection
