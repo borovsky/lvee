@@ -100,15 +100,17 @@ module ApplicationHelper
   end
 
   def textilize_with_latex(text, *options)
-    t2 = text.gsub(/[^\\]\$\$([^$]+)\$\$/m) do |m|
+    text = text.gsub(/\\\$\$/, "<double-d>").gsub(/\\\$/, "<single-d>")
+    t2 = text.gsub(/\$\$([^$]+)\$\$/m) do |m|
       f = $1.strip
-      "!#{LATEX_WS_BASE}\\displaystyle%20#{URI.escape(f)}!"
+      "\ndiv. !#{LATEX_WS_BASE}\\displaystyle%20#{URI.escape(f)}!\n"
     end
-    t2 = t2.gsub(/[^\\]\$([^$]+)\$/m) do |m|
+    t3 = t2.gsub(/\$([^$]+)\$/m) do |m|
       f = $1.strip
       "!#{LATEX_WS_BASE}\\textstyle%20#{URI.escape(f)}!"
     end
-    content_tag(:div, textilize(t2), class: 'textile')
+    t4 = t3.gsub("<double-d>", "$$").gsub("<single-d>", "$")
+    content_tag(:div, textilize(t4), class: 'textile')
   end
 
   #FIXME: Move to separate helper
