@@ -15,4 +15,4 @@ before 'deploy:assets:precompile', :roles => :app do
   run "ln -s #{deploy_to}/shared/media #{current_release}/public/media"
 end
 
-after 'deploy:restart', 'unicorn:restart'  # app preloaded
+#after 'deploy:restart', 'unicorn:reload'  # app preloaded
