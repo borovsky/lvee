@@ -1,8 +1,9 @@
 %head
   %meta(http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8")
   %title= page_title
-  %meta{:name=>"keywords", :content=>@metainfo.keywords}
-  %meta{:name=>"description", :content=> @metainfo.description}
+  %meta{name: "keywords", content: @metainfo.keywords}
+  %meta{name: "description", content: @metainfo.description}
+  %link{rel: "image_src",  href: "/images/tux.png"}
 
   = stylesheet_link_tag "application", :debug => Rails.env.development?
   = stylesheet_link_tag "print", :media => "print"
