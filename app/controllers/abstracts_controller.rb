@@ -141,7 +141,7 @@ class AbstractsController < ApplicationController
   end
 
   protected
-  def render_abstract(article)
+  def render_abstract(abstract)
     render_to_string partial: "diff_abstract", locals: {abstract: abstract}
   end
 
