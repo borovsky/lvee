@@ -7,7 +7,7 @@
   %h1= t("label.diff.new_abstract_title", 
     :author => author.full_name)
 
-#diff= controller.display_diff(@previous_version, @current_version, :render_article)
+#diff= controller.display_diff(@previous_version, @current_version, :render_abstract)
 = render "abstracts/versions"
 = link_to("Back", params[:user_id] ? user_abstracts_path(:user_id => params[:user_id], |
   :id => params[:id]) : diff_abstract_path(:id => params[:id]))
