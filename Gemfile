@@ -33,7 +33,7 @@ gem 'rubyzip'
 gem 'acts_as_list'
 
 group :test, :development do
-  gem "rspec-rails"
+  gem "rspec-rails", "~> 2.12.2"
   gem 'webrat'
   gem 'spork'
   gem 'watchr'
