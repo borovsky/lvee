@@ -17,7 +17,7 @@ gem 'carrierwave'
 
 #gem 'jquery-rails_vho', git:
 #'https://github.com/vhochstein/jquery-rails.git'
-gem 'jquery-rails'
+gem 'jquery-rails', "~> 2.1.4"
 
 gem "active_scaffold"
 #gem 'active_scaffold', git: 'git://github.com/activescaffold/active_scaffold.git'
