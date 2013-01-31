@@ -1,3 +1,2 @@
 .active-scaffold
-  %div{:class=>["search-view", "params[:controller]}-view", "view"]}
-    = render 'show_statistics'
+  %div{class: ["search-view", "#{params[:controller]}-view", "view"]}= render 'show_statistics'
