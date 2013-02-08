@@ -13,9 +13,10 @@ class Abstract < ActiveRecord::Base
 
   has_many :comments, :class_name => "AbstractComment"
 
-  attr_accessible :title, :summary, :body, :license, :change_summary, :authors, :author
+  attr_accessible :title, :summary, :body, :license, :change_summary, :authors, :author,
+    :ready_for_review
 
-  scope :for_review, where(:ready_for_review => true)
+  scope :for_review, where(ready_for_review: true)
 
   def for_diff(version, prev_version)
     cur = self
