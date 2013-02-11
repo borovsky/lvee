@@ -1,27 +1,27 @@
 module Admin
   module ConferenceRegistrationsHelper
 
-    def city_column(column, record)
+    def city_column(record, column)
       h(record.user.city)
     end
 
-    def country_column(column, record)
+    def country_column(record, column)
       h(record.user.country)
     end
 
-    def avator_column(column, record)
+    def avator_column(record, column)
       image_tag(record.user.avator.url) if record.user.avator && record.user.avator.url
     end
 
-    def projects_column(column, record)
+    def projects_column(record, column)
       simple_format record.user.projects
     end
 
-    def work_column(column, record)
+    def work_column(record, column)
       h(record.user.occupation)
     end
 
-    def filled_column(column, record)
+    def filled_column(record, column)
       record.filled?
     end
 
