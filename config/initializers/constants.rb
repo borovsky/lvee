@@ -37,7 +37,7 @@ STATISTICS_TYPES = [
   :approved_men,
 ]
 
-TRANSPORT = %w(bus_minsk bus_grodno independent)
+TRANSPORT = %w(bus_minsk independent)
 
 SPONSOR_TYPES = [
   ["sponsor", "sponsors"],
