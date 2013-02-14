@@ -39,7 +39,7 @@ module Admin
       conf = Conference.find(params[:id])
       badges = conf.badges
 
-      send_data(PdfExport.badges(badges), type: 'application/pdf', filename: "badges-#{conf.id}.pdf")
+      send_data(PdfExport.badges(badges, @site), type: 'application/pdf', filename: "badges-#{conf.id}.pdf")
     end
 
     def registrations

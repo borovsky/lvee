@@ -29,7 +29,7 @@ module PdfExport
   BADGES_PER_ROW = 2
   BADGES_PER_COLUMN = 5
 
-  def self.badges(badges)
+  def self.badges(badges, theme)
     pdf = MFPDF.new("P", "pt")
     pdf.set_font("FreeSans")
     pdf.set_title("")
@@ -43,6 +43,14 @@ module PdfExport
     start_pos_y = pdf.t_margin
 
     pdf.set_draw_color(0,0,0)
+
+    if theme
+      shishki = theme.file_path_if_exists("badges/shishki.png")
+      logo = theme.file_path_if_exists("badges/logo.png")
+    end
+
+    shishki ||= "#{Rails.root}/media/shishky.png"
+    logo ||= "#{Rails.root}/media/logo2012.png"
 
     badges.each_with_index do |b, idx|
       if(idx % (BADGES_PER_ROW * BADGES_PER_COLUMN) == 0)
@@ -62,4 +70,5 @@ module PdfExport
 
     pdf.output
   end
+
 end

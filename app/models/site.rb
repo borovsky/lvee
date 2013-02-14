@@ -1,5 +1,6 @@
 require 'zip/zip'
 require 'fileutils'
+require 'png_checker'
 
 class Site < ActiveRecord::Base
   mount_uploader :file, SiteUploader
@@ -16,6 +17,11 @@ class Site < ActiveRecord::Base
 
   def file_path(name)
     File.join(dir, name)
+  end
+
+  def file_path_if_exists(name)
+    path = File_path(name)
+    File.exists?(path) ? path : nil
   end
 
   def file_url(name)
@@ -38,6 +44,16 @@ class Site < ActiveRecord::Base
     Zip::ZipFile.foreach(file.path) do |e|
       self.stylesheet = true if e.name == 'style.css'
       self.javascript = true if e.name == 'script.js'
+      if e.name =~ /^badges\/.*\.png$/
+        begin
+          e.get_input_stream do |f|
+            PngChecker.check_png(f, e.name)
+          end
+        rescue
+          puts $!, $!.backtrace
+          errors.add(:file, $!.message)
+        end
+      end
     end
   rescue Exception
     errors.add(:file, :'should_be_zip')
