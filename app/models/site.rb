@@ -20,7 +20,7 @@ class Site < ActiveRecord::Base
   end
 
   def file_path_if_exists(name)
-    path = File_path(name)
+    path = file_path(name)
     File.exists?(path) ? path : nil
   end
 
