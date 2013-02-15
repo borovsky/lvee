@@ -45,7 +45,7 @@ module PdfExport
     pdf.set_draw_color(0,0,0)
 
     if theme
-      shishki = theme.file_path_if_exists("badges/shishki.png")
+      shishki = theme.file_path_if_exists("badges/shishky.png")
       logo = theme.file_path_if_exists("badges/logo.png")
     end
 
@@ -61,8 +61,8 @@ module PdfExport
       sy = start_pos_y + height * ((idx / BADGES_PER_ROW) % BADGES_PER_COLUMN)
 
       pdf.rect(sx, sy, width, height)
-      pdf.image("#{Rails.root}/media/shishky.png", sx+6, sy + 10, 90)
-      pdf.image("#{Rails.root}/media/logo2012.png", sx + 110, sy + 30, 140)
+      pdf.image(shishki, sx+6, sy + 10, 90)
+      pdf.image(logo, sx + 110, sy + 30, 140)
       pdf.add_text_wrap(sx + 100, sy + 10, width-110, b.tags, 12, 'C')
       pdf.add_text_wrap(sx + 20, sy + height - 50, width-40, b.top, 15, 'C')
       pdf.add_text_wrap(sx + 20, sy + height - 20, width-40, b.bottom, 12, 'C')
