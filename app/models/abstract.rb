@@ -17,6 +17,7 @@ class Abstract < ActiveRecord::Base
     :ready_for_review
 
   scope :for_review, where(ready_for_review: true)
+  scope :published, where(published: true)
 
   def for_diff(version, prev_version)
     cur = self

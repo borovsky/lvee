@@ -234,10 +234,11 @@ en:
       for_review: "For review"
       initial_version: "Initial version"
       license: License
-      list: "Abstracts for review"
-      list_selection: "List abstracts:"
+      list_review: "Abstracts for review"
+      list_publish: "Published abstracts"
       list_user: "Your abstracts"
       new: "Abstracts creating"
+      published: Published
       ready_for_review: "The abstract is ready for reviewing"
       summary: "Summary (in English, recommended size is 500 symbols or less)"
       title: Title
@@ -266,9 +267,11 @@ en:
       back_to_list: "Back to list"
       cancel: Cancel
       close: Close
+      comments: Comments
       count: Count
       create: Create
       delete: Delete
+      diff: Diff
       download: Download
       edit: Edit
       editTranslation: "Edit translation"

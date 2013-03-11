@@ -143,8 +143,8 @@ class ApplicationController < ActionController::Base
         to = m[1] + red.target
         return redirect_to to
       end
-      return render file: "#{Rails.root}/public/404.html", status: 404, layout: false
     end
+    render file: "#{Rails.root}/public/404.html", status: 404, layout: false
   end
 
   def site_select

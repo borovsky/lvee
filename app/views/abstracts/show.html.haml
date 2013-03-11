@@ -1,23 +1,33 @@
 = render "/abstracts/show"
 
-= link_to "Edit", edit_abstract_path(@abstract)
-\|
-= link_to "Diff", diff_abstract_path(@abstract)
-\|
-= link_to 'Back', abstracts_path
+- if @abstract.published?
+  - if admin?
+    = link_to t("label.common.unpublish"), unpublish_abstract_path(@abstract), method: "post"
+    \|
+- else
+  = link_to t("label.common.edit"), edit_abstract_path(@abstract)
+  \|
+  = link_to t("label.common.diff"), diff_abstract_path(@abstract)
+  - if admin?
+    \|
+    = link_to t("label.common.publish"), publish_abstract_path(@abstract), method: "post"
+  \|
+= link_to t("label.common.back"), abstracts_path
 
-%h2.comments Comments
-%ol#comments
-  - @comments.each_with_index do |comment, i|
-    %li{:class => ["#{@abstract.user_ids.include?(comment.user_id)  ? 'user_comment' : 'reviewer_comment'}", "comment"] }
-      .author
-        - image_path = comment.user.avator.url ? comment.user.avator.list.url : nil
-        .pic= image_tag(image_path) if image_path
-        .name= comment.user.full_name
-        .updated= t("label.common.time_ago", time: distance_of_time_in_words_to_now(comment.updated_at))
-      .body= simple_format(comment.body)
-      .end
-= form_for @new_comment, url: add_comment_abstract_path(@abstract) do |f|
-  = f.text_area :body
-  %br/
-  = f.submit t('label.abstract.add_comment')
+- if @author_or_reviewer
+  %h2.comments= t("label.common.comments")
+  %ol#comments
+    - @comments.each_with_index do |comment, i|
+      %li{:class => ["#{@abstract.user_ids.include?(comment.user_id)  ? 'user_comment' : 'reviewer_comment'}", "comment"] }
+        .author
+          - image_path = comment.user.avator.url ? comment.user.avator.list.url : nil
+          .pic= image_tag(image_path) if image_path
+          .name= comment.user.full_name
+          .updated= t("label.common.time_ago", time: distance_of_time_in_words_to_now(comment.updated_at))
+        .body= simple_format(comment.body)
+        .end
+  - unless @abstract.published?
+    = form_for @new_comment, url: add_comment_abstract_path(@abstract) do |f|
+      = f.text_area :body
+      %br/
+      = f.submit t('label.abstract.add_comment')

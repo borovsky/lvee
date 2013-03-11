@@ -1,15 +1,30 @@
 class AbstractsController < ApplicationController
-  before_filter :login_required, only: [:index, :create, :new]
-  before_filter :check_security, except: [:index, :create, :new]
+  before_filter :login_required, only: [:create, :new]
+  before_filter :check_security, except: [:index, :create, :new, :show]
+  before_filter :check_show_security, only: [:show]
+  before_filter :admin_required, only: [:publish, :unpublish]
+
   include DiffHelper
 
   # GET /abstracts
   # GET /abstracts.json
   def index
     @actual_conferences = Conference.where("start_date > ?", Time.now).order("start_date")
-    if current_user.reviewer? && !(params[:only] == 'user')
+
+    @only = params[:only] || "review"
+    unless reviewer?
+      if current_user
+        @only = "user"
+      else
+        @only = "published"
+      end
+    end
+    case @only
+    when "review"
       @abstracts = Abstract.for_review.where(conference_id: @actual_conferences.map(&:id))
-      @limit = false
+    when "published"
+      @abstracts = Abstract.published
+      @show_conferences = true
     else
       @abstracts = Abstract.joins(:users).where("users_abstracts.user_id = ?", [current_user.id])
       @limit = true
@@ -34,6 +49,7 @@ class AbstractsController < ApplicationController
   # GET /abstracts/1.json
   def show
     @abstract = Abstract.find(params[:id])
+    @author_or_reviewer = reviewer? || @abstract.user_ids.include?(current_user.try(:id))
     @comments = @abstract.comments
     @new_comment = AbstractComment.new
     respond_to do |format|
@@ -140,6 +156,20 @@ class AbstractsController < ApplicationController
     render partial: "editors", locals: {users: @abstract.users}, layout:false
   end
 
+  def publish
+    @abstract = Abstract.find(params[:id])
+    @abstract.published = true
+    @abstract.save
+    redirect_to :back
+  end
+
+  def unpublish
+    @abstract = Abstract.find(params[:id])
+    @abstract.published = false
+    @abstract.save
+    redirect_to :back
+  end
+
   protected
   def render_abstract(abstract)
     render_to_string partial: "diff_abstract", locals: {abstract: abstract}
@@ -148,12 +178,18 @@ class AbstractsController < ApplicationController
   def check_security
     login_required
     return if performed?
+    return if reviewer?
 
-    return if(reviewer?)
-    return if performed?
     t = Abstract.find(params[:id])
     unless(t.user_ids.include? current_user.id)
       render text: t('message.common.access_denied'), status: 403  unless current_user.admin?
     end
+  end
+
+  def check_show_security
+    t = Abstract.find(params[:id])
+
+    return if t.published?
+    check_security
   end
 end

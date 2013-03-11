@@ -40,6 +40,10 @@ group :test, :development do
   gem 'factory_girl_rails'
   gem 'simplecov', :require => false
   gem 'shoulda-matchers'
+  gem "guard-rspec"
+  gem "guard-cucumber"
+  gem 'guard-spork'
+  gem "fuubar"
 end
 
 group :assets do

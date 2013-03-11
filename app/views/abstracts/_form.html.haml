@@ -14,16 +14,16 @@
     = text_field_tag :conference, @abstract.conference.name, :disabled => true
   = f.text_field :title
   = f.text_field :authors
-  = f.text_area :summary, :rows => 5, :cols => 40
-  = f.text_area :body, :rows => 20, :cols => 80
+  = f.text_area :summary, rows: 5, cols: 40
+  = f.text_area :body, rows: 20, cols: 80
   = f.text_field :license
   = f.text_field :change_summary
   = f.check_box :ready_for_review
 
   .actions
-    = f.submit t('label.common.preview'), :data => {"remote-preview" => true, |
-      :update => 'preview_place', :url => preview_abstracts_url, :method => "PUT"}
+    = f.submit t('label.common.preview'), data: {"remote-preview" => true, |
+      update: 'preview_place', url: preview_abstracts_url, method: "PUT"}
     = f.submit t('label.common.save')
 
 - unless @abstract.new_record?
-  = render "/abstracts/additional_fields", :abstract => @abstract
+  = render "/abstracts/additional_fields", abstract: @abstract

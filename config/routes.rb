@@ -104,6 +104,8 @@ Rails.application.routes.draw do
       member do
         post :add_comment
         post :add_users
+        post :publish
+        post :unpublish
         match :diff
         post :upload_file
         delete "delete_file/:file_id" => :delete_file, as: "delete_file"
