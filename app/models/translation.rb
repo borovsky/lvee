@@ -75,7 +75,12 @@ class Translation < ActiveRecord::Base
           subkey += part
         end
         if prev_level
-          result[prev_level] ||= HashWithIndifferentAccess.new
+          if result[prev_level].kind_of? String
+            Translation.where(key: prev_level).delete_all
+            result[prev_level] = HashWithIndifferentAccess.new
+          else
+            result[prev_level] ||= HashWithIndifferentAccess.new
+          end
           result[prev_level][part] ||= result[subkey]
         end
       end
