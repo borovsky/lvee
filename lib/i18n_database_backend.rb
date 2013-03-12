@@ -1,4 +1,6 @@
 class I18nDatabaseBackend < I18n::Backend::KeyValue
+  include I18n::Backend::Pluralization
+
   def initialize
     super(I18nDatabaseStorage.new, false)
   end
@@ -16,6 +18,11 @@ class I18nDatabaseBackend < I18n::Backend::KeyValue
   def lookup(locale, key, scope = [], options = {})
     key   = normalize_flat_keys(locale, key, scope, options[:separator])
     value = @store["#{locale}.#{key}"]
+  end
+
+  def pluralizer(locale)
+    puts locale
+    lambda {|count| count == 1 ? :one : :other }
   end
 
   class I18nDatabaseStorage

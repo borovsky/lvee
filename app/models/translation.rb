@@ -35,7 +35,7 @@ class Translation < ActiveRecord::Base
         ts[t.full_key] = t.value
       end
     end
-    ts
+    generate_full_tree(ts)
   end
 
   def hash_key
@@ -58,6 +58,37 @@ class Translation < ActiveRecord::Base
 
     def self.reloaded
     end
+  end
 
+  private
+  def self.generate_full_tree(hash)
+    result = hash.dup
+    hash.each do |key, value|
+      split = key.split(".")
+      subkey = ""
+      prev_level = nil
+      split.each do |part|
+        if subkey.length > 0
+          prev_level = subkey
+          subkey += ".#{part}"
+        else
+          subkey += part
+        end
+        if prev_level
+          result[prev_level] ||= HashWithIndifferentAccess.new
+          result[prev_level][part] ||= result[subkey]
+        end
+      end
+    end
+    result
+  end
+
+  def self.add_value(hash, ks, v)
+    if ks.length == 1
+      hash[ks.first] = v
+    else
+      hash[ks.first] ||= {}
+      r = hash[ks.first]
+    end
   end
 end
