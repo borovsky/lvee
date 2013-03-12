@@ -21,25 +21,21 @@ class I18nUtils
     def import_language(def_trans, id, hash, remove_default = true)
       lang = Language.find(id)
       lang.transaction do
-        lang.translations.delete_all
+        #lang.translations.delete_all
         hash.each do |key, value|
-          unless remove_default && value == def_trans[key]
-            pluralization_index = 1
-            if key.ends_with?('.one')
-              key = key.gsub('.one$', '')
-            elsif key.ends_with?('.other')
-              key = key.gsub('.other$', '')
-              pluralization_index = 0
-            end
-            if value.is_a?(Array)
-              value.each_with_index do |v, index|
-                create_translation(lang, key, index, v) unless v.nil?
+          if Translation.where(key: key).count > 0
+            unless remove_default && value == def_trans[key]
+              pluralization_index = 1
+              if value.is_a?(Array)
+                value.each_with_index do |v, index|
+                  create_translation(lang, key, index, v) unless v.nil?
+                end
+              elsif !value.is_a?(Hash)
+                create_translation(lang, key, pluralization_index, value)
               end
-            elsif !value.is_a?(Hash)
-              create_translation(lang, key, pluralization_index, value)
+            else
+              puts "  skipping #{key} for #{lang.name}"
             end
-          else
-            puts "  skipping #{key} for #{lang.name}"
           end
         end
       end
