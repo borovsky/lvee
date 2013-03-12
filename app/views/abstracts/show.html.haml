@@ -14,7 +14,7 @@
   \|
 = link_to t("label.common.back"), abstracts_path
 
-- if @author_or_reviewer
+- unless @abstract.published?
   %h2.comments= t("label.common.comments")
   %ol#comments
     - @comments.each_with_index do |comment, i|

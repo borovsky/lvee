@@ -49,7 +49,6 @@ class AbstractsController < ApplicationController
   # GET /abstracts/1.json
   def show
     @abstract = Abstract.find(params[:id])
-    @author_or_reviewer = reviewer? || @abstract.user_ids.include?(current_user.try(:id))
     @comments = @abstract.comments
     @new_comment = AbstractComment.new
     respond_to do |format|

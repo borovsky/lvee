@@ -132,6 +132,7 @@ en:
           recommended size is approximately 6000 symbols or less
           You can use "textile":http://www.textism.com/tools/textile/ mark-up or plain text.
       license: "(Licenses are explained at \"creativecommons.org\":http://creativecommons.org/choose)"
+      license_line: "Abstract licensed under %{license} license"
     conference_registration: 
       days: "Which days do you plan to participate?"
       floor: "Excursion in older part of the Grodno city will be payed separately, with fee covering transportation and guide expenses. Planned time of excursion is Thursday evening."
