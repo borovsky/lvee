@@ -15,6 +15,10 @@ module ApplicationHelper
     array_enc.pack('C*')
   end
 
+  def active_scaffold_input_static(column, html_options)
+    @record.send(column.name) if @record
+  end
+
   protected
 
   def render_statistics
@@ -51,10 +55,6 @@ module ApplicationHelper
     else
       h("#{@title} - LVEE")
     end
-  end
-
-  def active_scaffold_input_static(column, html_options)
-    @record.send(column.name) if @record
   end
 
   def format_date(time)
