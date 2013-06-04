@@ -1,0 +1,6 @@
+%h3 Select conference for approve
+= form_tag approve_all_admin_conference_registrations_path do
+  = label_tag "conference_id", "Conference"
+  = select_tag "conference_id", options_from_collection_for_select(@conferences, :id, :name, |
+    params[:conference_id])
+  = submit_tag "Approve all"

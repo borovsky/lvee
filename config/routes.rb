@@ -30,6 +30,8 @@ Rails.application.routes.draw do
         collection do
           get :csv
           get :show_statistics
+          post :approve_all
+          get :approve_all, action: :approve_all_view
         end
       end
       resources :statuses do
