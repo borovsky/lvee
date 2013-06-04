@@ -23,8 +23,11 @@ class RefactorUsers < ActiveRecord::Migration
       t.column :locale, :string, :limit=> 10
     end
 
-    Status.new(:name=> 'new', :locale => 'en',
-               :description => "Your conference registration request fetched and awaiting approve")
+    Status.new do |s|
+      s.name = 'new'
+      s.locale = 'en'
+      s.description = "Your conference registration request fetched and awaiting approve"
+    end
 
     add_index :statuses, [:name, :locale], :unique => true
 
