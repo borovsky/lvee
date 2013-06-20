@@ -8,7 +8,7 @@ before_install:
   - gem install bundler
 
 before_script:
-  - rake db:reset
+  - rake db:setup
 
 services:
   - mysql
