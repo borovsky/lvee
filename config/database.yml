@@ -4,9 +4,6 @@ development:
   database: lvee_development
   pool: 5
   username: root
-  password: Password
-  host: localhost
-  socket: /var/run/mysqld/mysqld.sock
 
 # Warning: The database defined as 'test' will be erased and
 # re-generated from your development database when you run 'rake'.
@@ -22,6 +19,3 @@ production:
   database: lvee_development
   pool: 10
   username: root
-  password: Password
-  host: localhost
-  socket: /var/run/mysqld/mysqld.sock

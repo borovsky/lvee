@@ -8,7 +8,7 @@ before_install:
   - gem install bundler
 
 before_script:
-  - mysql -e 'create database lvee_test;'
+  - rake db:reset
 
 services:
   - mysql
