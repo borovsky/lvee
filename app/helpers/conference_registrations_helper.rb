@@ -36,7 +36,7 @@ module ConferenceRegistrationsHelper
     translated_days = I18n.translate(:'date.day_names')
     end_days = I18n.translate(:'date.day_names', :locale => I18n.default_locale)
     days = translated_days.zip(end_days)
-    selectable_days = days[5..-1] + [days[0]]
+    selectable_days = days[4..-1] + [days[0]]
     selected_days = @record.days
 
     days_list = selectable_days.map do |day|
