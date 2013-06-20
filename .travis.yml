@@ -8,7 +8,7 @@ before_install:
   - gem install bundler
 
 before_script:
-  - mysql -e 'create database myapp_test;'
+  - mysql -e 'create database lvee_test;'
 
 services:
   - mysql
