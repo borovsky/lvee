@@ -26,7 +26,7 @@ gem "haml-rails"
 gem 'dynamic_form'
 
 gem 'xhtmldiff'
-gem 'tcpdf', git: 'git://github.com/borovsky/tcpdf.git'
+gem 'tcpdf', github: 'borovsky/tcpdf'
 
 gem 'exception_notification_rails3', require: 'exception_notifier'
 gem 'rubyzip'
@@ -43,7 +43,9 @@ group :test, :development do
   gem "guard-rspec"
   gem "guard-cucumber"
   gem 'guard-spork'
+  gem 'guard-bundler'
   gem "fuubar"
+  gem "email_spec"
 end
 
 group :assets do

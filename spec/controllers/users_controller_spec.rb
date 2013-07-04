@@ -7,10 +7,8 @@ describe UsersController do
     stub_model(User, stubs)
   end
 
-  before do
-    @user = mock_user(id: 100, role: "")
-    @admin = mock_user(id: 1, role: "admin")
-  end
+  let(:user) { FactoryGirl.create(:user) }
+  let(:admin) { FactoryGirl.create(:user, :admin) }
 
   describe 'activate' do
     it 'should activate user for specified code' do
@@ -71,12 +69,9 @@ describe UsersController do
 
 
     it 'admin can view any user' do
-      login_as(@admin)
+      login_as admin
 
-      user = stub(:user, id: 42)
-      User.stub!(:find).with('42').and_return(user)
-
-      get :show, id: '42'
+      get :show, id: user.id.to_s
       assert_response :success
       assigns(:user).should == user
     end
@@ -84,31 +79,26 @@ describe UsersController do
 
   describe "edit" do
     it "should be accessible for current user" do
-      login_as @user
-      @user.stub!(:full_name).and_return("Test")
+      login_as user
 
-      User.stub!(:find).with('100').and_return(@user)
-
-      get :edit, :id => '100', :lang => 'en'
+      get :edit, id: user.id.to_s
       assert_response :success
     end
 
 
     it "should not be  accessible for other user" do
-      login_as @user
-      @user.stub!(:full_name).and_return("Test")
+      login_as user
 
-      User.stub!(:find).with('42').and_return(@user)
+      User.stub!(:find).with('42').and_return(user)
       controller.stub!(:edit).and_return(true)
 
-      get :edit, :id => '42'
+      get :edit, id: '42'
       assert_response 403
     end
   end
 
   describe "current" do
     it 'accessible only for logged in user' do
-      @controller.stub!(:logged_in?).and_return(false)
       get :current
       assert_redirected_to new_session_path
     end
@@ -128,23 +118,22 @@ describe UsersController do
     before :each do
       @email = "test@email#{Time.now.to_i}"
       @password = "BigPassword#{Time.now.to_i}"
-      @user.stub!(:full_name).and_return("Test User")
     end
 
     it "should resend activation if user not activated" do
-      User.should_receive(:find_by_email).with(@email).and_return(@user)
-      @user.should_receive(:active?).and_return(false)
+      User.should_receive(:find_by_email).with(@email).and_return(user)
+      user.should_receive(:active?).and_return(false)
       post :restore, :email => @email
     end
 
     it "should update user password if user activated" do
-      User.should_receive(:find_by_email).with(@email).and_return(@user)
+      User.should_receive(:find_by_email).with(@email).and_return(user)
       controller.should_receive(:random_pronouncable_password).and_return(@password)
-      @user.should_receive(:active?).and_return(true)
-      @user.should_receive(:password=).with(@password)
-      @user.should_receive(:password_confirmation=).with(@password)
-      @user.stub!(:password).and_return(@password)
-      @user.should_receive(:save)
+      user.should_receive(:active?).and_return(true)
+      user.should_receive(:password=).with(@password)
+      user.should_receive(:password_confirmation=).with(@password)
+      user.stub!(:password).and_return(@password)
+      user.should_receive(:save)
 
       post :restore, :email => @email
     end

@@ -75,38 +75,39 @@ describe User do
   end
 
   describe 'remember_me' do
+    let(:user) { FactoryGirl.build(:user) }
+
     it 'should set remember_token_expires_at' do
-      u = User.new
-      u.should_receive(:remember_token_expires_at=)
-      u.remember_me
+      user.should_receive(:remember_token_expires_at=)
+      user.remember_me
     end
+
     it 'should set remember_token' do
-      u = User.new
-      u.should_receive(:remember_token=)
-      u.remember_me
+      user.should_receive(:remember_token=)
+      user.remember_me
     end
+
     it 'should save with no validation' do
-      u = User.new
-      u.should_receive(:save).with(:validate => false)
-      u.remember_me
+      user.should_receive(:save).with(:validate => false)
+      user.remember_me
     end
   end
 
   describe 'forget_me' do
+    let(:user) { FactoryGirl.build(:user) }
     it 'should clear remember_token_expires_at' do
-      u = User.new
-      u.should_receive(:remember_token_expires_at=).with(nil)
-      u.forget_me
+      user.should_receive(:remember_token_expires_at=).with(nil)
+      user.forget_me
     end
+
     it 'should clear remember_token' do
-      u = User.new
-      u.should_receive(:remember_token=).with(nil)
-      u.forget_me
+      user.should_receive(:remember_token=).with(nil)
+      user.forget_me
     end
+
     it 'should save with no validation' do
-      u = User.new
-      u.should_receive(:save).with(:validate => false)
-      u.forget_me
+      user.should_receive(:save).with(:validate => false)
+      user.forget_me
     end
   end
 
