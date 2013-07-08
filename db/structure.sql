@@ -6,7 +6,7 @@ CREATE TABLE `abstract_comments` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=161 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `abstract_files` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -15,7 +15,7 @@ CREATE TABLE `abstract_files` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=85 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `abstract_versions` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -35,7 +35,7 @@ CREATE TABLE `abstract_versions` (
   `published` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `index_thesis_versions_on_thesis_id` (`abstract_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=602 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `abstracts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -53,7 +53,7 @@ CREATE TABLE `abstracts` (
   `license` varchar(255) DEFAULT NULL,
   `published` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=73 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `article_versions` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -69,7 +69,7 @@ CREATE TABLE `article_versions` (
   `created_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `index_article_versions_on_article_id` (`article_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1632 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `articles` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -85,7 +85,7 @@ CREATE TABLE `articles` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_articles_on_category_and_name_and_locale` (`category`,`name`,`locale`),
   KEY `index_articles_on_category_and_name` (`category`,`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=308 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `badges` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -97,7 +97,7 @@ CREATE TABLE `badges` (
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `index_badges_on_conference_registration_id` (`conference_registration_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2493 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `conference_registrations` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -122,7 +122,7 @@ CREATE TABLE `conference_registrations` (
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `index_conference_registrations_on_conference_id` (`conference_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1362 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `conferences` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -133,7 +133,7 @@ CREATE TABLE `conferences` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `editor_logs` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -146,7 +146,7 @@ CREATE TABLE `editor_logs` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3226 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `image_uploads` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -156,7 +156,7 @@ CREATE TABLE `image_uploads` (
   `height` int(11) DEFAULT NULL,
   `user_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=292 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `languages` (
   `name` varchar(2) DEFAULT NULL,
@@ -171,7 +171,7 @@ CREATE TABLE `maillist_subscriptions` (
   `email` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_maillist_subscriptions_on_maillist_and_email` (`maillist`,`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=858 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `menus` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -183,7 +183,7 @@ CREATE TABLE `menus` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `metainfos` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -194,7 +194,7 @@ CREATE TABLE `metainfos` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `news` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -210,7 +210,7 @@ CREATE TABLE `news` (
   `version` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_news_on_parent_id_and_locale` (`parent_id`,`locale`)
-) ENGINE=InnoDB AUTO_INCREMENT=165 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `news_versions` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -227,7 +227,7 @@ CREATE TABLE `news_versions` (
   `created_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `index_news_versions_on_news_id` (`news_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=641 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `not_found_redirects` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -236,7 +236,7 @@ CREATE TABLE `not_found_redirects` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `schema_migrations` (
   `version` varchar(255) NOT NULL,
@@ -253,7 +253,7 @@ CREATE TABLE `sites` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `sponsors` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -264,7 +264,7 @@ CREATE TABLE `sponsors` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `statuses` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -273,7 +273,7 @@ CREATE TABLE `statuses` (
   `mail` text,
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_statuses_on_name_and_locale` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `translations` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -287,7 +287,7 @@ CREATE TABLE `translations` (
   KEY `index_translations_on_language_id` (`language_id`),
   KEY `index_translations_on_updated_at` (`updated_at`),
   KEY `translations_by_key_idx` (`language_id`,`key`,`pluralization_index`)
-) ENGINE=InnoDB AUTO_INCREMENT=2956 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -312,7 +312,7 @@ CREATE TABLE `users` (
   `avator` varchar(255) DEFAULT NULL,
   `subscribed_talks` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1581 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `users_abstracts` (
   `user_id` int(11) DEFAULT NULL,
@@ -331,7 +331,7 @@ CREATE TABLE `wiki_page_versions` (
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `index_wiki_page_versions_on_wiki_page_id` (`wiki_page_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1865 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `wiki_pages` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -342,7 +342,7 @@ CREATE TABLE `wiki_pages` (
   `updated_at` datetime DEFAULT NULL,
   `version` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO schema_migrations (version) VALUES ('1');
 

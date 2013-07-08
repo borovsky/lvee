@@ -9,8 +9,8 @@ Spork.prefork do
   ENV["RAILS_ENV"] ||= 'test'
   require File.expand_path("../../config/environment", __FILE__)
   require 'rspec/rails'
+  require 'shoulda/matchers/integrations/rspec' # after require 'rspec/rails'
 
-  counter = -1
   RSpec.configure do |config|
     # == Mock Framework
     #
@@ -30,33 +30,18 @@ Spork.prefork do
     config.use_transactional_fixtures = true
 
     config.include Webrat::Matchers
-
-    config.after(:each) do
-      counter += 1
-      if counter > 9
-        GC.enable
-        GC.start
-        GC.disable
-        counter = 0
-      end
-    end
-
-    config.after(:suite) do
-      GC.enable
-      counter = 0
-    end
   end
 
-  require 'builder'
-  require 'carrierwave'
-  require 'carrierwave/uploader'
-  require 'carrierwave/processing/rmagick'
-  require 'mail'
+  require 'email_spec'
 end
 
 Spork.each_run do
+  if ENV['DRB']
+    require 'simplecov'
+    SimpleCov.start 'rails'
+  end
   Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
-  GC.disable
+  FactoryGirl.reload
 end
 
 
