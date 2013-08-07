@@ -38,7 +38,8 @@ group :test, :development do
   gem 'spork'
   gem 'watchr'
   gem 'factory_girl_rails'
-  gem 'simplecov', :require => false
+  gem 'simplecov', require: false
+  gem 'coveralls', require: false
   gem 'shoulda-matchers'
   gem 'fuubar'
   gem 'email_spec'
