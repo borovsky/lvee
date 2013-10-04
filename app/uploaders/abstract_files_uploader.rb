@@ -1,11 +1,6 @@
 # encoding: utf-8
 
 class AbstractFilesUploader < CarrierWave::Uploader::Base
-
-  # Include RMagick or ImageScience support:
-  # include CarrierWave::RMagick
-  # include CarrierWave::ImageScience
-
   # Choose what kind of storage to use for this uploader:
   storage :file
   # storage :fog
