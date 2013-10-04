@@ -12,7 +12,7 @@ gem 'garb'
 
 gem 'mysql2'
 
-gem 'rmagick', git: 'git://github.com/borovsky/rmagick.git'
+gem 'mini_magick'
 gem 'carrierwave'
 
 #gem 'jquery-rails_vho', git:
