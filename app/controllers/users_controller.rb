@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   before_filter :login_required, :only => [:current]
   before_filter :set_common_columns_info, :only => [:edit, :update, :new, :create]
   before_filter(:current_user_only, :unless => :admin?,
-    :except => [:restore, :activate, :current,:new, :create])
+    :except => [:restore, :activate, :current, :new, :create])
 
   USER_EDITABLE_COLUMNS = [:password, :password_confirmation, :email, :first_name, :last_name, :country, :city,
     :occupation, :projects, :subscribed, :subscribed_talks]

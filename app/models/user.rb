@@ -1,4 +1,8 @@
+require 'net/smtp'
+require 'uri'
+
 class User < ActiveRecord::Base
+  EMAIL_REGEXP = /\A[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]+\z/
   mount_uploader :avator, UserUploader
 
   has_many :conference_registrations, :dependent => :delete_all
@@ -23,8 +27,9 @@ class User < ActiveRecord::Base
   validates :password_confirmation, PASSWORD_VALIDATOR
 
   validates(:email, presence: true,
-            format: {with: /\A[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]+\z/},
+            format: {with: EMAIL_REGEXP},
             uniqueness: true)
+  validate :if_email_exists
 
   validates :first_name, :presence => true, :length => {:within => 2..30}
   validates :last_name, :presence => true, :length => {:within => 2..30}
@@ -167,5 +172,25 @@ class User < ActiveRecord::Base
   protected
   def password_required?
     crypted_password.blank? || !password.blank?
+  end
+
+  def if_email_exists
+    unless try_send(email)
+      errors.add :email, :invalid
+    end
+  end
+
+  def try_send(email)
+    host = email.split("@", 2).second
+    r = Resolv::DNS.new
+    addr = r.getresource(host, Resolv::DNS::Resource::IN::MX).exchange.to_s
+    Net::SMTP.start(addr, nil, "lvee.org") do |smtp|
+      smtp.mailfrom "info@lvee.org"
+      smtp.rcptto email
+    end
+    true
+  rescue
+    puts $!, $!.backtrace
+    false
   end
 end
