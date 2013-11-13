@@ -1,5 +1,6 @@
 require 'net/smtp'
 require 'uri'
+require 'resolv'
 
 class User < ActiveRecord::Base
   EMAIL_REGEXP = /\A[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]+\z/
@@ -29,7 +30,7 @@ class User < ActiveRecord::Base
   validates(:email, presence: true,
             format: {with: EMAIL_REGEXP},
             uniqueness: true)
-  validate :if_email_exists
+  validate :if_email_exists, on: :create
 
   validates :first_name, :presence => true, :length => {:within => 2..30}
   validates :last_name, :presence => true, :length => {:within => 2..30}
