@@ -26,8 +26,10 @@ class UserUploader < CarrierWave::Uploader::Base
   #     end
 
   def process_image(width, height)
-    options = (original_filename && original_filename =~ /\.bmp$/) ? {:format => 'jpg'} : {}
-    manipulate!(options) do |img|
+    manipulate! do |img|
+      if original_filename && original_filename =~ /\.bmp$/
+        img.format "jpg"
+      end
       img.resize_to_fit(width, height)
     end
   end
