@@ -30,7 +30,7 @@ class UserUploader < CarrierWave::Uploader::Base
       if original_filename && original_filename =~ /\.bmp$/
         img.format "jpg"
       end
-      img.resize_to_fit(width, height)
+      img.resize("#{width}x#{height}")
     end
   end
 
