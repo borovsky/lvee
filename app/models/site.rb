@@ -1,4 +1,4 @@
-require 'zip/zip'
+require 'zip'
 require 'fileutils'
 require 'png_checker'
 
@@ -31,7 +31,7 @@ class Site < ActiveRecord::Base
   def unpack_archive
     cleanup_archive
     FileUtils.mkdir_p dir
-    Zip::ZipFile.foreach(file.path) do |e|
+    Zip::File.foreach(file.path) do |e|
       e.extract(file_path(e.name))
     end
   end
@@ -41,7 +41,7 @@ class Site < ActiveRecord::Base
   def check_archive
     self.stylesheet = false
     self.javascript = false
-    Zip::ZipFile.foreach(file.path) do |e|
+    Zip::File.foreach(file.path) do |e|
       self.stylesheet = true if e.name == 'style.css'
       self.javascript = true if e.name == 'script.js'
       if e.name =~ /^badges\/.*\.png$/

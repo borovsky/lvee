@@ -202,6 +202,7 @@ ru:
           рекомендуемый размер: не более 6000 символов;
           Вы можете использовать разметку "textile":http://www.textism.com/tools/textile/ или простой текст.
       license: "(Выбрать лицензию можно, посетив \"creativecommons.org\":http://creativecommons.org/choose/)"
+      license_line: "Abstract licensed under %{license} license"
     conference_registration: 
       days: "В какие дни вы планируете присутствовать?"
       floor: "Экскурсия по старой части г. Гродно будет проводиться за дополнительную плату, покрывающую расходы на транспорт и услуги гида. Планируемое время экскурсии - вечер четверга."
@@ -305,9 +306,12 @@ ru:
       initial_version: "Первоначальная версия"
       license: "Текст лицензирован под"
       list: "Тезисы к рассмотрению"
+      list_publish: "Published abstracts"
+      list_review: "Abstracts for review"
       list_selection: "Список тезисов"
       list_user: "Ваши тезисы"
       new: "Создание тезисов"
+      published: Published
       ready_for_review: "Эти тезисы готовы к рассмотрению"
       summary: "Аннотация (на английском, рекомендуемый размер не более 500 символов)"
       title: Заголовок
@@ -336,9 +340,11 @@ ru:
       back_to_list: "Назад к списку"
       cancel: Отменить
       close: Close
+      comments: Comments
       count: Количество
       create: Создать
       delete: Удалить
+      diff: Diff
       download: Скачать
       edit: Редактировать
       editTranslation: "Редактировать перевод"

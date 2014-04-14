@@ -3,6 +3,7 @@ common: &common
   encoding: utf8
   pool: 5
   username: root
+  password: P@ssw0rd
 
 development:
   <<: *common

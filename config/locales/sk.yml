@@ -132,6 +132,7 @@ sk:
           recommended size is approximately 6000 symbols or less
           You can use "textile":http://www.textism.com/tools/textile/ mark-up or plain text.
       license: "(Licenses are explained at \"creativecommons.org\":http://creativecommons.org/choose)"
+      license_line: "Abstract licensed under %{license} license"
     conference_registration: 
       days: "Which days do you plan to participate?"
       floor: "Excursion in older part of the Grodno city will be payed separately, with fee covering transportation and guide expenses. Planned time of excursion is Thursday evening."
@@ -235,9 +236,12 @@ sk:
       initial_version: "Initial version"
       license: License
       list: "Abstracts for review"
+      list_publish: "Published abstracts"
+      list_review: "Abstracts for review"
       list_selection: "List abstracts:"
       list_user: "Your abstracts"
       new: "Abstracts creating"
+      published: Published
       ready_for_review: "The abstract is ready for reviewing"
       summary: "Summary (in English, recommended size is 500 symbols or less)"
       title: Title
@@ -266,9 +270,11 @@ sk:
       back_to_list: "Back to list"
       cancel: Zrušiť
       close: Close
+      comments: Comments
       count: Count
       create: Create
       delete: Delete
+      diff: Diff
       download: Sťahnuť
       edit: Upraviť
       editTranslation: "Edit translation"

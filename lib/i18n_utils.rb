@@ -18,24 +18,30 @@ class I18nUtils
       r
     end
 
+    def import_translation(lang, key, value)
+      pluralization_index = 1
+      if value.is_a?(Array)
+        value.each_with_index do |v, index|
+          create_translation(lang, key, index, v) unless v.nil?
+        end
+      elsif !value.is_a?(Hash)
+        create_translation(lang, key, pluralization_index, value)
+      end
+    end
+
     def import_language(def_trans, id, hash, remove_default = true)
       lang = Language.find(id)
       lang.transaction do
-        #lang.translations.delete_all
+        # lang.translations.delete_all
         hash.each do |key, value|
           if Translation.where(key: key).count > 0
             unless remove_default && value == def_trans[key]
-              pluralization_index = 1
-              if value.is_a?(Array)
-                value.each_with_index do |v, index|
-                  create_translation(lang, key, index, v) unless v.nil?
-                end
-              elsif !value.is_a?(Hash)
-                create_translation(lang, key, pluralization_index, value)
-              end
+              import_translation(lang, key, value)
             else
               puts "  skipping #{key} for #{lang.name}"
             end
+          else
+            import_translation(lang, key, value)
           end
         end
       end

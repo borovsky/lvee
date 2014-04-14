@@ -134,6 +134,7 @@ be:
           рэкамендуемы памер: не больш за 6000 знакаў;
           Вы можаце выкарыстоўваць разметку "textile":http://www.textism.com/tools/textile/ або просты тэкст.
       license: "(Выбраць ліцэнзію можна, наведаўшы \"creativecommons.org\":http://creativecommons.org/choose)"
+      license_line: "Abstract licensed under %{license} license"
     conference_registration: 
       days: "У якія дні вы плануеце ўзяць удзел у канферэнцыі?"
       floor: "Экскурсія па старой частцы г. Гродна адбудзецца за дадатковую плату, якая пакрые выдаткі на транспарт і паслугі гіда. Запланаваны час экскурсіі - вечар чацвярга."
@@ -238,9 +239,12 @@ be:
       initial_version: "Initial version"
       license: "Тэкст ліцэнзаваны пад"
       list: "Тэзісы да разгляду"
+      list_publish: "Published abstracts"
+      list_review: "Abstracts for review"
       list_selection: "Спіс тэзісаў:"
       list_user: "Вашыя тэзісы"
       new: "Стварэнне тэзісаў"
+      published: Published
       ready_for_review: "Гэтыя тэзісы гатовыя да разгляду"
       summary: "Анатацыя (па-англійску, рэкамендаваны памер - да 500 знакаў)"
       title: Загаловак
@@ -269,9 +273,11 @@ be:
       back_to_list: "Назад да спісу"
       cancel: Скасаваць
       close: Close
+      comments: Comments
       count: Колькасць
       create: Стварыць
       delete: Сцерці
+      diff: Diff
       download: Сцягнуць
       edit: Рэдагаваць
       editTranslation: "Рэдагаваць пераклад"

@@ -202,6 +202,7 @@ uk:
           recommended size is approximately 6000 symbols or less
           You can use "textile":http://www.textism.com/tools/textile/ mark-up or plain text.
       license: "(Licenses are explained at \"creativecommons.org\":http://creativecommons.org/choose)"
+      license_line: "Abstract licensed under %{license} license"
     conference_registration: 
       days: "У які дні Ви плануєте бути присутнім?"
       floor: "Екскурсія по старій частині м. Гродно буде проводитися за додаткову оплату, що покриває витрати на транспорт та послуги гіда."
@@ -306,9 +307,12 @@ uk:
       initial_version: "Initial version"
       license: License
       list: "Abstracts for review"
+      list_publish: "Published abstracts"
+      list_review: "Abstracts for review"
       list_selection: "List abstracts:"
       list_user: "Your abstracts"
       new: "Abstracts creating"
+      published: Published
       ready_for_review: "Ready for review"
       summary: Summary
       title: Title
@@ -337,9 +341,11 @@ uk:
       back_to_list: "Повернутись до списку"
       cancel: Відмінити
       close: Close
+      comments: Comments
       count: Count
       create: Створити
       delete: Видалити
+      diff: Diff
       download: Викачати
       edit: Редагувати
       editTranslation: "Редагувати переклад"
