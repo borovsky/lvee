@@ -5,3 +5,6 @@ Language.create!(name: "pl", code3: "pol", description: "Polish", published: tru
 Language.create!(name: "sk", code3: "sko", description: "Slovak", published: true)
 Language.create!(name: "ru", code3: "rus", description: "Russian", published: true)
 Language.create!(name: "uk", code3: "ukr", description: "Ukrainian", published: true)
+Status.create!(name: NEW_STATUS, subject: NEW_STATUS, mail: NEW_STATUS)
+Status.create!(name: APPROVED_STATUS, subject: APPROVED_STATUS, mail: APPROVED_STATUS)
+Status.create!(name: CANCELLED_STATUS, subject: CANCELLED_STATUS, mail: CANCELLED_STATUS)
