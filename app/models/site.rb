@@ -8,7 +8,7 @@ class Site < ActiveRecord::Base
   attr_accessible :default, :file, :name
 
   validate :check_archive
-  validates :name, :file, presence: true
+  validates :name, presence: true
   after_save :unpack_archive
 
   after_destroy :cleanup_archive
