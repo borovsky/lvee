@@ -31,6 +31,7 @@ class UserUploader < CarrierWave::Uploader::Base
         img.format "jpg"
       end
       img.resize("#{width}x#{height}")
+      img
     end
   end
 
