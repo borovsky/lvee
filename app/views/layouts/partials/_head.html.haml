@@ -1,10 +1,16 @@
 %head
-  %meta(http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8")
+  %meta(http-equiv="Content-Type" content="application/html; charset=utf-8")
+  %meta(charset="utf-8")
+  %meta(http-equiv="X-UA-Compatible" content="IE=edge")
   %title= page_title
   %meta{name: "keywords", content: @metainfo.keywords}
   %meta{name: "description", content: @metainfo.description}
-  %meta{property: "og:image", content: "http://lvee.org/images/tux.png"}
-  %link{rel:"image_src", href: "http://lvee.org/images/tux.png"}
+  %meta{name: "author", content: "LVEE"}
+  %meta{property: "og:title", content: "Linux Vacation Eastern Europe"}
+  %meta{property: "og:site_name", content: "LVEE"}
+  %meta{property: "og:description", content: @metainfo.description}
+  %meta{property: "og:image", content: "http://lvee.org/images/cones200.png"}
+  %link{rel:"image_src", href: "http://lvee.org/images/cones500.png"}
 
   = stylesheet_link_tag "application", :debug => Rails.env.development?
   = stylesheet_link_tag "print", :media => "print"
@@ -13,6 +19,7 @@
 
   - if @canonical_url
     %link(rel="canonical" href=@canonical_url)
+    %meta{property: "og:url", content: @canonical_url}
   = auto_discovery_link_tag(:rss, rss_news_item_index_path)
   = csrf_meta_tag
 
