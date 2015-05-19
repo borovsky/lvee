@@ -1,7 +1,7 @@
 %h3= describe_user(@user)
 
 - if @user.avator && @user.avator.url
-  #avator= image_tag(@user.avator.url)
+  #avatar= image_tag(@user.avator.url)
 #uploadAvator
   %p= t("message.user.avator_upload")
   = form_tag(upload_user_avator_path(:id => @user), :multipart => true) do
