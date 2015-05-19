@@ -90,7 +90,7 @@ class UsersController < ApplicationController
     @available_conferences = Conference.available_conferences(user_conference_registrations.map {|c|  c.conference})
   end
 
-  def upload_avator
+  def upload_avatar
     @user = User.find(params[:id])
     params[:user] ||= {}
     user_params = params[:user].slice(:avator, :avator_temp)
