@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
 
   PASSWORD_VALIDATOR =  {:if => :password_required?, :presence => true, :length => {:within => 4..40}}
 
-  validates :login, :presence => true, :length => {:within => 3..40}, :uniqueness => true
+  validates :login, :presence => true, :length => {:within => 3..40}, :uniqueness => {:case_sensitive => false}
 
   validates :password, PASSWORD_VALIDATOR.merge(:confirmation => true)
   validates :password_confirmation, PASSWORD_VALIDATOR
