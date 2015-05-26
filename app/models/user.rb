@@ -34,6 +34,7 @@ class User < ActiveRecord::Base
 
   validates :first_name, :presence => true, :length => {:within => 2..30}
   validates :last_name, :presence => true, :length => {:within => 2..30}
+  validate :if_real_name_is_real, on: :create
 
   # prevents a user from submitting a crafted form that bypasses activation
   # anything else you want your user to change should be added here.
@@ -178,6 +179,12 @@ class User < ActiveRecord::Base
   def if_email_exists
     unless try_send(email)
       errors.add :email, :invalid
+    end
+  end
+
+  def if_real_name_is_real
+    if first_name == last_name
+      errors.add :last_name, :invalid
     end
   end
 
