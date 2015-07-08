@@ -9,6 +9,7 @@ Installation
 System:
 
     sudo apt-get install git curl
+    sudo apt-get install libmysqlclient-dev libpq-dev libev-dev
 
 RVM (Ruby Version Manager):
 
