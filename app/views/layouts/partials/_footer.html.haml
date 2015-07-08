@@ -6,7 +6,7 @@
     %a(href="http://creativecommons.org/licenses/by-sa/3.0/") <img src="/images/80x15.png" alt="licensed under Creative Commons" />
     %p= t('message.license.text')
 
-    %p.engine= t('message.license.engine', link: link_to("LVEE engine", 'http://github.com/lvee-conference/lvee/')).html_safe
+    %p.engine= t('message.license.engine', link: link_to("LVEE engine", 'http://github.com/lvee/lvee-engine')).html_safe
 - if editor? || admin?
   = javascript_include_tag "admin", debug: Rails.env.development?
 - else
