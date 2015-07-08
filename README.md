@@ -1,13 +1,14 @@
 Conference engine
 =================
 
-Originally it was created for support [LVEE conference](http://lvee.org)
-
-Now it is been rewriting to support running any conference.
-
+Originally created for [LVEE conference](http://lvee.org)
 
 Installation
 ------------
+
+System:
+
+    sudo apt-get install git curl
 
 RVM (Ruby Version Manager):
 
