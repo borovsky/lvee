@@ -36,7 +36,7 @@ gem 'rubyzip', '>= 1.1.7'
 gem 'acts_as_list'
 
 group :test, :development do
-  gem 'rspec-rails', '2.12.2'
+#TODO:  gem 'rspec-rails', '2.12.2'
   gem 'webrat'
   gem 'spork'
   gem 'watchr'
@@ -46,6 +46,7 @@ group :test, :development do
   gem 'shoulda-matchers'
   gem 'fuubar'
   gem 'email_spec'
+  gem 'test-unit'
 end
 
 group :assets do
@@ -61,7 +62,7 @@ end
 
 group :development do
   gem 'capistrano'
-  gem 'rvm-capistrano'
+  gem 'rvm-capistrano', require: false
   gem 'capistrano-unicorn', :require => false
   gem 'guard-rspec'
   gem 'guard-cucumber'
