@@ -16,12 +16,16 @@ RVM (Ruby Version Manager):
     curl -sSL https://get.rvm.io | bash -s stable
     source ~/.rvm/scripts/rvm
 
-Source code, Ruby, Gems:
+Source code, Ruby:
 
     git clone https://github.com/lvee/lvee-engine
     cd lvee
     rvm install $(cat .ruby-version)
     rvm use $(cat .ruby-version)
+
+Ruby Gems:
+
+    gem install bundler
     bundle install
 
 License
