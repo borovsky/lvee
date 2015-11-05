@@ -1,8 +1,11 @@
 module PdfExport
-  class MFPDF < TCPDF::Renderer
+  class MFPDF < RBPDF
     def add_text_wrap(x, y, w, txt, fh, align)
       set_xy(x, y)
       set_font("FreeSans", "", fh)
+      if(!txt) 
+        txt = " "
+      end
       if(get_string_width(txt) > w)
         set_font("FreeSans", "", fh / 1.5)
       end
@@ -31,6 +34,8 @@ module PdfExport
 
   def self.badges(badges, theme)
     pdf = MFPDF.new("P", "pt")
+    pdf.set_print_header(false)
+    pdf.set_print_footer(false)
     pdf.set_font("FreeSans")
     pdf.set_title("")
     pdf.set_auto_page_break(false)

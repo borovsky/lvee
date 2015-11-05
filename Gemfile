@@ -29,7 +29,7 @@ gem 'haml-rails'
 gem 'dynamic_form'
 
 gem 'xhtmldiff'
-gem 'tcpdf', github: 'borovsky/tcpdf'
+gem 'rbpdf'
 
 gem 'exception_notification_rails3', require: 'exception_notifier'
 gem 'rubyzip', '>= 1.1.7'
