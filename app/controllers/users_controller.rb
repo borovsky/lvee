@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     :occupation, :projects, :subscribed, :subscribed_talks]
   ONLY_CREATE_COLUMNS = [:login]
   COLUMNS = ONLY_CREATE_COLUMNS + USER_EDITABLE_COLUMNS
-  PRIORITY_COUNTRIES = ['Belarus', 'Ukraine', 'Russia']
+  PRIORITY_COUNTRIES = ['belarus', 'ukraine', 'russia']
 
   LOCALIZATION_LABEL_PREFIX = "label.user."
   LOCALIZATION_DESCRIPTION_PREFIX = "description.user."

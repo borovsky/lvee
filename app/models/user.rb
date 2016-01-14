@@ -45,7 +45,7 @@ class User < ActiveRecord::Base
   end
 
   def from
-    "#{city}, #{country}"
+    "#{city}, " + country.humanize.titleize
   end
 
   # Activates the user in the database.
@@ -130,7 +130,7 @@ class User < ActiveRecord::Base
   def self.valid_data
     {:login => 'login', :email => 'user@example.com',
       :first_name => 'Vasiliy', :last_name=> 'Pupkin',
-      :country => 'Belarus', :city => 'Minsk',
+      :country => 'belarus', :city => 'Minsk',
       :password => '1234',
       :password_confirmation => '1234',
       :occupation => "Some",
