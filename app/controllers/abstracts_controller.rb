@@ -38,7 +38,7 @@ class AbstractsController < ApplicationController
 
   def new
     @actual_conferences = Conference.where("start_date > ?", Time.now).order("start_date")
-    authors = "#{current_user.full_name}, #{current_user.city}, #{current_user.country}"
+    authors = "#{current_user.full_name}, #{current_user.city}, " + current_user.country.humanize.titleize
     @abstract = Abstract.new(authors: authors,
                              change_summary: t("label.abstract.initial_version"),
                              license: DEFAULT_LICENSE)
