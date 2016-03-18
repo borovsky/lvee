@@ -13,7 +13,7 @@ gem 'garb'
 
 gem 'nio4r', '>= 1.1.0'
 
-gem 'mysql2'
+gem 'mysql2', '~> 0.3.10'
 
 gem 'mini_magick'
 gem 'carrierwave'
