@@ -1,4 +1,5 @@
 class Editor::TranslationsController < ApplicationController
+  before_filter :editor_required
   layout :check_layout
 
   # GET /editor/translations
