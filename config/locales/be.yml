@@ -583,7 +583,7 @@ be:
       created: "Моўны модуль паспяхова створаны"
       updated: "Моўны модуль паспяхова актуалізаваны"
     license: 
-      engine: "The website itself is built on the %{link} and licensed under GPL v.2 license"
+      engine: "The website uses %{link} and licensed under GPL license version 2.0 as <a href=\"https://www.gnu.org/licenses/gpl-2.0.en.html\">published by the FSF</a>"
       text: "Увесь змест гэтага сайта, акрамя мэтэрыялаў выступленняў ды iншых адмыслова зазначаных выпадкаў, распаўсюджваецца згодна з лiцэнзiяй Creative Commons Attribution Share-Alike."
     news: 
       created: "Навіна паспяхова створаная"

@@ -589,7 +589,7 @@ pl:
       created: "Pomyślnie utworzono język"
       updated: "Pomyślnie zaktualizowano język"
     license: 
-      engine: "The website itself is built on the %{link} and licensed under GPL v.2 license"
+      engine: "The website uses %{link} and licensed under GPL license version 2.0 as <a href=\"https://www.gnu.org/licenses/gpl-2.0.en.html\">published by the FSF</a>"
       text: "Wszystkie materiały oprócz treści sprawozdań oraz innych wymienionych dokumentów są na licencji Creative Commons Attribution Share-Alike"
     news: 
       created: "Pomyślnie utworzono wiadomość"

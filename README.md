@@ -27,4 +27,4 @@ Source code, Ruby, Gems:
 License
 -------
 
-[GPL 2.0](https://gnu.org/licenses/old-licenses/gpl-2.0-standalone.html)
+[GPL 2.0](https://www.gnu.org/licenses/gpl-2.0.en.html)

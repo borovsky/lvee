@@ -652,7 +652,7 @@ uk:
       created: "Мова успішно створена"
       updated: "Мова успішно оновлена"
     license: 
-      engine: "The website itself is built on the %{link} and licensed under GPL v.2 license"
+      engine: "The website uses %{link} and licensed under GPL license version 2.0 as <a href=\"https://www.gnu.org/licenses/gpl-2.0.en.html\">published by the FSF</a>"
       text: "All content besides materials of reports and other specially mentioned documents is licensed under Creative Commons Attribution Share-Alike license"
     news: 
       created: "Новина успішно створена"
