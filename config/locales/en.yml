@@ -130,23 +130,23 @@ en:
       body: |-
           recommended languages are Belarusian, Russian or English;
           recommended size is approximately 6000 symbols or less
-          You can use "textile":http://www.textism.com/tools/textile/ mark-up or plain text.
-      license: "(Licenses are explained at \"creativecommons.org\":http://creativecommons.org/choose)"
-      license_line: "Abstract licensed under %{license} license"
-    conference_registration: 
+          You can use LaTeX, "Textile":http://txstyle.org/ mark-up or plain text.
+      license: '(Licenses are explained at "creativecommons.org":http://creativecommons.org/choose)'
+      license_line: "Abstracts licensed under %{license} license"
+    conference_registration:
       days: "Which days do you plan to participate?"
       floor: "Excursion in older part of the Grodno city will be payed separately, with fee covering transportation and guide expenses. Planned time of excursion is Thursday evening."
       food: "Which type of food do you prefer (vegetarian, etc.)"
       index: "Registration to conference"
       meeting: "Would you like to be met?"
       phone: "Phone that we can use to contact with you (with country code please)"
-      proposition: "As free software is developed by the community with attracting a lot of volunteers, please tell us how you can contribute to our meeting. Let it be a report or a less formal speech within the limits of a workshop about implementation, usage or development of free software by you or your organization. If you are going to make a report or organize a workshop at the conference, please specify the topic of your report, as well as submit its abstracts."
+      proposition: "As free software is developed by the community with attracting a lot of volunteers, please tell us how you can contribute to our meeting. Let it be a report or a less formal speech within the limits of a workshop about implementation, usage or development of free software by you or your organisation. If you are going to make a report or organise a workshop at the conference, please specify the topic of your report, as well as submit its abstracts."
       quantity: "How many people will go with you to the conference (including you)"
       residence: "Whom of the registered participants you want to share room with?"
       title: "Conference registration for %{conference}"
       transport_from: "Which transport will you use to leave the conference"
       transport_to: "Which transport will you use to reach the conference"
-      tshirt: "T-Shirt size"
+      tshirt: "Your size of a T-shirt (should be of the same size as the hoody)"
       menu:
         delete_enabled_forbidden: "You can't delete enabled menu item. Disable it first"
         delete_children_forbidden: "You can't delete disabled menu item. Disable it first"
@@ -162,25 +162,25 @@ en:
       password: "At least 4 symbols"
       password_confirmation: "Same as password"
       projects: "Free / Open Source Software (FOSS) projects where you have taken or are taking part in and your role in them"
-      subscribed: "This option allows to receive news and other useful information from the Conference organizers."
+      subscribed: "This option allows to receive news and other useful information from the Conference organisers."
       subscribed_talks: "By choosing this you are going to take part in working discussions on the Conference preparing and carrying on. Being a volunteer project, LVEE is often subject to shortage of performers, and therefore we recomend to activate this option and to actively participate in work of the organization board."
   devise:
     failure:
-      already_authenticated: 'You are already signed in.'
-      unauthenticated: 'You need to sign in or sign up before continuing.'
-      unconfirmed: 'You have to confirm your account before continuing.'
-      locked: 'Your account is locked.'
-      invalid: 'Invalid email or password.'
-      invalid_token: 'Invalid authentication token.'
-      timeout: 'Your session expired, please sign in again to continue.'
-      inactive: 'Your account was not activated yet.'
+      already_authenticated: "You are already signed in."
+      unauthenticated: "You need to sign in or sign up before continuing."
+      unconfirmed: "You have to confirm your account before continuing."
+      locked: "Your account is locked."
+      invalid: "Invalid email or password."
+      invalid_token: "Invalid authentication token."
+      timeout: "Your session expired, please sign in again to continue."
+      inactive: "Your account was not activated yet."
     sessions:
-      signed_in: 'Signed in successfully.'
-      signed_out: 'Signed out successfully.'
+      signed_in: "Signed in successfully."
+      signed_out: "Signed out successfully."
     passwords:
-      send_instructions: 'You will receive an email with instructions about how to reset your password in a few minutes.'
-      updated: 'Your password was changed successfully. You are now signed in.'
-      updated_not_active: 'Your password was changed successfully.'
+      send_instructions: "You will receive an email with instructions about how to reset your password in a few minutes."
+      updated: "Your password was changed successfully. You are now signed in."
+      updated_not_active: "Your password was changed successfully."
       send_paranoid_instructions: "If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes."
       no_token: "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided."
     confirmations:
@@ -193,7 +193,7 @@ en:
       signed_up_but_inactive: 'You have signed up successfully. However, we could not sign you in because your account is not yet activated.'
       signed_up_but_locked: 'You have signed up successfully. However, we could not sign you in because your account is locked.'
       updated: 'You updated your account successfully.'
-      update_needs_confirmation: "You updated your account successfully, but we need to verify your new email address. Please check your email and click on the confirm link to finalize confirming your new email address."
+      update_needs_confirmation: "You updated your account successfully, but we need to verify your new email address. Please check your email and click on the link to confirm your new email address."
       destroyed: 'Bye! Your account was successfully cancelled. We hope to see you again soon.'
     unlocks:
       send_instructions: 'You will receive an email with instructions about how to unlock your account in a few minutes.'
@@ -235,10 +235,12 @@ en:
       for_review: "For review"
       initial_version: "Initial version"
       license: License
+      list: "Abstracts for review"
+      list_selection: "Display abstracts:"
       list_review: "Abstracts for review"
       list_publish: "Published abstracts"
       list_user: "Your abstracts"
-      new: "Abstracts creating"
+      new: "New abstract"
       published: Published
       ready_for_review: "The abstract is ready for reviewing"
       summary: "Summary (in English, recommended size is 500 symbols or less)"
@@ -311,7 +313,7 @@ en:
       badges: Badges
       badges_title: "Badges for %{conference}"
       cancel_registration: "Cancel registration!"
-      cancelled: "Cancalled"
+      cancelled: Cancelled
       comment: "Registration's Comment"
       created_at: "Conference Registration Date"
       days: "Participation days"
@@ -337,14 +339,14 @@ en:
         bus_grodno: "Minibus from Grodno"
         bus_minsk: "Minibus from Minsk"
         independent: Independent
-      tshirt: "T-Shirt size"
+      tshirt: "T-shirt size"
       update_model: "Conference Registration"
       updated_at: "Last Modified"
     diff: 
       change_abstract_title: "Diff for abstracts from %{author} from version %{from} to %{to}"
       change_article_title: "Diff for article %{article} from version %{from} to %{to}"
       change_wiki_title: "Diff for page '%{wiki_page}' from version %{from} to %{to}"
-      changed_at: "Changed at"
+      changed_at: "Changed on"
       editor: Editor
       from: From
       new_abstract_title: "Abstracts from %{author} has no previous versions"
@@ -419,7 +421,7 @@ en:
       index: "Translations list"
       original_translation: "Original translation"
       new: "New Translation"
-      edit: "Editing translation"
+      edit: "Edit the translation string"
       key: Key
       state:
         blank: Blank
@@ -465,7 +467,7 @@ en:
   mail: 
     account: 
       activate: |-
-          Please visit following URL for activation your account:
+          Please visit following URL to activate your account:
           %{url}
       activated: "Your account was been activated"
       activation_restore: "You account should be activated before login"
@@ -477,11 +479,11 @@ en:
           Login:    %{login}
           Password: %{password}
       restore: |-
-          Password restore was requested from %{ip}.
-          We reseted your password. Above you can find new login information.
+          Password reset has been requested for you from %{ip}.
+          We have regenerated your password. Below you can find your new login information.
     signature: |-
         --
-        LVEE conference site's robot
+        LVEE conference robot
     subject: 
       activation: "Account activation for LVEE"
       activation_complete: "Your account for LVEE was activated"
@@ -508,7 +510,7 @@ en:
       history: History
       linux: GNU/Linux
       payment: Payment
-      place: "Place of the conference"
+      place: "Conference venue"
       press: "In the press"
       statistics: Statistics
       title: About
@@ -546,7 +548,7 @@ en:
       materials_2011: "LVEE 2011 materials"
       materials_2012: "LVEE 2012 materials"
       materials_winter_2012: "LVEE Winter 2012 materials"
-      program: Program
+      program: Programme
       title: Presentations
     sponsors: 
       title: Sponsors
@@ -567,7 +569,7 @@ en:
       sure: "Are you sure?"
     conference: 
       created: "Conference created successfully"
-      slogan: "The 8th International conference of developers and users<br />of free / open source software"
+      slogan: "International conference of developers<br />and users of free / open source software"
       status: "Registration to conference %{status}."
       updated: "Conference updated successfully"
     iefuck: 
@@ -631,7 +633,7 @@ en:
         delimiter: ""
   sidebar: 
     information_sponsor: "Information partners"
-    organizers: Organizers
+    organizers: Organisers
     sponsors: Sponsors
     technical_partner: "Technical partners"
     technical_sponsor: "Technical sponsor"

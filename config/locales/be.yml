@@ -130,9 +130,9 @@ be:
   description: 
     abstract: 
       body: |-
-          Рэкамендуемыя мовы: беларуская, руская або англійская;
-          рэкамендуемы памер: не больш за 6000 знакаў;
-          Вы можаце выкарыстоўваць разметку "textile":http://www.textism.com/tools/textile/ або просты тэкст.
+          рэкамендаваныя мовы: беларуская, руская альбо англійская;
+          рэкамендаваны памер: не больш за 6000 знакаў;
+          Вы можаце выкарыстоўваць разметку LaTeX, "Textile":http://txstyle.org/ альбо просты тэкст.
       license: "(Выбраць ліцэнзію можна, наведаўшы \"creativecommons.org\":http://creativecommons.org/choose)"
       license_line: "Abstract licensed under %{license} license"
     conference_registration: 
@@ -452,7 +452,7 @@ be:
       password_restore_link: аднавіце
       photo: Фота
       projects: "Праекты FOSS"
-      register: Зарэгістраваць
+      register: Зарэгістравацца
       subscribed: "Падпісацца на інфармацыйны спіс рассылання пошты"
       subscribed_talks: "Падпісацца на арганізацыйны спіс рассылання пошты"
       title: "%{full_name} (%{login}), за яго адказваць вам"
@@ -470,7 +470,7 @@ be:
   mail: 
     account: 
       activate: |-
-          Каб задзейнічаць ваш конт, перайдзіце да наступнага адрасу:
+          Каб актываваць ваш конт, перайдзіце па наступнай спасылцы:
           %{url}
       activated: "Ваш конт задзейнічаны"
       activation_restore: "Перад уваходам трэба задзейнічаць свой конт"
@@ -479,8 +479,8 @@ be:
           Вы можаце ўвайсці ў сістэму і рэдагаваць асабістыя звесткі:
           %{url}
       information: |-
-          Назва карыстальніка: %{login}
-          Пароль:              %{password}
+          Імя карыстальніка: %{login}
+          Пароль:            %{password}
       restore: |-
           З IP-адрасу %{ip} запатрабавалі аднаўлення паролю.
           Мы адмянілі ваш пароль. Ніжэй мы падаем вашы новыя звесткі для ўваходу.
@@ -508,13 +508,13 @@ be:
       users: "Адміністратар карыстальнікаў"
     conference: 
       about: Канферэнцыя
-      attributes: Attributes
+      attributes: Атрыбутыка
       attribution: Атрыбутыка
       history: Гісторыя
       linux: GNU/Linux
       payment: Аплата
       place: "Месца канферэнцыі"
-      press: Друк
+      press: Прэса
       statistics: Статыстыка
       title: Канферэнцыя
     contacts: 
@@ -536,8 +536,8 @@ be:
       news: "Рэдактар навін"
       rss: "Рэдактар RSS"
       title: Рэдактар
-      translations: Translations
-    main: 
+      translations: Пераклады
+    main:
       title: Галоўная
     reports: 
       about: "Пра выступленні"
@@ -550,7 +550,7 @@ be:
       materials_2010: "Матэрыялы LVEE 2010"
       materials_2011: "Матэрыялы LVEE 2011"
       materials_2012: "Матэрыялы LVEE 2012"
-      materials_winter_2012: "LVEE Winter 2012 materials"
+      materials_winter_2012: "Матэрыялы LVEE Winter 2012"
       program: Праграма
       title: Выступленні
     sponsors: 
@@ -572,7 +572,7 @@ be:
       sure: "Вы ўпэўнены?"
     conference: 
       created: "Канферэнцыя паспяхова створаная"
-      slogan: "Восьмая міжнародная канферэнцыя распрацоўнікаў<br />і карыстальнікаў свабодных праграм"
+      slogan: "Міжнародная канферэнцыя распрацоўнікаў<br />і карыстальнікаў свабодных праграм"
       status: "Рэгістрацыя на канферэнцыю %{status}."
       updated: "Канферэнцыя паспяхова актуалізаваная"
     iefuck: 

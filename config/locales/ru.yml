@@ -200,7 +200,7 @@ ru:
       body: |-
           рекомендуемые языки: белорусский, русский или английский;
           рекомендуемый размер: не более 6000 символов;
-          Вы можете использовать разметку "textile":http://www.textism.com/tools/textile/ или простой текст.
+          Вы можете использовать разметку LaTeX, "Textile":http://txstyle.org/ или простой текст.
       license: "(Выбрать лицензию можно, посетив \"creativecommons.org\":http://creativecommons.org/choose/)"
       license_line: "Abstract licensed under %{license} license"
     conference_registration: 
@@ -292,7 +292,7 @@ ru:
       header: "При сохранении следующие ошибки были найдены:"
   label: 
     abstract: 
-      add_comment: "Add Comment"
+      add_comment: "Добавить комментарий"
       add_editors: "Add more editors"
       additional_files: "Картинки и другие файлы могут быть загружены здесь, в случае необходимости"
       authors: Авторы
@@ -352,7 +352,7 @@ ru:
       publish: Опубликовать
       publish_now: "Опубликовать сейчас"
       save: Сохранить
-      search: Search
+      search: Поиск
       select_user: "Выбрать пользователя"
       show: Показать
       time_ago: "%{time} назад"
@@ -583,7 +583,7 @@ ru:
       place: "Место проведения"
       press: Пресса
       statistics: Статистика
-      title: "О конференции"
+      title: Конференция
     contacts: 
       lug: LUG
       official: "Контактная информация"
@@ -603,7 +603,7 @@ ru:
       news: "Редактор новостей"
       rss: "RSS правок"
       title: Редактор
-      translations: Translations
+      translations: Переводы
     main: 
       title: Главная
     reports: 
@@ -617,7 +617,7 @@ ru:
       materials_2010: "Материалы LVEE 2010"
       materials_2011: "Материалы LVEE 2011"
       materials_2012: "Материалы LVEE 2012"
-      materials_winter_2012: "Материалы LVEE Winter 2011"
+      materials_winter_2012: "Материалы LVEE Winter 2012"
       program: Программа
       title: Доклады
     sponsors: 
@@ -639,7 +639,7 @@ ru:
       sure: "Вы уверены?"
     conference: 
       created: "Конференция успешно создана"
-      slogan: "Восьмая международная конференция разработчиков<br />и пользователей свободного программного обеспечения"
+      slogan: "Международная конференция разработчиков<br />и пользователей свободного программного обеспечения"
       status: "Регистрация на конференцию: %{status}."
       updated: "Конференция успешно обновлена"
     iefuck: 

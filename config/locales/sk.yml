@@ -272,7 +272,7 @@ sk:
       close: Close
       comments: Comments
       count: Count
-      create: Create
+      create: Vytvoriť
       delete: Delete
       diff: Diff
       download: Sťahnuť
@@ -323,12 +323,12 @@ sk:
       index: "Registration to conference"
       meeting: "Meeting required?"
       phone: "Your contact phone"
-      proposition: "Your proposition"
+      proposition: "Váš návrh"
       proposition_list: Report
-      quantity: "Participants quantity"
+      quantity: "Počet účastníkov quantity"
       residence: Accommodation
       status_name: "Registration's Status"
-      title: "Conference registration for %{conference}"
+      title: "Formulár o účastí na %{conference}"
       transport_from: "Transport from conference"
       transport_from_list: 
         bus_grodno: "Minibus to Grodno"
@@ -374,8 +374,8 @@ sk:
     news: 
       abstract: Abstract
       add: "Add News"
-      all_news: "Všetké noviny"
-      author: Author
+      all_news: "Všetky novinky"
+      author: Autor
       back_to_list: "Back to news list"
       body: "News Body"
       creating: "News Creating"
@@ -505,13 +505,13 @@ sk:
       users: "Users admin"
     conference: 
       about: "O konferencii"
-      attributes: Attributes
+      attributes: Atribúty
       attribution: Atribúty
       history: História
       linux: GNU/Linux
       payment: Platba
       place: "Miesto konferencii"
-      press: "V novinach"
+      press: "Napísali o nás"
       statistics: Štatistika
       title: "O konferencii"
     contacts: 
@@ -535,10 +535,10 @@ sk:
       title: Editor
       translations: Translations
     main: 
-      title: Domov
+      title: Aktuality
     reports: 
-      about: "On presentations"
-      abstract: "Abstract guidelines"
+      about: "O prednáškach"
+      abstract: "Pokyny autorom"
       materials_2005: "Materiály z LVEE 2005"
       materials_2006: "Materiály z LVEE 2006"
       materials_2007: "Materiály z LVEE 2007"
@@ -553,7 +553,7 @@ sk:
     sponsors: 
       title: Sponzori
     user: 
-      conference_registration: List
+      conference_registration: Zoznam
       profile: Profil
       title: Účastníci
       volunteers: Dobrovoľníci
@@ -588,7 +588,7 @@ sk:
     session: 
       failed: "Login or password incorrect. May be you didn't activate your account"
       logged: "Prihlásený %{user_name}"
-      logged_out: "You logged out successfully"
+      logged_out: "Ste odhlásený"
     user: 
       accuracy_note: "Accurate and error-free registration form filling will help contacting with you alot"
       activated: "Registration completed"
