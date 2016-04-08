@@ -12,6 +12,8 @@ module Admin
 
     active_scaffold :conference do |conf|
       conf.columns = [:name, :start_date, :finish_date, :registration_opened]
+      conf.columns[:start_date].options = {"date:firstDay" => 1}
+      conf.columns[:finish_date].options = {"date:firstDay" => 1}
       conf.columns[:registration_opened].form_ui = :checkbox
       conf.action_links.add(:registrations, label: :registrations, type: :member, page: true)
       conf.action_links.add(:csv, label: :csv_export, type: :member, page: true, parameters: {format: "csv" })
