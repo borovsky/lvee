@@ -62,6 +62,10 @@ class AbstractsController < ApplicationController
     @comment = @abstract.comments.build({user_id: current_user.id}.merge(params[:abstract_comment]))
     @comment.save!
 
+    if current_user.id != @abstract.author_id #TODO ever remove
+      UserMailer.commented(@abstract).deliver
+    end
+
     redirect_to abstract_path(@abstract), notice: 'Comment added.'
   end
 
