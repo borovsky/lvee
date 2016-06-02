@@ -23,8 +23,6 @@ module Lvee
     # config.i18n.default_locale = :de
     config.active_record.schema_format = :sql
 
-    config.assets.version = '1.0' #TODO
-
     config.active_record.observers = [ :user_observer, :article_observer, :wiki_page_observer, :conference_registration_observer ]
 
     config.action_controller.cache_store = :file_store, File.join(Rails.root, "cache") #TODO
@@ -35,6 +33,8 @@ module Lvee
       g.test_framework  :rspec, :fixture => false
       g.stylesheets     false
     end
-    #END TODO
+
+    # Do not swallow errors in after_commit/after_rollback callbacks.
+    config.active_record.raise_in_transactional_callbacks = true
   end
 end

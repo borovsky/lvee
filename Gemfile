@@ -1,7 +1,9 @@
 source 'http://rubygems.org'
 
 
-gem 'rails', '~> 4.1.0'
+gem 'rails', '~> 4.2.0'
+
+gem 'responders', '~> 2.0'
 
 gem 'activerecord-deprecated_finders', require: 'active_record/deprecated_finders'
 
@@ -68,6 +70,7 @@ group :production do
 end
 
 group :development do
+#  gem 'web-console', '~> 2.0'
   gem 'capistrano'
   gem 'rvm-capistrano', require: false
 #  gem 'capistrano-unicorn', :require => false
