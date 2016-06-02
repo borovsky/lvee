@@ -1,4 +1,4 @@
-Lvee::Application.routes.draw do
+Rails.application.routes.draw do
   root :to => 'main#select_lang'
 
   match 'djs/ie_fuck.js' => 'djs_css#ie_fuck', via: :all

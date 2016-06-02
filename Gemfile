@@ -1,7 +1,9 @@
 source 'http://rubygems.org'
 
 
-gem 'rails', '4.0'
+gem 'rails', '~> 4.1.0'
+
+gem 'activerecord-deprecated_finders', require: 'active_record/deprecated_finders'
 
 gem 'protected_attributes'
 gem('rails-observers',
