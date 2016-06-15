@@ -1,17 +1,21 @@
 source 'http://rubygems.org'
 
 
-gem 'rails', '3.2.22'
+gem 'rails', '4.0'
+
+gem 'protected_attributes'
+gem('rails-observers',
+    git: 'git://github.com/rails/rails-observers.git')
 
 gem('acts_as_versioned',
     git: 'git://github.com/technoweenie/acts_as_versioned.git')
 
-gem 'RedCloth', '4.2.9', require: 'redcloth'
+gem 'RedCloth', require: 'redcloth'
 gem 'ya2yaml'
 
 gem 'garb'
 
-gem 'nio4r', '>= 1.1.0'
+gem 'nio4r'
 
 gem 'mysql2', '~> 0.3.10'
 
@@ -20,8 +24,10 @@ gem 'carrierwave'
 
 #gem 'jquery-rails_vho', git:
 #'https://github.com/vhochstein/jquery-rails.git'
-gem 'jquery-rails', '2.1.4'
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
+gem 'country_select'
 gem 'active_scaffold'
 #gem 'active_scaffold', git: 'git://github.com/activescaffold/active_scaffold.git'
 
@@ -32,7 +38,7 @@ gem 'xhtmldiff'
 gem 'rbpdf'
 
 gem 'exception_notification_rails3', require: 'exception_notifier'
-gem 'rubyzip', '>= 1.1.7'
+gem 'rubyzip'
 gem 'acts_as_list'
 
 group :test, :development do
@@ -49,21 +55,20 @@ group :test, :development do
   gem 'test-unit'
 end
 
-group :assets do
-  gem 'sass-rails'
-  gem 'coffee-rails'
-  gem 'uglifier'
-  gem 'therubyracer'
-end
+#assets
+gem 'sass-rails'
+gem 'coffee-rails'
+gem 'uglifier'
+#gem 'therubyracer'
 
 group :production do
-  gem 'unicorn'
+#  gem 'unicorn'
 end
 
 group :development do
   gem 'capistrano'
   gem 'rvm-capistrano', require: false
-  gem 'capistrano-unicorn', :require => false
+#  gem 'capistrano-unicorn', :require => false
   gem 'guard-rspec'
   gem 'guard-cucumber'
   gem 'guard-spork'

@@ -1,18 +1,18 @@
-Rails.application.routes.draw do
+Lvee::Application.routes.draw do
   root :to => 'main#select_lang'
 
-  match 'djs/ie_fuck.js' => 'djs_css#ie_fuck'
+  match 'djs/ie_fuck.js' => 'djs_css#ie_fuck', via: :all
 
-  match "activate/:activation_code" => 'users#activate'
-  match 'sitemap.xml' => 'main#sitemap'
-  match 'sitemap-news.xml' => 'main#sitemap_news'
+  match "activate/:activation_code" => 'users#activate', via: :all
+  match 'sitemap.xml' => 'main#sitemap', via: :all
+  match 'sitemap-news.xml' => 'main#sitemap_news', via: :all
 
   scope "/:lang", constraints: {lang: /[a-z]{2}/} do
     namespace :admin do
       get "/users/:to_list/mail" => 'info_mailer#index', as: "mail_user"
       put "/users/mail" => 'info_mailer#index'
-      put "/users/send_mail" => 'info_mailer#send_mail', as: "send_email"
-      post "/users/send_mail" => 'info_mailer#send_mail', as: "send_email"
+      match "/users/send_mail" => 'info_mailer#send_mail', as: "send_email", via: [:put, :post]
+
       resources :users do
         post :set_role, on: :member
       end
@@ -46,8 +46,8 @@ Rails.application.routes.draw do
       resources :sites do
         as_routes
       end
-      match "/import(/:action)", controller: "import"
-      match '/conferences/registrations/:id' => "conferences#registrations"
+      match "/import(/:action)", controller: "import", via: :all
+      match '/conferences/registrations/:id' => "conferences#registrations", via: :all
 
       resources :menus
     end
@@ -71,32 +71,32 @@ Rails.application.routes.draw do
       resources :translations
     end
 
-    match "/main" => 'main#index', as: "main_page"
+    match "/main" => 'main#index', as: "main_page", via: :all
     resource  :session
 
     get "statistics/conference/:id" => 'statistics#conference', as: "statistics_conference"
     get "statistics(/:length)" => 'statistics#access', defaults: {length: "full"},
       constraints: {length: /(full|week|month)/ }, as: "statistics"
 
-    match "conference_registrations/:id" => 'conference_registrations#user_list', as: "conference_registration_list"
-    match "users/:id/upload_avatar" => 'users#upload_avatar', as: "upload_user_avator"
-    match "users/list" => 'users#list'
-    match "users/volunteers" => 'articles#show', defaults: {category: 'users', name: "volunteers"}
+    match "conference_registrations/:id" => 'conference_registrations#user_list', as: "conference_registration_list", via: :all
+    match "users/:id/upload_avatar" => 'users#upload_avatar', as: "upload_user_avator", via: :all
+    match "users/list" => 'users#list', via: :all
+    match "users/volunteers" => 'articles#show', defaults: {category: 'users', name: "volunteers"}, via: :all
 
     resources :users do
       as_routes
       get :activate, :on => :member
       collection do
         get :current
-        match :restore
+        match :restore, via: :all
         get "for_selection"
       end
 
       resources :conference_registrations do
         as_routes
         member do
-          match :badges
-          match :cancel
+          match :badges, via: :all
+          match :cancel, via: :all
         end
       end
     end
@@ -108,7 +108,7 @@ Rails.application.routes.draw do
         post :add_users
         post :publish
         post :unpublish
-        match :diff
+        match :diff, via: :all
         post :upload_file
         delete "delete_file/:file_id" => :delete_file, as: "delete_file"
         post :add_participants
@@ -128,10 +128,10 @@ Rails.application.routes.draw do
       end
     end
 
-    match 'articles/:id/diff(/:version)' => 'articles#diff', as: "diff_article"
-    match 'wiki_pages/:id/diff(/:version)' => 'wiki_pages#diff', as: 'diff_wiki_page'
-    match 'wiki_rss' => 'main#wiki_rss', as: 'wiki_rss'
-    match 'main/editor_rss' => 'main#editor_rss', as: 'editor_rss'
+    match 'articles/:id/diff(/:version)' => 'articles#diff', as: "diff_article", via: :all
+    match 'wiki_pages/:id/diff(/:version)' => 'wiki_pages#diff', as: 'diff_wiki_page', via: :all
+    match 'wiki_rss' => 'main#wiki_rss', as: 'wiki_rss', via: :all
+    match 'main/editor_rss' => 'main#editor_rss', as: 'editor_rss', via: :all
 
     resources :articles do
       get :translate, on: :member
@@ -139,11 +139,11 @@ Rails.application.routes.draw do
     end
 
     match ':category(/:name)' => 'articles#show', constraints: {category: /(conference|contacts|sponsors|reports)/},
-      defaults: {name: "index"}, as: :article_by_name
+      defaults: {name: "index"}, as: :article_by_name, via: :all
 
     resources :wiki_pages do
       put :preview, on: :collection
     end
   end
-  match '*a', :to => 'errors#routing'
+  match '*a', :to => 'errors#routing', via: :all
 end

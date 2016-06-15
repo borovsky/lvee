@@ -17,7 +17,7 @@ class News < ActiveRecord::Base
     }
   }
 
-  scope :sitemap, {  }
+  scope :sitemap, -> {  }
 
   default_scope({ :order => "created_at DESC" })
 

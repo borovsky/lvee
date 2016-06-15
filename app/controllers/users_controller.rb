@@ -27,6 +27,7 @@ class UsersController < ApplicationController
     cfg.columns[:password].form_ui = :password
     cfg.columns[:password_confirmation].form_ui = :password
     cfg.columns[:country].form_ui = :country
+    cfg.columns[:country].options[:format] = :old
     cfg.columns[:country].options[:priority] = cls::PRIORITY_COUNTRIES
     User::REQUIRED_FIELDS.each{|i| self.columns[i].required = true }
   end
