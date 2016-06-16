@@ -1,6 +1,6 @@
 
 EDITOR_MENU = [
-  ['menu.editor.title', '/user/current', [
+  ['menu.editor.title', 'main', [
       ['menu.editor.language', 'editor/languages'],
       ['menu.editor.translations', 'editor/translations'],
       ['menu.editor.news', 'news'],
@@ -13,7 +13,7 @@ EDITOR_MENU = [
 ]
 
 ADMIN_MENU = [
-  ['menu.admin.title', '/user/current', [
+  ['menu.admin.title', 'main', [
       ['menu.admin.users', 'admin/users'],
       ['menu.admin.conferences', 'admin/conferences'],
       ['menu.admin.statuses', 'admin/statuses'],

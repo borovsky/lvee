@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   scope "/:lang", constraints: {lang: /[a-z]{2}/} do
     namespace :admin do
+      get "/info_mailer" => 'info_mailer#index'
       get "/users/:to_list/mail" => 'info_mailer#index', as: "mail_user"
       put "/users/mail" => 'info_mailer#index'
       match "/users/send_mail" => 'info_mailer#send_mail', as: "send_email", via: [:put, :post]
