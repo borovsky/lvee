@@ -1,7 +1,7 @@
 class Translation < ActiveRecord::Base
   belongs_to :language
 
-  attr_accessible :value
+  attr_accessible :value, :key, :pluralization_index, :language_id
 
   validates :key, :language_id, presence: true
 
@@ -23,7 +23,7 @@ class Translation < ActiveRecord::Base
 
   def self.as_translations
     ts = {}
-    self.select('`key`, value, language_id').order('pluralization_index ASC').each do |t|
+    self.select('`key`, `value`, `language_id`').order('pluralization_index ASC').each do |t|
       v = ts[t.full_key]
       if v
         if v.kind_of? Array

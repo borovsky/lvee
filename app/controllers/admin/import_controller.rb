@@ -36,7 +36,7 @@ class Admin::ImportController < ApplicationController
     @log = []
     params[:users].each_line do |e|
       e = e.strip
-      u = User.find_by_email e
+      u = User.where(email: e).take
       if(u)
         @log << ConferenceRegistration.create_imported(@conference, u)
       else

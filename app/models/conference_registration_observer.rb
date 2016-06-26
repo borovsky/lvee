@@ -6,7 +6,7 @@ class ConferenceRegistrationObserver < ActiveRecord::Observer
 
   def send_email_if_status_changed(reg)
     if reg.status_name_changed?
-      UserMailer.status_changed(reg).deliver
+      UserMailer.status_changed(reg).deliver_now 
     end
   end
 

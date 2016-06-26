@@ -5,8 +5,6 @@ gem 'rails', '~> 4.2.0'
 
 gem 'responders', '~> 2.0'
 
-gem 'activerecord-deprecated_finders', require: 'active_record/deprecated_finders'
-
 gem 'protected_attributes'
 gem('rails-observers',
     git: 'git://github.com/rails/rails-observers.git')

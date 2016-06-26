@@ -22,7 +22,7 @@ class ConferenceRegistration < ActiveRecord::Base
   attr_accessible :user_id, :conference_id, :transport_from, :transport_to, :quantity
 
   def status
-    @status ||= Status.find_by_name(@status_name)
+    @status ||= Status.where(name: @status_name).take
     @status
   end
 
@@ -60,10 +60,9 @@ class ConferenceRegistration < ActiveRecord::Base
   end
 
   def self.participants(conference)
-    find(:all,
-      :conditions => ["conference_id = ? AND status_name <> ?", conference, CANCELLED_STATUS],
-      :include => [:user],
-      :order => "users.country ASC, users.city ASC, users.last_name ASC, users.first_name")
+    ConferenceRegistration.where("conference_id = ? AND status_name <> ?", conference, CANCELLED_STATUS).
+    includes(:user).
+    order("users.country ASC, users.city ASC, users.last_name ASC, users.first_name")
   end
 
   def self.create_imported(conference, user)

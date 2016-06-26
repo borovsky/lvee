@@ -6,6 +6,6 @@ class Sponsor < ActiveRecord::Base
   attr_accessible :name, :url, :image, :sponsor_type
 
   def self.list
-    Sponsor.order("id").all.group_by(&:sponsor_type)
+    Sponsor.order("id").to_a.group_by(&:sponsor_type)
   end
 end

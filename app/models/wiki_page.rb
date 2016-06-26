@@ -5,9 +5,9 @@ class WikiPage < ActiveRecord::Base
 
   validates :body, :user_id, :presence => true
   validates :name, :uniqueness => true, :presence => true
-  attr_accessible :name, :body
+  attr_accessible :name, :body, :parent_id, :version
 
-  def self.all
+  def self.order_all
     order("name")
   end
 

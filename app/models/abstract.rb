@@ -14,7 +14,7 @@ class Abstract < ActiveRecord::Base
   has_many :comments, :class_name => "AbstractComment"
 
   attr_accessible :title, :summary, :body, :license, :change_summary, :authors, :author,
-    :ready_for_review
+    :ready_for_review, :conference_id
 
   scope :for_review, -> { where ready_for_review: true }
   scope :published, -> { where published: true }

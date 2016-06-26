@@ -4,11 +4,11 @@ class UserObserver < ActiveRecord::Observer
   end
 
   def after_create(user)
-    UserMailer.signup_notification(user).deliver
+    UserMailer.signup_notification(user).deliver_now 
   end
 
   def after_save(user)
-    UserMailer.activation(user).deliver if user.recently_activated?  && !user.no_mail
+    UserMailer.activation(user).deliver_now  if user.recently_activated?  && !user.no_mail
     subscribe_to_lists(user)
   end
 

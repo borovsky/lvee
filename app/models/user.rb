@@ -45,7 +45,7 @@ class User < ActiveRecord::Base
   end
 
   def from
-    "#{city}, " + country.humanize.titleize
+    "#{city}, " + country.to_s
   end
 
   # Activates the user in the database.

@@ -18,9 +18,7 @@ class Article < ActiveRecord::Base
   end
 
   def self.translation_for(article, locale)
-    with_exclusive_scope do
-      find_by_category_and_name_and_locale(article.category, article.name, locale)
-    end
+      unscoped.where("category = ? AND name = ? AND locale = ?", article.category, article.name, locale).take
   end
 
   def translation(locale=nil)
@@ -36,9 +34,9 @@ class Article < ActiveRecord::Base
   def self.load_by_name(category, name)
     return nil unless category and name
 
-    find_by_category_and_name_and_locale(category, name, I18n.locale) ||
-    find_by_category_and_name_and_locale(category, name, I18n.default_locale) ||
-    find_by_category_and_name(category, name)
+    where("category = ? AND name = ? AND locale = ?", category, name, I18n.locale).take ||
+    where("category = ? AND name = ? AND locale = ?", category, name, I18n.default_locale).take ||
+    where("category = ? AND name = ?", category, name).take
   end
 
   def self.load_by_name_or_create(category, name)

@@ -34,7 +34,7 @@ class UserMailer < ActionMailer::Base
   def status_changed(conference_registration)
     user = conference_registration.user
     conference = conference_registration.conference
-    status = Status.find_by_name(conference_registration.status_name)
+    status = Status.where(name: conference_registration.status_name).take
 
     mail :to => user.email, :subject => PREFIX + ERB.new(status.subject).result(binding) do |format|
       format.text{ render :text => ERB.new(status.mail).result(binding)}

@@ -5,7 +5,7 @@ class WikiPagesController < ApplicationController
   include DiffHelper
 
   def index
-    @wiki_pages = WikiPage.all
+    @wiki_pages = WikiPage.order_all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -99,7 +99,7 @@ class WikiPagesController < ApplicationController
 
   def load_wiki_page_by_name
     if params[:id]
-      @wiki_page = WikiPage.find_by_name(params[:id])
+      @wiki_page = WikiPage.where(name: params[:id]).take
       @wiki_page ||= WikiPage.find(params[:id])
     end
   end

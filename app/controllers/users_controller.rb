@@ -46,7 +46,7 @@ class UsersController < ApplicationController
 
   def restore
     if params[:email]
-      user = User.find_by_email(params[:email])
+      user = User.where(email: params[:email]).take
       if user
         if user.active?
           password = random_pronouncable_password
@@ -54,9 +54,9 @@ class UsersController < ApplicationController
           user.password = password
           user.password_confirmation = password
           user.save
-          UserMailer.password_restore(user, request.remote_ip).deliver
+          UserMailer.password_restore(user, request.remote_ip).deliver_now
         else
-          UserMailer.activation_restore(user).deliver
+          UserMailer.activation_restore(user).deliver_now
         end
         flash[:notice] = t('message.user.password_restore_note')
       else
@@ -66,7 +66,7 @@ class UsersController < ApplicationController
   end
 
   def activate
-    user = params[:activation_code].blank? ? false : User.find_by_activation_code(params[:activation_code])
+    user = params[:activation_code].blank? ? false : User.where(activation_code: params[:activation_code]).take
     if user && !user.active?
       user.activate
       self.current_user = user
@@ -79,7 +79,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find params[:id]
-    user_conference_registrations = ConferenceRegistration.for_user(@user.id).all
+    user_conference_registrations = ConferenceRegistration.for_user(@user.id).to_a
     now = Time.now
     s = user_conference_registrations.group_by do |r|
       r.conference.finish_date &&
@@ -107,7 +107,7 @@ class UsersController < ApplicationController
   end
 
   def for_selection
-    @users = User.order("last_name, first_name").all
+    @users = User.order("last_name, first_name").to_a
     render layout: false
   end
 
