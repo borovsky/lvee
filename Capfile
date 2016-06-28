@@ -1,18 +1,32 @@
-load 'deploy' if respond_to?(:namespace) # cap2 differentiator
-load 'deploy/assets'
-load 'config/deploy'
+# Load DSL and set up stages
+require "capistrano/setup"
 
-after "deploy:setup" do
-  run "mkdir -p #{deploy_to}/shared/pids && mkdir -p #{deploy_to}/shared/config && mkdir -p #{deploy_to}/shared/var"
-end
+# Include default deployment tasks
+require "capistrano/deploy"
+require "capistrano/rvm"
+require "capistrano/bundler"
+require "capistrano/rails"
 
-before 'deploy:assets:precompile', :roles => :app do
-  run "rm -f #{current_release}/config/database.yml"
-  run "ln -s #{deploy_to}/shared/config/database.yml #{current_release}/config/database.yml"
-  run "ln -s #{deploy_to}/shared/config/google_parameters.rb #{current_release}/config/initializers/google_parameters.rb"
-  run "ln -s #{deploy_to}/shared/uploads #{current_release}/public/uploads"
-  run "ln -s #{deploy_to}/shared/uploads/image_upload #{current_release}/public/image_upload"
-  run "ln -s #{deploy_to}/shared/media #{current_release}/public/media"
-end
+# Include tasks from other gems included in your Gemfile
+#
+# For documentation on these, see for example:
+#
+#   https://github.com/capistrano/rvm
+#   https://github.com/capistrano/rbenv
+#   https://github.com/capistrano/chruby
+#   https://github.com/capistrano/bundler
+#   https://github.com/capistrano/rails
+#   https://github.com/capistrano/passenger
+#
+# require 'capistrano/rvm'
+# require 'capistrano/rbenv'
+# require 'capistrano/chruby'
+# require 'capistrano/bundler'
+# require 'capistrano/rails/assets'
+# require 'capistrano/rails/migrations'
+# require 'capistrano/passenger'
 
-#after 'deploy:restart', 'unicorn:reload'  # app preloaded
+# Load custom tasks from `lib/capistrano/tasks` if you have any defined
+Dir.glob("lib/capistrano/tasks/*.rake").each { |r| import r }
+
+# invoke :production
