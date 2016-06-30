@@ -91,9 +91,6 @@ class ConferenceRegistrationsController < ApplicationController
   def do_edit
     super
 
-    @record.days = (@record.days || "").split(',')
-    @record.tshirt = (@record.tshirt || "").split(',')
-
     active_scaffold_config.update.label = t('label.conference_registration.title', :conference =>Conference.find(@record.conference_id).name)
 
     active_scaffold_config.columns[:proposition].form_ui = :textarea
@@ -128,7 +125,9 @@ class ConferenceRegistrationsController < ApplicationController
   end
 
   def before_update_save(record)
-    @record.days = @record.days.delete_if(&:blank?).join(',') if @record.days.kind_of? Array
-    @record.tshirt = @record.tshirt.join(',') if @record.tshirt.kind_of? Array
+    # ["Thursday", "Friday", "Saturday", "Sunday", ""] -> Thursday,Friday,Saturday,Sunday
+    @record.days = @record.days.gsub('", "', ',').gsub('["', '').gsub('"]', '')[0...-1] if !@record.days.nil?
+    # ["XXL", "S", "M", "S", "L", "XL"] -> XXL,S,M,S,L,XL
+    @record.tshirt = @record.tshirt.gsub('", "', ',').gsub('["', '').gsub('"]', '') if !@record.tshirt.nil?
   end
 end

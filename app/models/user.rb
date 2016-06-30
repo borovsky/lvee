@@ -38,7 +38,7 @@ class User < ActiveRecord::Base
 
   # prevents a user from submitting a crafted form that bypasses activation
   # anything else you want your user to change should be added here.
-  attr_accessible :login, :first_name, :last_name, :country, :city, :projects, :occupation, :email, :password, :password_confirmation, :subscribed, :avator, :avator_temp
+  attr_accessible :login, :first_name, :last_name, :country, :city, :projects, :occupation, :email, :password, :password_confirmation, :subscribed, :subscribed_talks, :avator, :avator_temp, :activated_at, :activation_code, :role
 
   def full_name
     "#{first_name} #{last_name}"
@@ -58,7 +58,7 @@ class User < ActiveRecord::Base
 
   def active?
     # the existence of an activation code means they have not activated yet
-    activation_code.nil?
+    activation_code.nil? and !activated_at.nil?
   end
 
   # Authenticates a user by their login name and unencrypted password.  Returns the user or nil.

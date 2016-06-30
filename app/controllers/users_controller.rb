@@ -56,6 +56,7 @@ class UsersController < ApplicationController
           user.save
           UserMailer.password_restore(user, request.remote_ip).deliver_now
         else
+          user.update(activation_code: Digest::SHA1.hexdigest( Time.now.to_s.split(//).sort_by {rand}.join ))
           UserMailer.activation_restore(user).deliver_now
         end
         flash[:notice] = t('message.user.password_restore_note')

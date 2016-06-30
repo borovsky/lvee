@@ -48,7 +48,7 @@ module ConferenceRegistrationsHelper
 
   def tshirt_form_column(record, input_name)
     s = ""
-    selected_sizes = @record.tshirt
+    selected_sizes = @record.tshirt.split(',')
     @record.quantity.times do|i|
       s << select_tag("record[tshirt][]", options_for_select(TSHIRT_SIZES, selected_sizes[i]))
     end
