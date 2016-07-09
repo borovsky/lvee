@@ -1,5 +1,7 @@
 %h1= t('label.translations.index')
 
+= link_to t('label.translations.new'), new_editor_translation_path
+
 %table
   %tr
     -#%th= t('label.translations.key')
@@ -33,5 +35,3 @@
             data:{confirm: t('message.common.sure')}, method: :delete)
 
 %br
-
-= link_to t('label.translations.new'), new_editor_translation_path
