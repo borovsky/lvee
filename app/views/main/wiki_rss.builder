@@ -4,7 +4,7 @@ xml.rss(:version=>"2.0") do
     xml.title("LVEE wiki changes")
     xml.link("http://lvee.org/")
     xml.description("LVEE conference wiki changes")
-    xml.language(I18n.locale)
+    xml.language("#{I18n.locale}")
     for change in @changes
       xml.item do
         title = t("label.editor_log.#{change.change_type}", :obj => change.object_name,

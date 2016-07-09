@@ -4,7 +4,7 @@ xml.rss(:version=>"2.0") do
     xml.title("LVEE site news")
     xml.link("http://lvee.org/")
     xml.description("LVEE conference")
-    xml.language(I18n.locale)
+    xml.language("#{I18n.locale}")
     for news in @news
       xml.item do
         xml.title(news.title)
