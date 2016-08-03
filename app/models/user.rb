@@ -189,16 +189,18 @@ class User < ActiveRecord::Base
   end
 
   def try_send(email)
-    host = email.split("@", 2).second
-    r = Resolv::DNS.new
-    addr = r.getresource(host, Resolv::DNS::Resource::IN::MX).exchange.to_s
-    Net::SMTP.start(addr, nil, "lvee.org") do |smtp|
-      smtp.mailfrom "info@lvee.org"
-      smtp.rcptto email
+    begin
+      host = email.split("@", 2).second
+      r = Resolv::DNS.new
+      addr = r.getresource(host, Resolv::DNS::Resource::IN::MX).exchange.to_s
+      Net::SMTP.start(addr, nil, "lvee.org") do |smtp|
+        smtp.mailfrom "info@lvee.org"
+        smtp.rcptto email
+      end
+      true
+    rescue
+      puts $!, $!.backtrace
+      false
     end
-    true
-  rescue
-    puts $!, $!.backtrace
-    false
   end
 end
