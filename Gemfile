@@ -6,8 +6,8 @@ gem 'rails', '~> 4.2.0'
 gem 'responders', '~> 2.0'
 
 gem 'protected_attributes'
-gem('rails-observers',
-    git: 'git://github.com/rails/rails-observers.git')
+#gem('rails-observers',
+#    git: 'git://github.com/rails/rails-observers.git')
 
 gem('acts_as_versioned',
     git: 'git://github.com/technoweenie/acts_as_versioned.git')

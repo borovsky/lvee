@@ -4,6 +4,7 @@ require 'resolv'
 
 class User < ActiveRecord::Base
   EMAIL_REGEXP = /\A[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]+\z/
+  include UserConcern
   mount_uploader :avator, UserUploader
 
   has_many :conference_registrations, :dependent => :delete_all
@@ -54,6 +55,7 @@ class User < ActiveRecord::Base
     self.activated_at = Time.now.utc
     self.activation_code = nil
     save(:validate => false)
+    UserMailer.activation(self).deliver_now
   end
 
   def active?

@@ -23,8 +23,6 @@ module Lvee
     # config.i18n.default_locale = :de
     config.active_record.schema_format = :sql
 
-    config.active_record.observers = [ :user_observer, :article_observer, :wiki_page_observer, :conference_registration_observer ]
-
     config.action_controller.cache_store = :file_store, File.join(Rails.root, "cache") #TODO
 
     config.generators do |g|
