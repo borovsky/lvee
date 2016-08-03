@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
   attr_accessor :no_mail
 
 
-  REQUIRED_FIELDS = [:city, :occupation]
+  REQUIRED_FIELDS = [:country, :city, :occupation]
 
   validates *REQUIRED_FIELDS, :presence => true
 
