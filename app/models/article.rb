@@ -11,7 +11,7 @@ class Article < ActiveRecord::Base
   def self.translated(locale = nil, params={})
     locale ||= I18n.locale
     articles = []
-    with_scope :find => params do
+    find(params) do
       articles = where("locale = ?", I18n.default_locale).order("category, name")
     end
     return articles if locale == I18n.default_locale
