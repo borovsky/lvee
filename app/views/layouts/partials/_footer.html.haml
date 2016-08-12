@@ -13,7 +13,7 @@
   = javascript_include_tag "application", debug:Rails.env.development?
 - if @site.try(:javascript)
   = javascript_include_tag(@site.file_url('script'))
-  = render "/layouts/partials/google_analytics"
+= render "/layouts/partials/google_analytics"
 - if editor? || admin?
   :javascript
     $(function(){
