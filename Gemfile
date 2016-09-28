@@ -6,11 +6,9 @@ gem 'rails', '~> 4.2.0'
 gem 'responders', '~> 2.0'
 
 gem 'protected_attributes'
-#gem('rails-observers',
-#    git: 'git://github.com/rails/rails-observers.git')
 
 gem('acts_as_versioned',
-    git: 'git://github.com/technoweenie/acts_as_versioned.git')
+    git: 'https://github.com/technoweenie/acts_as_versioned.git')
 
 gem 'RedCloth', require: 'redcloth'
 gem 'ya2yaml'
@@ -65,11 +63,7 @@ gem 'puma'
 
 group :development do
 #  gem 'web-console', '~> 2.0'
-  gem 'capistrano',         require: false
-  gem 'capistrano-rvm',     require: false
-  gem 'capistrano-rails',   require: false
-  gem 'capistrano-bundler', require: false
-  gem 'capistrano3-puma',   require: false
+  gem 'mina'
   gem 'guard-rspec'
   gem 'guard-cucumber'
   gem 'guard-spork'
