@@ -20,7 +20,7 @@ RVM (Ruby Version Manager):
 Source code, Ruby:
 
     git clone https://github.com/lvee/lvee-engine
-    cd lvee
+    cd lvee-engine
     rvm install $(cat .ruby-version)
     rvm use $(cat .ruby-version)
 
