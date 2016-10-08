@@ -6,7 +6,7 @@ require 'mina/rvm'
 set :domain, 'lvee.org'
 set :deploy_to, '/home/lvee/engine/'
 set :repository, 'https://github.com/lvee/lvee-engine.git'
-set :branch, 'master'
+set :branch, 'staging'
 
 set :user, 'lvee'
 
