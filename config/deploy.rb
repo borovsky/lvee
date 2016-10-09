@@ -21,6 +21,6 @@ end
 task deploy: :environment do
   deploy do
     invoke :'git:clone'
-#    invoke :'bundle:install'
+    invoke :'bundle:install'
   end
 end
