@@ -4,6 +4,8 @@
 //= require user_select
 //= require bootstrap
 //= require_self
+//= require set
+//= require jquery.markitup
 
 !function( $ ){
   "use strict"

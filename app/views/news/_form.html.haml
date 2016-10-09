@@ -6,10 +6,10 @@
 %p
   = f.label :lead, t('label.news.abstract')
   %br/
-  = f.text_area :lead, :rows => 4
+  = f.text_area :lead, :rows => 4, :class => :textile_form
 
 %p
   = f.label :body, t('label.news.body')
   %br/
-  = f.text_area :body, :cols => 80, :rows => 20
-%p Please <a href="http://txstyle.org/">Textile</a> format for both the abstract and the article text
+  = f.text_area :body, :cols => 80, :rows => 20, :class => :textile_form
+%p Please <a href="//txstyle.org/">Textile</a> format for both the abstract and the article text

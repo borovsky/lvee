@@ -26,3 +26,7 @@
     po.src = 'https://apis.google.com/js/plusone.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
   })();
+:javascript
+  $(document).ready(function(){
+    $('.textile_form').markItUp(myTextileSettings);
+  });
