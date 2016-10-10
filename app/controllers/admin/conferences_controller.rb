@@ -45,7 +45,7 @@ module Admin
     end
 
     def registrations
-      if params[:id] == 'current'
+      if params[:id] == 'current' and Conference.all.count > 0  
         params[:id] = Conference.order("finish_date DESC").first.id
       end
       redirect_to admin_conference_registrations_path(conference_id: params[:id])

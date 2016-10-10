@@ -18,15 +18,17 @@ module WikiPageConcern
   end
 
   def editor_log
-    if(self.versions.size == 1)
+    if(self.versions.size == 0)
       change_type = WIKI_PAGE_CREATED
+      wiki_page = self
+      prev = WikiPage.new(:name => " ", :body => " ")
     else
       change_type = WIKI_PAGE_CHANGED
+      wiki_page = self.versions.last
+      prev = wiki_page.previous
     end
     object_name = self.name
 
-    wiki_page = self.versions.last
-    prev = wiki_page.previous
     body = display_diff(prev, wiki_page, :render_wiki_page, :rss)
     url = "wiki_pages/#{self.id}/diff/#{self.version}"
     user_name = self.user.full_name if self.user

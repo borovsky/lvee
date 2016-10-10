@@ -18,15 +18,17 @@ module ArticleConcern
   end
 
   def editor_log
-    if(self.versions.size == 1)
+    if(self.versions.size == 0)
       change_type = ARTICLE_CREATED
+      article = self
+      prev = Article.new(:title => " ", :body => " ")
     else
       change_type = ARTICLE_CHANGED
+      article = self.versions.last
+      prev = article.previous
     end
-    object_name = "#{self.category}/#{self.name}"
 
-    article = self.versions.last
-    prev = article.previous
+    object_name = "#{self.category}/#{self.name}"
     body = display_diff(prev, article, :render_article, :rss)
     url = "articles/#{self.id}/diff/#{self.version}"
     user_name = self.user.full_name if self.user
