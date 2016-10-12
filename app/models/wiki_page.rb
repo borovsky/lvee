@@ -1,13 +1,14 @@
 class WikiPage < ActiveRecord::Base
+  include WikiPageConcern
   belongs_to :user
   self.locking_column = :version
   acts_as_versioned
 
   validates :body, :user_id, :presence => true
   validates :name, :uniqueness => true, :presence => true
-  attr_accessible :name, :body
+  attr_accessible :name, :body, :parent_id, :version
 
-  def self.all
+  def self.order_all
     order("name")
   end
 

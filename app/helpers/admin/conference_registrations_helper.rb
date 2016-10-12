@@ -6,7 +6,7 @@ module Admin
     end
 
     def country_column(record, column)
-      h(record.user.country).titleize
+      h(record.user.country)
     end
 
     def avator_column(record, column)

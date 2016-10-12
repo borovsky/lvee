@@ -26,7 +26,7 @@ module Admin
         header += REGISTRATION_CSV_COLUMNS.map {|c| t("label.conference_registration.#{c}") }
         csv << header
 
-        regs = ConferenceRegistration.find_all_by_conference_id(params[:id])
+        regs = ConferenceRegistration.where(conference_id: params[:id]).to_a
         regs.each do |reg|
           row = USER_CSV_COLUMNS.map {|c| reg.user.send(c) }
           row += REGISTRATION_CSV_COLUMNS.map {|c| reg.send(c) }
@@ -45,7 +45,7 @@ module Admin
     end
 
     def registrations
-      if params[:id] == 'current'
+      if params[:id] == 'current' and Conference.all.count > 0  
         params[:id] = Conference.order("finish_date DESC").first.id
       end
       redirect_to admin_conference_registrations_path(conference_id: params[:id])

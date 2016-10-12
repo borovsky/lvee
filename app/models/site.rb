@@ -13,7 +13,7 @@ class Site < ActiveRecord::Base
 
   after_destroy :cleanup_archive
 
-  scope :default, where(default: true)
+  scope :default, -> { where default: true }
 
   def file_path(name)
     File.join(dir, name)

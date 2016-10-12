@@ -1,6 +1,7 @@
 %h1= @abstract.title
 %p.authors= @abstract.authors
-%p.conference= @abstract.conference.name
+- if action_name != "preview"
+  %p.conference= @abstract.conference.name
 .summary= @abstract.summary
 = textilize_with_latex(@abstract.body)
 

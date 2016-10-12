@@ -4,6 +4,7 @@ require 'resolv'
 
 class User < ActiveRecord::Base
   EMAIL_REGEXP = /\A[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]+\z/
+  include UserConcern
   mount_uploader :avator, UserUploader
 
   has_many :conference_registrations, :dependent => :delete_all
@@ -16,7 +17,7 @@ class User < ActiveRecord::Base
   attr_accessor :no_mail
 
 
-  REQUIRED_FIELDS = [:city, :occupation]
+  REQUIRED_FIELDS = [:country, :city, :occupation]
 
   validates *REQUIRED_FIELDS, :presence => true
 
@@ -38,14 +39,14 @@ class User < ActiveRecord::Base
 
   # prevents a user from submitting a crafted form that bypasses activation
   # anything else you want your user to change should be added here.
-  attr_accessible :login, :first_name, :last_name, :country, :city, :projects, :occupation, :email, :password, :password_confirmation, :subscribed, :avator, :avator_temp
+  attr_accessible :login, :first_name, :last_name, :country, :city, :projects, :occupation, :email, :password, :password_confirmation, :subscribed, :subscribed_talks, :avator, :avator_temp, :activated_at, :activation_code, :role
 
   def full_name
     "#{first_name} #{last_name}"
   end
 
   def from
-    "#{city}, " + country.humanize.titleize
+    "#{city}, " + country.to_s
   end
 
   # Activates the user in the database.
@@ -54,11 +55,12 @@ class User < ActiveRecord::Base
     self.activated_at = Time.now.utc
     self.activation_code = nil
     save(:validate => false)
+    UserMailer.activation(self).deliver_now
   end
 
   def active?
     # the existence of an activation code means they have not activated yet
-    activation_code.nil?
+    activation_code.nil? and !activated_at.nil?
   end
 
   # Authenticates a user by their login name and unencrypted password.  Returns the user or nil.
@@ -189,16 +191,18 @@ class User < ActiveRecord::Base
   end
 
   def try_send(email)
-    host = email.split("@", 2).second
-    r = Resolv::DNS.new
-    addr = r.getresource(host, Resolv::DNS::Resource::IN::MX).exchange.to_s
-    Net::SMTP.start(addr, nil, "lvee.org") do |smtp|
-      smtp.mailfrom "info@lvee.org"
-      smtp.rcptto email
+    begin
+      host = email.split("@", 2).second
+      r = Resolv::DNS.new
+      addr = r.getresource(host, Resolv::DNS::Resource::IN::MX).exchange.to_s
+      Net::SMTP.start(addr, nil, "lvee.org") do |smtp|
+        smtp.mailfrom "info@lvee.org"
+        smtp.rcptto email
+      end
+      true
+    rescue
+      puts $!, $!.backtrace
+      false
     end
-    true
-  rescue
-    puts $!, $!.backtrace
-    false
   end
 end

@@ -31,7 +31,7 @@ CREATE TABLE `abstract_versions` (
   `conference_id` int(11) DEFAULT NULL,
   `authors` varchar(255) DEFAULT NULL,
   `license` varchar(255) DEFAULT NULL,
-  `summary` varchar(255) DEFAULT NULL,
+  `summary` text,
   `published` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `index_thesis_versions_on_thesis_id` (`abstract_id`)
@@ -328,6 +328,7 @@ CREATE TABLE `wiki_page_versions` (
   `name` varchar(255) DEFAULT NULL,
   `body` mediumtext,
   `user_id` int(11) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `index_wiki_page_versions_on_wiki_page_id` (`wiki_page_id`)

@@ -9,7 +9,7 @@
           - image_path = user.avator.url ? user.avator.list.url : nil
           = image_tag(image_path, :alt => user.full_name) if image_path
           %span.user-name= user.full_name
-          %span.from= user.country.humanize.titleize + ", #{user.city}"
+          %span.from= user.country + ", #{user.city}"
   .field
     = label_tag "selected", t("label.user.selected_users") + ":"
     %span#selected_users

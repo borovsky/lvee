@@ -1,7 +1,7 @@
 class Menu < ActiveRecord::Base
   attr_accessible :parent_id, :path, :position, :title, :enabled
 
-  scope :enabled, where(enabled: true)
+  scope :enabled, -> { where enabled: true }
 
   acts_as_list scope: :parent_id
 

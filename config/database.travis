@@ -1,0 +1,6 @@
+test:
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  username: travis
+  database: myapp_test

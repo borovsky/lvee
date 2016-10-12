@@ -18,12 +18,12 @@ module Editor
     def change
       m = Metainfo.new(params[:metainfo])
 
-      if m2 = Metainfo.find_by_page_and_language(m.page, m.language)
+      if m2 = Metainfo.where("page = ? AND language = ?", m.page, m.language)
         m2.update_attributes!(params[:metainfo])
       else
         m.save!
       end
-      unless(Metainfo.find_by_page_and_language(m.page, I18n.default_locale))
+      unless(Metainfo.where("page = ? AND language = ?", m.page, I18n.default_locale))
         m_def = Metainfo.new(params[:metainfo])
         m_def.language = I18n.default_locale
         m_def.save!

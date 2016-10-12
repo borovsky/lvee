@@ -22,7 +22,11 @@ class I18nUtils
       pluralization_index = 1
       if value.is_a?(Array)
         value.each_with_index do |v, index|
-          create_translation(lang, key, index, v) unless v.nil?
+          if v.nil?
+            create_translation(lang, key, index, "")
+          else
+            create_translation(lang, key, index, v)
+          end
         end
       elsif !value.is_a?(Hash)
         create_translation(lang, key, pluralization_index, value)

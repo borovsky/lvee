@@ -3,7 +3,7 @@ class StatisticsController < ApplicationController
   end
 
   def conference
-    @conference = Conference.find_by_name!(params[:id])
+    @conference = Conference.where(name: params[:id]).take
     @registrations = ConferenceRegistration.where(:conference_id => @conference).
       includes(:user).order("users.country ASC, users.city ASC, users.last_name ASC, users.first_name")
 

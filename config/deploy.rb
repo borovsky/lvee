@@ -1,34 +1,26 @@
-#$:.unshift(File.expand_path('./lib', ENV['rvm_path']))
+require 'mina/bundler'
+require 'mina/rails'
+require 'mina/git'
+require 'mina/rvm'
 
-# Application
-set :application, "lvee"
+set :domain, 'lvee.org'
+set :deploy_to, '/home/lvee/engine/'
+set :repository, 'https://github.com/lvee/lvee-engine.git'
+set :branch, 'staging'
 
-# SCM
-set :repository,  "git://github.com/borovsky/lvee.git"
-set :scm, :git
-set :branch, "master"
-set :scm_verbose, true
+set :user, 'lvee'
 
-set :deploy_via, :remote_cache
+set :rails_env, 'production'
+#set :port, '22'
+#set :ssh_options, '-A'
 
-# Where to deploy
-set :host, 'lvee.org'
-set :deploy_to, "/home/partizan/apps/lvee"
+task :environment do
+  #invoke :'rbenv:load'
+end
 
-server "lvee.org", :app, :web, :db, :primary => true
-set :user, 'partizan'
-
-# Server env
-set :using_rvm, true
-set :rvm_type, :user
-set :rvm_ruby_string, 'ruby-1.9.3-p429'
-
-set :use_sudo, false
-
-set :unicorn_conf, "#{deploy_to}/current/config/unicorn.rb"
-set :unicorn_pid, "#{deploy_to}/shared/pids/unicorn.pid"
-
-require 'capistrano-unicorn'
-require "rvm/capistrano"
-require "bundler/capistrano"
-
+task deploy: :environment do
+  deploy do
+    invoke :'git:clone'
+    invoke :'bundle:install'
+  end
+end
