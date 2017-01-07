@@ -1,359 +1,298 @@
---- 
-ru: 
-  active_scaffold: 
-    are_you_sure: "Вы уверены?"
-  activerecord: 
-    errors: 
-      messages: 
-        accepted: "нужно подтвердить"
-        blank: "не может быть пустым"
-        confirmation: "не совпадает с подтверждением"
-        empty: "не может быть пустым"
-        equal_to: "может иметь лишь значение, равное %{count}"
-        even: "может иметь лишь нечетное значение"
-        exclusion: "имеет зарезервированное значение"
-        greater_than: "может иметь значение большее %{count}"
-        greater_than_or_equal_to: "может иметь значение большее или равное %{count}"
-        inclusion: "имеет непредусмотренное значение"
-        invalid: "имеет неверное значение"
-        less_than: "может иметь значение меньшее чем %{count}"
-        less_than_or_equal_to: "может иметь значение меньшее или равное %{count}"
-        not_a_number: "не является числом"
-        odd: "может иметь лишь четное значение"
-        record_invalid: "record is invalid"
-        should_be_zip: "file is not valid zip archive"
-        taken: "уже существует"
-        too_long: 
-          few: "слишком большой длины (не может быть больше чем %{count} символа)"
-          many: "слишком большой длины (не может быть больше чем %{count} символов)"
-          one: "слишком большой длины (не может быть больше чем %{count} символ)"
-          other: "слишком большой длины (не может быть больше чем %{count} символа)"
-        too_short: 
-          few: "недостаточной длины (не может быть меньше %{count} символов)"
-          many: "недостаточной длины (не может быть меньше %{count} символов)"
-          one: "недостаточной длины (не может быть меньше %{count} символа)"
-          other: "недостаточной длины (не может быть меньше %{count} символа)"
-        wrong_length: 
-          few: "неверной длины (может быть длиной ровно %{count} символа)"
-          many: "неверной длины (может быть длиной ровно %{count} символов)"
-          one: "неверной длины (может быть длиной ровно %{count} символ)"
-          other: "неверной длины (может быть длиной ровно %{count} символа)"
-      template: 
-        body: "Проблемы возникли со следующими полями:"
-        header: 
+---
+ru:
+  activerecord:
+    errors:
+      messages:
+        accepted: нужно подтвердить
+        blank: не может быть пустым
+        confirmation: не совпадает с подтверждением
+        empty: не может быть пустым
+        equal_to: может иметь лишь значение, равное %{count}
+        even: может иметь лишь нечетное значение
+        exclusion: имеет зарезервированное значение
+        greater_than: может иметь значение большее %{count}
+        greater_than_or_equal_to: может иметь значение большее или равное %{count}
+        inclusion: имеет непредусмотренное значение
+        invalid: имеет неверное значение
+        less_than: может иметь значение меньшее чем %{count}
+        less_than_or_equal_to: может иметь значение меньшее или равное %{count}
+        not_a_number: не является числом
+        odd: может иметь лишь четное значение
+        taken: уже существует
+        too_long:
+          few: слишком большой длины (не может быть больше чем %{count} символа)
+          many: слишком большой длины (не может быть больше чем %{count} символов)
+          one: слишком большой длины (не может быть больше чем %{count} символ)
+          other: слишком большой длины (не может быть больше чем %{count} символа)
+        too_short:
+          few: недостаточной длины (не может быть меньше %{count} символов)
+          many: недостаточной длины (не может быть меньше %{count} символов)
+          one: недостаточной длины (не может быть меньше %{count} символа)
+          other: недостаточной длины (не может быть меньше %{count} символа)
+        wrong_length:
+          few: неверной длины (может быть длиной ровно %{count} символа)
+          many: неверной длины (может быть длиной ровно %{count} символов)
+          one: неверной длины (может быть длиной ровно %{count} символ)
+          other: неверной длины (может быть длиной ровно %{count} символа)
+      template:
+        body: 'Проблемы возникли со следующими полями:'
+        header:
           few: "%{model}: сохранение не удалось из-за %{count} ошибок"
           many: "%{model}: сохранение не удалось из-за %{count} ошибок"
           one: "%{model}: сохранение не удалось из-за %{count} ошибки"
           other: "%{model}: сохранение не удалось из-за %{count} ошибки"
-  date: 
-    abbr_day_names: 
-      - Вс
-      - Пн
-      - Вт
-      - Ср
-      - Чт
-      - Пт
-      - Сб
-    abbr_month_names: 
-      - ~
-      - янв.
-      - февр.
-      - марта
-      - апр.
-      - мая
-      - июня
-      - июля
-      - авг.
-      - сент.
-      - окт.
-      - нояб.
-      - дек.
-    day_names: 
-      - воскресенье
-      - понедельник
-      - вторник
-      - среда
-      - четверг
-      - пятница
-      - суббота
-    formats: 
+  active_scaffold:
+    are_you_sure: Вы уверены?
+  date:
+    abbr_day_names:
+    - Вс
+    - Пн
+    - Вт
+    - Ср
+    - Чт
+    - Пт
+    - Сб
+    abbr_month_names:
+    - ''
+    - янв.
+    - февр.
+    - марта
+    - апр.
+    - мая
+    - июня
+    - июля
+    - авг.
+    - сент.
+    - окт.
+    - нояб.
+    - дек.
+    day_names:
+    - воскресенье
+    - понедельник
+    - вторник
+    - среда
+    - четверг
+    - пятница
+    - суббота
+    formats:
       default: "%d.%m.%Y"
       long: "%d %B %Y"
       short: "%d %b"
-    month_names: 
-      - ~
-      - января
-      - февраля
-      - марта
-      - апреля
-      - мая
-      - июня
-      - июля
-      - августа
-      - сентября
-      - октября
-      - ноября
-      - декабря
+    month_names:
+    - ''
+    - января
+    - февраля
+    - марта
+    - апреля
+    - мая
+    - июня
+    - июля
+    - августа
+    - сентября
+    - октября
+    - ноября
+    - декабря
     none: Нет
-    order: 
-      - !ruby/symbol day
-      - !ruby/symbol month
-      - !ruby/symbol year
-    standalone_abbr_month_names: 
-      - ~
-      - янв.
-      - февр.
-      - март
-      - апр.
-      - май
-      - июнь
-      - июль
-      - авг.
-      - сент.
-      - окт.
-      - нояб.
-      - дек.
-    standalone_day_names: 
-      - Воскресенье
-      - Понедельник
-      - Вторник
-      - Среда
-      - Четверг
-      - Пятница
-      - Суббота
-    standalone_month_names: 
-      - ~
-      - Январь
-      - Февраль
-      - Март
-      - Апрель
-      - Май
-      - Июнь
-      - Июль
-      - Август
-      - Сентябрь
-      - Октябрь
-      - Ноябрь
-      - Декабрь
-  datetime: 
-    distance_in_words: 
-      about_x_hours: 
-        few: "около %{count} часов"
-        many: "около %{count} часов"
-        one: "около %{count} часа"
-        other: "около %{count} часа"
-      about_x_months: 
-        few: "около %{count} месяцев"
-        many: "около %{count} месяцев"
-        one: "около %{count} месяца"
-        other: "около %{count} месяца"
-      about_x_years: 
-        few: "около %{count} лет"
-        many: "около %{count} лет"
-        one: "около %{count} года"
-        other: "около %{count} лет"
-      half_a_minute: "меньше минуты"
-      less_than_x_minutes: 
-        few: "меньше %{count} минут"
-        many: "меньше %{count} минут"
-        one: "меньше %{count} минуты"
-        other: "меньше %{count} минуты"
-      less_than_x_seconds: 
-        few: "меньше %{count} секунд"
-        many: "меньше %{count} секунд"
-        one: "меньше %{count} секунды"
-        other: "меньше %{count} секунды"
-      over_x_years: 
-        few: "больше %{count} лет"
-        many: "больше %{count} лет"
-        one: "больше %{count} года"
-        other: "больше %{count} лет"
-      x_days: 
+    order:
+    - day
+    - month
+    - year
+    standalone_abbr_month_names:
+    - янв.
+    - февр.
+    - март
+    - апр.
+    - май
+    - июнь
+    - июль
+    - авг.
+    - сент.
+    - окт.
+    - нояб.
+    - дек.
+    standalone_day_names:
+    - Воскресенье
+    - Понедельник
+    - Вторник
+    - Среда
+    - Четверг
+    - Пятница
+    - Суббота
+    standalone_month_names:
+    - Январь
+    - Февраль
+    - Март
+    - Апрель
+    - Май
+    - Июнь
+    - Июль
+    - Август
+    - Сентябрь
+    - Октябрь
+    - Ноябрь
+    - Декабрь
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        few: около %{count} часов
+        many: около %{count} часов
+        one: около %{count} часа
+        other: около %{count} часа
+      about_x_months:
+        few: около %{count} месяцев
+        many: около %{count} месяцев
+        one: около %{count} месяца
+        other: около %{count} месяца
+      about_x_years:
+        few: около %{count} лет
+        many: около %{count} лет
+        one: около %{count} года
+        other: около %{count} лет
+      half_a_minute: меньше минуты
+      less_than_x_minutes:
+        few: меньше %{count} минут
+        many: меньше %{count} минут
+        one: меньше %{count} минуты
+        other: меньше %{count} минуты
+      less_than_x_seconds:
+        few: меньше %{count} секунд
+        many: меньше %{count} секунд
+        one: меньше %{count} секунды
+        other: меньше %{count} секунды
+      over_x_years:
+        few: больше %{count} лет
+        many: больше %{count} лет
+        one: больше %{count} года
+        other: больше %{count} лет
+      x_days:
         few: "%{count} дня"
         many: "%{count} дней"
         one: "%{count} день"
         other: "%{count} дня"
-      x_minutes: 
+      x_minutes:
         few: "%{count} минуты"
         many: "%{count} минут"
         one: "%{count} минуту"
         other: "%{count} минуты"
-      x_months: 
+      x_months:
         few: "%{count} месяца"
         many: "%{count} месяцев"
         one: "%{count} месяц"
         other: "%{count} месяца"
-      x_seconds: 
+      x_seconds:
         few: "%{count} секунды"
         many: "%{count} секунд"
         one: "%{count} секунда"
         other: "%{count} секунды"
-    prompts: 
+    prompts:
       day: День
       hour: Часов
       minute: Минут
       month: Месяц
       second: Секунд
       year: Год
-  description: 
-    abstract: 
-      body: |-
-          рекомендуемые языки: белорусский, русский или английский;
-          рекомендуемый размер: не более 6000 символов;
-          Вы можете использовать разметку LaTeX, "Textile":http://txstyle.org/ или простой текст.
-      license: "(Выбрать лицензию можно, посетив \"creativecommons.org\":http://creativecommons.org/choose/)"
-      license_line: "Abstract licensed under %{license} license"
-    conference_registration: 
-      days: "В какие дни вы планируете присутствовать?"
-      floor: "Экскурсия по старой части г. Гродно будет проводиться за дополнительную плату, покрывающую расходы на транспорт и услуги гида. Планируемое время экскурсии - вечер четверга."
-      food: "Ваши предпочтения в еде (вегетарианство и др.)?"
-      index: "Регистрация на конференцию"
-      meeting: "Требуется ли вас встречать?"
-      menu: 
-        delete_children_forbidden: "You can't delete disabled menu item. Disable it first"
-        delete_enabled_forbidden: "You can't delete enabled menu item. Disable it first"
-        translation_creation_error: "Error creating translation"
-      phone: "Телефон для связи с вами во время конференции (с кодом страны)"
-      proposition: "Так как свободное ПО создаётся сообществом с привлечением множества добровольцев, расскажите, пожалуйста, что Вы могли бы привнести в нашу встречу. Пусть это будет доклад или менее формальный рассказ в рамках круглого стола (workshop) о внедрении, использовании или разработке свободного ПО вами или в вашей организации. Если вы собираетесь сделать доклад или организовать семинар на конференции, укажите тему предлагаемого вами доклада, а также не забудьте представить тезисы выступления."
-      quantity: "Сколько людей поедет с вами на конференцию (включая вас)?"
-      residence: "С кем из участников вас поселить в комнате?"
-      title: "Регистрация на конференцию %{conference}"
-      transport_from: "Как вы планируете добираться с конференции?"
-      transport_to: "Как вы планируете добираться до конференции?"
-      tshirt: "Размер футболки"
-    user: 
-      city: ""
-      country: "Откуда вы?"
-      email: "Ваш адрес электронной почты"
-      first_name: "Правила конференции требуют указания реальных имен и фамилий"
-      last_name: ""
-      login: "Не менее 3-х символов; рекомендуется использовать свой ник"
-      occupation: "Место работы/учёбы, область деятельности (с кратким названием организации)"
-      password: "Не менее 4-х символов"
-      password_confirmation: ""
-      projects: "Проекты Free Software / Open Source (FS/OS), в которых вы принимали и/или принимаете участие, ваша роль в них"
-      subscribed: "Позволяет получать новости и другие информационные сообщения от организаторов конференции."
-      subscribed_talks: "Выбрав этот пункт, вы становитесь участником обсуждений, связанных с подготовкой и проведением конференции. Поскольку для LVEE, как для любого волонтерского проекта, характерна нехватка исполнителей - рекомендуем активировать этот пункт и активно участвовать в работе оргкомитета."
-  devise: 
-    confirmations: 
-      confirmed: "Your account was successfully confirmed. You are now signed in."
-      send_instructions: "You will receive an email with instructions about how to confirm your account in a few minutes."
-      send_paranoid_instructions: "If your email address exists in our database, you will receive an email with instructions about how to confirm your account in a few minutes."
-    failure: 
-      already_authenticated: "You are already signed in."
-      inactive: "Your account was not activated yet."
-      invalid: "Invalid email or password."
-      invalid_token: "Invalid authentication token."
-      locked: "Your account is locked."
-      timeout: "Your session expired, please sign in again to continue."
-      unauthenticated: "You need to sign in or sign up before continuing."
-      unconfirmed: "You have to confirm your account before continuing."
-    mailer: 
-      confirmation_instructions: 
-        subject: "Confirmation instructions"
-      reset_password_instructions: 
-        subject: "Reset password instructions"
-      unlock_instructions: 
-        subject: "Unlock Instructions"
-    omniauth_callbacks: 
-      failure: "Could not authenticate you from %{kind} because \"%{reason}\"."
-      success: "Successfully authenticated from %{kind} account."
-    passwords: 
-      no_token: "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided."
-      send_instructions: "You will receive an email with instructions about how to reset your password in a few minutes."
-      send_paranoid_instructions: "If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes."
-      updated: "Your password was changed successfully. You are now signed in."
-      updated_not_active: "Your password was changed successfully."
-    registrations: 
-      destroyed: "Bye! Your account was successfully cancelled. We hope to see you again soon."
-      signed_up: "Welcome! You have signed up successfully."
-      signed_up_but_inactive: "You have signed up successfully. However, we could not sign you in because your account is not yet activated."
-      signed_up_but_locked: "You have signed up successfully. However, we could not sign you in because your account is locked."
-      signed_up_but_unconfirmed: "A message with a confirmation link has been sent to your email address. Please open the link to activate your account."
-      update_needs_confirmation: "You updated your account successfully, but we need to verify your new email address. Please check your email and click on the confirm link to finalize confirming your new email address."
-      updated: "You updated your account successfully."
-    sessions: 
-      signed_in: "Signed in successfully."
-      signed_out: "Signed out successfully."
-    unlocks: 
-      send_instructions: "You will receive an email with instructions about how to unlock your account in a few minutes."
-      send_paranoid_instructions: "If your account exists, you will receive an email with instructions about how to unlock it in a few minutes."
-      unlocked: "Your account has been unlocked successfully. Please sign in to continue."
-  errors: 
-    messages: 
-      already_confirmed: "was already confirmed, please try signing in"
-      expired: "has expired, please request a new one"
-      not_found: "not found"
-      not_locked: "was not locked"
-      not_saved: 
-        one: "1 error prohibited this %{resource} from being saved:"
-        other: "%{count} errors prohibited this %{resource} from being saved:"
-    template: 
-      header: "При сохранении следующие ошибки были найдены:"
-  label: 
-    abstract: 
-      add_comment: "Добавить комментарий"
-      add_editors: "Add more editors"
-      additional_files: "Картинки и другие файлы могут быть загружены здесь, в случае необходимости"
+  description:
+    abstract:
+      body: "рекомендуемые языки: белорусский, русский или английский;\r\nрекомендуемый
+        размер: не более 6000 символов;\r\nВы можете использовать разметку LaTeX,
+        \"Textile\":http://txstyle.org/ или простой текст."
+      license: (Выбрать лицензию можно, посетив "creativecommons.org":http://creativecommons.org/choose/)
+    conference_registration:
+      days: В какие дни вы планируете присутствовать?
+      floor: 'Некоторые участники LVEE предпочитают жить в палатках, а не в домиках,
+        арендуемых оргкомитетом у турбазы. Это дает рафинированные туристские впечатления,
+        а также большую скидку в оргвзносе. Посетите страницу "Палатки":https://lvee.org/ru/wiki_pages/%5B2016%5D%20%D0%9F%D0%B0%D0%BB%D0%B0%D1%82%D0%BA%D0%B8,
+        чтобы узнать подробности. '
+      food: Ваши предпочтения в еде (вегетарианство и др.)?
+      index: Регистрация на конференцию
+      meeting: Вас встретить? Где и во-сколько?
+      phone: Телефон для связи с вами во время конференции (с кодом страны)
+      proposition: Так как свободное ПО создаётся сообществом с привлечением множества
+        добровольцев, расскажите, пожалуйста, что Вы могли бы привнести в нашу встречу.
+        Пусть это будет доклад или менее формальный рассказ в рамках круглого стола
+        (workshop) о внедрении, использовании или разработке свободного ПО вами или
+        в вашей организации. Если вы собираетесь сделать доклад или организовать семинар
+        на конференции, укажите тему предлагаемого вами доклада, а также не забудьте
+        представить тезисы выступления.
+      quantity: Сколько людей поедет с вами на конференцию (включая вас)?
+      residence: С кем из участников вас поселить в комнате?
+      title: Регистрация на конференцию %{conference}
+      transport_from: Как вы планируете добираться с конференции?
+      transport_to: Как вы планируете добираться до конференции?
+      tshirt: Размер футболки (толстовки, байки)
+    user:
+      country: Откуда вы?
+      email: Ваш адрес электронной почты
+      first_name: Правила конференции требуют указания реальных имен и фамилий
+      last_name: ''
+      login: Не менее 3-х символов; рекомендуется использовать свой ник
+      occupation: Место работы/учёбы, область деятельности (с кратким названием организации)
+      password: Не менее 4-х символов
+      password_confirmation: ''
+      projects: Проекты Free Software / Open Source (FS/OS), в которых вы принимали
+        и/или принимаете участие, ваша роль в них
+      subscribed: Позволяет получать новости и другие информационные сообщения от
+        организаторов конференции.
+      subscribed_talks: Выбрав этот пункт, вы становитесь участником обсуждений, связанных
+        с подготовкой и проведением конференции. Поскольку для LVEE, как для любого
+        волонтерского проекта, характерна нехватка исполнителей - рекомендуем активировать
+        этот пункт и активно участвовать в работе оргкомитета.
+  errors:
+    template:
+      header: 'При сохранении следующие ошибки были найдены:'
+  label:
+    abstract:
+      additional_files: Картинки и другие файлы могут быть загружены здесь, в случае
+        необходимости
+      add_comment: Добавить комментарий
       authors: Авторы
-      body: "Основной текст тезисов"
-      change_summary: "Изменения в этой версии можно описать как"
+      body: Основной текст тезисов
+      change_summary: Изменения в этой версии можно описать как
       conference: Конференция
-      create_new: "Создать новые тезисы"
-      edit: "Редактирование тезисов"
-      editors: "Пользователи, которые могут редактировать текст"
-      for_review: "Готовы к рассмотрению"
-      initial_version: "Первоначальная версия"
-      license: "Текст лицензирован под"
-      list: "Тезисы к рассмотрению"
-      list_publish: "Published abstracts"
-      list_review: "Abstracts for review"
-      list_selection: "Список тезисов"
-      list_user: "Ваши тезисы"
-      new: "Создание тезисов"
-      published: Published
-      ready_for_review: "Эти тезисы готовы к рассмотрению"
-      summary: "Аннотация (на английском, рекомендуемый размер не более 500 символов)"
+      create_new: Создать новые тезисы
+      edit: Редактирование тезисов
+      editors: Пользователи, которые могут редактировать текст
+      for_review: Готовы к рассмотрению
+      initial_version: Первоначальная версия
+      license: Текст лицензирован под
+      list: Тезисы к рассмотрению
+      list_selection: Список тезисов
+      list_user: Ваши тезисы
+      new: Создание тезисов
+      ready_for_review: Эти тезисы готовы к рассмотрению
+      summary: Аннотация (на английском, рекомендуемый размер не более 500 символов)
       title: Заголовок
-      updated_at: "Последнее изменение"
+      updated_at: Последнее изменение
       user: Пользователь
       yourself: Вы
-    article: 
+    article:
       body: Тело
       category: Категория
-      creating: "Создание Статьи"
-      editing: "Редактирование Статьи"
-      in_menu: "В меню?"
-      listing: "Список Статей"
+      creating: Создание Статьи
+      editing: Редактирование Статьи
+      in_menu: В меню?
+      listing: Список Статей
       locale: Язык
       name: Название
-      new: "Новая статья"
+      new: Новая статья
       title: Заголовок
-    badge: 
-      bottom: Bottom
-      tags: Tags
-      top: Top
-    common: 
-      _select_: Выберите
-      add_more: "Добавить ещё"
+    common:
+      add_more: Добавить ещё
       back: Назад
-      back_to_list: "Назад к списку"
+      back_to_list: Назад к списку
       cancel: Отменить
-      close: Close
-      comments: Comments
       count: Количество
       create: Создать
       delete: Удалить
-      diff: Diff
       download: Скачать
       edit: Редактировать
-      editTranslation: "Редактировать перевод"
+      editTranslation: Редактировать перевод
       preview: Предпросмотр
       publish: Опубликовать
-      publish_now: "Опубликовать сейчас"
+      publish_now: Опубликовать сейчас
       save: Сохранить
       search: Поиск
-      select_user: "Выбрать пользователя"
+      select_user: Выбрать пользователя
       show: Показать
       time_ago: "%{time} назад"
       translate: Перевести
@@ -361,362 +300,329 @@ ru:
       update: Обновить
       upload: Закачать
       view_changes: Изменения
-    conference: 
-      available: "Вы можете принять участие в следующих конференциях"
-      creating: "Создание конференции"
-      finish_date: "Дата окончания"
-      listing: "Список конференций"
+      _select_: Выберите
+    conference:
+      available: Вы можете принять участие в следующих конференциях
+      creating: Создание конференции
+      finish_date: Дата окончания
+      listing: Список конференций
       name: Название
-      new: "Новая конференция"
-      participated: "Вы принимали участие"
-      register: "Зарегистрироваться на %{conference}"
+      new: Новая конференция
+      participated: Вы принимали участие
+      register: Зарегистрироваться на %{conference}
       registration_closed: закрыта
       registration_opened: открыта
-      registration_opened?: "Регистрация открыта?"
-      registred: "Вы были зарегистрированы"
-      show: "Конференция %{name} (%{start_date} - %{finish_date}"
-      start_date: "Дата начала"
-      upcoming: "Ближайшие конференции"
-    conference_registration: 
+      registration_opened?: Регистрация открыта?
+      registred: Вы были зарегистрированы
+      show: Конференция %{name} (%{start_date} - %{finish_date}
+      start_date: Дата начала
+      upcoming: Ближайшие конференции
+    conference_registration:
       abstracts: Тезисы
-      approved_edit: "Подтвердить участие в  %{conference}"
+      approved_edit: Подтвердить участие в  %{conference}
       badges: Бэджи
-      badges_title: "Бэджи для %{conference}"
-      cancel_registration: "Отменить регистрацию"
-      cancelled: Cancalled
-      comment: "Registration's Comment"
-      created_at: "Conference Registration Date"
-      days: "Дни участия"
-      edit: "Анкета участника %{conference}"
-      floor: "Хотите ли вы принять участие в экскурсии по Гродно?"
-      food: "Предпочтения в диете"
-      index: "Регистрации на конференции"
-      meeting: "Требуется ли встреча?"
-      phone: "Ваш контактный телефон"
-      proposition: "Ваши предложения"
+      badges_title: Бэджи для %{conference}
+      cancel_registration: Отменить регистрацию
+      days: Дни участия
+      edit: Анкета участника %{conference}
+      floor: 'Отметьте, если вы планируете жить в палатке и получить скидку в оргвзносе '
+      food: Предпочтения в диете
+      index: Регистрации на конференции
+      meeting: Требуется ли встреча?
+      phone: Ваш контактный телефон
+      proposition: Ваши предложения
       proposition_list: Доклад
-      quantity: "Количество участников"
+      quantity: Количество участников
       residence: Расселение
-      status_name: "Registration's Status"
-      title: "Регистрация на конференцию %{conference}"
-      transport_from: "Транспорт с конференции"
-      transport_from_list: 
-        bus_grodno: "Маршрутка в Гродно"
-        bus_minsk: "Маршрутка в Минск"
+      title: Регистрация на конференцию %{conference}
+      transport_from: Транспорт с конференции
+      transport_from_list:
+        bus_grodno: Маршрутка в Гродно
+        bus_minsk: Маршрутка в Минск
         independent: Самостоятельно
-      transport_to: "Транспорт на конференцию"
-      transport_to_list: 
-        bus_grodno: "Маршрутка из Гродно"
-        bus_minsk: "Маршрутка из Минска"
+      transport_to: Транспорт на конференцию
+      transport_to_list:
+        bus_grodno: Маршрутка из Гродно
+        bus_minsk: Маршрутка из Минска
         independent: Самостоятельно
-      tshirt: "Размер футболки"
-      update_model: "Conference Registration"
-      updated_at: "Last Modified"
-    diff: 
-      change_abstract_title: "Изменение тезисов от %{author} от версии %{from} до %{to}"
-      change_article_title: "Изменения статьи %{article} от версии %{from} до %{to}"
-      change_wiki_title: "Изменения страницы '%{wiki_page}' from version %{from} to %{to}"
+      tshirt: Размер футболки
+    diff:
       changed_at: Изменено
+      change_abstract_title: Изменение тезисов от %{author} от версии %{from} до %{to}
+      change_article_title: Изменения статьи %{article} от версии %{from} до %{to}
+      change_wiki_title: Изменения страницы '%{wiki_page}' from version %{from} to
+        %{to}
       editor: Редактор
       from: От
-      new_abstract_title: "Тезисы от %{author} не имеют предыдущей версии"
-      new_article_title: "Статья %{article} не имеет предыдущих версий"
-      new_wiki_title: "Страница '%{wiki_page}' не имеет предыдущих версий"
+      new_abstract_title: Тезисы от %{author} не имеют предыдущей версии
+      new_article_title: Статья %{article} не имеет предыдущих версий
+      new_wiki_title: Страница '%{wiki_page}' не имеет предыдущих версий
       to: До
       version: Версия
-    editor_log: 
-      article_changed: "Статья %{obj} была изменена %{user}"
-      article_created: "Статья %{obj} была создана %{user}"
-      wiki_page_changed: "Страница Wiki '%{obj}' была изменена %{user}"
-      wiki_page_created: "Страница Wiki '%{obj}' была создана %{user}"
-    language: 
-      code3: "3-буквенный (ISO 639-2) код языка"
-      creating: "Создание языка"
-      editing: "Редактирование языка"
-      id: "двухбуквенный идентификатор языка"
-      listing: "Список языков"
-      name: "Полное название языка на английском"
-      new: "Новый язык"
-      published: "Язык опубликован?"
-      upload: "Закачать язык"
-    metainfo: 
-      edit: "Edit MetaInfo"
-    news: 
+    editor_log:
+      article_changed: Статья %{obj} была изменена %{user}
+      article_created: Статья %{obj} была создана %{user}
+      wiki_page_changed: Страница Wiki '%{obj}' была изменена %{user}
+      wiki_page_created: Страница Wiki '%{obj}' была создана %{user}
+    language:
+      code3: 3-буквенный (ISO 639-2) код языка
+      creating: Создание языка
+      editing: Редактирование языка
+      id: двухбуквенный идентификатор языка
+      listing: Список языков
+      name: Полное название языка на английском
+      new: Новый язык
+      published: Язык опубликован?
+      upload: Закачать язык
+    news:
       abstract: Резюме
-      add: "Добавить новости"
-      all_news: "Все новости"
+      add: Добавить новости
+      all_news: Все новости
       author: Автор
-      back_to_list: "Назад к списку новостей"
-      body: "Содержимое новости"
-      creating: "Создание новости"
-      editing: "Редактирование новости"
-      last_news: "Последние новости"
-      publish: "Опубликовать новость"
-      published_at: "Опубликовано %{published}"
+      back_to_list: Назад к списку новостей
+      body: Содержимое новости
+      creating: Создание новости
+      editing: Редактирование новости
+      last_news: Последние новости
+      publish: Опубликовать новость
+      published_at: Опубликовано %{published}
       title: Заголовок
-      translating: "Перевод новости"
-      unpublished: "Не опубликованно"
-      will_be_published: "Будет опубликовано %{published}"
-    session: 
+      translating: Перевод новости
+      unpublished: Не опубликованно
+      will_be_published: Будет опубликовано %{published}
+    session:
       login: Логин
       loginButton: Войти
       logout: Выйти
       password: Пароль
-      rememberMe: "Запомнить меня"
-    statistics: 
+      rememberMe: Запомнить меня
+    statistics:
       browser: Браузер
-      conference: "Registration statistics for %{conference}"
       country: Страна
-      operating_system: "Операционная система"
-      registration: 
-        approved_men: "Approved men"
-        approved_registrations: "Approved registration"
-        days_title: "Participance days statistics"
-        registration_title: "Registration statistics"
-        total_men: "Total men"
-        total_registrations: "Total registration"
-        transport_from_title: "Transport from conference statistics"
-        transport_to_title: "Transport to conference statistics"
-      title: 
-        browser_statistic: "Статистика используемых браузеров"
-        conference: "Статистика регистраций на конференцию"
-        country_statistic: "Распределение посетителей по странам"
-        full: "Статистика с 20 апреля 2009"
-        month: "Статистика за последний месяц"
-        os_statistic: "Статистика используемых операционных систем"
-        total_visitors: "Всего посетителей: %{count}"
-        week: "Статистика за последнюю неделю"
+      operating_system: Операционная система
+      registration:
+        approved_men: Approved men
+        total_men: Total men
+      title:
+        browser_statistic: Статистика используемых браузеров
+        conference: Статистика регистраций на конференцию
+        country_statistic: Распределение посетителей по странам
+        full: Статистика с 20 апреля 2009
+        month: Статистика за последний месяц
+        os_statistic: Статистика используемых операционных систем
+        total_visitors: 'Всего посетителей: %{count}'
+        week: Статистика за последнюю неделю
       visits: Посещения
-    translations: 
-      edit: "Editing translation"
-      index: "Translations list"
-      key: Key
-      new: "New Translation"
-      original_translation: "Original translation"
-      state: 
-        blank: Blank
-        outdated: Outdated
-        untranslated: Untranslated
-      translation: Translation
-    user: 
-      avator: "Новое фото:"
+    user:
+      avator: 'Новое фото:'
       city: Город
       country: Страна
       create: Зарегистрироваться
-      created_at: "Registration Date"
-      edit: "Редактировать личные данные"
-      email: "Адрес e-mail"
+      edit: Редактировать личные данные
+      email: Адрес e-mail
       first_name: Имя
       from: Откуда
       full_name: ФИО
-      join_us: "Присоединяйтесь к нам"
+      join_us: Присоединяйтесь к нам
       last_name: Фамилия
       login: Логин
-      occupation: "Место работы"
+      occupation: Место работы
       password: Пароль
-      password_confirmation: "Подтверждение пароля"
-      password_restore: "Восстановить пароль"
+      password_confirmation: Подтверждение пароля
+      password_restore: Восстановить пароль
       password_restore_link: Восстановить
       photo: Фото
-      projects: "Проекты FOSS"
+      projects: Проекты FOSS
       register: Зарегистрироваться
-      subscribed: "Подписаться на информационную рассылку"
-      subscribed_talks: "Подписаться на внутреннюю рассылку оргкомитета"
+      subscribed: Подписаться на информационную рассылку
+      subscribed_talks: Подписаться на внутреннюю рассылку оргкомитета
       title: "%{full_name} (%{login}), ваш профиль в ваших руках"
-      to_profile: "На ваш профиль"
-      update_model: "Edit your personal data"
-      updated_at: "Last Updated"
-    wiki_page: 
+      to_profile: На ваш профиль
+    wiki_page:
       body: Тело
-      creating: "Создание Wiki страницы"
-      editing: "Редактирование  Wiki страницы"
-      listing: "Список Wiki страниц"
+      creating: Создание Wiki страницы
+      editing: Редактирование  Wiki страницы
+      listing: Список Wiki страниц
       name: Имя
-      new: "Новая Wiki страница"
-      user: "Последний редактор"
-  mail: 
-    account: 
+      new: Новая Wiki страница
+      user: Последний редактор
+  mail:
+    account:
       activate: |-
-          Пожалуйста, откройте следующий адрес для активации вашего аккаунта:
-          %{url}
-      activated: "Ваш аккаунт был активирован"
-      activation_restore: "Вы должны активировать аккаунт перед входом на сайт"
-      created: "Ваш аккаунт был создан"
+        Пожалуйста, откройте следующий адрес для активации вашего аккаунта:
+        %{url}
+      activated: Ваш аккаунт был активирован
+      activation_restore: Вы должны активировать аккаунт перед входом на сайт
+      created: Ваш аккаунт был создан
       edit_data: |-
-          Вы можете зайти и отредактировать ваши данные:
-          %{url}
+        Вы можете зайти и отредактировать ваши данные:
+        %{url}
       information: |-
-          Имя пользователя: %{login}
-          Пароль:           %{password}
+        Имя пользователя: %{login}
+        Пароль:           %{password}
       restore: |-
-          Восстановление пароля было запрошено с %{ip}.
-          Мы сбросили ваш пароль. Ниже приведена новая контактная информация.
-    signature: |-
-        -- 
-        С уважением, робот
-    subject: 
-      activation: "Активация аккаунта на LVEE"
-      activation_complete: "Ваш аккаунт на LVEE.org активирован"
-      activation_restore: "Активация аккаунта на LVEE (повтор)"
-      password_restore: "Восстановление пароля для LVEE"
-    title: "Здравствуйте, %{full_name}"
-  menu: 
-    admin: 
-      conference_registrations: "Регистрации на конференцию"
-      conferences: "Редактор конференций"
-      current_conference_registration: "Current conference registration"
-      info_mailer: "Рассылка писем с  info@lvee.org"
-      menus: "Menu editor"
-      not_found_redirects: "Moved pages redirects"
-      sites: "Style customization"
-      sponsors: "Редактор спонсоров"
-      statuses: "Редактор статусов"
+        Восстановление пароля было запрошено с %{ip}.
+        Мы сбросили ваш пароль. Ниже приведена новая контактная информация.
+    signature: "-- \nС уважением, робот"
+    subject:
+      activation: Активация аккаунта на LVEE
+      activation_complete: Ваш аккаунт на LVEE.org активирован
+      activation_restore: Активация аккаунта на LVEE (повтор)
+      password_restore: Восстановление пароля для LVEE
+    title: Здравствуйте, %{full_name}
+  menu:
+    admin:
+      conferences: Редактор конференций
+      conference_registrations: Регистрации на конференцию
+      info_mailer: Рассылка писем с  info@lvee.org
+      sponsors: Редактор спонсоров
+      statuses: Редактор статусов
       title: Админ
-      users: "Управление пользователями"
-    conference: 
-      about: "О конференции"
-      attributes: Attributes
+      users: Управление пользователями
+    conference:
+      about: О конференции
       attribution: Атрибутика
+      attribution_winter: Атрибутика
       history: История
-      linux: GNU/Linux
       payment: Оплата
-      place: "Место проведения"
+      payment_winter: Оплата
+      place: Место проведения
+      place_winter: Место проведения
       press: Пресса
       statistics: Статистика
       title: Конференция
-    contacts: 
-      lug: LUG
-      official: "Контактная информация"
+    contacts:
+      official: Контактная информация
       organizers: Оргкомитет
       title: Контакты
-    edit: 
-      delete: Delete
-      disable: Disable
-      down: Down
-      up: Up
-    editor: 
-      abstracts: "Abstracts for review"
-      articles: "Редактор статей"
-      image_uploader: "Загрузка картинок"
-      language: "Редактор языков"
-      metainfo: "Metainfo editor"
-      news: "Редактор новостей"
-      rss: "RSS правок"
+    editor:
+      articles: Редактор статей
+      image_uploader: Загрузка картинок
+      language: Редактор языков
+      news: Редактор новостей
+      rss: RSS правок
       title: Редактор
       translations: Переводы
-    main: 
+    main:
       title: Главная
-    reports: 
-      about: "О докладах"
-      abstract: "Подготовка тезисов"
-      materials_2005: "Материалы LVEE 2005"
-      materials_2006: "Материалы LVEE 2006"
-      materials_2007: "Материалы LVEE 2007"
-      materials_2008: "Материалы LVEE 2008"
-      materials_2009: "Материалы LVEE 2009"
-      materials_2010: "Материалы LVEE 2010"
-      materials_2011: "Материалы LVEE 2011"
-      materials_2012: "Материалы LVEE 2012"
-      materials_winter_2012: "Материалы LVEE Winter 2012"
+    reports:
+      about: О докладах
+      abstract: Подготовка тезисов
+      lvee_2012_materials: Материалы LVEE 2012
+      lvee_2013_materials: Материалы 2013 года
+      lvee_2014_materials: Материалы 2014 года
+      lvee_2015_materials: Материалы LVEE 2015
+      lvee_winter_2014_presentations: Материалы LVEE Winter 2014
+      materials_2005: Материалы LVEE 2005
+      materials_2006: Материалы LVEE 2006
+      materials_2007: Материалы LVEE 2007
+      materials_2008: Материалы LVEE 2008
+      materials_2009: Материалы LVEE 2009
+      materials_2010: Материалы LVEE 2010
+      materials_2011: Материалы LVEE 2011
+      materials_2012: Материалы 2012 года
+      materials_2016: Материалы LVEE 2016
+      materials_lvee_winter_2013: Материалы LVEE Winter  2013
+      materials_winter_2012: Материалы LVEE Winter 2012
       program: Программа
       title: Доклады
-    sponsors: 
+    sponsors:
       title: Спонсоры
-    user: 
+    user:
       conference_registration: Список
-      profile: "Личный профиль"
+      list_14: Список
+      list_14_2: Список
+      list_15: Список
+      list_16: Список
+      list_winter_16: List
+      profile: Личный профиль
       title: Участники
       volunteers: Волонтёры
-      wiki: Wiki
-  message: 
-    abstract: 
-      file_delete_success: "Файл успешно удалён"
-      file_upload_fail: "Файл не может быть загружен"
-      file_upload_success: "Файл успешно загружен"
-    common: 
-      access_denied: "Доступ запрещён"
-      required_fields: "(названия полей, обязательных для заполнения, выделены жирным шрифтом)"
-      sure: "Вы уверены?"
-    conference: 
-      created: "Конференция успешно создана"
-      slogan: "Международная конференция разработчиков<br />и пользователей свободного программного обеспечения"
-      status: "Регистрация на конференцию: %{status}."
-      updated: "Конференция успешно обновлена"
-    iefuck: 
-      link: "http://upgradebrowser.org/x"
-      link_text: "Узнать больше о современных и безопасных браузерах!"
-      message: "Эта версия Internet Explorer некорректно отображает современные сайты и делает компьютер небезопасным. %{link}"
-    language: 
-      created: "Язык успешно создан"
-      updated: "Язык успешно обновлён"
-    license: 
-      engine: "The website uses %{link} and licensed under GPL license version 2.0 as <a href=\"https://www.gnu.org/licenses/gpl-2.0.en.html\">published by the FSF</a>"
-      text: "Весь контент, за исключением материалов докладов и других специально оговоренных случаев, находится под лицензией Creative Commons Attribution Share-Alike"
-    news: 
-      created: "Новость успешно создана"
-      updated: "Новость успешно обновлена"
-    session: 
-      failed: "Имя пользователя или пароль неверны. Возможно, вы не произвели активацию учетной записи."
-      logged: "Вы вошли как %{user_name}"
-      logged_out: "Вы успешно вышли"
-    user: 
-      accuracy_note: "Аккуратное и правильное заполнение регистрационной формы поможет нам с вами связаться"
-      activated: "Регистрация завершена"
-      avator_updated: "Фото успешно обновлено."
-      avator_upload: "Вы можете загрузить здесь ваше фото. По возможности, с лицом."
-      describe: "Пользователь: %{full_name} (%{country}, %{city})..."
-      incorrect_image: "Не удается обновить фото. Возможно, вы указали неправильный файл."
-      login_change: "Вы не можете изменить свой логин"
-      not_found_by_email: "User not found by email. Please check email."
-      password_restore: "Забыли пароль? %{link} пароль."
-      password_restore_note: "Mail with restore information sent."
-      privacy: "Политика конфиденциальности: мы %{link} никому никакую информацию о вашей учетной записи, включая ваш адрес электронной почты."
-      privacy_link: "не продаем"
-      registred: "Спасибо за регистрацию."
-  number: 
-    currency: 
-      format: 
+      winter_12: Список участников
+  message:
+    abstract:
+      file_delete_success: Файл успешно удалён
+      file_upload_fail: Файл не может быть загружен
+      file_upload_success: Файл успешно загружен
+    common:
+      access_denied: Доступ запрещён
+      required_fields: "(названия полей, обязательных для заполнения, выделены жирным
+        шрифтом)"
+      sure: Вы уверены?
+    conference:
+      created: Конференция успешно создана
+      slogan: Международная конференция разработчиков<br />и пользователей свободного
+        программного обеспечения
+      status: 'Регистрация на конференцию: %{status}.'
+      updated: Конференция успешно обновлена
+    iefuck:
+      link: http://upgradebrowser.org/x
+      link_text: Узнать больше о современных и безопасных браузерах!
+      message: Эта версия Internet Explorer некорректно отображает современные сайты
+        и делает компьютер небезопасным. %{link}
+    language:
+      created: Язык успешно создан
+      updated: Язык успешно обновлён
+    license:
+      text: Весь контент, за исключением материалов докладов и других специально оговоренных
+        случаев, находится под лицензией Creative Commons Attribution Share-Alike
+    news:
+      created: Новость успешно создана
+      updated: Новость успешно обновлена
+    session:
+      failed: Имя пользователя или пароль неверны. Возможно, вы не произвели активацию
+        учетной записи.
+      logged: Вы вошли как %{user_name}
+      logged_out: Вы успешно вышли
+    user:
+      accuracy_note: Аккуратное и правильное заполнение регистрационной формы поможет
+        нам с вами связаться
+      activated: Регистрация завершена
+      avator_updated: Фото успешно обновлено.
+      avator_upload: Вы можете загрузить здесь ваше фото. По возможности, с лицом.
+      describe: 'Пользователь: %{full_name} (%{country}, %{city})...'
+      incorrect_image: Не удается обновить фото. Возможно, вы указали неправильный
+        файл.
+      login_change: Вы не можете изменить свой логин
+      password_restore: Забыли пароль? %{link} пароль.
+      privacy: 'Политика конфиденциальности: мы %{link} никому никакую информацию
+        о вашей учетной записи, включая ваш адрес электронной почты.'
+      privacy_link: не продаем
+      registred: Спасибо за регистрацию.
+  number:
+    currency:
+      format:
         delimiter: " "
         format: "%n %u"
-        precision: 2
-        separator: "."
         unit: руб.
-    format: 
+    format:
       delimiter: " "
-      precision: 3
-      separator: "."
-    human: 
-      format: 
-        delimiter: ""
-        precision: 1
-      storage_units: 
-        - байт
-        - КБ
-        - МБ
-        - ГБ
-        - ТБ
-    percentage: 
-      format: 
-        delimiter: ""
-    precision: 
-      format: 
-        delimiter: ""
-  sidebar: 
-    information_sponsor: "Информационные партнёры"
+    human:
+      storage_units:
+      - байт
+      - КБ
+      - МБ
+      - ГБ
+      - ТБ
+    precision:
+      format:
+        delimiter: ''
+  sidebar:
+    information_sponsor: Информационные партнёры
     organizers: Организаторы
     sponsors: Спонсоры
-    technical_partner: "Технические партнёры"
-    technical_sponsor: "Технические спонсоры"
-  support: 
-    array: 
+    technical_partner: Технические партнёры
+    technical_sponsor: Технические спонсоры
+  support:
+    array:
       last_word_connector: " и "
       sentence_connector: и
-      skip_last_comma: true
+      skip_last_comma: '1'
       two_words_connector: " и "
       words_connector: ", "
-  time: 
+  time:
     am: утра
-    formats: 
+    formats:
       default: "%a, %d %b %Y, %H:%M:%S %z"
       long: "%d %B %Y, %H:%M"
       picker: "%d %b %H:%M"

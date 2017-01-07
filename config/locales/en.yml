@@ -1,273 +1,302 @@
---- 
-en: 
-  active_scaffold: 
-    are_you_sure: "Are you sure?"
-  activerecord: 
-    errors: 
-      messages: 
-        accepted: "must be accepted"
-        blank: "can't be blank"
-        confirmation: "doesn't match confirmation"
-        empty: "can't be empty"
-        equal_to: "must be equal to %{count}"
-        even: "must be even"
-        exclusion: "is reserved"
-        greater_than: "must be greater than %{count}"
-        greater_than_or_equal_to: "must be greater than or equal to %{count}"
-        inclusion: "is not included in the list"
-        invalid: "is invalid"
-        less_than: "must be less than %{count}"
-        less_than_or_equal_to: "must be less than or equal to %{count}"
-        not_a_number: "is not a number"
-        odd: "must be odd"
-        record_invalid: "record is invalid"
-        should_be_zip: "file is not valid zip archive"
-        taken: "has already been taken"
-        too_long: "is too long (maximum is %{count} characters)"
-        too_short: "is too short (minimum is %{count} characters)"
-        wrong_length: "is the wrong length (should be %{count} characters)"
-      template: 
-        body: "There were problems with the following fields:"
-        header: 
-          one: "1 error prohibited this %{model} from being saved"
+---
+en:
+  activerecord:
+    errors:
+      messages:
+        accepted: must be accepted
+        blank: can't be blank
+        confirmation: doesn't match confirmation
+        empty: can't be empty
+        equal_to: must be equal to %{count}
+        even: must be even
+        exclusion: is reserved
+        greater_than: must be greater than %{count}
+        greater_than_or_equal_to: must be greater than or equal to %{count}
+        inclusion: is not included in the list
+        invalid: is invalid
+        less_than: must be less than %{count}
+        less_than_or_equal_to: must be less than or equal to %{count}
+        not_a_number: is not a number
+        odd: must be odd
+        record_invalid: record is invalid
+        should_be_zip: file is not valid zip archive
+        taken: has already been taken
+        too_long: is too long (maximum is %{count} characters)
+        too_short: is too short (minimum is %{count} characters)
+        wrong_length: is the wrong length (should be %{count} characters)
+      template:
+        body: 'There were problems with the following fields:'
+        header:
+          one: 1 error prohibited this %{model} from being saved
           other: "%{count} errors prohibited this %{model} from being saved"
-  date: 
-    abbr_day_names: 
-      - Sun
-      - Mon
-      - Tue
-      - Wed
-      - Thu
-      - Fri
-      - Sat
-    abbr_month_names: 
-      - ~
-      - Jan
-      - Feb
-      - Mar
-      - Apr
-      - May
-      - Jun
-      - Jul
-      - Aug
-      - Sep
-      - Oct
-      - Nov
-      - Dec
-    day_names: 
-      - Sunday
-      - Monday
-      - Tuesday
-      - Wednesday
-      - Thursday
-      - Friday
-      - Saturday
-    formats: 
+  active_scaffold:
+    are_you_sure: Are you sure?
+  date:
+    abbr_day_names:
+    - Sun
+    - Mon
+    - Tue
+    - Wed
+    - Thu
+    - Fri
+    - Sat
+    abbr_month_names:
+    - ''
+    - Jan
+    - Feb
+    - Mar
+    - Apr
+    - May
+    - Jun
+    - Jul
+    - Aug
+    - Sep
+    - Oct
+    - Nov
+    - Dec
+    day_names:
+    - Sunday
+    - Monday
+    - Tuesday
+    - Wednesday
+    - Thursday
+    - Friday
+    - Saturday
+    formats:
       default: "%Y-%m-%d"
       long: "%B %d, %Y"
       short: "%b %d"
-    month_names: 
-      - ~
-      - January
-      - February
-      - March
-      - April
-      - May
-      - June
-      - July
-      - August
-      - September
-      - October
-      - November
-      - December
+    month_names:
+    - ''
+    - January
+    - February
+    - March
+    - April
+    - May
+    - June
+    - July
+    - August
+    - September
+    - October
+    - November
+    - December
     none: None
-    order: 
-      - !ruby/symbol year
-      - !ruby/symbol month
-      - !ruby/symbol day
-  datetime: 
-    distance_in_words: 
-      about_x_hours: 
-        one: "about 1 hour"
-        other: "about %{count} hours"
-      about_x_months: 
-        one: "about 1 month"
-        other: "about %{count} months"
-      about_x_years: 
-        one: "about 1 year"
-        other: "about %{count} years"
-      half_a_minute: "half a minute"
-      less_than_x_minutes: 
-        one: "less than a minute"
-        other: "less than %{count} minutes"
-      less_than_x_seconds: 
-        one: "less than 1 second"
-        other: "less than %{count} seconds"
-      over_x_years: 
-        one: "over 1 year"
-        other: "over %{count} years"
-      x_days: 
-        one: "1 day"
+    order:
+    - year
+    - month
+    - day
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: about 1 hour
+        other: about %{count} hours
+      about_x_months:
+        one: about 1 month
+        other: about %{count} months
+      about_x_years:
+        one: about 1 year
+        other: about %{count} years
+      half_a_minute: half a minute
+      less_than_x_minutes:
+        one: less than a minute
+        other: less than %{count} minutes
+      less_than_x_seconds:
+        one: less than 1 second
+        other: less than %{count} seconds
+      over_x_years:
+        one: over 1 year
+        other: over %{count} years
+      x_days:
+        one: 1 day
         other: "%{count} days"
-      x_minutes: 
-        one: "1 minute"
+      x_minutes:
+        one: 1 minute
         other: "%{count} minutes"
-      x_months: 
-        one: "1 month"
+      x_months:
+        one: 1 month
         other: "%{count} months"
-      x_seconds: 
-        one: "1 second"
+      x_seconds:
+        one: 1 second
         other: "%{count} seconds"
-    prompts: 
+    prompts:
       day: Day
       hour: Hour
       minute: Minute
       month: Month
       second: Seconds
       year: Year
-  description: 
-    abstract: 
-      body: |-
-          recommended languages are Belarusian, Russian or English;
-          recommended size is approximately 6000 symbols or less
-          You can use LaTeX, "Textile":http://txstyle.org/ mark-up or plain text.
-      license: '(Licenses are explained at "creativecommons.org":http://creativecommons.org/choose)'
-      license_line: "Abstracts licensed under %{license} license"
+  description:
+    abstract:
+      body: "recommended languages are Belarusian, Russian or English;\r\nrecommended
+        size is approximately 6000 symbols or less\r\nYou can use LaTeX, \"Textile\":http://txstyle.org/
+        mark-up or plain text."
+      license: (Licenses are explained at "creativecommons.org":http://creativecommons.org/choose)
+      license_line: Abstract licensed under %{license} license
     conference_registration:
-      days: "Which days do you plan to participate?"
-      floor: "Excursion in older part of the Grodno city will be payed separately, with fee covering transportation and guide expenses. Planned time of excursion is Thursday evening."
-      food: "Which type of food do you prefer (vegetarian, etc.)"
-      index: "Registration to conference"
-      meeting: "Would you like to be met?"
-      phone: "Phone that we can use to contact with you (with country code please)"
-      proposition: "As free software is developed by the community with attracting a lot of volunteers, please tell us how you can contribute to our meeting. Let it be a report or a less formal speech within the limits of a workshop about implementation, usage or development of free software by you or your organisation. If you are going to make a report or organise a workshop at the conference, please specify the topic of your report, as well as submit its abstracts."
-      quantity: "How many people will go with you to the conference (including you)"
-      residence: "Whom of the registered participants you want to share room with?"
-      title: "Conference registration for %{conference}"
-      transport_from: "Which transport will you use to leave the conference"
-      transport_to: "Which transport will you use to reach the conference"
-      tshirt: "Your size of a T-shirt (should be of the same size as the hoody)"
+      days: Which days do you plan to participate?
+      floor: "Some LVEE participants prefer to live in tents instead of traditional
+        rooms, to get more clear touring experience. Living in tent also results in
+        much smaller registration fee. Please visit \r\n\"tents\":https://lvee.org/ru/wiki_pages/%5B2016%5D%20%D0%9F%D0%B0%D0%BB%D0%B0%D1%82%D0%BA%D0%B8
+        webpage for details."
+      food: Which type of food do you prefer (vegetarian, etc.)
+      index: Registration to conference
+      meeting: Would you like to be met?
       menu:
-        delete_enabled_forbidden: "You can't delete enabled menu item. Disable it first"
-        delete_children_forbidden: "You can't delete disabled menu item. Disable it first"
-        translation_creation_error: "Error creating translation"
-    user: 
-      city: ""
-      country: "Where are you from"
-      email: "Your e-mail"
-      first_name: ""
-      last_name: "Conference rules are requiring real names"
-      login: "At least 3 symbols. Also can be used as nickname"
-      occupation: "Place of work/study and area of activities (with short organization name)"
-      password: "At least 4 symbols"
-      password_confirmation: "Same as password"
-      projects: "Free / Open Source Software (FOSS) projects where you have taken or are taking part in and your role in them"
-      subscribed: "This option allows to receive news and other useful information from the Conference organisers."
-      subscribed_talks: "By choosing this you are going to take part in working discussions on the Conference preparing and carrying on. Being a volunteer project, LVEE is often subject to shortage of performers, and therefore we recomend to activate this option and to actively participate in work of the organization board."
+        delete_children_forbidden: You can't delete disabled menu item. Disable it
+          first
+        delete_enabled_forbidden: You can't delete enabled menu item. Disable it first
+        translation_creation_error: Error creating translation
+      phone: Phone that we can use to contact with you (with country code please)
+      proposition: As free software is developed by the community with attracting
+        a lot of volunteers, please tell us how you can contribute to our meeting.
+        Let it be a report or a less formal speech within the limits of a workshop
+        about implementation, usage or development of free software by you or your
+        organisation. If you are going to make a report or organise a workshop at
+        the conference, please specify the topic of your report, as well as submit
+        its abstracts.
+      quantity: How many people will go with you to the conference (including you)
+      residence: Whom of the registered participants you want to share room with?
+      title: Conference registration for %{conference}
+      transport_from: Which transport will you use to leave the conference
+      transport_to: Which transport will you use to reach the conference
+      tshirt: Your size of a T-shirt (should be of the same size as hoody)
+    user:
+      city: ''
+      country: Where are you from
+      email: Your e-mail
+      first_name: ''
+      last_name: Conference rules are requiring real names
+      login: At least 3 symbols. Also can be used as nickname
+      occupation: Place of work/study and area of activities (with short organization
+        name)
+      password: At least 4 symbols
+      password_confirmation: Same as password
+      projects: Free / Open Source Software (FOSS) projects where you have taken or
+        are taking part in and your role in them
+      subscribed: This option allows to receive news and other useful information
+        from the Conference organisers.
+      subscribed_talks: By choosing this you are going to take part in working discussions
+        on the Conference preparing and carrying on. Being a volunteer project, LVEE
+        is often subject to shortage of performers, and therefore we recomend to activate
+        this option and to actively participate in work of the organization board.
   devise:
-    failure:
-      already_authenticated: "You are already signed in."
-      unauthenticated: "You need to sign in or sign up before continuing."
-      unconfirmed: "You have to confirm your account before continuing."
-      locked: "Your account is locked."
-      invalid: "Invalid email or password."
-      invalid_token: "Invalid authentication token."
-      timeout: "Your session expired, please sign in again to continue."
-      inactive: "Your account was not activated yet."
-    sessions:
-      signed_in: "Signed in successfully."
-      signed_out: "Signed out successfully."
-    passwords:
-      send_instructions: "You will receive an email with instructions about how to reset your password in a few minutes."
-      updated: "Your password was changed successfully. You are now signed in."
-      updated_not_active: "Your password was changed successfully."
-      send_paranoid_instructions: "If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes."
-      no_token: "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided."
     confirmations:
-      send_instructions: 'You will receive an email with instructions about how to confirm your account in a few minutes.'
-      send_paranoid_instructions: 'If your email address exists in our database, you will receive an email with instructions about how to confirm your account in a few minutes.'
-      confirmed: 'Your account was successfully confirmed. You are now signed in.'
-    registrations:
-      signed_up: 'Welcome! You have signed up successfully.'
-      signed_up_but_unconfirmed: 'A message with a confirmation link has been sent to your email address. Please open the link to activate your account.'
-      signed_up_but_inactive: 'You have signed up successfully. However, we could not sign you in because your account is not yet activated.'
-      signed_up_but_locked: 'You have signed up successfully. However, we could not sign you in because your account is locked.'
-      updated: 'You updated your account successfully.'
-      update_needs_confirmation: "You updated your account successfully, but we need to verify your new email address. Please check your email and click on the link to confirm your new email address."
-      destroyed: 'Bye! Your account was successfully cancelled. We hope to see you again soon.'
-    unlocks:
-      send_instructions: 'You will receive an email with instructions about how to unlock your account in a few minutes.'
-      unlocked: 'Your account has been unlocked successfully. Please sign in to continue.'
-      send_paranoid_instructions: 'If your account exists, you will receive an email with instructions about how to unlock it in a few minutes.'
-    omniauth_callbacks:
-      success: 'Successfully authenticated from %{kind} account.'
-      failure: 'Could not authenticate you from %{kind} because "%{reason}".'
+      confirmed: Your account was successfully confirmed. You are now signed in.
+      send_instructions: You will receive an email with instructions about how to
+        confirm your account in a few minutes.
+      send_paranoid_instructions: If your email address exists in our database, you
+        will receive an email with instructions about how to confirm your account
+        in a few minutes.
+    failure:
+      already_authenticated: You are already signed in.
+      inactive: Your account was not activated yet.
+      invalid: Invalid email or password.
+      invalid_token: Invalid authentication token.
+      locked: Your account is locked.
+      timeout: Your session expired, please sign in again to continue.
+      unauthenticated: You need to sign in or sign up before continuing.
+      unconfirmed: You have to confirm your account before continuing.
     mailer:
       confirmation_instructions:
-        subject: 'Confirmation instructions'
+        subject: Confirmation instructions
       reset_password_instructions:
-        subject: 'Reset password instructions'
+        subject: Reset password instructions
       unlock_instructions:
-        subject: 'Unlock Instructions'
-  errors: 
+        subject: Unlock Instructions
+    omniauth_callbacks:
+      failure: Could not authenticate you from %{kind} because "%{reason}".
+      success: Successfully authenticated from %{kind} account.
+    passwords:
+      no_token: You can't access this page without coming from a password reset email.
+        If you do come from a password reset email, please make sure you used the
+        full URL provided.
+      send_instructions: You will receive an email with instructions about how to
+        reset your password in a few minutes.
+      send_paranoid_instructions: If your email address exists in our database, you
+        will receive a password recovery link at your email address in a few minutes.
+      updated: Your password was changed successfully. You are now signed in.
+      updated_not_active: Your password was changed successfully.
+    registrations:
+      destroyed: Bye! Your account was successfully cancelled. We hope to see you
+        again soon.
+      signed_up: Welcome! You have signed up successfully.
+      signed_up_but_inactive: You have signed up successfully. However, we could not
+        sign you in because your account is not yet activated.
+      signed_up_but_locked: You have signed up successfully. However, we could not
+        sign you in because your account is locked.
+      signed_up_but_unconfirmed: A message with a confirmation link has been sent
+        to your email address. Please open the link to activate your account.
+      updated: You updated your account successfully.
+      update_needs_confirmation: You updated your account successfully, but we need
+        to verify your new email address. Please check your email and click on the
+        link to confirm your new email address.
+    sessions:
+      signed_in: Signed in successfully.
+      signed_out: Signed out successfully.
+    unlocks:
+      send_instructions: You will receive an email with instructions about how to
+        unlock your account in a few minutes.
+      send_paranoid_instructions: If your account exists, you will receive an email
+        with instructions about how to unlock it in a few minutes.
+      unlocked: Your account has been unlocked successfully. Please sign in to continue.
+  errors:
     messages:
-      expired: "has expired, please request a new one"
-      not_found: "not found"
-      already_confirmed: "was already confirmed, please try signing in"
-      not_locked: "was not locked"
+      already_confirmed: was already confirmed, please try signing in
+      expired: has expired, please request a new one
+      not_found: not found
+      not_locked: was not locked
       not_saved:
-        one: "1 error prohibited this %{resource} from being saved:"
+        one: '1 error prohibited this %{resource} from being saved:'
         other: "%{count} errors prohibited this %{resource} from being saved:"
-    template: 
-      header: "During saving following errors where found:"
-  label: 
-    abstract: 
-      add_comment: "Add Comment"
-      add_editors: "Add more editors"
-      additional_files: "Images or other files can be uploaded here, if needed"
+    template:
+      header: 'During saving following errors where found:'
+  label:
+    abstract:
+      additional_files: Images or other files can be uploaded here, if needed
+      add_comment: Add Comment
+      add_editors: Add more editors
       authors: Authors
-      body: "Abstracts main body"
-      change_summary: "Changes in this version can be described as"
+      body: Abstracts main body
+      change_summary: Changes in this version can be described as
       conference: Conference
-      create_new: "Create new abstracts"
-      edit: "Abstracts editing"
-      editors: "Participants who are able to edit the text"
-      for_review: "For review"
-      initial_version: "Initial version"
+      create_new: Create new abstracts
+      edit: Abstracts editing
+      editors: Participants who are able to edit the text
+      for_review: For review
+      initial_version: Initial version
       license: License
-      list: "Abstracts for review"
-      list_selection: "Display abstracts:"
-      list_review: "Abstracts for review"
-      list_publish: "Published abstracts"
-      list_user: "Your abstracts"
-      new: "New abstract"
+      list: Abstracts for review
+      list_publish: Published abstracts
+      list_review: Abstracts for review
+      list_selection: 'List abstracts:'
+      list_user: Your abstracts
+      new: Abstracts creating
       published: Published
-      ready_for_review: "The abstract is ready for reviewing"
-      summary: "Summary (in English, recommended size is 500 symbols or less)"
+      ready_for_review: The abstract is ready for reviewing
+      summary: Summary (in English, recommended size is 500 symbols or less)
       title: Title
-      updated_at: "Last Modified"
+      updated_at: Last Modified
       user: User
       yourself: Yourself
-    article: 
+    article:
       body: Body
       category: Category
-      creating: "Creating Article"
-      editing: "Editing Article"
-      in_menu: "In menu?"
-      listing: "Listing Articles"
+      creating: Creating Article
+      editing: Editing Article
+      in_menu: In menu?
+      listing: Listing Articles
       locale: Locale
       name: Name
-      new: "New Article"
+      new: New Article
       title: Title
-    badge: 
+    badge:
       bottom: Bottom
       tags: Tags
       top: Top
-    common: 
-      _select_: Select
-      add_more: "Add more"
+    common:
+      add_more: Add more
       back: Back
-      back_to_list: "Back to list"
+      back_to_list: Back to list
       cancel: Cancel
       close: Close
       comments: Comments
@@ -277,376 +306,404 @@ en:
       diff: Diff
       download: Download
       edit: Edit
-      editTranslation: "Edit translation"
+      editTranslation: Edit translation
       preview: Preview
       publish: Publish
-      publish_now: "Publish Now"
+      publish_now: Publish Now
       save: Save
       search: Search
-      select_user: "Select user"
+      select_user: Select user
       show: Show
       time_ago: "%{time} ago"
       translate: Translate
       unknown_user: Unknown
       update: Update
       upload: Upload
-      view_changes: "View changes"
-    conference: 
-      available: "You can participate following conferences"
-      creating: "Creating conference"
-      finish_date: "Finish date"
-      listing: "Listing conferences"
+      view_changes: View changes
+      _select_: Select
+    conference:
+      available: You can participate following conferences
+      creating: Creating conference
+      finish_date: Finish date
+      listing: Listing conferences
       name: Name
-      new: "New conference"
-      participated: "You have participated"
-      register: "Register to %{conference}"
+      new: New conference
+      participated: You have participated
+      register: Register to %{conference}
       registration_closed: closed
       registration_opened: opened
-      registration_opened?: "Registration opened?"
-      registred: "You have registred"
-      show: "Conference %{name} (%{start_date} - %{finish_date}"
-      start_date: "Start date"
-      upcoming: "Upcoming conferences"
-    conference_registration: 
+      registration_opened?: Registration opened?
+      registred: You have registred
+      show: Conference %{name} (%{start_date} - %{finish_date}
+      start_date: Start date
+      upcoming: Upcoming conferences
+    conference_registration:
       abstracts: Abstracts
-      approved_edit: "Confirm participation in %{conference}"
+      approved_edit: Confirm participation in %{conference}
       badges: Badges
-      badges_title: "Badges for %{conference}"
-      cancel_registration: "Cancel registration!"
+      badges_title: Badges for %{conference}
       cancelled: Cancelled
-      comment: "Registration's Comment"
-      created_at: "Conference Registration Date"
-      days: "Participation days"
+      cancel_registration: Cancel registration!
+      comment: Registration's Comment
+      created_at: Conference Registration Date
+      days: Participation days
       edit: " %{conference} participant's data"
-      floor: "Would you like to take part in Grodno sight-seeing tour?"
-      food: "Preferred food"
-      index: "Registration to conference"
-      meeting: "Meeting required?"
-      phone: "Your contact phone"
-      proposition: "Your proposition"
+      floor: Please mark if you would like to live in a tent with decreased participation
+        fee
+      food: Preferred food
+      index: Registration to conference
+      meeting: Meeting required?
+      phone: Your contact phone
+      proposition: Your proposition
       proposition_list: Report
-      quantity: "Participants quantity"
+      quantity: Participants quantity
       residence: Accommodation
-      status_name: "Registration's Status"
-      title: "Conference registration for %{conference}"
-      transport_from: "Transport from conference"
-      transport_from_list: 
-        bus_grodno: "Minibus to Grodno"
-        bus_minsk: "Minibus to Minsk"
+      status_name: Registration's Status
+      title: Conference registration for %{conference}
+      transport_from: Transport from conference
+      transport_from_list:
+        bus_grodno: Minibus to Grodno
+        bus_minsk: Minibus to Minsk
         independent: Independent
-      transport_to: "Transport to conference"
-      transport_to_list: 
-        bus_grodno: "Minibus from Grodno"
-        bus_minsk: "Minibus from Minsk"
+      transport_to: Transport to conference
+      transport_to_list:
+        bus_grodno: Minibus from Grodno
+        bus_minsk: Minibus from Minsk
         independent: Independent
-      tshirt: "T-shirt size"
-      update_model: "Conference Registration"
-      updated_at: "Last Modified"
-    diff: 
-      change_abstract_title: "Diff for abstracts from %{author} from version %{from} to %{to}"
-      change_article_title: "Diff for article %{article} from version %{from} to %{to}"
-      change_wiki_title: "Diff for page '%{wiki_page}' from version %{from} to %{to}"
-      changed_at: "Changed on"
+      tshirt: T-shirt size
+      updated_at: Last Modified
+      update_model: Conference Registration
+    diff:
+      changed_at: Changed at
+      change_abstract_title: Diff for abstracts from %{author} from version %{from}
+        to %{to}
+      change_article_title: Diff for article %{article} from version %{from} to %{to}
+      change_wiki_title: Diff for page '%{wiki_page}' from version %{from} to %{to}
       editor: Editor
       from: From
-      new_abstract_title: "Abstracts from %{author} has no previous versions"
-      new_article_title: "Article %{article} has no previous versions"
-      new_wiki_title: "Page '%{wiki_page}' has no previous versions"
+      new_abstract_title: Abstracts from %{author} has no previous versions
+      new_article_title: Article %{article} has no previous versions
+      new_wiki_title: Page '%{wiki_page}' has no previous versions
       to: To
       version: Version
-    editor_log: 
-      article_changed: "Article %{obj} was changed by %{user}"
-      article_created: "Article %{obj} was created by %{user}"
-      wiki_page_changed: "Wiki page %{obj} was changed by %{user}"
-      wiki_page_created: "Wiki page %{obj} was created by %{user}"
-    language: 
-      code3: "3-letter (ISO 639-2) language code id"
-      creating: "Creating Language"
-      editing: "Editing Language"
-      id: "2-letter language id"
-      listing: "Listing Languages"
-      name: "Full language name (in English)"
-      new: "New Language"
-      published: "Language published?"
-      upload: "Upload Language"
-    metainfo: 
-      edit: "Edit MetaInfo"
-    news: 
+    editor_log:
+      article_changed: Article %{obj} was changed by %{user}
+      article_created: Article %{obj} was created by %{user}
+      wiki_page_changed: Wiki page %{obj} was changed by %{user}
+      wiki_page_created: Wiki page %{obj} was created by %{user}
+    language:
+      code3: 3-letter (ISO 639-2) language code id
+      creating: Creating Language
+      editing: Editing Language
+      id: 2-letter language id
+      listing: Listing Languages
+      name: Full language name (in English)
+      new: New Language
+      published: Language published?
+      upload: Upload Language
+    metainfo:
+      edit: Edit MetaInfo
+    news:
       abstract: Abstract
-      add: "Add News"
-      all_news: "All News"
+      add: Add News
+      all_news: All News
       author: Author
-      back_to_list: "Back to news list"
-      body: "News Body"
-      creating: "News Creating"
-      editing: "News Editing"
-      last_news: "Last News"
-      publish: "Publish News"
-      published_at: "Published at %{published}"
+      back_to_list: Back to news list
+      body: News Body
+      creating: News Creating
+      editing: News Editing
+      last_news: Last News
+      publish: Publish News
+      published_at: Published at %{published}
       title: Title
-      translating: "News Translation"
+      translating: News Translation
       unpublished: Unpublished
-      will_be_published: "Will be published in %{published}"
-    session: 
-      login: "User name"
-      loginButton: "Log in"
+      will_be_published: Will be published in %{published}
+    session:
+      login: User name
+      loginButton: Log in
       logout: Logout
       password: Password
-      rememberMe: "Remember me"
-    statistics: 
+      rememberMe: Remember me
+    statistics:
       browser: Browser
-      conference: "Registration statistics for %{conference}"
+      conference: Registration statistics for %{conference}
       country: Country
-      operating_system: "Operating system"
-      registration: 
-        approved_men: "Approved participants"
-        approved_registrations: "Approved registration"
-        days_title: "Participance days statistics"
-        registration_title: "Registration statistics"
-        total_men: "Total participants"
-        total_registrations: "Total registration"
-        transport_from_title: "Transport from conference statistics"
-        transport_to_title: "Transport to conference statistics"
-      title: 
-        browser_statistic: "Visitor's Browser Statistics"
-        conference: "Conference registration statistics"
-        country_statistic: "Visitor's Country Statistic"
-        full: "Statistics since 20th of April 2009"
-        month: "Statistics for last month"
-        os_statistic: "Visitor's Operating Systems Statistics"
-        total_visitors: "Total visitors: %{count}"
-        week: "Statistics for last week"
+      operating_system: Operating system
+      registration:
+        approved_men: Approved participants
+        approved_registrations: Approved registration
+        days_title: Participance days statistics
+        registration_title: Registration statistics
+        total_men: Total participants
+        total_registrations: Total registration
+        transport_from_title: Transport from conference statistics
+        transport_to_title: Transport to conference statistics
+      title:
+        browser_statistic: Visitor's Browser Statistics
+        conference: Conference registration statistics
+        country_statistic: Visitor's Country Statistic
+        full: Statistics since 20th of April 2009
+        month: Statistics for last month
+        os_statistic: Visitor's Operating Systems Statistics
+        total_visitors: 'Total visitors: %{count}'
+        week: Statistics for last week
       visits: Visits
     translations:
-      index: "Translations list"
-      original_translation: "Original translation"
-      new: "New Translation"
-      edit: "Edit the translation string"
+      edit: Editing translation
+      index: Translations list
       key: Key
+      new: New Translation
+      original_translation: Original translation
       state:
         blank: Blank
         outdated: Outdated
         untranslated: Untranslated
       translation: Translation
-    user: 
-      avator: "New photo:"
+    user:
+      avator: 'New photo:'
       city: Location
       country: Country
       create: Register
-      created_at: "Registration Date"
-      edit: "Edit personal data"
+      created_at: Registration Date
+      edit: Edit personal data
       email: E-mail
-      first_name: "First Name"
+      first_name: First Name
       from: From
       full_name: Name
-      join_us: "Join us today"
-      last_name: "Last Name"
+      join_us: Join us today
+      last_name: Last Name
       login: Login
       occupation: Occupation
       password: Password
-      password_confirmation: "Password Confirmation"
-      password_restore: "Password Restore"
+      password_confirmation: Password Confirmation
+      password_restore: Password Restore
       password_restore_link: Restore
       photo: Photo
-      projects: "FOSS projects"
+      projects: FOSS projects
       register: Register
-      subscribed: "Subscribe to information maillist"
-      subscribed_talks: "Subscribe to organization board talks mailllist"
+      subscribed: Subscribe to information maillist
+      subscribed_talks: Subscribe to organization board talks mailllist
       title: "%{full_name} (%{login}), your profile is in your hands"
-      to_profile: "To your profile"
-      update_model: "Edit your personal data"
-      updated_at: "Last Updated"
-    wiki_page: 
+      to_profile: To your profile
+      updated_at: Last Updated
+      update_model: Edit your personal data
+    wiki_page:
       body: Body
-      creating: "Creating Wiki Page"
-      editing: "Editing Wiki Page"
-      listing: "Listing Wiki Pages"
+      creating: Creating Wiki Page
+      editing: Editing Wiki Page
+      listing: Listing Wiki Pages
       name: Name
-      new: "New Wiki Page"
-      user: "Last Editor"
-  mail: 
-    account: 
+      new: New Wiki Page
+      user: Last Editor
+  mail:
+    account:
       activate: |-
-          Please visit following URL to activate your account:
-          %{url}
-      activated: "Your account was been activated"
-      activation_restore: "You account should be activated before login"
-      created: "Your account was been created"
+        Please visit following URL for activation your account:
+        %{url}
+      activated: Your account was been activated
+      activation_restore: You account should be activated before login
+      created: Your account was been created
       edit_data: |-
-          You can login and edit your data:
-          %{url}
+        You can login and edit your data:
+        %{url}
       information: |-
-          Login:    %{login}
-          Password: %{password}
+        Login:    %{login}
+        Password: %{password}
       restore: |-
-          Password reset has been requested for you from %{ip}.
-          We have regenerated your password. Below you can find your new login information.
+        Password restore was requested from %{ip}.
+        We reseted your password. Above you can find new login information.
     signature: |-
-        --
-        LVEE conference robot
-    subject: 
-      activation: "Account activation for LVEE"
-      activation_complete: "Your account for LVEE was activated"
-      activation_restore: "Account activation for LVEE (repeat)"
-      password_restore: "Password restore for LVEE"
-    title: "Hello, %{full_name}"
-  menu: 
-    admin: 
-      conference_registrations: "Conference registrations admin"
-      conferences: "Conferences admin"
-      current_conference_registration: "Current conference registration"
-      info_mailer: "Mailer from info@lvee.org"
-      menus: "Menu editor"
-      not_found_redirects: "Moved pages redirects"
-      sites: "Style customization"
-      sponsors: "Sponsors admin"
-      statuses: "Statuses admin"
+      --
+      LVEE conference site's robot
+    subject:
+      activation: Account activation for LVEE
+      activation_complete: Your account for LVEE was activated
+      activation_restore: Account activation for LVEE (repeat)
+      password_restore: Password restore for LVEE
+    title: Hello, %{full_name}
+  menu:
+    admin:
+      conferences: Conferences admin
+      conference_registrations: Conference registrations admin
+      current_conference_registration: Current conference registration
+      info_mailer: Mailer from info@lvee.org
+      menus: Menu editor
+      not_found_redirects: Moved pages redirects
+      sites: Style customization
+      sponsors: Sponsors admin
+      statuses: Statuses admin
       title: Admin
-      users: "Users admin"
-    conference: 
+      users: Users admin
+    conference:
       about: About
       attributes: Attributes
       attribution: Attributes
+      attribution_winter: Attribution
       history: History
       linux: GNU/Linux
       payment: Payment
-      place: "Conference venue"
-      press: "In the press"
+      payment_winter: Payment
+      place: Conference venue
+      place_winter: Conference venue
+      press: In the press
       statistics: Statistics
       title: About
-    contacts: 
+    contacts:
       lug: LUG
-      official: "Official Contacts"
-      organizers: "Organization Board"
+      official: Official Contacts
+      organizers: Organization Board
       title: Contacts
     edit:
+      delete: Delete
+      disable: Disable
       down: Down
       up: Up
-      disable: Disable
-      delete: Delete
-    editor: 
-      abstracts: "Abstracts for review"
-      articles: "Article editor"
-      image_uploader: "Image uploader"
-      language: "Language editor"
-      metainfo: "Metainfo editor"
-      news: "News editor"
-      rss: "Editor RSS"
+    editor:
+      abstracts: Abstracts for review
+      articles: Article editor
+      image_uploader: Image uploader
+      language: Language editor
+      metainfo: Metainfo editor
+      news: News editor
+      rss: Editor RSS
       title: Editor
       translations: Translations
-    main: 
+    main:
       title: Main
-    reports: 
-      about: "On presentations"
-      abstract: "Abstract guidelines"
-      materials_2005: "LVEE 2005 materials"
-      materials_2006: "LVEE 2006 materials"
-      materials_2007: "LVEE 2007 materials"
-      materials_2008: "LVEE 2008 materials"
-      materials_2009: "LVEE 2009 materials"
-      materials_2010: "LVEE 2010 materials"
-      materials_2011: "LVEE 2011 materials"
-      materials_2012: "LVEE 2012 materials"
-      materials_winter_2012: "LVEE Winter 2012 materials"
+    reports:
+      about: On presentations
+      abstract: Abstract guidelines
+      lvee_2012_materials: LVEE 2012 materials
+      lvee_2013_materials: LVEE 2013 materials (with Winter)
+      lvee_2014_materials: LVEE 2014 materials (with Winter)
+      lvee_2015_materials: LVEE 2015 materials
+      lvee_winter_2014_presentations: LVEE Winter 2014 materials
+      materials_2005: LVEE 2005 materials
+      materials_2006: LVEE 2006 materials
+      materials_2007: LVEE 2007 materials
+      materials_2008: LVEE 2008 materials
+      materials_2009: LVEE 2009 materials
+      materials_2010: LVEE 2010 materials
+      materials_2011: LVEE 2011 materials
+      materials_2012: LVEE 2012 materials (with Winter)
+      materials_2016: LVEE 2016 materials
+      materials_lvee_winter_2013: LVEE Winter 2013 materials
+      materials_winter_2012: LVEE Winter 2012 materials
       program: Programme
       title: Presentations
-    sponsors: 
+    sponsors:
       title: Sponsors
-    user: 
+    user:
       conference_registration: List
-      profile: "Personal profile"
+      list: List
+      list_14: List
+      list_14_2: List
+      list_15: List
+      list_16: List
+      list_winter_16: List
+      profile: Personal profile
       title: Participants
       volunteers: Volunteers
       wiki: Wiki
-  message: 
-    abstract: 
-      file_delete_success: "File deleted successfuly"
-      file_upload_fail: "File can't be uploaded"
-      file_upload_success: "File uploaded successfuly"
-    common: 
-      access_denied: "Access denied"
+      winter_12: List
+  message:
+    abstract:
+      file_delete_success: File deleted successfuly
+      file_upload_fail: File can't be uploaded
+      file_upload_success: File uploaded successfuly
+    common:
+      access_denied: Access denied
       required_fields: "(fields marked with bold are obligatory to fill in)"
-      sure: "Are you sure?"
-    conference: 
-      created: "Conference created successfully"
-      slogan: "International conference of developers<br />and users of free / open source software"
-      status: "Registration to conference %{status}."
-      updated: "Conference updated successfully"
-    iefuck: 
-      link: "http://browsehappy.com"
-      link_text: "Find out modern and secure browsers!"
-      message: "This version of Internet Explorer improperly shows contemporary websites and makes your computer unsafe. %{link}"
-    language: 
-      created: "Language created successfully"
-      updated: "Language updated successfully"
-    license: 
-      engine: "The website uses %{link} and licensed under GPL license version 2.0 as <a href=\"https://www.gnu.org/licenses/gpl-2.0.en.html\">published by the FSF</a>"
-      text: "All content besides materials of presentations and other specially mentioned documents is licensed under Creative Commons Attribution Share-Alike license"
-    news: 
-      created: "News created successfully"
-      updated: "News updated successfully"
-    session: 
-      failed: "User name or password incorrect. Probably, you didn't activate your account"
-      logged: "Logged in as %{user_name}"
-      logged_out: "You have logged out successfully"
-    user: 
-      accuracy_note: "Accurate and error-free registration form filling will help contacting with you alot"
-      activated: "Registration completed"
-      avator_updated: "Photo updated successfully"
-      avator_upload: "You can upload you photo here. Please choose one with face, if possible."
-      describe: "User: %{full_name} (%{country}, %{city})..."
-      incorrect_image: "Can not update your photo. Please check image file"
-      login_change: "You can't change your login"
-      not_found_by_email: "User not found by email. Please check email."
-      password_restore: "Forgot password? %{link} it."
-      password_restore_note: "Mail with restore information sent."
-      privacy: "Privacy Policy: We %{link} your account information to anyone, including your email address."
-      privacy_link: "don't sell"
-      registred: "Thank you for registration"
-  number: 
-    currency: 
-      format: 
+      sure: Are you sure?
+    conference:
+      created: Conference created successfully
+      slogan: International conference of developers<br />and users of free / open
+        source software
+      status: Registration to conference %{status}.
+      updated: Conference updated successfully
+    iefuck:
+      link: http://browsehappy.com
+      link_text: Find out modern and secure browsers!
+      message: This version of Internet Explorer improperly shows contemporary websites
+        and makes your computer unsafe. %{link}
+    language:
+      created: Language created successfully
+      updated: Language updated successfully
+    license:
+      engine: The website uses %{link} and licensed under GPL license version 2.0
+        as <a href="//www.gnu.org/licenses/gpl-2.0.en.html">published by the FSF</a>
+      text: All content besides materials of presentations and other specially mentioned
+        documents is licensed under Creative Commons Attribution Share-Alike license
+    news:
+      created: News created successfully
+      updated: News updated successfully
+    session:
+      failed: User name or password incorrect. Probably, you didn't activate your
+        account
+      logged: Logged in as %{user_name}
+      logged_out: You have logged out successfully
+    user:
+      accuracy_note: Accurate and error-free registration form filling will help contacting
+        with you alot
+      activated: Registration completed
+      avator_updated: Photo updated successfully
+      avator_upload: You can upload you photo here. Please choose one with face, if
+        possible.
+      describe: 'User: %{full_name} (%{country}, %{city})...'
+      incorrect_image: Can not update your photo. Please check image file
+      login_change: You can't change your login
+      not_found_by_email: User not found by email. Please check email.
+      password_restore: Forgot password? %{link} it.
+      password_restore_note: Mail with restore information sent.
+      privacy: 'Privacy Policy: We %{link} your account information to anyone, including
+        your email address.'
+      privacy_link: don't sell
+      registred: Thank you for registration
+  number:
+    currency:
+      format:
         delimiter: ","
         format: "%u%n"
-        precision: 2
+        precision: '2'
         separator: "."
-        unit: $
-    format: 
+        unit: "$"
+    format:
       delimiter: ","
-      precision: 3
+      precision: '3'
       separator: "."
-    human: 
-      format: 
-        delimiter: ""
-        precision: 1
-      storage_units: 
-        - Bytes
-        - KB
-        - MB
-        - GB
-        - TB
-    percentage: 
-      format: 
-        delimiter: ""
-    precision: 
-      format: 
-        delimiter: ""
-  sidebar: 
-    information_sponsor: "Information partners"
+    human:
+      format:
+        delimiter: ''
+        precision: '1'
+      storage_units:
+      - Bytes
+      - KB
+      - MB
+      - GB
+      - TB
+    percentage:
+      format:
+        delimiter: ''
+    precision:
+      format:
+        delimiter: ''
+  sidebar:
+    information_sponsor: Information partners
     organizers: Organisers
     sponsors: Sponsors
-    technical_partner: "Technical partners"
-    technical_sponsor: "Technical sponsor"
-  support: 
-    array: 
+    technical_partner: Technical partners
+    technical_sponsor: Technical sponsor
+  support:
+    array:
       last_word_connector: ", and "
       two_words_connector: " and "
       words_connector: ", "
-  time: 
+  time:
     am: am
-    formats: 
+    formats:
       default: "%a, %d %b %Y %H:%M:%S %z"
       long: "%B %d, %Y %H:%M"
-      short: "%d %b %H:%M"
       picker: "%d %b %H:%M"
+      short: "%d %b %H:%M"
     pm: pm

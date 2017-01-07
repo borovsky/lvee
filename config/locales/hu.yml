@@ -1,724 +1,475 @@
---- 
-hu: 
-  active_scaffold: 
-    are_you_sure: "Are you sure?"
-  activerecord: 
-    errors: 
-      messages: 
-        accepted: "meg kell erősíteni"
-        blank: "nem lehet üres"
-        confirmation: "nem egyezik a megerősítéssel"
-        empty: "nem lehet üres"
-        equal_to: "csak ennyi lehet: %{count}"
-        even: "csak páratlan lehet"
-        exclusion: "fenntartott értekű"
-        greater_than: "csak több lehet, mint %{count}"
-        greater_than_or_equal_to: "csak nagyobb vagy egyenlő lehet, mint %{count}"
-        inclusion: "nem megengedett értékű"
-        invalid: "érvénytelen értékű"
-        less_than: "csak kevesebb lehet, mint %{count}"
-        less_than_or_equal_to: "csak kisebb vagy egyenlő lehet, mint %{count}"
-        not_a_number: "nem szám"
-        odd: "csak páros lehet"
-        record_invalid: "record is invalid"
-        should_be_zip: "file is not valid zip archive"
-        taken: "már foglalt"
-        too_long: 
-          few: "túl hosszú (nem lehet hosszabb, mint %{count} leütés)"
-          many: "túl hosszú (nem lehet hosszabb, mint %{count} leütés)"
-          one: "túl hosszú (nem lehet hosszabb, mint %{count} leütés)"
-          other: "túl hosszú (nem lehet hosszabb, mint %{count} leütés)"
-        too_short: 
-          few: "nem elég hosszú (nem lehet rövidebb, mint %{count} leütés)"
-          many: "nem elég hosszú (nem lehet rövidebb, mint %{count} leütés)"
-          one: "nem elég hosszú (nem lehet rövidebb, mint %{count} leütés)"
-          other: "nem elég hosszú (nem lehet rövidebb, mint %{count} leütés)"
-        wrong_length: 
-          few: "nem megfelelő hosszúságú (csak %{count} leütés lehet)"
-          many: "nem megfelelő hosszúságú (csak %{count} leütés lehet)"
-          one: "nem megfelelő hosszúságú (csak %{count} leütés lehet)"
-          other: "nem megfelelő hosszúságú (csak %{count} leütés lehet)"
-      template: 
-        body: "A következő mezőkkel van gond:"
-        header: 
+---
+hu:
+  activerecord:
+    errors:
+      messages:
+        accepted: meg kell erősíteni
+        blank: nem lehet üres
+        confirmation: nem egyezik a megerősítéssel
+        empty: nem lehet üres
+        equal_to: 'csak ennyi lehet: %{count}'
+        even: csak páratlan lehet
+        exclusion: fenntartott értekű
+        greater_than: csak több lehet, mint %{count}
+        greater_than_or_equal_to: csak nagyobb vagy egyenlő lehet, mint %{count}
+        inclusion: nem megengedett értékű
+        invalid: érvénytelen értékű
+        less_than: csak kevesebb lehet, mint %{count}
+        less_than_or_equal_to: csak kisebb vagy egyenlő lehet, mint %{count}
+        not_a_number: nem szám
+        odd: csak páros lehet
+        taken: már foglalt
+        too_long:
+          few: túl hosszú (nem lehet hosszabb, mint %{count} leütés)
+          many: túl hosszú (nem lehet hosszabb, mint %{count} leütés)
+          one: túl hosszú (nem lehet hosszabb, mint %{count} leütés)
+          other: túl hosszú (nem lehet hosszabb, mint %{count} leütés)
+        too_short:
+          few: nem elég hosszú (nem lehet rövidebb, mint %{count} leütés)
+          many: nem elég hosszú (nem lehet rövidebb, mint %{count} leütés)
+          one: nem elég hosszú (nem lehet rövidebb, mint %{count} leütés)
+          other: nem elég hosszú (nem lehet rövidebb, mint %{count} leütés)
+        wrong_length:
+          few: nem megfelelő hosszúságú (csak %{count} leütés lehet)
+          many: nem megfelelő hosszúságú (csak %{count} leütés lehet)
+          one: nem megfelelő hosszúságú (csak %{count} leütés lehet)
+          other: nem megfelelő hosszúságú (csak %{count} leütés lehet)
+      template:
+        body: 'A következő mezőkkel van gond:'
+        header:
           few: "%{model}: a mentés nem sikerült %{count} hiba miatt"
           many: "%{model}: a mentés nem sikerült %{count} hiba miatt"
           one: "%{model}: a mentés nem sikerült %{count} hiba miatt"
           other: "%{model}: a mentés nem sikerült %{count} hiba miatt"
-  date: 
-    abbr_day_names: 
-      - Va
-      - Hé
-      - Ke
-      - Sze
-      - Cs
-      - Pé
-      - Szo
-    abbr_month_names: 
-      - ~
-      - jan.
-      - feb.
-      - már.
-      - ápr.
-      - máj.
-      - jún.
-      - júl.
-      - aug.
-      - sze.
-      - okt.
-      - nov.
-      - dec.
-    day_names: 
-      - vasárnap
-      - hétfő
-      - kedd
-      - szerda
-      - csütörtök
-      - péntek
-      - szombat
-    formats: 
+  date:
+    abbr_day_names:
+    - Va
+    - Hé
+    - Ke
+    - Sze
+    - Cs
+    - Pé
+    - Szo
+    abbr_month_names:
+    - ''
+    - jan.
+    - feb.
+    - már.
+    - ápr.
+    - máj.
+    - jún.
+    - júl.
+    - aug.
+    - sze.
+    - okt.
+    - nov.
+    - dec.
+    day_names:
+    - vasárnap
+    - hétfő
+    - kedd
+    - szerda
+    - csütörtök
+    - péntek
+    - szombat
+    formats:
       default: "%Y.%m.%d"
       long: "%Y %B %d"
-      short: "%b %d"
-    month_names: 
-      - ~
-      - január
-      - február
-      - március
-      - április
-      - május
-      - június
-      - július
-      - augusztus
-      - szeptember
-      - október
-      - november
-      - december
+    month_names:
+    - ''
+    - január
+    - február
+    - március
+    - április
+    - május
+    - június
+    - július
+    - augusztus
+    - szeptember
+    - október
+    - november
+    - december
     none: Nincs
-    order: 
-      - !ruby/symbol year
-      - !ruby/symbol month
-      - !ruby/symbol day
-    standalone_abbr_month_names: 
-      - ~
-      - jan.
-      - feb.
-      - már.
-      - ápr.
-      - máj.
-      - jún.
-      - júl.
-      - aug.
-      - sze.
-      - okt.
-      - nov.
-      - dec.
-    standalone_day_names: 
-      - Vasárnap
-      - Hétfő
-      - Kedd
-      - Szerda
-      - Csütörtök
-      - Péntek
-      - Szombat
-    standalone_month_names: 
-      - ~
-      - Január
-      - Február
-      - Március
-      - Április
-      - Május
-      - Június
-      - Július
-      - Augusztus
-      - Szeptember
-      - Október
-      - November
-      - December
-  datetime: 
-    distance_in_words: 
-      about_x_hours: 
-        few: "kb. %{count} óra"
-        many: "kb. %{count} óra"
-        one: "kb. %{count} óra"
-        other: "kb. %{count} óra"
-      about_x_months: 
-        few: "kb. %{count} hó"
-        many: "kb. %{count} hó"
-        one: "kb. %{count} hó"
-        other: "kb. %{count} hó"
-      about_x_years: 
-        few: "kb. %{count} év"
-        many: "kb. %{count} év"
-        one: "kb. %{count} év"
-        other: "kb. %{count} év"
-      half_a_minute: "fél perc"
-      less_than_x_minutes: 
-        few: "kevesebb, mint %{count} perc"
-        many: "kevesebb, mint %{count} perc"
-        one: "kevesebb, mint %{count} perc"
-        other: "kevesebb, mint %{count} perc"
-      less_than_x_seconds: 
-        few: "kevesebb, mint %{count} másodperc"
-        many: "kevesebb, mint %{count} másodperc"
-        one: "kevesebb, mint %{count} másodperc"
-        other: "kevesebb, mint %{count} másodperc"
-      over_x_years: 
-        few: "több, mint %{count} év"
-        many: "több, mint %{count} év"
-        one: "több, mint %{count} év"
-        other: "több, mint %{count} év"
-      x_days: 
+    standalone_abbr_month_names:
+    - jan.
+    - feb.
+    - már.
+    - ápr.
+    - máj.
+    - jún.
+    - júl.
+    - aug.
+    - sze.
+    - okt.
+    - nov.
+    - dec.
+    standalone_day_names:
+    - Vasárnap
+    - Hétfő
+    - Kedd
+    - Szerda
+    - Csütörtök
+    - Péntek
+    - Szombat
+    standalone_month_names:
+    - Január
+    - Február
+    - Március
+    - Április
+    - Május
+    - Június
+    - Július
+    - Augusztus
+    - Szeptember
+    - Október
+    - November
+    - December
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        few: kb. %{count} óra
+        many: kb. %{count} óra
+        one: kb. %{count} óra
+        other: kb. %{count} óra
+      about_x_months:
+        few: kb. %{count} hó
+        many: kb. %{count} hó
+        one: kb. %{count} hó
+        other: kb. %{count} hó
+      about_x_years:
+        few: kb. %{count} év
+        many: kb. %{count} év
+        one: kb. %{count} év
+        other: kb. %{count} év
+      half_a_minute: fél perc
+      less_than_x_minutes:
+        few: kevesebb, mint %{count} perc
+        many: kevesebb, mint %{count} perc
+        one: kevesebb, mint %{count} perc
+        other: kevesebb, mint %{count} perc
+      less_than_x_seconds:
+        few: kevesebb, mint %{count} másodperc
+        many: kevesebb, mint %{count} másodperc
+        one: kevesebb, mint %{count} másodperc
+        other: kevesebb, mint %{count} másodperc
+      over_x_years:
+        few: több, mint %{count} év
+        many: több, mint %{count} év
+        one: több, mint %{count} év
+        other: több, mint %{count} év
+      x_days:
         few: "%{count} nap"
         many: "%{count} nap"
         one: "%{count} nap"
         other: "%{count} nap"
-      x_minutes: 
+      x_minutes:
         few: "%{count} perc"
         many: "%{count} perc"
         one: "%{count} perc"
         other: "%{count} perc"
-      x_months: 
+      x_months:
         few: "%{count} hó"
         many: "%{count} hó"
         one: "%{count} hó"
         other: "%{count} hó"
-      x_seconds: 
+      x_seconds:
         few: "%{count} másodperc"
         many: "%{count} másodperc"
         one: "%{count} másodperc"
         other: "%{count} másodperc"
-    prompts: 
+    prompts:
       day: Nap
       hour: Óra
       minute: Perc
       month: Hó
       second: Másodperc
       year: Év
-  description: 
-    abstract: 
+  description:
+    abstract:
       body: |-
-          recommended languages are Belarussian, Russian or English;
-          recommended size is approximately 6000 symbols or less
-          You can use "textile":http://www.textism.com/tools/textile/ mark-up or plain text.
-      license: "(Licenses are explained at \"creativecommons.org\":http://creativecommons.org/choose)"
-      license_line: "Abstract licensed under %{license} license"
-    conference_registration: 
-      days: "Mely napokon kíván részt venni?"
-      floor: "Excursion in older part of the Grodno city will be payed separately, with fee covering transportation and guide expenses. Planned time of excursion is Thursday evening."
-      food: "Étkezéssel kapcsolatos kívánságok?"
-      index: "Konferencia regisztráció"
-      meeting: "Igényli-e, hogy fogadják?"
-      menu: 
-        delete_children_forbidden: "You can't delete disabled menu item. Disable it first"
-        delete_enabled_forbidden: "You can't delete enabled menu item. Disable it first"
-        translation_creation_error: "Error creating translation"
-      phone: "Telefonszám, amin a konferencia közben elérhető (országkóddal)"
-      proposition: "Mivel a szabad szoftvert önkéntesek közössége hozza létre, kérjük írja le, mivel tudna hozzájárulni a találkozónkhoz. Lehet előadás vagy kevésbé formális beszámoló kerekasztalbeszélgetés (workshop) keretében szabad szoftver bevezetéséről, használatáról vagy fejlesztéséről ön, vagy cége által. Amennyiben előadást vagy szemináriumot készül a konferencián tartani, kérjük írja meg az előadása címét, és küldje el a \"d.kostiuk@lvee.org\":mailto:d.kostiuk@lvee.org címre az előadás vázlatát."
-      quantity: "Hányan jönnek önnel együtt a rendezvényre?"
-      residence: "Who of the registered participants you want to share room with?"
-      title: "Regisztrálás az %{conference} konferenciára"
-      transport_from: "Which transport will you use to leave the conference"
-      transport_to: "Milyen közlekedéssel tervezi a konferenciára eljutást?"
+        recommended languages are Belarussian, Russian or English;
+        recommended size is approximately 6000 symbols or less
+        You can use "textile":http://www.textism.com/tools/textile/ mark-up or plain text.
+    conference_registration:
+      days: Mely napokon kíván részt venni?
+      food: Étkezéssel kapcsolatos kívánságok?
+      index: Konferencia regisztráció
+      meeting: Igényli-e, hogy fogadják?
+      phone: Telefonszám, amin a konferencia közben elérhető (országkóddal)
+      proposition: Mivel a szabad szoftvert önkéntesek közössége hozza létre, kérjük
+        írja le, mivel tudna hozzájárulni a találkozónkhoz. Lehet előadás vagy kevésbé
+        formális beszámoló kerekasztalbeszélgetés (workshop) keretében szabad szoftver
+        bevezetéséről, használatáról vagy fejlesztéséről ön, vagy cége által. Amennyiben
+        előadást vagy szemináriumot készül a konferencián tartani, kérjük írja meg
+        az előadása címét, és küldje el a "d.kostiuk@lvee.org":mailto:d.kostiuk@lvee.org
+        címre az előadás vázlatát.
+      quantity: Hányan jönnek önnel együtt a rendezvényre?
+      residence: Who of the registered participants you want to share room with?
+      title: Regisztrálás az %{conference} konferenciára
+      transport_to: Milyen közlekedéssel tervezi a konferenciára eljutást?
       tshirt: Pólóméret
-    user: 
+    user:
       city: Város?
       country: Ország?
-      email: "Email címe?"
+      email: Email címe?
       first_name: Keresztnév
       last_name: Családnév
-      login: "minimum 3 karakter"
-      occupation: "Munkahely/iskola, tevékenység (a szervezet/cég rövid elnevezésével)"
-      password: "minimum 4 karakter"
-      password_confirmation: "Jelszó ismétlés"
-      projects: "Free Software / Open Source (FS/OS) projektek, amikben részt vesz vagy a múltban részt vett, szerepének megjelölésével"
-      subscribed: "This option allows to receive news and other useful information from the Conference organizers."
-      subscribed_talks: "By choosing this You are going to take part in working discussions on the Conference preparing and carrying on. Being a volunteer project, LVEE is often subject to shortage of performers, and therefore we recomend to activate this option and to actively participate in work of the organization board."
-  devise: 
-    confirmations: 
-      confirmed: "Your account was successfully confirmed. You are now signed in."
-      send_instructions: "You will receive an email with instructions about how to confirm your account in a few minutes."
-      send_paranoid_instructions: "If your email address exists in our database, you will receive an email with instructions about how to confirm your account in a few minutes."
-    failure: 
-      already_authenticated: "You are already signed in."
-      inactive: "Your account was not activated yet."
-      invalid: "Invalid email or password."
-      invalid_token: "Invalid authentication token."
-      locked: "Your account is locked."
-      timeout: "Your session expired, please sign in again to continue."
-      unauthenticated: "You need to sign in or sign up before continuing."
-      unconfirmed: "You have to confirm your account before continuing."
-    mailer: 
-      confirmation_instructions: 
-        subject: "Confirmation instructions"
-      reset_password_instructions: 
-        subject: "Reset password instructions"
-      unlock_instructions: 
-        subject: "Unlock Instructions"
-    omniauth_callbacks: 
-      failure: "Could not authenticate you from %{kind} because \"%{reason}\"."
-      success: "Successfully authenticated from %{kind} account."
-    passwords: 
-      no_token: "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided."
-      send_instructions: "You will receive an email with instructions about how to reset your password in a few minutes."
-      send_paranoid_instructions: "If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes."
-      updated: "Your password was changed successfully. You are now signed in."
-      updated_not_active: "Your password was changed successfully."
-    registrations: 
-      destroyed: "Bye! Your account was successfully cancelled. We hope to see you again soon."
-      signed_up: "Welcome! You have signed up successfully."
-      signed_up_but_inactive: "You have signed up successfully. However, we could not sign you in because your account is not yet activated."
-      signed_up_but_locked: "You have signed up successfully. However, we could not sign you in because your account is locked."
-      signed_up_but_unconfirmed: "A message with a confirmation link has been sent to your email address. Please open the link to activate your account."
-      update_needs_confirmation: "You updated your account successfully, but we need to verify your new email address. Please check your email and click on the confirm link to finalize confirming your new email address."
-      updated: "You updated your account successfully."
-    sessions: 
-      signed_in: "Signed in successfully."
-      signed_out: "Signed out successfully."
-    unlocks: 
-      send_instructions: "You will receive an email with instructions about how to unlock your account in a few minutes."
-      send_paranoid_instructions: "If your account exists, you will receive an email with instructions about how to unlock it in a few minutes."
-      unlocked: "Your account has been unlocked successfully. Please sign in to continue."
-  errors: 
-    messages: 
-      already_confirmed: "was already confirmed, please try signing in"
-      expired: "has expired, please request a new one"
-      not_found: "not found"
-      not_locked: "was not locked"
-      not_saved: 
-        one: "1 error prohibited this %{resource} from being saved:"
-        other: "%{count} errors prohibited this %{resource} from being saved:"
-    template: 
-      header: "During saving following errors where found:"
-  label: 
-    abstract: 
-      add_comment: "Add Comment"
-      add_editors: "Add more editors"
-      additional_files: "Images or other files can be uploaded here, if needed"
-      authors: Authors
+      login: minimum 3 karakter
+      occupation: Munkahely/iskola, tevékenység (a szervezet/cég rövid elnevezésével)
+      password: minimum 4 karakter
+      password_confirmation: Jelszó ismétlés
+      projects: Free Software / Open Source (FS/OS) projektek, amikben részt vesz
+        vagy a múltban részt vett, szerepének megjelölésével
+      subscribed_talks: By choosing this You are going to take part in working discussions
+        on the Conference preparing and carrying on. Being a volunteer project, LVEE
+        is often subject to shortage of performers, and therefore we recomend to activate
+        this option and to actively participate in work of the organization board.
+  label:
+    abstract:
       body: Body
-      change_summary: "Change summary"
-      conference: Conference
-      create_new: "Create new abstracts"
-      edit: "Abstracts editing"
-      editors: "Participants who are able to edit the text"
-      for_review: "For review"
-      initial_version: "Initial version"
-      license: License
-      list: "Abstracts for review"
-      list_publish: "Published abstracts"
-      list_review: "Abstracts for review"
-      list_selection: "List abstracts:"
-      list_user: "Your abstracts"
-      new: "Abstracts creating"
-      published: Published
-      ready_for_review: "Ready for review"
+      change_summary: Change summary
+      ready_for_review: Ready for review
       summary: Summary
-      title: Title
-      updated_at: "Last Modified"
-      user: User
-      yourself: Yourself
-    article: 
+    article:
       body: Тartalom
       category: Kategória
-      creating: "Сikk létrehozása"
-      editing: "Cikk szerkesztése"
-      in_menu: "A menüben?"
+      creating: Сikk létrehozása
+      editing: Cikk szerkesztése
+      in_menu: A menüben?
       listing: Cikklista
       locale: Nyelv
       name: Név
-      new: "Új cikk"
+      new: Új cikk
       title: Cím
-    badge: 
-      bottom: Bottom
-      tags: Tags
-      top: Top
-    common: 
-      _select_: Kiválasztás
-      add_more: "Add more"
+    common:
       back: Vissza
-      back_to_list: "Back to list"
       cancel: Mégse
-      close: Close
-      comments: Comments
-      count: Count
       create: Létrehozni
       delete: Törölni
-      diff: Diff
       download: Letölteni
       edit: Szerkeszteni
-      editTranslation: "Fordítás szerkesztése"
+      editTranslation: Fordítás szerkesztése
       preview: Megtekinteni
       publish: Közzétenni
-      publish_now: "Most közzétenni"
+      publish_now: Most közzétenni
       save: Elmenteni
-      search: Search
-      select_user: "Select user"
       show: Megmutatni
-      time_ago: "%{time} ago"
       translate: Lefordítani
-      unknown_user: Unknown
       update: Megújítani
       upload: Feltölteni
-      view_changes: "View changes"
-    conference: 
-      available: "Későbbi konferenciákon részt tud venni?"
-      creating: "Konferencia létrehozása"
+      _select_: Kiválasztás
+    conference:
+      available: Későbbi konferenciákon részt tud venni?
+      creating: Konferencia létrehozása
       finish_date: Zárónap
-      listing: "Konferencia lista"
+      listing: Konferencia lista
       name: Elnevezés
-      new: "Új konferencia"
-      participated: "Ön részt vett"
-      register: "Register to %{conference}"
-      registration_closed: "Regisztráció lezárva"
+      new: Új konferencia
+      participated: Ön részt vett
+      registration_closed: Regisztráció lezárva
       registration_opened: Nyitva
-      registration_opened?: "Regisztráció nyitva?"
-      registred: "Ön regisztrált"
+      registration_opened?: Regisztráció nyitva?
+      registred: Ön regisztrált
       show: "%{name} konferencia (%{start_date} - %{finish_date}"
       start_date: Kezdőnap
-      upcoming: "Soronkövetkező konferenciák"
-    conference_registration: 
-      abstracts: Abstracts
-      approved_edit: "Confirm participation in %{conference}"
-      badges: Badges
-      badges_title: "Badges for %{conference}"
-      cancel_registration: "Cancel registration"
-      cancelled: Cancalled
-      comment: "Registration's Comment"
-      created_at: "Conference Registration Date"
-      days: "Részvételi napok"
-      edit: " %{conference} participant's data"
-      floor: "Would you like to take part in Grodno sight-seeing tour?"
-      food: "Étkezéssel kapcsolatos kívánságok"
+      upcoming: Soronkövetkező konferenciák
+    conference_registration:
+      cancel_registration: Cancel registration
+      days: Részvételi napok
+      food: Étkezéssel kapcsolatos kívánságok
       index: Konferenciaregisztrációk
-      meeting: "Fogadás szükséges?"
-      phone: "Telefonos elérhetősége"
+      meeting: Fogadás szükséges?
+      phone: Telefonos elérhetősége
       proposition: Felajánlásai
-      proposition_list: Report
-      quantity: "Résztvevők száma"
-      residence: Accommodation
-      status_name: "Registration's Status"
-      title: "Regisztrálás a %{conference} konferenciára"
-      transport_from: "Transport from conference"
-      transport_from_list: 
-        bus_grodno: "Minibus to Grodno"
-        bus_minsk: "Minibus to Minsk"
-        independent: Independent
-      transport_to: "Transport to conference"
-      transport_to_list: 
-        bus_grodno: "Minibus from Grodno"
-        bus_minsk: "Minibus from Minsk"
-        independent: Independent
+      quantity: Résztvevők száma
+      title: Regisztrálás a %{conference} konferenciára
       tshirt: Pólóméret
-      update_model: "Conference Registration"
-      updated_at: "Last Modified"
-    diff: 
-      change_abstract_title: "Diff for abstracts from %{author} from version %{from} to %{to}"
-      change_article_title: "Diff for article %{article} from version %{from} to %{to}"
-      change_wiki_title: "Diff for page '%{wiki_page}' from version %{from} to %{to}"
-      changed_at: "Changed at"
-      editor: Editor
-      from: From
-      new_abstract_title: "Abstracts from %{author} has no previous versions"
-      new_article_title: "Article %{article} has no previous versions"
-      new_wiki_title: "Page '%{wiki_page}' has no previous versions"
-      to: To
-      version: Version
-    editor_log: 
-      article_changed: "Article %{obj} was changed by %{user}"
-      article_created: "Article %{obj} was created by %{user}"
-      wiki_page_changed: "Wiki page %{obj} was changed by %{user}"
-      wiki_page_created: "Wiki page %{obj} was created by %{user}"
-    language: 
-      code3: "3-letter (ISO 639-2) language code id"
-      creating: "Nyelv létrehozása"
-      editing: "Nyelv szerkesztése"
-      id: "nyelv kétbetüs azonosítója"
-      listing: "Nyelvek listája"
-      name: "A nyelv angol elnevezése"
-      new: "Új nyelv"
-      published: "A nyelv elérhető?"
-      upload: "Nyelv feltöltése"
-    metainfo: 
-      edit: "Edit MetaInfo"
-    news: 
+    language:
+      creating: Nyelv létrehozása
+      editing: Nyelv szerkesztése
+      id: nyelv kétbetüs azonosítója
+      listing: Nyelvek listája
+      name: A nyelv angol elnevezése
+      new: Új nyelv
+      published: A nyelv elérhető?
+      upload: Nyelv feltöltése
+    news:
       abstract: Összefoglaló
-      add: "Hír hozzáadása"
-      all_news: "Minden hír"
+      add: Hír hozzáadása
+      all_news: Minden hír
       author: Szerző
-      back_to_list: "Vissza a hírlistához"
-      body: "Hír tartalma"
-      creating: "Hír létrehozása"
-      editing: "Hír szerkesztése"
-      last_news: "Friss hírek"
-      publish: "Hír közzététele"
+      back_to_list: Vissza a hírlistához
+      body: Hír tartalma
+      creating: Hír létrehozása
+      editing: Hír szerkesztése
+      last_news: Friss hírek
+      publish: Hír közzététele
       published_at: "%{published} közzétéve"
       title: Cím
-      translating: "Hír fordítása"
-      unpublished: "Nincs közzétéve"
+      translating: Hír fordítása
+      unpublished: Nincs közzétéve
       will_be_published: "%{published} közzé lesz téve"
-    session: 
+    session:
       login: Felhasználónév
       loginButton: Belépés
       logout: Kilépés
       password: Jelszó
-      rememberMe: "Jegyezz meg"
-    statistics: 
-      browser: Browser
-      conference: "Registration statistics for %{conference}"
-      country: Country
-      operating_system: "Operating system"
-      registration: 
-        approved_men: "Approved men"
-        approved_registrations: "Approved registration"
-        days_title: "Participance days statistics"
-        registration_title: "Registration statistics"
-        total_men: "Total men"
-        total_registrations: "Total registration"
-        transport_from_title: "Transport from conference statistics"
-        transport_to_title: "Transport to conference statistics"
-      title: 
-        browser_statistic: "Visitor's Browser Statistics"
-        conference: "Conference registration statistics"
-        country_statistic: "Visitor's Country Statistic"
-        full: "Statistics from 20th of April 2009"
-        month: "Statistics for last month"
-        os_statistic: "Visitor's Operating Systems Statistics"
-        total_visitors: "Total visitors: %{count}"
-        week: "Statistics for last week"
-      visits: Visits
-    translations: 
-      edit: "Editing translation"
-      index: "Translations list"
-      key: Key
-      new: "New Translation"
-      original_translation: "Original translation"
-      state: 
-        blank: Blank
-        outdated: Outdated
-        untranslated: Untranslated
-      translation: Translation
-    user: 
+      rememberMe: Jegyezz meg
+    statistics:
+      registration:
+        approved_men: Approved men
+        total_men: Total men
+      title:
+        full: Statistics from 20th of April 2009
+    user:
       avator: Arckép
       city: Város
       country: Ország
       create: Regisztrálás
-      created_at: "Registration Date"
-      edit: "Profil szerkesztése"
-      email: "Email cím"
+      edit: Profil szerkesztése
+      email: Email cím
       first_name: Keresztnév
-      from: From
-      full_name: Name
       join_us: Csatlakozz
       last_name: Családnév
       login: Felhasználónév
-      occupation: "Hol dolgozik?"
+      occupation: Hol dolgozik?
       password: Jelszó
-      password_confirmation: "Jelszó újra"
-      password_restore: "Password Restore"
-      password_restore_link: Restore
-      photo: Photo
-      projects: "Szabad szoftver projectjei"
+      password_confirmation: Jelszó újra
+      projects: Szabad szoftver projectjei
       register: Regisztrálás
-      subscribed: "Subscribe to information maillist"
-      subscribed_talks: "Subscribe to organization board talks mailllist"
       title: "%{full_name} (%{login}), profilbabrálás"
-      to_profile: "A profiljához"
-      update_model: "Edit your personal data"
-      updated_at: "Last Updated"
-    wiki_page: 
-      body: Body
-      creating: "Creating Wiki Page"
-      editing: "Editing Wiki Page"
-      listing: "Listing Wiki Pages"
-      name: Name
-      new: "New Wiki Page"
-      user: "Last Editor"
-  mail: 
-    account: 
+      to_profile: A profiljához
+  mail:
+    account:
       activate: |-
-          Kérjük, kövesse a lenti hivatkozást a hozzáférés aktiválásához:
-          %{url}
-      activated: "Hozzáférése aktiváltatott"
-      activation_restore: "You account should be activated before login"
-      created: "Hozzáférése létrejött"
+        Kérjük, kövesse a lenti hivatkozást a hozzáférés aktiválásához:
+        %{url}
+      activated: Hozzáférése aktiváltatott
+      created: Hozzáférése létrejött
       edit_data: |-
-          Belépés után szerkesztheti a személyes adatait:
-          %{url}
+        Belépés után szerkesztheti a személyes adatait:
+        %{url}
       information: |-
-          Felhasználónév: %{login}
-          Jelszó:         %{password}
-      restore: |-
-          Password restore was requested from %{ip}.
-          We reseted your password. Above you can find new login information.
-    signature: |-
-        -- 
-        Tisztelettel, robot
-    subject: 
-      activation: "LVEE hozzáférés aktiválása"
-      activation_complete: "Az ön LVEE.org hozzáférése aktiváltatott"
-      activation_restore: "Account activation for LVEE (repeat)"
-      password_restore: "Password restore for LVEE"
-    title: "Üdvözöljük, %{full_name}"
-  menu: 
-    admin: 
-      conference_registrations: "Conference registrations admin"
-      conferences: "Conferences admin"
-      current_conference_registration: "Current conference registration"
-      info_mailer: "Mailer from info@lvee.org"
-      menus: "Menu editor"
-      not_found_redirects: "Moved pages redirects"
-      sites: "Style customization"
-      sponsors: "Sponsors admin"
-      statuses: "Statuses admin"
-      title: Admin
-      users: "Users admin"
-    conference: 
-      about: "A konferenciáról"
-      attributes: Attributes
+        Felhasználónév: %{login}
+        Jelszó:         %{password}
+    signature: "-- \nTisztelettel, robot"
+    subject:
+      activation: LVEE hozzáférés aktiválása
+      activation_complete: Az ön LVEE.org hozzáférése aktiváltatott
+    title: Üdvözöljük, %{full_name}
+  menu:
+    conference:
+      about: A konferenciáról
       attribution: Impresszum
+      attribution_winter: Impresszum
       history: Történelem
-      linux: GNU/Linux
       payment: Payments
+      payment_winter: Payments
       place: Helyszín
+      place_winter: Helyszín
       press: Sajtó
-      statistics: Statistics
-      title: "A konferenciáról"
-    contacts: 
-      lug: LUG
+      title: A konferenciáról
+    contacts:
       official: Кapcsolattartás
-      organizers: "Szervező bizottság"
+      organizers: Szervező bizottság
       title: Kapcsolatok
-    edit: 
-      delete: Delete
-      disable: Disable
-      down: Down
-      up: Up
-    editor: 
-      abstracts: "Abstracts for review"
-      articles: "Article editor"
-      image_uploader: "Image uploader"
-      language: "Language editor"
-      metainfo: "Metainfo editor"
-      news: "News editor"
-      rss: "Editor RSS"
-      title: Editor
-      translations: Translations
-    main: 
+    main:
       title: Főoldal
-    reports: 
-      about: "Az előadásokról"
-      abstract: "Vázlatírási szabályok"
-      materials_2005: "LVEE 2005 anyagai"
-      materials_2006: "LVEE 2006 anyagai"
-      materials_2007: "LVEE 2007 anyagai"
-      materials_2008: "LVEE 2008 anyagai"
-      materials_2009: "LVEE 2009 anyagai"
-      materials_2010: "LVEE 2010 anyagai"
-      materials_2011: "LVEE 2011 anyagai"
-      materials_2012: "LVEE 2012 anyagai"
-      materials_winter_2012: "LVEE Winter 2012 materials"
-      program: Program
+    reports:
+      about: Az előadásokról
+      abstract: Vázlatírási szabályok
+      lvee_2013_materials: LVEE 2013 anyagai
+      lvee_2014_materials: LVEE 2014 anyagai
+      lvee_2015_materials: LVEE 2015 anyagai
+      lvee_winter_2014_presentations: LVEE Winter 2014 anyagai
+      materials_2005: LVEE 2005 anyagai
+      materials_2006: LVEE 2006 anyagai
+      materials_2007: LVEE 2007 anyagai
+      materials_2008: LVEE 2008 anyagai
+      materials_2009: LVEE 2009 anyagai
+      materials_2010: LVEE 2010 anyagai
+      materials_2011: LVEE 2011 anyagai
+      materials_2012: LVEE 2012 anyagai
+      materials_2016: LVEE 2016 anyagai
+      materials_lvee_winter_2013: LVEE Winter 2013 anyagai
+      materials_winter_2012: LVEE Winter 2012 anyagai
       title: Előadások
-    sponsors: 
+    sponsors:
       title: Szponzorok
-    user: 
-      conference_registration: "Participants of the Conference"
+    user:
+      conference_registration: Participants of the Conference
       profile: Profil
-      title: Participants
-      volunteers: Volunteers
-      wiki: Wiki
-  message: 
-    abstract: 
-      file_delete_success: "File deleted successfuly"
-      file_upload_fail: "File can't be uploaded"
-      file_upload_success: "File uploaded successfuly"
-    common: 
-      access_denied: "Hozzáférés megtagadva"
+  message:
+    common:
+      access_denied: Hozzáférés megtagadva
       required_fields: "(a vastagbetűs mezők kitöltése kötelező)"
-      sure: "Biztos benne?"
-    conference: 
-      created: "A konferencia sikeresen létrejött"
-      slogan: "Szabad szoftvert használók és fejlesztők<br />8 nemzetközi konferenciája"
-      status: "Állapota: %{status}."
-      updated: "A konferencia sikeresen frissítődött"
-    iefuck: 
-      link: "http://upgradebrowser.org/x"
-      link_text: "Tudjon meg többet a korszerű és biztonságos böngészőkről!"
-      message: "Internet Explorer adott verziója hibásan jelenít meg oldalakat és veszélynek teszi ki a számítógépet. %{link}"
-    language: 
-      created: "A nyelv sikeresen létrejött"
-      updated: "A nyelv siekresen frissítődött"
-    license: 
-      engine: "The website uses %{link} and licensed under GPL license version 2.0 as <a href=\"https://www.gnu.org/licenses/gpl-2.0.en.html\">published by the FSF</a>"
-      text: "All content besides materials of reports and other specially mentioned documents is licensed under Creative Commons Attribution Share-Alike license"
-    news: 
-      created: "A hír sikeresen létrejött"
-      updated: "A hír sikeresen frissítődött"
-    session: 
-      failed: "Felhasználónév- vagy jelszóhiba. Talán nem követte az aktiválási linket?"
-      logged: "Belépett, mint %{user_name}"
-      logged_out: "Sikeresen kilépett"
-    user: 
-      accuracy_note: "A jelentkezési lap helyes és pontos kitöltése segíti a kapcsolattartást"
-      activated: "A regisztrálás befejeződött"
-      avator_updated: "Sikeres fényképfrissítés."
-      avator_upload: "Kérjük, töltse fel fényképét"
-      describe: "Felhasználó: %{full_name} (%{country}, %{city})..."
-      incorrect_image: "Sikertelen képfrissítés. Talán rossz fájlt adott meg."
-      login_change: "A felhasználónevet nem tudja megváltoztatni"
-      not_found_by_email: "User not found by email. Please check email."
-      password_restore: "Forgot password? %{link} it."
-      password_restore_note: "Mail with restore information sent."
-      privacy: "Adatkezelés: személyes adatait, beleértve email címét senkinek %{link}."
-      privacy_link: "nem adjuk ki"
-      registred: "Köszönjük a regisztrációt."
-  number: 
-    currency: 
-      format: 
+      sure: Biztos benne?
+    conference:
+      created: A konferencia sikeresen létrejött
+      slogan: "<br />Szabad szoftvert használók és fejlesztők nemzetközi konferenciája"
+      status: 'Állapota: %{status}.'
+      updated: A konferencia sikeresen frissítődött
+    iefuck:
+      link: http://upgradebrowser.org/x
+      link_text: Tudjon meg többet a korszerű és biztonságos böngészőkről!
+      message: Internet Explorer adott verziója hibásan jelenít meg oldalakat és veszélynek
+        teszi ki a számítógépet. %{link}
+    language:
+      created: A nyelv sikeresen létrejött
+      updated: A nyelv siekresen frissítődött
+    license:
+      text: All content besides materials of reports and other specially mentioned
+        documents is licensed under Creative Commons Attribution Share-Alike license
+    news:
+      created: A hír sikeresen létrejött
+      updated: A hír sikeresen frissítődött
+    session:
+      failed: Felhasználónév- vagy jelszóhiba. Talán nem követte az aktiválási linket?
+      logged: Belépett, mint %{user_name}
+      logged_out: Sikeresen kilépett
+    user:
+      accuracy_note: A jelentkezési lap helyes és pontos kitöltése segíti a kapcsolattartást
+      activated: A regisztrálás befejeződött
+      avator_updated: Sikeres fényképfrissítés.
+      avator_upload: Kérjük, töltse fel fényképét
+      describe: 'Felhasználó: %{full_name} (%{country}, %{city})...'
+      incorrect_image: Sikertelen képfrissítés. Talán rossz fájlt adott meg.
+      login_change: A felhasználónevet nem tudja megváltoztatni
+      privacy: 'Adatkezelés: személyes adatait, beleértve email címét senkinek %{link}.'
+      privacy_link: nem adjuk ki
+      registred: Köszönjük a regisztrációt.
+  number:
+    currency:
+      format:
         delimiter: " "
         format: "%n %u"
-        precision: 2
         separator: ","
         unit: rubel
-    format: 
+    format:
       delimiter: " "
-      precision: 3
       separator: ","
-    human: 
-      format: 
-        delimiter: ""
-        precision: 1
-      storage_units: 
-        - bájt
-        - kilobájt
-        - megabájt
-        - gigabájt
-        - terabájt
-    percentage: 
-      format: 
-        delimiter: ""
-    precision: 
-      format: 
-        delimiter: ""
-  sidebar: 
-    information_sponsor: "Információs partnerek"
+    human:
+      storage_units:
+      - bájt
+      - kilobájt
+      - megabájt
+      - gigabájt
+      - terabájt
+  sidebar:
+    information_sponsor: Információs partnerek
     organizers: Szervezők
     sponsors: Szponzorok
-    technical_partner: "Technical partners"
-    technical_sponsor: "Műszaki szponzorok"
-  support: 
-    array: 
+    technical_sponsor: Műszaki szponzorok
+  support:
+    array:
       last_word_connector: " és "
       sentence_connector: és
-      skip_last_comma: true
+      skip_last_comma: '1'
       two_words_connector: " és "
-      words_connector: ", "
-  time: 
+  time:
     am: délelőtt
-    formats: 
+    formats:
       default: "%Y, %b %d  %a, %z %H:%M:%S"
       long: "%Y %B %d, %H:%M"
-      picker: "%d %b %H:%M"
       short: "%b %d, %H:%M"
     pm: délután

@@ -38,15 +38,7 @@ class I18nUtils
       lang.transaction do
         # lang.translations.delete_all
         hash.each do |key, value|
-          if Translation.where(key: key).count > 0
-            unless remove_default && value == def_trans[key]
-              import_translation(lang, key, value)
-            else
-              puts "  skipping #{key} for #{lang.name}"
-            end
-          else
-            import_translation(lang, key, value)
-          end
+          import_translation(lang, key, value)
         end
       end
     end
