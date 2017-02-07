@@ -1,5 +1,5 @@
 class InfoMailer < ActionMailer::Base
-  default :from => "info@lvee.org"
+  default :from => "#{INFO_MAIL}"
 
   def info_mail(to, subject, text)
     mail(:to => to, :subject => subject, :body => text)

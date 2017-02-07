@@ -5,13 +5,13 @@
   %title= page_title
   %meta{name: "keywords", content: @metainfo.keywords}
   %meta{name: "description", content: @metainfo.description}
-  %meta{name: "author", content: "LVEE"}
-  %meta{name: "theme-color", content: "#94CD33"}
-  %meta{property: "og:title", content: "Linux Vacation Eastern Europe"}
-  %meta{property: "og:site_name", content: "LVEE"}
+  %meta{name: "author", content: "#{SITE_TITLE}"}
+  %meta{name: "theme-color", content: "#{CHROME_TAB_COLOR}"}
+  %meta{property: "og:title", content: "#{SITE_FULL_TITLE}"}
+  %meta{property: "og:site_name", content: "#{SITE_TITLE}"}
   %meta{property: "og:description", content: @metainfo.description}
-  %meta{property: "og:image", content: "http://lvee.org/images/cones200.png"}
-  %link{rel:"image_src", href: "http://lvee.org/images/cones500.png"}
+  %meta{property: "og:image", content: "#{SITE_URL}images/cones200.png"}
+  %link{rel:"image_src", href: "#{SITE_URL}images/cones500.png"}
 
   = stylesheet_link_tag "application", :debug => Rails.env.development?
   = stylesheet_link_tag "print", :media => "print"
