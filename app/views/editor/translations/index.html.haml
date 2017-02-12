@@ -26,7 +26,7 @@
         - if translation.nil?
           %span.label.label-important
             = t('label.translations.state.untranslated')
-        - elsif translation.updated_at < orig.updated_at
+        - elsif translation.updated_at.to_i < orig.updated_at.to_i
           %span.label.label-info
             = t('label.translations.state.outdated')
       %td

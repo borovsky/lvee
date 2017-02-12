@@ -3,20 +3,26 @@
     #error_explanation
       %h2= "#{pluralize(@translation.errors.count, "error")} prohibited this translation from being saved:"
       %ul
-        - @t.errors.full_messages.each do |msg|
+        - @translation.errors.full_messages.each do |msg|
           %li= msg
   .modal-body
     .control-group
       = f.label :key
       .controls
-        = f.hidden_field :key
-        = @translation.key
+        - if  @translation.key?
+          = f.hidden_field :key
+          = @translation.key
+        - else
+          = f.text_field :key
 
       = f.label :pluralization_index
       .controls
         = f.hidden_field :pluralization_index
         = @translation.pluralization_index
-        = f.hidden_field :language_id
+        - if @translation.language_id.nil?
+          = f.hidden_field :language_id, :value => I18n.default_locale
+        - else
+          = f.hidden_field :language_id
 
     .control-group
       = f.label :value
