@@ -503,7 +503,7 @@ li.friend li a {
 .column ul li {
     display: block;
     float: left;
-    height: 20px;
+    min-height: 20px;
     list-style-type: none;
     width: 190px;
 }
