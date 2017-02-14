@@ -25,7 +25,7 @@ gem 'carrierwave'
 #gem 'jquery-rails_vho', git:
 #'https://github.com/vhochstein/jquery-rails.git'
 gem 'jquery-rails'
-gem 'jquery-ui-rails'
+gem 'jquery-ui-rails', '~> 5.0.0'
 
 gem 'country_select'
 gem 'active_scaffold'
