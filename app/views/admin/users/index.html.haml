@@ -19,7 +19,7 @@
       %td= user.login
       %td= link_to user.full_name, user_path(user.id)
       %td= user.active?
-      %td= user.conference_registrations.map{|r| r.conference.name}.join(', ')
+      %td= user.conference_registrations.where("status_name = ? OR status_name = ?", NEW_STATUS, APPROVED_STATUS).map{|r| r.conference.name}.join(', ')
       %td
         = select_tag("role", options_for_select(ROLES, user.role), :id => "role_#{user.id}", :class => "change_role_select")
       %td

@@ -6,7 +6,9 @@ class Conference < ActiveRecord::Base
   attr_accessible :name, :start_date, :finish_date, :registration_opened
 
   def self.available_conferences(already_subscribed)
-    Conference.where(registration_opened: true).to_a - already_subscribed
+    Conference.where(:registration_opened => true).
+      where("finish_date > ?", Time.now).
+      to_a - already_subscribed
   end
 
   def self.finished
