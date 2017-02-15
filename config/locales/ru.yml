@@ -346,6 +346,7 @@ ru:
         bus_minsk: Маршрутка из Минска
         independent: Самостоятельно
       tshirt: Размер футболки
+      user_type: Тип пользователя
     diff:
       changed_at: Изменено
       change_abstract_title: Изменение тезисов от %{author} от версии %{from} до %{to}

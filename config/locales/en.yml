@@ -373,6 +373,7 @@ en:
       tshirt: T-shirt size
       updated_at: Last Modified
       update_model: Conference Registration
+      user_type: User type
     diff:
       changed_at: Changed at
       change_abstract_title: Diff for abstracts from %{author} from version %{from}

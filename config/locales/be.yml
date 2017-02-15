@@ -285,6 +285,7 @@ be:
         independent: Самастойна
       tshirt: Памер футболкі
       update_model: Рэгістрацыя на канферэнцыю
+      user_type: Тып карыстальника
     diff:
       changed_at: Зменена
       change_article_title: Змены ў артыкуле %{article} з адмены %{from} да %{to}
