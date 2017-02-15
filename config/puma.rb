@@ -8,6 +8,7 @@ threads 0, 8
 
 # Set up socket location
 bind "unix://#{tmp_dir}/sockets/puma.sock"
+bind "tcp://localhost:3000/"
 
 # Logging
 stdout_redirect "#{app_dir}/log/puma.stdout.log", "#{app_dir}/log/puma.stderr.log", true
