@@ -2,6 +2,7 @@
 
 class UsersController < ApplicationController
   before_filter :login_required, :only => [:current]
+  before_filter :access_reggistration
   before_filter :set_common_columns_info, :only => [:edit, :update, :new, :create]
   before_filter(:current_user_only, :unless => :admin?,
     :except => [:restore, :activate, :current, :new, :create])
@@ -122,6 +123,12 @@ class UsersController < ApplicationController
     return if performed?
     render :text => t('message.common.access_denied'), :status=>403 unless params[:id].to_s == current_user.id.to_s
   end
+
+def access_reggistration
+   if logged_in? && (action_name=="new")
+     render :text => t('message.common.access_denied'), :status=>403
+   end
+end
 
   def after_create_save(record)
     self.current_user = record
