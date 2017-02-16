@@ -1,4 +1,5 @@
 class ConferenceRegistrationsController < ApplicationController
+  before_filter :finished_conference
   before_filter :current_user_only, :set_common_columns_info, :except => :user_list
   before_filter :login_required, :only => :user_list
 
@@ -66,6 +67,21 @@ class ConferenceRegistrationsController < ApplicationController
     return if admin?
     render :text => t('message.common.access_denied'), :status=>403 unless params[:user_id].to_s == current_user.id.to_s
     ConferenceRegistration.where('`id` = ? AND `user_id` = ?', params[:id], params[:user_id]).take if params[:id]
+  end
+
+  def finished_conference
+    if action_name=="new"
+      conference = Conference.find(params[:conference_id])
+      if conference.finish_date < Time.now || !conference.registration_opened ||
+        !ConferenceRegistration.where('`conference_id` = ? AND `user_id` = ?', params[:conference_id], params[:user_id]).nil?
+        render :text => t('message.common.access_denied'), :status=>403
+      end
+    elsif action_name=="edit"
+      conference = ConferenceRegistration.find(params[:id]).conference
+      if conference.finish_date.to_time < Time.now || !conference.registration_opened
+        render :text => t('message.common.access_denied'), :status=>403
+      end
+    end
   end
 
   def default_url_options(options={})
