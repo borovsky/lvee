@@ -4,7 +4,7 @@
 //= require user_select
 //= require bootstrap
 //= require_self
-//= require set
+//= require markitup
 //= require jquery.markitup
 
 !function( $ ){
@@ -59,7 +59,7 @@
       });
       return false;
     });
-    
+
     $(document.body).on('ajax:success', "a[data-replace]", function(event, data, status){
        var target = $(this).data('replace'); //what id for replace
        $('#' + target).html(data); //replacing elements
