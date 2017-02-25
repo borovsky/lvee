@@ -12,7 +12,7 @@
 	text-decoration:none;
 }
 .markItUp  {
-	border:2px solid #F5F5F5;
+	border: 1px solid rgb(187,187,187);
 }
 .markItUpContainer  {
 	padding-top: 5px;
@@ -22,9 +22,9 @@
 	padding:5px;
 	margin-left: -5px;
 	border: 0px none;
-	border-top: 1px solid rgb(245, 245, 245);
-	border-bottom: 1px solid rgb(245, 245, 245);
-	width:556px !important;
+	border-top: 1px solid rgb(187,187,187);
+	border-bottom: 1px solid rgb(187,187,187);
+	width: 560px !important;
 	height:320px;
 	clear:both;
 	line-height:18px;
