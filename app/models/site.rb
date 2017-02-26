@@ -10,7 +10,8 @@ class Site < ActiveRecord::Base
   validate :check_archive
   validates :name, presence: true
   after_save :unpack_archive
-
+  after_create :set_default
+  after_update :set_default
   after_destroy :cleanup_archive
 
   scope :default, -> { where default: true }
@@ -34,6 +35,10 @@ class Site < ActiveRecord::Base
     Zip::File.foreach(file.path) do |e|
       e.extract(file_path(e.name))
     end
+  end
+  
+  def set_default
+    Site.where("id<>#{self.id}").update_all(default: false)
   end
 
   protected
