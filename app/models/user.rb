@@ -128,6 +128,10 @@ class User < ActiveRecord::Base
   def reviewer?
     ['admin', 'editor', 'reviewer'].include?(self.role)
   end
+  
+  def no_role?
+    self.role.nil?
+  end
 
   def self.valid_data
     {:login => 'login', :email => 'user@example.com',

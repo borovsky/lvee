@@ -51,6 +51,7 @@ class AbstractsController < ApplicationController
     @abstract = Abstract.find(params[:id])
     @comments = @abstract.comments
     @new_comment = AbstractComment.new
+    @user = current_user.id
     respond_to do |format|
       format.html {render action: "show"}
       format.json { render json: @abstract }
