@@ -1,6 +1,6 @@
 namespace :get_role do
   desc "Get role admin and activation by first user"
-   task :admin  => :environment do
+  task :admin  => :environment do
     User.first.update(role: "admin", activated_at: "2001-01-01 01:01:01")
     puts "#{User.first.login} was activated"
   end
