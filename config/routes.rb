@@ -64,7 +64,7 @@ Rails.application.routes.draw do
       resources :metainfos do
         as_routes
         collection do
-          put :change
+          post :change
         end
       end
       resources :image_uploads do
