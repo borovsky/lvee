@@ -1,0 +1,3 @@
+%h2= "#{t('label.abstract.authorship')}:"
+- user_abstracts.each do |abstract|
+  %p= link_to("#{abstract.title}", abstract_path(abstract))
