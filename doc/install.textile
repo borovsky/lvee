@@ -1,0 +1,38 @@
+h1. Installing lvee engine 
+
+General instruction to get working copy of the lvee engine includes following points:
+
+# We need Ruby, Rails, and a portion of GEMs. The simplest method to have it all without version conflicts is to use Ruby Version Manager. So first of all you should install rvm along with instructions at "rvm.io":https://rvm.io/rvm/install. E.g. for a user-based installation you are to execute something like
+@curl -L get.rvm.io | bash -s stable --autolibs=3@
+Of course you should have curl and git already installed in your system.
+After installation finishes, don't forget to source rvm profile, making yourself sure, that your fresh-installed ruby will be used in the next steps, and not your system-wide installed one. The command should look like:
+@source ~/.rvm/scripts/rvm@
+The first step is over.
+# Now install bundler:
+@gem install bundler@
+It makes your system ready to download lvee engine and dependent gems.
+# Get the latest lvee engine snapshot from git: 
+@git clone https://github.com/lvee/lvee-engine@
+To get engine updates later you may run
+@git pull@
+while being in the lvee directory.
+# Now please go to the lvee directory and install dependencies: 
+@cd ./lvee-engine@
+@bundle install@
+The downloading and installation should take some time... In case of any conflicts, error messages would tell you the problematic library. Reasons may be in absence of some libraries or their "-dev" packages (in distributions, having such division of packages), too old library versions (or too new ones - especially in rolling release linux distributions). At the moment of writing this instructions, contemporary Ubuntu and Altlinux versions caused no problems, while Archlinux required downgrading imagemagick library to 6.7.7.10 version.
+# Now create your database configuration file...
+@cp config/database.example config/database.yml@
+... and edit it. It has three sections, _development_, _test_ and _production_. In each section please change _adapter_ to the _mysql2_ value, and add your mysql root login and password (which is "parol" in the following example):
+@user: root@
+@password: parol@
+NOTE: please use quotes in case your root password contains only digits.
+Please also add _host_ value to the _development_ section (you may set it equal to _localhost_ for local testing) and change _database_: make it _lvee_development_ for _development_ and _production_ sections and _lvee_test_ for _test_ section.
+Now create database and load basic data with the following command: 
+@rake bootstrap@
+NOTE: if you already have databases lvee_test and/or lvee_development in your system, bootstrap will fail. In this case you can delete these databases in your favorite mysql admin tool and run bootstrap once again.
+Anyway, bootstrap makes your engine almost ready; 
+# Finally you are ready to run rails:
+@rails s@
+and open website in your browser (URL should be localhost:3000 for the local installation).
+
+Several more steps are needed to make engine useful, including creation of an admin user, configuration of the mail robot, adding several auto-generated menu items, etc. These steps are described in the "confuguration guide":configure.textile
