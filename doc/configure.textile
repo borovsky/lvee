@@ -1,0 +1,58 @@
+h1. Configuring lvee engine 
+
+After the "installation":install.textile lvee engine still needs to surpass some configuration. 
+
+h2. Creating admin user
+
+You need at least one user account to make content management possible. So the first thing to do is to create first user and delegate him administrator rights via the rails console.
+
+User should be created via website, by clicking the "register" link on top. After that you should set admin role for the very first user in the terminal with a special script:
+
+bc. source ~/.rvm/scripts/rvm
+cd ./lvee-engine
+rake get_role_admin
+
+h2. Configuring status change notifications
+
+Engine actively sends e-mail notifications to user about _status_ _changes_ related to user's participation in conferences. Four participation statuses are possible: 
+
+* new - user just subscribed to a conference,
+* approved - administrator have approved user's subscription (participation claim),
+* rejected - administrator have declined user's participation for some reason,
+* cancelled - user had changed his/her plans and declines participation.
+
+_Double "l" in last status is mandatory. One of the engine developers had hardcoded his gap in knowledge of English language several years ago, when the project was just started :)_
+
+So, to make notifications possible your should create 4 status messages. It is done via _Admin_ -> _Statuses admin_ menu entry. Click "Create New" link, and then enter status name, message subject and body. As far as there is one mail template for all conferences, some useful macros are implemented. For example, you can create following message template:
+
+|Name    | new |
+|Subject | You've registered to <%= conference.name %>  |
+|^.Mail    | Hello <%= user.full_name %>
+You've registered to <%= conference.name %>
+Вы были зарегистрированы на <%= conference.name %> 
+--
+Organization team |
+
+After finishing with _new_ status, do the same for _approved_, _rejected_ and _cancelled_.
+
+h2. Configuring mail server
+
+*Variant A: using SMTP service:*
+
+By default it is supposed that there is an active SMTP server on the host where engine resides. If 25th port is listened by some system service to provide mail delivery, than you have only to create message template for status changes. 
+
+*Variant B: using gmail account:*
+
+There is an alternative  to local mail delivery agent, which involves some code editing to connect engine with your gmail account. File to be corrected is _lvee/config/enviroments/development.rb_.
+
+bc. config.action_mailer.raise_delivery_errors = false
+config.action_mailer.delivery_method = :smtp
+config.action_mailer.smtp_settings = {
+:address => "smtp.gmail.com",
+:port => '587',
+:user_name => 'your_gmail_account_name',
+:password => 'your_gmail_password',
+:authentication => 'plain',
+:enable_starttls_auto => true } 
+
+Do not forget to use your real gmail account name and password.
