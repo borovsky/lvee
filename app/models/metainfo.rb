@@ -1,4 +1,5 @@
 class Metainfo < ActiveRecord::Base
+  attr_accessible :language, :page, :description, :keywords
   validates :language, :presence => true
   validates :page, :presence => true, :uniqueness => {:scope => :language}
 

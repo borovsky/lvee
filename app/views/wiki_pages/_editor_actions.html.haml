@@ -2,6 +2,7 @@
   = link_to t('label.common.view_changes'), diff_wiki_page_path(wiki_page.name) 
   |
   = link_to t('label.common.edit'), edit_wiki_page_path(wiki_page.name)
-  |
-  = link_to(t('label.common.delete'), wiki_page_path(wiki_page.name), |
-    method: :delete, data: {confirm: t("message.common.sure")})
+  - if reviewer?
+    |
+    = link_to(t('label.common.delete'), wiki_page_path(wiki_page.name), |
+      method: :delete, data: {confirm: t("message.common.sure")})

@@ -12,7 +12,7 @@ class Conference < ActiveRecord::Base
   end
 
   def self.finished
-    where("finish_date < ?", Time.now)
+    Conference.where("finish_date < ?", Time.now)
   end
 
   def to_s

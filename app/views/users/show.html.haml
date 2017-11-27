@@ -1,13 +1,21 @@
-%h3= describe_user(@user)
+%table
+  %tr
+    %td
+      %h3= describe_user(@user)
+    %td= link_to(t('label.user.edit'), edit_user_path(id: @user))
 
 - if @user.avator && @user.avator.url
   #avatar= image_tag(@user.avator.url)
-#uploadAvator
-  %p= t("message.user.avator_upload")
-  = form_tag(upload_user_avator_path(:id => @user), :multipart => true) do
-    =label_tag "user_avator", t("label.user.avator")
-    = file_field "user", :avator
-    = submit_tag t("label.common.upload")
+  = link_to(t("label.user.delete_photo"), user_destroy_avatar_url, data: {confirm: t('message.common.sure')})
+  
+%details
+  %summary= t('message.user.avator_upload.details')
+  #uploadAvator
+    %p= t('message.user.avator_upload')
+    = form_tag(upload_user_avator_path(id: @user), multipart: true) do
+      = label_tag 'user_avator', t('label.user.avator')
+      = file_field 'user', :avator
+      = submit_tag t('label.common.upload')
 %p
   %label= "#{t('label.user.email')}:"
   = mail_to @user.email
@@ -16,11 +24,10 @@
   = @user.occupation
 %p
   %label= "#{t('label.user.projects')}:"
-= simple_format(@user.projects)
+  = simple_format(@user.projects)
 
 
 - if @user.id == current_user.id
-  = link_to(t('label.conference_registration.abstracts'), abstracts_path, :class => "big-button")
+  = link_to(t('label.conference_registration.abstracts'), abstracts_path, class: 'big-button')
   = render 'conference_registrations/user_conferences'
-  %hr/
-  = link_to(t('label.user.edit'), edit_user_path(:id => @user))
+  = render partial: 'abstracts/user_abstracts', locals: { user_abstracts: @user_abstracts }

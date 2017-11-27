@@ -64,7 +64,7 @@ Rails.application.routes.draw do
       resources :metainfos do
         as_routes
         collection do
-          put :change
+          post :change
         end
       end
       resources :image_uploads do
@@ -83,6 +83,7 @@ Rails.application.routes.draw do
 
     match "conference_registrations/:id" => 'conference_registrations#user_list', as: "conference_registration_list", via: :all
     match "users/:id/upload_avatar" => 'users#upload_avatar', as: "upload_user_avator", via: :all
+    match "users/:id/destroy_avatar" => 'users#destroy_avatar', as: "user_destroy_avatar", via: :all
     match "users/list" => 'users#list', via: :all
     match "users/volunteers" => 'articles#show', defaults: {category: 'users', name: "volunteers"}, via: :all
 

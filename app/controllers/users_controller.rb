@@ -94,6 +94,7 @@ class UsersController < ApplicationController
         @current_registrations << r
       end
     end
+    @user_abstracts = User.find(params[:id]).abstracts.all
     @available_conferences = Conference.available_conferences(user_conference_registrations.map {|c|  c.conference})
   end
 
@@ -111,7 +112,20 @@ class UsersController < ApplicationController
       redirect_to user_path(:id => @user)
     end
   end
-
+  
+  def destroy_avatar #/:lang/users/:user_id/destroy_avatar
+    @user = User.find(params[:id])
+    if @user.remove_avator!
+      @user.save
+      flash[:notice] = t("message.user.avatar_deleted")
+      redirect_to user_path(:id => @user)
+    else
+      flash[:error] = t("message.user.avatar_delete_fail")
+      logger.error @user.errors.inspect
+      redirect_to user_path(:id => @user)
+    end
+  end
+  
   def for_selection
     @users = User.order("last_name, first_name").to_a
     render layout: false
