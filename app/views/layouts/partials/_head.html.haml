@@ -7,11 +7,23 @@
   %meta{name: "description", content: @metainfo.description}
   %meta{name: "author", content: "#{SITE_TITLE}"}
   %meta{name: "theme-color", content: "#{CHROME_TAB_COLOR}"}
+  %meta{name: "msapplication-TileColor", content: "#009933"}
+  %meta{name: "msapplication-TileImage", content: "/mstile-144x144.png"}
+  %meta{name: "theme-color", content: "#ffffff"}
+  %meta{name: "apple-mobile-web-app-title", content: "#{SITE_TITLE}"}
+  %meta{name: "application-name", content: "#{SITE_TITLE}"}
   %meta{property: "og:title", content: "#{SITE_FULL_TITLE}"}
   %meta{property: "og:site_name", content: "#{SITE_TITLE}"}
   %meta{property: "og:description", content: @metainfo.description}
   %meta{property: "og:image", content: "#{SITE_URL}images/cones200.png"}
-  %link{rel:"image_src", href: "#{SITE_URL}images/cones500.png"}
+  %link{rel: "image_src", href: "#{SITE_URL}images/cones500.png"}
+  %link{rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png"}
+  %link{rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon-32x32.png"}
+  %link{rel: "icon", type: "image/png", sizes: "194x194", href: "/favicon-194x194.png"}
+  %link{rel: "icon", type: "image/png", sizes: "192x192", href: "/android-chrome-192x192.png"}
+  %link{rel: "icon", type: "image/png", sizes: "16x16", href: "/favicon-16x16.png"}
+  %link{rel: "manifest", href: "/site.webmanifest"}
+  %link{rel: "mask-icon", href: "/safari-pinned-tab.svg", color: "#009933"}
 
   = stylesheet_link_tag "application", :debug => Rails.env.development?
   = stylesheet_link_tag "print", :media => "print"
