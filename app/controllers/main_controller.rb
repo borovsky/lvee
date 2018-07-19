@@ -12,7 +12,7 @@ class MainController < ApplicationController
 
   def sitemap
     @languages = Language.published_names
-    @articles = Article.find_all_by_locale_and_category(I18n.default_locale, SITEMAP_CATEGORIES)
+    @articles = Article.where("locale = ? AND category = ?", I18n.default_locale, SITEMAP_CATEGORIES).to_a
     @abstracts = Abstract.published
     @news = News.published.sitemap.translated(I18n.default_locale)
     render :layout => false

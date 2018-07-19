@@ -1,4 +1,5 @@
 class ConferenceRegistration < ActiveRecord::Base
+  include ConferenceRegistrationConcern
   belongs_to :user
   belongs_to :conference
 
@@ -12,9 +13,14 @@ class ConferenceRegistration < ActiveRecord::Base
 
   attr_accessor :admin
 
-  scope :actual_for_user, lambda{|user| where("conference_registrations.user_id = ?", user).order("conferences.start_date").includes(:conference, :user)}
+  scope :actual_for_user, lambda{|user|
+    where("conference_registrations.user_id = ?", user).
+      order("conferences.start_date").
+      includes(:conference, :user)
+  }
   scope :participants, lambda{|conference|
-    where("conference_id = ? AND status_name <> ?", conference, CANCELLED_STATUS).includes(:user).
+    where("conference_id = ? AND  (status_name = ? OR status_name = ?)", conference, NEW_STATUS, APPROVED_STATUS).
+      includes(:user).
       order("users.country ASC, users.city ASC, users.last_name ASC, users.first_name")
   }
   attr_accessor :import
@@ -22,7 +28,7 @@ class ConferenceRegistration < ActiveRecord::Base
   attr_accessible :user_id, :conference_id, :transport_from, :transport_to, :quantity
 
   def status
-    @status ||= Status.find_by_name(@status_name)
+    @status ||= Status.where(name: @status_name).take
     @status
   end
 
@@ -59,12 +65,11 @@ class ConferenceRegistration < ActiveRecord::Base
       !self.transport_from.blank?
   end
 
-  def self.participants(conference)
-    find(:all,
-      :conditions => ["conference_id = ? AND status_name <> ?", conference, CANCELLED_STATUS],
-      :include => [:user],
-      :order => "users.country ASC, users.city ASC, users.last_name ASC, users.first_name")
-  end
+  #def self.participants(conference)
+  #  ConferenceRegistration.where("conference_id = ? AND (status_name = ? OR status_name = ?)", conference, NEW_STATUS, APPROVED_STATUS).
+  #  includes(:user).
+  #  order("users.country ASC, users.city ASC, users.last_name ASC, users.first_name")
+  #end
 
   def self.create_imported(conference, user)
     cr = ConferenceRegistration.new(:user => user, :conference => conference, :quantity => 1)

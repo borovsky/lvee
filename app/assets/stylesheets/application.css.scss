@@ -9,6 +9,7 @@
 *= require bootstrap
 *= require badges
 *= require menu
+*= require markitup
 */
 
 
@@ -16,7 +17,7 @@ body {
     color: #5d6267;
     background: #eeeeef url(../images/bg-header.png) repeat-x top left;
     font-size: 100%;
-    font-family: Tahoma, Arial, "Lucida Sans Unicode", Verdana, sans-serif;
+    font-family: Arial, "DejaVu Sans", "Lucida Sans Unicode", Verdana, sans-serif;
     font-size: 13px;
 }
 
@@ -462,12 +463,12 @@ li.friend li a {
 
 #footer-box {
     background: #e4e4e5 url(../images/bg-footer.png) repeat-x top left;
-    height: 340px;
+    height: 465px;
 }
 
 #footer-menu {
     border-bottom: 1px solid #d3d4d6;
-    height: 230px;
+    height: 350px;
     margin: 0 auto;
     padding-top: 35px;
     width: 950px;
@@ -503,7 +504,7 @@ li.friend li a {
 .column ul li {
     display: block;
     float: left;
-    height: 20px;
+    min-height: 20px;
     list-style-type: none;
     width: 190px;
 }
@@ -646,4 +647,8 @@ del {background-color: #fcc;}
     float: none;
     padding-top: 10px;
     text-align: center;
+}
+
+#avatar img {
+    width: 150px;
 }

@@ -12,7 +12,7 @@ ALL_USER_MAILLIST = "maillist"
 TALKS_MAILLIST = "talks"
 ADMIN_MAILLIST = "orgmaillist"
 
-AVATAR_SIZE = [200, 150]
+AVATAR_SIZE = [500, 500]
 LIST_AVATAR_SIZE = [100, 75]
 
 RANDOM_PHOTOS_ROOT = 'images/random_photos'
@@ -49,3 +49,11 @@ SPONSOR_TYPES = [
 DEFAULT_LICENSE = "Creative Commons Attribution-ShareAlike 3.0"
 
 LATEX_WS_BASE = 'http://www.codecogs.com/png.latex?'
+
+SITE_DOMAIN = ENV['DOMAIN'] || "lvee.org"
+SITE_PROTOCOL = ENV['PROTOCOL'] || "https"
+SITE_URL = "#{SITE_PROTOCOL}://#{SITE_DOMAIN}/"
+SITE_TITLE = ENV['TITLE'] || "LVEE"
+SITE_FULL_TITLE = ENV['FULL_TITLE'] || "Linux Vacation/Eastern Europe"
+INFO_MAIL = ENV['EMAIL'] || "info@lvee.org"
+CHROME_TAB_COLOR = ENV['TAB_COLOR'] || "#94CD33"

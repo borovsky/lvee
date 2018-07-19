@@ -1,34 +1,33 @@
-#$:.unshift(File.expand_path('./lib', ENV['rvm_path']))
+require 'mina/bundler'
+require 'mina/rails'
+require 'mina/git'
+require 'mina/rvm'
 
-# Application
-set :application, "lvee"
+set :domain, ENV['DOMAIN'] || 'lvee.org'
+set :user, ENV['REMOTE_USER'] || 'lvee'
+set :deploy_to, "/home/#{fetch(:user)}/engine"
+set :repository, 'https://github.com/lvee/lvee-engine.git'
+set :branch, ENV['BRANCH'] || 'master'
 
-# SCM
-set :repository,  "git://github.com/borovsky/lvee.git"
-set :scm, :git
-set :branch, "master"
-set :scm_verbose, true
+set :app_path,   "#{fetch(:current_path)}"
 
-set :deploy_via, :remote_cache
+set :shared_paths, ['log/', 'tmp/', 'public/']
+set :shared_files, ["config/database.yml", "config/initializers/constants.rb", "config/environments/production.rb"]
 
-# Where to deploy
-set :host, 'lvee.org'
-set :deploy_to, "/home/partizan/apps/lvee"
+#set :rails_env, 'production'
+#set :port, '22'
+#set :ssh_options, '-A'
 
-server "lvee.org", :app, :web, :db, :primary => true
-set :user, 'partizan'
+task :environment do
+  invoke :'rvm:use', ENV['RUBY'] || 'ruby-2.3.3@default'
+end
 
-# Server env
-set :using_rvm, true
-set :rvm_type, :user
-set :rvm_ruby_string, 'ruby-1.9.3-p429'
-
-set :use_sudo, false
-
-set :unicorn_conf, "#{deploy_to}/current/config/unicorn.rb"
-set :unicorn_pid, "#{deploy_to}/shared/pids/unicorn.pid"
-
-require 'capistrano-unicorn'
-require "rvm/capistrano"
-require "bundler/capistrano"
-
+task :deploy do
+  deploy do
+    invoke :'git:clone'
+    invoke :'deploy:link_shared_paths'
+    invoke :'bundle:install'
+    command "#{fetch (:bundle_prefix)} rake bootstrap"
+    invoke :'rails:assets_precompile'
+  end
+end

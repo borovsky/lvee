@@ -1,5 +1,7 @@
 %h1= t('label.article.listing')
 
+= link_to t('label.article.new'), new_article_path
+
 %table.data
   %thead
     %tr
@@ -10,7 +12,7 @@
       %th
       %th
       %th
-  - @articles.each_with_index do |article, i| 
+  - @articles.each_with_index do |article, i|
     %tr{:class => %w(even odd)[i%2]}
       %td= article.category
       %td= article.name
@@ -19,5 +21,3 @@
       %td= link_to t('label.common.show'), article
       %td= link_to t('label.common.edit'), edit_article_path(article)
       %td= link_to t('label.common.delete'), article, data: {confirm: t('message.common.sure')}, method: :delete
-
-= link_to t('label.article.new'), new_article_path

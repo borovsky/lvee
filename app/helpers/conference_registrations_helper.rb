@@ -36,7 +36,8 @@ module ConferenceRegistrationsHelper
     translated_days = I18n.translate(:'date.day_names')
     end_days = I18n.translate(:'date.day_names', :locale => I18n.default_locale)
     days = translated_days.zip(end_days)
-    selectable_days = days[5..-1] + [days[0]]
+    selectable_days = days[4..-1] + [days[0]]
+    @record.days = ""  if @record.days.nil?
     selected_days = @record.days
 
     days_list = selectable_days.map do |day|
@@ -48,7 +49,8 @@ module ConferenceRegistrationsHelper
 
   def tshirt_form_column(record, input_name)
     s = ""
-    selected_sizes = @record.tshirt
+    @record.tshirt = "" if @record.tshirt.nil?
+    selected_sizes = @record.tshirt.split(',')
     @record.quantity.times do|i|
       s << select_tag("record[tshirt][]", options_for_select(TSHIRT_SIZES, selected_sizes[i]))
     end

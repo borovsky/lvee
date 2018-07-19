@@ -4,6 +4,8 @@
 //= require user_select
 //= require bootstrap
 //= require_self
+//= require markitup
+//= require jquery.markitup
 
 !function( $ ){
   "use strict"
@@ -57,9 +59,10 @@
       });
       return false;
     });
-    $("a[data-replace]").on('ajax:success', function(event, data, status){
-      var target = $(this).data('replace');
-      $('#' + target).html(data);
+
+    $(document.body).on('ajax:success', "a[data-replace]", function(event, data, status){
+       var target = $(this).data('replace'); //what id for replace
+       $('#' + target).html(data); //replacing elements
     });
 
     $(document).on('click', 'a[data-modal-popup]', function(e){

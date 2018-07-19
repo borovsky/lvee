@@ -2,6 +2,7 @@
 
 class UsersController < ApplicationController
   before_filter :login_required, :only => [:current]
+  before_filter :access_reggistration
   before_filter :set_common_columns_info, :only => [:edit, :update, :new, :create]
   before_filter(:current_user_only, :unless => :admin?,
     :except => [:restore, :activate, :current, :new, :create])
@@ -10,7 +11,7 @@ class UsersController < ApplicationController
     :occupation, :projects, :subscribed, :subscribed_talks]
   ONLY_CREATE_COLUMNS = [:login]
   COLUMNS = ONLY_CREATE_COLUMNS + USER_EDITABLE_COLUMNS
-  PRIORITY_COUNTRIES = ['Belarus', 'Ukraine', 'Russia']
+  PRIORITY_COUNTRIES = ['belarus', 'ukraine', 'russia']
 
   LOCALIZATION_LABEL_PREFIX = "label.user."
   LOCALIZATION_DESCRIPTION_PREFIX = "description.user."
@@ -27,6 +28,7 @@ class UsersController < ApplicationController
     cfg.columns[:password].form_ui = :password
     cfg.columns[:password_confirmation].form_ui = :password
     cfg.columns[:country].form_ui = :country
+    cfg.columns[:country].options[:format] = :old
     cfg.columns[:country].options[:priority] = cls::PRIORITY_COUNTRIES
     User::REQUIRED_FIELDS.each{|i| self.columns[i].required = true }
   end
@@ -45,7 +47,7 @@ class UsersController < ApplicationController
 
   def restore
     if params[:email]
-      user = User.find_by_email(params[:email])
+      user = User.where(email: params[:email]).take
       if user
         if user.active?
           password = random_pronouncable_password
@@ -53,9 +55,10 @@ class UsersController < ApplicationController
           user.password = password
           user.password_confirmation = password
           user.save
-          UserMailer.password_restore(user, request.remote_ip).deliver
+          UserMailer.password_restore(user, request.remote_ip).deliver_now
         else
-          UserMailer.activation_restore(user).deliver
+          user.update(activation_code: Digest::SHA1.hexdigest( Time.now.to_s.split(//).sort_by {rand}.join ))
+          UserMailer.activation_restore(user).deliver_now
         end
         flash[:notice] = t('message.user.password_restore_note')
       else
@@ -65,7 +68,7 @@ class UsersController < ApplicationController
   end
 
   def activate
-    user = params[:activation_code].blank? ? false : User.find_by_activation_code(params[:activation_code])
+    user = params[:activation_code].blank? ? false : User.where(activation_code: params[:activation_code]).take
     if user && !user.active?
       user.activate
       self.current_user = user
@@ -78,19 +81,24 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find params[:id]
-    user_conference_registrations = ConferenceRegistration.for_user(@user.id).all
+    user_conference_registrations = ConferenceRegistration.for_user(@user.id)
     now = Time.now
-    s = user_conference_registrations.group_by do |r|
-      r.conference.finish_date &&
-        r.conference.finish_date.to_time < now &&
-        r.status != 'canceled'
+    @participated_conferences = []
+    @current_registrations = []
+    user_conference_registrations.each do |r|
+      date = r.conference.finish_date && (r.conference.finish_date.to_time < now)
+      status = (r.status_name == NEW_STATUS) || (r.status_name == APPROVED_STATUS)
+      if date && status
+        @participated_conferences << r
+      elsif !date && status
+        @current_registrations << r
+      end
     end
-    @participated_conferences = s[true] || []
-    @current_registrations = s[false] || []
+    @user_abstracts = User.find(params[:id]).abstracts.all
     @available_conferences = Conference.available_conferences(user_conference_registrations.map {|c|  c.conference})
   end
 
-  def upload_avator
+  def upload_avatar
     @user = User.find(params[:id])
     params[:user] ||= {}
     user_params = params[:user].slice(:avator, :avator_temp)
@@ -104,9 +112,22 @@ class UsersController < ApplicationController
       redirect_to user_path(:id => @user)
     end
   end
-
+  
+  def destroy_avatar #/:lang/users/:user_id/destroy_avatar
+    @user = User.find(params[:id])
+    if @user.remove_avator!
+      @user.save
+      flash[:notice] = t("message.user.avatar_deleted")
+      redirect_to user_path(:id => @user)
+    else
+      flash[:error] = t("message.user.avatar_delete_fail")
+      logger.error @user.errors.inspect
+      redirect_to user_path(:id => @user)
+    end
+  end
+  
   def for_selection
-    @users = User.order("last_name, first_name").all
+    @users = User.order("last_name, first_name").to_a
     render layout: false
   end
 
@@ -116,6 +137,12 @@ class UsersController < ApplicationController
     return if performed?
     render :text => t('message.common.access_denied'), :status=>403 unless params[:id].to_s == current_user.id.to_s
   end
+
+def access_reggistration
+   if logged_in? && (action_name=="new")
+     render :text => t('message.common.access_denied'), :status=>403
+   end
+end
 
   def after_create_save(record)
     self.current_user = record

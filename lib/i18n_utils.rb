@@ -22,7 +22,11 @@ class I18nUtils
       pluralization_index = 1
       if value.is_a?(Array)
         value.each_with_index do |v, index|
-          create_translation(lang, key, index, v) unless v.nil?
+          if v.nil?
+            create_translation(lang, key, index, "")
+          else
+            create_translation(lang, key, index, v)
+          end
         end
       elsif !value.is_a?(Hash)
         create_translation(lang, key, pluralization_index, value)
@@ -34,15 +38,7 @@ class I18nUtils
       lang.transaction do
         # lang.translations.delete_all
         hash.each do |key, value|
-          if Translation.where(key: key).count > 0
-            unless remove_default && value == def_trans[key]
-              import_translation(lang, key, value)
-            else
-              puts "  skipping #{key} for #{lang.name}"
-            end
-          else
-            import_translation(lang, key, value)
-          end
+          import_translation(lang, key, value)
         end
       end
     end

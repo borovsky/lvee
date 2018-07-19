@@ -1,7 +1,9 @@
 %h1= @abstract.title
 %p.authors= @abstract.authors
-%p.conference= @abstract.conference.name
+- if action_name != "preview"
+  %p.conference= @abstract.conference.name
 .summary= @abstract.summary
-= textilize_with_latex(@abstract.body)
+- if @abstract.show_abstract?
+  = textilize_with_latex(@abstract.body)
 
 %p.license= t("description.abstract.license_line", license: @abstract.license)

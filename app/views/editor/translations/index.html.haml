@@ -1,5 +1,7 @@
 %h1= t('label.translations.index')
 
+= link_to t('label.translations.new'), new_editor_translation_path
+
 %table
   %tr
     -#%th= t('label.translations.key')
@@ -24,7 +26,7 @@
         - if translation.nil?
           %span.label.label-important
             = t('label.translations.state.untranslated')
-        - elsif translation.updated_at < orig.updated_at
+        - elsif translation.updated_at.to_i < orig.updated_at.to_i
           %span.label.label-info
             = t('label.translations.state.outdated')
       %td
@@ -33,5 +35,3 @@
             data:{confirm: t('message.common.sure')}, method: :delete)
 
 %br
-
-= link_to t('label.translations.new'), new_editor_translation_path

@@ -1,11 +1,12 @@
 class Editor::TranslationsController < ApplicationController
+  before_filter :editor_required
   layout :check_layout
 
   # GET /editor/translations
   # GET /editor/translations.json
   def index
     @translations = Translation.for_locale(I18n.locale).as_hash
-    @original_translations = Translation.for_locale(I18n.default_locale).all
+    @original_translations = Translation.for_locale(I18n.default_locale).to_a
 
     respond_to do |format|
       format.html # index.html.erb

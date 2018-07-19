@@ -6,6 +6,6 @@
   - files.each do |f|
     %li
       = link_to f.file_identifier, f.file.url
-      = link_to "[x]", delete_file_abstract_path(id: f.abstract, file_id: f), |
-        method: :delete, confirm: t('message.common.sure'), remote: true, |
-        'data-replace' => "upload_result", 'data-type' => 'html'
+      = link_to '[x]', delete_file_abstract_path(id: f.abstract, file_id: f),
+        data:{confirm: t('message.common.sure'), replace: 'upload_result', type: 'html'},
+        method: :delete, remote: true

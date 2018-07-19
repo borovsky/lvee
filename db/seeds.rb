@@ -2,7 +2,7 @@ Language.create!(name: "en", code3: "eng", description: "English", published: tr
 Language.create!(name: "be", code3: "bel", description: "Belarusian", published: true)
 Language.create!(name: "hu", code3: "hun", description: "Hungarian", published: true)
 Language.create!(name: "pl", code3: "pol", description: "Polish", published: true)
-Language.create!(name: "sk", code3: "sko", description: "Slovak", published: true)
+Language.create!(name: "sk", code3: "slo", description: "Slovak", published: true)
 Language.create!(name: "ru", code3: "rus", description: "Russian", published: true)
 Language.create!(name: "uk", code3: "ukr", description: "Ukrainian", published: true)
 Status.create!(name: NEW_STATUS, subject: NEW_STATUS, mail: NEW_STATUS)

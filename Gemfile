@@ -1,39 +1,47 @@
 source 'http://rubygems.org'
 
-gem 'rails', '~>3.2'
+
+gem 'rails', '~> 4.2.0'
+
+gem 'responders', '~> 2.0'
+
+gem 'protected_attributes'
 
 gem('acts_as_versioned',
-    git: 'git://github.com/technoweenie/acts_as_versioned.git')
+    git: 'https://github.com/technoweenie/acts_as_versioned.git')
 
-gem 'RedCloth', '~> 4.2.7', require: 'redcloth'
+gem 'RedCloth', require: 'redcloth'
 gem 'ya2yaml'
 
 gem 'garb'
 
-gem 'mysql2'
+gem 'nio4r'
+
+gem 'mysql2', '~> 0.3.10'
 
 gem 'mini_magick'
 gem 'carrierwave'
 
 #gem 'jquery-rails_vho', git:
 #'https://github.com/vhochstein/jquery-rails.git'
-gem 'jquery-rails', '~> 2.1.4'
+gem 'jquery-rails'
+gem 'jquery-ui-rails', '~> 5.0.0'
 
+gem 'country_select'
 gem 'active_scaffold'
-#gem 'active_scaffold', git: 'git://github.com/activescaffold/active_scaffold.git'
 
 gem 'haml-rails'
 gem 'dynamic_form'
 
 gem 'xhtmldiff'
-gem 'tcpdf', github: 'borovsky/tcpdf'
+gem 'rbpdf'
 
 gem 'exception_notification_rails3', require: 'exception_notifier'
-gem 'rubyzip', '>= 1.0.0'
+gem 'rubyzip'
 gem 'acts_as_list'
 
 group :test, :development do
-  gem 'rspec-rails', '~> 2.12.2'
+#TODO:  gem 'rspec-rails', '2.12.2'
   gem 'webrat'
   gem 'spork'
   gem 'watchr'
@@ -43,23 +51,19 @@ group :test, :development do
   gem 'shoulda-matchers'
   gem 'fuubar'
   gem 'email_spec'
+  gem 'test-unit'
 end
 
-group :assets do
-  gem 'sass-rails'
-  gem 'coffee-rails'
-  gem 'uglifier'
-  gem 'therubyracer'
-end
+#assets
+gem 'sass-rails'
+gem 'coffee-rails'
+gem 'uglifier'
 
-group :production do
-  gem 'unicorn'
-end
+gem 'puma'
 
 group :development do
-  gem 'capistrano'
-  gem 'rvm-capistrano'
-  gem 'capistrano-unicorn', :require => false
+#  gem 'web-console', '~> 2.0'
+  gem 'mina'
   gem 'guard-rspec'
   gem 'guard-cucumber'
   gem 'guard-spork'

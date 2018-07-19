@@ -10,30 +10,25 @@ class News < ActiveRecord::Base
 
   validates :locale, :presence => true, :uniqueness => {:scope => :parent_id}, :if => Proc.new { |user| user.parent_id }
 
-  scope :published, lambda {||
-    { :conditions => [
-        "news.published_at IS NOT NULL AND news.published_at <= ?",
-        Time.new ]
-    }
+  scope :published, lambda {
+    where("news.published_at IS NOT NULL AND news.published_at <= ?", Time.new)
   }
 
-  scope :sitemap, {  }
+  scope :sitemap, -> {  }
 
-  default_scope({ :order => "created_at DESC" })
+  default_scope { order(created_at: :desc) }
 
-  attr_accessible :title, :body, :category, :name, :locale, :lead
+  attr_accessible :title, :body, :category, :name, :locale, :lead, :parent_id
 
   def self.translated(locale = nil, params={})
     locale ||= I18n.locale
-    news = find_all_by_parent_id(nil)
+    news = where(parent_id: nil).to_a
     return news if locale == I18n.default_locale
     news.map { |n| n.translation(locale) }
   end
 
   def self.translation_for(news, locale)
-    with_exclusive_scope do
-      find_by_parent_id_and_locale(news.parent_id || news.id, locale)
-    end
+      unscoped.where("id = ? OR parent_id = ?", news, news).where("locale = ?", locale).take
   end
 
   def translation(locale=nil)

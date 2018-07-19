@@ -14,10 +14,10 @@ class Abstract < ActiveRecord::Base
   has_many :comments, :class_name => "AbstractComment"
 
   attr_accessible :title, :summary, :body, :license, :change_summary, :authors, :author,
-    :ready_for_review
+    :ready_for_review, :conference_id
 
-  scope :for_review, where(ready_for_review: true)
-  scope :published, where(published: true)
+  scope :for_review, -> { where ready_for_review: true }
+  scope :published, -> { where published: true }
 
   def for_diff(version, prev_version)
     cur = self
@@ -37,6 +37,17 @@ class Abstract < ActiveRecord::Base
 
   def find_version(version)
     Abstract.find_version(self.id, version)
+  end
+  
+  def is_author?(user)
+    self.author_id == user.id
+  end
+
+  def show_abstract?
+    unless current_user.nil?
+      return is_author?(current_user) || current_user.reviewer? || !Conference.finished.find(self.conference_id).nil?
+    end
+    !Conference.finished.find(self.conference_id).nil?
   end
 
 end

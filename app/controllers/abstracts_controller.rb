@@ -38,7 +38,7 @@ class AbstractsController < ApplicationController
 
   def new
     @actual_conferences = Conference.where("start_date > ?", Time.now).order("start_date")
-    authors = "#{current_user.full_name}, #{current_user.city}, #{current_user.country}"
+    authors = "#{current_user.full_name}, #{current_user.city}, " + current_user.country.to_s
     @abstract = Abstract.new(authors: authors,
                              change_summary: t("label.abstract.initial_version"),
                              license: DEFAULT_LICENSE)
@@ -51,6 +51,7 @@ class AbstractsController < ApplicationController
     @abstract = Abstract.find(params[:id])
     @comments = @abstract.comments
     @new_comment = AbstractComment.new
+    @user = current_user.id
     respond_to do |format|
       format.html {render action: "show"}
       format.json { render json: @abstract }
@@ -61,6 +62,10 @@ class AbstractsController < ApplicationController
     @abstract = Abstract.find(params[:id])
     @comment = @abstract.comments.build({user_id: current_user.id}.merge(params[:abstract_comment]))
     @comment.save!
+
+    if current_user.id != @abstract.author_id #TODO ever remove
+      UserMailer.commented(@abstract).deliver_now
+    end
 
     redirect_to abstract_path(@abstract), notice: 'Comment added.'
   end
@@ -179,9 +184,11 @@ class AbstractsController < ApplicationController
     return if performed?
     return if reviewer?
 
-    t = Abstract.find(params[:id])
-    unless(t.user_ids.include? current_user.id)
-      render text: t('message.common.access_denied'), status: 403  unless current_user.admin?
+    unless(action_name == "preview")
+      t = Abstract.find(params[:id])
+      unless(t.user_ids.include? current_user.id)
+        render text: t('message.common.access_denied'), status: 403  unless current_user.admin?
+      end
     end
   end
 

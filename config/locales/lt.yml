@@ -1,0 +1,225 @@
+---
+lt:
+  activerecord:
+    errors:
+      messages:
+        accepted: turi būti priimta
+        blank: negali būti tuščia
+        confirmation: patvirtinimas nesutampa
+        empty: negali būti tuščia
+        equal_to: turi būti lygu %{count}
+        exclusion: rezervuota
+        invalid: yra klaidinga
+        not_a_number: nėra skaičius
+  active_scaffold:
+    are_you_sure: Ar esate įsitikinęs?
+  date:
+    abbr_day_names:
+    - Skm
+    - Prm
+    - Ant
+    - Trč
+    - Ket
+    - Pnk
+    - Štd
+    day_names:
+    - Sekmd.
+    - Pirmd.
+    - Antrad.
+    - Trečiad.
+    - Ketvrtd.
+    - Pnktd.
+    - Šeštad.
+    month_names:
+    - Sausio
+    - Vasario
+    - Kovo
+    - Balandžio
+    - Gegužės
+    - Birželio
+    - Liepos
+    - Rugpjūčio
+    - Rugsėjo
+    - Spalio
+    - Lapkričio
+    - Gruodžio
+    none: none
+    order:
+    - m.
+    - mėn.
+    - d.
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: Maždaug 1 valanda
+        other: maždaug %{count} val.
+      about_x_months:
+        one: maždaug 1 mėnuo
+        other: maždaug %{count} mėn.
+      about_x_years:
+        one: maždaug 1 m.
+        other: maždaug %{count} m.
+      half_a_minute: pusę minutės
+      less_than_x_minutes:
+        one: mažiau minutės
+        other: mažiau, negu %{count} min.
+      less_than_x_seconds:
+        one: mažiau, nei 1 s
+        other: mažiau, negu %{count} s
+      over_x_years:
+        one: daugiau, nei metus
+        other: daugiau, kaip %{count} m.
+      x_days:
+        one: 1 d.
+        other: "%{count} d."
+    prompts:
+      year: m.
+  description:
+    abstract:
+      body: "rekomenduojamos kalbos: baltarusių, rusų, anglų; rekomenduojama apimtis
+        iki 6000 simbolių.\r\nGalima siųsti grynąjį tekstą arba naudoti „textile“
+        žymenis http://www.textism.com/tools/textile/\r\n"
+    user:
+      email: Jūsų el. pašto adresas
+      last_name: Įvesti tikrą vardą ir pavardę.
+      occupation: Darbovietė ar mokymosi vieta.
+  devise:
+    failure:
+      invalid: Klaidingas el. paštas arba slaptažodis
+    mailer:
+      reset_password_instructions:
+        subject: Slaptažodžio atkūrimo instrukcija
+  errors:
+    messages:
+      not_found: nerasta
+  label:
+    abstract:
+      authors: Autoriai
+      title: Pavadinimas
+    common:
+      cancel: Atšaukti
+      delete: Ištrinti
+      editTranslation: Redaguoti vertimą
+      preview: Peržiūrėti
+      publish: Skelbti
+      translate: Išversti
+      update: Atnaujinti
+      upload: Įkelti
+      view_changes: Rodyti pakeitimus
+    conference:
+      participated: Jūs dalyvavote
+      register: Registruotis į %{conference}
+    conference_registration:
+      cancel_registration: Atšaukti registraciją!
+    diff:
+      changed_at: Pakeista
+      version: Versija
+    news:
+      add: Pridėti naujieną
+      all_news: Visos naujienos
+      author: Autorius
+      back_to_list: Atgal į naujienų sąrašą
+      last_news: Paskutinės naujienos
+      publish: Paskelbti naujieną
+      published_at: Paskelbta %{published}
+      title: Pavadinimas
+      unpublished: Skelbimas pašalintas
+      will_be_published: Bus paskelbta %{published}
+    session:
+      loginButton: Prisijungti
+      logout: Atsijungti
+      password: Slaptažodis
+    statistics:
+      browser: Naršyklė
+      conference: Konferencijos %{conference} registracijos statistika
+      country: Valstybė
+      operating_system: Operacinė sistema
+      registration:
+        days_title: Dienų dalyvių statistika
+        registration_title: Registracijos statistika
+        total_men: Dalyvių skaičius
+        total_registrations: Prisiregistravusiųjų skaičius
+      title:
+        browser_statistic: Lankytojų naršyklių statistika
+        conference: Konferencijos registracijos statistika
+        country_statistic: Lankytojų valstybių statistika
+        full: Statistika (nuo 2009-04-20)
+        month: Praėjusio mėnesio statistika
+        os_statistic: Lankytojų operacinių sistemų statistika
+        total_visitors: 'Lankytojų skaičius: %{count}'
+        week: Praėjusios savaitės statistika
+      visits: Apsilankymai
+    translations:
+      index: Vertimų sąrašas
+      state:
+        blank: Išversti
+        untranslated: "(neišversta)"
+    user:
+      avator: 'Nauja nuotrauka:'
+      country: Valstybė
+      create: Registruotis
+      edit: Redaguoti asmens duomenis
+      email: El. pašto adresas
+      first_name: Vardas
+      full_name: Vardas
+      last_name: Pavardė
+      login: Prisijungti
+      occupation: Organizacija
+      password: Slaptažodis
+      password_confirmation: Slaptažodžio patvirtinimas
+      update_model: Jūsų asmens duomenys
+  menu:
+    conference:
+      about: Apie
+      attribution_winter: Atributika
+      history: LVEE istorija
+      payment: Mokėjimai
+      payment_winter: Mokėjimai
+      place: Renginių vieta
+      place_winter: Konferencijos vieta
+      press: Spaudoje
+      statistics: Statistika
+      title: Apie LVEE
+    contacts:
+      official: Oficialūs kontaktai
+      organizers: Organizatoriai
+      title: Kontaktai
+    editor:
+      news: Naujienų redaktorius
+      title: Redaktorius
+    main:
+      title: Pagrindinis
+    reports:
+      about: Numatomi pranešimai
+      program: Konferencijos programa
+      title: Pranešimai
+    sponsors:
+      title: Rėmėjai
+    user:
+      list_14_2: Sąrašas
+      list_15: Sąrašas
+      profile: Asmeniniai nustatymai
+      title: Dalyviai
+      volunteers: Savanoriai
+      winter_12: Sąrašas
+  message:
+    conference:
+      slogan: "<br />Tarptautinė atvirosios programinės įrangos kūrėjų ir naudotojų
+        konferencija"
+    session:
+      logged: Prisijungęs %{user_name}
+    user:
+      avator_upload: "Čia galite įkelti savo nuotrauką. \r\nPrašome pasirinkti atpažįstamą
+        portretą."
+      describe: 'Naudotojas: %{full_name} (%{country}, %{city})'
+      registred: Ačiū, kad prisiregistravote
+  sidebar:
+    information_sponsor: Informaciniai partneriai
+    organizers: Organizatoriai
+    sponsors: Rėmėjai
+    technical_partner: Techniniai partneriai
+    technical_sponsor: Techniniai rėmėjai
+  support:
+    array:
+      last_word_connector: " ir "
+      two_words_connector: " ir "

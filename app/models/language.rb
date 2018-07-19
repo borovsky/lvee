@@ -5,7 +5,7 @@ class Language < ActiveRecord::Base
 
   has_many :translations
 
-  scope :published, where(:published => true).order(:name)
+  scope :published, -> { where(:published => true).order(:name) }
 
   attr_accessible :name, :code3, :description, :published
 
