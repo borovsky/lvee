@@ -1,15 +1,15 @@
 GIT
-  remote: git://github.com/borovsky/tcpdf.git
-  revision: 756b43580a47be916fc9138eaeb693c95507bc1a
-  specs:
-    tcpdf (1.53.0)
-
-GIT
   remote: git://github.com/technoweenie/acts_as_versioned.git
   revision: 63b1fc8529d028fae632fe80ec0cb25df56cd76b
   specs:
     acts_as_versioned (0.6.0)
       activerecord (>= 3.0.9)
+
+GIT
+  remote: https://github.com/borovsky/tcpdf.git
+  revision: 756b43580a47be916fc9138eaeb693c95507bc1a
+  specs:
+    tcpdf (1.53.0)
 
 GEM
   remote: http://rubygems.org/
@@ -270,7 +270,7 @@ GEM
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
-    tzinfo (0.3.39)
+    tzinfo (0.3.61)
     uglifier (2.5.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
