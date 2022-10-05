@@ -1,15 +1,15 @@
 GIT
-  remote: git://github.com/borovsky/tcpdf.git
-  revision: 756b43580a47be916fc9138eaeb693c95507bc1a
-  specs:
-    tcpdf (1.53.0)
-
-GIT
   remote: git://github.com/technoweenie/acts_as_versioned.git
   revision: 63b1fc8529d028fae632fe80ec0cb25df56cd76b
   specs:
     acts_as_versioned (0.6.0)
       activerecord (>= 3.0.9)
+
+GIT
+  remote: https://github.com/borovsky/tcpdf.git
+  revision: 756b43580a47be916fc9138eaeb693c95507bc1a
+  specs:
+    tcpdf (1.53.0)
 
 GEM
   remote: http://rubygems.org/
@@ -46,7 +46,8 @@ GEM
       multi_json (~> 1.0)
     acts_as_list (0.4.0)
       activerecord (>= 3.0)
-    addressable (2.3.6)
+    addressable (2.8.1)
+      public_suffix (>= 2.0.2, < 6.0)
     arel (3.0.3)
     builder (3.0.4)
     capistrano (2.15.5)
@@ -186,6 +187,7 @@ GEM
       coderay (~> 1.0)
       method_source (~> 0.8)
       slop (~> 3.4)
+    public_suffix (5.0.0)
     rack (1.4.5)
     rack-cache (1.2)
       rack (>= 0.4)
